@@ -35,13 +35,30 @@ def contained(root, value):
     return path
 
 
+def steering_rows(text):
+    """Read decision-table columns without backtracking across long prose rows."""
+    identifiers = []
+    decisions = {}
+    for line in text.splitlines():
+        if not line.startswith("|"):
+            continue
+        columns = line.split("|", 2)
+        if len(columns) != 3:
+            continue
+        identifier = columns[1].strip()
+        if not re.fullmatch(r"[A-Z]\d{2}", identifier):
+            continue
+        identifiers.append(identifier)
+        remainder = columns[2]
+        if remainder.endswith("|"):
+            decisions[identifier] = remainder[:-1].strip()
+    return identifiers, decisions
+
+
 def validate(root):
     conformance = root / "conformance"
     steering = (root / "language-steering.md").read_text()
-    identifiers = re.findall(r"^\|\s*([A-Z]\d{2})\s*\|", steering, re.MULTILINE)
-    decisions = dict(re.findall(
-        r"^\|\s*([A-Z]\d{2})\s*\|\s*(.*?)\s*\|$", steering, re.MULTILINE
-    ))
+    identifiers, decisions = steering_rows(steering)
     require(len(identifiers) == len(set(identifiers)), "duplicate steering document IDs")
     ledger = json.loads((conformance / "steering.json").read_text())
     require(ledger.get("format") == "bifoil.conformance.v1", "unknown ledger format")

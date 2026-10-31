@@ -39,6 +39,22 @@ class EvidenceIntegrity(unittest.TestCase):
             with contextlib.redirect_stdout(io.StringIO()):
                 validator.validate(root)
 
+    def test_steering_rows_preserve_embedded_pipes_and_duplicate_ids(self):
+        identifiers, decisions = validator.steering_rows(
+            "Ignored prose\n| incomplete\n| ID | Decision |\n"
+            "| S14 | First | alternative. |\n"
+            "| S14 | Final selected rule. |\n"
+        )
+        self.assertEqual(identifiers, ["S14", "S14"])
+        self.assertEqual(decisions, {"S14": "Final selected rule."})
+
+    def test_long_unterminated_steering_row_keeps_id_without_decision(self):
+        identifiers, decisions = validator.steering_rows("| S14 | " + " " * 100_000)
+        self.assertEqual(identifiers, ["S14"])
+        self.assertEqual(decisions, {})
+        _, decisions = validator.steering_rows("| S14 | " + " " * 100_000 + "rule |")
+        self.assertEqual(decisions, {"S14": "rule"})
+
     def test_valid_reciprocal_record(self):
         self.check_fixture()
 

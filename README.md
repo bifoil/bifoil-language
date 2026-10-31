@@ -49,3 +49,10 @@ disabled for this project. A completed analysis and its quality gate are separat
 
 Sonar checks the Python validation tools. It does not understand `.bfl` semantics; language acceptance remains the
 responsibility of the metadata validator and native conformance runner.
+
+Generate portable Python coverage for the validator before scanning:
+
+```sh
+uv run --no-project --with coverage python -m coverage run -m unittest discover -s tools -p test_validate_conformance.py
+uv run --no-project --with coverage python -m coverage xml
+```
