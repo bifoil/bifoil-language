@@ -1,0 +1,7 @@
+scene start():
+    var dependency: Int
+    val result: Int
+    val status = initialize(3)
+    fun initialize(value: Int) -> String:
+        result = dependency + value
+        return "ready"

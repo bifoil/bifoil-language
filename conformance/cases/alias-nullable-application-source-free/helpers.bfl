@@ -1,0 +1,3 @@
+typealias Optional = String?
+export typealias Again = Optional?
+export fun echo(value: Again) -> Again = value

@@ -1,0 +1,11 @@
+shared var trace: String = ""
+export fun run() -> () -> String:
+    var result: Int
+    val first = initialize(3)
+    val observed = result
+    val second = initialize(4)
+    fun initialize(value: Int) -> String:
+        result = value
+        trace += "${result},"
+        return "ready ${result}"
+    return () => "${first}|${observed}|${second}|${result}|${trace}"

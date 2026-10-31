@@ -1,0 +1,6 @@
+scene start():
+    val result: Int
+    fun read() -> Int = result
+    initialize(::read)
+    fun initialize(reader: () -> Int):
+        result = 3

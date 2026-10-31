@@ -1,0 +1,5 @@
+fun factory() -> Any:
+    val x: Int
+    return (() => x) as Any
+scene start():
+    return

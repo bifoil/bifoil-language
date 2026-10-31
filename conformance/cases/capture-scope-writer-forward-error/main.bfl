@@ -1,0 +1,7 @@
+scene start():
+    if true:
+        var target = 0
+        set(3)
+    var target: Int
+    fun set(value: Int):
+        target = value

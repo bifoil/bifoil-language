@@ -1,0 +1,10 @@
+import helpers.calls
+import helpers.classify
+scene start():
+    val first = classify(2)
+    val second = classify(-1)
+    choice:
+        option "Result ${first}|${second}; calls ${calls}":
+            Unit
+    prose:
+        ${first}|${second}|${first === 30.0}|${calls}

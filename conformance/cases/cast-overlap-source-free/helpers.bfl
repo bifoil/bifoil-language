@@ -1,0 +1,29 @@
+export fun nullable(value: Int?) -> String? = value as? String?
+export fun <T> read(value: T) -> String? = value as? String
+export fun <T> target(value: String) -> T? = value as? T
+export fun emptyList() -> List<String>:
+    val bottom: List<Nothing> = []
+    val values: List<Int> = bottom
+    return values as List<String>
+export fun emptyMap() -> Map<Int, String>:
+    val bottom: Map<Int, Nothing> = {}
+    val values: Map<Int, Int> = bottom
+    return values as Map<Int, String>
+fun never(value: Any?) -> Nothing:
+    while true:
+        Unit
+export fun callable() -> Boolean:
+    val initial: (Int) -> Int = ::never
+    val checked = initial as (String) -> String
+    return checked is (String) -> String
+export suspend fun suspended(value: Int?) -> String?:
+    val converted = value as String?
+    choice:
+        option "Restore":
+            Unit
+    return converted
+export fun unchangedAlias() -> Int:
+    val original = mutable [1, 2]
+    val hidden = original as MutableList<*>
+    hidden.clear()
+    return original.size

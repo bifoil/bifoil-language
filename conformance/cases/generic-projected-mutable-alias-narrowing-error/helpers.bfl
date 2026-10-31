@@ -1,0 +1,4 @@
+export data class Box<T>:
+    var value: T
+export fun clear(box: Box<String?>):
+    box.value = null

@@ -1,0 +1,5 @@
+data class Box<T>:
+    val items: MutableList<T>
+scene start():
+    val hidden: Box<*> = Box(mutable [1])
+    hidden.items[0] = "wrong"

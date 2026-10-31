@@ -1,0 +1,14 @@
+export suspend fun run() -> () -> String:
+    val result: Int
+    var calls = 0
+    for ordinal in 5..7:
+        initialize(ordinal)
+        break
+    suspend fun initialize(value: Int):
+        calls += 1
+        choice:
+            option "Proceed":
+                Unit
+        result = value
+    fun read() -> String = "${result}|${calls}"
+    return ::read

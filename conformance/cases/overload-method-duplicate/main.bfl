@@ -1,0 +1,6 @@
+data class Reader:
+    val name: String
+    fun read(value: Int) -> Int = value
+    fun read(value: Int) -> Float = value
+scene start():
+    return

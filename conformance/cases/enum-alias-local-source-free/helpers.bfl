@@ -1,0 +1,15 @@
+export enum Mood:
+    Happy
+    Sad
+export typealias Color = Mood
+export fun selected() = Color.Happy
+export fun retained() -> () -> Mood:
+    typealias Local = Color
+    return () => Local.Sad
+export suspend fun delayed() -> Mood:
+    fun choose() = Local.Sad
+    typealias Local = Color
+    choice:
+        option "Resume the local enum alias":
+            Unit
+    return choose()

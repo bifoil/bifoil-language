@@ -1,0 +1,11 @@
+import helpers.Fixed
+scene start():
+    val fixed: Fixed<*> = Fixed("Ada")
+    var read: () -> Int = () => 0
+    if fixed.value is String:
+        read = () => fixed.value.length
+    choice:
+        option "Captured":
+            Unit
+    prose:
+        ${read()}

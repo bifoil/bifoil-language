@@ -1,0 +1,7 @@
+scene start():
+    val result: Int
+    val callback: ((Unit) -> Int)? = null
+    val done = callback?.(initialize())
+    val observed = result
+    fun initialize():
+        result = 3

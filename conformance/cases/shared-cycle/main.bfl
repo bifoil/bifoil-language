@@ -1,0 +1,6 @@
+shared val first: Int = readSecond()
+shared val second: Int = first
+fun readSecond() -> Int = second
+scene start():
+    prose:
+        Unreachable.

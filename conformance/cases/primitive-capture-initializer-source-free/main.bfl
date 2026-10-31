@@ -1,0 +1,5 @@
+import helpers.run
+scene start():
+    val answer = run()
+    prose:
+        ${answer}

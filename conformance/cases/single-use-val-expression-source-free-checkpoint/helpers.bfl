@@ -1,0 +1,20 @@
+export fun run(seed: Int) -> String:
+    val result: Int
+    fun initialize(value: Int) = if value >= 0:
+        result = value
+        "positive"
+    else:
+        result = -value
+        "negative"
+    val status = initialize(seed)
+    return "${result}|${status}"
+export fun fixed() -> Int:
+    val result: Int
+    fun initialize() = if true:
+        result = 5
+        Unit
+    else:
+        result = 6
+        Unit
+    initialize()
+    return result

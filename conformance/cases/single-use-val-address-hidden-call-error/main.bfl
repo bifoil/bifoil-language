@@ -1,0 +1,7 @@
+scene start():
+    val result: Int
+    val items = mutable {"k": "pending"}
+    fun initialize(value: Int) -> String:
+        result = value
+        return "k"
+    items[initialize(1)] = initialize(2)

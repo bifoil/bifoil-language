@@ -1,0 +1,4 @@
+export data class Box<out T>:
+    val value: T
+    fun read() -> T = value
+export fun erase(receiver: Box<Any>) -> () -> Any = receiver::read

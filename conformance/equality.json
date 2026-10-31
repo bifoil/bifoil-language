@@ -1,0 +1,227 @@
+[
+  {
+    "id": "exact-equality-collection-types-source-free-checkpoint",
+    "directory": "cases/exact-equality-collection-types-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "true|false|false|false|true|true|true"
+    ],
+    "decisions": [
+      "E28",
+      "E30"
+    ]
+  },
+  {
+    "id": "exact-equality-unordered-values-source-free-checkpoint",
+    "directory": "cases/exact-equality-unordered-values-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "true|false|true|true|false|true"
+    ],
+    "decisions": [
+      "E28",
+      "E30"
+    ]
+  },
+  {
+    "id": "exact-equality-contained-nullables-source-free-checkpoint",
+    "directory": "cases/exact-equality-contained-nullables-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "true|false|true|true"
+    ],
+    "decisions": [
+      "E28",
+      "E29"
+    ]
+  },
+  {
+    "id": "exact-equality-cyclic-nominal-graphs-source-free-checkpoint",
+    "directory": "cases/exact-equality-cyclic-nominal-graphs-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "true|true|false|true"
+    ],
+    "decisions": [
+      "E28",
+      "E30"
+    ]
+  },
+  {
+    "id": "exact-equality-independent-generic-types-source-free-checkpoint",
+    "directory": "cases/exact-equality-independent-generic-types-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "false|true|false|true"
+    ],
+    "decisions": [
+      "E28",
+      "E29"
+    ]
+  },
+  {
+    "id": "exact-equality-variant-pattern-conversions-source-free-checkpoint",
+    "directory": "cases/exact-equality-variant-pattern-conversions-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "true|true|true|false"
+    ],
+    "decisions": [
+      "E28",
+      "E30",
+      "U33"
+    ]
+  },
+  {
+    "id": "exact-equality-covariant-empty-reification-source-free-checkpoint",
+    "directory": "cases/exact-equality-covariant-empty-reification-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "true"
+    ],
+    "decisions": [
+      "E30",
+      "E31"
+    ]
+  },
+  {
+    "id": "exact-equality-function-null-checks-source-free-checkpoint",
+    "directory": "cases/exact-equality-function-null-checks-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "true|true|7"
+    ],
+    "decisions": [
+      "F39"
+    ]
+  },
+  {
+    "id": "exact-equality-unknown-universal-error",
+    "directory": "cases/exact-equality-unknown-universal-error",
+    "compile_error": "operator '=='",
+    "decisions": [
+      "E31"
+    ]
+  },
+  {
+    "id": "exact-equality-unknown-universal-exact-error",
+    "directory": "cases/exact-equality-unknown-universal-exact-error",
+    "compile_error": "operator '==='",
+    "decisions": [
+      "E31"
+    ]
+  },
+  {
+    "id": "exact-equality-function-values-error",
+    "directory": "cases/exact-equality-function-values-error",
+    "compile_error": "operator '=='",
+    "decisions": [
+      "F39"
+    ]
+  },
+  {
+    "id": "exact-equality-function-values-exact-error",
+    "directory": "cases/exact-equality-function-values-exact-error",
+    "compile_error": "operator '==='",
+    "decisions": [
+      "F39"
+    ]
+  },
+  {
+    "id": "exact-equality-unequatable-data-error",
+    "directory": "cases/exact-equality-unequatable-data-error",
+    "compile_error": "operator '==='",
+    "decisions": [
+      "E30",
+      "F39"
+    ]
+  }
+]

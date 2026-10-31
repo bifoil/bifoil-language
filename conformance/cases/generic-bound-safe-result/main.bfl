@@ -1,0 +1,5 @@
+data class Box:
+    fun read() -> Int = 1
+fun invalid(item: Box?) -> Int = item?.read()
+scene start():
+    return

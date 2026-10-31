@@ -1,0 +1,8 @@
+import helpers.create
+scene start():
+    val callback = create()
+    choice:
+        option "Initialize":
+            Unit
+    prose:
+        ${callback()}|${callback()}

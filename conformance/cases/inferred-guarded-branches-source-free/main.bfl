@@ -1,0 +1,14 @@
+import helpers.Outcome
+import helpers.guarded
+import helpers.condition
+import helpers.payload
+import helpers.ask
+scene start():
+    val named = ask("Ada")
+    val empty = ask(null)
+    prose:
+        ${guarded("Ada", true)}|${guarded(null, true)}|${guarded("Ada", false)}
+    prose:
+        ${condition("Ada")}|${condition(null)}|${payload(Outcome.Success("four"))}|${payload(Outcome.Success(null))}
+    prose:
+        ${named}|${empty}

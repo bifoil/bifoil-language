@@ -1,0 +1,29 @@
+data class Pair<out Left, out Right>:
+    val left: Left
+    val right: Right
+typealias A0<T> = T
+typealias A1<T> = Pair<A0<T>, A0<T>>
+typealias A2<T> = Pair<A1<T>, A1<T>>
+typealias A3<T> = Pair<A2<T>, A2<T>>
+typealias A4<T> = Pair<A3<T>, A3<T>>
+typealias A5<T> = Pair<A4<T>, A4<T>>
+typealias A6<T> = Pair<A5<T>, A5<T>>
+typealias A7<T> = Pair<A6<T>, A6<T>>
+typealias A8<T> = Pair<A7<T>, A7<T>>
+typealias A9<T> = Pair<A8<T>, A8<T>>
+typealias A10<T> = Pair<A9<T>, A9<T>>
+typealias A11<T> = Pair<A10<T>, A10<T>>
+typealias A12<T> = Pair<A11<T>, A11<T>>
+typealias A13<T> = Pair<A12<T>, A12<T>>
+typealias A14<T> = Pair<A13<T>, A13<T>>
+typealias A15<T> = Pair<A14<T>, A14<T>>
+typealias A16<T> = Pair<A15<T>, A15<T>>
+typealias A17<T> = Pair<A16<T>, A16<T>>
+typealias A18<T> = Pair<A17<T>, A17<T>>
+typealias A19<T> = Pair<A18<T>, A18<T>>
+typealias A20<T> = Pair<A19<T>, A19<T>>
+data class Box<T>:
+    val value: A20<T>
+fun read(input: Box<*>) = input.value
+scene start():
+    Unit

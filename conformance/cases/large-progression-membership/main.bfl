@@ -1,0 +1,6 @@
+scene start():
+    val values = (-2147483648..2147483647) step 1
+    val backwards = 2147483647 downTo -2147483648
+    val all = -2147483648..2147483647
+    prose:
+        ${-2147483648 in values}|${-1 in values}|${0 in backwards}|${2147483647 in all}

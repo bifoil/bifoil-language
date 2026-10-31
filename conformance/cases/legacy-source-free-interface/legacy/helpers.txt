@@ -1,0 +1,4 @@
+*label award
+*params amount
+*set score + amount
+*return

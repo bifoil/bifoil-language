@@ -1,0 +1,6 @@
+data class Handler:
+    val toString: () -> String
+scene start():
+    val handler = Handler(() => "field")
+    prose:
+        ${handler.toString()}

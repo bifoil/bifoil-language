@@ -1,0 +1,7 @@
+import helpers.makeWriter
+scene start():
+    val action = makeWriter()
+    action(3)
+    action(9)
+    prose:
+        Complete.

@@ -1,0 +1,28 @@
+export data class Box<T>:
+    val value: T
+export enum Mood:
+    Happy
+    Sad
+export fun <T> binding(value: T) -> T:
+    if value is String:
+        return value!!
+    return value
+export fun <T> field(holder: Box<T>) -> T:
+    if holder.value is String:
+        return holder.value!!
+    return holder.value
+export fun <T> required(value: T):
+    if value is String:
+        return value!!
+    return value!!
+export fun <T> requiredField(holder: Box<T>):
+    if holder.value is String:
+        return holder.value!!
+    return holder.value!!
+export fun <T> closure(holder: Box<T>) -> () -> T:
+    if holder.value is String:
+        return () => holder.value!!
+    return () => holder.value!!
+export fun chosen() -> Mood = Happy!!
+export fun empty() -> List<Int> = []!!
+export fun mutableEmpty() -> MutableList<Int> = []!!

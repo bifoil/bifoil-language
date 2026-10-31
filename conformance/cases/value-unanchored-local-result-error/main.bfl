@@ -1,0 +1,8 @@
+fun unresolved(flag: Boolean):
+    return if flag:
+        fun recurse() = recurse()
+        recurse()
+    else:
+        0
+scene start():
+    Unit

@@ -1,0 +1,2 @@
+import api.Shade
+export legacy fun echo(value: Shade) -> Shade = "questions" label "echo" result "answer"

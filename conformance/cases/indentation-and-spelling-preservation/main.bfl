@@ -1,0 +1,19 @@
+scene start():
+	val message = """
+	first
+    second
+"""
+	var count = 0
+	  if false:
+		count = 1
+	  elif false:
+		count = 2
+	  else if true:
+		count = 3
+	choice:
+ 		option "Count ${count}; length ${message.length}":
+			Unit
+	prose:
+	    ${count}|${message.length}
+	    @if true:
+		    Narrative """ stays prose.

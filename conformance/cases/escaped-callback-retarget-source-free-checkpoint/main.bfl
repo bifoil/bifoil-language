@@ -1,0 +1,19 @@
+import helpers.callback as saved
+import helpers.invoke
+scene start():
+    var future: Int
+    var target: () -> Int = () => 7
+    var other: () -> Int = () => 9
+    fun through() -> Int = target()
+    saved = ::through
+    target = () => other()
+    future = 3
+    other = () => future
+    choice:
+        option "Resume retargeted shared cells":
+            Unit
+    future = 9
+    val first = invoke()
+    target = () => future + 1
+    prose:
+        ${first}|${invoke()}

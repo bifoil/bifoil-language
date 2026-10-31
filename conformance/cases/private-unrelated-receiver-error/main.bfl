@@ -1,0 +1,6 @@
+data class Box:
+    private val value: Int
+data class Reader:
+    fun read(other: Box) -> Int = other.value
+scene start():
+    Unit

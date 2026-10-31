@@ -1,0 +1,6 @@
+fun answer() -> Int = 7
+export fun run() -> () -> String:
+    val absent: (() -> Int)? = null
+    val present: (() -> Int)? = ::answer
+    fun read() -> String = "${absent == null}|${present != null}|${present?.() ?: 0}"
+    return ::read

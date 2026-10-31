@@ -1,0 +1,10 @@
+data class Box<out T>:
+    val value: T
+data class Sink<in T>:
+    val label: String
+    fun consume(value: T) -> String = label
+data class Nested<out T>:
+    val values: List<T>
+    val action: (T) -> Unit
+scene start():
+    return

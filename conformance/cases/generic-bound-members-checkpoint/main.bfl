@@ -1,0 +1,18 @@
+import helpers.Counter
+import helpers.bump
+import helpers.chained
+import helpers.retained
+import helpers.edit
+import helpers.contains
+import helpers.optional
+import helpers.length
+scene start():
+    val counter = Counter(1)
+    val a = bump(counter)
+    val b = retained(counter)
+    val c = chained<Counter, Counter>(counter)
+    val items = mutable [1, 2]
+    val d = edit(items)
+    val mapping = {"key": 1}
+    prose:
+        ${a}|${b}|${c}|${d}|${contains(mapping)}|${optional<Counter?>(null)}|${optional<Counter?>(counter)}|${length<String?>(null)}|${length<String?>("😀x")}

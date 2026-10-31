@@ -1,0 +1,9 @@
+fun length(name: String?, ignored: Int =
+    if name == null:
+        return 0
+    else:
+        1
+) -> Int:
+    return name.length
+scene start():
+    return

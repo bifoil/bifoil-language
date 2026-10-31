@@ -1,0 +1,9 @@
+export fun run() -> Any:
+    val result: Any
+    var source: Any = 1
+    fun initialize():
+        result = {"value": source}
+    if source is Int:
+        initialize()
+        return result
+    return "skipped"

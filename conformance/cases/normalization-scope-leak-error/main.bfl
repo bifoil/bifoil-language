@@ -1,0 +1,6 @@
+fun left() -> Int:
+    typealias Hidden = Int
+    return 1
+fun right(value: Hidden) -> Int = value
+scene start():
+    Unit

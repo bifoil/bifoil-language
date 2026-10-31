@@ -1,0 +1,11 @@
+import schema.Shade
+import helpers.retained
+import helpers.read
+import helpers.optional
+scene start():
+    val values: Map<Shade, String?> = {Happy: "Ada", Sad: null}
+    val saved = retained(values)
+    val count = read(values)
+    val nullable: Map<Shade?, String?> = {Shade.Happy: "Ada", null: "Other"}
+    prose:
+        ${count}|${saved()}|${optional(nullable)}|${values[Shade.Sad] == null}

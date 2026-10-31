@@ -1,0 +1,17 @@
+data class Counter:
+    var count: Int
+    fun next() -> Int:
+        count += 1
+        return count
+scene start():
+    val counter = Counter(5)
+    val nextValue = counter::next
+    val entries = mutable {"key": Counter(10)}
+    for entry in entries:
+        entries.clear()
+        for index in 1..32000:
+            val temporary = Counter(index)
+        choice:
+            option "Continue":
+                prose:
+                    ${entry.key}|${entry.value.count}|${nextValue()}

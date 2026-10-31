@@ -1,0 +1,4 @@
+import main.start
+export scene echo(value: Int):
+    prose:
+        Echo ${value}.

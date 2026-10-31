@@ -1,0 +1,10 @@
+import helpers.run
+scene start():
+    val present = run({0: "ready"})
+    val storedNull = run({0: null})
+    val missing = run({})
+    choice:
+        option "Saved":
+            Unit
+    prose:
+        ${present}|${storedNull}|${missing}

@@ -1,0 +1,11 @@
+data class Box:
+    var score: Int?
+fun clear(holder: Box) -> Int:
+    holder.score = null
+    return 20
+fun update(holder: Box) -> Int:
+    if holder.score == null:
+        return 0
+    holder.score %+= clear(holder)
+    return holder.score!!
+export fun run() -> Int = update(Box(50))

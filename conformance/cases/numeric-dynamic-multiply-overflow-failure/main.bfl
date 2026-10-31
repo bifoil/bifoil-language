@@ -1,0 +1,6 @@
+fun integer(value: Int) -> Int = value
+fun floating(value: Float) -> Float = value
+scene start():
+    val result = integer(2147483647) * integer(2)
+    prose:
+        This must not execute.

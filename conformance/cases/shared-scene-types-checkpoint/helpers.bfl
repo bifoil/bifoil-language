@@ -1,0 +1,9 @@
+export typealias Target = Scene<Int>
+export typealias Router = Scene<Target, Target>
+export fun <T> preserve(value: T) -> T = value
+export scene route(first: Target, second: Target):
+    choice:
+        option "Continue":
+            Unit
+    visit first(3)
+    visit second(4)

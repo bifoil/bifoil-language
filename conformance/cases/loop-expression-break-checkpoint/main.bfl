@@ -1,0 +1,14 @@
+suspend fun ask() -> Int:
+    choice:
+        option "Continue":
+            return 1
+scene start():
+    val total = 100 + if true:
+        outer@ for i in 1..2:
+            for j in 1..2:
+                val skipped = ask() + break@outer
+        7
+    else:
+        0
+    prose:
+        ${total}

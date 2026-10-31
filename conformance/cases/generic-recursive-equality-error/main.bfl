@@ -1,0 +1,7 @@
+data class Node<T>:
+    val next: Node<() -> Int>? = null
+    val value: T
+scene start():
+    val first = Node(value = 3)
+    val second = Node(value = 3)
+    val equal = first == second

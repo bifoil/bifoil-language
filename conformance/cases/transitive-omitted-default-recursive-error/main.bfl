@@ -1,0 +1,10 @@
+scene start():
+    var future: Int
+    fun read(value: Int = future) -> Int = value
+    fun first(flag: Boolean) -> Int:
+        if flag:
+            return second()
+        return read(7)
+    fun second() -> Int = read()
+    val result = first(true)
+    future = 3

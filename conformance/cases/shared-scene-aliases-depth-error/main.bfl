@@ -1,0 +1,38 @@
+typealias A0 = Scene
+typealias A1 = Scene<A0, A0>
+typealias A2 = Scene<A1, A1>
+typealias A3 = Scene<A2, A2>
+typealias A4 = Scene<A3, A3>
+typealias A5 = Scene<A4, A4>
+typealias A6 = Scene<A5, A5>
+typealias A7 = Scene<A6, A6>
+typealias A8 = Scene<A7, A7>
+typealias A9 = Scene<A8, A8>
+typealias A10 = Scene<A9, A9>
+typealias A11 = Scene<A10, A10>
+typealias A12 = Scene<A11, A11>
+typealias A13 = Scene<A12, A12>
+typealias A14 = Scene<A13, A13>
+typealias A15 = Scene<A14, A14>
+typealias A16 = Scene<A15, A15>
+typealias A17 = Scene<A16, A16>
+typealias A18 = Scene<A17, A17>
+typealias A19 = Scene<A18, A18>
+typealias A20 = Scene<A19, A19>
+typealias A21 = Scene<A20, A20>
+typealias A22 = Scene<A21, A21>
+typealias A23 = Scene<A22, A22>
+typealias A24 = Scene<A23, A23>
+typealias A25 = Scene<A24, A24>
+typealias A26 = Scene<A25, A25>
+typealias A27 = Scene<A26, A26>
+typealias A28 = Scene<A27, A27>
+typealias A29 = Scene<A28, A28>
+typealias A30 = Scene<A29, A29>
+typealias A31 = Scene<A30, A30>
+typealias A32 = Scene<A31, A31>
+typealias A33 = Scene<A32, A32>
+typealias A34 = Scene<A33, A33>
+scene start():
+    prose:
+        ready

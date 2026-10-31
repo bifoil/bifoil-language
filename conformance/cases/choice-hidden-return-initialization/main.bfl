@@ -1,0 +1,9 @@
+scene start():
+    val result: Int
+    choice:
+        option "Hidden ${return}" if false:
+            Unit
+        option "Continue":
+            Unit
+    prose:
+        ${result}

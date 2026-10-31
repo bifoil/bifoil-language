@@ -1,0 +1,10 @@
+enum Switch:
+    On
+    Off
+export shared val answer: Int = resolve(Switch.On)
+fun resolve(flag: Switch) -> Int:
+    return when flag:
+        case Switch.On:
+            1
+        case Switch.Off:
+            0

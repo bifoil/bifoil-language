@@ -1,0 +1,13 @@
+import helpers.byWhile
+import helpers.byFor
+import helpers.byDo
+import helpers.visits
+scene start():
+    val before = byWhile(0) + byWhile(1) + byWhile(2)
+    val counted = byFor(0) + byFor(1) + byFor(2)
+    val after = byDo(0) + byDo(1) + byDo(2)
+    choice:
+        option "Retain ${before}|${counted}|${after}; calls ${visits}":
+            Unit
+    prose:
+        ${before}|${counted}|${after}|${visits}

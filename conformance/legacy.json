@@ -1,0 +1,635 @@
+[
+  {
+    "id": "legacy-state-and-defaults",
+    "directory": "cases/legacy-state-and-defaults",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "output": [
+      "7|7"
+    ],
+    "legacy_stats": {
+      "score": 0
+    }
+  },
+  {
+    "id": "legacy-primitive-values",
+    "directory": "cases/legacy-primitive-values",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "output": [
+      "3|😀|hello|true|true"
+    ],
+    "legacy_stats": {
+      "number": 3,
+      "letter": "😀",
+      "text": "hello",
+      "flag": true,
+      "absent": null
+    }
+  },
+  {
+    "id": "legacy-wrong-integer",
+    "directory": "cases/legacy-wrong-integer",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "runtime_error": "Int overflow",
+    "legacy_stats": {
+      "score": 3.5
+    }
+  },
+  {
+    "id": "legacy-untrusted-string",
+    "directory": "cases/legacy-untrusted-string",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "runtime_error": "not an Int",
+    "legacy_stats": {
+      "score": "3"
+    }
+  },
+  {
+    "id": "legacy-invalid-char",
+    "directory": "cases/legacy-invalid-char",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "runtime_error": "one Char",
+    "legacy_stats": {
+      "letter": "ab"
+    }
+  },
+  {
+    "id": "legacy-missing-variable",
+    "directory": "cases/legacy-missing-variable",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "runtime_error": "missing legacy variable"
+  },
+  {
+    "id": "legacy-no-implicit-narrowing",
+    "directory": "cases/legacy-no-implicit-narrowing",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "compile_error": "nullable member"
+  },
+  {
+    "id": "legacy-copied-narrowing",
+    "directory": "cases/legacy-copied-narrowing",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "output": [
+      "3"
+    ],
+    "legacy_stats": {
+      "name": "Ada"
+    }
+  },
+  {
+    "id": "legacy-suspended-expression",
+    "directory": "cases/legacy-suspended-expression",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Take 2"
+      ]
+    ],
+    "output": [
+      "Native 2.",
+      "9|3"
+    ],
+    "legacy_stats": {
+      "calls": 0,
+      "answer": 0
+    }
+  },
+  {
+    "id": "legacy-nested-native-calls",
+    "directory": "cases/legacy-nested-native-calls",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Choose 4"
+      ]
+    ],
+    "output": [
+      "5"
+    ],
+    "legacy_stats": {
+      "answer": 0
+    }
+  },
+  {
+    "id": "legacy-effect-violation",
+    "directory": "cases/legacy-effect-violation",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "runtime_error": "requires a suspend function",
+    "legacy_stats": {
+      "calls": 0,
+      "answer": 0
+    },
+    "output": [
+      "Native 1."
+    ]
+  },
+  {
+    "id": "legacy-suspension-static-error",
+    "directory": "cases/legacy-suspension-static-error",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "compile_error": "suspend context"
+  },
+  {
+    "id": "legacy-source-free-interface",
+    "directory": "cases/legacy-source-free-interface",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "precompile": [
+      "api"
+    ],
+    "output": [
+      "9|9"
+    ],
+    "legacy_stats": {
+      "score": 0
+    }
+  },
+  {
+    "id": "legacy-source-free-volatile",
+    "directory": "cases/legacy-source-free-volatile",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "precompile": [
+      "api"
+    ],
+    "compile_error": "nullable member"
+  },
+  {
+    "id": "legacy-missing-result-interface",
+    "directory": "cases/legacy-missing-result-interface",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "compile_error": "explicit result binding"
+  },
+  {
+    "id": "legacy-unsupported-value-type",
+    "directory": "cases/legacy-unsupported-value-type",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "compile_error": "requires a primitive type"
+  },
+  {
+    "id": "legacy-unknown-target",
+    "directory": "cases/legacy-unknown-target",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "compile_error": "missing legacy scene"
+  },
+  {
+    "id": "legacy-unknown-label",
+    "directory": "cases/legacy-unknown-label",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "compile_error": "missing legacy label"
+  },
+  {
+    "id": "legacy-page-break",
+    "directory": "cases/legacy-page-break",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Go on"
+      ]
+    ],
+    "output": [
+      "Before.",
+      "After.",
+      "Finished."
+    ]
+  },
+  {
+    "id": "legacy-variadic-groups",
+    "directory": "cases/legacy-variadic-groups",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "legacy_stats": {
+      "answer": 0
+    },
+    "output": [
+      "4|2|0"
+    ]
+  },
+  {
+    "id": "legacy-native-error-location",
+    "directory": "cases/legacy-native-error-location",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "output": [
+      "Before failure."
+    ],
+    "runtime_error": "src/main.bfl:1"
+  },
+  {
+    "id": "legacy-ordinary-transfer-rejected",
+    "directory": "cases/legacy-ordinary-transfer-rejected",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "output": [
+      "Before transfer."
+    ],
+    "runtime_error": "explicit transfer bridge"
+  },
+  {
+    "id": "legacy-ordinary-ending-rejected",
+    "directory": "cases/legacy-ordinary-ending-rejected",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "runtime_error": "explicit transfer bridge"
+  },
+  {
+    "id": "legacy-explicit-transfer-checkpoint",
+    "directory": "cases/legacy-explicit-transfer-checkpoint",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "output": [
+      "Before.",
+      "Native 7.",
+      "Complete."
+    ],
+    "options": [
+      [
+        "Finish"
+      ]
+    ],
+    "choices": [
+      0
+    ]
+  },
+  {
+    "id": "legacy-transfer-effect-check",
+    "directory": "cases/legacy-transfer-effect-check",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "compile_error": "suspend"
+  },
+  {
+    "id": "legacy-transfer-result-rejected",
+    "directory": "cases/legacy-transfer-result-rejected",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "compile_error": "transfer bridges require"
+  },
+  {
+    "id": "legacy-transfer-natural-completion",
+    "directory": "cases/legacy-transfer-natural-completion",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "output": [
+      "Last paragraph."
+    ]
+  },
+  {
+    "id": "legacy-text-input-checkpoint",
+    "directory": "cases/legacy-text-input-checkpoint",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "legacy_stats": {
+      "visits": 0,
+      "name": ""
+    },
+    "choices": [
+      "",
+      "  Ada\nLovelace  "
+    ],
+    "options": [
+      [],
+      []
+    ],
+    "output": [
+      "Name?",
+      "Ada[n/]Lovelace|1"
+    ]
+  },
+  {
+    "id": "legacy-number-input-checkpoint",
+    "directory": "cases/legacy-number-input-checkpoint",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "legacy_stats": {
+      "visits": 0,
+      "answer": 0
+    },
+    "choices": [
+      "x",
+      "2.5",
+      "0",
+      "10",
+      "7"
+    ],
+    "options": [
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    "output": [
+      "Number?",
+      "7|1"
+    ]
+  },
+  {
+    "id": "legacy-fractional-number-input",
+    "directory": "cases/legacy-fractional-number-input",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "legacy_stats": {
+      "answer": 0
+    },
+    "choices": [
+      "2.5"
+    ],
+    "options": [
+      []
+    ],
+    "output": [
+      "2.5"
+    ]
+  },
+  {
+    "id": "legacy-text-allow-blank",
+    "directory": "cases/legacy-text-allow-blank",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "legacy_stats": {
+      "answer": "unchanged"
+    },
+    "choices": [
+      ""
+    ],
+    "options": [
+      []
+    ],
+    "output": [
+      "[]"
+    ]
+  },
+  {
+    "id": "legacy-sliced-continuation",
+    "directory": "cases/legacy-suspended-expression",
+    "decisions": [
+      "S03",
+      "S04",
+      "S12"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Take 2"
+      ]
+    ],
+    "output": [
+      "Native 2.",
+      "9|3"
+    ],
+    "legacy_stats": {
+      "calls": 0,
+      "answer": 0
+    },
+    "quantum": 3
+  },
+  {
+    "id": "legacy-state-before-first-read",
+    "legacy_stats": {
+      "score": 41
+    },
+    "choices": [
+      0
+    ],
+    "output": [
+      "41"
+    ],
+    "directory": "cases/legacy-state-before-first-read",
+    "decisions": [
+      "T24",
+      "T25",
+      "S12"
+    ]
+  },
+  {
+    "id": "legacy-state-before-first-call",
+    "legacy_stats": {
+      "score": 41
+    },
+    "choices": [
+      0
+    ],
+    "output": [
+      "41"
+    ],
+    "directory": "cases/legacy-state-before-first-call",
+    "decisions": [
+      "T24",
+      "T25",
+      "S12"
+    ]
+  },
+  {
+    "id": "legacy-enum-source-free-checkpoint",
+    "directory": "cases/legacy-enum-source-free-checkpoint",
+    "decisions": [
+      "S12",
+      "S10",
+      "T24"
+    ],
+    "legacy_stats": {
+      "current": "Happy",
+      "answer": "Happy",
+      "null_answer": null
+    },
+    "precompile": [
+      "schema",
+      "bridge"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Choose Sad from Happy"
+      ]
+    ],
+    "output": [
+      "true|true|true|true|true"
+    ]
+  },
+  {
+    "id": "legacy-enum-transitive-alias-source-free",
+    "directory": "cases/legacy-enum-transitive-alias-source-free",
+    "decisions": [
+      "S12",
+      "S10"
+    ],
+    "legacy_stats": {
+      "answer": "Happy"
+    },
+    "precompile": [
+      "palette",
+      "api",
+      "bridge"
+    ],
+    "output": [
+      "Happy"
+    ]
+  },
+  {
+    "id": "legacy-enum-varargs",
+    "directory": "cases/legacy-enum-varargs",
+    "decisions": [
+      "S12",
+      "F32"
+    ],
+    "legacy_stats": {
+      "answer": ""
+    },
+    "output": [
+      "Happy|Sad"
+    ]
+  },
+  {
+    "id": "legacy-invalid-enum-result",
+    "directory": "cases/legacy-invalid-enum-result",
+    "decisions": [
+      "S12"
+    ],
+    "legacy_stats": {
+      "answer": "Happy"
+    },
+    "runtime_error": "legacy value is not an enum case"
+  },
+  {
+    "id": "legacy-invalid-enum-global",
+    "directory": "cases/legacy-invalid-enum-global",
+    "decisions": [
+      "S12"
+    ],
+    "legacy_stats": {
+      "current": "Missing"
+    },
+    "runtime_error": "legacy value is not an enum case"
+  },
+  {
+    "id": "legacy-enum-nominal-argument-error",
+    "directory": "cases/legacy-enum-nominal-argument-error",
+    "decisions": [
+      "S12"
+    ],
+    "compile_error": "argument requires main.Mood, found main.OtherMood"
+  }
+]

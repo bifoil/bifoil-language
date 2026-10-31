@@ -1,0 +1,7 @@
+scene start():
+    val result: Int
+    fun initialize(value: Int):
+        result = value
+    for ordinal in 1..3:
+        initialize(ordinal)
+        continue

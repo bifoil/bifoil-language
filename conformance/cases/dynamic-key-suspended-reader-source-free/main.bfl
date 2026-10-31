@@ -1,0 +1,6 @@
+import helpers.reader
+scene start():
+    val read = reader({"name": "Ada"}, "name")
+    val size = read()
+    prose:
+        ${size}

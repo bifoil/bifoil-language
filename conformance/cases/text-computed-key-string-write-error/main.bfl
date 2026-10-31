@@ -1,0 +1,6 @@
+fun read(values: Map<String, String?>, var alphabet: String, index: Int) -> Int:
+    values["${alphabet[index]}!"]!!
+    alphabet = "other"
+    return values["${alphabet[index]}!"].length
+scene start():
+    Unit

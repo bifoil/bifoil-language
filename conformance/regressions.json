@@ -1,0 +1,371 @@
+[
+  {
+    "id": "ordered-operands-sum-revoked-error",
+    "directory": "cases/ordered-operands-sum-revoked-error",
+    "decisions": [
+      "B09",
+      "E09"
+    ],
+    "compile_error": "Int?"
+  },
+  {
+    "id": "ordered-operands-order-revoked-error",
+    "directory": "cases/ordered-operands-order-revoked-error",
+    "decisions": [
+      "B09",
+      "E09"
+    ],
+    "compile_error": "Int?"
+  },
+  {
+    "id": "ordered-operands-range-revoked-error",
+    "directory": "cases/ordered-operands-range-revoked-error",
+    "decisions": [
+      "B09",
+      "E09"
+    ],
+    "compile_error": "Int?"
+  },
+  {
+    "id": "ordered-operands-half-open-revoked-error",
+    "directory": "cases/ordered-operands-half-open-revoked-error",
+    "decisions": [
+      "B09",
+      "E09"
+    ],
+    "compile_error": "Int?"
+  },
+  {
+    "id": "ordered-operands-captured-left-source-free",
+    "directory": "cases/ordered-operands-captured-left-source-free",
+    "decisions": [
+      "B09",
+      "E09",
+      "S10",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "3"
+    ]
+  },
+  {
+    "id": "boolean-bottom-and-lhs-error",
+    "directory": "cases/boolean-bottom-and-lhs-error",
+    "decisions": [
+      "E01",
+      "E25"
+    ],
+    "compile_error": "operator '&&'"
+  },
+  {
+    "id": "boolean-bottom-or-lhs-error",
+    "directory": "cases/boolean-bottom-or-lhs-error",
+    "decisions": [
+      "E01",
+      "E25"
+    ],
+    "compile_error": "operator '||'"
+  },
+  {
+    "id": "fairmath-increase-high-dynamic-change-error",
+    "directory": "cases/fairmath-increase-high-dynamic-change-error",
+    "decisions": [
+      "N11"
+    ],
+    "compile_error": "constant fairmath base"
+  },
+  {
+    "id": "fairmath-increase-negative-dynamic-change-error",
+    "directory": "cases/fairmath-increase-negative-dynamic-change-error",
+    "decisions": [
+      "N11"
+    ],
+    "compile_error": "constant fairmath base"
+  },
+  {
+    "id": "fairmath-increase-fractional-high-dynamic-change-error",
+    "directory": "cases/fairmath-increase-fractional-high-dynamic-change-error",
+    "decisions": [
+      "N11"
+    ],
+    "compile_error": "constant fairmath base"
+  },
+  {
+    "id": "fairmath-decrease-high-dynamic-change-error",
+    "directory": "cases/fairmath-decrease-high-dynamic-change-error",
+    "decisions": [
+      "N11"
+    ],
+    "compile_error": "constant fairmath base"
+  },
+  {
+    "id": "fairmath-decrease-negative-dynamic-change-error",
+    "directory": "cases/fairmath-decrease-negative-dynamic-change-error",
+    "decisions": [
+      "N11"
+    ],
+    "compile_error": "constant fairmath base"
+  },
+  {
+    "id": "fairmath-decrease-fractional-high-dynamic-change-error",
+    "directory": "cases/fairmath-decrease-fractional-high-dynamic-change-error",
+    "decisions": [
+      "N11"
+    ],
+    "compile_error": "constant fairmath base"
+  },
+  {
+    "id": "collection-search-callback-error",
+    "directory": "cases/collection-search-callback-error",
+    "decisions": [
+      "F39",
+      "D19",
+      "G08"
+    ],
+    "compile_error": "no accessible member"
+  },
+  {
+    "id": "collection-search-unconstrained-error",
+    "directory": "cases/collection-search-unconstrained-error",
+    "decisions": [
+      "G08"
+    ],
+    "compile_error": "no accessible member"
+  },
+  {
+    "id": "generic-bound-unstable-set-error",
+    "directory": "cases/generic-bound-unstable-set-error",
+    "decisions": [
+      "G08",
+      "D12"
+    ],
+    "compile_error": "StableKey"
+  },
+  {
+    "id": "ordered-flow-named-guard-source-free",
+    "directory": "cases/ordered-flow-named-guard-source-free",
+    "decisions": [
+      "B09",
+      "A04",
+      "F02",
+      "S10"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "4|0"
+    ]
+  },
+  {
+    "id": "nonempty-loop-return-flow-source-free",
+    "directory": "cases/nonempty-loop-return-flow-source-free",
+    "decisions": [
+      "B09",
+      "F02",
+      "D15",
+      "S10"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "3|0"
+    ]
+  },
+  {
+    "id": "runtime-identity-storage-collision-error",
+    "directory": "cases/runtime-identity-storage-collision-error",
+    "decisions": [
+      "S01",
+      "S10",
+      "M16"
+    ],
+    "compile_error": "linked runtime identity"
+  },
+  {
+    "id": "runtime-identity-storage-collision-source-free-error",
+    "directory": "cases/runtime-identity-storage-collision-source-free-error",
+    "decisions": [
+      "S01",
+      "S10",
+      "M16"
+    ],
+    "precompile": [
+      "a",
+      "a.B"
+    ],
+    "compile_error": "linked runtime identity"
+  },
+  {
+    "id": "fairmath-dynamic-endpoints-and-modifiers",
+    "directory": "cases/fairmath-dynamic-endpoints-and-modifiers",
+    "decisions": [
+      "N08",
+      "N09",
+      "N10",
+      "N11",
+      "N12"
+    ],
+    "output": [
+      "1|100|99|60|40|40|60|99|1|99"
+    ]
+  },
+  {
+    "id": "numeric-dynamic-division-remainder-and-truncation",
+    "directory": "cases/numeric-dynamic-division-remainder-and-truncation",
+    "decisions": [
+      "N05",
+      "N06",
+      "N07",
+      "N13"
+    ],
+    "output": [
+      "0|-1|-3|3"
+    ]
+  },
+  {
+    "id": "numeric-dynamic-multiply-overflow-failure",
+    "directory": "cases/numeric-dynamic-multiply-overflow-failure",
+    "decisions": [
+      "N02"
+    ],
+    "runtime_error": "Int overflow",
+    "output": []
+  },
+  {
+    "id": "numeric-dynamic-division-overflow-failure",
+    "directory": "cases/numeric-dynamic-division-overflow-failure",
+    "decisions": [
+      "N02",
+      "N05"
+    ],
+    "runtime_error": "Int overflow",
+    "output": []
+  },
+  {
+    "id": "numeric-dynamic-float-zero-division-failure",
+    "directory": "cases/numeric-dynamic-float-zero-division-failure",
+    "decisions": [
+      "N03"
+    ],
+    "runtime_error": "division by zero",
+    "output": []
+  },
+  {
+    "id": "numeric-dynamic-float-nonfinite-failure",
+    "directory": "cases/numeric-dynamic-float-nonfinite-failure",
+    "decisions": [
+      "N03"
+    ],
+    "runtime_error": "non-finite Float",
+    "output": []
+  },
+  {
+    "id": "numeric-dynamic-conversion-high-failure",
+    "directory": "cases/numeric-dynamic-conversion-high-failure",
+    "decisions": [
+      "N13"
+    ],
+    "runtime_error": "Int overflow",
+    "output": []
+  },
+  {
+    "id": "numeric-dynamic-conversion-low-failure",
+    "directory": "cases/numeric-dynamic-conversion-low-failure",
+    "decisions": [
+      "N13"
+    ],
+    "runtime_error": "Int overflow",
+    "output": []
+  },
+  {
+    "id": "numeric-dynamic-range-equal-failure",
+    "directory": "cases/numeric-dynamic-range-equal-failure",
+    "decisions": [
+      "R04"
+    ],
+    "runtime_error": "ascending range is empty",
+    "output": []
+  },
+  {
+    "id": "numeric-dynamic-range-reversed-failure",
+    "directory": "cases/numeric-dynamic-range-reversed-failure",
+    "decisions": [
+      "R04"
+    ],
+    "runtime_error": "ascending range is empty",
+    "output": []
+  },
+  {
+    "id": "location-choice-visibility",
+    "directory": "cases/location-choice-visibility",
+    "decisions": [
+      "E35"
+    ],
+    "runtime_error": "src/main.bfl:5:",
+    "output": []
+  },
+  {
+    "id": "location-choice-later-label",
+    "directory": "cases/location-choice-later-label",
+    "decisions": [
+      "E35"
+    ],
+    "runtime_error": "src/main.bfl:7:",
+    "output": []
+  },
+  {
+    "id": "location-prose-later-interpolation",
+    "directory": "cases/location-prose-later-interpolation",
+    "decisions": [
+      "E35"
+    ],
+    "runtime_error": "src/main.bfl:6:",
+    "output": []
+  },
+  {
+    "id": "location-multiline-label",
+    "directory": "cases/location-multiline-label",
+    "decisions": [
+      "E35"
+    ],
+    "runtime_error": "src/main.bfl:6:",
+    "output": []
+  },
+  {
+    "id": "location-prose-source-free-failure",
+    "directory": "cases/location-prose-source-free-failure",
+    "decisions": [
+      "E35",
+      "S10"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "runtime_error": "src/helpers.bfl:6:",
+    "output": []
+  },
+  {
+    "id": "empty-list-iteration-counter-checkpoint",
+    "directory": "cases/empty-list-iteration-counter-checkpoint",
+    "decisions": [
+      "D15",
+      "D16",
+      "C01",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "0|0"
+    ]
+  }
+]

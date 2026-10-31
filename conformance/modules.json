@@ -1,0 +1,754 @@
+[
+  {
+    "id": "cyclic-scene-visits",
+    "directory": "cases/cyclic-scene-visits",
+    "decisions": [
+      "M01",
+      "M08",
+      "M16"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Proceed 2"
+      ]
+    ],
+    "output": [
+      "Echo 2.",
+      "Returned.",
+      "Resumed."
+    ]
+  },
+  {
+    "id": "cyclic-mutual-recursion",
+    "directory": "cases/cyclic-mutual-recursion",
+    "decisions": [
+      "M01",
+      "M08",
+      "M16"
+    ],
+    "output": [
+      "true|false"
+    ]
+  },
+  {
+    "id": "cyclic-source-free-recursion",
+    "directory": "cases/cyclic-source-free-recursion",
+    "decisions": [
+      "M01",
+      "M08",
+      "M16"
+    ],
+    "precompile": [
+      "parity",
+      "opposite"
+    ],
+    "output": [
+      "true|false"
+    ]
+  },
+  {
+    "id": "cyclic-inferred-returns",
+    "directory": "cases/cyclic-inferred-returns",
+    "decisions": [
+      "M01",
+      "M08",
+      "M16"
+    ],
+    "output": [
+      "7"
+    ]
+  },
+  {
+    "id": "cyclic-nominal-fields",
+    "directory": "cases/cyclic-nominal-fields",
+    "decisions": [
+      "M01",
+      "M08",
+      "M16"
+    ],
+    "output": [
+      "true|true|true"
+    ]
+  },
+  {
+    "id": "cyclic-source-free-nominals",
+    "directory": "cases/cyclic-source-free-nominals",
+    "decisions": [
+      "M01",
+      "M08",
+      "M16"
+    ],
+    "precompile": [
+      "a",
+      "b"
+    ],
+    "output": [
+      "true|true|true"
+    ]
+  },
+  {
+    "id": "cyclic-shared-dependency-order",
+    "directory": "cases/cyclic-shared-dependency-order",
+    "decisions": [
+      "M01",
+      "M08",
+      "M16"
+    ],
+    "output": [
+      "3|BA"
+    ]
+  },
+  {
+    "id": "cyclic-shared-initialization-error",
+    "directory": "cases/cyclic-shared-initialization-error",
+    "decisions": [
+      "M01",
+      "M08",
+      "M16"
+    ],
+    "compile_error": "shared initialization dependency cycle"
+  },
+  {
+    "id": "cyclic-private-export-error",
+    "directory": "cases/cyclic-private-export-error",
+    "decisions": [
+      "M01",
+      "M08",
+      "M16"
+    ],
+    "compile_error": "'start' is not exported"
+  },
+  {
+    "id": "cyclic-generic-methods",
+    "directory": "cases/cyclic-generic-methods",
+    "decisions": [
+      "M08",
+      "M16",
+      "G01",
+      "G03"
+    ],
+    "output": [
+      "ok|true|x"
+    ]
+  },
+  {
+    "id": "cyclic-source-free-generics",
+    "directory": "cases/cyclic-source-free-generics",
+    "decisions": [
+      "M08",
+      "M16",
+      "G01",
+      "G03"
+    ],
+    "precompile": [
+      "a",
+      "b"
+    ],
+    "output": [
+      "ok|true|x"
+    ]
+  },
+  {
+    "id": "cyclic-transparent-alias",
+    "directory": "cases/cyclic-transparent-alias",
+    "decisions": [
+      "M08",
+      "M16",
+      "G01",
+      "G03"
+    ],
+    "output": [
+      "6"
+    ]
+  },
+  {
+    "id": "module-private-qualified-type-error",
+    "directory": "cases/module-private-qualified-type-error",
+    "decisions": [
+      "M08",
+      "M16",
+      "U07"
+    ],
+    "compile_error": "unknown type 'owner'"
+  },
+  {
+    "id": "module-private-qualified-test-error",
+    "directory": "cases/module-private-qualified-test-error",
+    "decisions": [
+      "M08",
+      "M16",
+      "U07"
+    ],
+    "compile_error": "unknown type 'owner'"
+  },
+  {
+    "id": "module-exported-alias-private-owner",
+    "directory": "cases/module-exported-alias-private-owner",
+    "decisions": [
+      "M08",
+      "M16",
+      "U07"
+    ],
+    "precompile": [
+      "owner"
+    ],
+    "output": [
+      "4|8"
+    ]
+  },
+  {
+    "id": "module-triple-string-discovery",
+    "output": [
+      "Keep|import|7"
+    ],
+    "directory": "cases/module-triple-string-discovery",
+    "decisions": [
+      "M16",
+      "M17",
+      "P07",
+      "P10"
+    ]
+  },
+  {
+    "id": "suspended-scene-default-checkpoint",
+    "choices": [
+      0
+    ],
+    "output": [
+      "3|5",
+      "Returned."
+    ],
+    "directory": "cases/suspended-scene-default-checkpoint",
+    "decisions": [
+      "M03",
+      "M04",
+      "T20",
+      "T22",
+      "T24"
+    ]
+  },
+  {
+    "id": "module-javascript-property-names",
+    "directory": "cases/module-javascript-property-names",
+    "decisions": [
+      "M16",
+      "M17",
+      "T25",
+      "U03",
+      "U04",
+      "U29"
+    ],
+    "precompile": [
+      "__proto__"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "Kept|2"
+    ]
+  },
+  {
+    "id": "method-body-lowering-source-free",
+    "directory": "cases/method-body-lowering-source-free",
+    "decisions": [
+      "S10",
+      "U09",
+      "F23",
+      "F36",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Continue"
+      ]
+    ],
+    "output": [
+      "2|5|9|10|20|Ada"
+    ]
+  },
+  {
+    "id": "shared-wide-default-helper-source-free",
+    "directory": "cases/shared-wide-default-helper-source-free",
+    "decisions": [
+      "S10",
+      "F09",
+      "F10",
+      "M07",
+      "M15",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Inspect 64"
+      ]
+    ],
+    "output": [
+      "8|71|64"
+    ]
+  },
+  {
+    "id": "named-field-order-and-copy-checkpoint",
+    "directory": "cases/named-field-order-and-copy-checkpoint",
+    "decisions": [
+      "A01",
+      "A03",
+      "A04",
+      "F09",
+      "F10",
+      "F12",
+      "T25",
+      "U04",
+      "U29"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Order CABDEac"
+      ]
+    ],
+    "output": [
+      "10|20|30|10|40|30|1|50|3|CABDEac"
+    ]
+  },
+  {
+    "id": "forward-alias-bounds-source-free",
+    "directory": "cases/forward-alias-bounds-source-free",
+    "decisions": [
+      "U01",
+      "U26",
+      "U27",
+      "G01",
+      "G05",
+      "G08",
+      "S10",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Inspect aliases"
+      ]
+    ],
+    "output": [
+      "7|true"
+    ]
+  },
+  {
+    "id": "conditional-chain-value-source-free-checkpoint",
+    "directory": "cases/conditional-chain-value-source-free-checkpoint",
+    "decisions": [
+      "E06",
+      "E07",
+      "E08",
+      "N04",
+      "S10",
+      "T08",
+      "T22",
+      "T24",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Check 0; calls 1"
+      ],
+      [
+        "Check 1; calls 2"
+      ],
+      [
+        "Check 2; calls 3"
+      ],
+      [
+        "Check 0; calls 4"
+      ],
+      [
+        "Check 1; calls 5"
+      ],
+      [
+        "Check 2; calls 6"
+      ],
+      [
+        "Result 30|40; calls 6"
+      ]
+    ],
+    "output": [
+      "30|40|true|6"
+    ]
+  },
+  {
+    "id": "conditional-chain-exit-proofs",
+    "directory": "cases/conditional-chain-exit-proofs",
+    "decisions": [
+      "B06",
+      "B07",
+      "B08",
+      "B09",
+      "E06",
+      "E07",
+      "E08",
+      "T25"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Retain branch results"
+      ]
+    ],
+    "output": [
+      "10|20|30|40|0|0|1|3|true"
+    ]
+  },
+  {
+    "id": "conditional-chain-invalidated-null-proof",
+    "directory": "cases/conditional-chain-invalidated-null-proof",
+    "decisions": [
+      "B08",
+      "B09",
+      "E08"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "completed-path-facts-source-free-checkpoint",
+    "directory": "cases/completed-path-facts-source-free-checkpoint",
+    "decisions": [
+      "B07",
+      "F02",
+      "F19",
+      "F20",
+      "S10",
+      "T08",
+      "T22",
+      "T24",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      1,
+      2,
+      3,
+      0
+    ],
+    "options": [
+      [
+        "First",
+        "Second",
+        "Early",
+        "Both"
+      ],
+      [
+        "First",
+        "Second",
+        "Early",
+        "Both"
+      ],
+      [
+        "First",
+        "Second",
+        "Early",
+        "Both"
+      ],
+      [
+        "First",
+        "Second",
+        "Early",
+        "Both"
+      ],
+      [
+        "Retain 170|170|170"
+      ]
+    ],
+    "output": [
+      "170|170|170"
+    ]
+  },
+  {
+    "id": "completed-path-callback-uninitialized-error",
+    "directory": "cases/completed-path-callback-uninitialized-error",
+    "decisions": [
+      "B07",
+      "F19",
+      "F20"
+    ],
+    "compile_error": "captured binding 'second' is not initialized"
+  },
+  {
+    "id": "loop-break-facts-source-free-checkpoint",
+    "directory": "cases/loop-break-facts-source-free-checkpoint",
+    "decisions": [
+      "B06",
+      "B07",
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "F02",
+      "F19",
+      "F20",
+      "S10",
+      "T08",
+      "T22",
+      "T24",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "while 0; calls 1"
+      ],
+      [
+        "while 1; calls 2"
+      ],
+      [
+        "while 2; calls 3"
+      ],
+      [
+        "for 0; calls 4"
+      ],
+      [
+        "for 1; calls 5"
+      ],
+      [
+        "for 2; calls 6"
+      ],
+      [
+        "do 0; calls 7"
+      ],
+      [
+        "do 1; calls 8"
+      ],
+      [
+        "do 2; calls 9"
+      ],
+      [
+        "Retain 80|80|80; calls 9"
+      ]
+    ],
+    "output": [
+      "80|80|80|9"
+    ]
+  },
+  {
+    "id": "loop-break-possible-write-error",
+    "directory": "cases/loop-break-possible-write-error",
+    "decisions": [
+      "B06",
+      "B07",
+      "C02",
+      "C05"
+    ],
+    "compile_error": "cannot reassign initialized val 'result'"
+  },
+  {
+    "id": "loop-break-missing-initialization-error",
+    "directory": "cases/loop-break-missing-initialization-error",
+    "decisions": [
+      "B06",
+      "B07",
+      "C02",
+      "C05"
+    ],
+    "compile_error": "binding 'result' is not definitely initialized"
+  },
+  {
+    "id": "continue-correlated-captures-source-free-checkpoint",
+    "directory": "cases/continue-correlated-captures-source-free-checkpoint",
+    "decisions": [
+      "B06",
+      "C02",
+      "C05",
+      "C06",
+      "F19",
+      "F20",
+      "S10",
+      "T08",
+      "T24",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Round 1"
+      ],
+      [
+        "Round 2"
+      ],
+      [
+        "Round 3"
+      ],
+      [
+        "Result 10"
+      ]
+    ],
+    "output": [
+      "10"
+    ]
+  },
+  {
+    "id": "continue-uninitialized-capture-error",
+    "directory": "cases/continue-uninitialized-capture-error",
+    "decisions": [
+      "B06",
+      "C02",
+      "C05",
+      "F19",
+      "F20"
+    ],
+    "compile_error": "captured binding 'first' is not initialized"
+  },
+  {
+    "id": "many-scene-modules-source-free-checkpoint",
+    "decisions": [
+      "S05",
+      "M01",
+      "M02",
+      "M04",
+      "M05",
+      "M08",
+      "M16"
+    ],
+    "precompile": [
+      "stats",
+      "rooms.r0000",
+      "rooms.r0001",
+      "rooms.r0002",
+      "rooms.r0003",
+      "rooms.r0004",
+      "rooms.r0005",
+      "rooms.r0006",
+      "rooms.r0007",
+      "rooms.r0008",
+      "rooms.r0009",
+      "rooms.r0010",
+      "rooms.r0011",
+      "rooms.r0012",
+      "rooms.r0013",
+      "rooms.r0014",
+      "rooms.r0015",
+      "rooms.r0016",
+      "rooms.r0017",
+      "rooms.r0018",
+      "rooms.r0019",
+      "rooms.r0020",
+      "rooms.r0021",
+      "rooms.r0022",
+      "rooms.r0023",
+      "rooms.r0024",
+      "rooms.r0025",
+      "rooms.r0026",
+      "rooms.r0027",
+      "rooms.r0028",
+      "rooms.r0029",
+      "rooms.r0030",
+      "rooms.r0031",
+      "rooms.r0032",
+      "rooms.r0033",
+      "rooms.r0034",
+      "rooms.r0035",
+      "rooms.r0036",
+      "rooms.r0037",
+      "rooms.r0038",
+      "rooms.r0039",
+      "rooms.r0040",
+      "rooms.r0041",
+      "rooms.r0042",
+      "rooms.r0043",
+      "rooms.r0044",
+      "rooms.r0045",
+      "rooms.r0046",
+      "rooms.r0047",
+      "rooms.r0048",
+      "rooms.r0049",
+      "rooms.r0050",
+      "rooms.r0051",
+      "rooms.r0052",
+      "rooms.r0053",
+      "rooms.r0054",
+      "rooms.r0055",
+      "rooms.r0056",
+      "rooms.r0057",
+      "rooms.r0058",
+      "rooms.r0059",
+      "rooms.r0060",
+      "rooms.r0061",
+      "rooms.r0062",
+      "rooms.r0063",
+      "main"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Seen 64"
+      ]
+    ],
+    "output": [
+      "64|2016"
+    ],
+    "directory": "cases/many-scene-modules-source-free-checkpoint"
+  }
+]

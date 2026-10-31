@@ -1,0 +1,20 @@
+import helpers.capture
+import helpers.delayed
+import helpers.unchanged
+import helpers.rebound
+import helpers.keyed
+import helpers.matched
+scene start():
+    val words: List<String?> = [null, "Ada", "four"]
+    val reader = capture(words, 0)
+    val missing = capture(words, -1)
+    val first = delayed(words, 0)
+    val second = unchanged(words, 0)
+    val third = rebound(words, 0, 1)
+    val fourth = keyed({"key0": "four"}, "key", 0)
+    val fifth = matched(words, 0)
+    choice:
+        option "Inspect":
+            Unit
+    prose:
+        ${reader()}|${first}|${second}|${third}|${fourth}|${fifth}|${missing()}|${keyed({"key0": 9}, "key", 0)}|${matched(words, -1)}

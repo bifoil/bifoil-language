@@ -1,0 +1,6 @@
+data class Box<T>:
+    val value: T
+fun unused(value: Box<Int, String>):
+    return
+scene start():
+    return

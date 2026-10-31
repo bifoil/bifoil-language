@@ -1,0 +1,28 @@
+export data class Box<out T>:
+    val item: T
+export fun <T: String?> widenReader(reader: () -> T) -> () -> String? = reader
+export fun <T: String?> narrowWriter(writer: (String?) -> Int) -> (T) -> Int = writer
+export fun <T: String?> widenBox(item: Box<T>) -> Box<String?> = item
+export fun <T: String?> widenList(items: List<T>) -> List<String?> = items
+export fun <T: String?, U: T?> chainBox(item: Box<U>) -> Box<String?> = item
+export fun <T: String?> widenSuspend(reader: suspend () -> T) -> suspend () -> String? = reader
+export suspend fun exercise() -> String:
+    val reader = widenReader<String>(() => "Ada")
+    val missing = widenReader<String?>(() => null)
+    val writer = narrowWriter<String>((text: String?) => text?.length ?: 0)
+    val box = widenBox<String>(Box("yes"))
+    val chained = chainBox<String?, String>(Box("chain"))
+    val original: List<String> = ["x"]
+    val items = widenList<String>(original)
+    var calls = 0
+    suspend fun pending() -> String?:
+        calls += 1
+        choice:
+            option "Return saved value":
+                Unit
+        return "saved"
+    val callback = widenSuspend<String?>(::pending)
+    val functions = "${reader() ?: "missing"}|${missing() == null}|${writer("four")}"
+    val objects = "${box.item ?: "missing"}|${box is Box<String>}|${chained.item ?: "missing"}"
+    val collections = "${items is List<String>}|${items === original}"
+    return functions + "|" + objects + "|" + collections + "|${callback() ?: "missing"}|${calls}"

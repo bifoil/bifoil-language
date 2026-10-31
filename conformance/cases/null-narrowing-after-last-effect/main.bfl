@@ -1,0 +1,14 @@
+scene start():
+    var item: String? = null
+    val stable: String? = "stable"
+    fun prepare() -> Boolean:
+        item = "ready"
+        return true
+    if prepare() && item != null:
+        val result: String = item
+        prose:
+            ${result}
+    if stable != null && prepare():
+        val kept: String = stable
+        prose:
+            ${kept}

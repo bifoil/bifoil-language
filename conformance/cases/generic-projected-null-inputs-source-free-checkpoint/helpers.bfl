@@ -1,0 +1,18 @@
+export shared var calls: Int = 0
+export data class Box<T: Any>:
+    var value: T?
+    fun replace(next: T? = null) -> T?:
+        calls += 1
+        val previous = value
+        value = next
+        return previous
+    fun count(vararg values: T?) -> Int = values.size
+    fun optionalList(values: List<T>?) -> Boolean = values == null
+    suspend fun ask(next: T? = null) -> T?:
+        calls += 1
+        choice:
+            option "Replace ${calls}":
+                Unit
+        val previous = value
+        value = next
+        return previous

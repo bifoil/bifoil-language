@@ -1,0 +1,7 @@
+scene start():
+    val result: Int
+    val status = initialize(3)
+    result = 4
+    fun initialize(value: Int) -> String:
+        result = value
+        return "ready"

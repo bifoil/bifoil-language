@@ -1,0 +1,7 @@
+legacy val score: Int = "score"
+scene start():
+    choice:
+        option "Continue":
+            Unit
+    prose:
+        ${score}

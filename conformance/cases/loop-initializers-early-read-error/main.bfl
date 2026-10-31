@@ -1,0 +1,8 @@
+scene start():
+    var result: Int
+    for ordinal in 1..2:
+        initialize(ordinal)
+        val observed = result
+    fun initialize(amount: Int) -> Int:
+        result = result + amount
+        return result

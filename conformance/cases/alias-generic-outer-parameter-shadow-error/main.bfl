@@ -1,0 +1,5 @@
+fun <T> outer(value: T) -> T:
+    typealias Local<T> = T
+    return value
+scene start():
+    Unit

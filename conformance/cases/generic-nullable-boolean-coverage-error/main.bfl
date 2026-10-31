@@ -1,0 +1,7 @@
+fun <T: Boolean?> invalid(value: T) = when value:
+    case true:
+        1
+    case false:
+        0
+scene start():
+    invalid<Boolean?>(null)

@@ -1,0 +1,24 @@
+export suspend fun run() -> String:
+    var trace = ""
+    val visible: Int
+    val enabled: Int
+    val caption: Int
+    val selected: Int
+    fun visibility() -> Boolean:
+        trace += "V"
+        visible = 3
+        return true
+    fun enabling() -> Boolean:
+        trace += "E"
+        enabled = 4
+        return true
+    fun label() -> String:
+        trace += "L"
+        caption = 5
+        return "Ready"
+    fun body():
+        selected = 6
+    choice:
+        option "${label()} ${visible}|${enabled}" if visibility() enabledIf enabling():
+            body()
+    return "${visible}|${enabled}|${caption}|${selected}|${trace}"

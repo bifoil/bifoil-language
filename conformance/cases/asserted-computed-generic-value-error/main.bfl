@@ -1,0 +1,6 @@
+fun <T> invalid(value: T) -> T:
+    if value is String:
+        return (value + "")!!
+    return value
+scene start():
+    Unit

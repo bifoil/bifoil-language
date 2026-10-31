@@ -1,0 +1,11 @@
+enum Mood:
+    case Happy
+fun <T> identity(value: T) -> T = value
+fun describe(value: String) = value
+fun describe(value: Int) = "int"
+scene start():
+    val selected: (String) -> String = (::describe)
+    val integer: (Int) -> Int = (::identity<Int>)
+    val mood = (Mood.Happy)
+    prose:
+        ${selected("text")}|${integer(3)}|${mood == Mood.Happy}

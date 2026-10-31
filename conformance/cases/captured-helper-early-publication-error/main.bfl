@@ -1,0 +1,8 @@
+shared var saved: () -> Int = () => 0
+scene start():
+    var value: Int
+    fun initialize() -> Int:
+        saved = () => value
+        value = 7
+        return value
+    val result = initialize()

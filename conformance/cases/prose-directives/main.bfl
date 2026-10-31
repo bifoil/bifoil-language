@@ -1,0 +1,16 @@
+scene start():
+    var score = 0
+    prose:
+        Start
+        @score = score + 1
+        @if score == 1:
+            middle
+        @else:
+            wrong
+        @for number in 1..3:
+            ${number}
+        end.
+
+        New paragraph; \@literal and \${literal}.
+    prose:
+        ${score}

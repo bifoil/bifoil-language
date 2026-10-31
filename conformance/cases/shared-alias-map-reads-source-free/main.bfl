@@ -1,0 +1,13 @@
+import state.values as first
+import state.values as second
+import state.dynamic as dynamicFirst
+import state.dynamic as dynamicSecond
+scene start():
+    first["name"]!!
+    prose:
+        ${second["name"].length}
+    dynamicFirst = first
+    if dynamicFirst is Map<String, String?>:
+        dynamicFirst["name"]!!
+        prose:
+            ${dynamicSecond["name"].length}

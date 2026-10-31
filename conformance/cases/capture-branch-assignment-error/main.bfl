@@ -1,0 +1,8 @@
+fun run(flag: Boolean):
+    val x: Int
+    var reader: () -> Int = () => 0
+    if flag:
+        reader = () => x
+    reader()
+scene start():
+    return

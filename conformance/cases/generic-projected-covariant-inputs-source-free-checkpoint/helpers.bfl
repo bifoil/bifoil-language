@@ -1,0 +1,8 @@
+export data class Producer<out U>:
+    val values: List<U>
+export data class Box<T: StableKey>:
+    val value: T
+    fun readList(values: List<T>) -> Int = values.size
+    fun readSet(values: Set<T>) -> Int = values.size
+    fun readMap(values: Map<String, T>) -> Int = values.size
+    fun readProducer(producer: Producer<T>) -> Int = producer.values.size

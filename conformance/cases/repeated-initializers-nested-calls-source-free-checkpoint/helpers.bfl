@@ -1,0 +1,9 @@
+shared var calls: Int = 0
+export fun run() -> () -> String:
+    var result: Int
+    val status = initialize(initialize(3))
+    fun initialize(value: Int) -> Int:
+        result = value
+        calls += 1
+        return result
+    return () => "${status}|${result}|${calls}"

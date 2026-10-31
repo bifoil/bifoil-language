@@ -1,0 +1,13 @@
+export suspend fun run(seed: Int) -> String:
+    val result: Int
+    suspend fun initialize(value: Int) -> String:
+        choice:
+            option "Before return value":
+                Unit
+        result = value
+        choice:
+            option "After ${result}":
+                Unit
+        return "ready"
+    val status = initialize(seed)
+    return "${result}|${status}"

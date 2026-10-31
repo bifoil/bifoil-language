@@ -1,0 +1,4 @@
+data class Reader:
+    val copy: String
+scene start():
+    return

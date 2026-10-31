@@ -1,0 +1,21 @@
+shared var trace: String = ""
+fun mark(value: Int) -> Int:
+    trace += "${value},"
+    return value
+export fun run() -> () -> String:
+    var dependency: Int
+    fun fill() -> Int:
+        dependency = 4
+        return mark(2)
+    val first: Int
+    val status = initialize(fill())
+    fun initialize(value: Int, increment: Int = mark(value + 1)) -> String:
+        first = dependency + value + increment
+        return "ready"
+    val second: Int
+    val other = initializeSecond(value = mark(5), increment = mark(6))
+    fun initializeSecond(value: Int, increment: Int = mark(value + 1)) -> String:
+        second = value + increment
+        return "two"
+    fun read() -> String = "${status}|${first}|${second}|${trace}"
+    return ::read

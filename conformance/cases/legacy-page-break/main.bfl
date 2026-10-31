@@ -1,0 +1,5 @@
+legacy suspend fun tell() = "story" label "tell"
+scene start():
+    tell()
+    prose:
+        Finished.

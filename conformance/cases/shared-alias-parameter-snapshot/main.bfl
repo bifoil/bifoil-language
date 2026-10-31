@@ -1,0 +1,14 @@
+import state.name as first
+import state.name as second
+fun read(value: String?, effect: () -> Unit) -> Int:
+    if value == null:
+        return 0
+    effect()
+    return value.length
+scene start():
+    val size = read(first, () =>:
+        second = null
+        Unit
+    )
+    prose:
+        ${size}

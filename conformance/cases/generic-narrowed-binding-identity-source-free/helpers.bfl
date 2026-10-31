@@ -1,0 +1,38 @@
+export sealed class Outcome<T>:
+    case Success(value: T)
+    case Pending
+fun <T> identity(value: T) -> T = value
+export fun <T> preserve(value: T) -> T:
+    if value is String:
+        val original: T = value
+        return original
+    return value
+export fun <T> viaCall(value: T) -> T:
+    if value is String:
+        return identity<T>(value)
+    return value
+export fun <T> branch(value: T) -> T = if value is String:
+    value
+else:
+    value
+export fun <T> boxed(value: T) -> List<T> = if value is String:
+    [value]
+else:
+    [value]
+export fun <T> variant(value: T) -> T:
+    if value is Outcome.Success<Int>:
+        return value
+    return value
+export suspend fun <T> ask(value: T) -> T:
+    if value is String:
+        val original: T = value
+        choice:
+            option "Preserve":
+                Unit
+        return original
+    return value
+export fun <T: Outcome<Int>> whenVariant(value: T) -> T = when value:
+    case is Outcome.Success<Int>:
+        value
+    case is Outcome.Pending<Int>:
+        value

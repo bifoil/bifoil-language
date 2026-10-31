@@ -1,0 +1,9 @@
+import helpers.keep
+scene start():
+    val text = keep("saved")
+    val absent = keep<Int?>(null)
+    choice:
+        option "Generic complete":
+            Unit
+    prose:
+        ${text}|${absent == null}

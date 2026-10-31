@@ -1,0 +1,6 @@
+legacy suspend fun ask() -> Int = "native" result "answer"
+legacy val visits: Int = "visits"
+scene start():
+    val answer = ask()
+    prose:
+        ${answer}|${visits}

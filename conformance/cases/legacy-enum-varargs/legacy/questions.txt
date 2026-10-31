@@ -1,0 +1,4 @@
+*label join
+*params first second
+*set answer ((first & "|") & second)
+*return

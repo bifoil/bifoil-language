@@ -1,0 +1,6 @@
+fun run(action: (Int) -> Unit):
+    action(3)
+scene start():
+    run((value: Int) => value + 1)
+    prose:
+        done

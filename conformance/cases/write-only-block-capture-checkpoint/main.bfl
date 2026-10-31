@@ -1,0 +1,16 @@
+scene start():
+    val writer: () -> Unit = if true:
+        var hidden: Int
+        fun store():
+            hidden = 1
+            prose:
+                Stored.
+        ::store
+    else:
+        () => Unit
+    choice:
+        option "Run stored writer":
+            Unit
+    writer()
+    prose:
+        Done.

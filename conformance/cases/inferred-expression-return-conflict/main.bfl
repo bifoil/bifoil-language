@@ -1,0 +1,5 @@
+fun mismatch(input: String?):
+    val text = input ?: return 7
+    return text
+scene start():
+    mismatch("Ada")

@@ -1,0 +1,4 @@
+fun <T> invoke(value: (T) -> Float, item: T) -> Float = value(item)
+fun invalid(value: (Float) -> Float) -> Float = invoke<Int>(value, 3)
+scene start():
+    Unit

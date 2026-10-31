@@ -1,0 +1,11 @@
+fun length(name: String?) -> Int:
+    when:
+        case name == null:
+            return 0
+        case name.length > 0:
+            return name.length
+        else:
+            return 0
+scene start():
+    prose:
+        ${length("Ada")}|${length(null)}|${length("")}

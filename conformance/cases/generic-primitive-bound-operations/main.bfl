@@ -1,0 +1,29 @@
+import helpers.add
+import helpers.half
+import helpers.negated
+import helpers.append
+import helpers.widen
+import helpers.optional
+import helpers.text
+import helpers.compare
+import helpers.inverted
+import helpers.condition
+import helpers.display
+import helpers.gated
+scene start():
+    display(4)
+    val answer = gated(false)
+    val a = add(3)
+    val b = half(3.0)
+    val c = negated(3)
+    val d = append("hey")
+    val e = widen(3) === 3.0
+    val f = optional<Int?>(null) == null
+    val g = optional<Int?>(4) === 4.0
+    val h = text('😀')
+    val i = compare<Int?>(1)
+    val j = compare<Int?>(null)
+    val k = inverted(true)
+    val l = condition(true)
+    prose:
+        ${a}|${b}|${c}|${d}|${e}|${f}|${g}|${h}|${i}|${j}|${k}|${l}|${answer}

@@ -1,0 +1,21 @@
+import helpers.Key
+import helpers.calls
+import helpers.fieldReader
+import helpers.width
+import helpers.delayed
+import helpers.optional
+scene start():
+    val box = Key<String?>("😀x")
+    val missing = Key<String?>(null)
+    val values: Map<String, String?> = {"😀!": "four", "key😀": "Ada", "key0": "four"}
+    val reader = fieldReader(values, box)
+    val zero = fieldReader(values, missing)
+    val first = delayed(values, "key", "😀x", 0)
+    val second = width([null, null, "four"], box)
+    val third = optional<String?>(values, null, 0)
+    val fourth = optional(values, "key", 0)
+    choice:
+        option "Inspect":
+            Unit
+    prose:
+        ${reader()}|${zero()}|${first}|${second}|${third}|${fourth}|${box.count}|${calls}

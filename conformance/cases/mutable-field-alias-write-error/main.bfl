@@ -1,0 +1,10 @@
+data class Box:
+    var value: String?
+fun invalid(holder: Box) -> Int:
+    if holder.value == null:
+        return 0
+    val alias = holder
+    alias.value = null
+    return holder.value.length
+scene start():
+    Unit

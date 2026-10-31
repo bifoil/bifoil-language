@@ -1,0 +1,9 @@
+scene start():
+    var item: String? = "present"
+    fun clear() -> Boolean:
+        item = null
+        return true
+    while item != null && clear():
+        val result: String = item
+        prose:
+            ${result}

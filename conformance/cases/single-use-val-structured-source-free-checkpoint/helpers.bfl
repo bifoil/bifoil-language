@@ -1,0 +1,26 @@
+export fun branch(flag: Boolean) -> String:
+    val x: Int
+    val y: Int
+    fun initialize(condition: Boolean, value: Int):
+        if condition:
+            x = value
+        else:
+            x = value + 1
+        y = x + 1
+    initialize(flag, 3)
+    return "${x}|${y}"
+export fun looping() -> Int:
+    val x: Int
+    fun initialize():
+        while true:
+            x = 9
+            break
+    initialize()
+    return x
+export fun constant() -> Int:
+    val x: Int
+    fun initialize():
+        if true:
+            x = 5
+    initialize()
+    return x

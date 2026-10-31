@@ -1,0 +1,10 @@
+data class Box<T>:
+    val value: T
+    fun label(extra: Int) = "number"
+    fun label(extra: String) = extra
+    fun <U> select(other: U) -> U = other
+scene start():
+    val box = Box(1)
+    val action: (String) -> String = box::label
+    prose:
+        ${box.label(2)}|${action("text")}|${box.select("generic")}

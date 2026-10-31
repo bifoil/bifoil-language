@@ -1,0 +1,15 @@
+shared var reader: () -> Int = () => 0
+shared var writer: () -> Unit = () => Unit
+fun install():
+    var current: () -> Int = () => 1
+    fun observe() -> Int = current()
+    fun replace():
+        var future: Int
+        current = () => future
+        val value = reader()
+        future = 9
+    reader = ::observe
+    writer = ::replace
+scene start():
+    install()
+    writer()

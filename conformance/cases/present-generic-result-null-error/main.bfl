@@ -1,0 +1,6 @@
+fun <T> maybe(value: T?):
+    if value is String:
+        return value
+    return null
+scene start():
+    val text: String = maybe("Ada")

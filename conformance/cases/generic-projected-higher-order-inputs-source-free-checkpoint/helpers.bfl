@@ -1,0 +1,5 @@
+export data class Box<T>:
+    val value: T
+    fun <U> map(callback: (T) -> U) -> U = callback(value)
+    fun nullable(callback: (T?) -> String) -> String = callback(null)
+export fun make() -> Box<Int> = Box(7)

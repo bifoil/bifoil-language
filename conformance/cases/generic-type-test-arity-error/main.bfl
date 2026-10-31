@@ -1,0 +1,5 @@
+data class Box<T>:
+    val value: T
+scene start():
+    val value: Any = 1
+    value is Box<Int, String>

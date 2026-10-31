@@ -1,0 +1,4 @@
+legacy val score: Int = "score"
+scene start():
+    prose:
+        ${score}

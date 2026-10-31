@@ -1,0 +1,5 @@
+legacy val name: String? = "name"
+scene start():
+    if name != null:
+        prose:
+            ${name.length}

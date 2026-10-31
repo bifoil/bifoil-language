@@ -1,0 +1,3 @@
+scene start():
+    val opaque: Any = 3
+    val observed = opaque === 3

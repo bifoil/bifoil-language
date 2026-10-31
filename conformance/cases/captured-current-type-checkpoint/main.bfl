@@ -1,0 +1,24 @@
+scene start():
+    var name: String? = "Ada"
+    val safe = () =>:
+        if name != null:
+            name.length
+        else:
+            0
+    name = null
+    var value: Any = "Ada"
+    if value is String:
+        val reader = () => value
+        value = 7
+        choice:
+            option "Read current":
+                val observed = reader()
+                prose:
+                    ${observed is Int}|${(observed as Int) + 1}|${safe()}
+    val fixed: String? = "Ada"
+    if fixed != null:
+        val length = () => fixed.length
+        choice:
+            option "Read fixed":
+                prose:
+                    ${length()}

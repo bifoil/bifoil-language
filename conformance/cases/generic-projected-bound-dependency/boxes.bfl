@@ -1,0 +1,4 @@
+export data class Box<T: U, U: Any>:
+    val first: T
+    val second: U
+    fun read() -> T = first

@@ -1,0 +1,27 @@
+export sealed class Outcome:
+    case Success(value: String?)
+    case Failure(reason: Int)
+export fun guarded(name: String?, allowed: Boolean):
+    when:
+        case allowed if name != null:
+            return name.length
+        else:
+            return 0
+export fun condition(name: String?):
+    when:
+        case name != null:
+            return name.length
+        else:
+            return 0
+export fun payload(result: Outcome):
+    when result:
+        case is Outcome.Success(value) if value != null:
+            return value.length
+        else:
+            return 0
+export suspend fun ask(name: String?):
+    choice:
+        option "Length ${name.length}" if name != null:
+            return name.length
+        else:
+            return 0

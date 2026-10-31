@@ -1,0 +1,4 @@
+scene start():
+    val message = "\u{+41}"
+    prose:
+        ${message}

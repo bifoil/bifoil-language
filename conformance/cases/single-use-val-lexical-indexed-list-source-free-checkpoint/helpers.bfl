@@ -1,0 +1,9 @@
+export fun run() -> Any:
+    val result: Any
+    val source: List<Any> = [1]
+    fun initialize():
+        result = [source[0], 2.0]
+    if source[0] is Int:
+        initialize()
+        return result
+    return "skipped"

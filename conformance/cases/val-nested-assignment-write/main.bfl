@@ -1,0 +1,7 @@
+scene start():
+    val result: Int
+    result = if true:
+        result = 1
+        2
+    else:
+        3

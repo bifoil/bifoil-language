@@ -1,0 +1,2 @@
+scene start():
+    val item = "😀".substring(endExclusive = 2, start = 0)

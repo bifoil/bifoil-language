@@ -1,0 +1,13 @@
+fun invoke(callback: () -> Int, ignored: Int) -> Int = callback()
+scene start():
+    val x: Int
+    var callback: () -> Int = () => 42
+    val answer = invoke(callback, if true:
+        callback = () => x
+        0
+    else:
+        0
+    )
+    x = 3
+    prose:
+        ${answer}|${callback()}

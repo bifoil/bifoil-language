@@ -1,0 +1,18 @@
+import helpers.unchanged
+import helpers.expression
+import helpers.nested
+import helpers.make
+import helpers.ask
+scene start():
+    val absent: String? = unchanged<String?>(null)
+    val reader = make("kept")
+    prose:
+        ${unchanged(3)}|${unchanged("Ada")}|${expression("yes")}|${nested("four", true)}|${absent == null}
+    choice:
+        option "Read":
+            Unit
+    prose:
+        ${reader()}
+    val answer = ask("saved")
+    prose:
+        ${answer}

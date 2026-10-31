@@ -1,0 +1,10 @@
+export fun run() -> () -> String:
+    val firstSet = {1, 2}
+    val secondSet = {2, 1}
+    val floatSet = {1.0, 2.0}
+    val firstMap = {"a": [1], "b": [2]}
+    val secondMap = {"b": [2], "a": [1]}
+    val floatMap = {"a": [1.0], "b": [2.0]}
+    fun read() -> String:
+        return "${firstSet === secondSet}|${firstSet === floatSet}|${firstSet == floatSet}|${firstMap === secondMap}|${firstMap === floatMap}|${firstMap == floatMap}"
+    return ::read

@@ -1,0 +1,4 @@
+export fun <T> keep(value: T) -> () -> T:
+    typealias Local<U> = U
+    val held: Local<T> = value
+    return () => held

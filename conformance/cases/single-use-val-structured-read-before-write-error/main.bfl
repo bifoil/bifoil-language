@@ -1,0 +1,6 @@
+scene start():
+    val x: Int
+    fun initialize(value: Int):
+        val previous = x
+        x = value + previous
+    initialize(3)

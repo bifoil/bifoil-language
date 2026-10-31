@@ -1,0 +1,2 @@
+scene start():
+    (mutable [1, 2])[2] = 4

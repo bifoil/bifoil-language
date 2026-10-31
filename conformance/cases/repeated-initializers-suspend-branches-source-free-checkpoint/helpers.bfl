@@ -1,0 +1,13 @@
+export suspend fun run(flag: Boolean) -> String:
+    var result: Int
+    val first = if flag:
+        initialize(3)
+    else:
+        initialize(4)
+    val second = initialize(5)
+    suspend fun initialize(value: Int) -> String:
+        choice:
+            option "Set ${value}":
+                result = value
+        return "ready ${result}"
+    return "${first}|${second}|${result}"

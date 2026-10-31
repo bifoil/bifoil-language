@@ -1,0 +1,7 @@
+import echo.echo
+export scene next(value: Int):
+    choice:
+        option "Proceed ${value}":
+            visit echo(value)
+    prose:
+        Returned.

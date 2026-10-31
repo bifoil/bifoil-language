@@ -1,0 +1,7 @@
+scene start():
+    val result: Int
+    val items = mutable [0]
+    fun initialize() -> String:
+        result = 3
+        return "ready"
+    items[0] = initialize()

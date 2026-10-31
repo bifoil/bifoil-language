@@ -1,0 +1,10 @@
+import helpers.length
+import helpers.mapped
+import helpers.choose
+scene start():
+    val words = mutable ["Ada"]
+    val picked: String = choose(words, "Other")
+    val first = length(mutable ["Ada"])
+    val second = mapped(mutable {1: "Ada"})
+    prose:
+        ${first}|${second}|${picked}

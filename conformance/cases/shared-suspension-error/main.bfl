@@ -1,0 +1,4 @@
+suspend fun ask() -> Int = 1
+shared val bad = ask()
+scene start():
+    return

@@ -1,0 +1,9 @@
+export fun run() -> () -> String:
+    val integers = [1, 2]
+    val duplicate = [1, 2]
+    val floats = [1.0, 2.0]
+    val mutableValues = mutable [1, 2]
+    val nullableValues: List<Int?> = [1, 2]
+    fun read() -> String:
+        return "${integers === duplicate}|${integers === floats}|${integers === mutableValues}|${integers === nullableValues}|${integers == floats}|${integers == mutableValues}|${integers == nullableValues}"
+    return ::read

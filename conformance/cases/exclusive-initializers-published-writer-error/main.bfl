@@ -1,0 +1,9 @@
+scene start():
+    val result: Int
+    fun initialize(value: Int):
+        result = value
+    val writer = ::initialize
+    if true:
+        initialize(1)
+    else:
+        initialize(2)

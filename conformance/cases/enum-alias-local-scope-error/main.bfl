@@ -1,0 +1,8 @@
+enum Mood:
+    Happy
+    Sad
+scene start():
+    if true:
+        typealias Local = Mood
+        val chosen = Local.Happy
+    val invalid = Local.Happy

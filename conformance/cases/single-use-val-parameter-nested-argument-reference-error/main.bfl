@@ -1,0 +1,5 @@
+scene start():
+    val x: Int
+    fun initialize(value: Unit):
+        x = 1
+    initialize(initialize(Unit))

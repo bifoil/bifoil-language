@@ -1,0 +1,2 @@
+import b.anchor
+export fun value() = anchor()

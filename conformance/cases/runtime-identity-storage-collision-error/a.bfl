@@ -1,0 +1,2 @@
+export sealed class B:
+    case C(value: Int)

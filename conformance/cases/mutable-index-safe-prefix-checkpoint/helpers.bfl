@@ -1,0 +1,8 @@
+export suspend fun run(values: MutableList<MutableMap<String, String?>?>?) -> Int:
+    if values?[0]?["value"] == null:
+        return 0
+    val first = values[0]["value"].length
+    choice:
+        option "Continue":
+            Unit
+    return first + values[0]["value"].length

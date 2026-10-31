@@ -1,0 +1,8 @@
+fun invalid(var input: String?, stop: Boolean):
+    while input == null:
+        if stop:
+            break
+        input = "Ada"
+    return input.length
+scene start():
+    invalid(null, true)

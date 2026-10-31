@@ -1,0 +1,9 @@
+export shared var trace: String = ""
+fun mark(label: String) -> String:
+    trace += label
+    return label
+suspend fun prompt() -> String:
+    choice:
+        option "Pick ${"""one } "two"""}":
+            return mark("B")
+export suspend fun build() -> String = "${mark("A")} ${"""before } "${prompt()}" after"""} ${mark("C")}"

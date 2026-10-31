@@ -1,0 +1,7 @@
+enum Mood:
+    case Happy
+enum OtherMood:
+    case Happy
+legacy fun echo(value: Mood) -> Mood = "questions" label "echo" result "answer"
+scene start():
+    val result = echo(OtherMood.Happy)

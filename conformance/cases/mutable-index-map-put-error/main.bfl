@@ -1,0 +1,8 @@
+fun invalid(values: MutableMap<String, String?>):
+    if values["value"] == null:
+        return 0
+    val alias = values
+    alias.put("value", null)
+    return values["value"].length
+scene start():
+    Unit

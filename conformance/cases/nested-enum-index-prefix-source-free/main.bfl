@@ -1,0 +1,8 @@
+import helpers.Mood
+import helpers.Nested
+import helpers.read
+import helpers.safe
+scene start():
+    val values: Nested = {Happy: {Happy: {Happy: {Happy: {Happy: {Happy: {Happy: {Happy: {Happy: {Happy: {Happy: {Happy: {Happy: {Happy: "Ada"}}}}}}}}}}}}}}
+    prose:
+        ${read(values)}|${safe(values)}|${safe(null)}

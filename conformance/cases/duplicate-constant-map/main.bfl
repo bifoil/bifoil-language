@@ -1,0 +1,2 @@
+scene start():
+    val mapping = {"a": 1, "a": 2}

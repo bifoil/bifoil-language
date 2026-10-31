@@ -1,0 +1,4 @@
+fun pick(value: Int) -> Int = value
+fun pick(value: Float) -> Float = value
+scene start():
+    val result = (::pick)(3)

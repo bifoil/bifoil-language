@@ -1,0 +1,67 @@
+data class Pair<out L, out R>:
+    val left: L
+    val right: R
+typealias A0 = Any
+typealias B0 = Int
+typealias A1 = Pair<A0, A0>
+typealias B1 = Pair<B0, B0>
+typealias A2 = Pair<A1, A1>
+typealias B2 = Pair<B1, B1>
+typealias A3 = Pair<A2, A2>
+typealias B3 = Pair<B2, B2>
+typealias A4 = Pair<A3, A3>
+typealias B4 = Pair<B3, B3>
+typealias A5 = Pair<A4, A4>
+typealias B5 = Pair<B4, B4>
+typealias A6 = Pair<A5, A5>
+typealias B6 = Pair<B5, B5>
+typealias A7 = Pair<A6, A6>
+typealias B7 = Pair<B6, B6>
+typealias A8 = Pair<A7, A7>
+typealias B8 = Pair<B7, B7>
+typealias A9 = Pair<A8, A8>
+typealias B9 = Pair<B8, B8>
+typealias A10 = Pair<A9, A9>
+typealias B10 = Pair<B9, B9>
+typealias A11 = Pair<A10, A10>
+typealias B11 = Pair<B10, B10>
+typealias A12 = Pair<A11, A11>
+typealias B12 = Pair<B11, B11>
+typealias A13 = Pair<A12, A12>
+typealias B13 = Pair<B12, B12>
+typealias A14 = Pair<A13, A13>
+typealias B14 = Pair<B13, B13>
+typealias A15 = Pair<A14, A14>
+typealias B15 = Pair<B14, B14>
+typealias A16 = Pair<A15, A15>
+typealias B16 = Pair<B15, B15>
+typealias A17 = Pair<A16, A16>
+typealias B17 = Pair<B16, B16>
+typealias A18 = Pair<A17, A17>
+typealias B18 = Pair<B17, B17>
+typealias A19 = Pair<A18, A18>
+typealias B19 = Pair<B18, B18>
+typealias A20 = Pair<A19, A19>
+typealias B20 = Pair<B19, B19>
+typealias A21 = Pair<A20, A20>
+typealias B21 = Pair<B20, B20>
+typealias A22 = Pair<A21, A21>
+typealias B22 = Pair<B21, B21>
+typealias A23 = Pair<A22, A22>
+typealias B23 = Pair<B22, B22>
+typealias A24 = Pair<A23, A23>
+typealias B24 = Pair<B23, B23>
+typealias A25 = Pair<A24, A24>
+typealias B25 = Pair<B24, B24>
+typealias A26 = Pair<A25, A25>
+typealias B26 = Pair<B25, B25>
+typealias A27 = Pair<A26, A26>
+typealias B27 = Pair<B26, B26>
+typealias A28 = Pair<A27, A27>
+typealias B28 = Pair<B27, B27>
+fun view(input: A28) = if input is B28:
+    input
+else:
+    input
+scene start():
+    Unit

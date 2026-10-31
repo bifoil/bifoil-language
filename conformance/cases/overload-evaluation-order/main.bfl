@@ -1,0 +1,14 @@
+shared var count = 0
+data class Reader:
+    val name: String
+    fun read(value: Int, extra: Int = count) = name + ":" + extra
+    fun read(value: String) = value
+scene start():
+    var receiver = Reader("original")
+    fun argument() -> Int:
+        receiver = Reader("after")
+        count = 3
+        return 1
+    val result = receiver.read(argument())
+    prose:
+        ${result}|${receiver.name}|${count}

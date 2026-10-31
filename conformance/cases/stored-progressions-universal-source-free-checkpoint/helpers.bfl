@@ -1,0 +1,8 @@
+export fun run() -> () -> Int:
+    val erased: Any = 1..5 step 2
+    if erased !is IntProgression:
+        return () => -1
+    var result: Int
+    for ordinal in erased:
+        result = ordinal
+    return () => result

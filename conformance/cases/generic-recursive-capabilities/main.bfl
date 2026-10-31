@@ -1,0 +1,9 @@
+data class Chain<T>:
+    val next: Chain<List<T>>? = null
+    val value: T
+scene start():
+    val first = Chain(value = 3)
+    val second = Chain(value = 3)
+    val values = {first, second}
+    prose:
+        ${first == second}|${values.size}

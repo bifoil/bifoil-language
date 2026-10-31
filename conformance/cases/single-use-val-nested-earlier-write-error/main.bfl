@@ -1,0 +1,8 @@
+scene start(flag: Boolean = true):
+    if flag:
+        val x: Int
+        fun initialize():
+            x = 3
+        if flag:
+            x = 4
+        initialize()

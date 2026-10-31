@@ -1,0 +1,25 @@
+shared var trace: String = ""
+fun mark(value: Int) -> Int:
+    trace += "${value},"
+    return value
+fun accept(before: Int, token: Unit, after: Int) -> Int = before + after
+export fun run() -> () -> String:
+    val first: Int
+    val sum = accept(mark(1), (initializeFirst)(), mark(first))
+    val second: Int
+    val tokens = [Unit, initializeSecond(), Unit]
+    val third: Int
+    val slots: MutableMap<Int, Unit> = mutable {0: Unit}
+    slots[0] = initializeThird()
+    val fourth: Int
+    val ready = initializeFourth() == Unit
+    fun initializeFirst():
+        first = 3
+    fun initializeSecond():
+        second = sum + 1
+    fun initializeThird():
+        third = second + 1
+    fun initializeFourth():
+        fourth = third + 1
+    fun read() -> String = "${sum}|${first}|${second}|${third}|${fourth}|${tokens.size}|${slots[0] == Unit}|${ready}|${trace}"
+    return ::read

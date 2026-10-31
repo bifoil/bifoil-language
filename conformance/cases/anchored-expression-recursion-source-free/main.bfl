@@ -1,0 +1,11 @@
+import helpers.factorial
+import helpers.even
+import helpers.odd
+import helpers.mixed
+import helpers.descend
+scene start():
+    prose:
+        ${factorial(5)}|${even(6)}|${odd(6)}|${mixed(3)}
+    val answer = descend(3)
+    prose:
+        ${answer}

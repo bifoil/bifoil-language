@@ -1,0 +1,7 @@
+data class Cell<T>:
+    var value: T
+data class Holder<T>:
+    val cell: Cell<T>
+scene start():
+    val hidden: Holder<*> = Holder(Cell(1))
+    hidden.cell.value = "wrong"

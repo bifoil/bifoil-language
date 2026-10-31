@@ -1,0 +1,13 @@
+fun total(vararg values: Int):
+    var result = 0
+    for item in values:
+        result += item
+    return result
+scene start():
+    val first = [2, 3]
+    val second = mutable [5]
+    val consumer: (vararg Int) -> Int = ::total
+    val combined = consumer(1, *first, 4, *second)
+    val named = total(values = second)
+    prose:
+        ${combined}|${named}|${consumer()}

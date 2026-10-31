@@ -1,0 +1,8 @@
+import state.seed
+import state.count
+scene start():
+    count += 1
+    choice:
+        option "Continue":
+            prose:
+                ${seed}|${count}

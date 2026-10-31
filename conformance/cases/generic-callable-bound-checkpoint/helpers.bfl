@@ -1,0 +1,9 @@
+export fun <T: (Int) -> Int> apply(callback: T) -> Int = callback(3)
+export fun <T: ((Int) -> Int)?> optional(callback: T) -> Int = callback?.(3) ?: 0
+export fun <T: (vararg Int) -> Int> spread(callback: T) -> Int = callback(1, *[2, 3])
+export suspend fun <T: suspend (Int) -> Int> invoke(callback: T) -> Int = callback(4)
+export suspend fun <T: Scene<Int>> visitScene(destination: T):
+    visit destination(5)
+export scene target(value: Int):
+    prose:
+        Scene ${value}.

@@ -1,0 +1,20 @@
+export data class Person:
+    val name: String?
+export fun callback(person: Person, effect: () -> Unit) -> () -> Int:
+    if person.name == null:
+        return () => 0
+    effect()
+    return () => person.name.length
+export fun named(person: Person) -> Int:
+    if person.name != null:
+        val before = read()
+        fun read() -> Int = person.name.length
+        return before
+    return 0
+export suspend fun ask(person: Person) -> Int:
+    val reader = callback(person, () => Unit)
+    choice:
+        option "Read ${person.name}" if person.name != null:
+            return reader() + person.name.length
+        else:
+            return 0

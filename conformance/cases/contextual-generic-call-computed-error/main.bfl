@@ -1,0 +1,7 @@
+fun <U> identity(item: U) -> U = item
+fun <T> invalid(value: T) -> T:
+    if value is String:
+        return identity(value + "changed")
+    return value
+scene start():
+    Unit

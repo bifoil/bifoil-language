@@ -1,0 +1,4 @@
+fun invalid(value: Map<*, *>):
+    val keys: Set<Map<*, *>> = {value}
+scene start():
+    invalid({1: 3})

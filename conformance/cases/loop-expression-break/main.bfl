@@ -1,0 +1,9 @@
+scene start():
+    val total = 100 + if true:
+        for i in 1..2:
+            val skipped = 10 + break
+        7
+    else:
+        0
+    prose:
+        ${total}

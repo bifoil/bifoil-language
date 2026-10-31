@@ -1,0 +1,25 @@
+import helpers.apply
+import helpers.optional
+import helpers.spread
+import helpers.invoke
+import helpers.visitScene
+import helpers.target
+fun double(value: Int) -> Int = value * 2
+fun total(vararg values: Int) -> Int:
+    var result = 0
+    for value in values:
+        result += value
+    return result
+suspend fun ask(value: Int) -> Int:
+    choice:
+        option "Continue":
+            return value + 1
+scene start():
+    visitScene(::target)
+    val a = apply(::double)
+    val b = optional<((Int) -> Int)?>(null)
+    val c = optional<((Int) -> Int)?>(::double)
+    val d = spread(::total)
+    val e = invoke(::ask)
+    prose:
+        ${a}|${b}|${c}|${d}|${e}

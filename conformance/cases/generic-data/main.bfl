@@ -1,0 +1,22 @@
+data class Box<out T>:
+    val value: T
+    fun read() -> T = value
+sealed class Result<T>:
+    case Good(value: T)
+    case Missing
+scene start():
+    val small = Box(3)
+    val broad: Box<Any> = small
+    val unknown: Any = small
+    val list: List<Int> = []
+    val erased: Any = list
+    val result: Result<String> = Result.Good("ready")
+    prose:
+        ${small.read()}|${broad.value is Int}|${unknown is Box<Int>}|${unknown is Box<Float>}|${erased is List<Int>}|${erased is List<Float>}
+    when result:
+        case is Result.Good<String>(value):
+            prose:
+                ${value}
+        case is Result.Missing<String>:
+            prose:
+                missing

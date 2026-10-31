@@ -1,0 +1,8 @@
+import helpers.factory
+scene start():
+    val integer = factory(7)
+    val nullable = factory<String?>(null)
+    choice:
+        option "Continue":
+            prose:
+                ${integer()}|${nullable() ?: "none"}

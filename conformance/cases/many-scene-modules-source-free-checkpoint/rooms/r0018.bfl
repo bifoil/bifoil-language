@@ -1,0 +1,5 @@
+import stats.visits
+import stats.total
+export scene enter():
+    visits += 1
+    total += 18

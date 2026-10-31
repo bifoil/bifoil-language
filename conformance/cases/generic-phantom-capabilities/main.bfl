@@ -1,0 +1,8 @@
+data class Phantom<T>:
+    fun tag() -> Int = 1
+scene start():
+    val first = Phantom<() -> Int>()
+    val second = Phantom<() -> Int>()
+    val values = {first, second}
+    prose:
+        ${first == second}|${values.size}

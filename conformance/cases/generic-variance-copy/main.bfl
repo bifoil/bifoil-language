@@ -1,0 +1,16 @@
+data class Box<out T>:
+    val value: T
+data class Sink<in T>:
+    val label: String
+    fun consume(value: T) -> String = label
+data class Nested<out T>:
+    val values: List<T>
+scene start():
+    val original = Box(3)
+    val wide: Box<Any> = original
+    val copied = wide.copy(value = "new")
+    val broad = Sink<Any>("used")
+    val narrow: Sink<Int> = broad
+    val nested: Nested<Any> = Nested([1, 2])
+    prose:
+        ${String(copied.value)}|${String(wide.value)}|${narrow.consume(1)}|${nested.values.size}

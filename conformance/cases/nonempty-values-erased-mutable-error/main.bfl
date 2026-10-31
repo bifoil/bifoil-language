@@ -1,0 +1,9 @@
+scene start():
+    val original = mutable [1]
+    val erased: Any = original
+    original.clear()
+    if erased is MutableList<Int>:
+        var result: Int
+        for item in erased:
+            result = item
+        val observed = result

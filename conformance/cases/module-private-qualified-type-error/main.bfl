@@ -1,0 +1,5 @@
+import owner.touch
+scene start():
+    val leaked: owner.Secret? = null
+    prose:
+        ${touch()}

@@ -1,0 +1,6 @@
+import state.a
+import state.b
+import state.log
+scene start():
+    prose:
+        ${a}|${b}|${log}

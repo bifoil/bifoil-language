@@ -1,0 +1,8 @@
+fun ambiguous(value: Any):
+    if value is String:
+        return value
+    if value is Int:
+        return value
+    return false
+scene start():
+    Unit

@@ -1,0 +1,6 @@
+scene start():
+    var name: String? = "Ada"
+    if name != null:
+        fun reader() -> Int = name.length
+        name = null
+        reader()

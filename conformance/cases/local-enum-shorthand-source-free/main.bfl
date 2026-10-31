@@ -1,0 +1,5 @@
+import helpers.exercise
+scene start():
+    val answer = exercise()
+    prose:
+        ${answer}

@@ -1,0 +1,6 @@
+fun invalid(values: MutableList<String?>) -> () -> Int:
+    if values[0] == null:
+        return () => 0
+    return () => values[0].length
+scene start():
+    Unit

@@ -1,0 +1,10 @@
+enum Mood:
+    Happy
+    Sad
+fun read(values: MutableMap<Mood, String?>) -> Int:
+    if values[Mood.Happy] != null:
+        values[Mood.Happy] = null
+        return values[Happy].length
+    return 0
+scene start():
+    Unit

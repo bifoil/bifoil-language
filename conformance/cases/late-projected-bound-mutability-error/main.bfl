@@ -1,0 +1,9 @@
+data class A:
+    val value: Box<*>
+data class Box<T: ZMutable>:
+    val value: T
+data class ZMutable:
+    var value: Int
+scene start():
+    val item = A(Box(ZMutable(3)))
+    val keys: Set<A> = {item}

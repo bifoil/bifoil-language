@@ -1,0 +1,10 @@
+export suspend fun run() -> Int:
+    var answer: Int
+    suspend fun initialize():
+        choice:
+            option "First":
+                answer = 5
+            option "Second":
+                answer = 7
+    initialize()
+    return answer

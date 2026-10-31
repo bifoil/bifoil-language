@@ -1,0 +1,7 @@
+data class Box:
+    val callback: () -> Int
+fun answer() -> Int = 7
+scene start():
+    val first = Box(::answer)
+    val second = Box(::answer)
+    val observed = first === second

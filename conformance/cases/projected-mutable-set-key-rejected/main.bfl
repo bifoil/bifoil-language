@@ -1,0 +1,4 @@
+fun invalid(value: MutableSet<*>):
+    val keys: Set<MutableSet<*>> = {value}
+scene start():
+    invalid(mutable {1})

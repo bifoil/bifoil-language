@@ -1,0 +1,6 @@
+import a.B
+import a.B.C as count
+scene start():
+    val made: B = B.C(3)
+    prose:
+        ${count}

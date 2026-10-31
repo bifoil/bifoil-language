@@ -1,0 +1,12 @@
+export data class Person:
+    var name: String?
+export data class House:
+    var person: Person?
+export suspend fun run(home: House) -> Int:
+    if home.person?.name == null:
+        return 0
+    val first = home.person.name.length
+    choice:
+        option "Continue":
+            Unit
+    return first + home.person.name.length

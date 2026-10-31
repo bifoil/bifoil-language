@@ -1,0 +1,7 @@
+fun <U: Any> present(value: U) -> U = value
+fun <T> invalid(value: T) -> T:
+    if value is String:
+        return present(value + "changed")
+    return value
+scene start():
+    Unit

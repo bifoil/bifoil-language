@@ -1,0 +1,3 @@
+export fun <T> factory(input: T) -> () -> T:
+    fun <U> identity(item: U) -> U = item
+    return () => identity<T>(input)

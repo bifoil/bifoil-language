@@ -1,0 +1,8 @@
+data class Box<T>:
+    var value: T
+    fun replace(next: T):
+        value = next
+scene start():
+    val original = Box(3)
+    val hidden: Box<*> = original
+    hidden.replace("wrong")

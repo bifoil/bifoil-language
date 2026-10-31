@@ -1,0 +1,8 @@
+scene start():
+    val result: String
+    fun initialize(value: Int):
+        result = "${value}"
+    fun initialize(value: String):
+        result = value
+    initialize(1)
+    initialize("second")

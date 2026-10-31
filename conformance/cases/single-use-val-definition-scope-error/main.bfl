@@ -1,0 +1,6 @@
+scene start():
+    val x: Int
+    fun initialize() -> Unit:
+        x = later
+    val later = 3
+    initialize()

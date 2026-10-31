@@ -1,0 +1,22 @@
+typealias Transform = (Int) -> Int
+fun identity(value: Int) = value
+export fun immediate() = return 42
+export fun branches(flag: Boolean):
+    val unused = if flag:
+        return 1
+    else:
+        return 2
+export fun build() = () => return 7
+export fun argument() = identity(return 9)
+export fun shortCircuit(flag: Boolean):
+    flag || (return true)
+    return false
+export fun nullReturn(input: String?):
+    val text = input ?: return "missing"
+    return text
+export fun assertion(input: String?):
+    input!!
+    return input.length
+export fun skip(callback: Transform?):
+    val result = callback?.(return 5)
+    return result ?: 3

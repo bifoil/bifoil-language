@@ -1,0 +1,5 @@
+fun <T: Int> invalid(value: T):
+    if value:
+        return
+scene start():
+    return

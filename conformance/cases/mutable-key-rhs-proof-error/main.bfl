@@ -1,0 +1,9 @@
+fun read(values: Map<String, String?>, var key: String) -> Int:
+    key = if true:
+        values[key]!!
+        "missing"
+    else:
+        "name"
+    return values[key].length
+scene start():
+    Unit

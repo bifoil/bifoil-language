@@ -1,0 +1,84 @@
+data class Box:
+    var status: String
+shared var currentBox: Box = Box("old")
+shared var fieldTrace: String = ""
+shared var currentItems: MutableList<String> = mutable ["old"]
+shared var listTrace: String = ""
+shared var currentMap: MutableMap<String, String> = mutable {"k": "old"}
+shared var mapTrace: String = ""
+fun fieldTarget() -> Box:
+    fieldTrace += "T"
+    return currentBox
+fun fieldArgument() -> Int:
+    fieldTrace += "A"
+    return 3
+fun itemTarget() -> MutableList<String>:
+    listTrace += "L"
+    return currentItems
+fun itemIndex() -> Int:
+    listTrace += "K"
+    return 0
+fun itemArgument() -> Int:
+    listTrace += "A"
+    return 4
+fun mapTarget() -> MutableMap<String, String>:
+    mapTrace += "M"
+    return currentMap
+fun mapKey() -> String:
+    mapTrace += "K"
+    return "k"
+fun mapArgument() -> Int:
+    mapTrace += "A"
+    return 5
+export suspend fun field() -> String:
+    val result: Int
+    val old = currentBox
+    suspend fun initialize(value: Int) -> String:
+        fieldTrace += "I"
+        currentBox = Box("replacement")
+        choice:
+            option "Write field ${fieldTrace}":
+                Unit
+        result = value
+        return "ready"
+    fieldTarget().status = initialize(fieldArgument())
+    return "${old.status}|${currentBox.status}|${result}|${fieldTrace}"
+export suspend fun items() -> String:
+    val result: Int
+    val old = currentItems
+    suspend fun initialize(value: Int) -> String:
+        listTrace += "I"
+        currentItems = mutable ["replacement"]
+        choice:
+            option "Write list ${listTrace}":
+                Unit
+        result = value
+        return "ready"
+    itemTarget()[itemIndex()] = initialize(itemArgument())
+    return "${old[0]}|${currentItems[0]}|${result}|${listTrace}"
+export suspend fun mapping() -> String:
+    val result: Int
+    val old = currentMap
+    suspend fun initialize(value: Int) -> String:
+        mapTrace += "I"
+        currentMap = mutable {"k": "replacement"}
+        choice:
+            option "Write map ${mapTrace}":
+                Unit
+        result = value
+        return "ready"
+    mapTarget()[mapKey()] = initialize(mapArgument())
+    val before = old["k"]!!
+    val after = currentMap["k"]!!
+    return "${before}|${after}|${result}|${mapTrace}"
+export suspend fun orphan() -> String:
+    val result: Int
+    suspend fun initialize() -> String:
+        currentBox = Box("unaliased")
+        choice:
+            option "Only address":
+                Unit
+        result = 6
+        return "discarded"
+    currentBox.status = initialize()
+    return "${currentBox.status}|${result}"

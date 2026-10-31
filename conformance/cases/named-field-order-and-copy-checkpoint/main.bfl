@@ -1,0 +1,17 @@
+shared var trace: String = ""
+fun mark(label: String, value: Int) -> Int:
+    trace += label
+    return value
+data class Record:
+    val __proto__: Int = mark("a", 1)
+    val constructor: Int = mark("b", 2)
+    val toString: Int = mark("c", 3)
+scene start():
+    val first = Record(toString = mark("C", 30), __proto__ = mark("A", 10), constructor = mark("B", 20))
+    val second = first.copy(constructor = mark("D", 40))
+    val third = Record(constructor = mark("E", 50))
+    choice:
+        option "Order ${trace}":
+            Unit
+    prose:
+        ${first.__proto__}|${first.constructor}|${first.toString}|${second.__proto__}|${second.constructor}|${second.toString}|${third.__proto__}|${third.constructor}|${third.toString}|${trace}

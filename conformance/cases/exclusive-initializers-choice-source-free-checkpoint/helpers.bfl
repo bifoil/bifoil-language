@@ -1,0 +1,16 @@
+suspend fun make() -> () -> Int:
+    val result: Int
+    choice:
+        option "First":
+            initialize(1)
+        option "Second":
+            initialize(2)
+    fun initialize(value: Int):
+        result = value
+    fun read() -> Int = result
+    return ::read
+export suspend fun run() -> () -> String:
+    val first = make()
+    val second = make()
+    fun read() -> String = "${first()}|${second()}"
+    return ::read

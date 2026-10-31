@@ -1,0 +1,6 @@
+data class Box:
+    var callback: () -> Int
+scene start():
+    val box = Box(() => 0)
+    val x: Int
+    box.callback = () => x

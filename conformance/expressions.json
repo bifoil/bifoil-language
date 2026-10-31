@@ -1,0 +1,1424 @@
+[
+  {
+    "id": "block-if-values",
+    "output": [
+      "true|7|2"
+    ],
+    "decisions": [],
+    "directory": "cases/block-if-values"
+  },
+  {
+    "id": "lambda-values",
+    "output": [
+      "4|9|0|8|2|3"
+    ],
+    "decisions": [],
+    "directory": "cases/lambda-values"
+  },
+  {
+    "id": "when-values",
+    "output": [
+      "three|1|5"
+    ],
+    "decisions": [],
+    "directory": "cases/when-values"
+  },
+  {
+    "id": "prose-directives",
+    "output": [
+      "Start middle 1 2 3 end.",
+      "New paragraph; @literal and ${literal}.",
+      "1"
+    ],
+    "decisions": [],
+    "directory": "cases/prose-directives"
+  },
+  {
+    "id": "lambda-suspend-checkpoint",
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Choose 1"
+      ],
+      [
+        "Choose 2"
+      ]
+    ],
+    "output": [
+      "12|3"
+    ],
+    "decisions": [],
+    "directory": "cases/lambda-suspend-checkpoint"
+  },
+  {
+    "id": "prose-return-break",
+    "output": [
+      "1",
+      "helper",
+      "4"
+    ],
+    "decisions": [],
+    "directory": "cases/prose-return-break"
+  },
+  {
+    "id": "when-missing-exhaustiveness",
+    "compile_error": "exhaustive",
+    "decisions": [],
+    "directory": "cases/when-missing-exhaustiveness"
+  },
+  {
+    "id": "null-narrowing-after-and-call",
+    "directory": "cases/null-narrowing-after-and-call",
+    "compile_error": "expected String",
+    "decisions": [
+      "B09",
+      "B25"
+    ]
+  },
+  {
+    "id": "null-narrowing-after-or-call",
+    "directory": "cases/null-narrowing-after-or-call",
+    "compile_error": "expected String",
+    "decisions": [
+      "B09",
+      "B25"
+    ]
+  },
+  {
+    "id": "null-narrowing-after-while-call",
+    "directory": "cases/null-narrowing-after-while-call",
+    "compile_error": "expected String",
+    "decisions": [
+      "B09",
+      "B25"
+    ]
+  },
+  {
+    "id": "type-narrowing-after-and-call",
+    "directory": "cases/type-narrowing-after-and-call",
+    "compile_error": "expected String",
+    "decisions": [
+      "B09",
+      "B25"
+    ]
+  },
+  {
+    "id": "null-narrowing-after-last-effect",
+    "directory": "cases/null-narrowing-after-last-effect",
+    "output": [
+      "ready",
+      "stable"
+    ],
+    "decisions": [
+      "B09",
+      "B25"
+    ]
+  },
+  {
+    "id": "null-narrowing-for-backedge",
+    "directory": "cases/null-narrowing-for-backedge",
+    "decisions": [
+      "B09",
+      "B19",
+      "B25"
+    ],
+    "compile_error": "expected String"
+  },
+  {
+    "id": "null-narrowing-while-backedge",
+    "directory": "cases/null-narrowing-while-backedge",
+    "decisions": [
+      "B09",
+      "B19",
+      "B25"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "null-narrowing-do-backedge",
+    "directory": "cases/null-narrowing-do-backedge",
+    "decisions": [
+      "B09",
+      "B19",
+      "B25"
+    ],
+    "compile_error": "expected String"
+  },
+  {
+    "id": "null-narrowing-when-failed-test",
+    "directory": "cases/null-narrowing-when-failed-test",
+    "decisions": [
+      "B09",
+      "B19",
+      "B25"
+    ],
+    "compile_error": "expected String"
+  },
+  {
+    "id": "null-narrowing-when-unmatched",
+    "directory": "cases/null-narrowing-when-unmatched",
+    "decisions": [
+      "B09",
+      "B19",
+      "B25"
+    ],
+    "compile_error": "expected String"
+  },
+  {
+    "id": "null-narrowing-loop-condition-exit",
+    "directory": "cases/null-narrowing-loop-condition-exit",
+    "decisions": [
+      "B09",
+      "B19",
+      "B25"
+    ],
+    "output": [
+      "ready|kept"
+    ]
+  },
+  {
+    "id": "null-narrowing-when-guard",
+    "directory": "cases/null-narrowing-when-guard",
+    "decisions": [
+      "B09",
+      "B19",
+      "B25"
+    ],
+    "output": [
+      "guarded"
+    ]
+  },
+  {
+    "id": "loop-expression-break",
+    "output": [
+      "107"
+    ],
+    "decisions": [
+      "E26",
+      "C02",
+      "C04",
+      "T24"
+    ],
+    "directory": "cases/loop-expression-break"
+  },
+  {
+    "id": "loop-expression-continue",
+    "output": [
+      "107"
+    ],
+    "decisions": [
+      "E26",
+      "C02",
+      "C04",
+      "T24"
+    ],
+    "directory": "cases/loop-expression-continue"
+  },
+  {
+    "id": "loop-expression-break-checkpoint",
+    "directory": "cases/loop-expression-break-checkpoint",
+    "choices": [
+      0
+    ],
+    "output": [
+      "107"
+    ],
+    "decisions": [
+      "E26",
+      "C02",
+      "C04",
+      "T24"
+    ]
+  },
+  {
+    "id": "loop-expression-continue-checkpoint",
+    "directory": "cases/loop-expression-continue-checkpoint",
+    "choices": [
+      0,
+      0
+    ],
+    "output": [
+      "107"
+    ],
+    "decisions": [
+      "E26",
+      "C02",
+      "C04",
+      "T24"
+    ]
+  },
+  {
+    "id": "prose-escape-order",
+    "directory": "cases/prose-escape-order",
+    "output": [
+      "@literal",
+      "\\@literal",
+      "${score}",
+      "\\7",
+      "\\${score}"
+    ],
+    "decisions": []
+  },
+  {
+    "id": "safe-index-skipped-initialization",
+    "compile_error": "not definitely initialized",
+    "directory": "cases/safe-index-skipped-initialization",
+    "decisions": [
+      "B06",
+      "B15"
+    ]
+  },
+  {
+    "id": "safe-call-skipped-initialization",
+    "compile_error": "not definitely initialized",
+    "directory": "cases/safe-call-skipped-initialization",
+    "decisions": [
+      "B06",
+      "B16"
+    ]
+  },
+  {
+    "id": "safe-method-skipped-initialization",
+    "compile_error": "not definitely initialized",
+    "directory": "cases/safe-method-skipped-initialization",
+    "decisions": [
+      "B06",
+      "B11"
+    ]
+  },
+  {
+    "id": "safe-skipped-returns-checkpoint",
+    "choices": [
+      0,
+      0,
+      0
+    ],
+    "output": [
+      "7|11|8|21|9|31|0"
+    ],
+    "directory": "cases/safe-skipped-returns-checkpoint",
+    "decisions": [
+      "B11",
+      "B15",
+      "B16",
+      "E26",
+      "T22"
+    ]
+  },
+  {
+    "id": "null-literal-fallback",
+    "output": [
+      "3|4|6"
+    ],
+    "directory": "cases/null-literal-fallback",
+    "decisions": [
+      "B12",
+      "E25",
+      "E26"
+    ]
+  },
+  {
+    "id": "nonreturning-conditions-checkpoint",
+    "directory": "cases/nonreturning-conditions-checkpoint",
+    "decisions": [
+      "E25",
+      "E26",
+      "T22"
+    ],
+    "choices": [
+      0,
+      0,
+      0
+    ],
+    "output": [
+      "1|2|3"
+    ]
+  },
+  {
+    "id": "constant-flow-initialization",
+    "output": [
+      "1|2|3"
+    ],
+    "directory": "cases/constant-flow-initialization",
+    "decisions": [
+      "B06",
+      "B07",
+      "F04",
+      "E25"
+    ]
+  },
+  {
+    "id": "choice-hidden-return-initialization",
+    "compile_error": "not definitely initialized",
+    "directory": "cases/choice-hidden-return-initialization",
+    "decisions": [
+      "B06",
+      "E25",
+      "E26",
+      "T14"
+    ]
+  },
+  {
+    "id": "choice-stable-guard-checkpoint",
+    "choices": [
+      0,
+      0
+    ],
+    "output": [
+      "3",
+      "4"
+    ],
+    "directory": "cases/choice-stable-guard-checkpoint",
+    "decisions": [
+      "B09",
+      "T12",
+      "T13",
+      "T14",
+      "T24"
+    ]
+  },
+  {
+    "id": "choice-mutable-guard-invalidated",
+    "compile_error": "nullable",
+    "directory": "cases/choice-mutable-guard-invalidated",
+    "decisions": [
+      "B09",
+      "T14",
+      "T23"
+    ]
+  },
+  {
+    "id": "choice-dead-option-return",
+    "choices": [
+      0
+    ],
+    "output": [
+      "7"
+    ],
+    "directory": "cases/choice-dead-option-return",
+    "decisions": [
+      "F04",
+      "T13",
+      "T14"
+    ]
+  },
+  {
+    "id": "suspended-defaults-checkpoint",
+    "choices": [
+      0,
+      0
+    ],
+    "output": [
+      "10|ssd",
+      "16|ssdsds",
+      "6|ssdsds"
+    ],
+    "directory": "cases/suspended-defaults-checkpoint",
+    "decisions": [
+      "F09",
+      "F10",
+      "F11",
+      "A04",
+      "T22",
+      "T24"
+    ]
+  },
+  {
+    "id": "suspended-defaults-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "output": [
+      "10|ssd",
+      "16|ssdsds",
+      "6|ssdsds"
+    ],
+    "directory": "cases/suspended-defaults-checkpoint",
+    "decisions": [
+      "F09",
+      "F10",
+      "F11",
+      "A04",
+      "T22",
+      "T24"
+    ]
+  },
+  {
+    "id": "suspended-defaults-effect-error",
+    "compile_error": "suspend context",
+    "directory": "cases/suspended-defaults-effect-error",
+    "decisions": [
+      "F09",
+      "T08"
+    ]
+  },
+  {
+    "id": "when-test-effects-checkpoint",
+    "directory": "cases/when-test-effects-checkpoint",
+    "decisions": [
+      "B06",
+      "E19",
+      "T24"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Value 1"
+      ],
+      [
+        "Value 2"
+      ]
+    ],
+    "output": [
+      "1|2"
+    ]
+  },
+  {
+    "id": "when-guard-effects",
+    "directory": "cases/when-guard-effects",
+    "decisions": [
+      "B06",
+      "E19",
+      "E32"
+    ],
+    "output": [
+      "4|5"
+    ]
+  },
+  {
+    "id": "when-suspended-alternatives-and-guard",
+    "directory": "cases/when-suspended-alternatives-and-guard",
+    "decisions": [
+      "E14",
+      "E18",
+      "E19",
+      "E20",
+      "E32",
+      "T24"
+    ],
+    "choices": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "first:1"
+      ],
+      [
+        "second:2"
+      ],
+      [
+        "guard:3"
+      ],
+      [
+        "last:4"
+      ]
+    ],
+    "output": [
+      "last|4"
+    ]
+  },
+  {
+    "id": "when-skipped-alternative-effects",
+    "directory": "cases/when-skipped-alternative-effects",
+    "decisions": [
+      "B06",
+      "B07",
+      "E18",
+      "E20"
+    ],
+    "output": [
+      "2"
+    ]
+  },
+  {
+    "id": "when-unmatched-test-effects",
+    "directory": "cases/when-unmatched-test-effects",
+    "decisions": [
+      "B06",
+      "E19",
+      "E23"
+    ],
+    "output": [
+      "6"
+    ]
+  },
+  {
+    "id": "when-subjectless-narrowing",
+    "directory": "cases/when-subjectless-narrowing",
+    "decisions": [
+      "B09",
+      "E19",
+      "E20"
+    ],
+    "output": [
+      "3|0|0"
+    ]
+  },
+  {
+    "id": "when-test-repeated-val-error",
+    "directory": "cases/when-test-repeated-val-error",
+    "decisions": [
+      "B06",
+      "B07",
+      "E18",
+      "E19",
+      "E32"
+    ],
+    "compile_error": "initialized"
+  },
+  {
+    "id": "when-guard-repeated-val-error",
+    "directory": "cases/when-guard-repeated-val-error",
+    "decisions": [
+      "B06",
+      "B07",
+      "E18",
+      "E19",
+      "E32"
+    ],
+    "compile_error": "initialized"
+  },
+  {
+    "id": "when-alternative-skipped-initialization",
+    "directory": "cases/when-alternative-skipped-initialization",
+    "decisions": [
+      "B06",
+      "B07",
+      "E18",
+      "E19",
+      "E32"
+    ],
+    "compile_error": "initialized"
+  },
+  {
+    "id": "constant-scalar-condition-flow",
+    "directory": "cases/constant-scalar-condition-flow",
+    "decisions": [
+      "B06",
+      "E02",
+      "E28",
+      "E29",
+      "N11",
+      "P15"
+    ],
+    "output": [
+      "1|2|3|4"
+    ]
+  },
+  {
+    "id": "constant-short-circuit-initialization",
+    "directory": "cases/constant-short-circuit-initialization",
+    "decisions": [
+      "B06",
+      "E02"
+    ],
+    "output": [
+      "true|7"
+    ]
+  },
+  {
+    "id": "constant-short-circuit-skipped-initialization",
+    "directory": "cases/constant-short-circuit-skipped-initialization",
+    "decisions": [
+      "B06",
+      "E02"
+    ],
+    "compile_error": "not definitely initialized"
+  },
+  {
+    "id": "choice-constant-arithmetic-empty",
+    "directory": "cases/choice-constant-arithmetic-empty",
+    "decisions": [
+      "T17",
+      "E04"
+    ],
+    "compile_error": "no selectable options"
+  },
+  {
+    "id": "choice-constant-text-empty",
+    "directory": "cases/choice-constant-text-empty",
+    "decisions": [
+      "T17",
+      "P15"
+    ],
+    "compile_error": "no selectable options"
+  },
+  {
+    "id": "choice-constant-exact-empty",
+    "directory": "cases/choice-constant-exact-empty",
+    "decisions": [
+      "T17",
+      "E02",
+      "E28"
+    ],
+    "compile_error": "no selectable options"
+  },
+  {
+    "id": "lambda-exhaustive-final-when",
+    "directory": "cases/lambda-exhaustive-final-when",
+    "decisions": [
+      "F27",
+      "F34",
+      "E21",
+      "E22",
+      "U20",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "10|20|happy|7|3"
+    ]
+  },
+  {
+    "id": "lambda-nonexhaustive-final-when",
+    "directory": "cases/lambda-nonexhaustive-final-when",
+    "decisions": [
+      "F27",
+      "E21"
+    ],
+    "compile_error": "return on every path"
+  },
+  {
+    "id": "qualified-local-capture-checkpoint",
+    "directory": "cases/qualified-local-capture-checkpoint",
+    "decisions": [
+      "F19",
+      "F20",
+      "F21",
+      "U08",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "true|4"
+    ]
+  },
+  {
+    "id": "qualified-capture-uninitialized-receiver",
+    "directory": "cases/qualified-capture-uninitialized-receiver",
+    "decisions": [
+      "B06",
+      "F19"
+    ],
+    "compile_error": "initialized"
+  },
+  {
+    "id": "aliased-enum-when-source-free",
+    "directory": "cases/aliased-enum-when-source-free",
+    "decisions": [
+      "F27",
+      "E21",
+      "U08",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "happy|sad"
+    ]
+  },
+  {
+    "id": "default-nonreturning-initialization-error",
+    "directory": "cases/default-nonreturning-initialization-error",
+    "decisions": [
+      "B06",
+      "F09",
+      "F10",
+      "E25"
+    ],
+    "compile_error": "initialized"
+  },
+  {
+    "id": "default-nonreturning-missing-return",
+    "directory": "cases/default-nonreturning-missing-return",
+    "decisions": [
+      "F04",
+      "F09",
+      "F10",
+      "E25"
+    ],
+    "compile_error": "return on every path"
+  },
+  {
+    "id": "default-skipped-narrowing-error",
+    "directory": "cases/default-skipped-narrowing-error",
+    "decisions": [
+      "B09",
+      "F09",
+      "F10"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "supplied-default-control-flow",
+    "directory": "cases/supplied-default-control-flow",
+    "decisions": [
+      "B09",
+      "F09",
+      "F10",
+      "E26"
+    ],
+    "output": [
+      "0|0|3|2"
+    ]
+  },
+  {
+    "id": "captured-mutable-lambda-narrowing-error",
+    "directory": "cases/captured-mutable-lambda-narrowing-error",
+    "decisions": [
+      "B09",
+      "F16",
+      "F17"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "captured-mutable-local-narrowing-error",
+    "directory": "cases/captured-mutable-local-narrowing-error",
+    "decisions": [
+      "B09",
+      "F16",
+      "F17"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "captured-mutable-type-narrowing-error",
+    "directory": "cases/captured-mutable-type-narrowing-error",
+    "decisions": [
+      "B25",
+      "F16",
+      "F17"
+    ],
+    "compile_error": "member"
+  },
+  {
+    "id": "captured-current-type-checkpoint",
+    "directory": "cases/captured-current-type-checkpoint",
+    "decisions": [
+      "B09",
+      "B25",
+      "F16",
+      "F17",
+      "F21",
+      "T24"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "output": [
+      "true|8|0",
+      "3"
+    ]
+  },
+  {
+    "id": "nested-text-interpolation",
+    "directory": "cases/nested-text-interpolation",
+    "decisions": [
+      "P03",
+      "P06",
+      "P07",
+      "T02"
+    ],
+    "output": [
+      "Value a\" } b|Value Inner }|Map x\" } y|\ud83d\ude00 \u0441\u043b\u043e\u0432\u043e \u5440|Value 3!"
+    ]
+  },
+  {
+    "id": "nested-text-suspended-source-free",
+    "directory": "cases/nested-text-suspended-source-free",
+    "decisions": [
+      "P06",
+      "P07",
+      "T12",
+      "T22",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Pick one } \"two"
+      ]
+    ],
+    "output": [
+      "A before } \"B\" after C|ABC"
+    ]
+  },
+  {
+    "id": "invalid-unicode-signed-digits",
+    "directory": "cases/invalid-unicode-signed-digits",
+    "decisions": [
+      "P09"
+    ],
+    "compile_error": "invalid Unicode escape"
+  },
+  {
+    "id": "prose-multiline-expressions",
+    "directory": "cases/prose-multiline-expressions",
+    "decisions": [
+      "P07",
+      "P10",
+      "T02",
+      "T03",
+      "T04",
+      "T09",
+      "T10"
+    ],
+    "output": [
+      "Count 3; 28. End 1."
+    ]
+  },
+  {
+    "id": "inferred-guard-source-free",
+    "directory": "cases/inferred-guard-source-free",
+    "decisions": [
+      "B09",
+      "B25",
+      "F01",
+      "F15",
+      "U09",
+      "G03",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "3|0|5|0|1",
+      "kept|4|9"
+    ]
+  },
+  {
+    "id": "inferred-guard-mutation-error",
+    "directory": "cases/inferred-guard-mutation-error",
+    "decisions": [
+      "B09",
+      "B25",
+      "F01",
+      "F18"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "inferred-expression-returns-source-free",
+    "directory": "cases/inferred-expression-returns-source-free",
+    "decisions": [
+      "B09",
+      "B12",
+      "B13",
+      "B16",
+      "E26",
+      "F01",
+      "F05",
+      "F26",
+      "F35",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "42|1|2|7|9",
+      "false|true|missing|Ada|3",
+      "3|5"
+    ]
+  },
+  {
+    "id": "inferred-expression-return-conflict",
+    "directory": "cases/inferred-expression-return-conflict",
+    "decisions": [
+      "B12",
+      "E26",
+      "F01"
+    ],
+    "compile_error": "incompatible types"
+  },
+  {
+    "id": "interpolated-functions",
+    "directory": "cases/interpolated-functions",
+    "decisions": [
+      "P06",
+      "T02",
+      "T03",
+      "T12",
+      "F26"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "4"
+      ]
+    ],
+    "output": [
+      "5|3"
+    ]
+  },
+  {
+    "id": "interpolated-function-error-location",
+    "directory": "cases/interpolated-function-error-location",
+    "decisions": [
+      "T03",
+      "F26",
+      "E35"
+    ],
+    "runtime_error": "src/main.bfl:4: division by zero"
+  },
+  {
+    "id": "branch-condition-functions",
+    "directory": "cases/branch-condition-functions",
+    "decisions": [
+      "F26"
+    ],
+    "output": [
+      "right",
+      "positive|five"
+    ]
+  },
+  {
+    "id": "conditional-lookahead-blocks",
+    "directory": "cases/conditional-lookahead-blocks",
+    "decisions": [
+      "F26",
+      "T09",
+      "T10"
+    ],
+    "output": [
+      "kept else: literal narrative 1|3|5|6"
+    ]
+  },
+  {
+    "id": "inferred-guarded-branches-source-free",
+    "directory": "cases/inferred-guarded-branches-source-free",
+    "decisions": [
+      "B09",
+      "B25",
+      "F01",
+      "T13",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Length 3"
+      ]
+    ],
+    "output": [
+      "3|0|0",
+      "3|0|4|0",
+      "3|0"
+    ]
+  },
+  {
+    "id": "inferred-alternative-narrowing-error",
+    "directory": "cases/inferred-alternative-narrowing-error",
+    "decisions": [
+      "B09",
+      "B25",
+      "F01"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "inferred-guard-effect-narrowing-error",
+    "directory": "cases/inferred-guard-effect-narrowing-error",
+    "decisions": [
+      "B09",
+      "B25",
+      "F01"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "inferred-choice-mutable-guard-error",
+    "directory": "cases/inferred-choice-mutable-guard-error",
+    "decisions": [
+      "B09",
+      "B25",
+      "F01"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "orphan-elif",
+    "directory": "cases/orphan-elif",
+    "decisions": [],
+    "compile_error": "requires a preceding if"
+  },
+  {
+    "id": "orphan-else",
+    "directory": "cases/orphan-else",
+    "decisions": [],
+    "compile_error": "requires a preceding if"
+  },
+  {
+    "id": "spaced-prose-branches",
+    "directory": "cases/spaced-prose-branches",
+    "decisions": [
+      "T09",
+      "T10"
+    ],
+    "output": [
+      "one"
+    ]
+  },
+  {
+    "id": "inferred-bottom-source-free",
+    "directory": "cases/inferred-bottom-source-free",
+    "decisions": [
+      "E25",
+      "F01",
+      "T24"
+    ],
+    "precompile": [
+      "ending",
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "true",
+      "before",
+      "finished"
+    ]
+  },
+  {
+    "id": "unary-return-expressions",
+    "directory": "cases/unary-return-expressions",
+    "decisions": [
+      "E25",
+      "E26"
+    ],
+    "output": [
+      "42|true"
+    ]
+  },
+  {
+    "id": "negated-keyword-prefixes",
+    "directory": "cases/negated-keyword-prefixes",
+    "output": [
+      "false|true|false|true"
+    ],
+    "decisions": [
+      "L08",
+      "L11",
+      "E02"
+    ]
+  },
+  {
+    "id": "operator-continuations",
+    "directory": "cases/operator-continuations",
+    "output": [
+      "true|true|false|true|true 3|false|true|3|3|A|16|2"
+    ],
+    "decisions": [
+      "L05",
+      "E04",
+      "N09"
+    ]
+  },
+  {
+    "id": "inferred-loop-exits-source-free",
+    "directory": "cases/inferred-loop-exits-source-free",
+    "output": [
+      "4|3|5|4|3|3|7",
+      "5"
+    ],
+    "choices": [
+      0
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "decisions": [
+      "F02",
+      "B09",
+      "C02",
+      "C04",
+      "C05",
+      "C07",
+      "C08",
+      "E26",
+      "T24"
+    ]
+  },
+  {
+    "id": "inferred-loop-break-nullability-error",
+    "directory": "cases/inferred-loop-break-nullability-error",
+    "compile_error": "nullable",
+    "decisions": [
+      "F02",
+      "B09",
+      "C02",
+      "C05"
+    ]
+  },
+  {
+    "id": "continued-string-lambda-location",
+    "directory": "cases/continued-string-lambda-location",
+    "decisions": [
+      "L05",
+      "F26",
+      "E35"
+    ],
+    "runtime_error": "src/main.bfl:3: division by zero"
+  },
+  {
+    "id": "prose-physical-line-location",
+    "directory": "cases/prose-physical-line-location",
+    "decisions": [
+      "L05",
+      "F26",
+      "E35"
+    ],
+    "runtime_error": "src/main.bfl:6: division by zero"
+  },
+  {
+    "id": "continued-lambda-body-location",
+    "directory": "cases/continued-lambda-body-location",
+    "decisions": [
+      "L05",
+      "F26",
+      "E35"
+    ],
+    "runtime_error": "src/main.bfl:3: division by zero"
+  },
+  {
+    "id": "continued-condition-lambda-location",
+    "directory": "cases/continued-condition-lambda-location",
+    "decisions": [
+      "L05",
+      "F26",
+      "E35"
+    ],
+    "runtime_error": "src/main.bfl:3: division by zero"
+  },
+  {
+    "id": "continued-block-headers",
+    "directory": "cases/continued-block-headers",
+    "decisions": [
+      "L05",
+      "L06",
+      "F26"
+    ],
+    "output": [
+      "3|4"
+    ]
+  },
+  {
+    "id": "value-prefix-flow-source-free",
+    "decisions": [
+      "E06",
+      "E07",
+      "E22",
+      "B09",
+      "F02",
+      "F04",
+      "F15",
+      "T24"
+    ],
+    "output": [
+      "0|3|9|5|0|4|4|0|5|3|4|0",
+      "6"
+    ],
+    "choices": [
+      0
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "directory": "cases/value-prefix-flow-source-free"
+  },
+  {
+    "id": "value-prefix-write-invalidation",
+    "decisions": [
+      "B09",
+      "E06",
+      "E07"
+    ],
+    "compile_error": "nullable member receiver",
+    "directory": "cases/value-prefix-write-invalidation"
+  },
+  {
+    "id": "value-condition-call-invalidation",
+    "decisions": [
+      "B09",
+      "E06",
+      "E07"
+    ],
+    "compile_error": "nullable member receiver",
+    "directory": "cases/value-condition-call-invalidation"
+  },
+  {
+    "id": "value-forward-local-results-source-free",
+    "decisions": [
+      "E06",
+      "E07",
+      "F02",
+      "F13",
+      "F14",
+      "F15"
+    ],
+    "output": [
+      "6|0|true|8"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "directory": "cases/value-forward-local-results-source-free"
+  },
+  {
+    "id": "value-unanchored-local-result-error",
+    "decisions": [
+      "F02",
+      "F13",
+      "F14"
+    ],
+    "compile_error": "cannot infer local function result",
+    "directory": "cases/value-unanchored-local-result-error"
+  },
+  {
+    "id": "hoisted-local-late-proof-error",
+    "decisions": [
+      "B09",
+      "F14",
+      "F16"
+    ],
+    "compile_error": "nullable member receiver",
+    "directory": "cases/hoisted-local-late-proof-error"
+  },
+  {
+    "id": "hoisted-local-default-late-proof-error",
+    "decisions": [
+      "B09",
+      "F11",
+      "F14",
+      "F16"
+    ],
+    "compile_error": "nullable member receiver",
+    "directory": "cases/hoisted-local-default-late-proof-error"
+  },
+  {
+    "id": "hoisted-entry-proofs-source-free",
+    "decisions": [
+      "B09",
+      "F14",
+      "F16",
+      "F21",
+      "T24"
+    ],
+    "output": [
+      "3|0|4|0",
+      "6"
+    ],
+    "choices": [
+      0
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "directory": "cases/hoisted-entry-proofs-source-free"
+  },
+  {
+    "id": "anchored-expression-recursion-source-free",
+    "decisions": [
+      "E06",
+      "E07",
+      "E13",
+      "E22",
+      "F02",
+      "F05",
+      "F13",
+      "T24"
+    ],
+    "output": [
+      "120|true|false|2.5",
+      "7"
+    ],
+    "choices": [
+      0
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "directory": "cases/anchored-expression-recursion-source-free"
+  },
+  {
+    "id": "float-artifact-roundtrip-source-free",
+    "directory": "cases/float-artifact-roundtrip-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "-1.0803725086404524e-296",
+      "-1.0803725086404524e-296",
+      "-1.0803725086404524e-296",
+      "-1.0803725086404524e-296"
+    ],
+    "decisions": [
+      "N03",
+      "S10",
+      "T24"
+    ]
+  },
+  {
+    "id": "float-key-precision-checkpoint",
+    "directory": "cases/float-key-precision-checkpoint",
+    "choices": [
+      0
+    ],
+    "output": [
+      "2|2|first|second"
+    ],
+    "decisions": [
+      "N03",
+      "D03",
+      "D12",
+      "D14",
+      "T24"
+    ]
+  }
+]

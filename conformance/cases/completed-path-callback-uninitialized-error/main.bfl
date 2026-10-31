@@ -1,0 +1,14 @@
+fun invalid(selector: Int):
+    val first: Int
+    val second: Int
+    var read: () -> Int = () => 0
+    if selector == 0:
+        read = () => first
+    elif selector == 1:
+        read = () => second
+    else:
+        read = () => first
+    first = 3
+    return read()
+scene start():
+    Unit

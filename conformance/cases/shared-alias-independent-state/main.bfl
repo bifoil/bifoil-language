@@ -1,0 +1,11 @@
+import state.name
+import state.values
+scene start():
+    name!!
+    var copy: String? = name
+    copy!!
+    values = {"name": null}
+    val before = name.length
+    name = null
+    prose:
+        ${before}|${copy.length}

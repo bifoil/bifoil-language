@@ -1,0 +1,8 @@
+fun run(input: IntProgression) -> Int:
+    val progression = input
+    var result: Int
+    for ordinal in progression:
+        result = ordinal
+    return result
+scene start():
+    Unit

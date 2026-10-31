@@ -1,0 +1,5 @@
+legacy suspend fun ask() = "questions" label "ask"
+fun ordinary():
+    ask()
+scene start():
+    ordinary()

@@ -1,0 +1,5 @@
+scene start():
+    var item: String? = "present"
+    if item != null:
+        while item.length > 0:
+            item = null

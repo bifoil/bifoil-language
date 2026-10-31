@@ -1,0 +1,7 @@
+fun factory() -> () -> Int:
+    val x: Int
+    val ready: Int? = null
+    val value = ready ?: return () => x
+    return () => value
+scene start():
+    return

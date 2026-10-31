@@ -1,0 +1,11 @@
+import helpers.Status
+import helpers.status
+import helpers.empty
+scene start():
+    val result = empty()
+    val values: List<Unit> = [Unit, result]
+    choice:
+        option "Use Unit values":
+            Unit
+    prose:
+        ${result == Unit}|${status() == Status.Unit}|${values.size}

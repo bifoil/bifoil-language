@@ -1,0 +1,9 @@
+scene start():
+    val future: Int
+    fun read(value: Int = 7) -> Int = value
+    fun read(vararg values: String) -> Int = future
+    fun wrapper() -> Int = read()
+    val result = wrapper()
+    future = 9
+    prose:
+        ${result}

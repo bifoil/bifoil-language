@@ -1,0 +1,11 @@
+export fun run() -> String:
+    var result: Int
+    var counter = 0
+    do:
+        counter += 1
+        val amount = counter
+    while initialize(amount)
+    fun initialize(value: Int) -> Boolean:
+        result = value
+        return value < 3
+    return "${result}|${counter}"

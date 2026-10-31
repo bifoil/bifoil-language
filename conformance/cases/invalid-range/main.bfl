@@ -1,0 +1,2 @@
+scene start():
+    val invalid = 5..<5

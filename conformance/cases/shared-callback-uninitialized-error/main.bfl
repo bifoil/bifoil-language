@@ -1,0 +1,7 @@
+shared var callback: () -> Int = () => 0
+fun invoke() -> Int = callback()
+scene start():
+    var future: Int
+    callback = () => future
+    val result = invoke()
+    future = 3

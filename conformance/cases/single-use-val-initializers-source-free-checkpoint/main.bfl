@@ -1,0 +1,16 @@
+import helpers.prepare
+import helpers.greet
+import helpers.makeReader
+import helpers.identity
+scene start():
+    val values = prepare(7)
+    val present = greet("Ada")
+    val missing = greet(null)
+    val read = makeReader(9)
+    val generic = identity("typed")
+    val absent = identity<Int?>(null)
+    choice:
+        option "Initialized":
+            Unit
+    prose:
+        ${values[0]}|${values[1]}|${present}|${missing}|${read()}|${generic}|${absent == null}

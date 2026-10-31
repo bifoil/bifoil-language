@@ -1,0 +1,9 @@
+export suspend fun run() -> Int:
+    val x: Int
+    suspend fun initialize():
+        choice:
+            option "Begin":
+                Unit
+        x = 8
+    initialize()
+    return x

@@ -1,0 +1,7 @@
+scene start():
+    val reader = if true:
+        val x: Int
+        () => x
+    else:
+        () => 0
+    reader()

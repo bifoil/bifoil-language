@@ -1,0 +1,17 @@
+scene start():
+    var future: Int
+    val callbacks = [() => future]
+    val copied = callbacks.toList().toMutableList()
+    val extracted = copied.removeAt(0)
+    val mapping = mutable {"one": () => future}
+    val removed = mapping.remove("one")
+    val ignored = mutable [() => future]
+    ignored.clear()
+    val empty = ignored.isEmpty()
+    future = 3
+    choice:
+        option "Resume copied callbacks":
+            Unit
+    future = 9
+    prose:
+        ${extracted()}|${removed!!()}|${empty}|${callbacks[0]()}

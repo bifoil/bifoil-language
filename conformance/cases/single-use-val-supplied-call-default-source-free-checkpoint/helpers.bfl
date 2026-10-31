@@ -1,0 +1,10 @@
+shared var reads: Int = 0
+export fun run() -> String:
+    val result: Int
+    fun read() -> Int:
+        reads += 1
+        return result
+    fun initialize(value: Int = read()):
+        result = value
+    initialize(7)
+    return "${result}|${reads}"

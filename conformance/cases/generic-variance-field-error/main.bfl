@@ -1,0 +1,4 @@
+data class Box<out T>:
+    var value: T
+scene start():
+    return

@@ -1,0 +1,6 @@
+scene start():
+    val callback: () -> Unit
+    fun initialize():
+        callback = ::initialize
+    initialize()
+    callback()

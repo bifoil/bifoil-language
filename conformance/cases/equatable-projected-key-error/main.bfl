@@ -1,0 +1,5 @@
+data class Box<T: Equatable>:
+    val value: T
+scene start():
+    val hidden: Box<*> = Box(3)
+    val keys: Set<Box<*>> = {hidden}

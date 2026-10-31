@@ -1,0 +1,10 @@
+data class Box:
+    var value: String?
+suspend fun invalid(holder: Box) -> Int:
+    choice:
+        option "Read" if holder.value != null:
+            return holder.value.length
+        else:
+            return 0
+scene start():
+    Unit

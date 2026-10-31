@@ -1,0 +1,13 @@
+export suspend fun run() -> String:
+    var values: MutableList<String?> = mutable ["Ada"]
+    val previous = values
+    suspend fun replace() -> String:
+        values = mutable ["Other"]
+        choice:
+            option "Finish":
+                Unit
+        return "!"
+    if values[0] == null:
+        return "missing"
+    values[0] += replace()
+    return previous[0]!! + "|" + values[0]!!

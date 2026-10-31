@@ -1,0 +1,4 @@
+fun <T> first(value: List<T>) -> T = value[0]
+fun <U: List<String>?> invalid(value: U) -> String = first(value)
+scene start():
+    Unit

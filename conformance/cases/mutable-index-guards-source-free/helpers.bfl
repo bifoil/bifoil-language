@@ -1,0 +1,15 @@
+export fun length(values: MutableList<String?>):
+    if values[0] == null:
+        return 0
+    val empty = values.isEmpty()
+    val copy = values.toList()
+    return values[0].length
+export fun mapped(values: MutableMap<Float, String?>) = when values[1]:
+    case null:
+        0
+    else:
+        values[1.0].length
+export fun <T> choose(values: MutableList<T>, fallback: T):
+    if values[0] is String:
+        return values[0]
+    return fallback

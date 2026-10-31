@@ -1,0 +1,6 @@
+scene start():
+    val values: List<Int?> = [null, 3]
+    val hidden: List<*> = values
+    val broad: List<Any?> = hidden
+    prose:
+        ${broad[0] == null}|${broad[1] is Int}

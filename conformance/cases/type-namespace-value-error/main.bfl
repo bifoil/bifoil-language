@@ -1,0 +1,3 @@
+import helpers.Mood
+scene start():
+    val invalid = Mood

@@ -1,0 +1,11 @@
+scene start():
+    val branch = if true &&
+      true:
+        3
+    else:
+        4
+    val transform = (value:
+      Int) =>:
+        value + 1
+    prose:
+        ${branch}|${transform(branch)}

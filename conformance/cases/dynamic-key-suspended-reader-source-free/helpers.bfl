@@ -1,0 +1,8 @@
+export fun reader(values: Map<String, String?>, key: String) -> suspend () -> Int:
+    if values[key] == null:
+        return suspend () => 0
+    return suspend () =>:
+        choice:
+            option "Read saved key":
+                Unit
+        values[key].length

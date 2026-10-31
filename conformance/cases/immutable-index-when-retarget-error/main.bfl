@@ -1,0 +1,11 @@
+fun read(var values: List<String?>) -> Int:
+    fun change() -> String:
+        values = [null]
+        return "Ada"
+    return when values[0]:
+        case change():
+            values[0].length
+        else:
+            0
+scene start():
+    Unit

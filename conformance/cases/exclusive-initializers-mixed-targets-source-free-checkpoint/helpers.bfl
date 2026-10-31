@@ -1,0 +1,13 @@
+export fun run() -> () -> String:
+    val result: Int
+    var extra: Int
+    val select = false
+    if select:
+        initialize(1)
+    else:
+        initialize(2)
+    fun initialize(value: Int):
+        result = value
+        extra = value + 1
+    fun read() -> String = "${result}|${extra}"
+    return ::read

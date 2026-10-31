@@ -1,0 +1,51 @@
+shared var calls: Int = 0
+export fun andCase() -> Boolean:
+    val result: Int
+    fun initialize() -> Boolean:
+        calls += 1
+        result = 3
+        return true
+    return false && initialize()
+export fun orCase() -> Boolean:
+    val result: Int
+    fun initialize() -> Boolean:
+        calls += 1
+        result = 3
+        return false
+    return true || initialize()
+export fun fallback() -> Int:
+    val result: Int
+    val present: Int? = 7
+    fun initialize() -> Int:
+        calls += 1
+        result = 3
+        return 0
+    return present ?: initialize()
+data class Receiver:
+    fun accept(value: Int):
+        Unit
+export fun safeCall() -> Boolean:
+    val result: Int
+    val callback: ((Int) -> Unit)? = null
+    fun initialize() -> Int:
+        calls += 1
+        result = 3
+        return 0
+    return callback?.(initialize()) == null
+export fun safeIndex() -> Boolean:
+    val result: Int
+    val items: List<Int>? = null
+    fun initialize() -> Int:
+        calls += 1
+        result = 3
+        return 0
+    return items?[initialize()] == null
+export fun safeMember() -> Boolean:
+    val result: Int
+    val receiver: Receiver? = null
+    fun initialize() -> Int:
+        calls += 1
+        result = 3
+        return 0
+    return receiver?.accept(initialize()) == null
+export fun count() -> Int = calls

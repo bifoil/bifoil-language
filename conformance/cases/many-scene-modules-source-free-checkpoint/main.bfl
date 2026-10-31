@@ -1,0 +1,140 @@
+import stats.visits
+import stats.total
+import rooms.r0000.enter as room0000
+import rooms.r0001.enter as room0001
+import rooms.r0002.enter as room0002
+import rooms.r0003.enter as room0003
+import rooms.r0004.enter as room0004
+import rooms.r0005.enter as room0005
+import rooms.r0006.enter as room0006
+import rooms.r0007.enter as room0007
+import rooms.r0008.enter as room0008
+import rooms.r0009.enter as room0009
+import rooms.r0010.enter as room0010
+import rooms.r0011.enter as room0011
+import rooms.r0012.enter as room0012
+import rooms.r0013.enter as room0013
+import rooms.r0014.enter as room0014
+import rooms.r0015.enter as room0015
+import rooms.r0016.enter as room0016
+import rooms.r0017.enter as room0017
+import rooms.r0018.enter as room0018
+import rooms.r0019.enter as room0019
+import rooms.r0020.enter as room0020
+import rooms.r0021.enter as room0021
+import rooms.r0022.enter as room0022
+import rooms.r0023.enter as room0023
+import rooms.r0024.enter as room0024
+import rooms.r0025.enter as room0025
+import rooms.r0026.enter as room0026
+import rooms.r0027.enter as room0027
+import rooms.r0028.enter as room0028
+import rooms.r0029.enter as room0029
+import rooms.r0030.enter as room0030
+import rooms.r0031.enter as room0031
+import rooms.r0032.enter as room0032
+import rooms.r0033.enter as room0033
+import rooms.r0034.enter as room0034
+import rooms.r0035.enter as room0035
+import rooms.r0036.enter as room0036
+import rooms.r0037.enter as room0037
+import rooms.r0038.enter as room0038
+import rooms.r0039.enter as room0039
+import rooms.r0040.enter as room0040
+import rooms.r0041.enter as room0041
+import rooms.r0042.enter as room0042
+import rooms.r0043.enter as room0043
+import rooms.r0044.enter as room0044
+import rooms.r0045.enter as room0045
+import rooms.r0046.enter as room0046
+import rooms.r0047.enter as room0047
+import rooms.r0048.enter as room0048
+import rooms.r0049.enter as room0049
+import rooms.r0050.enter as room0050
+import rooms.r0051.enter as room0051
+import rooms.r0052.enter as room0052
+import rooms.r0053.enter as room0053
+import rooms.r0054.enter as room0054
+import rooms.r0055.enter as room0055
+import rooms.r0056.enter as room0056
+import rooms.r0057.enter as room0057
+import rooms.r0058.enter as room0058
+import rooms.r0059.enter as room0059
+import rooms.r0060.enter as room0060
+import rooms.r0061.enter as room0061
+import rooms.r0062.enter as room0062
+import rooms.r0063.enter as room0063
+scene start():
+    val destinations = [
+        ::room0000,
+        ::room0001,
+        ::room0002,
+        ::room0003,
+        ::room0004,
+        ::room0005,
+        ::room0006,
+        ::room0007,
+        ::room0008,
+        ::room0009,
+        ::room0010,
+        ::room0011,
+        ::room0012,
+        ::room0013,
+        ::room0014,
+        ::room0015,
+        ::room0016,
+        ::room0017,
+        ::room0018,
+        ::room0019,
+        ::room0020,
+        ::room0021,
+        ::room0022,
+        ::room0023,
+        ::room0024,
+        ::room0025,
+        ::room0026,
+        ::room0027,
+        ::room0028,
+        ::room0029,
+        ::room0030,
+        ::room0031,
+        ::room0032,
+        ::room0033,
+        ::room0034,
+        ::room0035,
+        ::room0036,
+        ::room0037,
+        ::room0038,
+        ::room0039,
+        ::room0040,
+        ::room0041,
+        ::room0042,
+        ::room0043,
+        ::room0044,
+        ::room0045,
+        ::room0046,
+        ::room0047,
+        ::room0048,
+        ::room0049,
+        ::room0050,
+        ::room0051,
+        ::room0052,
+        ::room0053,
+        ::room0054,
+        ::room0055,
+        ::room0056,
+        ::room0057,
+        ::room0058,
+        ::room0059,
+        ::room0060,
+        ::room0061,
+        ::room0062,
+        ::room0063,
+    ]
+    for destination in destinations:
+        visit destination()
+    choice:
+        option "Seen ${visits}":
+            Unit
+    prose:
+        ${visits}|${total}

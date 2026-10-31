@@ -1,0 +1,5 @@
+data class Holder<T>:
+    val value: T
+    fun <T> invalid(input: T) -> T = input
+scene start():
+    Unit

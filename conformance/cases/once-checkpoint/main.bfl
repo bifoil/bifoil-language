@@ -1,0 +1,15 @@
+scene start():
+    var prepared = 0
+    fun label() -> String:
+        prepared += 1
+        return "Once"
+    suspend fun ask():
+        choice:
+            option "${label()}" once:
+                prose:
+                    Selected.
+            else:
+                prose:
+                    Empty ${prepared}.
+    ask()
+    ask()

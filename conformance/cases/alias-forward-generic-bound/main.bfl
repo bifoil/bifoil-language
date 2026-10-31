@@ -1,0 +1,6 @@
+typealias Checked<T: Later<String>> = T
+typealias Later<U> = List<U>
+scene start():
+    val names: Checked<List<String>> = ["Ada"]
+    prose:
+        ${names[0]}

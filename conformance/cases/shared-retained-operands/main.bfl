@@ -1,0 +1,12 @@
+shared val result = first() + later
+shared var calls = 0
+shared val later = second()
+fun first() -> Int:
+    calls += 1
+    return 5
+fun second() -> Int:
+    calls += 1
+    return 10
+scene start():
+    prose:
+        ${result}|${calls}

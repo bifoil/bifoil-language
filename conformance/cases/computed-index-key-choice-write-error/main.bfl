@@ -1,0 +1,8 @@
+suspend fun read(values: List<String?>, var index: Int) -> Int:
+    values[index + 1]!!
+    choice:
+        option "Move":
+            index += 1
+    return values[index + 1].length
+scene start():
+    Unit

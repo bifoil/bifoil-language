@@ -1,0 +1,6 @@
+data class Key<T: StableKey>:
+    val value: T
+fun unused(value: Key<() -> Int>):
+    return
+scene start():
+    return

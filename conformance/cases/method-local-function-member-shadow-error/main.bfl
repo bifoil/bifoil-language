@@ -1,0 +1,9 @@
+sealed class Outcome:
+    case Success(item: Int)
+data class Counter:
+    var value: Int
+    fun read() -> Int:
+        fun value() -> Int = 7
+        return value()
+scene start():
+    Unit

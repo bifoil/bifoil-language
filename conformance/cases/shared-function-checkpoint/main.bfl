@@ -1,0 +1,12 @@
+shared val reader = ::read
+shared val value = prepare()
+shared var runs = 0
+fun read() = value
+fun prepare() -> Int:
+    runs += 1
+    return 7
+scene start():
+    choice:
+        option "Continue":
+            prose:
+                ${reader()}|${runs}

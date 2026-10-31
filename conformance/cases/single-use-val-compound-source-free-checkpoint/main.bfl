@@ -1,0 +1,16 @@
+import helpers.named
+import helpers.field
+import helpers.list
+import helpers.mapping
+import helpers.text
+scene start():
+    val namedResult = named()
+    val fieldResult = field()
+    val listResult = list()
+    val mapResult = mapping()
+    val textResult = text()
+    choice:
+        option "Compound complete":
+            Unit
+    prose:
+        ${namedResult}|${fieldResult}|${listResult}|${mapResult}|${textResult}

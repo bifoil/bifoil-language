@@ -1,0 +1,16 @@
+data class Receiver:
+    fun accept(value: Int):
+        return
+fun invalid(callback: ((Int) -> Unit)?) -> Int:
+    val result: Int
+    callback?.(
+        if true:
+            result = 1
+            0
+        else:
+            result = 2
+            0
+    )
+    return result
+scene start():
+    return

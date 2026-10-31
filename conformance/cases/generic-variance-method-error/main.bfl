@@ -1,0 +1,6 @@
+data class Box<out T>:
+    val value: T
+    fun consume(other: T):
+        return
+scene start():
+    return

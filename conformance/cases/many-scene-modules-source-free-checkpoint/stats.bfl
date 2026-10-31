@@ -1,0 +1,2 @@
+export shared var visits: Int = 0
+export shared var total: Int = 0

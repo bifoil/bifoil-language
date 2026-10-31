@@ -1,0 +1,16 @@
+export fun run() -> List<String>:
+    var result: Int
+    val observed: MutableList<String> = []
+    for ordinal in 1..2:
+        val status = if ordinal == 1:
+            initialize(3)
+        else:
+            initialize("Ada")
+        observed.add("${status}|${result}")
+    fun initialize(value: Int) -> String:
+        result = value
+        return "int ${result}"
+    fun initialize(name: String) -> String:
+        result = name.length
+        return "text ${result}"
+    return observed

@@ -1,0 +1,11 @@
+export suspend fun run(seed: Int) -> String:
+    val x: Int
+    val y: Int
+    suspend fun initialize(value: Int):
+        x = value
+        choice:
+            option "Finish ${x}":
+                Unit
+        y = x + 1
+    initialize(seed)
+    return "${x}|${y}"

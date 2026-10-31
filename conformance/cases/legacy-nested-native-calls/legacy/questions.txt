@@ -1,0 +1,4 @@
+*label ask
+*gosub_scene submenu pick 4
+*set answer + 1
+*return

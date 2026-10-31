@@ -1,0 +1,10 @@
+scene start():
+    if true:
+        fun read(value: Int = 7) -> Int = value
+        fun through() -> Int = read()
+        val first = through()
+    if true:
+        var future: Int
+        fun read(value: Int = future) -> Int = value
+        fun through() -> Int = read()
+        val second = through()

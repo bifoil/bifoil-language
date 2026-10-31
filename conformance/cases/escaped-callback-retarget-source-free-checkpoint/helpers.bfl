@@ -1,0 +1,2 @@
+export shared var callback: () -> Int = () => 0
+export fun invoke() -> Int = callback()

@@ -1,0 +1,6 @@
+data class Box:
+    var value: String?
+export fun run() -> String:
+    val holder = Box(null)
+    holder.value += return "done"
+    return "unreachable"

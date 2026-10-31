@@ -1,0 +1,34 @@
+export data class Box<T>:
+    val value: T?
+export fun <T> fromBinding(value: T?, fallback: T):
+    if value is String:
+        return value
+    return fallback
+export fun <T> fromField(holder: Box<T>, fallback: T):
+    if holder.value is String:
+        return holder.value
+    return fallback
+export fun <T> fromList(values: List<T?>, fallback: T):
+    if values[0] is String:
+        return values[0]
+    return fallback
+export fun <T> fromMap(values: Map<String, T>, fallback: T):
+    if values["value"] is String:
+        return values["value"]
+    return fallback
+export fun <T> conditional(value: T?, fallback: T) = if value is String:
+    value
+else:
+    fallback
+export fun <T> matched(value: T?, fallback: T) = when value:
+    case is String:
+        value
+    else:
+        fallback
+export suspend fun <T> deferred(values: Map<String, T>, fallback: T):
+    if values["value"] is String:
+        choice:
+            option "Resume inferred generic result":
+                Unit
+        return values["value"]
+    return fallback

@@ -1,0 +1,9 @@
+import helpers.guarded
+import helpers.callback
+import helpers.ask
+scene start():
+    prose:
+        ${guarded("Ada")}|${guarded(null)}|${callback("four")()}|${callback(null)()}
+    val answer = ask("sixsix")
+    prose:
+        ${answer}

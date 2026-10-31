@@ -1,0 +1,12 @@
+scene start():
+    val result: Int
+    fun initialize() -> Int:
+        result = 3
+        return 3
+    choice:
+        option "${initialize()}" once:
+            Unit
+        else:
+            Unit
+    prose:
+        ${result}

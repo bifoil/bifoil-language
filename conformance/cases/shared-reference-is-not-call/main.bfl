@@ -1,0 +1,6 @@
+shared val reader = ::read
+shared val value = 7
+fun read() -> Int = value
+scene start():
+    prose:
+        ${reader()}

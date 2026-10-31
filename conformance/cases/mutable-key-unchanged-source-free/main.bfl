@@ -1,0 +1,5 @@
+import helpers.read
+import helpers.item
+scene start():
+    prose:
+        ${read({"name": "Ada"}, "name")}|${item(["Ada"], 0)}

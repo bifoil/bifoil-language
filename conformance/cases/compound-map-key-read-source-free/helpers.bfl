@@ -1,0 +1,11 @@
+fun update(values: MutableMap<Int, String?>) -> String:
+    var selected = 0
+    fun reset() -> String:
+        selected = 1
+        values[0] = null
+        return "!"
+    if values[selected] == null:
+        return "missing"
+    values[selected] += reset()
+    return values[0]!! + "|" + String(selected) + "|" + values[1]!!
+export fun run() -> String = update(mutable {0: "Ada", 1: "Other"})

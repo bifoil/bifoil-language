@@ -1,0 +1,10 @@
+sealed class Result<T>:
+    case Good(value: T)
+    case Missing
+scene start():
+    val hidden: Result<*> = Result.Good("text")
+    val output = when hidden:
+        case is Result.Good<Int>:
+            1
+        case is Result.Missing<Int>:
+            2

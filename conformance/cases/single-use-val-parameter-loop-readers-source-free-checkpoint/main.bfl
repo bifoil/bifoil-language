@@ -1,0 +1,8 @@
+import helpers.collect
+scene start():
+    val readers = collect()
+    choice:
+        option "Retained parameters":
+            Unit
+    prose:
+        ${readers[0]()}|${readers[1]()}|${readers[2]()}

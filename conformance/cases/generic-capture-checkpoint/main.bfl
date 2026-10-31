@@ -1,0 +1,10 @@
+suspend fun <T> retain(value: T) -> T:
+    val get = () -> T => value
+    choice:
+        option "Continue":
+            val ignored = 0
+    return get()
+scene start():
+    val saved = retain("kept")
+    prose:
+        ${saved}

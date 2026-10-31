@@ -1,0 +1,6 @@
+import a.Box
+import b.wrap
+scene start():
+    val boxed = wrap("ok")
+    prose:
+        ${boxed.value}|${boxed is Box<String>}|${boxed.wrapped().value}

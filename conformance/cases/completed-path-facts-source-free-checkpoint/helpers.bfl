@@ -1,0 +1,59 @@
+export fun byIf(selector: Int):
+    val first: Int
+    val second: Int
+    val result: Int
+    var read: () -> Int = () => 0
+    if selector == 0:
+        result = 10
+        read = () => first
+    elif selector == 1:
+        result = 20
+        read = () => second
+    elif selector == 2:
+        return 90
+    else:
+        result = 30
+        read = () => first + second
+    first = 3
+    second = 7
+    return result + read()
+export fun byWhen(selector: Int):
+    val first: Int
+    val second: Int
+    val result: Int
+    var read: () -> Int = () => 0
+    when selector:
+        case 0:
+            result = 10
+            read = () => first
+        case 1:
+            result = 20
+            read = () => second
+        case 2:
+            return 90
+        else:
+            result = 30
+            read = () => first + second
+    first = 3
+    second = 7
+    return result + read()
+export suspend fun ask():
+    val first: Int
+    val second: Int
+    val result: Int
+    var read: () -> Int = () => 0
+    choice:
+        option "First":
+            result = 10
+            read = () => first
+        option "Second":
+            result = 20
+            read = () => second
+        option "Early":
+            return 90
+        option "Both":
+            result = 30
+            read = () => first + second
+    first = 3
+    second = 7
+    return result + read()

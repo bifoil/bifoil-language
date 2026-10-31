@@ -1,0 +1,4 @@
+fun apply(callback: (Int) -> Int) -> Int = callback(0)
+scene start():
+    prose:
+        ${apply((value: Int) => 1 / value)}

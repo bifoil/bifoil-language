@@ -1,0 +1,7 @@
+scene start():
+    if true:
+        val x = 1
+        val callbacks = [::read]
+        val result = callbacks[0]()
+    val x = 2
+    fun read() -> Int = x

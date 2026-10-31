@@ -1,0 +1,5 @@
+scene start():
+    val x: Int
+    val readers = [() => x]
+    for reader in readers:
+        reader()

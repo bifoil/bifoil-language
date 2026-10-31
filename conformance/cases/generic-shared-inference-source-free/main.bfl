@@ -1,0 +1,8 @@
+import helpers.Tree
+import helpers.count
+scene start():
+    val empty: Tree<Int> = {}
+    choice:
+        option "Infer the repeated generic argument":
+            prose:
+                ${count(empty)}|${empty is Tree<Int>}|${empty is Tree<Float>}

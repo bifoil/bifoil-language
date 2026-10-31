@@ -1,0 +1,10 @@
+export fun run() -> () -> String:
+    val items: Any = [1, 2]
+    fun read() -> String:
+        if items is List<Int>:
+            var result: Int
+            for item in items:
+                result = item
+            return "${result}"
+        return "unexpected"
+    return ::read

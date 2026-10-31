@@ -1,0 +1,7 @@
+import owner.Public
+import owner.make
+scene start():
+    val instance: Public = make()
+    val copied = instance.copy(value = 8)
+    prose:
+        ${instance.value}|${copied.value}

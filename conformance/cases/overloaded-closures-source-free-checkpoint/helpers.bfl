@@ -1,0 +1,5 @@
+export fun make() -> List<() -> Int>:
+    fun read(value: Int) -> Int = value
+    fun read(value: String) -> Int = value.length
+    fun through() -> Int = read("Ada")
+    return [::through, () => read("four")]

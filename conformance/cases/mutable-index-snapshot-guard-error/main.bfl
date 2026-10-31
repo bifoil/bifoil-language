@@ -1,0 +1,8 @@
+suspend fun invalid(values: MutableList<String?>) -> Int:
+    choice:
+        option "Read" if values[0] != null:
+            return values[0].length
+        else:
+            return 0
+scene start():
+    Unit

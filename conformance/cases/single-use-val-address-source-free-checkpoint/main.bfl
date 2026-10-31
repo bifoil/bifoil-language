@@ -1,0 +1,14 @@
+import helpers.field
+import helpers.items
+import helpers.mapping
+import helpers.orphan
+scene start():
+    val fieldStatus = field()
+    val listStatus = items()
+    val mapStatus = mapping()
+    val orphanStatus = orphan()
+    choice:
+        option "Address complete":
+            Unit
+    prose:
+        ${fieldStatus}|${listStatus}|${mapStatus}|${orphanStatus}

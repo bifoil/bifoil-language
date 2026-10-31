@@ -1,0 +1,28 @@
+scene start():
+    var count = 0
+    fun subject() -> Int:
+        count += 1
+        return 3
+    val result = when val item = subject():
+        case 1, 2:
+            "small"
+        case in 3..5 if item == 3:
+            "three"
+        else:
+            "other"
+    val boolean = when true:
+        case true:
+            1
+        case false:
+            2
+    val unknown: Any = "text"
+    when unknown:
+        case is String if unknown.length == 0:
+            count += 100
+        case is String:
+            count += unknown.length
+    when 9:
+        case 8:
+            count += 1000
+    prose:
+        ${result}|${boolean}|${count}

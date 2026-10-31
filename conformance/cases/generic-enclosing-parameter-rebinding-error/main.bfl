@@ -1,0 +1,5 @@
+fun <T> outer(value: T) -> String:
+    fun <U> inner(original: T, extra: U) -> String = String(original)
+    return inner("changed", 1)
+scene start():
+    Unit

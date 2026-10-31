@@ -1,0 +1,4 @@
+fun <A: Equatable, B: Equatable> same(first: A, second: B) -> Boolean = first === second
+export fun run() -> () -> String:
+    fun read() -> String = "${same(3, 3.0)}|${same(3, 3)}|${same('a', "a")}|${same<Int?, Int>(3, 3)}"
+    return ::read

@@ -1,0 +1,11 @@
+scene start():
+    val values: List<Int> = []
+    var visits = 0
+    for value in values:
+        visits += 1
+        prose:
+            This must not execute.
+    choice:
+        option "Continue":
+            prose:
+                ${visits}|${values.size}

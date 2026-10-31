@@ -1,0 +1,16 @@
+export suspend fun run(seed: Int) -> String:
+    val result: Int
+    suspend fun initialize(value: Int) = if value >= 0:
+        choice:
+            option "Before expression":
+                Unit
+        result = value
+        choice:
+            option "After ${result}":
+                Unit
+        "positive"
+    else:
+        result = -value
+        "negative"
+    val status = initialize(seed)
+    return "${result}|${status}"

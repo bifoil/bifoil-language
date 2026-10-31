@@ -1,0 +1,28 @@
+typealias A0 = Int
+typealias B0 = Float
+typealias A1 = Map<A0, A0>
+typealias B1 = Map<B0, B0>
+export typealias A2 = Map<A1, A1>
+export typealias B2 = Map<B1, B1>
+export fun convert(value: A2) -> B2 = value
+export fun choose(flag: Boolean, first: A2, second: B2) = if flag:
+    first
+else:
+    second
+fun <T> firstOf(first: T, second: T) -> T = first
+fun leaf(value: B2) -> Float:
+    for outer in value:
+        for inner in outer.value:
+            return inner.value
+    return 0.0
+export suspend fun run(value: A2) -> String:
+    val converted = convert(value)
+    val selected = choose(true, value, converted)
+    val merged = firstOf(value, converted)
+    val mutableCopy: MutableList<B2> = [value]
+    val snapshot: List<B2> = mutableCopy
+    mutableCopy.clear()
+    choice:
+        option "Continue":
+            Unit
+    return "${converted is B2}|${selected is B2}|${merged is B2}|${leaf(selected) == 2.0}|${snapshot.size}|${mutableCopy.size}"

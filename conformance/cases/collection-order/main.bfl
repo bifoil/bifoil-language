@@ -1,0 +1,13 @@
+scene start():
+    val mapping: MutableMap<String, Int?> = {"a": 1, "b": 2}
+    mapping.remove("a")
+    mapping["a"] = 3
+    mapping["c"] = null
+    var order = ""
+    for entry in mapping:
+        order += entry.key
+        mapping["d"] = 4
+    val empty: Set<Int> = {}
+    val unique = {1, 1, 2}
+    prose:
+        ${order}|${"c" in mapping}|${mapping["absent"] == null}|${unique.size}|${empty.size}

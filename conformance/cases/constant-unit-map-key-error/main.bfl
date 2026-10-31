@@ -1,0 +1,2 @@
+scene start():
+    val values: Map<Unit, Int> = {Unit: 1, Unit: 2}

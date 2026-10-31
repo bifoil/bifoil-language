@@ -1,0 +1,7 @@
+sealed class Outcome:
+    case Success(item: Int)
+data class Counter:
+    var value: Int
+    fun action() -> (Int) -> Int = (value: Int) => value
+scene start():
+    Unit

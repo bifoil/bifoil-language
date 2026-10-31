@@ -1,0 +1,5 @@
+data class Box<T: Any>:
+    val value: T
+typealias Invalid = Box<String?>
+scene start():
+    return

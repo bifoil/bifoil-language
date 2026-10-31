@@ -1,0 +1,8 @@
+export fun run() -> () -> String:
+    val original: List<Int> = []
+    val erased: List<Any> = original
+    fun read() -> String:
+        if erased is List<Int>:
+            return "${erased === original}"
+        return "unexpected"
+    return ::read

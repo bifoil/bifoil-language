@@ -1,0 +1,12 @@
+export data class Key:
+    val value: Int
+export data class Box<T: Key>:
+    val value: T
+export data class Wrapped:
+    val box: Box<*>
+export data class IntBox<T: Int>:
+    val value: T
+export data class ListBox<T: List<Int>>:
+    val value: T
+export data class EqualityBox<T: MutableList<Int>>:
+    val value: T

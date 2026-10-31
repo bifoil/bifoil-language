@@ -1,0 +1,7 @@
+scene start():
+    val result: Int
+    fun initialize() -> Boolean:
+        result = 3
+        return true
+    while initialize():
+        break

@@ -1,0 +1,5 @@
+export shared var trace: String = ""
+export shared val value: Int = initialize()
+fun initialize() -> Int:
+    trace += "state"
+    return 7

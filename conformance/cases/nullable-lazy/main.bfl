@@ -1,0 +1,15 @@
+scene start():
+    var calls = 0
+    fun mark() -> Int:
+        calls += 1
+        return 0
+    val missing: String? = null
+    val callback: ((Int) -> Int)? = null
+    val a = missing?[mark()] ?: 'z'
+    val b = callback?.(mark()) ?: 4
+    val present: Int? = 3
+    val wider: Float? = present
+    val unknown: Any = "ok"
+    if unknown is String:
+        prose:
+            ${a}|${b}|${calls}|${wider!! === 3.0}|${unknown.length}

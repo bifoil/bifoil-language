@@ -1,0 +1,3 @@
+import b.Second
+export data class First:
+    val next: Second? = null

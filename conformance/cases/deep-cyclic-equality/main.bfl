@@ -1,0 +1,19 @@
+data class Node:
+    var value: Int
+    var next: Node? = null
+fun cycle() -> Node:
+    val first = Node(1)
+    var last = first
+    for index in 1..6000:
+        val next = Node(1)
+        last.next = next
+        last = next
+    last.next = first
+    return first
+scene start():
+    val first = cycle()
+    val second = cycle()
+    val same = first == second
+    second.next!!.value = 2
+    prose:
+        ${same}|${first == second}|${first === first}

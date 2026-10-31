@@ -1,0 +1,3 @@
+shared val value = null
+scene start():
+    return

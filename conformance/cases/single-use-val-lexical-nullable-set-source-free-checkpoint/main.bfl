@@ -1,0 +1,8 @@
+import helpers.run
+scene start():
+    val value = run()
+    choice:
+        option "Saved":
+            Unit
+    prose:
+        ${value is Set<String>}|${(value as Set<String?>).size}

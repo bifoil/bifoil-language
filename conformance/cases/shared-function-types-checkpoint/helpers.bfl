@@ -1,0 +1,9 @@
+export typealias Transform<T> = (T) -> T
+export typealias Higher<T> = (Transform<T>) -> Transform<T>
+export fun <T> relay(operation: Higher<T>, inner: Transform<T>) -> Transform<T> = operation(inner)
+export suspend fun run(operation: Higher<Int>, inner: Transform<Int>) -> Int:
+    val ready = relay(operation, inner)
+    choice:
+        option "Continue":
+            Unit
+    return ready(4)

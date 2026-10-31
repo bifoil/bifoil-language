@@ -1,0 +1,6 @@
+data class Box:
+    var value: String?
+fun invalid(holder: Box):
+    holder.value += "!"
+scene start():
+    Unit

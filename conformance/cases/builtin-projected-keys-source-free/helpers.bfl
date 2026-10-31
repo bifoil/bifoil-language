@@ -1,0 +1,7 @@
+export data class Keys:
+    val members: Set<*>
+    val table: Map<*, Int>
+export fun sameSet(left: Set<*>, right: Set<*>) -> Boolean = left == right
+export fun sameMap(left: Map<*, Int>, right: Map<*, Int>) -> Boolean = left == right
+export data class SetBox<T: Set<*>>:
+    val value: T

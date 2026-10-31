@@ -1,0 +1,10 @@
+export fun run() -> () -> Int:
+    var result: Int
+    val reader = initialize<String>("Ada", values = [3, 4])
+    fun <T: Equatable> initialize(value: T, vararg values: Int) -> () -> Int:
+        if value == value:
+            result = values.size
+        else:
+            result = 0
+        return () => result
+    return reader

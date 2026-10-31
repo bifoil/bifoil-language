@@ -1,0 +1,7 @@
+fun read(values: List<String?>, var index: Int) -> Int:
+    if values[index] != null:
+        index = index + 1
+        return values[index].length
+    return 0
+scene start():
+    Unit

@@ -1,0 +1,3 @@
+export shared var name: String? = "Ada"
+export shared var dynamic: Any? = "Ada"
+export shared var values: Map<String, String?> = {"name": "Ada"}

@@ -1,0 +1,23 @@
+export enum Mood:
+    Happy
+    Sad
+export suspend fun exercise() -> String:
+    val before = pick()
+    val callback: (Mood) -> Mood = ::pick
+    fun pick(value: Mood = Happy) -> Mood:
+        fun answer() -> Mood = Happy
+        return if value == Mood.Sad:
+            value
+        else:
+            answer()
+    val block: Mood = if true:
+        fun choose() -> Mood = Sad
+        choose()
+    else:
+        Happy
+    fun early() -> Mood = Happy
+    val Happy = Mood.Sad
+    choice:
+        option "Check enums":
+            Unit
+    return "${before == Mood.Happy}|${callback(Mood.Sad) == Mood.Sad}|${block == Mood.Sad}|${early() == Mood.Happy}|${Happy == Mood.Sad}"

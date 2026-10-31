@@ -1,0 +1,11 @@
+export fun <T> make(input: T) -> () -> T:
+    val result: T
+    fun <U: T> initialize(value: U) = when true:
+        case true:
+            result = value
+            () => result
+        else:
+            result = value
+            () => result
+    val saved = initialize<T>(input)
+    return saved

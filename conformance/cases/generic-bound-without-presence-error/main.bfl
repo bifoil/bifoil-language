@@ -1,0 +1,4 @@
+fun <U: Any> present(value: U) -> U = value
+fun <T> invalid(value: T) -> T = present(value)
+scene start():
+    Unit

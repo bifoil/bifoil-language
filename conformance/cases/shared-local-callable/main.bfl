@@ -1,0 +1,9 @@
+shared val a = prepare()
+shared val b = 7
+fun read() -> Int = b
+fun prepare() -> Int:
+    val callback = ::read
+    return callback()
+scene start():
+    prose:
+        ${a}

@@ -1,0 +1,4 @@
+fun invoke(callback: () -> Int) -> Int = callback()
+scene start():
+    val x: Int
+    invoke(() => x)

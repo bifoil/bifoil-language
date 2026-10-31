@@ -1,0 +1,4 @@
+scene start():
+    choice:
+        option "Impossible" if "z" < "a":
+            return

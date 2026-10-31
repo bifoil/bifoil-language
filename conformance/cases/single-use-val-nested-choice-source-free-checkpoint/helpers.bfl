@@ -1,0 +1,15 @@
+export suspend fun run(flag: Boolean) -> Int:
+    val result: Int
+    suspend fun initialize():
+        choice:
+            option "Outer":
+                choice:
+                    option "Inner" if flag:
+                        result = 3
+                    else:
+                        result = 4
+        choice:
+            option "After ${result}":
+                Unit
+    initialize()
+    return result

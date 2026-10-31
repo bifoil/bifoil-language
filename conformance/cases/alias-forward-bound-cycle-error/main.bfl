@@ -1,0 +1,4 @@
+typealias A<T: B<T>> = T
+typealias B<T: A<T>> = T
+scene start():
+    Unit

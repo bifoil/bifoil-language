@@ -1,0 +1,6 @@
+export shared val a = record("A") + b
+export shared val b = record("B")
+export shared var log = ""
+fun record(letter: String) -> Int:
+    log += letter
+    return 1

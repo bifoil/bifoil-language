@@ -1,0 +1,5 @@
+export fun makeReader() -> () -> Int:
+    var unusedDefault: Int
+    fun read(value: Int = unusedDefault) -> Int = value
+    fun through() -> Int = read(7)
+    return ::through

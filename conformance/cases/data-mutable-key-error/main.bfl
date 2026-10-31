@@ -1,0 +1,4 @@
+data class Person:
+    var score: Int = 3
+scene start():
+    val people = {Person()}

@@ -1,0 +1,4 @@
+import a.convert
+scene start():
+    prose:
+        ${convert(6)}

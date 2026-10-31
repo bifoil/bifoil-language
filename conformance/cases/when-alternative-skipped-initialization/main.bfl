@@ -1,0 +1,16 @@
+fun run(flag: Boolean):
+    val x: Int
+    when:
+        case flag, (if true:
+            x = 1
+            true
+        else:
+            x = 2
+            true
+        ):
+            prose:
+                ${x}
+        else:
+            return
+scene start():
+    return

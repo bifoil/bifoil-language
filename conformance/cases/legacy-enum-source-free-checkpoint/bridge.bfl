@@ -1,0 +1,4 @@
+import schema.Mood
+export legacy var current: Mood? = "current"
+export legacy fun echo(value: Mood?) -> Mood? = "questions" label "echo" result "null_answer"
+export legacy suspend fun ask(value: Mood = Mood.Happy) -> Mood = "questions" label "ask" result "answer"

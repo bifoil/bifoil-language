@@ -1,0 +1,4 @@
+fun unused(value: Set<() -> Int>):
+    return
+scene start():
+    return

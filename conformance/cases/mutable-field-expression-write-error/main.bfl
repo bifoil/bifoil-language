@@ -1,0 +1,12 @@
+data class Box:
+    var value: String?
+fun invalid(holder: Box):
+    holder.value!!
+    val ignored = if true:
+        holder.value = null
+        Unit
+    else:
+        Unit
+    return holder.value.length
+scene start():
+    Unit

@@ -1,0 +1,14 @@
+shared var callback: () -> Int = () => 0
+fun invoke() -> Int = callback()
+scene start():
+    var future: Int
+    val local = () => future
+    future = 3
+    callback = local
+    val before = invoke()
+    choice:
+        option "Resume shared capture":
+            Unit
+    future = 9
+    prose:
+        ${before}|${invoke()}

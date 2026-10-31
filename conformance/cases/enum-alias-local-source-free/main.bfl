@@ -1,0 +1,17 @@
+import helpers.Mood
+import helpers.Color
+import helpers.selected
+import helpers.retained
+import helpers.delayed
+scene start():
+    val first = selected()
+    val callback = retained()
+    val second = delayed()
+    val third = if true:
+        val chosen = Local.Happy
+        typealias Local = Color
+        chosen
+    else:
+        Mood.Sad
+    prose:
+        ${first == Mood.Happy}|${callback() == Mood.Sad}|${second == Mood.Sad}|${third == Mood.Happy}

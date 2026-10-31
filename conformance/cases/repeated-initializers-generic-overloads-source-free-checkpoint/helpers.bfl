@@ -1,0 +1,16 @@
+export fun run(flag: Boolean) -> () -> String:
+    var result: Int
+    val status = if flag:
+        initialize(3)
+    else:
+        initialize("Ada")
+    fun initialize(value: Int) -> String:
+        result = value
+        return "int ${result}"
+    fun <T: Equatable> initialize(value: T) -> String:
+        if value == value:
+            result = 4
+        else:
+            result = 5
+        return "generic ${result}"
+    return () => "${status}|${result}"

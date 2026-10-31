@@ -1,0 +1,8 @@
+scene start():
+    var score: Int
+    fun bump():
+        score += 1
+    score = 3
+    bump()
+    prose:
+        ${score}

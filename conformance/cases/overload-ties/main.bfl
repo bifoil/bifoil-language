@@ -1,0 +1,9 @@
+fun direct(value: Int, extra: Int = 0) = "fixed"
+fun direct(vararg values: Int) = "variadic"
+fun defaults(value: Int, extra: Int = 0) = "fewer"
+fun defaults(value: Int, extra: Int = 0, last: Int = 0) = "more"
+fun <T> generic(value: T) = "generic"
+fun generic(value: Int) = "concrete"
+scene start():
+    prose:
+        ${direct(1)}|${defaults(1)}|${generic(1)}|${generic("x")}

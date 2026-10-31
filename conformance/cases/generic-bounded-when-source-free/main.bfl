@@ -1,0 +1,20 @@
+import helpers.Mood
+import helpers.Outcome
+import helpers.enumName
+import helpers.optionalMood
+import helpers.booleanName
+import helpers.booleanAfterNull
+import helpers.inspect
+import helpers.optionalOutcome
+import helpers.identity
+import helpers.nonNullAlternative
+scene start():
+    val saved = ::inspect<Outcome<Int>>
+    choice:
+        option "Describe":
+            prose:
+                ${enumName(Mood.Happy)}|${enumName(Mood.Sad)}|${optionalMood<Mood?>(Mood.Happy)}|${optionalMood<Mood?>(null)}
+                ${booleanName<Boolean?>(true)}|${booleanName<Boolean?>(false)}|${booleanName<Boolean?>(null)}
+                ${saved(Outcome.Success(7))}|${inspect(Outcome.Pending<Int>())}|${optionalOutcome<Outcome<Int>?>(null)}
+                ${identity<String?>(null) == null}|${nonNullAlternative("Ada", "Ada")}
+                ${booleanAfterNull<Boolean?>(true)}|${booleanAfterNull<Boolean?>(null)}

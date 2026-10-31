@@ -1,0 +1,18 @@
+export fun run(seed: Int) -> String:
+    val result: Int
+    var status = "pending"
+    fun initialize(value: Int) -> String:
+        result = value
+        return "ready"
+    status = ((initialize)(seed))
+    return "${result}|${status}"
+export fun unit() -> Int:
+    val result: Int
+    val status: Unit
+    fun initialize():
+        result = 5
+    status = (initialize())
+    if status == Unit:
+        return result
+    else:
+        return 0

@@ -1,0 +1,9 @@
+shared var name: String? = "Ada"
+suspend fun unsafe():
+    choice:
+        option "Read" if name != null:
+            return name.length
+        else:
+            return 0
+scene start():
+    unsafe()

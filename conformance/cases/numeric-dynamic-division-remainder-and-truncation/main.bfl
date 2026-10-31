@@ -1,0 +1,9 @@
+fun integer(value: Int) -> Int = value
+fun floating(value: Float) -> Float = value
+scene start():
+    val remainder = integer(-2147483648) % integer(-1)
+    val quotient = integer(-3) / integer(2)
+    val negative = floating(-3.9).toInt()
+    val positive = floating(3.9).toInt()
+    prose:
+        ${remainder}|${quotient}|${negative}|${positive}

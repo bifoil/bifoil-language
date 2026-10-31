@@ -1,0 +1,8 @@
+shared val first: Int = if true:
+    3
+else:
+    second
+shared val second: Int = first
+scene start():
+    prose:
+        ${first}|${second}

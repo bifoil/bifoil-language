@@ -1,0 +1,7 @@
+import state.key as first
+import state.key as second
+scene start():
+    val values: Map<String, String?> = {"first": "Ada", "second": "Bifoil"}
+    values[first]!!
+    second = "missing"
+    val length = values[first].length

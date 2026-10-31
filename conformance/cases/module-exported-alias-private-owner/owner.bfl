@@ -1,0 +1,4 @@
+data class Secret:
+    val value: Int
+export typealias Public = Secret
+export fun make() -> Public = Secret(4)

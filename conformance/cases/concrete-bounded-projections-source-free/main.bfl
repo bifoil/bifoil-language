@@ -1,0 +1,18 @@
+import helpers.Key
+import helpers.Box
+import helpers.Wrapped
+import helpers.IntBox
+import helpers.ListBox
+import helpers.EqualityBox
+scene start():
+    val left: Box<*> = Box(Key(3))
+    val right: Box<*> = Box(Key(3))
+    val wrapped: Set<Wrapped> = {Wrapped(left), Wrapped(right)}
+    val mapping: Map<Box<*>, String> = {left: "three"}
+    val integers: Set<IntBox<*>> = {IntBox(4), IntBox(4)}
+    val lists: Set<ListBox<*>> = {ListBox([1, 2]), ListBox([1, 2])}
+    val compared: EqualityBox<*> = EqualityBox(mutable [1, 2])
+    choice:
+        option "Continue":
+            prose:
+                ${wrapped.size}|${integers.size}|${lists.size}|${mapping[right]!!}|${compared == compared}

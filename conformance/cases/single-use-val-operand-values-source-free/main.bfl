@@ -1,0 +1,16 @@
+import helpers.unitCall
+import helpers.arithmetic
+import helpers.collection
+import helpers.target
+import helpers.formatted
+scene start():
+    val first = unitCall()
+    val second = arithmetic()
+    val third = collection()
+    val fourth = target()
+    val fifth = formatted()
+    choice:
+        option "Operands complete":
+            Unit
+    prose:
+        ${first}|${second}|${third}|${fourth}|${fifth}

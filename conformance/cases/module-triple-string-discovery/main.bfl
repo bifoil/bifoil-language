@@ -1,0 +1,8 @@
+import helpers.answer
+fun saved() -> String = """Keep
+import missing.symbol
+tail"""
+scene start():
+    val text = saved()
+    prose:
+        ${text.substring(0, 4)}|${text.substring(5, 11)}|${answer()}

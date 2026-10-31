@@ -1,0 +1,27 @@
+import helpers.Callbacks
+import helpers.make
+import helpers.calls
+scene start():
+    val hidden: Callbacks<*> = make()
+    val absent: Callbacks<*> = make(false)
+    val direct: (Nothing?) -> Any? = hidden.callback
+    val returned: (Nothing?) -> Any? = hidden.get()
+    val count: (vararg Nothing) -> Int = hidden.counts
+    val returnedCount: (vararg Nothing) -> Int = hidden.getCount()
+    val waiting: suspend (Nothing?) -> Any? = hidden.waiting
+    val returnedWait: suspend (Nothing?) -> Any? = hidden.getWait()
+    val optionalNull = hidden.optional?.(null) == null
+    val missing = absent.optional?.(null) == null
+    val directNull = direct(null) == null
+    val returnedNull = returned(null) == null
+    val zero = count() + returnedCount()
+    choice:
+        option "Callbacks ${calls}":
+            Unit
+    val waitingNull = waiting(null) == null
+    val returnedWaitNull = returnedWait(null) == null
+    choice:
+        option "Calls ${calls}":
+            Unit
+    prose:
+        ${optionalNull}|${missing}|${directNull}|${returnedNull}|${zero}|${waitingNull}|${returnedWaitNull}|${calls}

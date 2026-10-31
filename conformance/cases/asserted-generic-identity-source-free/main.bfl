@@ -1,0 +1,26 @@
+import helpers.Box
+import helpers.Mood
+import helpers.binding
+import helpers.field
+import helpers.required
+import helpers.requiredField
+import helpers.closure
+import helpers.chosen
+import helpers.empty
+import helpers.mutableEmpty
+scene start():
+    val reader = closure(Box<String?>("saved"))
+    val reference: (String?) -> String = ::required
+    choice:
+        option "Use assertions":
+            Unit
+    val first = binding("kept")
+    val second = field(Box(7))
+    val third: String = required<String?>("yes")
+    val fourth: Int = requiredField(Box<Int?>(8))
+    val mode = chosen()
+    val items = mutableEmpty()
+    items.add(3)
+    val prefix = "${first}|${second}|${third}|${fourth}|${mode == Mood.Happy}"
+    prose:
+        ${prefix}|${empty().size}|${items.size}|${reader() ?: "missing"}|${reference("typed")}

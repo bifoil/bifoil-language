@@ -1,0 +1,6 @@
+fun selectIndex() -> Int = 0
+fun read(values: List<String?>) -> Int:
+    values[selectIndex() + 1]!!
+    return values[selectIndex() + 1].length
+scene start():
+    Unit

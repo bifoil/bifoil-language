@@ -1,0 +1,7 @@
+export fun run() -> () -> Int:
+    var result: Int
+    outer@ for ordinal in 1..3:
+        for other in 1..2:
+            result = ordinal
+            continue@outer
+    return () => result

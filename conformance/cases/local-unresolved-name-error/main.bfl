@@ -1,0 +1,3 @@
+scene start():
+    fun pick() -> Int = missing
+    val result = pick()

@@ -1,0 +1,12 @@
+scene start():
+    val early = select(1)
+    val later = "kept"
+    fun select(value: Int) = "ready"
+    fun select(value: String) = later + value
+    val selected: (String) -> String = ::select
+    prose:
+        ${early}
+    choice:
+        option "Continue":
+            prose:
+                ${selected(":3")}

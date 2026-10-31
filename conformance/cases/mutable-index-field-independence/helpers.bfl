@@ -1,0 +1,13 @@
+data class Box:
+    var value: String?
+export fun run() -> Int:
+    val box = Box("Other")
+    val values: MutableList<String?> = mutable ["four"]
+    if values[0] == null:
+        return 0
+    box.value = "Ada"
+    val first = values[0].length
+    if box.value == null:
+        return first
+    values.add(null)
+    return first + box.value.length

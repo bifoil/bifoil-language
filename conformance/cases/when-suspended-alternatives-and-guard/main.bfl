@@ -1,0 +1,16 @@
+shared var visits: Int = 0
+suspend fun test(label: String, result: Boolean) -> Boolean:
+    visits += 1
+    choice:
+        option "${label}:${visits}":
+            return result
+scene start():
+    val selected = when:
+        case test("first", false), test("second", true) if test("guard", false):
+            "unexpected"
+        case test("last", true):
+            "last"
+        else:
+            "none"
+    prose:
+        ${selected}|${visits}

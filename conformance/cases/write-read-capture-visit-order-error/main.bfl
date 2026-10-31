@@ -1,0 +1,10 @@
+scene start():
+    var value: Int
+    fun read() -> Int = value
+    fun write():
+        value = 1
+    fun both():
+        val previous = read()
+        write()
+    both()
+    value = 2

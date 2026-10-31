@@ -1,0 +1,7 @@
+fun check(flag: Boolean):
+    val result: Int
+    while flag:
+        if flag:
+            result = 1
+scene start():
+    check(false)

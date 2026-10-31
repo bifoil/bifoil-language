@@ -1,0 +1,11 @@
+export fun run() -> () -> String:
+    val items: List<Float> = mutable [1, 2]
+    val alias: List<Float>? = items
+    var observed = false
+    if alias != null:
+        var result: Float
+        for item in alias:
+            result = item
+        observed = result == 2.0
+    fun read() -> String = "${observed}"
+    return ::read

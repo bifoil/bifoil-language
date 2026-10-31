@@ -1,0 +1,8 @@
+import helpers.Checked
+import helpers.echo
+scene start():
+    val message: Checked<String> = "Ada"
+    choice:
+        option "Use the normalized forward bound":
+            prose:
+                ${echo(message)}

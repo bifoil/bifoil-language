@@ -1,0 +1,7 @@
+legacy fun gather(vararg values: Int) -> Int = "native" result "answer"
+scene start():
+    val first = gather(1, *[2, 3], 4)
+    val second = gather(values = [5, 6])
+    val empty = gather()
+    prose:
+        ${first}|${second}|${empty}

@@ -1,0 +1,15 @@
+shared val first = write()
+shared var target = initialize()
+shared var log = ""
+fun produce() -> Int:
+    log += "R"
+    return 9
+fun initialize() -> Int:
+    log += "I"
+    return 1
+fun write() -> Int:
+    target = produce()
+    return target
+scene start():
+    prose:
+        ${first}|${target}|${log}

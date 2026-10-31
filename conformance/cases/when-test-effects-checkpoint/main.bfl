@@ -1,0 +1,20 @@
+suspend fun run(flag: Boolean) -> Int:
+    val x: Int
+    when:
+        case (if flag:
+            x = 1
+            false
+        else:
+            x = 2
+            false
+        ):
+            return 0
+        else:
+            choice:
+                option "Value ${x}":
+                    return x
+scene start():
+    val first = run(true)
+    val second = run(false)
+    prose:
+        ${first}|${second}

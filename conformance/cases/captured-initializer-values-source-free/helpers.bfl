@@ -1,0 +1,13 @@
+data class Box:
+    val value: Int
+export fun run() -> Int:
+    var box: Box
+    var items: List<() -> Int>
+    var mapping: Map<String, () -> Int>
+    fun initialize():
+        val ready = 9
+        box = Box(ready)
+        items = [() => ready]
+        mapping = {"value": () => ready}
+    initialize()
+    return box.value + items[0]() + mapping["value"]!!()

@@ -1,0 +1,2919 @@
+[
+  {
+    "id": "generic-functions",
+    "output": [
+      "3|true|true|7|true|4"
+    ],
+    "decisions": [],
+    "directory": "cases/generic-functions"
+  },
+  {
+    "id": "generic-data",
+    "output": [
+      "3|true|true|false|true|false",
+      "ready"
+    ],
+    "decisions": [],
+    "directory": "cases/generic-data"
+  },
+  {
+    "id": "generic-capture-checkpoint",
+    "choices": [
+      0
+    ],
+    "output": [
+      "kept"
+    ],
+    "decisions": [],
+    "directory": "cases/generic-capture-checkpoint"
+  },
+  {
+    "id": "generic-definition-error",
+    "compile_error": "cannot combine",
+    "decisions": [],
+    "directory": "cases/generic-definition-error"
+  },
+  {
+    "id": "generic-constraint-error",
+    "compile_error": "does not satisfy",
+    "decisions": [],
+    "directory": "cases/generic-constraint-error"
+  },
+  {
+    "id": "generic-variance-function-error",
+    "compile_error": "variance violation",
+    "directory": "cases/generic-variance-function-error",
+    "decisions": [
+      "G06"
+    ]
+  },
+  {
+    "id": "generic-variance-copy",
+    "output": [
+      "new|3|used|2"
+    ],
+    "directory": "cases/generic-variance-copy",
+    "decisions": [
+      "G06"
+    ]
+  },
+  {
+    "id": "generic-variance-field-error",
+    "compile_error": "variance violation",
+    "directory": "cases/generic-variance-field-error",
+    "decisions": [
+      "G06"
+    ]
+  },
+  {
+    "id": "generic-variance-method-error",
+    "compile_error": "variance violation",
+    "directory": "cases/generic-variance-method-error",
+    "decisions": [
+      "G06"
+    ]
+  },
+  {
+    "id": "generic-variance-return-error",
+    "compile_error": "variance violation",
+    "directory": "cases/generic-variance-return-error",
+    "decisions": [
+      "G06"
+    ]
+  },
+  {
+    "id": "generic-variance-nested-error",
+    "compile_error": "variance violation",
+    "directory": "cases/generic-variance-nested-error",
+    "decisions": [
+      "G06"
+    ]
+  },
+  {
+    "id": "generic-unused-arity-error",
+    "compile_error": "requires 1 arguments",
+    "directory": "cases/generic-unused-arity-error",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-unused-bound-error",
+    "compile_error": "does not satisfy",
+    "directory": "cases/generic-unused-bound-error",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-alias-bound-error",
+    "compile_error": "does not satisfy",
+    "directory": "cases/generic-alias-bound-error",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-local-alias-arity-error",
+    "compile_error": "requires 1 arguments",
+    "directory": "cases/generic-local-alias-arity-error",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-self-bound-cycle",
+    "compile_error": "cyclic generic upper bounds",
+    "directory": "cases/generic-self-bound-cycle",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-mutual-bound-cycle",
+    "compile_error": "cyclic generic upper bounds",
+    "directory": "cases/generic-mutual-bound-cycle",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-forward-nominal",
+    "output": [
+      "7"
+    ],
+    "directory": "cases/generic-forward-nominal",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-standalone-projection-error",
+    "compile_error": "only valid as a type argument",
+    "directory": "cases/generic-standalone-projection-error",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-type-test-arity-error",
+    "compile_error": "requires 1 arguments",
+    "directory": "cases/generic-type-test-arity-error",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-unused-call-type-error",
+    "compile_error": "requires 1 arguments",
+    "directory": "cases/generic-unused-call-type-error",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-key-annotation-error",
+    "compile_error": "require StableKey",
+    "directory": "cases/generic-key-annotation-error",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-local-alias-values",
+    "output": [
+      "3|4"
+    ],
+    "directory": "cases/generic-local-alias-values",
+    "decisions": [
+      "G01",
+      "F41"
+    ]
+  },
+  {
+    "id": "generic-recursive-key-error",
+    "directory": "cases/generic-recursive-key-error",
+    "decisions": [
+      "D12",
+      "G05",
+      "G08",
+      "G09",
+      "G10",
+      "U06"
+    ],
+    "compile_error": "StableKey"
+  },
+  {
+    "id": "generic-recursive-equality-error",
+    "directory": "cases/generic-recursive-equality-error",
+    "decisions": [
+      "G05",
+      "G08",
+      "G09",
+      "G10",
+      "U06"
+    ],
+    "compile_error": "operator '=='"
+  },
+  {
+    "id": "generic-recursive-capabilities",
+    "directory": "cases/generic-recursive-capabilities",
+    "decisions": [
+      "D12",
+      "G05",
+      "G08",
+      "G09",
+      "G10",
+      "U06"
+    ],
+    "output": [
+      "true|1"
+    ]
+  },
+  {
+    "id": "generic-phantom-capabilities",
+    "directory": "cases/generic-phantom-capabilities",
+    "decisions": [
+      "D12",
+      "G05",
+      "G08",
+      "G09",
+      "G10",
+      "U06"
+    ],
+    "output": [
+      "true|1"
+    ]
+  },
+  {
+    "id": "generic-mutual-recursive-key-error",
+    "directory": "cases/generic-mutual-recursive-key-error",
+    "decisions": [
+      "D12",
+      "G05",
+      "G08",
+      "G09",
+      "G10",
+      "U06"
+    ],
+    "compile_error": "StableKey"
+  },
+  {
+    "id": "generic-projected-field-write-error",
+    "directory": "cases/generic-projected-field-write-error",
+    "decisions": [
+      "G07"
+    ],
+    "compile_error": "cannot assign to val field"
+  },
+  {
+    "id": "generic-projected-method-write-error",
+    "directory": "cases/generic-projected-method-write-error",
+    "decisions": [
+      "G07"
+    ],
+    "compile_error": "argument requires Nothing, found String"
+  },
+  {
+    "id": "generic-projected-results",
+    "directory": "cases/generic-projected-results",
+    "decisions": [
+      "G07"
+    ],
+    "output": [
+      "true|true|true|true|2|true"
+    ]
+  },
+  {
+    "id": "generic-projected-nested-write-error",
+    "directory": "cases/generic-projected-nested-write-error",
+    "decisions": [
+      "G07"
+    ],
+    "compile_error": "star projection"
+  },
+  {
+    "id": "generic-projected-nullable-view",
+    "directory": "cases/generic-projected-nullable-view",
+    "decisions": [
+      "G07",
+      "B08"
+    ],
+    "output": [
+      "true|true"
+    ]
+  },
+  {
+    "id": "generic-projected-nonnull-error",
+    "directory": "cases/generic-projected-nonnull-error",
+    "decisions": [
+      "G07",
+      "B08"
+    ],
+    "compile_error": "expected"
+  },
+  {
+    "id": "generic-projected-remove-cross-write",
+    "directory": "cases/generic-projected-remove-cross-write",
+    "decisions": [
+      "G07",
+      "G11"
+    ],
+    "compile_error": "argument requires"
+  },
+  {
+    "id": "generic-projected-traversal-cross-write",
+    "directory": "cases/generic-projected-traversal-cross-write",
+    "decisions": [
+      "G07",
+      "G11"
+    ],
+    "compile_error": "argument requires"
+  },
+  {
+    "id": "generic-projected-entry-cross-write",
+    "directory": "cases/generic-projected-entry-cross-write",
+    "decisions": [
+      "G07",
+      "G11"
+    ],
+    "compile_error": "argument requires"
+  },
+  {
+    "id": "generic-projected-bounded-reads",
+    "directory": "cases/generic-projected-bounded-reads",
+    "decisions": [
+      "G07",
+      "G11"
+    ],
+    "output": [
+      "true|true|2|true"
+    ]
+  },
+  {
+    "id": "generic-projected-bound-dependency",
+    "directory": "cases/generic-projected-bound-dependency",
+    "decisions": [
+      "G07",
+      "G11"
+    ],
+    "precompile": [
+      "boxes"
+    ],
+    "output": [
+      "first|first|second"
+    ]
+  },
+  {
+    "id": "generic-projected-nullable-reads",
+    "directory": "cases/generic-projected-nullable-reads",
+    "decisions": [
+      "G07",
+      "G11"
+    ],
+    "output": [
+      "2",
+      "true"
+    ]
+  },
+  {
+    "id": "generic-projected-copy-reification",
+    "directory": "cases/generic-projected-copy-reification",
+    "decisions": [
+      "G07",
+      "G15"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "true|false|true"
+    ]
+  },
+  {
+    "id": "generic-projected-multiple-bounds",
+    "directory": "cases/generic-projected-multiple-bounds",
+    "decisions": [
+      "G07",
+      "G11",
+      "G12"
+    ],
+    "output": [
+      "bounded|bounded"
+    ]
+  },
+  {
+    "id": "generic-projected-nested-views",
+    "output": [
+      "3|2|1|true|true|true|3|true"
+    ],
+    "choices": [
+      0
+    ],
+    "decisions": [
+      "G07"
+    ],
+    "directory": "cases/generic-projected-nested-views"
+  },
+  {
+    "id": "generic-projected-nested-add-error",
+    "compile_error": "argument requires *, found String",
+    "decisions": [
+      "G07"
+    ],
+    "directory": "cases/generic-projected-nested-add-error"
+  },
+  {
+    "id": "generic-projected-nominal-write-error",
+    "compile_error": "cannot assign to val field",
+    "decisions": [
+      "G07"
+    ],
+    "directory": "cases/generic-projected-nominal-write-error"
+  },
+  {
+    "id": "generic-projected-parent-invariance",
+    "directory": "cases/generic-projected-parent-invariance",
+    "decisions": [
+      "G06",
+      "G07"
+    ],
+    "compile_error": "expected main.Result<Any?>, found main.Result.Good<*>"
+  },
+  {
+    "id": "generic-projected-parent-covariance",
+    "directory": "cases/generic-projected-parent-covariance",
+    "decisions": [
+      "G06",
+      "G07"
+    ],
+    "output": [
+      "true"
+    ]
+  },
+  {
+    "id": "generic-projected-when-not-exhaustive",
+    "directory": "cases/generic-projected-when-not-exhaustive",
+    "decisions": [
+      "G07",
+      "E21"
+    ],
+    "compile_error": "exhaustive"
+  },
+  {
+    "id": "generic-projected-when-exhaustive",
+    "directory": "cases/generic-projected-when-exhaustive",
+    "decisions": [
+      "G07",
+      "E21"
+    ],
+    "output": [
+      "true"
+    ]
+  },
+  {
+    "id": "generic-projected-when-statement",
+    "directory": "cases/generic-projected-when-statement",
+    "decisions": [
+      "G07",
+      "E21"
+    ],
+    "output": [
+      "Continued."
+    ]
+  },
+  {
+    "id": "generic-primitive-argument-error",
+    "compile_error": "type Int does not accept type arguments",
+    "directory": "cases/generic-primitive-argument-error",
+    "decisions": [
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-nonnull-checkpoint",
+    "choices": [
+      0
+    ],
+    "output": [
+      "Ada|kept|saved|missing|matched|upper|fallback"
+    ],
+    "directory": "cases/generic-nonnull-checkpoint",
+    "decisions": [
+      "G04",
+      "B08",
+      "B09",
+      "B13"
+    ]
+  },
+  {
+    "id": "generic-nonnull-source-free",
+    "choices": [
+      0
+    ],
+    "output": [
+      "Ada|kept|saved|missing|matched|upper|fallback"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "directory": "cases/generic-nonnull-checkpoint",
+    "decisions": [
+      "G04",
+      "B08",
+      "B09",
+      "B13"
+    ]
+  },
+  {
+    "id": "generic-nonnull-required",
+    "compile_error": "expected Any",
+    "directory": "cases/generic-nonnull-required",
+    "decisions": [
+      "G04",
+      "B08",
+      "B09",
+      "B13"
+    ]
+  },
+  {
+    "id": "generic-nonnull-assertion",
+    "runtime_error": "non-null assertion failed",
+    "directory": "cases/generic-nonnull-assertion",
+    "decisions": [
+      "G04",
+      "B08",
+      "B09",
+      "B13"
+    ]
+  },
+  {
+    "id": "nullable-type-header-colons",
+    "output": [
+      "true|true|true|false|fallback"
+    ],
+    "directory": "cases/nullable-type-header-colons",
+    "decisions": [
+      "B08",
+      "F03",
+      "L05",
+      "E12"
+    ]
+  },
+  {
+    "id": "generic-bound-members-checkpoint",
+    "choices": [
+      0
+    ],
+    "output": [
+      "3|4|4|11|true|0|4|0|2"
+    ],
+    "directory": "cases/generic-bound-members-checkpoint",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-bound-members-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "3|4|4|11|true|0|4|0|2"
+    ],
+    "directory": "cases/generic-bound-members-checkpoint",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-bound-private-field",
+    "compile_error": "private",
+    "directory": "cases/generic-bound-private-field",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-bound-private-method",
+    "compile_error": "private",
+    "directory": "cases/generic-bound-private-method",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-bound-nullable-field-write",
+    "compile_error": "nullable",
+    "directory": "cases/generic-bound-nullable-field-write",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-bound-nullable-index-write",
+    "compile_error": "nullable",
+    "directory": "cases/generic-bound-nullable-index-write",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-bound-safe-result",
+    "compile_error": "expected Int, found Int?",
+    "directory": "cases/generic-bound-safe-result",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-bound-private-function-field",
+    "compile_error": "private",
+    "directory": "cases/generic-bound-private-function-field",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-primitive-bound-operations",
+    "choices": [
+      1
+    ],
+    "output": [
+      "4",
+      "4|1.5|-3|hey!|true|true|true|😀|true|false|false|1|2"
+    ],
+    "directory": "cases/generic-primitive-bound-operations",
+    "decisions": [
+      "G05",
+      "G08",
+      "N04",
+      "N06",
+      "B14",
+      "E01",
+      "P08",
+      "P13"
+    ]
+  },
+  {
+    "id": "generic-primitive-bound-source-free",
+    "choices": [
+      1
+    ],
+    "output": [
+      "4",
+      "4|1.5|-3|hey!|true|true|true|😀|true|false|false|1|2"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "directory": "cases/generic-primitive-bound-operations",
+    "decisions": [
+      "G05",
+      "G08",
+      "N04",
+      "N06",
+      "B14",
+      "E01",
+      "P08",
+      "P13"
+    ]
+  },
+  {
+    "id": "generic-bound-no-truthiness",
+    "compile_error": "Boolean",
+    "directory": "cases/generic-bound-no-truthiness",
+    "decisions": [
+      "G05",
+      "E01"
+    ]
+  },
+  {
+    "id": "generic-bound-nullable-arithmetic",
+    "compile_error": "cannot combine",
+    "directory": "cases/generic-bound-nullable-arithmetic",
+    "decisions": [
+      "G05",
+      "G08",
+      "B08"
+    ]
+  },
+  {
+    "id": "generic-callable-bound-checkpoint",
+    "choices": [
+      0
+    ],
+    "output": [
+      "Scene 5.",
+      "6|0|6|6|5"
+    ],
+    "directory": "cases/generic-callable-bound-checkpoint",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-callable-bound-source-free",
+    "choices": [
+      0
+    ],
+    "output": [
+      "Scene 5.",
+      "6|0|6|6|5"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "directory": "cases/generic-callable-bound-checkpoint",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-callable-bound-effect",
+    "compile_error": "suspend context",
+    "directory": "cases/generic-callable-bound-effect",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-callable-bound-nullable",
+    "compile_error": "nullable",
+    "directory": "cases/generic-callable-bound-nullable",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-callable-bound-named",
+    "compile_error": "parameter names",
+    "directory": "cases/generic-callable-bound-named",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-callable-bound-scene-effect",
+    "compile_error": "suspension-capable context",
+    "directory": "cases/generic-callable-bound-scene-effect",
+    "decisions": [
+      "G05",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-nested-copy-reification",
+    "directory": "cases/generic-nested-copy-reification",
+    "decisions": [
+      "G07",
+      "G15",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "true|true|true|true|true|false|true|true"
+    ]
+  },
+  {
+    "id": "generic-sum-import-source-free",
+    "directory": "cases/generic-sum-import-source-free",
+    "decisions": [
+      "G01",
+      "G03",
+      "E21",
+      "F27",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "7"
+    ]
+  },
+  {
+    "id": "generic-local-function-capture",
+    "directory": "cases/generic-local-function-capture",
+    "decisions": [
+      "G01",
+      "G03",
+      "F20",
+      "F21",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "7|none"
+    ]
+  },
+  {
+    "id": "bounded-projected-capabilities-source-free",
+    "directory": "cases/bounded-projected-capabilities-source-free",
+    "decisions": [
+      "G05",
+      "G07",
+      "G09",
+      "G10",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "1|three|label|1",
+      "true|true|false|true"
+    ]
+  },
+  {
+    "id": "unbounded-projected-key-error",
+    "directory": "cases/unbounded-projected-key-error",
+    "decisions": [
+      "G07",
+      "G10"
+    ],
+    "compile_error": "StableKey"
+  },
+  {
+    "id": "equatable-projected-key-error",
+    "directory": "cases/equatable-projected-key-error",
+    "decisions": [
+      "G07",
+      "G10"
+    ],
+    "compile_error": "StableKey"
+  },
+  {
+    "id": "mutable-projected-key-error",
+    "directory": "cases/mutable-projected-key-error",
+    "decisions": [
+      "G07",
+      "G10"
+    ],
+    "compile_error": "StableKey"
+  },
+  {
+    "id": "unbounded-projected-equality-error",
+    "directory": "cases/unbounded-projected-equality-error",
+    "decisions": [
+      "G07",
+      "G09",
+      "G10"
+    ],
+    "compile_error": "cannot combine"
+  },
+  {
+    "id": "concrete-bounded-projections-source-free",
+    "directory": "cases/concrete-bounded-projections-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "1|1|1|three|true"
+    ],
+    "decisions": [
+      "G05",
+      "G07",
+      "G09",
+      "G10",
+      "D12",
+      "T24"
+    ]
+  },
+  {
+    "id": "late-projected-bound-mutability-error",
+    "directory": "cases/late-projected-bound-mutability-error",
+    "compile_error": "StableKey",
+    "decisions": [
+      "G05",
+      "G07",
+      "G09",
+      "G10",
+      "D12"
+    ]
+  },
+  {
+    "id": "generic-bounded-when-source-free",
+    "directory": "cases/generic-bounded-when-source-free",
+    "decisions": [
+      "G05",
+      "G08",
+      "B09",
+      "B19",
+      "E21",
+      "U13",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "happy|sad|present|none true|false|missing 7|0|-1 true|3 true|missing"
+    ]
+  },
+  {
+    "id": "nullable-value-alternative-narrowing-error",
+    "directory": "cases/nullable-value-alternative-narrowing-error",
+    "decisions": [
+      "B09",
+      "B19",
+      "E18"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "nullable-membership-alternative-narrowing-error",
+    "directory": "cases/nullable-membership-alternative-narrowing-error",
+    "decisions": [
+      "B09",
+      "B19",
+      "E18"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "generic-nullable-boolean-coverage-error",
+    "directory": "cases/generic-nullable-boolean-coverage-error",
+    "decisions": [
+      "G05",
+      "G08",
+      "E21"
+    ],
+    "compile_error": "exhaustive"
+  },
+  {
+    "id": "generic-enum-shorthand-conflict-error",
+    "directory": "cases/generic-enum-shorthand-conflict-error",
+    "decisions": [
+      "G05",
+      "G08",
+      "U13",
+      "U24"
+    ],
+    "compile_error": "conflicts with a visible binding"
+  },
+  {
+    "id": "generic-unknown-equality-compatibility-error",
+    "directory": "cases/generic-unknown-equality-compatibility-error",
+    "compile_error": "cannot combine",
+    "decisions": [
+      "G05",
+      "G08",
+      "E03"
+    ]
+  },
+  {
+    "id": "builtin-projected-keys-source-free",
+    "directory": "cases/builtin-projected-keys-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "2|numbers|1|1|1 true|true true|true|true 2|true|true|0|2|3|true"
+    ],
+    "decisions": [
+      "G07",
+      "G09",
+      "G10",
+      "D12",
+      "D08",
+      "T24",
+      "D25",
+      "D27"
+    ]
+  },
+  {
+    "id": "projected-list-key-still-rejected",
+    "directory": "cases/projected-list-key-still-rejected",
+    "compile_error": "StableKey",
+    "decisions": [
+      "G07",
+      "G09",
+      "G10",
+      "D12"
+    ]
+  },
+  {
+    "id": "projected-mutable-set-key-rejected",
+    "directory": "cases/projected-mutable-set-key-rejected",
+    "compile_error": "StableKey",
+    "decisions": [
+      "G07",
+      "G09",
+      "G10",
+      "D12"
+    ]
+  },
+  {
+    "id": "projected-unknown-map-values-key-rejected",
+    "directory": "cases/projected-unknown-map-values-key-rejected",
+    "compile_error": "StableKey",
+    "decisions": [
+      "G07",
+      "G09",
+      "G10",
+      "D12"
+    ]
+  },
+  {
+    "id": "projected-copy-checkpoint-source-free",
+    "directory": "cases/projected-copy-checkpoint-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "2|true|3|2|2|exact"
+    ],
+    "decisions": [
+      "G05",
+      "G07",
+      "D25",
+      "D26",
+      "D27",
+      "T24"
+    ]
+  },
+  {
+    "id": "generic-nullable-copy-still-rejected",
+    "directory": "cases/generic-nullable-copy-still-rejected",
+    "compile_error": "expected List<*>",
+    "decisions": [
+      "G05",
+      "G08",
+      "B09",
+      "D25"
+    ]
+  },
+  {
+    "id": "generic-narrowed-binding-identity-source-free",
+    "decisions": [
+      "G01",
+      "G05",
+      "G08",
+      "B19",
+      "B25",
+      "E21",
+      "U30",
+      "T24"
+    ],
+    "output": [
+      "Ada|3|four|yes|x|7|true|8",
+      "saved"
+    ],
+    "choices": [
+      0
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "directory": "cases/generic-narrowed-binding-identity-source-free"
+  },
+  {
+    "id": "generic-narrowed-new-value-error",
+    "decisions": [
+      "G01",
+      "G08",
+      "B25"
+    ],
+    "compile_error": "expected T, found String",
+    "directory": "cases/generic-narrowed-new-value-error"
+  },
+  {
+    "id": "cast-overlap-source-free",
+    "decisions": [
+      "B22",
+      "B23",
+      "B24",
+      "G05",
+      "G08",
+      "F37",
+      "T24"
+    ],
+    "output": [
+      "true|true|Ada|true|true|yes|0|0|true|0",
+      "true"
+    ],
+    "choices": [
+      0
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "directory": "cases/cast-overlap-source-free"
+  },
+  {
+    "id": "cast-no-numeric-conversion-error",
+    "decisions": [
+      "B22",
+      "B23",
+      "B24"
+    ],
+    "compile_error": "cast between provably incompatible concrete types",
+    "directory": "cases/cast-no-numeric-conversion-error"
+  },
+  {
+    "id": "cast-no-container-copy-error",
+    "decisions": [
+      "B22",
+      "B23",
+      "B24"
+    ],
+    "compile_error": "cast between provably incompatible concrete types",
+    "directory": "cases/cast-no-container-copy-error"
+  },
+  {
+    "id": "cast-invariant-keys-error",
+    "decisions": [
+      "B22",
+      "B23",
+      "B24"
+    ],
+    "compile_error": "cast between provably incompatible concrete types",
+    "directory": "cases/cast-invariant-keys-error"
+  },
+  {
+    "id": "cast-closed-generic-bound-error",
+    "decisions": [
+      "B22",
+      "B23",
+      "B24",
+      "G05",
+      "G08"
+    ],
+    "compile_error": "cast between provably incompatible concrete types",
+    "directory": "cases/cast-closed-generic-bound-error"
+  },
+  {
+    "id": "cast-nullable-generic-bound-error",
+    "decisions": [
+      "B22",
+      "B23",
+      "B24",
+      "G05",
+      "G08"
+    ],
+    "compile_error": "cast between provably incompatible concrete types",
+    "directory": "cases/cast-nullable-generic-bound-error"
+  },
+  {
+    "id": "cast-overlap-runtime-error",
+    "decisions": [
+      "B22",
+      "B23",
+      "B24",
+      "E35"
+    ],
+    "output": [
+      "Before."
+    ],
+    "runtime_error": "src/helpers.bfl:1: checked cast failed",
+    "precompile": [
+      "helpers"
+    ],
+    "directory": "cases/cast-overlap-runtime-error"
+  },
+  {
+    "id": "inferred-generic-binding-identity-source-free",
+    "decisions": [
+      "G01",
+      "G08",
+      "B25",
+      "E07",
+      "F02",
+      "F21",
+      "F27",
+      "T24"
+    ],
+    "output": [
+      "3|Ada|yes|four|true",
+      "kept",
+      "saved"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "directory": "cases/inferred-generic-binding-identity-source-free"
+  },
+  {
+    "id": "inferred-narrowing-no-any-fallback-error",
+    "decisions": [
+      "E13",
+      "F02",
+      "B25"
+    ],
+    "compile_error": "function return paths have incompatible types",
+    "directory": "cases/inferred-narrowing-no-any-fallback-error"
+  },
+  {
+    "id": "nullable-generic-variance-source-free",
+    "directory": "cases/nullable-generic-variance-source-free",
+    "decisions": [
+      "G04",
+      "G05",
+      "G06",
+      "G08",
+      "B08",
+      "B21",
+      "T24",
+      "D30",
+      "G15",
+      "F37",
+      "F38"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "Ada|true|4|yes|true|chain|true|true|saved|1"
+    ]
+  },
+  {
+    "id": "nullable-generic-no-numeric-adapter-error",
+    "directory": "cases/nullable-generic-no-numeric-adapter-error",
+    "decisions": [
+      "G04",
+      "G05",
+      "G08",
+      "B08",
+      "F37",
+      "F38"
+    ],
+    "compile_error": "expected"
+  },
+  {
+    "id": "nullable-generic-no-null-unwrapping-error",
+    "directory": "cases/nullable-generic-no-null-unwrapping-error",
+    "decisions": [
+      "G04",
+      "G05",
+      "G08",
+      "B08",
+      "F37",
+      "F38"
+    ],
+    "compile_error": "expected"
+  },
+  {
+    "id": "nullable-generic-no-arbitrary-return-error",
+    "directory": "cases/nullable-generic-no-arbitrary-return-error",
+    "decisions": [
+      "G04",
+      "G05",
+      "G08",
+      "B08",
+      "F37",
+      "F38"
+    ],
+    "compile_error": "expected"
+  },
+  {
+    "id": "nullable-generic-inferred-join-source-free",
+    "directory": "cases/nullable-generic-inferred-join-source-free",
+    "decisions": [
+      "G04",
+      "G05",
+      "G08",
+      "B08",
+      "T24",
+      "F02"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "kept|other|path|saved"
+    ]
+  },
+  {
+    "id": "sibling-sum-joins-source-free",
+    "directory": "cases/sibling-sum-joins-source-free",
+    "decisions": [
+      "U18",
+      "U22",
+      "F02",
+      "G08",
+      "D11",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "true|true|2|true|true|2|2|true|false"
+    ]
+  },
+  {
+    "id": "sum-join-unrelated-types-error",
+    "directory": "cases/sum-join-unrelated-types-error",
+    "decisions": [
+      "U07",
+      "F02"
+    ],
+    "compile_error": "compatible"
+  },
+  {
+    "id": "sum-join-invariant-arguments-error",
+    "directory": "cases/sum-join-invariant-arguments-error",
+    "decisions": [
+      "G06",
+      "F02"
+    ],
+    "compile_error": "compatible"
+  },
+  {
+    "id": "asserted-generic-identity-source-free",
+    "directory": "cases/asserted-generic-identity-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Use assertions"
+      ]
+    ],
+    "output": [
+      "kept|7|yes|8|true|0|1|saved|typed"
+    ],
+    "decisions": [
+      "B13",
+      "G08",
+      "F02",
+      "T24",
+      "U13"
+    ]
+  },
+  {
+    "id": "asserted-computed-generic-value-error",
+    "directory": "cases/asserted-computed-generic-value-error",
+    "compile_error": "expected T, found String",
+    "decisions": [
+      "B13",
+      "G08"
+    ]
+  },
+  {
+    "id": "asserted-generic-null-runtime-error",
+    "directory": "cases/asserted-generic-null-runtime-error",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Check null"
+      ]
+    ],
+    "runtime_error": "src/helpers.bfl:7: non-null assertion failed",
+    "output": [],
+    "decisions": [
+      "B13",
+      "G08",
+      "F02",
+      "T24"
+    ]
+  },
+  {
+    "id": "structural-generic-inference-source-free",
+    "directory": "cases/structural-generic-inference-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Return 8"
+      ],
+      [
+        "Use typed scene"
+      ],
+      [
+        "Target 7"
+      ]
+    ],
+    "output": [
+      "Scene 7.",
+      "true|true|saved|7|3|true|8"
+    ],
+    "decisions": [
+      "G03",
+      "G08",
+      "G15",
+      "U18",
+      "F37",
+      "T24"
+    ]
+  },
+  {
+    "id": "generic-enclosing-parameter-rebinding-error",
+    "directory": "cases/generic-enclosing-parameter-rebinding-error",
+    "compile_error": "argument requires T, found String",
+    "decisions": [
+      "G08",
+      "G03"
+    ]
+  },
+  {
+    "id": "generic-bound-inference-null-error",
+    "directory": "cases/generic-bound-inference-null-error",
+    "compile_error": "argument requires List<String>",
+    "decisions": [
+      "G03",
+      "G08",
+      "B08"
+    ]
+  },
+  {
+    "id": "generic-no-inferred-family-copy-error",
+    "directory": "cases/generic-no-inferred-family-copy-error",
+    "compile_error": "cannot infer type argument T",
+    "decisions": [
+      "G03",
+      "G14"
+    ]
+  },
+  {
+    "id": "generic-structural-inference-no-adapter-error",
+    "directory": "cases/generic-structural-inference-no-adapter-error",
+    "compile_error": "argument requires (Int) -> Float",
+    "decisions": [
+      "G03",
+      "F38"
+    ]
+  },
+  {
+    "id": "generic-parent-invariant-inference-error",
+    "directory": "cases/generic-parent-invariant-inference-error",
+    "compile_error": "argument requires main.Result<Float>",
+    "decisions": [
+      "G03",
+      "G06",
+      "U18"
+    ]
+  },
+  {
+    "id": "contextual-generic-calls-source-free",
+    "directory": "cases/contextual-generic-calls-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Preserve call"
+      ]
+    ],
+    "output": [
+      "kept|7|field|true|list|saved|true|true"
+    ],
+    "decisions": [
+      "G03",
+      "G08",
+      "G14",
+      "B09",
+      "F02",
+      "T24"
+    ]
+  },
+  {
+    "id": "contextual-generic-call-computed-error",
+    "directory": "cases/contextual-generic-call-computed-error",
+    "compile_error": "argument requires T, found String",
+    "decisions": [
+      "G03",
+      "G08"
+    ]
+  },
+  {
+    "id": "generic-bound-result-contexts-source-free",
+    "directory": "cases/generic-bound-result-contexts-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Non-null argument"
+      ],
+      [
+        "Non-null group"
+      ]
+    ],
+    "output": [
+      "3|text|true|kept|true|member|true|saved|true|group"
+    ],
+    "decisions": [
+      "G03",
+      "G05",
+      "G08",
+      "G13",
+      "B09",
+      "D23",
+      "T24"
+    ]
+  },
+  {
+    "id": "generic-bound-without-presence-error",
+    "directory": "cases/generic-bound-without-presence-error",
+    "compile_error": "argument requires",
+    "decisions": [
+      "G03",
+      "G08",
+      "G13",
+      "B09"
+    ]
+  },
+  {
+    "id": "generic-bound-computed-identity-error",
+    "directory": "cases/generic-bound-computed-identity-error",
+    "compile_error": "argument requires",
+    "decisions": [
+      "G03",
+      "G08",
+      "G13",
+      "B09"
+    ]
+  },
+  {
+    "id": "generic-bound-mutable-field-proof-error",
+    "directory": "cases/generic-bound-mutable-field-proof-error",
+    "compile_error": "argument requires",
+    "decisions": [
+      "G03",
+      "G08",
+      "G13",
+      "B09"
+    ]
+  },
+  {
+    "id": "bounded-generic-references-source-free",
+    "directory": "cases/bounded-generic-references-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Use bounded references"
+      ]
+    ],
+    "output": [
+      "eq|present|effect|group|factory|true|true"
+    ],
+    "decisions": [
+      "G03",
+      "G05",
+      "G08",
+      "G13",
+      "G15",
+      "F35",
+      "F37",
+      "D23",
+      "T21",
+      "T24"
+    ]
+  },
+  {
+    "id": "bounded-reference-nullable-input-error",
+    "directory": "cases/bounded-reference-nullable-input-error",
+    "compile_error": "does not satisfy Any",
+    "decisions": [
+      "G03",
+      "G13",
+      "F38"
+    ]
+  },
+  {
+    "id": "bounded-reference-ambiguity-error",
+    "directory": "cases/bounded-reference-ambiguity-error",
+    "compile_error": "ambiguous overload reference",
+    "decisions": [
+      "G03",
+      "G05",
+      "F36"
+    ]
+  },
+  {
+    "id": "bounded-reference-numeric-adapter-error",
+    "directory": "cases/bounded-reference-numeric-adapter-error",
+    "compile_error": "no overload matches the expected function type",
+    "decisions": [
+      "G03",
+      "F38"
+    ]
+  },
+  {
+    "id": "bound-directed-widening-source-free",
+    "choices": [
+      0
+    ],
+    "output": [
+      "true|true|true|true",
+      "true|true|true|true",
+      "true|true|1|3|exact"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "directory": "cases/bound-directed-widening-source-free",
+    "decisions": [
+      "G03",
+      "G05",
+      "G14",
+      "D22",
+      "D28",
+      "F28",
+      "T24"
+    ]
+  },
+  {
+    "id": "bound-directed-family-copy-error",
+    "compile_error": "does not satisfy",
+    "directory": "cases/bound-directed-family-copy-error",
+    "decisions": [
+      "G14",
+      "D22"
+    ]
+  },
+  {
+    "id": "bound-directed-mutable-widening-error",
+    "compile_error": "does not satisfy",
+    "directory": "cases/bound-directed-mutable-widening-error",
+    "decisions": [
+      "G14",
+      "D28"
+    ]
+  },
+  {
+    "id": "bound-directed-null-unwrapping-error",
+    "compile_error": "does not satisfy",
+    "directory": "cases/bound-directed-null-unwrapping-error",
+    "decisions": [
+      "G05",
+      "B08"
+    ]
+  },
+  {
+    "id": "present-generic-results-source-free",
+    "directory": "cases/present-generic-results-source-free",
+    "decisions": [
+      "F02",
+      "B09",
+      "B19",
+      "G03",
+      "S10",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "7|7|7|7|7|7|8|9",
+      "Ada|Ada|7|none"
+    ]
+  },
+  {
+    "id": "present-generic-result-null-error",
+    "directory": "cases/present-generic-result-null-error",
+    "decisions": [
+      "F02",
+      "B09",
+      "G03"
+    ],
+    "compile_error": "expected String"
+  },
+  {
+    "id": "present-generic-result-computed-error",
+    "directory": "cases/present-generic-result-computed-error",
+    "decisions": [
+      "F02",
+      "B09",
+      "G03"
+    ],
+    "compile_error": "expected T"
+  },
+  {
+    "id": "alias-shared-graph-private",
+    "directory": "cases/alias-shared-graph-private",
+    "decisions": [
+      "U01",
+      "U26"
+    ],
+    "output": [
+      "Graph checked."
+    ]
+  },
+  {
+    "id": "alias-shared-graph-unused-generic",
+    "directory": "cases/alias-shared-graph-unused-generic",
+    "decisions": [
+      "U01",
+      "G01"
+    ],
+    "output": [
+      "Graph checked."
+    ]
+  },
+  {
+    "id": "alias-shared-graph-depth-error",
+    "directory": "cases/alias-shared-graph-depth-error",
+    "decisions": [
+      "U01",
+      "S15"
+    ],
+    "compile_error": "type graph budget exceeded"
+  },
+  {
+    "id": "alias-shared-graph-mutable-key-error",
+    "directory": "cases/alias-shared-graph-mutable-key-error",
+    "decisions": [
+      "U01",
+      "D12"
+    ],
+    "compile_error": "StableKey"
+  },
+  {
+    "id": "alias-canonical-hash-budget-error",
+    "directory": "cases/alias-canonical-hash-budget-error",
+    "decisions": [
+      "U01",
+      "S15"
+    ],
+    "compile_error": "canonical data size budget exceeded"
+  },
+  {
+    "id": "alias-nullable-application-source-free",
+    "directory": "cases/alias-nullable-application-source-free",
+    "decisions": [
+      "U01",
+      "B17",
+      "S10",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "true|3"
+    ]
+  },
+  {
+    "id": "alias-equivalent-bound-shared-graphs",
+    "directory": "cases/alias-equivalent-bound-shared-graphs",
+    "decisions": [
+      "G05",
+      "G08"
+    ],
+    "output": [
+      "Equivalent."
+    ]
+  },
+  {
+    "id": "alias-invalid-bound-bounded-diagnostic",
+    "directory": "cases/alias-invalid-bound-bounded-diagnostic",
+    "decisions": [
+      "G05",
+      "G08"
+    ],
+    "compile_error": "does not satisfy"
+  },
+  {
+    "id": "alias-generic-shared-arguments",
+    "directory": "cases/alias-generic-shared-arguments",
+    "decisions": [
+      "G01",
+      "G05",
+      "G08"
+    ],
+    "output": [
+      "Generic graph checked."
+    ]
+  },
+  {
+    "id": "alias-generic-key-bound-error",
+    "directory": "cases/alias-generic-key-bound-error",
+    "decisions": [
+      "G01",
+      "G05",
+      "G08"
+    ],
+    "compile_error": "StableKey"
+  },
+  {
+    "id": "alias-covariant-bound-shared-graphs",
+    "directory": "cases/alias-covariant-bound-shared-graphs",
+    "decisions": [
+      "G01",
+      "G05",
+      "G08"
+    ],
+    "output": [
+      "Covariant graph checked."
+    ]
+  },
+  {
+    "id": "alias-distinct-generic-function-inputs-source-free",
+    "directory": "cases/alias-distinct-generic-function-inputs-source-free",
+    "decisions": [
+      "G01",
+      "G05",
+      "G08"
+    ],
+    "output": [
+      "3|2.5"
+    ],
+    "choices": [
+      0
+    ],
+    "precompile": [
+      "helpers"
+    ]
+  },
+  {
+    "id": "alias-forward-bound-source-free",
+    "directory": "cases/alias-forward-bound-source-free",
+    "decisions": [
+      "G05",
+      "G08",
+      "U26"
+    ],
+    "output": [
+      "Ada"
+    ],
+    "choices": [
+      0
+    ],
+    "precompile": [
+      "helpers"
+    ]
+  },
+  {
+    "id": "alias-forward-generic-bound",
+    "directory": "cases/alias-forward-generic-bound",
+    "decisions": [
+      "G05",
+      "G08",
+      "U26"
+    ],
+    "output": [
+      "Ada"
+    ]
+  },
+  {
+    "id": "alias-local-forward-bound-checkpoint",
+    "directory": "cases/alias-local-forward-bound-checkpoint",
+    "decisions": [
+      "G05",
+      "G08",
+      "U26"
+    ],
+    "output": [
+      "Local"
+    ],
+    "choices": [
+      0
+    ]
+  },
+  {
+    "id": "alias-forward-bound-error",
+    "directory": "cases/alias-forward-bound-error",
+    "decisions": [
+      "G05",
+      "G08",
+      "U26"
+    ],
+    "compile_error": "does not satisfy String"
+  },
+  {
+    "id": "alias-forward-bound-cycle-error",
+    "directory": "cases/alias-forward-bound-cycle-error",
+    "decisions": [
+      "G05",
+      "G08",
+      "U26",
+      "U27"
+    ],
+    "compile_error": "type alias expansion cycle"
+  },
+  {
+    "id": "generic-shared-inference-source-free",
+    "directory": "cases/generic-shared-inference-source-free",
+    "decisions": [
+      "G01",
+      "G03",
+      "G05",
+      "G08",
+      "G15"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "0|true|false"
+    ]
+  },
+  {
+    "id": "generic-inference-graph-artifact-budget-error",
+    "directory": "cases/generic-inference-graph-artifact-budget-error",
+    "decisions": [
+      "G03",
+      "G08"
+    ],
+    "compile_error": "canonical data size budget exceeded"
+  },
+  {
+    "id": "alias-generic-overlay-source-free",
+    "directory": "cases/alias-generic-overlay-source-free",
+    "decisions": [
+      "G01",
+      "G03",
+      "U25",
+      "U26"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "Ada|3"
+    ]
+  },
+  {
+    "id": "alias-generic-outer-parameter-shadow-error",
+    "directory": "cases/alias-generic-outer-parameter-shadow-error",
+    "decisions": [
+      "G01",
+      "U25"
+    ],
+    "compile_error": "generic parameter shadows a visible type name"
+  },
+  {
+    "id": "narrowed-shared-result-checkpoint",
+    "directory": "cases/narrowed-shared-result-checkpoint",
+    "decisions": [
+      "F02",
+      "G06",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "3"
+    ]
+  },
+  {
+    "id": "narrowed-shared-result-budget",
+    "directory": "cases/narrowed-shared-result-budget",
+    "decisions": [
+      "F02",
+      "G06"
+    ],
+    "compile_error": "canonical data size budget exceeded"
+  },
+  {
+    "id": "shared-generic-cast-checkpoint",
+    "directory": "cases/shared-generic-cast-checkpoint",
+    "decisions": [
+      "G01",
+      "G06",
+      "G08",
+      "T25",
+      "B22",
+      "U25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "output": [
+      "true|true|2"
+    ]
+  },
+  {
+    "id": "shared-generic-cast-budget",
+    "directory": "cases/shared-generic-cast-budget",
+    "decisions": [
+      "G01",
+      "G06",
+      "G08",
+      "B22",
+      "U25"
+    ],
+    "compile_error": "canonical data size budget exceeded"
+  },
+  {
+    "id": "shared-function-aliases-compact",
+    "directory": "cases/shared-function-aliases-compact",
+    "decisions": [
+      "U25"
+    ],
+    "output": [
+      "ready"
+    ]
+  },
+  {
+    "id": "shared-function-aliases-depth-error",
+    "directory": "cases/shared-function-aliases-depth-error",
+    "decisions": [
+      "U25"
+    ],
+    "compile_error": "type graph budget exceeded"
+  },
+  {
+    "id": "shared-scene-aliases-compact",
+    "directory": "cases/shared-scene-aliases-compact",
+    "decisions": [
+      "U25"
+    ],
+    "output": [
+      "ready"
+    ]
+  },
+  {
+    "id": "shared-scene-aliases-depth-error",
+    "directory": "cases/shared-scene-aliases-depth-error",
+    "decisions": [
+      "U25"
+    ],
+    "compile_error": "type graph budget exceeded"
+  },
+  {
+    "id": "shared-function-types-checkpoint",
+    "directory": "cases/shared-function-types-checkpoint",
+    "decisions": [
+      "U25",
+      "G01",
+      "G03",
+      "F20",
+      "F22",
+      "F25",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "9"
+    ]
+  },
+  {
+    "id": "shared-scene-types-checkpoint",
+    "directory": "cases/shared-scene-types-checkpoint",
+    "decisions": [
+      "U25",
+      "G01",
+      "G03",
+      "T25"
+    ],
+    "precompile": [
+      "helpers",
+      "target"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "3",
+      "4"
+    ]
+  },
+  {
+    "id": "shared-collection-conversion-budget",
+    "directory": "cases/shared-collection-conversion-budget",
+    "decisions": [
+      "D22",
+      "D28",
+      "U25"
+    ],
+    "compile_error": "canonical data size budget exceeded"
+  },
+  {
+    "id": "shared-collection-join-budget",
+    "directory": "cases/shared-collection-join-budget",
+    "decisions": [
+      "E13",
+      "D28",
+      "U25"
+    ],
+    "compile_error": "canonical data size budget exceeded"
+  },
+  {
+    "id": "shared-collection-types-checkpoint",
+    "directory": "cases/shared-collection-types-checkpoint",
+    "decisions": [
+      "D22",
+      "D25",
+      "D28",
+      "E13",
+      "G14",
+      "U25",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "true|true|true|true|1|0"
+    ]
+  },
+  {
+    "id": "shared-collection-join-copy-error",
+    "directory": "cases/shared-collection-join-copy-error",
+    "decisions": [
+      "E13"
+    ],
+    "compile_error": "no compatible joined type"
+  },
+  {
+    "id": "shared-projected-read-budget",
+    "directory": "cases/shared-projected-read-budget",
+    "decisions": [
+      "G05",
+      "G06",
+      "G07",
+      "U25"
+    ],
+    "compile_error": "canonical data size budget exceeded"
+  },
+  {
+    "id": "shared-projected-read-checkpoint",
+    "directory": "cases/shared-projected-read-checkpoint",
+    "decisions": [
+      "G05",
+      "G06",
+      "G07",
+      "U25",
+      "F20",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "output": [
+      "A!|Value3"
+    ]
+  },
+  {
+    "id": "normalization-scope-checkpoint",
+    "directory": "cases/normalization-scope-checkpoint",
+    "decisions": [
+      "U25",
+      "U26",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "A3|true|1|z"
+    ]
+  },
+  {
+    "id": "normalization-scope-leak-error",
+    "directory": "cases/normalization-scope-leak-error",
+    "decisions": [
+      "U25",
+      "U26"
+    ],
+    "compile_error": "unknown type 'Hidden'"
+  },
+  {
+    "id": "generic-name-scope-checkpoint",
+    "directory": "cases/generic-name-scope-checkpoint",
+    "decisions": [
+      "G01",
+      "G02",
+      "G03",
+      "U25",
+      "U26",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "Kept"
+    ]
+  },
+  {
+    "id": "generic-name-scope-shadow-error",
+    "directory": "cases/generic-name-scope-shadow-error",
+    "decisions": [
+      "G01",
+      "G02"
+    ],
+    "compile_error": "generic parameter shadows"
+  },
+  {
+    "id": "generic-projected-null-inputs-source-free-checkpoint",
+    "directory": "cases/generic-projected-null-inputs-source-free-checkpoint",
+    "decisions": [
+      "A01",
+      "A08",
+      "F09",
+      "F20",
+      "F37",
+      "G07",
+      "S10",
+      "T08",
+      "T24",
+      "T25",
+      "U29"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Methods ready"
+      ],
+      [
+        "Replace 4"
+      ],
+      [
+        "Replace 5"
+      ],
+      [
+        "Calls 5"
+      ]
+    ],
+    "output": [
+      "true|true|true|true|true|true|true|6|true|true|true|true|5"
+    ]
+  },
+  {
+    "id": "generic-projected-bare-null-input-error",
+    "directory": "cases/generic-projected-bare-null-input-error",
+    "decisions": [
+      "G07"
+    ],
+    "compile_error": "argument requires Nothing, found null"
+  },
+  {
+    "id": "generic-projected-present-input-error",
+    "directory": "cases/generic-projected-present-input-error",
+    "decisions": [
+      "G07"
+    ],
+    "compile_error": "argument requires Nothing?, found Int"
+  },
+  {
+    "id": "generic-projected-callback-views-source-free-checkpoint",
+    "directory": "cases/generic-projected-callback-views-source-free-checkpoint",
+    "decisions": [
+      "B09",
+      "F20",
+      "F37",
+      "G07",
+      "S10",
+      "T08",
+      "T22",
+      "T24",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Callbacks 3"
+      ],
+      [
+        "Wait 4"
+      ],
+      [
+        "Wait 5"
+      ],
+      [
+        "Calls 5"
+      ]
+    ],
+    "output": [
+      "true|true|true|true|0|true|true|5"
+    ]
+  },
+  {
+    "id": "generic-projected-default-only-source-free-checkpoint",
+    "directory": "cases/generic-projected-default-only-source-free-checkpoint",
+    "decisions": [
+      "F09",
+      "F20",
+      "F37",
+      "G07",
+      "S10",
+      "T24",
+      "T25",
+      "U29"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Defaults 1"
+      ],
+      [
+        "Defaults 2"
+      ]
+    ],
+    "output": [
+      "true|true|true|0|2"
+    ]
+  },
+  {
+    "id": "generic-projected-callback-bare-null-error",
+    "directory": "cases/generic-projected-callback-bare-null-error",
+    "decisions": [
+      "G07"
+    ],
+    "compile_error": "expected Nothing, found null"
+  },
+  {
+    "id": "generic-projected-callback-present-error",
+    "directory": "cases/generic-projected-callback-present-error",
+    "decisions": [
+      "G07"
+    ],
+    "compile_error": "expected Nothing?, found Int"
+  },
+  {
+    "id": "wide-generic-parameters-source-free-checkpoint",
+    "directory": "cases/wide-generic-parameters-source-free-checkpoint",
+    "decisions": [
+      "G01",
+      "G02",
+      "G03",
+      "G05",
+      "G08",
+      "G15"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Built true"
+      ],
+      [
+        "Verify"
+      ]
+    ],
+    "output": [
+      "0|39|true"
+    ]
+  },
+  {
+    "id": "wide-generic-duplicate-parameter-error",
+    "decisions": [
+      "G01",
+      "G02"
+    ],
+    "compile_error": "duplicate type parameter",
+    "directory": "cases/wide-generic-duplicate-parameter-error"
+  },
+  {
+    "id": "wide-generic-float-source-free-checkpoint",
+    "directory": "cases/wide-generic-float-source-free-checkpoint",
+    "decisions": [
+      "G01",
+      "G03",
+      "G15",
+      "N04"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Built true"
+      ],
+      [
+        "Verify"
+      ]
+    ],
+    "output": [
+      "0|39|false"
+    ]
+  },
+  {
+    "id": "wide-generic-late-bound-error",
+    "decisions": [
+      "G01",
+      "G05",
+      "G08"
+    ],
+    "compile_error": "StableKey",
+    "directory": "cases/wide-generic-late-bound-error"
+  },
+  {
+    "id": "generic-projected-higher-order-inputs-source-free-checkpoint",
+    "directory": "cases/generic-projected-higher-order-inputs-source-free-checkpoint",
+    "decisions": [
+      "F37",
+      "G06",
+      "G07",
+      "S10",
+      "T24",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Prepared 7"
+      ]
+    ],
+    "output": [
+      "7|7|empty"
+    ]
+  },
+  {
+    "id": "generic-projected-bounded-callback-inputs-source-free-checkpoint",
+    "directory": "cases/generic-projected-bounded-callback-inputs-source-free-checkpoint",
+    "decisions": [
+      "F37",
+      "G06",
+      "G07",
+      "S10",
+      "T24",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Bound 3"
+      ]
+    ],
+    "output": [
+      "3|3|1"
+    ]
+  },
+  {
+    "id": "generic-projected-covariant-inputs-source-free-checkpoint",
+    "directory": "cases/generic-projected-covariant-inputs-source-free-checkpoint",
+    "decisions": [
+      "F37",
+      "G06",
+      "G07",
+      "S10",
+      "T24",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Empty inputs"
+      ]
+    ],
+    "output": [
+      "0|0|0|0"
+    ]
+  },
+  {
+    "id": "generic-projected-nonnull-result-source-free-checkpoint",
+    "directory": "cases/generic-projected-nonnull-result-source-free-checkpoint",
+    "decisions": [
+      "B09",
+      "B13",
+      "F37",
+      "G06",
+      "G07",
+      "S10",
+      "T24",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Present"
+      ]
+    ],
+    "output": [
+      "7"
+    ]
+  },
+  {
+    "id": "generic-projected-suspend-inputs-source-free-checkpoint",
+    "directory": "cases/generic-projected-suspend-inputs-source-free-checkpoint",
+    "decisions": [
+      "F37",
+      "G06",
+      "G07",
+      "S10",
+      "T08",
+      "T22",
+      "T24",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Before 0"
+      ],
+      [
+        "Inside 1"
+      ],
+      [
+        "Inside 2"
+      ],
+      [
+        "After 2"
+      ]
+    ],
+    "output": [
+      "2|7|true|2|7|true|2"
+    ]
+  },
+  {
+    "id": "generic-projected-narrow-callback-error",
+    "directory": "cases/generic-projected-narrow-callback-error",
+    "decisions": [
+      "F37",
+      "G06",
+      "G07",
+      "S10"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "compile_error": "argument"
+  },
+  {
+    "id": "generic-projected-hidden-producer-error",
+    "directory": "cases/generic-projected-hidden-producer-error",
+    "decisions": [
+      "F37",
+      "G06",
+      "G07",
+      "S10"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "compile_error": "Nothing"
+  },
+  {
+    "id": "generic-projected-invariant-input-error",
+    "directory": "cases/generic-projected-invariant-input-error",
+    "decisions": [
+      "F37",
+      "G06",
+      "G07",
+      "S10"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "compile_error": "Nothing"
+  },
+  {
+    "id": "generic-projected-callback-numeric-adapter-error",
+    "directory": "cases/generic-projected-callback-numeric-adapter-error",
+    "decisions": [
+      "F37",
+      "G06",
+      "G07",
+      "S10"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "compile_error": "argument"
+  },
+  {
+    "id": "generic-projected-mutable-alias-narrowing-error",
+    "directory": "cases/generic-projected-mutable-alias-narrowing-error",
+    "decisions": [
+      "B09",
+      "G07",
+      "S10"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "compile_error": "nullable member receiver"
+  },
+  {
+    "id": "generic-projected-field-stability-source-free-checkpoint",
+    "directory": "cases/generic-projected-field-stability-source-free-checkpoint",
+    "decisions": [
+      "B09",
+      "G07",
+      "S10",
+      "T24",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Recheck 1"
+      ],
+      [
+        "Stable"
+      ]
+    ],
+    "output": [
+      "3|-1|1|3"
+    ]
+  },
+  {
+    "id": "generic-projected-mutable-capture-narrowing-error",
+    "directory": "cases/generic-projected-mutable-capture-narrowing-error",
+    "decisions": [
+      "B09",
+      "F20",
+      "F21",
+      "G07",
+      "S10"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "compile_error": "nullable member receiver"
+  },
+  {
+    "id": "generic-projected-immutable-capture-source-free-checkpoint",
+    "directory": "cases/generic-projected-immutable-capture-source-free-checkpoint",
+    "decisions": [
+      "B09",
+      "F20",
+      "F21",
+      "G07",
+      "S10",
+      "T24",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Captured"
+      ]
+    ],
+    "output": [
+      "3"
+    ]
+  },
+  {
+    "id": "generic-projected-rechecked-capture-source-free-checkpoint",
+    "directory": "cases/generic-projected-rechecked-capture-source-free-checkpoint",
+    "decisions": [
+      "B09",
+      "F20",
+      "F21",
+      "G07",
+      "S10",
+      "T24",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Rechecked"
+      ]
+    ],
+    "output": [
+      "-1"
+    ]
+  },
+  {
+    "id": "generic-reference-receiver-short-circuit-error",
+    "directory": "cases/generic-reference-receiver-short-circuit-error",
+    "compile_error": "nullable member receiver",
+    "decisions": [
+      "B09",
+      "F43",
+      "F44",
+      "G03"
+    ]
+  },
+  {
+    "id": "generic-reference-receiver-negated-short-circuit-error",
+    "directory": "cases/generic-reference-receiver-negated-short-circuit-error",
+    "compile_error": "nullable member receiver",
+    "decisions": [
+      "B09",
+      "F43",
+      "F44",
+      "G03"
+    ]
+  },
+  {
+    "id": "generic-reference-receiver-when-error",
+    "directory": "cases/generic-reference-receiver-when-error",
+    "compile_error": "nullable member receiver",
+    "decisions": [
+      "B09",
+      "B19",
+      "F43",
+      "F44",
+      "G03"
+    ]
+  },
+  {
+    "id": "generic-reference-receiver-recheck-source-free-checkpoint",
+    "directory": "cases/generic-reference-receiver-recheck-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Calls 2"
+      ]
+    ],
+    "output": [
+      "4|0|5|cleared|7|2"
+    ],
+    "decisions": [
+      "B09",
+      "B19",
+      "F43",
+      "F44",
+      "G03",
+      "T24"
+    ]
+  }
+]

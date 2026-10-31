@@ -1,0 +1,25 @@
+typealias Number = Int
+export fun left(value: Number):
+    fun describe(input: Local) -> Local = input
+    typealias Local = String
+    return describe("A") + value
+export fun right(value: Number):
+    typealias Local = Float
+    val measured: Local = value
+    return measured
+fun nested(flag: Boolean) -> String:
+    if flag:
+        typealias Local = Int
+        val first: Local = 1
+        return "" + first
+    else:
+        typealias Local = String
+        val second: Local = "z"
+        return second
+export suspend fun run() -> String:
+    val first = left(3)
+    choice:
+        option "Continue":
+            Unit
+    val second = right(3)
+    return "${first}|${second == 3.0}|${nested(true)}|${nested(false)}"

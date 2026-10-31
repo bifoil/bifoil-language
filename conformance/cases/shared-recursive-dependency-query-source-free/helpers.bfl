@@ -1,0 +1,11 @@
+export shared val seed: Int = 7
+export fun left(follow: Boolean) -> Int:
+    if follow:
+        return right(false)
+    return seed
+export fun right(follow: Boolean) -> Int:
+    if follow:
+        return left(false)
+    return seed
+export fun seedValue() -> Int = seed
+export fun read(action: () -> Int) -> Int = action()

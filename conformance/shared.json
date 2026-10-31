@@ -1,0 +1,338 @@
+[
+  {
+    "id": "shared-forward-defaults",
+    "output": [
+      "5|1|4"
+    ],
+    "directory": "cases/shared-forward-defaults",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ]
+  },
+  {
+    "id": "shared-retained-operands",
+    "output": [
+      "15|2"
+    ],
+    "directory": "cases/shared-retained-operands",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ]
+  },
+  {
+    "id": "shared-cycle",
+    "directory": "cases/shared-cycle",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ],
+    "compile_error": "dependency cycle"
+  },
+  {
+    "id": "shared-unused-cycle",
+    "directory": "cases/shared-unused-cycle",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ],
+    "compile_error": "dependency cycle"
+  },
+  {
+    "id": "shared-function-checkpoint",
+    "choices": [
+      0
+    ],
+    "output": [
+      "7|1"
+    ],
+    "directory": "cases/shared-function-checkpoint",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ]
+  },
+  {
+    "id": "shared-artifact",
+    "precompile": [
+      "state"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "8|10"
+    ],
+    "directory": "cases/shared-artifact",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ]
+  },
+  {
+    "id": "shared-suspension-error",
+    "compile_error": "suspend context",
+    "directory": "cases/shared-suspension-error",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ]
+  },
+  {
+    "id": "shared-store-before-initialization",
+    "output": [
+      "9|9|IR"
+    ],
+    "directory": "cases/shared-store-before-initialization",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ]
+  },
+  {
+    "id": "shared-source-order",
+    "output": [
+      "AB"
+    ],
+    "directory": "cases/shared-source-order",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ]
+  },
+  {
+    "id": "shared-null-annotation-error",
+    "compile_error": "explicit annotation",
+    "directory": "cases/shared-null-annotation-error",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ]
+  },
+  {
+    "id": "shared-eager-side-effects",
+    "directory": "cases/shared-eager-side-effects",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ],
+    "output": [
+      "2|1|BA"
+    ]
+  },
+  {
+    "id": "shared-eager-defaults",
+    "directory": "cases/shared-eager-defaults",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ],
+    "output": [
+      "2|BA"
+    ]
+  },
+  {
+    "id": "shared-eager-methods",
+    "directory": "cases/shared-eager-methods",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ],
+    "output": [
+      "3|BA"
+    ]
+  },
+  {
+    "id": "shared-eager-recursion",
+    "directory": "cases/shared-eager-recursion",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ],
+    "output": [
+      "2|BA"
+    ]
+  },
+  {
+    "id": "shared-indirect-cycle",
+    "directory": "cases/shared-indirect-cycle",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ],
+    "compile_error": "dependency cycle"
+  },
+  {
+    "id": "shared-reference-is-not-call",
+    "directory": "cases/shared-reference-is-not-call",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ],
+    "output": [
+      "7"
+    ]
+  },
+  {
+    "id": "shared-eager-builtins",
+    "directory": "cases/shared-eager-builtins",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ],
+    "output": [
+      "main.Label(value=3)|3|2"
+    ]
+  },
+  {
+    "id": "shared-captured-callable-cycle",
+    "directory": "cases/shared-captured-callable-cycle",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ],
+    "compile_error": "dependency cycle"
+  },
+  {
+    "id": "shared-local-callable",
+    "directory": "cases/shared-local-callable",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ],
+    "output": [
+      "7"
+    ]
+  },
+  {
+    "id": "shared-eager-artifact",
+    "directory": "cases/shared-eager-artifact",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ],
+    "output": [
+      "2|1|BA"
+    ],
+    "precompile": [
+      "state"
+    ]
+  },
+  {
+    "id": "shared-exhaustive-when-artifact",
+    "directory": "cases/shared-exhaustive-when-artifact",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ],
+    "precompile": [
+      "state"
+    ],
+    "output": [
+      "1"
+    ]
+  },
+  {
+    "id": "shared-indirect-importer-cycle",
+    "directory": "cases/shared-indirect-importer-cycle",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ],
+    "precompile": [
+      "library"
+    ],
+    "compile_error": "dependency cycle"
+  },
+  {
+    "id": "shared-loop-expression-stack",
+    "directory": "cases/shared-loop-expression-stack",
+    "output": [
+      "107"
+    ],
+    "decisions": [
+      "E26",
+      "C02",
+      "M15"
+    ]
+  },
+  {
+    "id": "shared-summary-only-module-source-free",
+    "directory": "cases/shared-summary-only-module-source-free",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ],
+    "precompile": [
+      "state",
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "7|statehelper"
+    ]
+  },
+  {
+    "id": "shared-recursive-dependency-query-source-free",
+    "directory": "cases/shared-recursive-dependency-query-source-free",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "7|7|7|7"
+    ]
+  },
+  {
+    "id": "shared-dependency-list-source-free",
+    "directory": "cases/shared-dependency-list-source-free",
+    "decisions": [
+      "M07",
+      "M14",
+      "M15",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "6|6|15|3"
+    ]
+  }
+]

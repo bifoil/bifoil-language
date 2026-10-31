@@ -1,0 +1,8 @@
+import helpers.run
+scene start():
+    val result = run()
+    choice:
+        option "Result ${result}":
+            Unit
+    prose:
+        ${result}

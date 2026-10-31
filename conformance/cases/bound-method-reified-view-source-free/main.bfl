@@ -1,0 +1,17 @@
+import helpers.Box
+import helpers.erase
+scene start():
+    val original = Box("Ada")
+    var source: Box<Any> = original
+    val saved = erase(source)
+    val held: Any = saved
+    val suspended: suspend () -> Any = saved
+    val effectView: Any = suspended
+    val opaque: Any = Box<Any>("Ada")::read
+    source = Box<Any>(7)
+    choice:
+        option "Inspect method":
+            Unit
+    val recovered = held as () -> String
+    prose:
+        ${held is () -> String}|${held is () -> Any}|${recovered().length}|${String(source.read())}|${opaque is () -> String}|${opaque is () -> Any}|${effectView is () -> String}|${effectView is suspend () -> String}

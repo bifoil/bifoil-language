@@ -1,0 +1,37 @@
+import helpers.Keys
+import helpers.SetBox
+import helpers.sameSet
+import helpers.sameMap
+scene start():
+    val raw = {1, 2}
+    val rawAgain = {2, 1}
+    val rawWords = {"one", "two"}
+    val numbers: Set<*> = raw
+    val again: Set<*> = rawAgain
+    val words: Set<*> = rawWords
+    val distinct: Set<Set<*>> = {numbers, again, words}
+    val lookup: Map<Set<*>, String> = {numbers: "numbers", words: "words"}
+    val rawMap = {1: 3}
+    val rawAgainMap = {1: 3}
+    val mapping: Map<*, Int> = rawMap
+    val againMapping: Map<*, Int> = rawAgainMap
+    val tables: Set<Map<*, Int>> = {mapping, againMapping}
+    val records: Set<Keys> = {Keys(numbers, mapping), Keys(again, againMapping)}
+    val boxed: Set<SetBox<*>> = {SetBox(numbers), SetBox(again)}
+    val rawMutable = mutable {1, 2}
+    val mutableView: MutableSet<*> = rawMutable
+    val rawMutableMap = mutable {1: 3}
+    val mutableMapView: MutableMap<*, Int> = rawMutableMap
+    val copied: Set<*> = rawMutable
+    val copiedMap: Map<*, Int> = rawMutableMap
+    val writable: MutableSet<*> = raw
+    rawMutable.add(3)
+    rawMutableMap[1] = 4
+    writable.clear()
+    choice:
+        option "Compare":
+            prose:
+                ${distinct.size}|${lookup[again]!!}|${tables.size}|${records.size}|${boxed.size}
+                ${sameSet(numbers, again)}|${sameMap(mapping, againMapping)}
+                ${mutableView == mutableView}|${mutableMapView == mutableMapView}|${numbers !== words}
+                ${copied.size}|${sameSet(copied, numbers)}|${sameMap(copiedMap, againMapping)}|${writable.size}|${raw.size}|${mutableView.size}|${copiedMap is Map<Int, Int>}

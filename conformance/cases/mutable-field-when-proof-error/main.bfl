@@ -1,0 +1,13 @@
+data class Person:
+    val name: String?
+fun invalid(var person: Person) -> Int:
+    fun change() -> String:
+        person = Person(null)
+        return "Ada"
+    when person.name:
+        case change():
+            return person.name.length
+        else:
+            return 0
+scene start():
+    Unit

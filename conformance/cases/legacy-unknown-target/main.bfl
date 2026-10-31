@@ -1,0 +1,3 @@
+legacy fun unknown() = "missing" label "absent"
+scene start():
+    unknown()

@@ -1,0 +1,40 @@
+enum Mood:
+    Happy
+    Sad
+sealed class Result:
+    case Value(amount: Int)
+    case None
+scene start():
+    val choose = (flag: Boolean) =>:
+        when flag:
+            case true:
+                return 10
+            case false:
+                20
+    val describe = (mood: Mood) =>:
+        when mood:
+            case Mood.Happy:
+                "happy"
+            case Mood.Sad:
+                "sad"
+    val read = (result: Result) =>:
+        when result:
+            case is Result.Value(amount):
+                amount
+            case is Result.None:
+                0
+    var count = 0
+    val sink: (Boolean) -> Unit = (flag: Boolean) =>:
+        when flag:
+            case true:
+                count += 1
+                40
+            case false:
+                count += 2
+                50
+    sink(true)
+    val ignored: Unit = sink(false)
+    choice:
+        option "Continue":
+            prose:
+                ${choose(true)}|${choose(false)}|${describe(Mood.Happy)}|${read(Result.Value(7))}|${count}

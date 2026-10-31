@@ -1,0 +1,7 @@
+fun read(values: MutableMap<String, String?>, prefix: String, suffix: Int) -> Int:
+    values[prefix + suffix]!!
+    val alias = values
+    alias[prefix + suffix] = null
+    return values[prefix + suffix].length
+scene start():
+    Unit

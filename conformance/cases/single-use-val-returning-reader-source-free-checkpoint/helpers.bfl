@@ -1,0 +1,7 @@
+export fun <T> make(input: T) -> () -> T:
+    val result: T
+    fun <U: T> initialize(value: U) -> () -> T:
+        result = value
+        return () => result
+    val saved = initialize<T>(input)
+    return saved

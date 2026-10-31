@@ -1,0 +1,6 @@
+shared val a: Int = invoke(::read)
+fun read() -> Int = a
+fun invoke(callback: () -> Int) -> Int = callback()
+scene start():
+    prose:
+        Unreachable.

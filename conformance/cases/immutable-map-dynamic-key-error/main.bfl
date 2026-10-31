@@ -1,0 +1,7 @@
+fun read(values: Map<String, String?>, var key: String) -> Int:
+    if values[key] != null:
+        key = "other"
+        return values[key].length
+    return 0
+scene start():
+    Unit

@@ -1,0 +1,9 @@
+scene start():
+    val value: Int
+    val reader = () => value
+    val next = () => value + 1
+    choice:
+        option "Initialize":
+            value = 41
+    prose:
+        ${reader()}|${next()}

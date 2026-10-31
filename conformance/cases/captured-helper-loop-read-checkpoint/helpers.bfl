@@ -1,0 +1,13 @@
+export suspend fun run() -> Int:
+    var value: Int
+    suspend fun initialize() -> Int:
+        value = 7
+        choice:
+            option "Increment":
+                value += 1
+        do:
+            value += 1
+        while value < 9
+        return value
+    val result = initialize()
+    return result + value

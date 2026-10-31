@@ -1,0 +1,7 @@
+fun read(values: List<MutableList<String?>>) -> Int:
+    if values[0][0] != null:
+        values[0][0] = null
+        return values[0][0].length
+    return 0
+scene start():
+    Unit

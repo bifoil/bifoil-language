@@ -1,0 +1,10 @@
+fun invoke(callback: () -> Int, ignored: Int) -> Int = callback()
+scene start():
+    val x: Int
+    var callback: () -> Int = () => x
+    invoke(callback, if true:
+        callback = () => 0
+        0
+    else:
+        0
+    )

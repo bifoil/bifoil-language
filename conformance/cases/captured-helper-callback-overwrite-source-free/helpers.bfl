@@ -1,0 +1,8 @@
+export fun run() -> Int:
+    var future: Int
+    var callback: () -> Int = () => future
+    fun initialize() -> Int:
+        callback = () => 7
+        return callback()
+    val result = initialize()
+    return result + callback()

@@ -1,0 +1,12 @@
+export suspend fun run() -> List<String>:
+    var result: Int
+    val observed: MutableList<String> = []
+    for ordinal in 1..2:
+        val status = initialize(ordinal)
+        observed.add("${status}|${result}")
+    suspend fun initialize(amount: Int) -> String:
+        choice:
+            option "Set ${amount}":
+                result = amount
+        return "ready ${result}"
+    return observed

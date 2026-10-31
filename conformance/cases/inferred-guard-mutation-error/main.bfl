@@ -1,0 +1,9 @@
+fun measure(var name: String?):
+    if name == null:
+        return 0
+    fun clear():
+        name = null
+    clear()
+    return name.length
+scene start():
+    measure("Ada")

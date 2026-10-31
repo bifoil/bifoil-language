@@ -1,0 +1,9 @@
+import helpers.Person
+import helpers.House
+import helpers.read
+import helpers.nested
+import helpers.matched
+import helpers.checked
+scene start():
+    prose:
+        ${read(Person("Ada"))}|${read(null)}|${nested(House(Person("Bifoil")))}|${matched(Person("Ada"))}|${checked(Person("Ada"))}

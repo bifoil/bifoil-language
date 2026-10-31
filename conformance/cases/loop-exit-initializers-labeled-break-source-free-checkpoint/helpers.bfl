@@ -1,0 +1,10 @@
+export fun run() -> () -> String:
+    val result: Int
+    outer@ for first in 1..3:
+        for second in 1..3:
+            initialize(first + second)
+            break@outer
+    fun initialize(value: Int):
+        result = value
+    fun read() -> String = "${result}"
+    return ::read

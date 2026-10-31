@@ -1,0 +1,9 @@
+scene start():
+    val result: Int
+    fun initialize(value: Int) -> String = if true:
+        result = value
+        1
+    else:
+        result = 0
+        2
+    val status = initialize(3)

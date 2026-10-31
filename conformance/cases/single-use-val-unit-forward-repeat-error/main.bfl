@@ -1,0 +1,6 @@
+scene start():
+    val result: Int
+    val done = initialize()
+    fun initialize():
+        result = 3
+    val again = initialize()

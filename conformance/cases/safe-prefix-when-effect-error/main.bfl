@@ -1,0 +1,13 @@
+data class Person:
+    val name: String?
+fun read(var person: Person?) -> Int:
+    fun change() -> String:
+        person = null
+        return "Ada"
+    return when person?.name:
+        case change():
+            person.name.length
+        else:
+            0
+scene start():
+    Unit

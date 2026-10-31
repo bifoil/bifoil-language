@@ -1,0 +1,16 @@
+data class Receiver:
+    fun accept(value: Int):
+        return
+fun invalid(items: List<Int>?) -> Int:
+    val result: Int
+    val ignored = items?[
+        if true:
+            result = 1
+            0
+        else:
+            result = 2
+            0
+    ]
+    return result
+scene start():
+    return

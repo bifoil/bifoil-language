@@ -1,0 +1,18 @@
+import helpers.checked
+import helpers.reader
+import helpers.present
+import helpers.matched
+import helpers.upper
+import helpers.defaulted
+import helpers.retained
+scene start():
+    val get = reader<String?>("kept")
+    val saved = retained<String?>("saved")
+    val a: String = checked<String?>("Ada")
+    val b: String = get()
+    val c = present<String?>(null) as String
+    val d = matched<String?>("matched") as String
+    val e = upper<String?>("upper")
+    val f = defaulted<String?>(null)
+    prose:
+        ${a}|${b}|${saved as String}|${c}|${d}|${e}|${f}

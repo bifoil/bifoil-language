@@ -1,0 +1,7 @@
+export fun <U: Equatable> identity(value: U) -> U = value
+export fun <U: Any> present(value: U) -> U = value
+export fun <U: Any> first(vararg values: U) -> U = values[0]
+export fun <T: Any> factory() -> (T) -> T? = ::present
+export fun <U: Any> never() -> U:
+    while true:
+        Unit

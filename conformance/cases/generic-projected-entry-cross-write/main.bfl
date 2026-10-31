@@ -1,0 +1,5 @@
+scene start():
+    val first: Map<*, *> = {"a": 1}
+    val second: MutableList<*> = mutable ["text"]
+    for entry in first:
+        second.add(entry.value)

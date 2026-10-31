@@ -1,0 +1,11 @@
+scene start():
+    val triple = "Value ${"""a" } b"""}"
+    val nested = "Value ${"Inner ${"}"}"}"
+    val mapping = "Map ${{"quote": """x" } y"""}["quote"]!!}"
+    val unicode = "😀 ${"слово ${'呀'}"}"
+    val continued = "Value ${(
+        1 + // } """ ignored
+        2
+    )}!"
+    prose:
+        ${triple}|${nested}|${mapping}|${unicode}|${continued}

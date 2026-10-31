@@ -1,0 +1,14 @@
+import helpers.length
+import helpers.post
+import helpers.breakLength
+import helpers.rangeLength
+import helpers.nested
+import helpers.continued
+import helpers.conditionReturns
+import helpers.askLength
+scene start():
+    prose:
+        ${length(null)}|${post(null)}|${breakLength("Ready")}|${rangeLength("word")}|${nested(null)}|${continued(null)}|${conditionReturns()}
+    val answer = askLength(null)
+    prose:
+        ${answer}

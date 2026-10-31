@@ -1,0 +1,28 @@
+enum Mood:
+    Happy
+    Sad
+sealed class Outcome:
+    case Success(value: String)
+    case Failure(code: Int)
+    case Pending
+fun describe(result: Outcome) -> String:
+    return when result:
+        case is Outcome.Success(value) if value == "":
+            "empty"
+        case is Outcome.Success(value):
+            value
+        case is Outcome.Failure(code):
+            "failure ${code}"
+        case is Outcome.Pending:
+            "pending"
+scene start():
+    val mood: Mood = Happy
+    val word = when mood:
+        case Mood.Happy:
+            "happy"
+        case Mood.Sad:
+            "sad"
+    val done: Outcome = Outcome.Success("ready")
+    val waiting: Outcome = Outcome.Pending
+    prose:
+        ${word}|${describe(done)}|${describe(waiting)}|${Outcome.Success("a") == Outcome.Success("a")}|${Mood.Happy !== Mood.Sad}

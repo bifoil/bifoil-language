@@ -1,0 +1,8 @@
+fun never() -> Nothing:
+    while true:
+        continue
+fun read(ignored: Int = never()) -> Int:
+    prose:
+        A supplied argument reaches this body.
+scene start():
+    return

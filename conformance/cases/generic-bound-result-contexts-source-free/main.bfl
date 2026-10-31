@@ -1,0 +1,21 @@
+import helpers.Box
+import helpers.optional
+import helpers.erased
+import helpers.widened
+import helpers.preserve
+import helpers.field
+import helpers.waited
+import helpers.waitedGroup
+scene start():
+    val number = optional()
+    val opaque = erased()
+    val wide = widened()
+    val kept = preserve<String?>("kept")
+    val missing = preserve<String?>(null)
+    val member = field(Box<String?>("member"))
+    val absent = field(Box<String?>(null))
+    val delayed = waited<String?>("saved")
+    val none = waited<String?>(null)
+    val group = waitedGroup<String?>("group")
+    prose:
+        ${number!!}|${String(opaque)}|${wide === 3.0}|${kept ?: "missing"}|${missing == null}|${member ?: "missing"}|${absent == null}|${delayed ?: "missing"}|${none == null}|${group ?: "missing"}

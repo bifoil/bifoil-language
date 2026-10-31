@@ -1,0 +1,14 @@
+export fun <T: Float> number(value: T) -> T = value
+export fun <T: String> text(value: T) -> T = value
+export fun <T: Float?> optional(value: T) -> T = value
+export fun <T: List<Float>> numbers(value: T) -> T = value
+export fun <T: List<List<Float>>> nested(value: T) -> T = value
+export fun <T: Set<String>> letters(value: T) -> T = value
+export fun <T: Map<Float, String>> pairs(value: T) -> T = value
+export fun <T: U, U: Float> dependent(value: T, upper: U) -> T = value
+export fun <T: Float> group(vararg values: T) -> List<T> = values
+export fun <T: Float> combine(first: T, second: T) -> List<T> = [first, second]
+export fun <T: Float> select(value: T) -> String = "widened"
+export fun select(value: Int) -> String = "exact"
+export data class Measurement<T: Float>:
+    val value: T

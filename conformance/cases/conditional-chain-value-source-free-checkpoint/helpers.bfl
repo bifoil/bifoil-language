@@ -1,0 +1,16 @@
+export shared var calls: Int = 0
+suspend fun check(value: Int, expected: Int) -> Boolean:
+    calls += 1
+    choice:
+        option "Check ${expected}; calls ${calls}":
+            Unit
+    return value == expected
+export suspend fun classify(value: Int):
+    return if check(value, 0):
+        10
+    elif check(value, 1):
+        20.5
+    else if check(value, 2):
+        30
+    else:
+        40

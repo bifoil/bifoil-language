@@ -1,0 +1,10 @@
+enum Mood:
+    Happy
+    Sad
+scene start():
+    val values: Map<Mood?, Int> = {Happy: 1, Mood.Sad: 2, null: 3}
+    choice:
+        option "Keep every distinct key":
+            Unit
+    prose:
+        ${values.size}|${values[Mood.Happy]!!}|${values[Sad]!!}|${values[null]!!}

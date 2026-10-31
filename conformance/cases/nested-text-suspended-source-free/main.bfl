@@ -1,0 +1,6 @@
+import helpers.build
+import helpers.trace
+scene start():
+    val message = build()
+    prose:
+        ${message}|${trace}

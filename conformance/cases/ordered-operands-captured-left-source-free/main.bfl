@@ -1,0 +1,7 @@
+import helpers.compute
+scene start():
+    val result = compute()
+    choice:
+        option "Continue":
+            prose:
+                ${result}

@@ -1,0 +1,9 @@
+export fun run() -> () -> String:
+    val scalar = '😀'
+    val text: String = scalar
+    val decorated = "prefix ${text}"
+    var result: Char
+    for character in "" + decorated:
+        result = character
+    fun read() -> String = "${result}|${decorated.length}"
+    return ::read

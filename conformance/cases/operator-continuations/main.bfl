@@ -1,0 +1,45 @@
+fun <T> identity(value: T) -> T = value
+fun <T> reference() = ::identity<T>
+typealias Nested = List<List<Int>>
+scene start():
+    val pending: Nested
+    pending = [[3]]
+    val fn = ::identity<Int>
+    val comparison = 4 >
+      3
+    val equality = 4 ==
+         4
+    val exact = 4 ===
+       4.0
+    val membership = 2 !in
+      [1, 3]
+    val range = 1..
+      5
+    val stepped = range step
+      2
+    val down = 5 downTo
+      1
+    val known: Any = "Ada"
+    val typed = known is
+      String
+    val cast = known as
+      String
+    var score = 5
+    score +=
+      2
+    score %+=
+      10
+    val characters = cast.
+      length
+    val optional: String? = cast
+    val optionalLength = optional?.
+      length
+    val method = cast::
+      substring
+    var loop = 0
+    do:
+        loop += 1
+    while loop < 2 && pending is List<List<Int>>
+    prose:
+        ${comparison}|${equality}|${exact}|${membership}|${typed}
+        ${fn(3)}|${2 in stepped}|${3 in down}|${characters}|${optionalLength!!}|${method(0, 1)}|${score}|${loop}

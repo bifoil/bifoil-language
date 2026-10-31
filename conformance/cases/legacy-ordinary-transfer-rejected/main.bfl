@@ -1,0 +1,3 @@
+legacy suspend fun ordinary() = "native"
+scene start():
+    ordinary()

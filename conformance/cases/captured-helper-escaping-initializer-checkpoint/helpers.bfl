@@ -1,0 +1,6 @@
+export fun create() -> () -> Int:
+    var value: Int
+    fun initialize() -> Int:
+        value = 7
+        return value
+    return ::initialize

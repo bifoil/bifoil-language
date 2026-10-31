@@ -1,0 +1,5 @@
+legacy suspend fun ask() -> Float = "native" result "answer"
+scene start():
+    val answer = ask()
+    prose:
+        ${answer}

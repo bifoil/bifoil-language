@@ -1,0 +1,22 @@
+export fun values() -> String:
+    var caller = 3
+    val x: Int
+    fun initialize(var value: Int, increment: Int = 1, vararg extras: Int):
+        value = value + increment
+        x = value + extras[0]
+    initialize(caller, extras = [2])
+    return "${x}|${caller}"
+export fun defaults() -> Int:
+    var offset = 1
+    val x: Int
+    fun initialize(first: Int = offset, second: Int = first + 1):
+        x = first + second
+    offset = 4
+    initialize()
+    return x
+export fun <T> identity(value: T) -> T:
+    val result: T
+    fun initialize(item: T):
+        result = item
+    initialize(value)
+    return result

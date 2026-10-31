@@ -1,0 +1,25 @@
+export suspend fun run():
+    var first: Int
+    var second: Int
+    var read: () -> Int = () => 0
+    var total = 0
+    var round = 0
+    do:
+        total += read()
+        round += 1
+        if round == 1:
+            first = 3
+            read = () => first
+            choice:
+                option "Round ${round}":
+                    Unit
+            continue
+        else:
+            second = 7
+            read = () => second
+            choice:
+                option "Round ${round}":
+                    Unit
+            continue
+    while round < 3
+    return total

@@ -1,0 +1,16 @@
+export fun run(mode: Int) -> () -> String:
+    var result: Int
+    val status = when mode:
+        case 0:
+            initialize(3)
+        case 1:
+            initialize("Ada")
+        else:
+            initialize('😀')
+    fun initialize(value: Int) -> String:
+        result = value
+        return "int ${result}"
+    fun initialize(name: String) -> String:
+        result = name.length
+        return "text ${result}"
+    return () => "${status}|${result}"

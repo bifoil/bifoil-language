@@ -1,0 +1,11 @@
+fun number(value: Int) = "int"
+fun number(value: Float) = "float"
+fun container(values: List<Float>) = "widen"
+fun container(values: MutableList<Int>) = "copy"
+fun copyKind(values: List<Int>) = "copy"
+fun copyKind(values: List<Float>) = "copy and widen"
+scene start():
+    val values = [1, 2]
+    val changing = mutable [1, 2]
+    prose:
+        ${number(1)}|${number(1.0)}|${container(values)}|${copyKind(changing)}

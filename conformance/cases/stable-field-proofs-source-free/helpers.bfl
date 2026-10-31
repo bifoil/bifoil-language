@@ -1,0 +1,43 @@
+export data class Person:
+    val name: String?
+export data class House:
+    val person: Person?
+export data class Box<T>:
+    val value: T
+export fun length(person: Person):
+    if person.name == null:
+        return 0
+    return person.name.length
+export fun nested(home: House):
+    if home.person == null:
+        return 0
+    if home.person.name == null:
+        return 0
+    return home.person.name.length
+export fun checked(person: Person):
+    person.name!!
+    return person.name.length
+export fun <T> keep(holder: Box<T>) -> T:
+    if holder.value is String:
+        return holder.value
+    return holder.value
+export fun <T> inferred(holder: Box<T>):
+    if holder.value is String:
+        return holder.value
+    return holder.value
+export fun fieldLength(holder: Box<Any?>):
+    if holder.value !is String:
+        return 0
+    holder.value!!
+    return holder.value.length
+export fun nestedField(holder: Box<Any?>):
+    if holder.value !is Box<String?>:
+        return 0
+    if holder.value.value == null:
+        return 0
+    return holder.value.value.length
+export fun scalarLength(value: Any?):
+    if value !is String:
+        return 0
+    value!!
+    return value.length

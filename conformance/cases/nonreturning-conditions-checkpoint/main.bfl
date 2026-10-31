@@ -1,0 +1,22 @@
+shared var calls: Int = 0
+suspend fun ask() -> Int:
+    calls += 1
+    choice:
+        option "Continue":
+            return calls
+suspend fun pre() -> Int:
+    while return ask():
+        Unit
+suspend fun post() -> Int:
+    do:
+        Unit
+    while return ask()
+suspend fun branch() -> Int:
+    if return ask():
+        Unit
+scene start():
+    val a = pre()
+    val b = post()
+    val c = branch()
+    prose:
+        ${a}|${b}|${c}

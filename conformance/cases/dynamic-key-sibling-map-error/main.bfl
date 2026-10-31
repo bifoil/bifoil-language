@@ -1,0 +1,8 @@
+scene start():
+    val values: Map<String, String?> = {"first": "Ada", "second": null}
+    if true:
+        val key = "first"
+        values[key]!!
+    if true:
+        val key = "second"
+        val size = values[key].length

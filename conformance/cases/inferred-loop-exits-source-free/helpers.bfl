@@ -1,0 +1,47 @@
+export fun length(var input: String?):
+    while input == null:
+        input = "seed"
+    return input.length
+export fun post(var input: String?):
+    do:
+        input = input ?: "Ada"
+    while input == null
+    return input.length
+export fun breakLength(var input: String?):
+    while true:
+        if input != null:
+            break
+        input = "Ada"
+    return input.length
+export fun rangeLength(input: String?):
+    for i in 1..1:
+        if input == null:
+            return 0
+        break
+    return input.length
+export fun nested(var input: String?):
+    outer@ while true:
+        for i in 1..1:
+            if input == null:
+                input = "Ada"
+            if input != null:
+                break@outer
+    return input.length
+export fun continued(var input: String?):
+    do:
+        val suffix = "Ada"
+        if input == null:
+            input = suffix
+            continue
+    while suffix.length == 0 || input == null
+    return input.length
+export fun conditionReturns():
+    do:
+        val reached = true
+    while return 7
+export suspend fun askLength(var input: String?):
+    while input == null:
+        choice:
+            option "Fill":
+                input = "saved"
+    return input.length

@@ -1,0 +1,14 @@
+import helpers.order
+import helpers.supplied
+import helpers.compute
+scene start():
+    val first = compute(supplied(2), c = supplied(5))
+    prose:
+        ${first}|${order}
+    val second = compute(supplied(3))
+    prose:
+        ${second}|${order}
+    val explicit: suspend (Int, Int, Int) -> Int = ::compute
+    val third = explicit(1, 2, 3)
+    prose:
+        ${third}|${order}

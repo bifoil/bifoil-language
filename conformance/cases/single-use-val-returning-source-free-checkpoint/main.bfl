@@ -1,0 +1,13 @@
+import helpers.run
+import helpers.unit
+import helpers.inferred
+scene start():
+    val positive = run(3)
+    val negative = run(-2)
+    val fixed = unit()
+    val inferredValue = inferred()
+    choice:
+        option "Returned results":
+            Unit
+    prose:
+        ${positive}|${negative}|${fixed}|${inferredValue}

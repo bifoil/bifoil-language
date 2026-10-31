@@ -1,0 +1,14 @@
+export fun run() -> () -> String:
+    val readers: MutableList<() -> Int> = mutable []
+    for ordinal in 1..3:
+        val result: Int
+        if ordinal % 2 == 0:
+            initialize(ordinal + 1)
+        else:
+            initialize(ordinal)
+        fun initialize(value: Int):
+            result = value
+        fun read() -> Int = result
+        readers.add(::read)
+    fun show() -> String = "${readers[0]()}|${readers[1]()}|${readers[2]()}"
+    return ::show

@@ -1,0 +1,6 @@
+export data class Box<T>:
+    val value: T
+export fun <T> choose(box: Box<T>?, fallback: T):
+    if box?.value == null:
+        return fallback
+    return box.value

@@ -1,0 +1,6 @@
+import helpers.walk
+scene start():
+    val values: MutableMap<String?, String?> = mutable {null: "zero", "a": "Ada", "b": null}
+    val result = walk(values)
+    prose:
+        ${result}|${values[null] == null}|${values["a"] == null}|${values.size}

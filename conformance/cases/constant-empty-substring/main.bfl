@@ -1,0 +1,7 @@
+scene start():
+    val first = "😀".substring(0, 0)
+    val last = "😀".substring(1, 1)
+    val values = mutable [1, 2]
+    values.insert(2, 3)
+    prose:
+        [${first}]|[${last}]|${values[2]}

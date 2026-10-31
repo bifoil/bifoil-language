@@ -1,0 +1,10 @@
+import helpers.Box
+import helpers.choose
+import helpers.length
+scene start():
+    val box = Box("Ada")
+    val picked: String = choose(box, "Other")
+    val size = length(box)
+    box.value = null
+    prose:
+        ${picked}|${size}|${length(box)}|${choose(box, "Other")}

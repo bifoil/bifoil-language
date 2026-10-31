@@ -1,0 +1,21 @@
+import helpers.Box
+scene start():
+    val hidden: Box<*> = Box(7)
+    var calls = 0
+    val callback = suspend (vararg values: Any?) =>:
+        calls += 1
+        choice:
+            option "Inside ${calls}":
+                Unit
+        "${values.size}|${String(values[0])}|${values[1] == null}"
+    val bound: suspend (suspend (vararg Any?) -> String) -> String = hidden::use
+    choice:
+        option "Before ${calls}":
+            Unit
+    val first = hidden.use(callback)
+    val second = bound(callback)
+    choice:
+        option "After ${calls}":
+            Unit
+    prose:
+        ${first}|${second}|${calls}

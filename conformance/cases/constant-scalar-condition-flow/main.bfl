@@ -1,0 +1,18 @@
+scene start():
+    val first: Int
+    if 2 * 3 == 6 && ('a' == "a"):
+        first = 1
+    val second: Int
+    if 3 === 3.0:
+        return
+    else:
+        second = 2
+    val third: Int
+    when 1 + 2:
+        case 3:
+            third = 3
+    val fourth: Int
+    if (50 %+ 20) == 60 && ('é' < "😀") && (Unit === Unit) && (null === null):
+        fourth = 4
+    prose:
+        ${first}|${second}|${third}|${fourth}

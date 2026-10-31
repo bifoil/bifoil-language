@@ -1,0 +1,7 @@
+import helpers.factory
+scene start():
+    val reader = factory()
+    choice:
+        option "Continue":
+            prose:
+                ${reader()}|${reader()}

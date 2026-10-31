@@ -1,0 +1,6 @@
+enum Mood:
+    case Happy
+    case Sad
+legacy fun invalid() -> Mood = "questions" label "invalid" result "answer"
+scene start():
+    val result = invalid()

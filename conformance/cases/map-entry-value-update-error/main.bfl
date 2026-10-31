@@ -1,0 +1,4 @@
+fun invalid(entry: Entry<String, String?>):
+    entry.value = null
+scene start():
+    Unit

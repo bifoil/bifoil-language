@@ -1,0 +1,14 @@
+import helpers.guarded
+import helpers.narrowed
+import helpers.looped
+import helpers.local
+import helpers.assigned
+import helpers.builtin
+import helpers.ask
+import helpers.whenGuarded
+scene start():
+    prose:
+        ${guarded(null, true)}|${guarded("Ada", true)}|${guarded(null, false)}|${narrowed("hello", true)}|${narrowed(3, true)}|${looped(null)}|${local("four")}|${local(null)}|${assigned("five!")}|${builtin("yes")}|${whenGuarded("four", true)}|${whenGuarded(null, true)}
+    val answer = ask("sixsix")
+    prose:
+        ${answer}

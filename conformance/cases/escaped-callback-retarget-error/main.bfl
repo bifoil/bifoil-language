@@ -1,0 +1,13 @@
+shared var callback: () -> Int = () => 0
+fun invoke() -> Int = callback()
+fun publish(action: () -> Int):
+    callback = action
+scene start():
+    var future: Int
+    var target: () -> Int = () => 7
+    var other: () -> Int = () => 9
+    fun through() -> Int = target()
+    callback = ::through
+    target = () => future
+    val result = invoke()
+    future = 3

@@ -1,0 +1,8 @@
+scene start():
+    var value: Int
+    fun initialize():
+        value = 1
+    initialize()
+    value = 2
+    prose:
+        ${value}

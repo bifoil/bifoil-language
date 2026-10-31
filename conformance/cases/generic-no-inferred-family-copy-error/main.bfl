@@ -1,0 +1,4 @@
+fun <T> first(value: MutableList<T>) -> T = value[0]
+fun invalid(value: List<Int>) = first(value)
+scene start():
+    Unit

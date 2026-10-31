@@ -1,0 +1,19 @@
+import helpers.andCase
+import helpers.orCase
+import helpers.fallback
+import helpers.count
+import helpers.safeCall
+import helpers.safeIndex
+import helpers.safeMember
+scene start():
+    val first = andCase()
+    val second = orCase()
+    val third = fallback()
+    val fourth = safeCall()
+    val fifth = safeIndex()
+    val sixth = safeMember()
+    choice:
+        option "Skipped ${count()}":
+            Unit
+    prose:
+        ${first}|${second}|${third}|${fourth}|${fifth}|${sixth}|${count()}

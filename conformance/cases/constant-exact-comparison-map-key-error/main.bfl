@@ -1,0 +1,2 @@
+scene start():
+    val values = {(3 === 3.0): 1, false: 2}

@@ -1,0 +1,11 @@
+fun compute() -> Int:
+    return 100 + if true:
+        for i in 1..2:
+            val skipped = 10 + continue
+        7
+    else:
+        0
+shared val result = compute()
+scene start():
+    prose:
+        ${result}

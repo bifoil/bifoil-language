@@ -1,0 +1,12 @@
+fun text(values: Map<String, String?>, key: Char) -> Int:
+    values[key]!!
+    return values[key].length
+fun number(values: Map<Float, String?>, key: Int) -> Int:
+    values[key]!!
+    return values[key].length
+fun optional(values: Map<String?, String?>, key: String?) -> Int:
+    values[key]!!
+    return values[key].length
+scene start():
+    prose:
+        ${text({"a": "Ada"}, 'a')}|${number({1.0: "four"}, 1)}|${optional({null: "three"}, null)}

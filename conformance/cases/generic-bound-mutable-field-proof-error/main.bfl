@@ -1,0 +1,10 @@
+data class Box<T>:
+    var value: T
+fun <U: Any> present(value: U) -> U = value
+fun <T> invalid(holder: Box<T>, replacement: T) -> T:
+    if holder.value is String:
+        holder.value = replacement
+        return present(holder.value)
+    return holder.value
+scene start():
+    Unit

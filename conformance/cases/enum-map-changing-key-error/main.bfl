@@ -1,0 +1,10 @@
+enum Mood:
+    Happy
+    Sad
+fun read(values: Map<Mood, String?>, var selected: Mood) -> Int:
+    if values[selected] != null:
+        selected = Mood.Sad
+        return values[selected].length
+    return 0
+scene start():
+    Unit

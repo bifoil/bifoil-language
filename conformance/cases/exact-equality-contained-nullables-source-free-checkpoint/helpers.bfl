@@ -1,0 +1,7 @@
+export fun run() -> () -> String:
+    val integer: Int? = 3
+    val floating: Float? = 3.0
+    val missingText: String? = null
+    val missingNumber: Int? = null
+    fun read() -> String = "${integer === 3}|${integer === floating}|${missingText === missingNumber}|${integer !== null}"
+    return ::read

@@ -1,0 +1,8 @@
+scene start():
+    var future: Int
+    fun read(value: Int = future) -> Int = value
+    fun supplied() -> Int = read(7)
+    fun omitted() -> Int = read()
+    val first = supplied()
+    val second = omitted()
+    future = 3

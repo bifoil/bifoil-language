@@ -1,0 +1,13 @@
+import helpers.branch
+import helpers.looping
+import helpers.constant
+scene start():
+    val yes = branch(true)
+    val no = branch(false)
+    val loop = looping()
+    val fixed = constant()
+    choice:
+        option "Structured":
+            Unit
+    prose:
+        ${yes}|${no}|${loop}|${fixed}

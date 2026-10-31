@@ -1,0 +1,8 @@
+scene start():
+    var future: Int
+    var target: () -> Int = () => 7
+    fun through() -> Int = target()
+    val first = through()
+    target = () => future
+    val second = through()
+    future = 3

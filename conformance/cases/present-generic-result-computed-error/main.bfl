@@ -1,0 +1,6 @@
+fun <T> invalid(value: T?, fallback: T) -> T:
+    if value is String:
+        return value + "changed"
+    return fallback
+scene start():
+    Unit

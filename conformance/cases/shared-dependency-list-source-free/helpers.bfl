@@ -1,0 +1,10 @@
+export shared var first: Int = 1
+shared val second: Int = 2
+shared val third: Int = 3
+export shared var calls: Int = 0
+fun read() -> Int:
+    calls += 1
+    return first + second + third
+export shared val a: Int = read()
+export shared val b: Int = read()
+export fun again() -> Int = read()

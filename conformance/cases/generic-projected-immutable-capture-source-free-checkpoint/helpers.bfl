@@ -1,0 +1,2 @@
+export data class Fixed<T>:
+    val value: T

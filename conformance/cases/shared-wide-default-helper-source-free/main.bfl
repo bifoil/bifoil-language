@@ -1,0 +1,8 @@
+import helpers.record
+import helpers.calls
+scene start():
+    choice:
+        option "Inspect ${calls}":
+            Unit
+    prose:
+        ${record.field0000}|${record.field0063}|${calls}

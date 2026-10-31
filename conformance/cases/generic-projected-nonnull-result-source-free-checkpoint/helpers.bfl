@@ -1,0 +1,4 @@
+export data class Box<T>:
+    val value: T
+    fun present() = value!!
+export fun make() -> Box<Int?> = Box<Int?>(7)

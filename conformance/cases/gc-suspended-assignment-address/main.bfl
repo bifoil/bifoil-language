@@ -1,0 +1,14 @@
+data class Counter:
+    var count: Int
+scene start():
+    var target = Counter(4)
+    suspend fun churn() -> Int:
+        target = Counter(100)
+        for index in 1..32000:
+            val temporary = Counter(index)
+        choice:
+            option "Resume":
+                return 3
+    target.count += churn()
+    prose:
+        ${target.count}

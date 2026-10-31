@@ -1,0 +1,2 @@
+import main.first
+export shared val second: Int = first + 1

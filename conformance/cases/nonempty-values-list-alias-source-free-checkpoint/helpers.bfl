@@ -1,0 +1,8 @@
+export fun run() -> () -> String:
+    val items = [1, 2]
+    val alias = items
+    var result: Int
+    for item in alias:
+        result = item
+    fun read() -> String = "${result}"
+    return ::read

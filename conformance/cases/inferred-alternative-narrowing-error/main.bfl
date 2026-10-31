@@ -1,0 +1,8 @@
+fun unsafe(name: String?, force: Boolean):
+    when:
+        case name != null, force:
+            return name.length
+        else:
+            return 0
+scene start():
+    unsafe(null, true)

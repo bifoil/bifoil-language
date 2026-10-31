@@ -1,0 +1,12 @@
+import helpers.Counter
+scene start():
+    val counter = Counter(3)
+    prose:
+        ${counter.replace(7)}
+    val result = counter.ask()
+    prose:
+        ${result}
+    val copy = counter.duplicate()
+    copy.value = 30
+    prose:
+        ${counter.value}|${copy.value}

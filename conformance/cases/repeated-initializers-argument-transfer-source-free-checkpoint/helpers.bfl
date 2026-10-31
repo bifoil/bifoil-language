@@ -1,0 +1,10 @@
+export fun run(flag: Boolean) -> Int:
+    var result: Int
+    if flag:
+        initialize(return -1)
+    else:
+        initialize(3)
+    fun initialize(value: Int) -> Int:
+        result = value
+        return result
+    return result

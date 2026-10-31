@@ -1,0 +1,7 @@
+export data class KeyBox<T: StableKey>:
+    val value: T
+export data class EqualityBox<T: Equatable>:
+    val value: T
+export sealed class Token<T: StableKey>:
+    case Value(value: T)
+    case Empty

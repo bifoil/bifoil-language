@@ -1,0 +1,10 @@
+scene start():
+    prose:
+        @ if false:
+            wrong
+        @ else if false:
+            wrong
+        @ elif true:
+            one
+        @ else:
+            wrong

@@ -1,0 +1,8 @@
+scene start():
+    var value: Int
+    fun read() -> Int = value
+    fun initialize() -> Int:
+        val old = read()
+        value = 7
+        return value
+    val result = initialize()

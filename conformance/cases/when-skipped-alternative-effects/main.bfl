@@ -1,0 +1,15 @@
+scene start():
+    val x: Int
+    when:
+        case true, (if true:
+            x = 1
+            true
+        else:
+            x = 3
+            true
+        ):
+            x = 2
+        else:
+            x = 4
+    prose:
+        ${x}

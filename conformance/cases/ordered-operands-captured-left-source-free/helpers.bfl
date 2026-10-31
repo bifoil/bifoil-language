@@ -1,0 +1,8 @@
+export fun compute() -> Int:
+    var score: Int? = 1
+    fun reset() -> Int:
+        score = null
+        return 2
+    if score != null:
+        return score + reset()
+    return 0

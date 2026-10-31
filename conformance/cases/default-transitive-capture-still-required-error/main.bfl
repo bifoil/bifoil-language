@@ -1,0 +1,9 @@
+fun exercise() -> Int:
+    val seed: Int
+    fun read(value: Int = seed) -> Int = value
+    fun wrapper() -> Int = read()
+    val result = wrapper()
+    seed = 7
+    return result
+scene start():
+    Unit

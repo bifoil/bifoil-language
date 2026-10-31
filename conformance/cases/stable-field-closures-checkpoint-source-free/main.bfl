@@ -1,0 +1,13 @@
+import helpers.Person
+import helpers.callback
+import helpers.named
+import helpers.ask
+scene start():
+    val reader = callback(Person("four"), () => Unit)
+    choice:
+        option "Keep callbacks":
+            Unit
+    val answer = ask(Person("Ada"))
+    val empty = ask(Person(null))
+    prose:
+        ${reader()}|${named(Person("two"))}|${named(Person(null))}|${answer}|${empty}

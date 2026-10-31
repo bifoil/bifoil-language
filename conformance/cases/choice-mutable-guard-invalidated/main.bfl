@@ -1,0 +1,11 @@
+scene start():
+    var name: String? = "Ada"
+    fun clear() -> Boolean:
+        name = null
+        return false
+    choice:
+        option "First" if name != null:
+            prose:
+                ${name.length}
+        option "Second" if clear():
+            Unit

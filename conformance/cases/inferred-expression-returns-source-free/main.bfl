@@ -1,0 +1,17 @@
+import helpers.immediate
+import helpers.branches
+import helpers.build
+import helpers.argument
+import helpers.shortCircuit
+import helpers.nullReturn
+import helpers.assertion
+import helpers.skip
+scene start():
+    choice:
+        option "Run inferred returns":
+            prose:
+                ${immediate()}|${branches(true)}|${branches(false)}|${build()()}|${argument()}
+            prose:
+                ${shortCircuit(true)}|${shortCircuit(false)}|${nullReturn(null)}|${nullReturn("Ada")}|${assertion("Ada")}
+            prose:
+                ${skip(null)}|${skip((value: Int) => value)}

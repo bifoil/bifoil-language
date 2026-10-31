@@ -1,0 +1,9 @@
+export fun makeWriter() -> suspend (Int) -> Unit:
+    var hidden: Int
+    return suspend (value: Int) =>:
+        choice:
+            option "Write ${value}":
+                Unit
+        hidden = value
+        prose:
+            Stored ${value}.

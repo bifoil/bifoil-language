@@ -1,0 +1,2 @@
+export legacy var score: Int = "score"
+export legacy fun award(amount: Int) -> Int = "helpers" label "award" result "score"

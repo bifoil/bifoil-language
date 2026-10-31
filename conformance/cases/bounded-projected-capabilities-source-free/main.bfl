@@ -1,0 +1,19 @@
+import helpers.KeyBox
+import helpers.EqualityBox
+import helpers.Token
+scene start():
+    val first: KeyBox<*> = KeyBox(3)
+    val same: KeyBox<*> = KeyBox(3)
+    val text: KeyBox<*> = KeyBox("Ada")
+    val keys: Set<KeyBox<*>> = {first, same}
+    val mapping: Map<KeyBox<*>, String> = {first: "three", text: "label"}
+    val compared: EqualityBox<*> = EqualityBox(8)
+    val other: EqualityBox<*> = EqualityBox(8)
+    val token: Token<*> = Token.Value(7)
+    val tokens: Set<Token<*>> = {token, Token.Value(7)}
+    choice:
+        option "Compare projected keys":
+            prose:
+                ${keys.size}|${mapping[KeyBox(3)]!!}|${mapping[KeyBox("Ada")]!!}|${tokens.size}
+            prose:
+                ${first == same}|${first === same}|${first === text}|${compared == other}

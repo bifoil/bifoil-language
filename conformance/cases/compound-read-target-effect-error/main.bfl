@@ -1,0 +1,9 @@
+fun reset(values: MutableList<String?>) -> Int:
+    values[0] = null
+    return 0
+fun invalid(values: MutableList<String?>):
+    if values[0] == null:
+        return
+    values[reset(values)] += "!"
+scene start():
+    Unit

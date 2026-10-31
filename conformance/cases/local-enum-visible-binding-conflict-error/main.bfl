@@ -1,0 +1,6 @@
+enum Mood:
+    Happy
+scene start():
+    val Happy = Mood.Happy
+    fun pick() -> Mood = Happy
+    val result = pick()

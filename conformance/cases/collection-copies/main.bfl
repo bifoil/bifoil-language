@@ -1,0 +1,14 @@
+scene start():
+    val source = mutable [1, 2]
+    val alias = source
+    val frozen: List<Int> = source
+    val wider: List<Float> = frozen
+    val editable: MutableList<Int> = frozen
+    fun change() -> Int:
+        source[0] = 9
+        return 0
+    fun hold(values: List<Float>, ignored: Int) -> Float = values[0]
+    val captured = hold(source, change())
+    editable[1] = 8
+    prose:
+        ${alias[0]}|${frozen[0]}|${wider[0] === 1.0}|${editable[1]}|${captured}

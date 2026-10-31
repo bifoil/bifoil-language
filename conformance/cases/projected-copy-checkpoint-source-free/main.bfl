@@ -1,0 +1,12 @@
+import helpers.snapshot
+import helpers.copyBound
+import helpers.copyChecked
+import helpers.pick
+import helpers.grow
+scene start():
+    val raw = mutable [1, 2]
+    val bound = copyBound(raw)
+    val checked = copyChecked<MutableList<Int>?>(raw)
+    val saved = snapshot(raw, grow(raw))
+    prose:
+        ${saved}|${raw.size}|${bound.size}|${checked.size}|${pick(raw)}

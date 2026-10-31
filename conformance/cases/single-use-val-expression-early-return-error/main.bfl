@@ -1,0 +1,8 @@
+scene start():
+    val result: Int
+    fun initialize(flag: Boolean) = if flag:
+        return "skipped"
+    else:
+        result = 3
+        "ready"
+    val status = initialize(false)

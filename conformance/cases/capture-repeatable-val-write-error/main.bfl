@@ -1,0 +1,6 @@
+scene start():
+    val x: Int
+    fun set():
+        x = 1
+    x = 2
+    set()

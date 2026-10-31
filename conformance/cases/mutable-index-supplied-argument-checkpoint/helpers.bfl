@@ -1,0 +1,11 @@
+fun consume(first: String, ignored: Unit) -> Int = first.length
+suspend fun clear(values: MutableList<String?>):
+    values.clear()
+    choice:
+        option "Finish":
+            Unit
+export suspend fun run() -> Int:
+    val values: MutableList<String?> = mutable ["Ada"]
+    if values[0] == null:
+        return 0
+    return consume(values[0], clear(values))

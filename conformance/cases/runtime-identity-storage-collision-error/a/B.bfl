@@ -1,0 +1,1 @@
+export shared val C: Int = 7

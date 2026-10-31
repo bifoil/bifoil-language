@@ -1,0 +1,4 @@
+fun <T: MutableList<Float>> keep(value: T) -> T = value
+scene start():
+    val values = mutable [1, 2]
+    val result = keep(values)

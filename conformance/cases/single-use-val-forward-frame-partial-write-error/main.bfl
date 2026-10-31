@@ -1,0 +1,8 @@
+scene start():
+    val result: Int
+    val status = initialize(0)
+    fun initialize(value: Int) -> String:
+        if value > 0:
+            result = value
+        return "ready"
+    val observed = result

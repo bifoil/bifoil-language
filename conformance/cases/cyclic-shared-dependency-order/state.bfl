@@ -1,0 +1,4 @@
+export shared var log: String = ""
+export fun record(text: String, value: Int) -> Int:
+    log += text
+    return value

@@ -1,0 +1,28 @@
+export sealed class Result<T>:
+    case Success(value: T)
+    case Empty
+export fun <T> known(value: Result<T>) -> Boolean = true
+export fun <T> empty() -> Result.Empty<T> = Result.Empty<T>()
+export fun <T> first(value: List<T>) -> T = value[0]
+export fun <U: List<String>> boundedFirst(value: U) = first(value)
+export fun <T> call(value: () -> T) -> T = value()
+export fun <U: () -> Int> boundedCall(value: U) = call(value)
+export suspend fun <T> waited(value: suspend () -> T) -> T = value()
+export suspend fun <U: suspend () -> Int> forwardWait(value: U) = waited(value)
+export fun <T> keep(value: Scene<T>) -> Scene<T> = value
+export fun <U: Scene<Int>> boundedScene(value: U) = keep(value)
+export fun <T> render(value: T) -> String:
+    fun <U> inner(original: T, extra: U) -> String = String(original)
+    return inner(value, 1)
+export suspend fun <T> pauseBeforeVisit(destination: Scene<T>, item: T):
+    val retained = keep(destination)
+    choice:
+        option "Use typed scene":
+            Unit
+    visit retained(item)
+export scene target(value: Int):
+    choice:
+        option "Target ${value}":
+            Unit
+    prose:
+        Scene ${value}.

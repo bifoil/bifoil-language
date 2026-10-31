@@ -1,0 +1,30 @@
+export fun forward(flag: Boolean):
+    return if flag:
+        val result = width(3)
+        fun width(value: Int) = value * 2
+        result
+    else:
+        0
+export fun recursive(flag: Boolean):
+    return if flag:
+        val result = even(6)
+        fun even(value: Int):
+            if value == 0:
+                return true
+            return odd(value - 1)
+        fun odd(value: Int):
+            if value == 0:
+                return false
+            return even(value - 1)
+        result
+    else:
+        false
+export fun callback(flag: Boolean):
+    return if flag:
+        fun make():
+            fun width(value: Int) = value * 2
+            return ::width
+        val result = make()(4)
+        result
+    else:
+        0

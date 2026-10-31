@@ -1,0 +1,9 @@
+export data class Person:
+    val name: String?
+export shared var text: String? = "Ada"
+export shared var dynamic: Any? = "Ada"
+export shared var values: Map<String, String?> = {"name": "Ada"}
+export shared var key: String = "name"
+export shared var number: Int = 7
+export shared var person: Person? = Person("Ada")
+export shared val fixed: String? = "Ada"

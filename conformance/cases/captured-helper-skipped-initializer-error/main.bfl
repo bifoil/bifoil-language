@@ -1,0 +1,8 @@
+scene start():
+    var value: Int
+    fun initialize() -> Boolean:
+        value = 7
+        val read = value
+        return true
+    val skipped = false && initialize()
+    val result = value

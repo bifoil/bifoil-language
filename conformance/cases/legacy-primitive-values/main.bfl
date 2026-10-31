@@ -1,0 +1,8 @@
+legacy val exact: Float = "number"
+legacy val letter: Char = "letter"
+legacy val text: String = "text"
+legacy val flag: Boolean = "flag"
+legacy val absent: Int? = "absent"
+scene start():
+    prose:
+        ${exact}|${letter}|${text}|${flag}|${absent == null}

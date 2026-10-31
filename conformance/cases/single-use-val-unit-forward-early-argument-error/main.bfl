@@ -1,0 +1,6 @@
+fun accept(before: Int, token: Unit, after: Int) -> Int = before + after
+scene start():
+    val result: Int
+    val done = accept(result, initialize(), 2)
+    fun initialize():
+        result = 3

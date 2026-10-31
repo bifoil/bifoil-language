@@ -1,0 +1,14 @@
+shared var trace: String = ""
+fun mark(value: Int) -> Int:
+    trace += "${value},"
+    return value
+export fun run() -> () -> String:
+    var result: Int
+    fun fill() -> Int:
+        result = 5
+        return mark(2)
+    val status = initialize(fill())
+    fun initialize(value: Int, increment: Int = mark(value + 1)) -> String:
+        result = result + value + increment
+        return "ready"
+    return () => "${status}|${result}|${trace}"

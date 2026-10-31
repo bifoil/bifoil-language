@@ -1,0 +1,10 @@
+shared var runs = 0
+shared val final = compute(later)
+shared val later = 4
+fun touch() -> Int:
+    runs += 1
+    return runs
+fun compute(value: Int, extra: Int = touch()) -> Int = value + extra
+scene start():
+    prose:
+        ${final}|${runs}|${later}

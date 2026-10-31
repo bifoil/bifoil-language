@@ -1,0 +1,11 @@
+export fun run() -> () -> String:
+    val result: Int
+    val status = initialize<String>("Ada")
+    fun <T: Equatable> initialize(value: T, amount: Int = 3) -> String:
+        if value == value:
+            result = amount
+        else:
+            result = 0
+        return "ready ${result}"
+    fun read() -> String = "${status}|${result}"
+    return ::read

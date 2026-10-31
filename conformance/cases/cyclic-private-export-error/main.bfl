@@ -1,0 +1,3 @@
+import other.helper
+scene start():
+    helper()

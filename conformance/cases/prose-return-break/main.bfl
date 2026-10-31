@@ -1,0 +1,13 @@
+fun helper() -> Int:
+    prose:
+        helper
+        @return 4
+scene start():
+    for i in 1..3:
+        prose:
+            ${i}
+            @break
+            unreachable
+    val result = helper()
+    prose:
+        ${result}

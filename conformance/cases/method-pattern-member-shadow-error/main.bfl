@@ -1,0 +1,10 @@
+sealed class Outcome:
+    case Success(item: Int)
+data class Counter:
+    var value: Int
+    fun read(item: Outcome):
+        when item:
+            case is Outcome.Success(value):
+                Unit
+scene start():
+    Unit

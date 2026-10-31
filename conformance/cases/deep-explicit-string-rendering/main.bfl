@@ -1,0 +1,13 @@
+data class Link:
+    var next: Link?
+    val value: Int
+scene start():
+    var chain: Link? = null
+    for index in 1..6000:
+        chain = Link(chain, index)
+    val text = String(chain)
+    val repeated = Link(null, 1)
+    repeated.next = repeated
+    val cycle = String(repeated)
+    prose:
+        ${text.substring(0, 10)}|${text.length > 100000}|${cycle}

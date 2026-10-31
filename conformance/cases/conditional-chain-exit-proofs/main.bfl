@@ -1,0 +1,37 @@
+fun pick(value: Int) -> Int:
+    val chosen: Int
+    if value == 0:
+        chosen = 10
+    elif value == 1:
+        chosen = 20
+    else if value == 2:
+        return 30
+    else:
+        chosen = 40
+    return chosen
+fun length(value: String?) -> Int:
+    if value == null:
+        return 0
+    elif value.length == 0:
+        return 0
+    else if value.length == 1:
+        return 1
+    return value.length
+scene start():
+    val values = [pick(0), pick(1), pick(2), pick(9)]
+    val lengths = [length(null), length(""), length("A"), length("Ada")]
+    val callback = (value: Int) =>:
+        if value == 0:
+            10
+        elif value == 1:
+            20.5
+        else if value == 2:
+            30
+        else:
+            40
+    val actual = callback(2)
+    choice:
+        option "Retain branch results":
+            Unit
+    prose:
+        ${values[0]}|${values[1]}|${values[2]}|${values[3]}|${lengths[0]}|${lengths[1]}|${lengths[2]}|${lengths[3]}|${actual === 30.0}

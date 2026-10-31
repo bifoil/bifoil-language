@@ -1,0 +1,2 @@
+export fun describe(value: Int) = "int"
+export fun describe(value: Float) = "float"

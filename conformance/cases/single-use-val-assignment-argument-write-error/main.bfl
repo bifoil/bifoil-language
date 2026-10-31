@@ -1,0 +1,12 @@
+scene start():
+    val result: Int
+    var status = "pending"
+    fun initialize(value: Int) -> String:
+        result = value
+        return "ready"
+    status = initialize((if true:
+        result = 1
+        2
+    else:
+        3
+    ))

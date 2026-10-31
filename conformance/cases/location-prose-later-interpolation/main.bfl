@@ -1,0 +1,6 @@
+scene start():
+    var position = 10
+    val values = [1]
+    prose:
+        First line.
+        Later ${values[position]}.

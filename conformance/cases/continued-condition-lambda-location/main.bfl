@@ -1,0 +1,6 @@
+scene start():
+    if true && (
+        ((value: Int) => 10 / value)(0) == 1
+    ):
+        prose:
+            unreachable

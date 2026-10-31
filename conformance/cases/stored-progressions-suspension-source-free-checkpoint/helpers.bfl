@@ -1,0 +1,9 @@
+export suspend fun run() -> Int:
+    val progression = 1..3 step 1
+    choice:
+        option "Proceed":
+            Unit
+    var result: Int
+    for ordinal in progression:
+        result = ordinal
+    return result

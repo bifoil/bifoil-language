@@ -1,0 +1,13 @@
+scene start():
+    var name: String? = "Ada"
+    fun clear() -> Boolean:
+        name = null
+        return true
+    if name != null:
+        val result = if true:
+            if clear():
+                name.length
+            else:
+                0
+        else:
+            0

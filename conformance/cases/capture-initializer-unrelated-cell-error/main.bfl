@@ -1,0 +1,8 @@
+scene start():
+    fun initialize():
+        var score: Int
+        score = 3
+    var score: Int
+    initialize()
+    prose:
+        ${score}

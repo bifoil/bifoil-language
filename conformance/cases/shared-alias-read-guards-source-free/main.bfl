@@ -1,0 +1,22 @@
+import state.text as first
+import state.text as second
+import state.dynamic as dynamicFirst
+import state.dynamic as dynamicSecond
+import state.person as personFirst
+import state.person as personSecond
+import state.fixed as fixedFirst
+import state.fixed as fixedSecond
+scene start():
+    if first != null:
+        prose:
+            ${second.length}
+    if dynamicFirst is String:
+        prose:
+            ${dynamicSecond.length}
+    if personFirst?.name != null:
+        prose:
+            ${personSecond.name.length}
+    choice:
+        option "Read fixed alias" if fixedFirst != null:
+            prose:
+                ${fixedSecond.length}

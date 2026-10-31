@@ -1,0 +1,4 @@
+fun describe(value: Int) = "int"
+fun describe(value: Float) = "float"
+scene start():
+    val action = ::describe

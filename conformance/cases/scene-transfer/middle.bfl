@@ -1,0 +1,7 @@
+import ending.finish
+export scene room(danger: Int = 0):
+    prose:
+        Middle ${danger}.
+    goto finish()
+    prose:
+        Unreachable.

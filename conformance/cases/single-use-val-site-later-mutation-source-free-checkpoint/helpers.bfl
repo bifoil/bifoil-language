@@ -1,0 +1,18 @@
+export suspend fun changed(visible: Boolean) -> String:
+    val result: Int
+    var name: String? = null
+    var calls = 0
+    fun initialize() -> String:
+        calls += 1
+        name = "ready"
+        result = 3
+        return "First"
+    fun clear() -> String:
+        calls += 1
+        name = null
+        return "Other"
+    choice:
+        option "${initialize()}" if visible:
+            return "${result}|${name == null}|${calls}"
+        option "${clear()}":
+            return "other"

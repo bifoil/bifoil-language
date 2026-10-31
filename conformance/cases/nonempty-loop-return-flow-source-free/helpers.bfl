@@ -1,0 +1,5 @@
+export fun count(values: Map<Int, String?>):
+    for position in [1]:
+        if values[0] == null:
+            return 0
+    return values[0].length

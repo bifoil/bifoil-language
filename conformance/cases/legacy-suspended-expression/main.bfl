@@ -1,0 +1,9 @@
+legacy var calls: Int = "calls"
+legacy suspend fun ask(amount: Int = 2) -> Int = "questions" label "ask" result "answer"
+fun bump() -> Int:
+    calls += 1
+    return calls
+scene start():
+    val total = bump() + ask() + bump()
+    prose:
+        ${total}|${calls}

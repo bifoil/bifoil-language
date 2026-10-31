@@ -1,0 +1,4 @@
+import a.early
+import state.record
+shared val later: Int = record("B", 2)
+export fun value() -> Int = later

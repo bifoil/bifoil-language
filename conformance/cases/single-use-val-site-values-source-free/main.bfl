@@ -1,0 +1,20 @@
+import helpers.proseCall
+import helpers.conditional
+import helpers.expression
+import helpers.subject
+import helpers.pattern
+import helpers.guarded
+import helpers.traversal
+scene start():
+    val a = proseCall()
+    val b = conditional()
+    val c = expression()
+    val d = subject()
+    val e = pattern()
+    val f = guarded()
+    val g = traversal()
+    choice:
+        option "Sites complete":
+            Unit
+    prose:
+        ${a}|${b}|${c}|${d}|${e}|${f}|${g}

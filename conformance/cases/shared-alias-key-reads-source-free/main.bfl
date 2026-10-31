@@ -1,0 +1,13 @@
+import state.key as first
+import state.key as second
+import state.number as numberFirst
+import state.number as numberSecond
+scene start():
+    val values: Map<String, String?> = {"name": "Ada"}
+    if values[first] != null:
+        prose:
+            ${values[second].length}
+    val numeric: Map<Float, String?> = {7.0: "Bifoil"}
+    if numeric[numberFirst] != null:
+        prose:
+            ${numeric[numberSecond].length}

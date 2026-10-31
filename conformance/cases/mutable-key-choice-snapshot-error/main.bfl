@@ -1,0 +1,6 @@
+scene start():
+    var key = "first"
+    val values: Map<String, String?> = {"first": "Ada", "second": null}
+    choice:
+        option "Read" if values[key] != null:
+            val length = values[key].length

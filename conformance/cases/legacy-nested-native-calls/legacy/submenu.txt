@@ -1,0 +1,6 @@
+*label pick
+*params amount
+*choice
+  #Choose ${amount}
+    *set answer amount
+    *return

@@ -1,0 +1,9 @@
+scene start():
+    var future: Int
+    fun read(value: Int = future, copy: Int = value) -> Int = copy
+    fun through() -> Int:
+        val reader = ::read
+        val supplied = reader(7, 8)
+        return read(copy = 7)
+    val result = through()
+    future = 3

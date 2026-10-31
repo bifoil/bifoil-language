@@ -1,0 +1,6 @@
+fun key() -> String = "name"
+fun read(values: Map<String, String?>) -> Int:
+    values["${key()}!"]!!
+    return values["${key()}!"].length
+scene start():
+    Unit

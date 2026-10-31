@@ -1,0 +1,64 @@
+export fun guarded(name: String?, flag: Boolean):
+    return if flag:
+        if name == null:
+            return 0
+        name.length
+    else:
+        9
+export fun narrowed(input: Any, flag: Boolean):
+    val result = if flag:
+        if input !is String:
+            return 0
+        input.length
+    else:
+        1
+    return result
+export fun looped(var name: String?):
+    return if true:
+        while name == null:
+            name = "seed"
+        name.length
+    else:
+        0
+export fun local(name: String?):
+    return if true:
+        val seed = name ?: return 0
+        fun width() = seed.length
+        width()
+    else:
+        0
+export fun assigned(name: String?):
+    return if true:
+        val result: Int
+        if name == null:
+            return 0
+        result = name.length
+        result
+    else:
+        0
+export fun builtin(input: String?):
+    return if true:
+        var name = input
+        if name == null:
+            return 0
+        val rendered = String(name)
+        name.length
+    else:
+        0
+export suspend fun ask(name: String?):
+    return if true:
+        if name == null:
+            return 0
+        choice:
+            option "Length":
+                Unit
+        name.length
+    else:
+        0
+export fun whenGuarded(name: String?, flag: Boolean) = when flag:
+    case true:
+        if name == null:
+            return 0
+        name.length
+    case false:
+        0

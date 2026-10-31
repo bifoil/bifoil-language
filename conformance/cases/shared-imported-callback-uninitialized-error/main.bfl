@@ -1,0 +1,7 @@
+import helpers.callback as saved
+import helpers.invoke
+scene start():
+    var future: Int
+    saved = () => future
+    val result = invoke()
+    future = 3

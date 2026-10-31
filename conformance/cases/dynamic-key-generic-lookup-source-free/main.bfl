@@ -1,0 +1,4 @@
+import helpers.extract
+scene start():
+    prose:
+        ${extract({"name": "Ada"}, "name")}|${extract({7: 9}, 7)}

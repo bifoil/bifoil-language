@@ -1,0 +1,8 @@
+export fun run() -> () -> Int:
+    val result: Int
+    val reader = initialize(3, 4)
+    fun initialize(vararg values: Int) -> () -> Int:
+        result = values.size
+        fun read() -> Int = result
+        return ::read
+    return reader

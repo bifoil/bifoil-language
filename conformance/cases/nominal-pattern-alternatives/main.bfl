@@ -1,0 +1,10 @@
+sealed class Number:
+    case Small(value: Int)
+    case Large(number: Float)
+scene start():
+    val input: Number = Number.Large(2.5)
+    val output = when input:
+        case is Number.Small(value), is Number.Large(value):
+            value + 1
+    prose:
+        ${output}

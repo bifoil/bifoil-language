@@ -1,0 +1,11 @@
+fun record() -> Int = 3
+scene start():
+    val x: Int
+    fun initialize(value: Int = record()):
+        x = value
+    initialize()
+    choice:
+        option "Called default":
+            Unit
+    prose:
+        ${x}

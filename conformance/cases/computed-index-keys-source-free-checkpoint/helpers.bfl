@@ -1,0 +1,30 @@
+export fun capture(values: List<String?>, index: Int) -> () -> Int:
+    if values[index + 1] == null:
+        return () => 0
+    return () => values[index + 1].length
+export suspend fun delayed(values: List<String?>, index: Int) -> Int:
+    values[index + 1]!!
+    choice:
+        option "Read":
+            Unit
+    return values[index + 1].length
+export suspend fun unchanged(values: List<String?>, var index: Int) -> Int:
+    values[index + 1]!!
+    choice:
+        option "Keep":
+            Unit
+    return values[index + 1].length
+export fun rebound(values: List<String?>, var first: Int, second: Int) -> Int:
+    values[first + second]!!
+    first += 1
+    values[first + second]!!
+    return values[first + second].length
+export fun keyed(values: Map<String, Any?>, prefix: String, suffix: Int) -> Int:
+    if values[prefix + suffix] !is String:
+        return 0
+    return values[prefix + suffix].length
+export fun matched(values: List<String?>, index: Int) = when values[index + 1]:
+    case null:
+        0
+    else:
+        values[index + 1].length

@@ -1,0 +1,54 @@
+import helpers.Box
+import helpers.calls
+scene start():
+    val original = Box<Int>(7)
+    val hidden: Box<*> = original
+    val old: Any? = hidden.replace(null)
+    original.value = 9
+    val defaulted: Any? = hidden.replace()
+    val replace: (Nothing?) -> Any? = hidden::replace
+    val count: (vararg Nothing?) -> Int = hidden::count
+    val copy: (Nothing?) -> Box<*> = hidden::copy
+    val group: List<Nothing?> = [null, null]
+    val size = hidden.count(null, *group) + count(null) + hidden.count(values = group)
+    val optional = hidden.optionalList(null)
+    val copied = hidden.copy(value = null)
+    original.value = 11
+    val kept = hidden.copy()
+    val copiedInt = copied is Box<Int>
+    val keptInt = kept is Box<Int>
+    val keptValue = if kept is Box<Int>:
+        kept.value == 11
+    else:
+        false
+    val oldValue = if old is Int:
+        old == 7
+    else:
+        false
+    val defaultValue = if defaulted is Int:
+        defaulted == 9
+    else:
+        false
+    choice:
+        option "Methods ready":
+            Unit
+    replace(null)
+    val boundCopy = copy(null)
+    original.value = 13
+    val ask: suspend (Nothing?) -> Any? = hidden::ask
+    val response: Any? = ask(null)
+    original.value = 17
+    val automatic: Any? = hidden.ask()
+    val responseValue = if response is Int:
+        response == 13
+    else:
+        false
+    val automaticValue = if automatic is Int:
+        automatic == 17
+    else:
+        false
+    choice:
+        option "Calls ${calls}":
+            Unit
+    prose:
+        ${oldValue}|${defaultValue}|${copiedInt}|${keptInt}|${keptValue}|${copied.value == null}|${boundCopy is Box<Int>}|${size}|${optional}|${responseValue}|${automaticValue}|${original.value == null}|${calls}

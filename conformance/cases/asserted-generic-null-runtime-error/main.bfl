@@ -1,0 +1,5 @@
+import helpers.required
+scene start():
+    val value: String = required<String?>(null)
+    prose:
+        After ${value}.

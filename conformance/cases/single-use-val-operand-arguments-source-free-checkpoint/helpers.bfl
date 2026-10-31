@@ -1,0 +1,17 @@
+shared var trace: String = ""
+fun mark() -> String:
+    trace += "L"
+    return "prefix"
+fun consume(first: String, second: String, third: Int) -> String:
+    return "${first}|${second}|${third}"
+export suspend fun run() -> String:
+    val result: Int
+    suspend fun initialize(value: Int) -> String:
+        trace += "I"
+        choice:
+            option "Inside ${trace}":
+                Unit
+        result = value
+        return "ready"
+    val answer = consume(mark(), initialize(3), result)
+    return "${answer}|${trace}"

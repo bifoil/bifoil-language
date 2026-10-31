@@ -1,0 +1,47 @@
+export data class Box<T>:
+    val value: T
+export fun length(values: List<String?>):
+    if values[0] == null:
+        return 0
+    return values[0].length
+export fun nested(values: List<List<String?>?>):
+    if values[0] == null || values[0][0] == null:
+        return 0
+    return values[0][0].length
+export fun field(values: List<Box<Any?>>):
+    if values[0].value !is String:
+        return 0
+    return values[0].value.length
+export fun checked(values: List<String?>):
+    values[0]!!
+    return values[0].length
+export fun matched(values: List<String?>) = when values[0]:
+    case null:
+        0
+    else:
+        values[0].length
+export suspend fun inspect(values: List<String?>) -> Int:
+    if values[0] == null:
+        return 0
+    choice:
+        option "Resume stable index":
+            Unit
+    return values[0].length
+export suspend fun choose(values: List<String?>) -> Int:
+    choice:
+        option "Read element" if values[0] != null:
+            return values[0].length
+        else:
+            return 0
+export fun <T> original(values: List<T>):
+    if values[0] is String:
+        return values[0]
+    return values[0]
+export fun retained(values: List<String?>) -> () -> Int:
+    if values[0] == null:
+        return () => 0
+    return () => values[0].length
+export fun local(var values: List<String?>):
+    if values[0] == null:
+        return 0
+    return values[0].length

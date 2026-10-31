@@ -1,0 +1,13 @@
+import helpers.Counter
+scene start():
+    val counter = Counter("Ada")
+    val apply: (Int) -> Int = counter::collect
+    val first = counter.collect("xy")
+    val second = counter.recursive(3)
+    val copied = counter.copy(total = 20)
+    val callback = counter.callback()
+    choice:
+        option "Continue":
+            Unit
+    prose:
+        ${first}|${second}|${apply(4)}|${callback(1)}|${copied.total}|${counter.seed}

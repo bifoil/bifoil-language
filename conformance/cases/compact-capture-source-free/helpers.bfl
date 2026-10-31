@@ -1,0 +1,12 @@
+export fun make() -> List<() -> Int>:
+    val unused: MutableList<Int> = []
+    for number in 1..5000:
+        unused.add(number)
+    var count = 0
+    val first = () =>:
+        count += 1
+        count
+    val second = () =>:
+        count += 10
+        count
+    return [first, second]

@@ -1,0 +1,5 @@
+data class Holder<T>:
+    val items: MutableList<T>
+scene start():
+    val hidden: Holder<*> = Holder(mutable [1])
+    hidden.items.add("wrong")

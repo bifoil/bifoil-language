@@ -1,0 +1,9 @@
+export fun run() -> Any:
+    val result: Any
+    var source: String? = "ready"
+    fun initialize():
+        result = [source]
+    if source != null:
+        initialize()
+        return result
+    return "skipped"

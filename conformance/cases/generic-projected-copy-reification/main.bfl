@@ -1,0 +1,9 @@
+scene start():
+    val source: List<Int> = []
+    val hidden: List<*> = source
+    val copy = hidden.toMutableList()
+    val again: List<*> = copy
+    choice:
+        option "Continue":
+            prose:
+                ${copy is MutableList<Int>}|${copy is MutableList<Float>}|${again is List<Int>}

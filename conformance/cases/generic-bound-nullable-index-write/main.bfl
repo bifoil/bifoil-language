@@ -1,0 +1,4 @@
+fun <T: MutableList<Int>?> invalid(items: T):
+    items[0] = 1
+scene start():
+    return

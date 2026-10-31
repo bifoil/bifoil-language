@@ -1,0 +1,17 @@
+import helpers.Box
+import helpers.calls
+import helpers.length
+import helpers.remainder
+import helpers.typed
+import helpers.asserted
+import helpers.pending
+scene start():
+    val first = length(Box<String?>("four"))
+    val missing = length(Box<String?>(null))
+    val later = remainder(Box<String?>("five"))
+    val guarded = typed(Box<Any?>("sixsix"))
+    val checked = asserted(Box<String?>("Ada"))
+    val answer = pending(Box<String?>("Ada"))
+    val empty = pending(Box<String?>(null))
+    prose:
+        ${first}|${missing}|${later}|${guarded}|${checked}|${answer}|${empty}|${calls}

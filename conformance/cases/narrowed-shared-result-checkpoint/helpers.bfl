@@ -1,0 +1,30 @@
+data class Pair<out L, out R>:
+    val left: L
+    val right: R
+typealias A0 = Any
+typealias B0 = Int
+typealias A1 = Pair<A0, A0>
+typealias B1 = Pair<B0, B0>
+typealias A2 = Pair<A1, A1>
+typealias B2 = Pair<B1, B1>
+typealias A3 = Pair<A2, A2>
+typealias B3 = Pair<B2, B2>
+typealias A4 = Pair<A3, A3>
+typealias B4 = Pair<B3, B3>
+typealias A5 = Pair<A4, A4>
+typealias B5 = Pair<B4, B4>
+fun view(input: A5) = if input is B5:
+    input
+else:
+    input
+export suspend fun result() -> Int:
+    val v0 = 3
+    val v1 = Pair(v0, v0)
+    val v2 = Pair(v1, v1)
+    val v3 = Pair(v2, v2)
+    val v4 = Pair(v3, v3)
+    val v5 = Pair(v4, v4)
+    choice:
+        option "Inspect":
+            Unit
+    return view(v5).left.left.left.left.left as Int

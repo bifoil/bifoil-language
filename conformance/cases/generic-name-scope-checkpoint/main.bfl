@@ -1,0 +1,6 @@
+import helpers.Holder
+import helpers.run
+scene start():
+    val retained = run(Holder("Kept"))
+    prose:
+        ${retained}

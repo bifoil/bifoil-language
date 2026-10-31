@@ -1,0 +1,7 @@
+scene start():
+    prose:
+        First narrative line.
+        Second narrative line.
+        ${(
+            (value: Int) => 10 / value
+        )(0)}

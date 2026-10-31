@@ -1,0 +1,5 @@
+fun callback() -> Unit:
+    return
+scene start():
+    val values = [::callback]
+    val found = values.contains(::callback)

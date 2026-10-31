@@ -1,0 +1,4 @@
+scene start():
+    val result = when true:
+        case true:
+            1

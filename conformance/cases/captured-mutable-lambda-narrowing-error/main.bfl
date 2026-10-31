@@ -1,0 +1,6 @@
+scene start():
+    var name: String? = "Ada"
+    if name != null:
+        val reader = () => name.length
+        name = null
+        reader()

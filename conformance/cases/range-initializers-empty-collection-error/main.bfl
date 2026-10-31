@@ -1,0 +1,6 @@
+scene start():
+    var result: Int
+    val empty: List<Int> = []
+    for ordinal in empty:
+        result = ordinal
+    val invalid = result

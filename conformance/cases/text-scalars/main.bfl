@@ -1,0 +1,6 @@
+scene start():
+    val text = "😀e\u{301}"
+    val first: Char = text[0]
+    val letter: String = first
+    prose:
+        ${text.length}|${first.code}|${letter}|${text.substring(1, 3)}|${'a' < 'b'}|${3.9.toInt()}

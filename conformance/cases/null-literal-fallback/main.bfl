@@ -1,0 +1,10 @@
+fun value() -> Int = null ?: 3
+fun block() -> Int = null ?: if true:
+    4
+else:
+    5
+fun exit() -> Int:
+    return null ?: return 6
+scene start():
+    prose:
+        ${value()}|${block()}|${exit()}

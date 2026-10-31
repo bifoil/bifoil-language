@@ -1,0 +1,11 @@
+fun unsafe(var name: String?):
+    fun clear() -> Boolean:
+        name = null
+        return true
+    when:
+        case name != null if clear():
+            return name.length
+        else:
+            return 0
+scene start():
+    unsafe("Ada")

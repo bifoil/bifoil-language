@@ -1,0 +1,17 @@
+export fun <T: String?> choose(flag: Boolean, first: T, second: String?):
+    return if flag:
+        first
+    else:
+        second
+export fun <T: String?> paths(flag: Boolean, first: T, second: String?):
+    if flag:
+        return first
+    return second
+export suspend fun <T: String?> saved(flag: Boolean, first: T, second: String?):
+    choice:
+        option "Choose":
+            Unit
+    return if flag:
+        first
+    else:
+        second

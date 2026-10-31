@@ -1,0 +1,12 @@
+import helpers.Mood as Feeling
+scene start():
+    val describe = (mood: Feeling) =>:
+        when mood:
+            case Feeling.Happy if 2 == 2:
+                "happy"
+            case (Feeling.Sad):
+                "sad"
+    choice:
+        option "Continue":
+            prose:
+                ${describe(Feeling.Happy)}|${describe(Feeling.Sad)}

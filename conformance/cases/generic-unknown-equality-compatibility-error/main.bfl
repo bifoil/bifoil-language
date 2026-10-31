@@ -1,0 +1,5 @@
+enum Mood:
+    Happy
+fun <T: Equatable> invalid(value: T) -> Boolean = value == Mood.Happy
+scene start():
+    invalid(3)

@@ -1,0 +1,10 @@
+import helpers.Again
+import helpers.echo
+scene start():
+    val missing: Again = null
+    val result: Again = echo("Ada")
+    choice:
+        option "Inspect the nullable alias":
+            Unit
+    prose:
+        ${missing == null}|${result?.length ?: 0}

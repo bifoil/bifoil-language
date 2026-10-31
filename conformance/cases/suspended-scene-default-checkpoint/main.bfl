@@ -1,0 +1,5 @@
+import helpers.target
+scene start():
+    visit target(3)
+    prose:
+        Returned.

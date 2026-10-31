@@ -1,0 +1,7 @@
+export suspend fun ask(value: Int) -> Int:
+    choice:
+        option "Continue":
+            return value + 2
+export scene target(value: Int, extra: Int = ask(value)):
+    prose:
+        ${value}|${extra}

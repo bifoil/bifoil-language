@@ -1,0 +1,15 @@
+fun run(flag: Boolean):
+    val x: Int
+    when:
+        case (if flag:
+            x = 1
+            false
+        else:
+            x = 2
+            false
+        ):
+            return
+        else:
+            x = 3
+scene start():
+    return

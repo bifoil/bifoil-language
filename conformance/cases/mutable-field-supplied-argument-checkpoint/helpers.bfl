@@ -1,0 +1,13 @@
+export data class Box:
+    var value: String?
+fun consume(first: String, ignored: Unit) -> Int = first.length
+suspend fun clear(holder: Box):
+    holder.value = null
+    choice:
+        option "Finish":
+            Unit
+export suspend fun run() -> Int:
+    val box = Box("Ada")
+    if box.value == null:
+        return 0
+    return consume(box.value, clear(box))

@@ -1,0 +1,13 @@
+data class Person:
+    val name: String?
+suspend fun invalid(var person: Person) -> Int:
+    fun change() -> Boolean:
+        person = Person(null)
+        return false
+    choice:
+        option "Read" if person.name != null:
+            return person.name.length
+        option "Prepare" if change():
+            return 0
+scene start():
+    Unit

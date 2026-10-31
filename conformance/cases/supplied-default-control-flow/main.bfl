@@ -1,0 +1,16 @@
+shared var checks: Int = 0
+fun length(name: String?, ignored: Int =
+    if name == null:
+        checks += 1
+        return 0
+    else:
+        checks += 1
+        1
+) -> Int:
+    return name?.length ?: 0
+scene start():
+    val supplied = length(null, ignored = 2)
+    val missing = length(null)
+    val present = length("Ada")
+    prose:
+        ${supplied}|${missing}|${present}|${checks}

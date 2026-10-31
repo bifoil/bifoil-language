@@ -1,0 +1,16 @@
+shared var calls: Int = 0
+export fun count() -> Int = calls
+export suspend fun run():
+    for i in 1..2:
+        val result: Int
+        fun initialize() -> String:
+            calls += 1
+            result = i
+            return "First"
+        choice:
+            option "${initialize()}" once:
+                prose:
+                    ${result}
+            else:
+                prose:
+                    Consumed

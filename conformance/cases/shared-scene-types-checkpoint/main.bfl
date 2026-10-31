@@ -1,0 +1,6 @@
+import helpers.route
+import helpers.preserve
+import target.show
+scene start():
+    val destination: Scene<Scene<Int>, Scene<Int>> = preserve(::route)
+    visit destination(::show, ::show)

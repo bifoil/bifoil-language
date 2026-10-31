@@ -1,0 +1,6 @@
+fun read(values: List<String?>, var first: Int, second: Int) -> Int:
+    values[first + second]!!
+    first += 1
+    return values[first + second].length
+scene start():
+    Unit

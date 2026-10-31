@@ -1,0 +1,16 @@
+fun invalid(flag: Boolean):
+    var first: Int
+    var second: Int
+    var read: () -> Int = () => 0
+    while flag:
+        read()
+        if flag:
+            second = 3
+            read = () => first
+            continue
+        else:
+            first = 7
+            read = () => second
+            continue
+scene start():
+    Unit

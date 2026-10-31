@@ -1,0 +1,9 @@
+import helpers.read
+import state.trace
+shared val answer: Int = read()
+scene start():
+    choice:
+        option "Retain imported initialization":
+            Unit
+    prose:
+        ${answer}|${trace}

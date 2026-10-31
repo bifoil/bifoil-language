@@ -1,0 +1,13 @@
+sealed class Result:
+    case Integer(value: Int)
+    case Fraction(value: Float)
+fun checkJoined(input: Result) -> Boolean:
+    return when input:
+        case is Result.Integer(value), is Result.Fraction(value):
+            (value === 2.0) && ((value + 1) === 3.0)
+export fun run() -> () -> String:
+    val first: Result = Result.Integer(2)
+    val second: Result = Result.Fraction(2.0)
+    val concrete = Result.Integer(2)
+    fun read() -> String = "${checkJoined(first)}|${checkJoined(second)}|${first === concrete}|${first === second}"
+    return ::read

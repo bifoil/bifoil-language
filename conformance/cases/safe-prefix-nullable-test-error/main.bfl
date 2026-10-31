@@ -1,0 +1,8 @@
+data class Person:
+    val name: String?
+fun read(person: Person?) -> Int:
+    if person?.name is String?:
+        return person.name.length
+    return 0
+scene start():
+    Unit

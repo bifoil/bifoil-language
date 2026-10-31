@@ -1,0 +1,9 @@
+scene start():
+    val numbers: MutableList<*> = mutable [null, 2]
+    val removed: Any? = numbers.removeAt(0)
+    for element in numbers:
+        if element is Int:
+            prose:
+                ${element}
+    prose:
+        ${removed == null}

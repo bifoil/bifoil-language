@@ -1,0 +1,10 @@
+export shared var order: String = ""
+export fun supplied(value: Int) -> Int:
+    order = order + "s"
+    return value
+suspend fun first(value: Int) -> Int:
+    order = order + "d"
+    choice:
+        option "Continue":
+            return value + 1
+export suspend fun compute(a: Int, b: Int = first(a), c: Int = supplied(9)) -> Int = a + b + c

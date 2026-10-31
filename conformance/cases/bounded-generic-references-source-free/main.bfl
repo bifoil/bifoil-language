@@ -1,0 +1,25 @@
+import helpers.identity
+import helpers.present
+import helpers.first
+import helpers.factory
+import helpers.never
+scene start():
+    val erased: (String) -> Any = ::identity
+    val optional: (String) -> String? = ::present
+    val effect: suspend (String) -> Any = ::identity
+    val grouped: (vararg String) -> String? = ::first
+    val constructed = factory<String>()
+    val unused: () -> String? = ::never
+    val opaque: Any = erased
+    val unusedType: Any = unused
+    choice:
+        option "Use bounded references":
+            Unit
+    val effectResult = effect("effect")
+    val firstResult = String(erased("eq"))
+    val second = optional("present") ?: "missing"
+    val third = String(effectResult)
+    val fourth = grouped("group", *["extra"]) ?: "missing"
+    val fifth = constructed("factory") ?: "missing"
+    prose:
+        ${firstResult}|${second}|${third}|${fourth}|${fifth}|${opaque is (String) -> String}|${unusedType is () -> String}

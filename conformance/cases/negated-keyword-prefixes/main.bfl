@@ -1,0 +1,7 @@
+fun <T> identity(value: T) -> T = value
+scene start():
+    val inside = true
+    val isReady = false
+    val list: List<Int> = [1, 2]
+    prose:
+        ${!inside}|${!isReady}|${1 !in list}|${"x" !is Int}

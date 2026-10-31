@@ -1,0 +1,4 @@
+scene start():
+    val values: List<Int?> = [null, 3]
+    val hidden: List<*> = values
+    val invalid: List<Any> = hidden

@@ -1,0 +1,6 @@
+data class Box:
+    val value: Int
+    fun read(amount: Int = 7) -> Int = amount
+scene start():
+    val box = Box(1)
+    val result = (box::read)()

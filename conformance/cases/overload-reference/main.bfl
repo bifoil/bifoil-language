@@ -1,0 +1,8 @@
+fun describe(value: Int) = "int:" + value
+fun describe(value: Float) = "float:" + value
+fun use(callback: (Int) -> String) = callback(5)
+scene start():
+    val integer: (Int) -> String = ::describe
+    val floating: (Float) -> String = ::describe
+    prose:
+        ${integer(3)}|${floating(4.0)}|${use(::describe)}

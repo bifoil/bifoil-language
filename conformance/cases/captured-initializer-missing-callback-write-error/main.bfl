@@ -1,0 +1,8 @@
+scene start():
+    var callback: () -> Int
+    fun initialize(flag: Boolean):
+        if flag:
+            return
+        callback = () => 9
+    initialize(true)
+    val value = callback()

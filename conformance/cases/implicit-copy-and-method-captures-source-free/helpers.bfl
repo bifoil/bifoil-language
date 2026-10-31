@@ -1,0 +1,18 @@
+export data class Counter:
+    var value: Int
+    fun replace(next: Int) -> Int:
+        value = next
+        return value
+    fun duplicate() -> Counter = copy()
+    fun reader() -> () -> Int:
+        fun get() -> Int = value
+        return ::get
+    suspend fun ask() -> String:
+        val retained = reader()
+        val fork = copy()
+        val copyReader = fork.reader()
+        choice:
+            option "Update both":
+                value += 1
+                fork.value += 10
+        return "${retained()}|${copyReader()}"

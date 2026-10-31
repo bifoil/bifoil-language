@@ -1,0 +1,8 @@
+data class Box:
+    val value: Int
+scene start():
+    var value: Any = Box(4)
+    if value is Box:
+        val reader = () => value.value
+        value = "text"
+        reader()

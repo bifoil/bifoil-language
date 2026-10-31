@@ -1,0 +1,8 @@
+scene start():
+    typealias Checked<T: Name> = T
+    typealias Name = String
+    val message: Checked<String> = "Local"
+    choice:
+        option "Use the local alias":
+            prose:
+                ${message}

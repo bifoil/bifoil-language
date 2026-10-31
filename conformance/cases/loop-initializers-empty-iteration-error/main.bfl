@@ -1,0 +1,8 @@
+scene start():
+    var result: Int
+    val empty: List<Int> = []
+    for ordinal in empty:
+        initialize(ordinal)
+    fun initialize(amount: Int):
+        result = amount
+    val invalid = result

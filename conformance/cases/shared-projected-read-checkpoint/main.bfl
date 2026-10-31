@@ -1,0 +1,9 @@
+import helpers.make
+import helpers.run
+import helpers.makeFunctions
+import helpers.execute
+scene start():
+    val first = run(make())
+    val second = execute(makeFunctions())
+    prose:
+        ${first}|${second}

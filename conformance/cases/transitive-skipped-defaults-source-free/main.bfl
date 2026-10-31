@@ -1,0 +1,25 @@
+import helpers.makeReader
+scene start():
+    var future: Int
+    fun read(value: Int = future, copy: Int = value) -> Int = copy
+    fun through() -> Int = read(value = 7)
+    fun reference() -> Int = (::read)(7, 8)
+    fun first(flag: Boolean) -> Int:
+        if flag:
+            return read(value = 7)
+        return second(true)
+    fun second(flag: Boolean) -> Int:
+        if flag:
+            return through()
+        return first(true)
+    val a = through()
+    val b = reference()
+    val c = first(false)
+    val escaped = makeReader()
+    choice:
+        option "Resume with unused captures uninitialized":
+            Unit
+    future = 3
+    val d = read()
+    prose:
+        ${a}|${b}|${c}|${d}|${escaped()}

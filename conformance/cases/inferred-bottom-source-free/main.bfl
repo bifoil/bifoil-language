@@ -1,0 +1,13 @@
+import helpers.leave
+scene start():
+    val action: suspend () -> Nothing = ::leave
+    val observed: Any = action
+    prose:
+        ${observed is suspend () -> Nothing}
+    choice:
+        option "Leave":
+            prose:
+                before
+            action()
+            prose:
+                wrong

@@ -1,0 +1,9 @@
+import helpers.run
+import helpers.observed
+scene start():
+    run()
+    choice:
+        option "Returned ${observed()}":
+            Unit
+    prose:
+        ${observed()}

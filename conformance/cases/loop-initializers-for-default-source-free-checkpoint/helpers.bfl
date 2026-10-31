@@ -1,0 +1,10 @@
+export fun run() -> List<Int>:
+    var result: Int
+    val observed: MutableList<Int> = []
+    for ordinal in 1..3:
+        initialize(ordinal)
+        observed.add(result)
+    fun initialize(amount: Int = result) -> Int:
+        result = amount
+        return result
+    return observed

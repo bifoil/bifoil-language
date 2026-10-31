@@ -1,0 +1,11 @@
+scene start():
+    var item: String? = "present"
+    fun clear() -> Boolean:
+        item = null
+        return false
+    if item != null:
+        when:
+            case clear():
+                prose:
+                    Unselected.
+        val result: String = item

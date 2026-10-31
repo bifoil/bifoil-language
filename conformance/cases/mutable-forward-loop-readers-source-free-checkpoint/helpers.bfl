@@ -1,0 +1,10 @@
+export fun run() -> List<() -> Int>:
+    val readers: MutableList<() -> Int> = []
+    for value in 1..2:
+        var result: Int
+        initialize(value)
+        fun initialize(amount: Int):
+            result = amount
+        readers.add(() => result)
+        result += 10
+    return readers

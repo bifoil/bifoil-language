@@ -1,0 +1,3 @@
+data class Secret:
+    val value: Int
+export fun touch() -> Int = 1

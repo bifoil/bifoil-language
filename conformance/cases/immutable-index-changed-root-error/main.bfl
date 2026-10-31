@@ -1,0 +1,9 @@
+fun read(var values: List<String?>) -> Int:
+    fun change():
+        values = [null]
+    if values[0] != null:
+        change()
+        return values[0].length
+    return 0
+scene start():
+    Unit

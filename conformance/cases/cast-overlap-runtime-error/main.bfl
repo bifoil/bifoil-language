@@ -1,0 +1,7 @@
+import helpers.checked
+scene start():
+    prose:
+        Before.
+    checked(3)
+    prose:
+        After.

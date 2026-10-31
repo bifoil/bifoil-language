@@ -1,0 +1,6 @@
+import helpers.Person
+import helpers.read
+scene start():
+    val values: Map<String, Person?> = {"name": Person("Ada"), "empty": null}
+    prose:
+        ${read(values, "name")}|${read(values, "empty")}|${read(null, "name")}

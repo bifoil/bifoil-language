@@ -1,0 +1,7 @@
+fun read(text: String?, index: Int) -> Int:
+    if text?[index] == null:
+        return 0
+    return text.length
+scene start():
+    prose:
+        ${read("😀a", 0)}|${read(null, 99)}

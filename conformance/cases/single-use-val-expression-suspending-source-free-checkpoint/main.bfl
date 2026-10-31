@@ -1,0 +1,9 @@
+import helpers.run
+scene start():
+    val first = run(8)
+    val second = run(-2)
+    choice:
+        option "Expression complete":
+            Unit
+    prose:
+        ${first}|${second}

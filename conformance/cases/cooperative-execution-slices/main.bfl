@@ -1,0 +1,14 @@
+shared var calls: Int = 0
+fun bump() -> Int:
+    calls += 1
+    return calls
+scene start():
+    val total = bump() + bump()
+    for index in 1..200:
+        calls += 1
+    prose:
+        Total ${total}.
+    choice:
+        option "Calls ${calls}":
+            prose:
+                Finished ${bump()}.

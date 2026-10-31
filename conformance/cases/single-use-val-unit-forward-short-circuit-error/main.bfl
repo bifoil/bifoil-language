@@ -1,0 +1,6 @@
+scene start():
+    val result: Int
+    val done = false && (initialize() == Unit)
+    val observed = result
+    fun initialize():
+        result = 3

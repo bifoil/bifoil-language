@@ -1,0 +1,13 @@
+export fun run() -> List<() -> Int>:
+    val readers: MutableList<() -> Int> = mutable []
+    for i in 1..2:
+        val first: Int
+        val second: Int
+        (initialize)()
+        val observed = first + second
+        fun initialize():
+            first = i
+            second = first + 1
+        fun read() -> Int = first + second + observed
+        readers.add(::read)
+    return readers

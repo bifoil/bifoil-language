@@ -1,0 +1,9 @@
+export fun run() -> () -> String:
+    val result: Int
+    fun initialize(value: Int):
+        result = value
+    while true:
+        initialize(3)
+        break
+    fun read() -> String = "${result}"
+    return ::read

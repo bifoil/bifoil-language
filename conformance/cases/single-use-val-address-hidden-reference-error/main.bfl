@@ -1,0 +1,7 @@
+fun target(callback: () -> String) -> MutableMap<String, String> = mutable {"k": "pending"}
+scene start():
+    val result: Int
+    fun initialize() -> String:
+        result = 3
+        return "ready"
+    target(::initialize)["k"] = initialize()

@@ -1,0 +1,5 @@
+enum Mood:
+    Happy
+    Sad
+scene start():
+    val values: Map<Mood, Int> = {Mood.Happy: 1, Happy: 2}

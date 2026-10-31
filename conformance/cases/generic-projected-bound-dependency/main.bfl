@@ -1,0 +1,6 @@
+import boxes.Box
+scene start():
+    val hidden: Box<*, String> = Box("first", "second")
+    val value: String = hidden.read()
+    prose:
+        ${hidden.first}|${value}|${hidden.second}

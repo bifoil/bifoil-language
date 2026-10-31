@@ -1,0 +1,5 @@
+enum Status:
+    case Unit
+fun status() -> Status = Unit
+scene start():
+    Unit

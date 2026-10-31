@@ -1,0 +1,7 @@
+export fun run() -> () -> String:
+    val progression = 1..5 step 2
+    val alias = progression
+    var result: Int
+    for ordinal in alias:
+        result = ordinal
+    return () => "${result}|${3 in progression}|${4 in alias}"

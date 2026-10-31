@@ -1,0 +1,4 @@
+fun <T> invalid(value: T) = value + 1
+scene start():
+    prose:
+        unused

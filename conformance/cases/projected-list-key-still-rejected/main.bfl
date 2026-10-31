@@ -1,0 +1,4 @@
+fun invalid(value: List<*>):
+    val keys: Set<List<*>> = {value}
+scene start():
+    invalid([1])

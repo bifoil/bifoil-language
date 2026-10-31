@@ -1,0 +1,23 @@
+data class Pair<out Left, out Right>:
+    val left: Left
+    val right: Right
+typealias Repeated<T> = Pair<Pair<T, T>, Pair<T, T>>
+export data class Holder<T: String>:
+    val value: Repeated<T>
+export fun make() -> Holder<String> = Holder(Pair(Pair("A", "d"), Pair("a", "!")))
+fun read(input: Holder<*>) -> Repeated<String> = input.value
+export suspend fun run(input: Holder<*>) -> String:
+    val retained = read(input)
+    choice:
+        option "Continue":
+            Unit
+    return retained.left.left + retained.right.right
+export data class Functions<T: String>:
+    val operation: (Int) -> T
+export fun makeFunctions() -> Functions<String> = Functions((value: Int) => "Value" + value)
+export suspend fun execute(input: Functions<*>) -> String:
+    val operation = input.operation
+    choice:
+        option "Continue":
+            Unit
+    return operation(3)

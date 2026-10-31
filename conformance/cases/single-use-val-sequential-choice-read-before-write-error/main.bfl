@@ -1,0 +1,13 @@
+suspend fun run() -> Int:
+    val result: Int
+    fun read() -> Int = result
+    suspend fun initialize():
+        choice:
+            option "Before ${result}":
+                Unit
+        result = 3
+        choice:
+            option "After":
+                Unit
+    initialize()
+    return result

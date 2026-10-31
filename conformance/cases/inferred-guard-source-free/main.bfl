@@ -1,0 +1,14 @@
+import helpers.length
+import helpers.textLength
+import helpers.reset
+import helpers.required
+import helpers.Reader
+scene start():
+    val first = length("Ada")
+    val reader = Reader("!")
+    choice:
+        option "Continue":
+            prose:
+                ${first}|${length(null)}|${textLength("hello")}|${textLength(7)}|${reset("Ada")}
+            prose:
+                ${required(null, "kept")}|${reader.measure("Ada")}|${reader.measure(9)}

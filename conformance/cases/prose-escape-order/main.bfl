@@ -1,0 +1,12 @@
+scene start():
+    val score = 7
+    prose:
+        \@literal
+
+        \\@literal
+
+        \${score}
+
+        \\${score}
+
+        \\\${score}

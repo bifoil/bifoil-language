@@ -1,0 +1,12 @@
+shared var callback: () -> Int = () => 0
+fun invoke() -> Int = callback()
+scene start():
+    var unused: Int
+    fun read(value: Int = unused) -> Int = value
+    fun through() -> Int = read(7)
+    callback = ::through
+    choice:
+        option "Keep unused default uninitialized":
+            Unit
+    prose:
+        ${invoke()}

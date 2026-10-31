@@ -1,0 +1,17 @@
+data class Pair<out Left, out Right>:
+    val left: Left
+    val right: Right
+export data class Holder<T>:
+    val value: T
+    fun <U> pair(other: U) -> Pair<T, U>:
+        fun <V> identity(input: V) -> V = input
+        typealias Element = U
+        val retained: Element = identity(other)
+        return Pair(value, retained)
+export typealias Stored<T> = Holder<T>
+export suspend fun <T> run(item: Stored<T>) -> T:
+    val paired = item.pair(7)
+    choice:
+        option "Continue":
+            Unit
+    return paired.left

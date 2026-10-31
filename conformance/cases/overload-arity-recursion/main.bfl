@@ -1,0 +1,9 @@
+fun count(value: Int) -> Int:
+    if value == 0:
+        return 0
+    return value + count(value - 1)
+fun count(value: String) = value + value
+fun count(first: Int, second: Int) = first + second
+scene start():
+    prose:
+        ${count(3)}|${count("x")}|${count(1, 2)}

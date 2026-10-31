@@ -1,0 +1,4 @@
+import helpers.read
+scene start():
+    prose:
+        ${read()}

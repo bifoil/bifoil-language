@@ -1,0 +1,8 @@
+export fun run() -> () -> Int:
+    val progression = 5 downTo 1 step 2
+    fun read() -> Int:
+        var result: Int
+        for ordinal in progression:
+            result = ordinal
+        return result
+    return ::read

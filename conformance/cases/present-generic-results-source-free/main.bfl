@@ -1,0 +1,28 @@
+import helpers.Box
+import helpers.fromBinding
+import helpers.fromField
+import helpers.fromList
+import helpers.fromMap
+import helpers.conditional
+import helpers.matched
+import helpers.deferred
+scene start():
+    val a: Int = fromBinding(3, 7)
+    val b: Int = fromField(Box<Int>(3), 7)
+    val c: Int = fromList([3], 7)
+    val d: Int = fromMap({"value": 3}, 7)
+    val e: Int = conditional(3, 7)
+    val f: Int = matched(3, 7)
+    val mapReader: (Map<String, Int>, Int) -> Int = ::fromMap
+    val bindingReader: (Int?, Int) -> Int = ::fromBinding
+    val g: Int = mapReader({"value": 9}, 8)
+    val h: Int = bindingReader(3, 9)
+    val empty: Map<String, Int> = {}
+    val absent: Int = fromMap(empty, 7)
+    val nullable: String? = fromBinding<String?>(null, null)
+    val resumed: String = deferred({"value": "Ada"}, "fallback")
+    val found: String = fromMap({"value": "Ada"}, "fallback")
+    prose:
+        ${a}|${b}|${c}|${d}|${e}|${f}|${g}|${h}
+    prose:
+        ${resumed}|${found}|${absent}|${nullable ?: "none"}

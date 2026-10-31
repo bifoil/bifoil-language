@@ -1,0 +1,5 @@
+scene start():
+    val result: Int
+    for ordinal in 1..3:
+        result = ordinal
+    val observed = result

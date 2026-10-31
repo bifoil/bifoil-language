@@ -1,0 +1,22 @@
+import helpers.read
+import helpers.identity
+import helpers.count
+import helpers.Box
+import helpers.ask
+scene start():
+    var box = Box(9)
+    suspend fun replace() -> Int:
+        choice:
+            option "Receiver captured before argument":
+                Unit
+        box = Box(100)
+        return 5
+    val answer: Int = (::ask)(4)
+    val a: Int = (::read)(3)
+    val b: Int = (box::read)(replace())
+    val c: Int = (::identity<Int>)(6)
+    val d: Int = (::count)(1, *[2, 3])
+    val e: Int = read()
+    val f: Int = box.read()
+    prose:
+        ${a}|${b}|${c}|${d}|${e}|${f}|${answer}

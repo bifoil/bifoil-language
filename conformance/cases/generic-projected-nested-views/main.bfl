@@ -1,0 +1,27 @@
+data class Cell<T>:
+    var value: T
+data class Vault<T: StableKey>:
+    val items: MutableList<T>
+    val members: Set<T>
+    val mapping: Map<T, T>
+    val nested: Cell<T>
+    val reader: () -> T
+    fun readItems() -> MutableList<T> = items
+scene start():
+    val original = Vault(mutable [1, 2], {1, 2}, {1: 2}, Cell(7), () => 9)
+    val hidden: Vault<*> = original
+    val items: MutableList<*> = hidden.items
+    val members: Set<*> = hidden.members
+    val mapping: Map<*, *> = hidden.mapping
+    val nested: Cell<*> = hidden.nested
+    val reader: () -> Any? = hidden.reader
+    val returned: MutableList<*> = hidden.readItems()
+    choice:
+        option "Continue":
+            original.items.add(3)
+            original.nested.value = 8
+            val item = items[0]
+            val current = nested.value
+            val result = reader()
+            prose:
+                ${items.size}|${members.size}|${mapping.size}|${item is Int}|${current is Int}|${result is Int}|${returned.size}|${items is MutableList<Int>}

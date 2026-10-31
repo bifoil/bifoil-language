@@ -1,0 +1,11 @@
+shared var exposed: () -> Int = () => 0
+scene start():
+    var current: () -> Int = () => 1
+    publish()
+    var future: Int
+    future = 9
+    current = () => future
+    prose:
+        ${exposed()}
+    fun publish():
+        exposed = () => current()

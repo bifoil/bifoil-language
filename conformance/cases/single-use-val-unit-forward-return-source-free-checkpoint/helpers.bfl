@@ -1,0 +1,8 @@
+shared var seen: Int = 0
+export fun observed() -> Int = seen
+export fun run():
+    val result: Int
+    return initialize()
+    fun initialize():
+        result = 3
+        seen = result

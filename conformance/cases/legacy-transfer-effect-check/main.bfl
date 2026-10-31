@@ -1,0 +1,5 @@
+legacy transfer fun leave() = "native"
+fun invalid():
+    leave()
+scene start():
+    invalid()

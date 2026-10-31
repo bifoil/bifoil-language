@@ -1,0 +1,10 @@
+import helpers.run
+scene start():
+    val first = run(0)
+    val second = run(1)
+    val third = run(2)
+    choice:
+        option "Saved":
+            Unit
+    prose:
+        ${first()}|${second()}|${third()}

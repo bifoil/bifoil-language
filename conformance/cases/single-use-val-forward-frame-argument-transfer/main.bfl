@@ -1,0 +1,6 @@
+scene start():
+    val result: Int
+    result = 3
+    val ignored = initialize(return)
+    fun initialize(value: Int):
+        result = value

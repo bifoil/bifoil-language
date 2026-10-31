@@ -1,0 +1,9 @@
+import helpers.exercise
+import helpers.groups
+scene start():
+    val first = exercise()
+    prose:
+        ${first}
+    val second = groups()
+    prose:
+        ${second}

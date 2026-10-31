@@ -1,0 +1,7 @@
+scene start():
+    val result: Int
+    var count = 0
+    fun initialize() -> String:
+        result = 3
+        return "ready"
+    count += initialize()

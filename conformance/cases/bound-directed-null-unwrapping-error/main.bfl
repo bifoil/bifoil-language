@@ -1,0 +1,4 @@
+fun <T: Float> keep(value: T) -> T = value
+scene start():
+    val value: Int? = null
+    val result = keep(value)

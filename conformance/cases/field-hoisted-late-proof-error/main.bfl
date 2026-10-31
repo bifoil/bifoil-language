@@ -1,0 +1,10 @@
+data class Person:
+    val name: String?
+fun invalid(person: Person) -> Int:
+    val before = read()
+    if person.name == null:
+        return 0
+    fun read() -> Int = person.name.length
+    return before
+scene start():
+    Unit

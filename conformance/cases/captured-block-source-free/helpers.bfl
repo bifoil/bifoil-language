@@ -1,0 +1,9 @@
+export fun factory() -> () -> Int:
+    val reader = if true:
+        var value = 10
+        () =>:
+            value += 1
+            value
+    else:
+        () => 0
+    return reader

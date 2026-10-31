@@ -1,0 +1,34 @@
+export data class Box<T>:
+    val value: T
+fun <U: Any> present(value: U) -> U = value
+fun <U: Equatable> equalValue(value: U) -> U = value
+fun <U: Int> integer(value: U) -> U = value
+export fun optional() -> Int? = present(3)
+export fun erased() -> Any = equalValue("text")
+export fun widened() -> Float = integer(3)
+export fun <T> preserve(value: T) -> T:
+    if value is String:
+        return present(value)
+    return value
+export fun <T> field(holder: Box<T>) -> T:
+    if holder.value is String:
+        return present(holder.value)
+    return holder.value
+suspend fun <U: Any> pause(value: U) -> U:
+    choice:
+        option "Non-null argument":
+            Unit
+    return value
+suspend fun <U: Any> first(vararg items: U) -> U:
+    choice:
+        option "Non-null group":
+            Unit
+    return items[0]
+export suspend fun <T> waited(value: T) -> T:
+    if value is String:
+        return pause(value)
+    return value
+export suspend fun <T> waitedGroup(value: T) -> T:
+    if value is String:
+        return first(*[value])
+    return value

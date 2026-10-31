@@ -1,0 +1,5 @@
+data class Box:
+    private val secret: Int
+fun <T: Box> invalid(item: T) -> Int = item.secret
+scene start():
+    return

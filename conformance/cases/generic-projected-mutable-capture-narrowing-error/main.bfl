@@ -1,0 +1,10 @@
+import helpers.Box
+import helpers.clear
+scene start():
+    val original = Box<String?>("Ada")
+    val hidden: Box<*> = original
+    var read: () -> Int = () => 0
+    if hidden.value is String:
+        read = () => hidden.value.length
+    clear(original)
+    val result = read()

@@ -1,0 +1,11 @@
+export fun read(value: Int = 7) -> Int = value
+export fun <T> identity(value: T) -> T = value
+export fun count(vararg values: Int) -> Int = values.size
+export data class Box:
+    val value: Int
+    fun read(amount: Int = 7) -> Int = this.value + amount
+export suspend fun ask(value: Int = 7) -> Int:
+    choice:
+        option "Resume explicit argument":
+            Unit
+    return value

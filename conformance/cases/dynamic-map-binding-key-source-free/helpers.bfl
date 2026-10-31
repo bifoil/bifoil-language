@@ -1,0 +1,13 @@
+export fun read(values: Map<String, String?>, key: String) -> Int:
+    if values[key] == null:
+        return 0
+    return values[key].length
+export fun kind(values: Map<String, Any?>, key: String) -> Int:
+    if values[key] !is String:
+        return 0
+    return values[key].length
+export fun matched(values: Map<String, String?>, key: String) -> Int = when values[key]:
+    case null:
+        0
+    else:
+        values[key].length

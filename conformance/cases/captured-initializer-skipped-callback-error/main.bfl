@@ -1,0 +1,8 @@
+scene start():
+    var future: Int
+    var callback: () -> Int = () => future
+    fun initialize() -> Boolean:
+        callback = () => 9
+        return true
+    val skipped = false && initialize()
+    val value = callback()

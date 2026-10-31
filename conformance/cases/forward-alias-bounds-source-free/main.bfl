@@ -1,0 +1,11 @@
+import helpers.mapper
+import helpers.Node
+scene start():
+    val wrap = mapper<Int>()
+    val node = Node(null)
+    node.next = node
+    choice:
+        option "Inspect aliases":
+            Unit
+    prose:
+        ${wrap(7).value}|${node.next == node}

@@ -1,0 +1,14 @@
+fun create() -> (Int) -> String:
+    val prefix = "Value "
+    return (seed: Int) => prefix + String(seed)
+suspend fun reset(values: MutableList<((Int) -> String)?>) -> Int:
+    values.clear()
+    choice:
+        option "Finish":
+            Unit
+    return 7
+export suspend fun run() -> String:
+    val callbacks: MutableList<((Int) -> String)?> = mutable [create()]
+    if callbacks[0] == null:
+        return "missing"
+    return callbacks[0](reset(callbacks))

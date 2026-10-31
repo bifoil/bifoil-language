@@ -1,0 +1,7 @@
+data class Box<T>:
+    val value: T
+    fun accept(next: T):
+        Unit
+scene start():
+    val hidden: Box<*> = Box(3)
+    hidden.accept(null)

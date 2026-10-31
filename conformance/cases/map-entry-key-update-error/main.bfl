@@ -1,0 +1,4 @@
+fun invalid(entry: Entry<String, String?>):
+    entry.key = "other"
+scene start():
+    Unit

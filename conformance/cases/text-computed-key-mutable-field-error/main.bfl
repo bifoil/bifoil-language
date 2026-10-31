@@ -1,0 +1,9 @@
+data class Key:
+    var text: String
+fun read(values: Map<String, String?>, box: Key) -> Int:
+    values["${box.text}!"]!!
+    val alias = box
+    alias.text = "other"
+    return values["${box.text}!"].length
+scene start():
+    Unit

@@ -1,0 +1,6 @@
+scene start():
+    var value: Int
+    fun update():
+        value += 1
+    update()
+    value = 2

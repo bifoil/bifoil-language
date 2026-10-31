@@ -1,0 +1,34 @@
+data class Box<out T>:
+    val value: T
+sealed class Outcome<out T>:
+    case Success(value: T)
+scene start():
+    val source: MutableList<List<Int>> = []
+    val nested: List<List<*>> = source
+    val boxes: MutableList<Box<String>> = []
+    val boxed: List<Box<*>> = boxes
+    val variants: MutableList<Outcome.Success<Int>> = []
+    val outcomes: List<Outcome<*>> = variants
+    val functions: MutableList<() -> List<Int>> = []
+    val callbacks: List<() -> List<*>> = functions
+    val nullableSource: MutableList<List<Int>?> = []
+    val nullableCopy: List<List<*>?> = nullableSource
+    val original: List<Outcome.Success<Int>> = []
+    val hidden: List<Outcome<*>> = original
+    val methodCopy = hidden.toList()
+    val immutableSource: List<List<Int>> = []
+    val writable: MutableList<List<*>> = immutableSource
+    writable.add(["Ada"])
+    choice:
+        option "Continue":
+            val identities =
+                "${nested is List<List<Int>>}|" +
+                "${boxed is List<Box<String>>}|" +
+                "${outcomes is List<Outcome<Int>>}|" +
+                "${callbacks is List<() -> List<Int>>}|" +
+                "${nullableCopy is List<List<Int>?>}|" +
+                "${nested is List<List<Float>>}|" +
+                "${methodCopy is List<Outcome<Int>>}|" +
+                "${writable[0] is List<String>}"
+            prose:
+                ${identities}

@@ -1,0 +1,5 @@
+import a.value
+scene start():
+    val result: Int = value()
+    prose:
+        ${result}

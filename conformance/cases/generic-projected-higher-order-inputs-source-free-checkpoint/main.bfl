@@ -1,0 +1,17 @@
+import helpers.Box
+import helpers.make
+fun label(value: Any?) -> String:
+    if value == null:
+        return "empty"
+    return String(value)
+scene start():
+    val hidden: Box<*> = make()
+    val first = hidden.map(::label)
+    val mapped: ((Any?) -> String) -> String = hidden::map
+    val second = mapped(::label)
+    val absent = hidden.nullable(::label)
+    choice:
+        option "Prepared ${first}":
+            Unit
+    prose:
+        ${first}|${second}|${absent}

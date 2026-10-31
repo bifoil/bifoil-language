@@ -1,0 +1,6 @@
+scene start():
+    val items: Set<Int> = {}
+    var result: Int
+    for item in items:
+        result = 7
+    val observed = result

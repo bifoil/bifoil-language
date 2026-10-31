@@ -1,0 +1,10 @@
+typealias Boxes<T> = List<Box<T>>
+data class Box<T>:
+    val value: T
+scene start():
+    val values: Local<Int> = [Box(3)]
+    typealias Local<U> = Boxes<U>
+    val action: Action = (value: Int) => value + 1
+    typealias Action = (Int) -> Int
+    prose:
+        ${values[0].value}|${action(3)}

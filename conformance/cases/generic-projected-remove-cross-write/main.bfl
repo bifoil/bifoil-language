@@ -1,0 +1,5 @@
+scene start():
+    val first: MutableList<*> = mutable [1]
+    val second: MutableList<*> = mutable ["text"]
+    val hidden = first.removeAt(0)
+    second.add(hidden)

@@ -1,0 +1,6 @@
+import state.dynamic as first
+import state.dynamic as second
+scene start():
+    if first is String:
+        second = 7
+        val length = first.length

@@ -1,0 +1,7 @@
+legacy var score: Int = "Score"
+legacy fun award(amount: Int = 2) -> Int = "helpers" label "AWARD" result "score"
+scene start():
+    score = 5
+    val total = award()
+    prose:
+        ${total}|${score}

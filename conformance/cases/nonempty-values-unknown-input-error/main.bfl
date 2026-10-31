@@ -1,0 +1,7 @@
+fun read(items: List<Int>) -> Int:
+    var result: Int
+    for item in items:
+        result = item
+    return result
+scene start():
+    Unit

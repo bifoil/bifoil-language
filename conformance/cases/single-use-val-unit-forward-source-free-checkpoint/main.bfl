@@ -1,0 +1,8 @@
+import helpers.run
+scene start():
+    val reader = run()
+    choice:
+        option "Unit ${reader()}":
+            Unit
+    prose:
+        ${reader()}

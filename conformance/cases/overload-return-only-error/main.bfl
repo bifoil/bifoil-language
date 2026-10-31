@@ -1,0 +1,4 @@
+fun describe(value: Int) -> Int = value
+fun describe(value: Int) -> Float = value
+scene start():
+    return

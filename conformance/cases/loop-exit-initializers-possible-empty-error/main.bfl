@@ -1,0 +1,10 @@
+fun read(input: List<Int>) -> Int:
+    val result: Int
+    for ordinal in input:
+        initialize(ordinal)
+        break
+    fun initialize(value: Int):
+        result = value
+    return result
+scene start():
+    Unit

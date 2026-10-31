@@ -1,0 +1,10 @@
+export typealias Mapper<T: Limit> = (T) -> Product<T>
+typealias Product<T: Limit> = Box<T>
+typealias Limit = Any
+typealias Link = Node?
+export data class Node:
+    var next: Link
+export data class Box<T>:
+    val value: T
+export fun <T: Any> mapper() -> Mapper<T>:
+    return (value: T) => Box(value)

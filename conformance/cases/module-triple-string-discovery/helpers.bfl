@@ -1,0 +1,1 @@
+export fun answer() -> Int = 7

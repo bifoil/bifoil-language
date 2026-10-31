@@ -1,0 +1,5 @@
+import helpers.describe as text
+scene start():
+    val selected: (Int) -> String = ::text
+    prose:
+        ${text(1)}|${text(1.0)}|${selected(2)}

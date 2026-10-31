@@ -1,0 +1,6 @@
+enum Mood:
+    case Happy
+    case Sad
+legacy var current: Mood = "current"
+scene start():
+    val result = current

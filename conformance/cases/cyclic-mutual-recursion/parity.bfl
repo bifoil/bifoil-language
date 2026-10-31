@@ -1,0 +1,5 @@
+import opposite.odd
+export fun even(value: Int) -> Boolean:
+    if value == 0:
+        return true
+    return odd(value - 1)

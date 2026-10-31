@@ -1,0 +1,13 @@
+export shared var calls: Int = 0
+suspend fun ask() -> Int:
+    calls += 1
+    choice:
+        option "Value":
+            Unit
+    return 7
+export suspend fun run() -> Int:
+    val result: Int
+    fun initialize(value: Int):
+        result = value
+    initialize(ask())
+    return result

@@ -1,0 +1,30 @@
+export sealed class Outcome:
+    case Success(item: String)
+    case Failure(code: Int)
+export sealed class Result<T>:
+    case Success(item: T)
+    case Pending
+export fun choose(flag: Boolean):
+    return if flag:
+        Outcome.Success("yes")
+    else:
+        Outcome.Failure(1)
+export fun paths(flag: Boolean):
+    if flag:
+        return Outcome.Success("yes")
+    return Outcome.Failure(1)
+export fun rows() = [Outcome.Success("yes"), Outcome.Failure(1)]
+export fun <T> generic(flag: Boolean, item: T):
+    return if flag:
+        Result.Success(item)
+    else:
+        Result.Pending<T>()
+export fun <T> many(item: T) = [Result.Success(item), Result.Pending<T>()]
+export suspend fun ask(flag: Boolean):
+    choice:
+        option "Return an outcome":
+            Unit
+    return if flag:
+        Outcome.Success("saved")
+    else:
+        Outcome.Failure(2)

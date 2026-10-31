@@ -1,0 +1,96 @@
+export shared var visits: Int = 0
+export suspend fun byWhile(selector: Int):
+    visits += 1
+    val first: Int
+    val second: Int
+    val result: Int
+    var read: () -> Int = () => 0
+    outer@ while true:
+        for passIndex in 0..0:
+            if selector == 0:
+                result = 10
+                read = () => first
+                choice:
+                    option "while ${selector}; calls ${visits}":
+                        Unit
+                break@outer
+            elif selector == 1:
+                result = 20
+                read = () => second
+                choice:
+                    option "while ${selector}; calls ${visits}":
+                        Unit
+                break@outer
+            else:
+                result = 30
+                read = () => first + second
+                choice:
+                    option "while ${selector}; calls ${visits}":
+                        Unit
+                break@outer
+    first = 3
+    second = 7
+    return result + read()
+export suspend fun byFor(selector: Int):
+    visits += 1
+    val first: Int
+    val second: Int
+    val result: Int
+    var read: () -> Int = () => 0
+    for passIndex in 0..0:
+        if selector == 0:
+            result = 10
+            read = () => first
+            choice:
+                option "for ${selector}; calls ${visits}":
+                    Unit
+            break
+        elif selector == 1:
+            result = 20
+            read = () => second
+            choice:
+                option "for ${selector}; calls ${visits}":
+                    Unit
+            break
+        else:
+            result = 30
+            read = () => first + second
+            choice:
+                option "for ${selector}; calls ${visits}":
+                    Unit
+            break
+    first = 3
+    second = 7
+    return result + read()
+export suspend fun byDo(selector: Int):
+    visits += 1
+    val first: Int
+    val second: Int
+    val result: Int
+    var read: () -> Int = () => 0
+    do:
+        if selector == 0:
+            result = 10
+            read = () => first
+            choice:
+                option "do ${selector}; calls ${visits}":
+                    Unit
+            break
+        elif selector == 1:
+            result = 20
+            read = () => second
+            choice:
+                option "do ${selector}; calls ${visits}":
+                    Unit
+            break
+        else:
+            result = 30
+            read = () => first + second
+            choice:
+                option "do ${selector}; calls ${visits}":
+                    Unit
+            break
+    while false
+    first = 3
+    second = 7
+    return result + read()

@@ -1,0 +1,30 @@
+import helpers.Box
+import helpers.defaults
+scene start():
+    val hidden: Box<*> = Box(7)
+    val first: Any = hidden.use()
+    val copied = hidden.copy()
+    val count: (vararg Nothing) -> Int = hidden::count
+    val copy: (Nothing) -> Box<*> = hidden::copy
+    choice:
+        option "Defaults ${defaults}":
+            Unit
+    val second: Any = hidden.use()
+    val zero = hidden.count() + count()
+    val firstValue = if first is Int:
+        first == 7
+    else:
+        false
+    val secondValue = if second is Int:
+        second == 7
+    else:
+        false
+    val copiedValue = if copied is Box<Int>:
+        copied.value == 7
+    else:
+        false
+    choice:
+        option "Defaults ${defaults}":
+            Unit
+    prose:
+        ${firstValue}|${secondValue}|${copiedValue}|${zero}|${defaults}

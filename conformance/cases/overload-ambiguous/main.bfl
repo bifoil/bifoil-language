@@ -1,0 +1,4 @@
+fun choose(first: Float, second: Int) = 1
+fun choose(first: Int, second: Float) = 2
+scene start():
+    choose(1, 1)

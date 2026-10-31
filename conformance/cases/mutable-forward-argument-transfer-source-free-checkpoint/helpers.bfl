@@ -1,0 +1,6 @@
+export fun run() -> String:
+    var result: Int
+    initialize(return "done")
+    val later = 3
+    fun initialize(token: Unit):
+        result = later

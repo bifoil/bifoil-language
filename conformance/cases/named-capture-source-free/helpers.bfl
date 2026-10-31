@@ -1,0 +1,21 @@
+export suspend fun factory() -> List<() -> Int>:
+    val deferred = ::tick
+    choice:
+        option "Prepare factory":
+            Unit
+    val unused = mutable [0]
+    for index in 1..5000:
+        unused.add(index)
+    var counter = 0
+    fun tick() -> Int:
+        counter += 1
+        return bounce(3)
+    fun bounce(depth: Int) -> Int:
+        if depth == 0:
+            return counter
+        return recur(depth - 1)
+    fun recur(depth: Int) -> Int:
+        if depth == 0:
+            return counter
+        return bounce(depth - 1)
+    return [deferred, ::tick]

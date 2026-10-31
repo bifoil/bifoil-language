@@ -1,0 +1,15 @@
+shared var callback: () -> Int = () => 0
+scene start():
+    var future: Int
+    var target: () -> Int = () => 7
+    fun through() -> Int = target()
+    val previous = through()
+    if false:
+        callback = ::through
+    target = () => future
+    future = 3
+    choice:
+        option "Resume locally deferred callback":
+            Unit
+    prose:
+        ${previous}|${through()}

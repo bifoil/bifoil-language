@@ -1,0 +1,3 @@
+fun <T> invalid(value: T) -> Any = value
+scene start():
+    return

@@ -1,0 +1,8 @@
+export fun run() -> () -> String:
+    val items = [1, 2]
+    var result: Int
+    for item in items:
+        result = item
+        continue
+    fun read() -> String = "${result}"
+    return ::read

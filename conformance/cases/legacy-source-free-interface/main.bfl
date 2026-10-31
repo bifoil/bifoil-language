@@ -1,0 +1,6 @@
+import api.score
+import api.award
+scene start():
+    score = 6
+    prose:
+        ${award(3)}|${score}

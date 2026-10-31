@@ -1,0 +1,8 @@
+export data class Person:
+    val name: String?
+export data class House:
+    val person: Person?
+export fun read(values: Map<String, Person?>?, key: String) -> Int:
+    if values?[key]?.name == null:
+        return 0
+    return values[key].name.length

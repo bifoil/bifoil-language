@@ -1,0 +1,25 @@
+export fun <T> snapshotValue(entry: Entry<String?, T>) -> T:
+    if entry.value is String:
+        return entry.value!!
+    return entry.value
+export suspend fun walk(values: MutableMap<String?, String?>) -> String:
+    var result = ""
+    for entry in values:
+        if entry.value == null:
+            continue
+        values[entry.key] = null
+        val snapshot = snapshotValue(entry) ?: "lost"
+        if entry.toString() != String(entry) || snapshot != entry.value:
+            return "mismatch"
+        when entry.key:
+            case null:
+                choice:
+                    option "Null key":
+                        Unit
+                result += "none:${entry.value.length};"
+            else:
+                choice:
+                    option "Key ${entry.key}":
+                        Unit
+                result += "${entry.key.length}:${entry.value.length};"
+    return result

@@ -1,0 +1,6 @@
+export data class Item:
+    val name: String
+    fun text() = name
+export sealed class Result:
+    case Good(value: Item)
+    case Empty

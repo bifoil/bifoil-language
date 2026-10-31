@@ -1,0 +1,13 @@
+data class Box:
+    var value: String?
+fun mutate(holder: Box) -> String:
+    holder.value = null
+    return "Ada"
+fun invalid(holder: Box) -> Int:
+    when holder.value:
+        case mutate(holder):
+            return holder.value.length
+        else:
+            return 0
+scene start():
+    Unit

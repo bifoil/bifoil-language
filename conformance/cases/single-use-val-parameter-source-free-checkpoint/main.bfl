@@ -1,0 +1,13 @@
+import helpers.values
+import helpers.defaults
+import helpers.identity
+scene start():
+    val result = values()
+    val number = defaults()
+    val typed = identity("typed")
+    val absent = identity<Int?>(null)
+    choice:
+        option "Parameters":
+            Unit
+    prose:
+        ${result}|${number}|${typed}|${absent == null}

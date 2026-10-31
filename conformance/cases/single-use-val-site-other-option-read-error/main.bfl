@@ -1,0 +1,10 @@
+suspend fun run(visible: Boolean) -> Int:
+    val result: Int
+    fun initialize() -> String:
+        result = 3
+        return "Ready"
+    choice:
+        option "${initialize()}" if visible:
+            return result
+        option "Other":
+            return result

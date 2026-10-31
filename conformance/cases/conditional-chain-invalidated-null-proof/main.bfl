@@ -1,0 +1,11 @@
+fun read(var value: String?) -> Int:
+    fun clear() -> Boolean:
+        value = null
+        return false
+    if value == null:
+        return 0
+    elif clear():
+        return 1
+    return value.length
+scene start():
+    val result = read("Ada")

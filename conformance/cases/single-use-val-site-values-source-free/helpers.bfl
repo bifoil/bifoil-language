@@ -1,0 +1,67 @@
+export fun proseCall() -> Int:
+    val result: Int
+    fun initialize() -> String:
+        result = 3
+        return "Ready prose"
+    prose:
+        ${initialize()}
+    return result
+export fun conditional() -> Int:
+    val result: Int
+    fun initialize() -> Int:
+        result = 4
+        return 4
+    if initialize() == 4:
+        return result
+    else:
+        return 0
+export fun expression() -> Int:
+    val result: Int
+    fun initialize() -> Int:
+        result = 5
+        return 2
+    return if true:
+        initialize() + result
+    else:
+        0
+export fun subject() -> Int:
+    val result: Int
+    fun initialize() -> Int:
+        result = 6
+        return 6
+    when initialize():
+        case 6:
+            return result
+        else:
+            return 0
+export fun pattern() -> Int:
+    val result: Int
+    fun initialize() -> Int:
+        result = 7
+        return 7
+    when 7:
+        case initialize():
+            return result
+        else:
+            return 0
+export fun guarded() -> Int:
+    val result: Int
+    fun initialize() -> Boolean:
+        result = 8
+        return true
+    when 8:
+        case 8 if initialize():
+            return result
+        else:
+            return 0
+export fun traversal() -> Int:
+    val result: Int
+    var calls = 0
+    fun initialize() -> List<Int>:
+        calls += 1
+        result = 9
+        return [1, 2]
+    var total = 0
+    for i in initialize():
+        total += result + i
+    return total + calls

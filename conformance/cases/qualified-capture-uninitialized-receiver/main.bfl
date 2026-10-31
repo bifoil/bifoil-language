@@ -1,0 +1,6 @@
+data class Box:
+    val value: Int
+scene start():
+    val holder: Box
+    val reader = () => holder.value
+    reader()

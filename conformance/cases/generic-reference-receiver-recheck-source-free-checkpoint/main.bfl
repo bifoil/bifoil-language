@@ -1,0 +1,30 @@
+import helpers.Source
+scene start():
+    var text: String? = "true"
+    val stable: String? = "fixed"
+    val source = Source()
+    var calls = 0
+    fun clear() -> Source:
+        text = null
+        calls += 1
+        return source
+    val pureLength: Int
+    if text != null && (source::identity<Int>) is (Int) -> Int:
+        pureLength = text.length
+    else:
+        pureLength = -1
+    var rechecked = -1
+    when text:
+        case "${(clear()::identity<Int>) is (Int) -> Int}":
+            if text != null:
+                rechecked = text.length
+            else:
+                rechecked = 0
+    if stable != null && (clear()::identity<Int>) is (Int) -> Int:
+        val callback = source::identity<Int>
+        val preserved = stable.length
+        choice:
+            option "Calls ${calls}":
+                Unit
+        prose:
+            ${pureLength}|${rechecked}|${preserved}|${text ?: "cleared"}|${callback(7)}|${calls}

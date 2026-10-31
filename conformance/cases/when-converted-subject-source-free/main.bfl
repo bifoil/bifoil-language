@@ -1,0 +1,8 @@
+import helpers.Score
+import helpers.numeric
+import helpers.character
+import helpers.copied
+import helpers.numericField
+scene start():
+    prose:
+        ${numeric()}|${character()}|${copied()}|${numericField(Score(3))}

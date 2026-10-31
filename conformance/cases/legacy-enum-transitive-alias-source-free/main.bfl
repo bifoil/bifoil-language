@@ -1,0 +1,11 @@
+import api.Shade
+import bridge.echo
+scene start():
+    val selected: Shade = echo(Happy)
+    val label = when selected:
+        case Happy:
+            "Happy"
+        case Sad:
+            "Sad"
+    prose:
+        ${label}

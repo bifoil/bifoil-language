@@ -1,0 +1,10 @@
+scene start():
+    var result: Int
+    initialize()
+    fun initialize(value: Int = (if true:
+        return
+    else:
+        7
+    )):
+        result = 5
+    val invalid = result

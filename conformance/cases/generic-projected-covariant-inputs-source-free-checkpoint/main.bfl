@@ -1,0 +1,13 @@
+import helpers.Box
+import helpers.Producer
+scene start():
+    val hidden: Box<*> = Box(7)
+    val listCount = hidden.readList([])
+    val setCount = hidden.readSet({})
+    val mapCount = hidden.readMap({})
+    val producerCount = hidden.readProducer(Producer<Nothing>([]))
+    choice:
+        option "Empty inputs":
+            Unit
+    prose:
+        ${listCount}|${setCount}|${mapCount}|${producerCount}

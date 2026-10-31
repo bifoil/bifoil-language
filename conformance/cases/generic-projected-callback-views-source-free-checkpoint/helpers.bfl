@@ -1,0 +1,26 @@
+export shared var calls: Int = 0
+export typealias Maybe<T> = (T?) -> T?
+export data class Callbacks<T: Any>:
+    val callback: Maybe<T>
+    val optional: Maybe<T>?
+    val counts: (vararg T) -> Int
+    val waiting: suspend (T?) -> T?
+    fun get() -> Maybe<T> = callback
+    fun getCount() -> (vararg T) -> Int = counts
+    fun getWait() -> suspend (T?) -> T? = waiting
+fun identity(value: Int?) -> Int?:
+    calls += 1
+    return value
+fun count(vararg values: Int) -> Int = values.size
+suspend fun ask(value: Int?) -> Int?:
+    calls += 1
+    choice:
+        option "Wait ${calls}":
+            Unit
+    return value
+export fun make(includeOptional: Boolean = true) -> Callbacks<Int>:
+    val optional: Maybe<Int>? = if includeOptional:
+        ::identity
+    else:
+        null
+    return Callbacks<Int>(::identity, optional, ::count, ::ask)

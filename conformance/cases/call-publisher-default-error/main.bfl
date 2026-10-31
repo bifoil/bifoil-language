@@ -1,0 +1,20 @@
+shared var exposed: () -> Int = () => 0
+scene start():
+    var current: () -> Int = () => 1
+    fun install() -> Int:
+        exposed = () => current()
+        return 0
+    fun withDefault(value: Int = install()):
+        Unit
+    fun choose(value: Int):
+        Unit
+    fun choose(value: String):
+        install()
+    fun forward():
+        wrapper()
+    fun wrapper():
+        install()
+    withDefault()
+    var future: Int
+    current = () => future
+    future = 9

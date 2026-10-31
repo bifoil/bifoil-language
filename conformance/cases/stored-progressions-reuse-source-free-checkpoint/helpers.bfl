@@ -1,0 +1,9 @@
+export fun run() -> String:
+    val progression = 1..5 step 2
+    var first: Int
+    for ordinal in progression:
+        first = ordinal
+    var second: Int
+    for ordinal in progression:
+        second = ordinal + 1
+    return "${first}|${second}|${3 in progression}"

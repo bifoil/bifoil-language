@@ -1,0 +1,9 @@
+import helpers.count
+import helpers.run
+scene start():
+    run()
+    choice:
+        option "Once complete ${count()}":
+            Unit
+    prose:
+        ${count()}

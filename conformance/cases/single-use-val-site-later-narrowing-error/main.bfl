@@ -1,0 +1,15 @@
+suspend fun run(visible: Boolean) -> Int:
+    val result: Int
+    var name: String? = null
+    fun initialize() -> String:
+        name = "ready"
+        result = 3
+        return "First"
+    fun clear() -> String:
+        name = null
+        return "Other"
+    choice:
+        option "${initialize()}" if visible && name == null:
+            return result + name.length
+        option "${clear()}":
+            return 0

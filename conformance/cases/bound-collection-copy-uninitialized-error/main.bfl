@@ -1,0 +1,6 @@
+scene start():
+    var future: Int
+    val callbacks = mutable [() => future]
+    val mapping = mutable {"one": () => future}
+    val result = (callbacks::toList)()[0]()
+    future = 3

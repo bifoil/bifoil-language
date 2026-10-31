@@ -1,0 +1,8 @@
+import helpers.run
+scene start():
+    val status = run(8)
+    choice:
+        option "Returned complete":
+            Unit
+    prose:
+        ${status}

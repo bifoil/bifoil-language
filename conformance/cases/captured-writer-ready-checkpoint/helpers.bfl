@@ -1,0 +1,19 @@
+shared var reader: () -> Int = () => 0
+shared var writer: () -> Unit = () => Unit
+fun install():
+    var current: () -> Int = () => 1
+    fun observe() -> Int = current()
+    fun replace():
+        var future: Int
+        future = 9
+        current = () => future
+        val value = reader()
+    reader = ::observe
+    writer = ::replace
+export suspend fun run() -> Int:
+    install()
+    writer()
+    choice:
+        option "Read retained writer":
+            Unit
+    return reader()

@@ -1,0 +1,15 @@
+suspend fun pause(action: () -> Unit):
+    choice:
+        option "Change key":
+            action()
+scene start():
+    var key = "first"
+    val values: Map<String, String?> = {"first": "Ada", "second": "Bifoil"}
+    values[key]!!
+    pause(() =>:
+        key = "second"
+        Unit
+    )
+    if values[key] != null:
+        prose:
+            ${values[key].length}

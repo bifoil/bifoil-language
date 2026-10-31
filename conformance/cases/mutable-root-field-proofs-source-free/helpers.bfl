@@ -1,0 +1,57 @@
+export data class Person:
+    val name: String?
+export data class Box<T>:
+    val value: T
+export fun length(var person: Person):
+    if person.name == null:
+        return 0
+    val before = person.name.length
+    person = Person("four")
+    if person.name == null:
+        return 0
+    return before + person.name.length
+export fun checked(var holder: Box<Any?>):
+    if holder.value !is String:
+        return 0
+    holder.value!!
+    return holder.value.length
+export fun nested(var holder: Box<Box<String?>?>):
+    if holder.value == null:
+        return 0
+    if holder.value.value == null:
+        return 0
+    return holder.value.value.length
+export fun matched(var person: Person) = when person.name:
+    case null:
+        0
+    else:
+        person.name.length
+export suspend fun snapshot(var person: Person):
+    suspend fun change() -> String:
+        person = Person(null)
+        choice:
+            option "Prepare snapshot":
+                Unit
+        return "Ada"
+    when val captured = person.name:
+        case change():
+            if person.name != null:
+                return 999
+            return captured.length
+        else:
+            return 0
+export suspend fun pause():
+    choice:
+        option "Read rebound":
+            Unit
+export suspend fun readAfterPause(var person: Person):
+    pause()
+    if person.name == null:
+        return 0
+    return person.name.length
+export fun reader(var person: Person) -> () -> Int:
+    val retained = person
+    if retained.name == null:
+        return () => 0
+    person = Person(null)
+    return () => retained.name.length

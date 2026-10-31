@@ -1,0 +1,10 @@
+export suspend fun run() -> String:
+    var score: Int
+    var name: String?
+    fun initialize():
+        score = 3
+        name = null
+    initialize()
+    choice:
+        option "Read the initialized primitives":
+            return "${score}|${name == null}"

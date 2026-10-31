@@ -1,0 +1,23 @@
+export enum Mood:
+    Happy
+typealias L0 = String?
+typealias L1 = Map<Mood, L0>
+typealias L2 = Map<Mood, L1>
+typealias L3 = Map<Mood, L2>
+typealias L4 = Map<Mood, L3>
+typealias L5 = Map<Mood, L4>
+typealias L6 = Map<Mood, L5>
+typealias L7 = Map<Mood, L6>
+typealias L8 = Map<Mood, L7>
+typealias L9 = Map<Mood, L8>
+typealias L10 = Map<Mood, L9>
+typealias L11 = Map<Mood, L10>
+typealias L12 = Map<Mood, L11>
+typealias L13 = Map<Mood, L12>
+typealias L14 = Map<Mood, L13>
+export typealias Nested = L14
+export fun read(values: Nested) -> Int = values[Happy]!![Happy]!![Happy]!![Happy]!![Happy]!![Happy]!![Happy]!![Happy]!![Happy]!![Happy]!![Happy]!![Happy]!![Happy]!![Happy]!!.length
+export fun safe(values: Nested?) -> Int:
+    if values?[Happy]?[Happy]?[Happy]?[Happy]?[Happy]?[Happy]?[Happy]?[Happy]?[Happy]?[Happy]?[Happy]?[Happy]?[Happy]?[Happy] == null:
+        return 0
+    return values[Happy][Happy][Happy][Happy][Happy][Happy][Happy][Happy][Happy][Happy][Happy][Happy][Happy][Happy].length

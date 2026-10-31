@@ -1,0 +1,4 @@
+fun unused(value: Int<String>):
+    return
+scene start():
+    return

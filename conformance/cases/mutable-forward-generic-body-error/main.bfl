@@ -1,0 +1,5 @@
+scene start():
+    var result: Int
+    initialize<String>("Ada")
+    fun <T: Any> initialize(value: T):
+        result = value.length

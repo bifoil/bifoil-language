@@ -1,0 +1,9 @@
+scene start():
+    var score: Int
+    fun initializeAndStop() -> Boolean:
+        score = 4
+        return false
+    while initializeAndStop():
+        Unit
+    prose:
+        ${score}

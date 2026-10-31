@@ -1,0 +1,4 @@
+fun <T: Any> nonnull(value: T) = value
+scene start():
+    val missing: Int? = null
+    val result = nonnull(missing)

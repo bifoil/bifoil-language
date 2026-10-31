@@ -1,0 +1,21 @@
+scene start():
+    val mapping: MutableMap<Int, Int> = {}
+    val members: MutableSet<Int> = {}
+    for index in 0..<5000:
+        mapping[index] = index * 2
+        members.add(index)
+    choice:
+        option "Continue":
+            mapping.remove(1)
+            mapping[1] = 7
+            members.remove(1)
+            members.add(1)
+            val snapshot: Map<Int, Float> = mapping
+            val reordered: MutableMap<Int, Int> = {}
+            for index in 4999 downTo 0:
+                reordered[index] = mapping[index]!!
+            var total = 0
+            for entry in snapshot:
+                total += Int(entry.value)
+            prose:
+                ${mapping[1]!!}|${snapshot[1]!! === 7.0}|${members.size}|${mapping == reordered}|${total}

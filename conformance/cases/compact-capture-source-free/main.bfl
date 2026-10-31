@@ -1,0 +1,8 @@
+import helpers.make
+scene start():
+    val callbacks = make()
+    val initial = callbacks[0]()
+    choice:
+        option "Continue ${initial}":
+            prose:
+                ${callbacks[1]()}|${callbacks[0]()}

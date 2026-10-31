@@ -1,0 +1,10 @@
+export suspend fun run() -> Int:
+    val x = 2
+    if true:
+        val other = 1
+        choice:
+            option "Read the declaration-site capture":
+                val callback: () -> Int = ::read
+                return callback()
+    fun read() -> Int = x
+    return 0

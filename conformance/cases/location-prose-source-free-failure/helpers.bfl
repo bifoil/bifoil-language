@@ -1,0 +1,6 @@
+export fun show() -> Unit:
+    var position = 10
+    val values = [1]
+    prose:
+        First line.
+        Later ${values[position]}.

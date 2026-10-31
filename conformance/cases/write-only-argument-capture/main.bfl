@@ -1,0 +1,10 @@
+fun run(action: () -> Unit):
+    action()
+scene start():
+    var value: Int
+    val action = () =>:
+        value = 1
+    run(action)
+    value = 2
+    prose:
+        ${value}

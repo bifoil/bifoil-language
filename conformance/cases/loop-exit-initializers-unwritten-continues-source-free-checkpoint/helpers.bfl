@@ -1,0 +1,13 @@
+export fun run() -> () -> String:
+    val result: Int
+    var ordinal = 0
+    while true:
+        ordinal += 1
+        if ordinal < 3:
+            continue
+        initialize(ordinal)
+        break
+    fun initialize(value: Int):
+        result = value
+    fun read() -> String = "${result}|${ordinal}"
+    return ::read

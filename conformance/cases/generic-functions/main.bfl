@@ -1,0 +1,12 @@
+fun <T> identity(value: T) -> T = value
+fun <T> choose(first: T, second: T) -> T = second
+fun <T: Equatable> same(first: T, second: T) -> Boolean = first == second
+fun <T: StableKey, V> single(key: T, value: V) -> Map<T, V> = {key: value}
+scene start():
+    val a = identity(3)
+    val b = choose(1, 2.5)
+    val c = identity<String?>(null)
+    val reference: (Int) -> Int = ::identity
+    val mapping = single("a", 4)
+    prose:
+        ${a}|${b === 2.5}|${c == null}|${reference(7)}|${same(1, 1.0)}|${mapping["a"]!!}

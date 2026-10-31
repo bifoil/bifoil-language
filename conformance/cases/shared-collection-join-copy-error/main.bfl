@@ -1,0 +1,6 @@
+fun choose(flag: Boolean, first: List<Int>, second: MutableList<Int>) = if flag:
+    first
+else:
+    second
+scene start():
+    Unit

@@ -1,0 +1,7 @@
+fun read(values: MutableList<String?>) -> Int:
+    if values[0] != null:
+        values.clear()
+        return values[0].length
+    return 0
+scene start():
+    Unit

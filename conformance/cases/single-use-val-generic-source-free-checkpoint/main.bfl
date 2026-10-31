@@ -1,0 +1,15 @@
+import helpers.identity
+import helpers.erased
+import helpers.bound
+import helpers.zero
+scene start():
+    val text = identity("typed")
+    val absent = identity<Int?>(null)
+    val number = erased(7) as Int
+    val bounded = bound()
+    val fixed = zero()
+    choice:
+        option "Generic results":
+            Unit
+    prose:
+        ${text}|${absent == null}|${number}|${bounded}|${fixed}

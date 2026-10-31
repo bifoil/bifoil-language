@@ -1,0 +1,4 @@
+export enum Mood:
+    Happy
+    Sad
+export typealias Shade = Mood

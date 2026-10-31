@@ -1,0 +1,7 @@
+import helpers.Person
+import helpers.House
+import helpers.run
+scene start():
+    val result = run(House(Person("Ada")))
+    prose:
+        ${result}

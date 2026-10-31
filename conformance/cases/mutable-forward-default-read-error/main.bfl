@@ -1,0 +1,5 @@
+scene start():
+    var result: Int
+    initialize()
+    fun initialize(value: Int = result):
+        result = value

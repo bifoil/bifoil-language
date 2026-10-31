@@ -1,0 +1,8 @@
+fun never() -> Nothing:
+    while true:
+        continue
+fun read(ignored: Int = never()) -> Int:
+    val value: Int
+    return value
+scene start():
+    return

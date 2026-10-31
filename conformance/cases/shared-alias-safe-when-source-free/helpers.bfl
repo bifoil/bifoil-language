@@ -1,0 +1,7 @@
+import state.person as first
+import state.person as second
+export fun read() = when first?.name:
+    case null:
+        0
+    else:
+        second.name.length

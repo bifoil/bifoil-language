@@ -1,0 +1,15 @@
+data class Person:
+    val name: String?
+shared var toggle = false
+fun make() -> Person:
+    toggle = !toggle
+    return if toggle:
+        Person("Ada")
+    else:
+        Person(null)
+fun invalid() -> Int:
+    if make().name == null:
+        return 0
+    return make().name.length
+scene start():
+    Unit

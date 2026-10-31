@@ -1,0 +1,15 @@
+shared var writer: () -> Unit = () => Unit
+scene start():
+    var future: Int
+    var target: () -> Int
+    writer = () =>:
+        target = () => 7
+    target = () => future
+    choice:
+        option "Initialize the local reader":
+            Unit
+    future = 3
+    val first = target()
+    writer()
+    prose:
+        ${first}|${target()}

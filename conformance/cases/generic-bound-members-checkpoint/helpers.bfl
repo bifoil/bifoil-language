@@ -1,0 +1,29 @@
+export data class Counter:
+    var value: Int
+    fun read() -> Int = value
+    fun add(amount: Int = 1) -> Int:
+        value += amount
+        return value
+export fun <T: Counter> bump(item: T) -> Int:
+    item.value += 1
+    return item.add()
+export fun <U: Counter, T: U> chained(item: T) -> Int = item.read()
+export suspend fun <T: Counter> retained(item: T) -> Int:
+    val get = item::read
+    choice:
+        option "Continue":
+            item.value += 1
+            return get()
+export fun <T: MutableList<Int>> edit(items: T) -> Int:
+    items[0] += 1
+    items.add(4)
+    var result = 0
+    for item in items:
+        result += item
+    return result + items.size
+export fun <T: Map<String, Int>> contains(items: T) -> Boolean = "key" in items
+export fun <T: Counter?> optional(item: T) -> Int = item?.read() ?: 0
+export fun <T: String?> length(value: T) -> Int:
+    if value != null:
+        return value.length
+    return 0

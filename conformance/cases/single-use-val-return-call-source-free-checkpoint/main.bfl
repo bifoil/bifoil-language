@@ -1,0 +1,9 @@
+import helpers.make
+scene start():
+    val first = make("returned")
+    val second = make<Int?>(null)
+    choice:
+        option "Returned readers":
+            Unit
+    prose:
+        ${first()}|${second() == null}

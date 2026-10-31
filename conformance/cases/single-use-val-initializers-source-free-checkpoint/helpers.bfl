@@ -1,0 +1,29 @@
+export fun prepare(seed: Int) -> List<Int>:
+    val first: Int
+    val second: Int
+    fun initialize():
+        first = seed + 1
+        second = first + 1
+    initialize()
+    return [first, second]
+export fun greet(name: String?) -> String:
+    val result: String
+    fun initialize():
+        result = "Hello " + (name ?: "unknown")
+    initialize()
+    return result
+export fun makeReader(value: Int) -> () -> Int:
+    val captured: Int
+    val reader: () -> Int
+    fun initialize():
+        captured = value
+        reader = ::read
+    fun read() -> Int = captured
+    initialize()
+    return reader
+export fun <T> identity(value: T) -> T:
+    val result: T
+    fun initialize():
+        result = value
+    initialize()
+    return result

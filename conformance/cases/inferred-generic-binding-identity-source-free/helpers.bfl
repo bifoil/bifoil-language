@@ -1,0 +1,27 @@
+export fun <T> unchanged(value: T):
+    if value is String:
+        return value
+    return value
+export fun <T> expression(value: T) = if value is String:
+    value
+else:
+    value
+export fun <T> nested(value: T, flag: Boolean):
+    if value is String:
+        return if flag:
+            value
+        else:
+            value
+    return value
+export fun <T> make(value: T):
+    return () =>:
+        if value is String:
+            return value
+        value
+export suspend fun <T> ask(value: T):
+    if value is String:
+        choice:
+            option "Observe":
+                Unit
+        return value
+    return value

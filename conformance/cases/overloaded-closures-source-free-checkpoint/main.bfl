@@ -1,0 +1,8 @@
+import helpers.make
+scene start():
+    val callbacks = make()
+    choice:
+        option "Call both retained callbacks":
+            Unit
+    prose:
+        ${callbacks[0]()}|${callbacks[1]()}

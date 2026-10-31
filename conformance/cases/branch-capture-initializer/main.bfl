@@ -1,0 +1,11 @@
+scene start():
+    var score: Int
+    fun initialize(flag: Boolean) -> Int:
+        if flag:
+            score = 1
+        else:
+            score = 2
+        return 7
+    val answer = initialize(true)
+    prose:
+        ${score}|${answer}

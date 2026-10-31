@@ -1,0 +1,7 @@
+import helpers.run
+scene start():
+    val double = (value: Int) => value * 2
+    val lift = (inner: (Int) -> Int) => (value: Int) => inner(value) + 1
+    val answer = run(lift, double)
+    prose:
+        ${answer}

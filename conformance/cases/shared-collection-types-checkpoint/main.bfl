@@ -1,0 +1,7 @@
+import helpers.run
+scene start():
+    val inner = {1: 2}
+    val nested = {inner: inner}
+    val result = run(nested)
+    prose:
+        ${result}

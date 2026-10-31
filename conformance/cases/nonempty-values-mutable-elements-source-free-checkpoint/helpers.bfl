@@ -1,0 +1,11 @@
+data class Box:
+    var value: Int
+export fun run() -> () -> String:
+    val box = Box(1)
+    val items = [box]
+    box.value = 7
+    var result: Int
+    for item in items:
+        result = item.value
+    fun read() -> String = "${result}"
+    return ::read

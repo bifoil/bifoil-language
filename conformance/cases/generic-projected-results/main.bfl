@@ -1,0 +1,16 @@
+data class Box<T>:
+    var value: T
+    val items: MutableList<T>
+    fun read() -> T = value
+    fun readItems() -> MutableList<T> = items
+    fun count() -> Int = items.size
+scene start():
+    val original = Box(3, mutable [1, 2])
+    val hidden: Box<*> = original
+    val first = hidden.value
+    val contents = hidden.items
+    val returned = hidden.readItems()
+    val numbers: List<*> = [1, 2]
+    val item = numbers[0]
+    prose:
+        ${first is Int}|${contents is MutableList<Int>}|${returned is MutableList<Int>}|${hidden.read() is Int}|${hidden.count()}|${item is Int}

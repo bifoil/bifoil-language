@@ -1,0 +1,13 @@
+import helpers.left
+import helpers.seedValue
+import helpers.read
+shared val first: Int = left(false)
+shared val second: Int = left(false)
+shared val third: Int = read(::seedValue)
+shared val fourth: Int = read(::seedValue)
+scene start():
+    choice:
+        option "Retain completed dependencies":
+            Unit
+    prose:
+        ${first}|${second}|${third}|${fourth}

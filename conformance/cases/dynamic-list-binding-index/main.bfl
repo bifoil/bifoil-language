@@ -1,0 +1,7 @@
+fun read(values: List<String?>, index: Int) -> Int:
+    if values[index] != null:
+        return values[index].length
+    return 0
+scene start():
+    prose:
+        ${read(["Ada", null], 0)}|${read(["Ada", null], 1)}

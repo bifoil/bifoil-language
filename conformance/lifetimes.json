@@ -1,0 +1,8155 @@
+[
+  {
+    "id": "gc-traversal-and-bound-method",
+    "choices": [
+      0
+    ],
+    "output": [
+      "key|10|6"
+    ],
+    "directory": "cases/gc-traversal-and-bound-method",
+    "decisions": [
+      "T24",
+      "T25",
+      "F44"
+    ]
+  },
+  {
+    "id": "gc-suspended-assignment-address",
+    "choices": [
+      0
+    ],
+    "output": [
+      "100"
+    ],
+    "directory": "cases/gc-suspended-assignment-address",
+    "decisions": [
+      "T24",
+      "T25",
+      "E10",
+      "T22"
+    ]
+  },
+  {
+    "id": "cooperative-execution-slices",
+    "directory": "cases/cooperative-execution-slices",
+    "decisions": [
+      "T24",
+      "E09"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Calls 202"
+      ]
+    ],
+    "output": [
+      "Total 3.",
+      "Finished 203."
+    ]
+  },
+  {
+    "id": "unicode-traversal-checkpoint",
+    "directory": "cases/unicode-traversal-checkpoint",
+    "decisions": [
+      "P03",
+      "P04",
+      "T24"
+    ],
+    "choices": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Append A"
+      ],
+      [
+        "Append \ud83d\ude00"
+      ],
+      [
+        "Append e"
+      ],
+      [
+        "Append \u0301"
+      ]
+    ],
+    "output": [
+      "A\ud83d\ude00e\u0301"
+    ]
+  },
+  {
+    "id": "deep-cyclic-equality",
+    "directory": "cases/deep-cyclic-equality",
+    "decisions": [
+      "E34",
+      "U06"
+    ],
+    "output": [
+      "true|false|true"
+    ]
+  },
+  {
+    "id": "deep-explicit-string-rendering",
+    "directory": "cases/deep-explicit-string-rendering",
+    "output": [
+      "main.Link(|true|main.Link(next=<cycle>, value=1)"
+    ],
+    "decisions": []
+  },
+  {
+    "id": "large-collection-index-checkpoint",
+    "directory": "cases/large-collection-index-checkpoint",
+    "choices": [
+      0
+    ],
+    "output": [
+      "7|true|5000|true|24995005"
+    ],
+    "decisions": [
+      "T24"
+    ]
+  },
+  {
+    "id": "captured-values-checkpoint",
+    "directory": "cases/captured-values-checkpoint",
+    "decisions": [
+      "B06",
+      "F19",
+      "F20",
+      "F21",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "7|7|9|1|2"
+    ]
+  },
+  {
+    "id": "captured-callable-snapshot",
+    "directory": "cases/captured-callable-snapshot",
+    "decisions": [
+      "B06",
+      "F19",
+      "F20",
+      "A04",
+      "A06"
+    ],
+    "output": [
+      "42|3"
+    ]
+  },
+  {
+    "id": "capture-lambda-argument-error",
+    "directory": "cases/capture-lambda-argument-error",
+    "decisions": [
+      "B06",
+      "F19",
+      "F20"
+    ],
+    "compile_error": "initialized"
+  },
+  {
+    "id": "capture-lambda-return-error",
+    "directory": "cases/capture-lambda-return-error",
+    "decisions": [
+      "B06",
+      "F19",
+      "F20"
+    ],
+    "compile_error": "initialized"
+  },
+  {
+    "id": "capture-any-return-error",
+    "directory": "cases/capture-any-return-error",
+    "decisions": [
+      "B06",
+      "F19",
+      "F20"
+    ],
+    "compile_error": "initialized"
+  },
+  {
+    "id": "capture-branch-assignment-error",
+    "directory": "cases/capture-branch-assignment-error",
+    "decisions": [
+      "B06",
+      "F19",
+      "F20"
+    ],
+    "compile_error": "initialized"
+  },
+  {
+    "id": "capture-block-result-error",
+    "directory": "cases/capture-block-result-error",
+    "decisions": [
+      "B06",
+      "F19",
+      "F20"
+    ],
+    "compile_error": "initialized"
+  },
+  {
+    "id": "capture-block-local-error",
+    "directory": "cases/capture-block-local-error",
+    "decisions": [
+      "B06",
+      "F19",
+      "F20"
+    ],
+    "compile_error": "initialized"
+  },
+  {
+    "id": "capture-indexed-callback-error",
+    "directory": "cases/capture-indexed-callback-error",
+    "decisions": [
+      "B06",
+      "F19",
+      "F20"
+    ],
+    "compile_error": "initialized"
+  },
+  {
+    "id": "capture-iterated-callback-error",
+    "directory": "cases/capture-iterated-callback-error",
+    "decisions": [
+      "B06",
+      "F19",
+      "F20"
+    ],
+    "compile_error": "initialized"
+  },
+  {
+    "id": "capture-loop-backedge-error",
+    "directory": "cases/capture-loop-backedge-error",
+    "decisions": [
+      "B06",
+      "F19",
+      "F20"
+    ],
+    "compile_error": "initialized"
+  },
+  {
+    "id": "capture-member-write-error",
+    "directory": "cases/capture-member-write-error",
+    "decisions": [
+      "B06",
+      "F19",
+      "F20"
+    ],
+    "compile_error": "initialized"
+  },
+  {
+    "id": "capture-when-binding-error",
+    "directory": "cases/capture-when-binding-error",
+    "decisions": [
+      "B06",
+      "F19",
+      "F20"
+    ],
+    "compile_error": "initialized"
+  },
+  {
+    "id": "capture-expression-return-error",
+    "directory": "cases/capture-expression-return-error",
+    "decisions": [
+      "B06",
+      "F19",
+      "F20"
+    ],
+    "compile_error": "initialized"
+  },
+  {
+    "id": "capture-argument-replacement-error",
+    "directory": "cases/capture-argument-replacement-error",
+    "decisions": [
+      "B06",
+      "F19",
+      "F20"
+    ],
+    "compile_error": "initialized"
+  },
+  {
+    "id": "capture-repeatable-val-write-error",
+    "directory": "cases/capture-repeatable-val-write-error",
+    "decisions": [
+      "B07"
+    ],
+    "compile_error": "captured val"
+  },
+  {
+    "id": "captured-block-source-free",
+    "directory": "cases/captured-block-source-free",
+    "decisions": [
+      "F20",
+      "F21",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "11|12"
+    ]
+  },
+  {
+    "id": "compact-capture-delayed-checkpoint",
+    "directory": "cases/compact-capture-delayed-checkpoint",
+    "decisions": [
+      "B06",
+      "F19",
+      "F20",
+      "F21",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "41|42"
+    ]
+  },
+  {
+    "id": "compact-capture-source-free",
+    "directory": "cases/compact-capture-source-free",
+    "decisions": [
+      "F20",
+      "F21",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Continue 1"
+      ]
+    ],
+    "output": [
+      "11|12"
+    ]
+  },
+  {
+    "id": "named-capture-source-free",
+    "directory": "cases/named-capture-source-free",
+    "decisions": [
+      "B06",
+      "F13",
+      "F14",
+      "F17",
+      "F18",
+      "F19",
+      "F20",
+      "F21",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Prepare factory"
+      ],
+      [
+        "Use captures"
+      ]
+    ],
+    "output": [
+      "1|2"
+    ]
+  },
+  {
+    "id": "skipped-default-captures-source-free",
+    "decisions": [
+      "F09",
+      "F10",
+      "F11",
+      "F19",
+      "F20",
+      "A05",
+      "T24"
+    ],
+    "output": [
+      "5|6|7",
+      "15|30"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "directory": "cases/skipped-default-captures-source-free"
+  },
+  {
+    "id": "default-body-capture-still-required-error",
+    "decisions": [
+      "F10",
+      "F11",
+      "F19"
+    ],
+    "compile_error": "not initialized",
+    "directory": "cases/default-body-capture-still-required-error"
+  },
+  {
+    "id": "default-transitive-capture-still-required-error",
+    "decisions": [
+      "F10",
+      "F11",
+      "F19"
+    ],
+    "compile_error": "not initialized",
+    "directory": "cases/default-transitive-capture-still-required-error"
+  },
+  {
+    "id": "local-enum-shorthand-source-free",
+    "directory": "cases/local-enum-shorthand-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "true|true|true|true|true"
+    ],
+    "decisions": [
+      "U08",
+      "U13",
+      "F10",
+      "F14",
+      "F16",
+      "F19",
+      "F20",
+      "T24"
+    ]
+  },
+  {
+    "id": "local-enum-capture-before-initialization-error",
+    "directory": "cases/local-enum-capture-before-initialization-error",
+    "decisions": [
+      "U13",
+      "F14",
+      "F16",
+      "F19"
+    ],
+    "compile_error": "initialized"
+  },
+  {
+    "id": "local-enum-visible-binding-conflict-error",
+    "directory": "cases/local-enum-visible-binding-conflict-error",
+    "decisions": [
+      "U13",
+      "U24",
+      "F16"
+    ],
+    "compile_error": "conflicts with a visible binding"
+  },
+  {
+    "id": "local-unresolved-name-error",
+    "directory": "cases/local-unresolved-name-error",
+    "decisions": [
+      "F16"
+    ],
+    "compile_error": "unknown"
+  },
+  {
+    "id": "stable-field-proofs-source-free",
+    "directory": "cases/stable-field-proofs-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "3|0|3|0|3|4|6|kept|7|true|5"
+    ],
+    "decisions": [
+      "B09",
+      "B13",
+      "B25",
+      "G08",
+      "F02",
+      "U03"
+    ]
+  },
+  {
+    "id": "stable-field-closures-checkpoint-source-free",
+    "directory": "cases/stable-field-closures-checkpoint-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Keep callbacks"
+      ],
+      [
+        "Read Ada"
+      ]
+    ],
+    "output": [
+      "4|3|0|6|0"
+    ],
+    "decisions": [
+      "B09",
+      "F14",
+      "F16",
+      "F20",
+      "F21",
+      "T24"
+    ]
+  },
+  {
+    "id": "field-mutable-member-error",
+    "directory": "cases/field-mutable-member-error",
+    "decisions": [
+      "B09",
+      "U03"
+    ],
+    "compile_error": "nullable member receiver"
+  },
+  {
+    "id": "field-mutable-root-error",
+    "directory": "cases/field-mutable-root-error",
+    "decisions": [
+      "B09",
+      "B02"
+    ],
+    "compile_error": "nullable member receiver"
+  },
+  {
+    "id": "field-partial-branch-error",
+    "directory": "cases/field-partial-branch-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable member receiver"
+  },
+  {
+    "id": "field-or-branch-error",
+    "directory": "cases/field-or-branch-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable member receiver"
+  },
+  {
+    "id": "field-hoisted-late-proof-error",
+    "directory": "cases/field-hoisted-late-proof-error",
+    "decisions": [
+      "B09",
+      "F14"
+    ],
+    "compile_error": "nullable member receiver"
+  },
+  {
+    "id": "field-private-access-error",
+    "directory": "cases/field-private-access-error",
+    "decisions": [
+      "U11"
+    ],
+    "compile_error": "private"
+  },
+  {
+    "id": "field-computed-receiver-error",
+    "directory": "cases/field-computed-receiver-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable member receiver"
+  },
+  {
+    "id": "when-converted-subject-source-free",
+    "directory": "cases/when-converted-subject-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "1|120|2|1|3"
+    ],
+    "decisions": [
+      "B25",
+      "E24"
+    ]
+  },
+  {
+    "id": "when-immutable-field-source-free",
+    "directory": "cases/when-immutable-field-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Prepare case"
+      ],
+      [
+        "Prepare case"
+      ]
+    ],
+    "output": [
+      "4|0|4|6|3|3|0|2"
+    ],
+    "decisions": [
+      "B09",
+      "B19",
+      "B25",
+      "F02",
+      "T24"
+    ]
+  },
+  {
+    "id": "when-mutable-field-alias-error",
+    "directory": "cases/when-mutable-field-alias-error",
+    "compile_error": "nullable member receiver",
+    "decisions": [
+      "B09",
+      "B19"
+    ]
+  },
+  {
+    "id": "map-entry-proofs-source-free",
+    "directory": "cases/map-entry-proofs-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Null key"
+      ],
+      [
+        "Key a"
+      ]
+    ],
+    "output": [
+      "none:4;1:3;|true|true|3"
+    ],
+    "decisions": [
+      "B09",
+      "B19",
+      "B13",
+      "D15",
+      "D16",
+      "G08",
+      "T24"
+    ]
+  },
+  {
+    "id": "map-entry-key-update-error",
+    "directory": "cases/map-entry-key-update-error",
+    "compile_error": "cannot assign to val field",
+    "decisions": [
+      "D15",
+      "D16"
+    ]
+  },
+  {
+    "id": "map-entry-value-update-error",
+    "directory": "cases/map-entry-value-update-error",
+    "compile_error": "cannot assign to val field",
+    "decisions": [
+      "D15",
+      "D16"
+    ]
+  },
+  {
+    "id": "mutable-root-field-proofs-source-free",
+    "directory": "cases/mutable-root-field-proofs-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Prepare snapshot"
+      ],
+      [
+        "Read rebound"
+      ]
+    ],
+    "output": [
+      "7|0|6|3|3|3|3|3"
+    ],
+    "decisions": [
+      "B09",
+      "B19",
+      "B25",
+      "F02",
+      "F17",
+      "F21",
+      "T24"
+    ]
+  },
+  {
+    "id": "mutable-field-call-proof-error",
+    "directory": "cases/mutable-field-call-proof-error",
+    "compile_error": "nullable member receiver",
+    "decisions": [
+      "B09",
+      "F17"
+    ]
+  },
+  {
+    "id": "mutable-field-closure-proof-error",
+    "directory": "cases/mutable-field-closure-proof-error",
+    "compile_error": "nullable member receiver",
+    "decisions": [
+      "B09",
+      "F17"
+    ]
+  },
+  {
+    "id": "mutable-field-choice-proof-error",
+    "directory": "cases/mutable-field-choice-proof-error",
+    "compile_error": "nullable member receiver",
+    "decisions": [
+      "B09",
+      "F17"
+    ]
+  },
+  {
+    "id": "mutable-field-when-proof-error",
+    "directory": "cases/mutable-field-when-proof-error",
+    "compile_error": "nullable member receiver",
+    "decisions": [
+      "B09",
+      "B19"
+    ]
+  },
+  {
+    "id": "bound-method-reified-view-source-free",
+    "directory": "cases/bound-method-reified-view-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Inspect method"
+      ]
+    ],
+    "output": [
+      "true|true|3|7|false|true|true|true"
+    ],
+    "decisions": [
+      "G15",
+      "G06",
+      "F37",
+      "F43",
+      "F44",
+      "T21",
+      "T24"
+    ]
+  },
+  {
+    "id": "immutable-index-guards-source-free",
+    "directory": "cases/immutable-index-guards-source-free",
+    "decisions": [
+      "B09",
+      "B19",
+      "F02",
+      "F21",
+      "G03",
+      "S10",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "output": [
+      "3|3|3|3|3|3|3|Ada|3|3"
+    ]
+  },
+  {
+    "id": "immutable-index-mutable-container-error",
+    "directory": "cases/immutable-index-mutable-container-error",
+    "decisions": [
+      "B09",
+      "B19"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "immutable-index-dynamic-index-error",
+    "directory": "cases/immutable-index-dynamic-index-error",
+    "decisions": [
+      "B09",
+      "B19"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "immutable-index-changed-root-error",
+    "directory": "cases/immutable-index-changed-root-error",
+    "decisions": [
+      "B09",
+      "B19"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "immutable-index-nested-mutation-error",
+    "directory": "cases/immutable-index-nested-mutation-error",
+    "decisions": [
+      "B09",
+      "B19"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "immutable-index-when-retarget-error",
+    "directory": "cases/immutable-index-when-retarget-error",
+    "decisions": [
+      "B09",
+      "B19"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "immutable-map-guards-source-free",
+    "directory": "cases/immutable-map-guards-source-free",
+    "decisions": [
+      "B09",
+      "B19",
+      "D07",
+      "F02",
+      "F21",
+      "G03",
+      "S10",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "output": [
+      "3|3|3|3|3|3|3",
+      "3|3|Ada|3|3|3"
+    ]
+  },
+  {
+    "id": "immutable-map-mutable-container-error",
+    "directory": "cases/immutable-map-mutable-container-error",
+    "decisions": [
+      "B09",
+      "B19"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "immutable-map-dynamic-key-error",
+    "directory": "cases/immutable-map-dynamic-key-error",
+    "decisions": [
+      "B09",
+      "B19"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "immutable-map-changed-root-error",
+    "directory": "cases/immutable-map-changed-root-error",
+    "decisions": [
+      "B09",
+      "B19"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "immutable-map-nested-mutation-error",
+    "directory": "cases/immutable-map-nested-mutation-error",
+    "decisions": [
+      "B09",
+      "B19"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "immutable-map-when-retarget-error",
+    "directory": "cases/immutable-map-when-retarget-error",
+    "decisions": [
+      "B09",
+      "B19"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "transitive-skipped-defaults-source-free",
+    "directory": "cases/transitive-skipped-defaults-source-free",
+    "decisions": [
+      "A04",
+      "A05",
+      "F19",
+      "F21",
+      "S10",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "7|8|7|3|7"
+    ]
+  },
+  {
+    "id": "transitive-skipped-default-before-declaration",
+    "directory": "cases/transitive-skipped-default-before-declaration",
+    "decisions": [
+      "A04",
+      "F14",
+      "F19",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "7|3"
+    ]
+  },
+  {
+    "id": "transitive-omitted-default-after-reference-error",
+    "directory": "cases/transitive-omitted-default-after-reference-error",
+    "decisions": [
+      "A04",
+      "F19"
+    ],
+    "compile_error": "not initialized"
+  },
+  {
+    "id": "transitive-omitted-default-scope-exit-error",
+    "directory": "cases/transitive-omitted-default-scope-exit-error",
+    "decisions": [
+      "A04",
+      "F19"
+    ],
+    "compile_error": "not initialized"
+  },
+  {
+    "id": "transitive-omitted-default-recursive-error",
+    "directory": "cases/transitive-omitted-default-recursive-error",
+    "decisions": [
+      "A04",
+      "F19"
+    ],
+    "compile_error": "not initialized"
+  },
+  {
+    "id": "empty-dependency-call-profile-error",
+    "directory": "cases/empty-dependency-call-profile-error",
+    "decisions": [
+      "F19",
+      "A04"
+    ],
+    "compile_error": "not initialized"
+  },
+  {
+    "id": "empty-dependency-mutable-callable-error",
+    "directory": "cases/empty-dependency-mutable-callable-error",
+    "decisions": [
+      "F19",
+      "F17"
+    ],
+    "compile_error": "not initialized"
+  },
+  {
+    "id": "empty-dependency-sibling-declarations-error",
+    "directory": "cases/empty-dependency-sibling-declarations-error",
+    "decisions": [
+      "F19",
+      "A04"
+    ],
+    "compile_error": "not initialized"
+  },
+  {
+    "id": "shared-callback-current-value-checkpoint",
+    "directory": "cases/shared-callback-current-value-checkpoint",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21",
+      "M14",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "3|9"
+    ]
+  },
+  {
+    "id": "shared-callback-skipped-default-checkpoint",
+    "directory": "cases/shared-callback-skipped-default-checkpoint",
+    "decisions": [
+      "A04",
+      "F19",
+      "F21",
+      "M14",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "7"
+    ]
+  },
+  {
+    "id": "shared-callback-uninitialized-error",
+    "directory": "cases/shared-callback-uninitialized-error",
+    "decisions": [
+      "F19",
+      "M14"
+    ],
+    "compile_error": "not initialized"
+  },
+  {
+    "id": "shared-nested-callback-uninitialized-error",
+    "directory": "cases/shared-nested-callback-uninitialized-error",
+    "decisions": [
+      "F19",
+      "M14"
+    ],
+    "compile_error": "not initialized"
+  },
+  {
+    "id": "shared-imported-callback-uninitialized-error",
+    "directory": "cases/shared-imported-callback-uninitialized-error",
+    "decisions": [
+      "F19",
+      "M14",
+      "S10"
+    ],
+    "compile_error": "not initialized",
+    "precompile": [
+      "helpers"
+    ]
+  },
+  {
+    "id": "collection-copy-deferred-capture-checkpoint",
+    "directory": "cases/collection-copy-deferred-capture-checkpoint",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21",
+      "D20",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "9|9|true|9"
+    ]
+  },
+  {
+    "id": "bound-collection-copy-capture-checkpoint",
+    "directory": "cases/bound-collection-copy-capture-checkpoint",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21",
+      "F43",
+      "F44",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "8"
+    ]
+  },
+  {
+    "id": "collection-copy-uninitialized-error",
+    "directory": "cases/collection-copy-uninitialized-error",
+    "decisions": [
+      "F19"
+    ],
+    "compile_error": "not initialized"
+  },
+  {
+    "id": "collection-family-copy-uninitialized-error",
+    "directory": "cases/collection-family-copy-uninitialized-error",
+    "decisions": [
+      "F19"
+    ],
+    "compile_error": "not initialized"
+  },
+  {
+    "id": "collection-remove-at-uninitialized-error",
+    "directory": "cases/collection-remove-at-uninitialized-error",
+    "decisions": [
+      "F19",
+      "D20"
+    ],
+    "compile_error": "not initialized"
+  },
+  {
+    "id": "map-remove-callback-uninitialized-error",
+    "directory": "cases/map-remove-callback-uninitialized-error",
+    "decisions": [
+      "F19",
+      "D20"
+    ],
+    "compile_error": "not initialized"
+  },
+  {
+    "id": "bound-collection-copy-uninitialized-error",
+    "directory": "cases/bound-collection-copy-uninitialized-error",
+    "decisions": [
+      "F19",
+      "F43",
+      "F44"
+    ],
+    "compile_error": "not initialized"
+  },
+  {
+    "id": "escaped-callback-retarget-error",
+    "directory": "cases/escaped-callback-retarget-error",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21",
+      "M14"
+    ],
+    "compile_error": "not initialized"
+  },
+  {
+    "id": "escaped-callback-transitive-retarget-error",
+    "directory": "cases/escaped-callback-transitive-retarget-error",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21",
+      "M14"
+    ],
+    "compile_error": "not initialized"
+  },
+  {
+    "id": "escaped-callback-argument-retarget-error",
+    "directory": "cases/escaped-callback-argument-retarget-error",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21",
+      "M14"
+    ],
+    "compile_error": "not initialized"
+  },
+  {
+    "id": "escaped-callback-heap-retarget-error",
+    "directory": "cases/escaped-callback-heap-retarget-error",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21",
+      "D20"
+    ],
+    "compile_error": "not initialized"
+  },
+  {
+    "id": "escaped-callback-branch-retarget-error",
+    "directory": "cases/escaped-callback-branch-retarget-error",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21",
+      "M14"
+    ],
+    "compile_error": "not initialized"
+  },
+  {
+    "id": "escaped-callback-rhs-publication-error",
+    "directory": "cases/escaped-callback-rhs-publication-error",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21",
+      "M14"
+    ],
+    "compile_error": "not initialized"
+  },
+  {
+    "id": "escaped-callback-retarget-source-free-checkpoint",
+    "directory": "cases/escaped-callback-retarget-source-free-checkpoint",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21",
+      "M14",
+      "S10",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "9|10"
+    ]
+  },
+  {
+    "id": "escaped-callback-exclusive-branches",
+    "directory": "cases/escaped-callback-exclusive-branches",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21",
+      "M14",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "3",
+      "7"
+    ]
+  },
+  {
+    "id": "local-callback-retarget-before-initialization",
+    "directory": "cases/local-callback-retarget-before-initialization",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "7|3"
+    ]
+  },
+  {
+    "id": "write-only-local-capture",
+    "directory": "cases/write-only-local-capture",
+    "decisions": [
+      "B06",
+      "F18",
+      "F19"
+    ],
+    "output": [
+      "2"
+    ]
+  },
+  {
+    "id": "compound-capture-initialized-after-declaration",
+    "directory": "cases/compound-capture-initialized-after-declaration",
+    "decisions": [
+      "B06",
+      "F17",
+      "F18",
+      "F19"
+    ],
+    "output": [
+      "4"
+    ]
+  },
+  {
+    "id": "write-only-escaping-capture-source-free",
+    "directory": "cases/write-only-escaping-capture-source-free",
+    "decisions": [
+      "B06",
+      "F18",
+      "F19",
+      "F21",
+      "S10",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Write 3"
+      ],
+      [
+        "Write 9"
+      ]
+    ],
+    "output": [
+      "Stored 3.",
+      "Stored 9.",
+      "Complete."
+    ]
+  },
+  {
+    "id": "write-only-block-capture-checkpoint",
+    "directory": "cases/write-only-block-capture-checkpoint",
+    "decisions": [
+      "B06",
+      "F18",
+      "F19",
+      "F21",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "Stored.",
+      "Done."
+    ]
+  },
+  {
+    "id": "write-only-argument-capture",
+    "directory": "cases/write-only-argument-capture",
+    "decisions": [
+      "B06",
+      "F18",
+      "F19"
+    ],
+    "output": [
+      "2"
+    ]
+  },
+  {
+    "id": "write-only-default-capture",
+    "directory": "cases/write-only-default-capture",
+    "decisions": [
+      "B06",
+      "F18",
+      "F19",
+      "A04"
+    ],
+    "output": [
+      "2"
+    ]
+  },
+  {
+    "id": "write-only-shared-capture-keeps-local-deferral",
+    "directory": "cases/write-only-shared-capture-keeps-local-deferral",
+    "decisions": [
+      "B06",
+      "F17",
+      "F18",
+      "F19",
+      "F21",
+      "M14",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "3|7"
+    ]
+  },
+  {
+    "id": "write-read-compound-capture-error",
+    "directory": "cases/write-read-compound-capture-error",
+    "decisions": [
+      "B06",
+      "F18",
+      "F19"
+    ],
+    "compile_error": "not initialized"
+  },
+  {
+    "id": "write-read-capture-visit-order-error",
+    "directory": "cases/write-read-capture-visit-order-error",
+    "decisions": [
+      "B06",
+      "F18",
+      "F19"
+    ],
+    "compile_error": "not initialized"
+  },
+  {
+    "id": "enum-map-guards-source-free",
+    "directory": "cases/enum-map-guards-source-free",
+    "decisions": [
+      "B09",
+      "B19",
+      "D07",
+      "F21",
+      "S10",
+      "T24"
+    ],
+    "precompile": [
+      "schema",
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "3|3|3|true"
+    ]
+  },
+  {
+    "id": "enum-map-distinct-keys",
+    "directory": "cases/enum-map-distinct-keys",
+    "decisions": [
+      "D07",
+      "D14",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "3|1|2|3"
+    ]
+  },
+  {
+    "id": "enum-map-duplicate-key-error",
+    "directory": "cases/enum-map-duplicate-key-error",
+    "decisions": [
+      "D14"
+    ],
+    "compile_error": "duplicate constant map key"
+  },
+  {
+    "id": "enum-map-other-case-error",
+    "directory": "cases/enum-map-other-case-error",
+    "decisions": [
+      "B09",
+      "B19"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "enum-map-changing-key-error",
+    "directory": "cases/enum-map-changing-key-error",
+    "decisions": [
+      "B09",
+      "B19"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "enum-map-mutable-container-error",
+    "directory": "cases/enum-map-mutable-container-error",
+    "decisions": [
+      "B09",
+      "B19"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "overloaded-capture-literals-source-free",
+    "directory": "cases/overloaded-capture-literals-source-free",
+    "decisions": [
+      "B06",
+      "F23",
+      "F28",
+      "S10",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "7|1|9"
+    ]
+  },
+  {
+    "id": "overloaded-capture-default-fit",
+    "directory": "cases/overloaded-capture-default-fit",
+    "decisions": [
+      "B06",
+      "F23",
+      "F29"
+    ],
+    "output": [
+      "7"
+    ]
+  },
+  {
+    "id": "overloaded-capture-char-widen",
+    "directory": "cases/overloaded-capture-char-widen",
+    "decisions": [
+      "B06",
+      "F23",
+      "F28",
+      "P13"
+    ],
+    "output": [
+      "1"
+    ]
+  },
+  {
+    "id": "overloaded-capture-profile-error",
+    "directory": "cases/overloaded-capture-profile-error",
+    "decisions": [
+      "B06",
+      "F23",
+      "F28"
+    ],
+    "compile_error": "initialized"
+  },
+  {
+    "id": "overloaded-capture-unknown-argument-error",
+    "directory": "cases/overloaded-capture-unknown-argument-error",
+    "decisions": [
+      "B06",
+      "F23",
+      "F28"
+    ],
+    "compile_error": "initialized"
+  },
+  {
+    "id": "overloaded-capture-generic-argument-error",
+    "directory": "cases/overloaded-capture-generic-argument-error",
+    "decisions": [
+      "B06",
+      "F23",
+      "F28"
+    ],
+    "compile_error": "initialized"
+  },
+  {
+    "id": "overloaded-closures-source-free-checkpoint",
+    "directory": "cases/overloaded-closures-source-free-checkpoint",
+    "decisions": [
+      "F18",
+      "F21",
+      "F23",
+      "S10",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "3|4"
+    ]
+  },
+  {
+    "id": "capture-scope-direct-forward-error",
+    "directory": "cases/capture-scope-direct-forward-error",
+    "decisions": [
+      "F14",
+      "F16",
+      "F19"
+    ],
+    "compile_error": "cannot prove captured binding 'x' initialized"
+  },
+  {
+    "id": "capture-scope-reference-forward-error",
+    "directory": "cases/capture-scope-reference-forward-error",
+    "decisions": [
+      "F14",
+      "F16",
+      "F19"
+    ],
+    "compile_error": "cannot prove captured binding 'x' initialized"
+  },
+  {
+    "id": "capture-scope-container-forward-error",
+    "directory": "cases/capture-scope-container-forward-error",
+    "decisions": [
+      "F14",
+      "F16",
+      "F19",
+      "F20"
+    ],
+    "compile_error": "cannot prove captured binding 'x' initialized"
+  },
+  {
+    "id": "capture-scope-default-forward-error",
+    "directory": "cases/capture-scope-default-forward-error",
+    "decisions": [
+      "F14",
+      "F16",
+      "F19"
+    ],
+    "compile_error": "cannot prove captured binding 'x' initialized"
+  },
+  {
+    "id": "capture-scope-overload-forward-error",
+    "directory": "cases/capture-scope-overload-forward-error",
+    "decisions": [
+      "F14",
+      "F16",
+      "F19",
+      "F23"
+    ],
+    "compile_error": "cannot prove captured binding 'x' initialized"
+  },
+  {
+    "id": "capture-scope-writer-forward-error",
+    "directory": "cases/capture-scope-writer-forward-error",
+    "decisions": [
+      "F14",
+      "F16",
+      "F18"
+    ],
+    "compile_error": "cannot prove captured binding 'target' initialized"
+  },
+  {
+    "id": "capture-scope-supplied-default-checkpoint",
+    "directory": "cases/capture-scope-supplied-default-checkpoint",
+    "decisions": [
+      "F14",
+      "F16",
+      "F19",
+      "T25"
+    ],
+    "output": [
+      "7"
+    ],
+    "choices": [
+      0
+    ]
+  },
+  {
+    "id": "capture-scope-forward-source-free-checkpoint",
+    "directory": "cases/capture-scope-forward-source-free-checkpoint",
+    "decisions": [
+      "F14",
+      "F16",
+      "F19",
+      "F20",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "2"
+    ]
+  },
+  {
+    "id": "primitive-capture-initializer-source-free",
+    "directory": "cases/primitive-capture-initializer-source-free",
+    "decisions": [
+      "B06",
+      "F18",
+      "F19",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "3|true"
+    ]
+  },
+  {
+    "id": "branch-capture-initializer",
+    "directory": "cases/branch-capture-initializer",
+    "decisions": [
+      "B06",
+      "F18",
+      "F19"
+    ],
+    "output": [
+      "1|7"
+    ]
+  },
+  {
+    "id": "loop-condition-capture-initializer",
+    "directory": "cases/loop-condition-capture-initializer",
+    "decisions": [
+      "B06",
+      "F18",
+      "F19"
+    ],
+    "output": [
+      "4"
+    ]
+  },
+  {
+    "id": "suspended-capture-initializer-source-free",
+    "directory": "cases/suspended-capture-initializer-source-free",
+    "decisions": [
+      "B06",
+      "F18",
+      "F19",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      1
+    ],
+    "output": [
+      "7"
+    ]
+  },
+  {
+    "id": "capture-initializer-early-return-error",
+    "directory": "cases/capture-initializer-early-return-error",
+    "decisions": [
+      "B06",
+      "F18",
+      "F19"
+    ],
+    "compile_error": "binding 'score' is not definitely initialized"
+  },
+  {
+    "id": "capture-initializer-skipped-call-error",
+    "directory": "cases/capture-initializer-skipped-call-error",
+    "decisions": [
+      "B06",
+      "F18",
+      "F19"
+    ],
+    "compile_error": "binding 'score' is not definitely initialized"
+  },
+  {
+    "id": "capture-initializer-zero-iteration-error",
+    "directory": "cases/capture-initializer-zero-iteration-error",
+    "decisions": [
+      "B06",
+      "F18",
+      "F19"
+    ],
+    "compile_error": "binding 'score' is not definitely initialized"
+  },
+  {
+    "id": "capture-initializer-unrelated-cell-error",
+    "directory": "cases/capture-initializer-unrelated-cell-error",
+    "decisions": [
+      "B06",
+      "F18",
+      "F19"
+    ],
+    "compile_error": "binding 'score' is not definitely initialized"
+  },
+  {
+    "id": "capture-initializer-default-return-error",
+    "directory": "cases/capture-initializer-default-return-error",
+    "decisions": [
+      "B06",
+      "F18",
+      "F19"
+    ],
+    "compile_error": "binding 'score' is not definitely initialized"
+  },
+  {
+    "id": "capture-initializer-choice-missing-write-error",
+    "directory": "cases/capture-initializer-choice-missing-write-error",
+    "decisions": [
+      "B06",
+      "F18",
+      "F19"
+    ],
+    "compile_error": "binding 'score' is not definitely initialized"
+  },
+  {
+    "id": "call-publisher-direct-error",
+    "directory": "cases/call-publisher-direct-error",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21"
+    ],
+    "compile_error": "captured binding 'future' is not initialized"
+  },
+  {
+    "id": "call-publisher-stored-value-error",
+    "directory": "cases/call-publisher-stored-value-error",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21"
+    ],
+    "compile_error": "captured binding 'future' is not initialized"
+  },
+  {
+    "id": "call-publisher-factory-error",
+    "directory": "cases/call-publisher-factory-error",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21"
+    ],
+    "compile_error": "captured binding 'future' is not initialized"
+  },
+  {
+    "id": "call-publisher-forward-error",
+    "directory": "cases/call-publisher-forward-error",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21"
+    ],
+    "compile_error": "captured binding 'future' is not initialized"
+  },
+  {
+    "id": "call-publisher-deferred-until-ready",
+    "directory": "cases/call-publisher-deferred-until-ready",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21"
+    ],
+    "output": [
+      "9"
+    ]
+  },
+  {
+    "id": "call-publisher-skipped-call",
+    "directory": "cases/call-publisher-skipped-call",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21"
+    ],
+    "output": [
+      "9"
+    ]
+  },
+  {
+    "id": "call-publisher-forward-ready",
+    "directory": "cases/call-publisher-forward-ready",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21"
+    ],
+    "output": [
+      "9"
+    ]
+  },
+  {
+    "id": "call-publisher-source-free-checkpoint",
+    "directory": "cases/call-publisher-source-free-checkpoint",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "9"
+    ]
+  },
+  {
+    "id": "call-publisher-wrapper-error",
+    "directory": "cases/call-publisher-wrapper-error",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21"
+    ],
+    "compile_error": "captured binding 'future' is not initialized"
+  },
+  {
+    "id": "call-publisher-default-error",
+    "directory": "cases/call-publisher-default-error",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21",
+      "F09",
+      "F10",
+      "F11"
+    ],
+    "compile_error": "captured binding 'future' is not initialized"
+  },
+  {
+    "id": "call-publisher-supplied-default",
+    "directory": "cases/call-publisher-supplied-default",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21",
+      "F09",
+      "F10",
+      "F11"
+    ],
+    "output": [
+      "9"
+    ]
+  },
+  {
+    "id": "call-publisher-overload-selected-error",
+    "directory": "cases/call-publisher-overload-selected-error",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21"
+    ],
+    "compile_error": "captured binding 'future' is not initialized"
+  },
+  {
+    "id": "call-publisher-overload-skipped",
+    "directory": "cases/call-publisher-overload-skipped",
+    "decisions": [
+      "F17",
+      "F19",
+      "F21"
+    ],
+    "output": [
+      "9"
+    ]
+  },
+  {
+    "id": "dynamic-map-binding-key-source-free",
+    "directory": "cases/dynamic-map-binding-key-source-free",
+    "decisions": [
+      "B09",
+      "B19",
+      "B25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "3|0|0 3|3"
+    ]
+  },
+  {
+    "id": "dynamic-list-binding-index",
+    "directory": "cases/dynamic-list-binding-index",
+    "decisions": [
+      "B09"
+    ],
+    "output": [
+      "3|0"
+    ]
+  },
+  {
+    "id": "dynamic-key-suspended-reader-source-free",
+    "directory": "cases/dynamic-key-suspended-reader-source-free",
+    "decisions": [
+      "B09",
+      "F21",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Read saved key"
+      ]
+    ],
+    "output": [
+      "3"
+    ]
+  },
+  {
+    "id": "dynamic-key-generic-lookup-source-free",
+    "directory": "cases/dynamic-key-generic-lookup-source-free",
+    "decisions": [
+      "B09"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "Ada|9"
+    ]
+  },
+  {
+    "id": "dynamic-key-converted-bindings",
+    "directory": "cases/dynamic-key-converted-bindings",
+    "decisions": [
+      "B09"
+    ],
+    "output": [
+      "3|4|5"
+    ]
+  },
+  {
+    "id": "dynamic-key-sibling-map-error",
+    "directory": "cases/dynamic-key-sibling-map-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable member receiver requires ?. or a null check"
+  },
+  {
+    "id": "dynamic-key-sibling-list-error",
+    "directory": "cases/dynamic-key-sibling-list-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable member receiver requires ?. or a null check"
+  },
+  {
+    "id": "dynamic-key-different-binding-error",
+    "directory": "cases/dynamic-key-different-binding-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable member receiver requires ?. or a null check"
+  },
+  {
+    "id": "dynamic-key-mutable-binding-error",
+    "directory": "cases/dynamic-key-mutable-binding-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable member receiver requires ?. or a null check"
+  },
+  {
+    "id": "dynamic-key-mutable-container-error",
+    "directory": "cases/dynamic-key-mutable-container-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable member receiver requires ?. or a null check"
+  },
+  {
+    "id": "mutable-key-unchanged-source-free",
+    "directory": "cases/mutable-key-unchanged-source-free",
+    "decisions": [
+      "B09"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "4|3"
+    ]
+  },
+  {
+    "id": "mutable-key-reguarded-after-call",
+    "directory": "cases/mutable-key-reguarded-after-call",
+    "decisions": [
+      "B09"
+    ],
+    "output": [
+      "3"
+    ]
+  },
+  {
+    "id": "mutable-key-stable-fact-retained",
+    "directory": "cases/mutable-key-stable-fact-retained",
+    "decisions": [
+      "B09"
+    ],
+    "output": [
+      "3"
+    ]
+  },
+  {
+    "id": "mutable-key-suspended-recheck",
+    "directory": "cases/mutable-key-suspended-recheck",
+    "decisions": [
+      "B09",
+      "T25"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Change key"
+      ]
+    ],
+    "output": [
+      "6"
+    ]
+  },
+  {
+    "id": "mutable-key-call-invalidation-error",
+    "directory": "cases/mutable-key-call-invalidation-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable member receiver requires ?. or a null check"
+  },
+  {
+    "id": "mutable-key-captured-reader-error",
+    "directory": "cases/mutable-key-captured-reader-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable member receiver requires ?. or a null check"
+  },
+  {
+    "id": "mutable-key-when-effect-error",
+    "directory": "cases/mutable-key-when-effect-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable member receiver requires ?. or a null check"
+  },
+  {
+    "id": "mutable-key-choice-snapshot-error",
+    "directory": "cases/mutable-key-choice-snapshot-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable member receiver requires ?. or a null check"
+  },
+  {
+    "id": "mutable-key-rhs-proof-error",
+    "directory": "cases/mutable-key-rhs-proof-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable member receiver requires ?. or a null check"
+  },
+  {
+    "id": "mutable-key-import-alias-error",
+    "directory": "cases/mutable-key-import-alias-error",
+    "decisions": [
+      "B09"
+    ],
+    "precompile": [
+      "state"
+    ],
+    "compile_error": "nullable member receiver requires ?. or a null check"
+  },
+  {
+    "id": "mutable-key-import-alias-reguarded",
+    "directory": "cases/mutable-key-import-alias-reguarded",
+    "decisions": [
+      "B09"
+    ],
+    "precompile": [
+      "state"
+    ],
+    "output": [
+      "6"
+    ]
+  },
+  {
+    "id": "shared-alias-null-write-error",
+    "directory": "cases/shared-alias-null-write-error",
+    "decisions": [
+      "B09"
+    ],
+    "precompile": [
+      "state"
+    ],
+    "compile_error": "nullable member receiver requires ?. or a null check"
+  },
+  {
+    "id": "shared-alias-map-write-error",
+    "directory": "cases/shared-alias-map-write-error",
+    "decisions": [
+      "B09"
+    ],
+    "precompile": [
+      "state"
+    ],
+    "compile_error": "nullable member receiver requires ?. or a null check"
+  },
+  {
+    "id": "shared-alias-type-write-error",
+    "directory": "cases/shared-alias-type-write-error",
+    "decisions": [
+      "B09",
+      "B25"
+    ],
+    "precompile": [
+      "state"
+    ],
+    "compile_error": "nullable member receiver requires ?. or a null check"
+  },
+  {
+    "id": "shared-alias-inferred-reader-error",
+    "directory": "cases/shared-alias-inferred-reader-error",
+    "decisions": [
+      "B09"
+    ],
+    "precompile": [
+      "state"
+    ],
+    "compile_error": "nullable member receiver requires ?. or a null check"
+  },
+  {
+    "id": "shared-alias-snapshots-checkpoint",
+    "directory": "cases/shared-alias-snapshots-checkpoint",
+    "decisions": [
+      "B09",
+      "T25"
+    ],
+    "precompile": [
+      "state"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Read snapshots"
+      ]
+    ],
+    "output": [
+      "3|3",
+      "6"
+    ]
+  },
+  {
+    "id": "shared-alias-independent-state",
+    "directory": "cases/shared-alias-independent-state",
+    "decisions": [
+      "B09"
+    ],
+    "precompile": [
+      "state"
+    ],
+    "output": [
+      "3|3"
+    ]
+  },
+  {
+    "id": "shared-alias-parameter-snapshot",
+    "directory": "cases/shared-alias-parameter-snapshot",
+    "decisions": [
+      "B09"
+    ],
+    "precompile": [
+      "state"
+    ],
+    "output": [
+      "3"
+    ]
+  },
+  {
+    "id": "safe-field-prefix-source-free",
+    "directory": "cases/safe-field-prefix-source-free",
+    "decisions": [
+      "B09",
+      "B19"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "3|0|6|3|Ada"
+    ]
+  },
+  {
+    "id": "safe-index-prefix-source-free",
+    "directory": "cases/safe-index-prefix-source-free",
+    "decisions": [
+      "B09"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "3|0|0"
+    ]
+  },
+  {
+    "id": "safe-string-index-prefix",
+    "directory": "cases/safe-string-index-prefix",
+    "decisions": [
+      "B09"
+    ],
+    "output": [
+      "2|0"
+    ]
+  },
+  {
+    "id": "safe-generic-prefix-source-free",
+    "directory": "cases/safe-generic-prefix-source-free",
+    "decisions": [
+      "B09"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "Ada|None|7"
+    ]
+  },
+  {
+    "id": "safe-captured-prefix-checkpoint",
+    "directory": "cases/safe-captured-prefix-checkpoint",
+    "decisions": [
+      "B09",
+      "F21",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Resume reader"
+      ]
+    ],
+    "output": [
+      "3"
+    ]
+  },
+  {
+    "id": "nested-enum-index-prefix-source-free",
+    "directory": "cases/nested-enum-index-prefix-source-free",
+    "decisions": [
+      "B09"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "3|3|0"
+    ]
+  },
+  {
+    "id": "safe-prefix-effectful-index-error",
+    "directory": "cases/safe-prefix-effectful-index-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable index receiver requires ?[ or a null check"
+  },
+  {
+    "id": "safe-prefix-nullable-test-error",
+    "directory": "cases/safe-prefix-nullable-test-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable member receiver requires ?. or a null check"
+  },
+  {
+    "id": "safe-prefix-when-effect-error",
+    "directory": "cases/safe-prefix-when-effect-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable member receiver requires ?. or a null check"
+  },
+  {
+    "id": "safe-prefix-key-write-error",
+    "directory": "cases/safe-prefix-key-write-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable member receiver requires ?. or a null check"
+  },
+  {
+    "id": "shared-alias-read-guards-source-free",
+    "directory": "cases/shared-alias-read-guards-source-free",
+    "decisions": [
+      "B09",
+      "B25",
+      "T25"
+    ],
+    "precompile": [
+      "state"
+    ],
+    "output": [
+      "3",
+      "3",
+      "3",
+      "3"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Read fixed alias"
+      ]
+    ]
+  },
+  {
+    "id": "shared-alias-map-reads-source-free",
+    "directory": "cases/shared-alias-map-reads-source-free",
+    "decisions": [
+      "B09",
+      "B25"
+    ],
+    "precompile": [
+      "state"
+    ],
+    "output": [
+      "3",
+      "3"
+    ]
+  },
+  {
+    "id": "shared-alias-key-reads-source-free",
+    "directory": "cases/shared-alias-key-reads-source-free",
+    "decisions": [
+      "B09"
+    ],
+    "precompile": [
+      "state"
+    ],
+    "output": [
+      "3",
+      "6"
+    ]
+  },
+  {
+    "id": "shared-alias-safe-when-source-free",
+    "directory": "cases/shared-alias-safe-when-source-free",
+    "decisions": [
+      "B09",
+      "B19"
+    ],
+    "precompile": [
+      "state",
+      "helpers"
+    ],
+    "output": [
+      "3"
+    ]
+  },
+  {
+    "id": "captured-writer-local-publication-error",
+    "directory": "cases/captured-writer-local-publication-error",
+    "decisions": [
+      "F18",
+      "F19",
+      "F21"
+    ],
+    "precompile": [],
+    "compile_error": "captured binding 'future' is not initialized"
+  },
+  {
+    "id": "captured-writer-ready-checkpoint",
+    "directory": "cases/captured-writer-ready-checkpoint",
+    "decisions": [
+      "F18",
+      "F19",
+      "F21",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Read retained writer"
+      ]
+    ],
+    "output": [
+      "9"
+    ]
+  },
+  {
+    "id": "captured-initializer-values-source-free",
+    "directory": "cases/captured-initializer-values-source-free",
+    "decisions": [
+      "F18",
+      "F19",
+      "F21"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "27"
+    ]
+  },
+  {
+    "id": "captured-initializer-callback-checkpoint",
+    "directory": "cases/captured-initializer-callback-checkpoint",
+    "decisions": [
+      "F18",
+      "F19",
+      "F21",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Initialize callback"
+      ]
+    ],
+    "output": [
+      "11"
+    ]
+  },
+  {
+    "id": "captured-initializer-overwrite-source-free",
+    "directory": "cases/captured-initializer-overwrite-source-free",
+    "decisions": [
+      "F18",
+      "F19",
+      "F17",
+      "F21"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "13"
+    ]
+  },
+  {
+    "id": "captured-initializer-scene-source-free",
+    "directory": "cases/captured-initializer-scene-source-free",
+    "decisions": [
+      "F18",
+      "F19"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "Forest",
+      "true"
+    ]
+  },
+  {
+    "id": "captured-initializer-snapshot-error",
+    "directory": "cases/captured-initializer-snapshot-error",
+    "decisions": [
+      "F18",
+      "F19"
+    ],
+    "precompile": [],
+    "compile_error": "captured binding 'future' is not initialized"
+  },
+  {
+    "id": "captured-initializer-skipped-callback-error",
+    "directory": "cases/captured-initializer-skipped-callback-error",
+    "decisions": [
+      "F18",
+      "F19"
+    ],
+    "precompile": [],
+    "compile_error": "captured binding 'future' is not initialized"
+  },
+  {
+    "id": "captured-initializer-missing-callback-write-error",
+    "directory": "cases/captured-initializer-missing-callback-write-error",
+    "decisions": [
+      "F18",
+      "F19"
+    ],
+    "precompile": [],
+    "compile_error": "binding 'callback' is not definitely initialized"
+  },
+  {
+    "id": "captured-initializer-caller-future-error",
+    "directory": "cases/captured-initializer-caller-future-error",
+    "decisions": [
+      "F18",
+      "F19"
+    ],
+    "precompile": [],
+    "compile_error": "captured binding 'future' is not initialized"
+  },
+  {
+    "id": "captured-helper-write-read-source-free",
+    "directory": "cases/captured-helper-write-read-source-free",
+    "decisions": [
+      "F18",
+      "F19"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "14"
+    ]
+  },
+  {
+    "id": "captured-helper-loop-read-checkpoint",
+    "directory": "cases/captured-helper-loop-read-checkpoint",
+    "decisions": [
+      "F18",
+      "F19",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "18"
+    ]
+  },
+  {
+    "id": "captured-helper-escaping-initializer-checkpoint",
+    "directory": "cases/captured-helper-escaping-initializer-checkpoint",
+    "decisions": [
+      "F18",
+      "F19",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "7|7"
+    ]
+  },
+  {
+    "id": "captured-helper-callback-overwrite-source-free",
+    "directory": "cases/captured-helper-callback-overwrite-source-free",
+    "decisions": [
+      "F18",
+      "F19"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "14"
+    ]
+  },
+  {
+    "id": "captured-helper-collection-write-read-source-free",
+    "directory": "cases/captured-helper-collection-write-read-source-free",
+    "decisions": [
+      "F18",
+      "F19"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "12"
+    ]
+  },
+  {
+    "id": "captured-helper-read-before-write-error",
+    "directory": "cases/captured-helper-read-before-write-error",
+    "decisions": [
+      "F18",
+      "F19"
+    ],
+    "compile_error": "captured binding 'value' is not initialized"
+  },
+  {
+    "id": "captured-helper-default-read-error",
+    "directory": "cases/captured-helper-default-read-error",
+    "decisions": [
+      "F18",
+      "F19"
+    ],
+    "compile_error": "captured binding 'value' is not initialized"
+  },
+  {
+    "id": "captured-helper-indirect-read-error",
+    "directory": "cases/captured-helper-indirect-read-error",
+    "decisions": [
+      "F18",
+      "F19"
+    ],
+    "compile_error": "captured binding 'value' is not initialized"
+  },
+  {
+    "id": "captured-helper-early-publication-error",
+    "directory": "cases/captured-helper-early-publication-error",
+    "decisions": [
+      "F18",
+      "F19"
+    ],
+    "compile_error": "captured binding 'value' is not initialized"
+  },
+  {
+    "id": "captured-helper-skipped-initializer-error",
+    "directory": "cases/captured-helper-skipped-initializer-error",
+    "decisions": [
+      "F18",
+      "F19"
+    ],
+    "compile_error": "not definitely initialized"
+  },
+  {
+    "id": "captured-helper-earlier-snapshot-error",
+    "directory": "cases/captured-helper-earlier-snapshot-error",
+    "decisions": [
+      "F18",
+      "F19"
+    ],
+    "compile_error": "captured binding 'future' is not initialized"
+  },
+  {
+    "id": "captured-helper-incomplete-write-error",
+    "directory": "cases/captured-helper-incomplete-write-error",
+    "decisions": [
+      "F18",
+      "F19"
+    ],
+    "compile_error": "captured binding 'value' is not initialized"
+  },
+  {
+    "id": "mutable-field-guards-source-free",
+    "directory": "cases/mutable-field-guards-source-free",
+    "decisions": [
+      "B09",
+      "U05"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "Ada|3|0|Other"
+    ]
+  },
+  {
+    "id": "mutable-field-safe-prefix-checkpoint",
+    "directory": "cases/mutable-field-safe-prefix-checkpoint",
+    "decisions": [
+      "B09",
+      "U05",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "6"
+    ]
+  },
+  {
+    "id": "mutable-field-when-source-free",
+    "directory": "cases/mutable-field-when-source-free",
+    "decisions": [
+      "B09",
+      "U05"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "3"
+    ]
+  },
+  {
+    "id": "mutable-field-supplied-argument-checkpoint",
+    "directory": "cases/mutable-field-supplied-argument-checkpoint",
+    "decisions": [
+      "B09",
+      "U05",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "3"
+    ]
+  },
+  {
+    "id": "mutable-field-and-key-independence",
+    "directory": "cases/mutable-field-and-key-independence",
+    "decisions": [
+      "B09",
+      "U05"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "7"
+    ]
+  },
+  {
+    "id": "mutable-field-alias-write-error",
+    "directory": "cases/mutable-field-alias-write-error",
+    "decisions": [
+      "B09",
+      "U05"
+    ],
+    "compile_error": "nullable member receiver"
+  },
+  {
+    "id": "mutable-field-conditional-write-error",
+    "directory": "cases/mutable-field-conditional-write-error",
+    "decisions": [
+      "B09",
+      "U05"
+    ],
+    "compile_error": "nullable member receiver"
+  },
+  {
+    "id": "mutable-field-expression-write-error",
+    "directory": "cases/mutable-field-expression-write-error",
+    "decisions": [
+      "B09",
+      "U05"
+    ],
+    "compile_error": "nullable member receiver"
+  },
+  {
+    "id": "mutable-field-snapshot-guard-error",
+    "directory": "cases/mutable-field-snapshot-guard-error",
+    "decisions": [
+      "B09",
+      "U05"
+    ],
+    "compile_error": "nullable member receiver"
+  },
+  {
+    "id": "mutable-field-escaping-reader-error",
+    "directory": "cases/mutable-field-escaping-reader-error",
+    "decisions": [
+      "B09",
+      "U05"
+    ],
+    "compile_error": "nullable member receiver"
+  },
+  {
+    "id": "mutable-index-guards-source-free",
+    "directory": "cases/mutable-index-guards-source-free",
+    "decisions": [
+      "B09",
+      "D02",
+      "D06",
+      "D07"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "3|3|Ada"
+    ]
+  },
+  {
+    "id": "mutable-index-enum-source-free",
+    "directory": "cases/mutable-index-enum-source-free",
+    "decisions": [
+      "B09",
+      "D02",
+      "D06",
+      "D07"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "3"
+    ]
+  },
+  {
+    "id": "mutable-index-supplied-argument-checkpoint",
+    "directory": "cases/mutable-index-supplied-argument-checkpoint",
+    "decisions": [
+      "B09",
+      "D02",
+      "D06",
+      "D07",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "3"
+    ]
+  },
+  {
+    "id": "mutable-index-safe-prefix-checkpoint",
+    "directory": "cases/mutable-index-safe-prefix-checkpoint",
+    "decisions": [
+      "B09",
+      "D02",
+      "D06",
+      "D07",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "6"
+    ]
+  },
+  {
+    "id": "mutable-index-field-independence",
+    "directory": "cases/mutable-index-field-independence",
+    "decisions": [
+      "B09",
+      "D02",
+      "D06",
+      "D07"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "7"
+    ]
+  },
+  {
+    "id": "mutable-index-list-mutator-error",
+    "directory": "cases/mutable-index-list-mutator-error",
+    "decisions": [
+      "B09",
+      "D02",
+      "D06",
+      "D07"
+    ],
+    "compile_error": "nullable member receiver"
+  },
+  {
+    "id": "mutable-index-map-put-error",
+    "directory": "cases/mutable-index-map-put-error",
+    "decisions": [
+      "B09",
+      "D02",
+      "D06",
+      "D07"
+    ],
+    "compile_error": "nullable member receiver"
+  },
+  {
+    "id": "mutable-index-snapshot-guard-error",
+    "directory": "cases/mutable-index-snapshot-guard-error",
+    "decisions": [
+      "B09",
+      "D02",
+      "D06",
+      "D07"
+    ],
+    "compile_error": "nullable member receiver"
+  },
+  {
+    "id": "mutable-index-escaping-reader-error",
+    "directory": "cases/mutable-index-escaping-reader-error",
+    "decisions": [
+      "B09",
+      "D02",
+      "D06",
+      "D07"
+    ],
+    "compile_error": "nullable member receiver"
+  },
+  {
+    "id": "mutable-index-conditional-mutation-error",
+    "directory": "cases/mutable-index-conditional-mutation-error",
+    "decisions": [
+      "B09",
+      "D02",
+      "D06",
+      "D07"
+    ],
+    "compile_error": "nullable member receiver"
+  },
+  {
+    "id": "compound-field-read-source-free",
+    "directory": "cases/compound-field-read-source-free",
+    "decisions": [
+      "E10",
+      "E11"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "Ada!"
+    ]
+  },
+  {
+    "id": "compound-fairmath-read-source-free",
+    "directory": "cases/compound-fairmath-read-source-free",
+    "decisions": [
+      "E11",
+      "N09"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "60"
+    ]
+  },
+  {
+    "id": "compound-map-key-read-source-free",
+    "directory": "cases/compound-map-key-read-source-free",
+    "decisions": [
+      "E10",
+      "E11"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "Ada!|1|Other"
+    ]
+  },
+  {
+    "id": "compound-index-root-read-checkpoint",
+    "directory": "cases/compound-index-root-read-checkpoint",
+    "decisions": [
+      "E10",
+      "E11",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "Ada!|Other"
+    ]
+  },
+  {
+    "id": "compound-read-early-return-source-free",
+    "directory": "cases/compound-read-early-return-source-free",
+    "decisions": [
+      "E11",
+      "E26",
+      "B25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "done"
+    ]
+  },
+  {
+    "id": "compound-read-target-effect-error",
+    "directory": "cases/compound-read-target-effect-error",
+    "decisions": [
+      "E10",
+      "E11"
+    ],
+    "compile_error": "String?"
+  },
+  {
+    "id": "compound-read-missing-guard-error",
+    "directory": "cases/compound-read-missing-guard-error",
+    "decisions": [
+      "E10",
+      "E11"
+    ],
+    "compile_error": "String?"
+  },
+  {
+    "id": "mutable-callable-before-suspended-argument",
+    "directory": "cases/mutable-callable-before-suspended-argument",
+    "decisions": [
+      "F19",
+      "T25",
+      "A06"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "Value 7"
+    ]
+  },
+  {
+    "id": "computed-index-keys-source-free-checkpoint",
+    "directory": "cases/computed-index-keys-source-free-checkpoint",
+    "decisions": [
+      "B09",
+      "B19",
+      "F02",
+      "F21",
+      "S10",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0,
+      0
+    ],
+    "output": [
+      "3|3|3|4|4|3|0|0|0"
+    ]
+  },
+  {
+    "id": "computed-index-key-write-error",
+    "directory": "cases/computed-index-key-write-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "computed-index-key-effect-error",
+    "directory": "cases/computed-index-key-effect-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "computed-index-key-heap-write-error",
+    "directory": "cases/computed-index-key-heap-write-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "computed-index-key-choice-write-error",
+    "directory": "cases/computed-index-key-choice-write-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "computed-index-key-snapshot-error",
+    "directory": "cases/computed-index-key-snapshot-error",
+    "decisions": [
+      "B09",
+      "B19"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "text-computed-keys-source-free-checkpoint",
+    "directory": "cases/text-computed-keys-source-free-checkpoint",
+    "decisions": [
+      "B09",
+      "F02",
+      "F21",
+      "G01",
+      "G03",
+      "S10",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "output": [
+      "4|0|3|4|0|4|2|4"
+    ]
+  },
+  {
+    "id": "text-computed-key-root-write-error",
+    "directory": "cases/text-computed-key-root-write-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "text-computed-key-mutable-field-error",
+    "directory": "cases/text-computed-key-mutable-field-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "text-computed-key-effect-error",
+    "directory": "cases/text-computed-key-effect-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "text-computed-key-nullable-bound-error",
+    "directory": "cases/text-computed-key-nullable-bound-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "render"
+  },
+  {
+    "id": "text-computed-key-string-write-error",
+    "directory": "cases/text-computed-key-string-write-error",
+    "decisions": [
+      "B09"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "single-use-val-initializers-source-free-checkpoint",
+    "directory": "cases/single-use-val-initializers-source-free-checkpoint",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "F20",
+      "F21",
+      "S10",
+      "T24",
+      "T25"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Initialized"
+      ]
+    ],
+    "output": [
+      "8|9|Hello Ada|Hello unknown|9|typed|true"
+    ]
+  },
+  {
+    "id": "single-use-val-reference-error",
+    "directory": "cases/single-use-val-reference-error",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ],
+    "compile_error": "captured val"
+  },
+  {
+    "id": "single-use-val-repeated-call-error",
+    "directory": "cases/single-use-val-repeated-call-error",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ],
+    "compile_error": "captured val"
+  },
+  {
+    "id": "single-use-val-self-reference-error",
+    "directory": "cases/single-use-val-self-reference-error",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ],
+    "compile_error": "captured val"
+  },
+  {
+    "id": "single-use-val-posttest-reference-error",
+    "directory": "cases/single-use-val-posttest-reference-error",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ],
+    "compile_error": "captured val"
+  },
+  {
+    "id": "single-use-val-shadowing-error",
+    "directory": "cases/single-use-val-shadowing-error",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ],
+    "compile_error": "shadow"
+  },
+  {
+    "id": "single-use-val-definition-scope-error",
+    "directory": "cases/single-use-val-definition-scope-error",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ],
+    "compile_error": "unknown name"
+  },
+  {
+    "id": "single-use-val-control-transfer-error",
+    "directory": "cases/single-use-val-control-transfer-error",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ],
+    "compile_error": "captured val"
+  },
+  {
+    "id": "single-use-val-lexical-bodies-source-free-checkpoint",
+    "directory": "cases/single-use-val-lexical-bodies-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Initialize first"
+      ],
+      [
+        "Nested"
+      ]
+    ],
+    "output": [
+      "Prose 7.",
+      "Result 36."
+    ],
+    "decisions": [
+      "B04",
+      "B06",
+      "B07",
+      "F14",
+      "T24",
+      "C07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-posttest-hidden-reference-error",
+    "directory": "cases/single-use-val-posttest-hidden-reference-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "C07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-outer-loop-binding-error",
+    "directory": "cases/single-use-val-outer-loop-binding-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B04",
+      "B06",
+      "B07"
+    ]
+  },
+  {
+    "id": "single-use-val-nested-earlier-write-error",
+    "directory": "cases/single-use-val-nested-earlier-write-error",
+    "compile_error": "possible earlier initialization",
+    "decisions": [
+      "B06",
+      "B07"
+    ]
+  },
+  {
+    "id": "single-use-val-loop-readers-source-free-checkpoint",
+    "directory": "cases/single-use-val-loop-readers-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Retained"
+      ]
+    ],
+    "output": [
+      "2|4|6"
+    ],
+    "decisions": [
+      "B04",
+      "B06",
+      "B07",
+      "F19",
+      "F20",
+      "F21",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-parameter-source-free-checkpoint",
+    "directory": "cases/single-use-val-parameter-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Parameters"
+      ]
+    ],
+    "output": [
+      "6|3|9|typed|true"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F07",
+      "F08",
+      "F19",
+      "F30",
+      "F31",
+      "A01",
+      "A03",
+      "A04",
+      "G03",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-parameter-suspending-argument-source-free-checkpoint",
+    "directory": "cases/single-use-val-parameter-suspending-argument-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Value"
+      ]
+    ],
+    "output": [
+      "7|1"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "A04",
+      "A06",
+      "T22",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-parameter-loop-readers-source-free-checkpoint",
+    "directory": "cases/single-use-val-parameter-loop-readers-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Retained parameters"
+      ]
+    ],
+    "output": [
+      "2|4|6"
+    ],
+    "decisions": [
+      "B04",
+      "B06",
+      "B07",
+      "F19",
+      "F20",
+      "F21",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-parameter-nested-argument-reference-error",
+    "directory": "cases/single-use-val-parameter-nested-argument-reference-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "A04"
+    ]
+  },
+  {
+    "id": "single-use-val-parameter-argument-write-error",
+    "directory": "cases/single-use-val-parameter-argument-write-error",
+    "compile_error": "possible earlier initialization",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "A04"
+    ]
+  },
+  {
+    "id": "single-use-val-parameter-call-default",
+    "directory": "cases/single-use-val-parameter-call-default",
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Called default"
+      ]
+    ],
+    "output": [
+      "3"
+    ],
+    "decisions": [
+      "A04",
+      "B06",
+      "B07",
+      "F19",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-parameter-overload-selected-checkpoint",
+    "directory": "cases/single-use-val-parameter-overload-selected-checkpoint",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "A04"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "3"
+    ]
+  },
+  {
+    "id": "single-use-val-structured-source-free-checkpoint",
+    "directory": "cases/single-use-val-structured-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Structured"
+      ]
+    ],
+    "output": [
+      "3|4|4|5|9|5"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "C01",
+      "C05",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-suspending-body-source-free-checkpoint",
+    "directory": "cases/single-use-val-suspending-body-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Finish 6"
+      ]
+    ],
+    "output": [
+      "6|7"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "T08",
+      "T15",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-suspending-before-write-source-free-checkpoint",
+    "directory": "cases/single-use-val-suspending-before-write-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Begin"
+      ]
+    ],
+    "output": [
+      "8"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "T08",
+      "T15",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-short-circuit-must-write-error",
+    "directory": "cases/single-use-val-short-circuit-must-write-error",
+    "compile_error": "cannot prove every captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-partial-branch-error",
+    "directory": "cases/single-use-val-partial-branch-error",
+    "compile_error": "cannot prove every captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-early-return-error",
+    "directory": "cases/single-use-val-early-return-error",
+    "compile_error": "cannot prove every captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-repeat-internal-loop-error",
+    "directory": "cases/single-use-val-repeat-internal-loop-error",
+    "compile_error": "initialized more than once",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-suspend-partial-choice-error",
+    "directory": "cases/single-use-val-suspend-partial-choice-error",
+    "compile_error": "cannot prove every captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-structured-read-before-write-error",
+    "directory": "cases/single-use-val-structured-read-before-write-error",
+    "compile_error": "not initialized",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-generic-source-free-checkpoint",
+    "directory": "cases/single-use-val-generic-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Generic results"
+      ]
+    ],
+    "output": [
+      "typed|true|7|4|5"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "G01",
+      "G03",
+      "G08",
+      "F08",
+      "G04",
+      "G05",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-generic-suspending-source-free-checkpoint",
+    "directory": "cases/single-use-val-generic-suspending-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Before generic write"
+      ],
+      [
+        "After generic write"
+      ],
+      [
+        "Before generic write"
+      ],
+      [
+        "After generic write"
+      ],
+      [
+        "Generic complete"
+      ]
+    ],
+    "output": [
+      "saved|true"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "G01",
+      "G03",
+      "G08",
+      "G04",
+      "T15",
+      "T22",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-generic-repeated-specialization-error",
+    "directory": "cases/single-use-val-generic-repeated-specialization-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "G01",
+      "G03",
+      "G08"
+    ]
+  },
+  {
+    "id": "single-use-val-generic-escaped-specialization-error",
+    "directory": "cases/single-use-val-generic-escaped-specialization-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "G01",
+      "G03",
+      "G08",
+      "F35"
+    ]
+  },
+  {
+    "id": "single-use-val-generic-definition-body-error",
+    "directory": "cases/single-use-val-generic-definition-body-error",
+    "compile_error": "expected Int, found T",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "G01",
+      "G03",
+      "G08"
+    ]
+  },
+  {
+    "id": "single-use-val-generic-bound-error",
+    "directory": "cases/single-use-val-generic-bound-error",
+    "compile_error": "does not satisfy Any",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "G01",
+      "G03",
+      "G08",
+      "G13"
+    ]
+  },
+  {
+    "id": "single-use-val-generic-argument-write-error",
+    "directory": "cases/single-use-val-generic-argument-write-error",
+    "compile_error": "possible earlier initialization",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "G01",
+      "G03",
+      "G08",
+      "E10"
+    ]
+  },
+  {
+    "id": "single-use-val-nongeneric-type-argument-error",
+    "directory": "cases/single-use-val-nongeneric-type-argument-error",
+    "compile_error": "nongeneric callable does not accept type arguments",
+    "decisions": [
+      "B06",
+      "B07",
+      "G03",
+      "G08"
+    ]
+  },
+  {
+    "id": "single-use-val-nested-choice-source-free-checkpoint",
+    "directory": "cases/single-use-val-nested-choice-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Outer"
+      ],
+      [
+        "Inner"
+      ],
+      [
+        "After 3"
+      ],
+      [
+        "Outer"
+      ],
+      [
+        "After 4"
+      ],
+      [
+        "Choice results"
+      ]
+    ],
+    "output": [
+      "3|4"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-sequential-choice-missing-write-error",
+    "directory": "cases/single-use-val-sequential-choice-missing-write-error",
+    "compile_error": "cannot prove every captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-nested-choice-missing-write-error",
+    "directory": "cases/single-use-val-nested-choice-missing-write-error",
+    "compile_error": "cannot prove every captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-sequential-choice-read-before-write-error",
+    "directory": "cases/single-use-val-sequential-choice-read-before-write-error",
+    "compile_error": "not initialized",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "T23"
+    ]
+  },
+  {
+    "id": "single-use-val-sequential-choice-call-before-write-error",
+    "directory": "cases/single-use-val-sequential-choice-call-before-write-error",
+    "compile_error": "not initialized",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "T23"
+    ]
+  },
+  {
+    "id": "single-use-val-returning-source-free-checkpoint",
+    "directory": "cases/single-use-val-returning-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Returned results"
+      ]
+    ],
+    "output": [
+      "3|4|positive|2|3|negative|5|7"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-returning-reader-source-free-checkpoint",
+    "directory": "cases/single-use-val-returning-reader-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Retained readers"
+      ],
+      [
+        "Read results"
+      ]
+    ],
+    "output": [
+      "first|true"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "G01",
+      "G03",
+      "G08",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-returning-suspending-source-free-checkpoint",
+    "directory": "cases/single-use-val-returning-suspending-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Before return value"
+      ],
+      [
+        "After 8"
+      ],
+      [
+        "Returned complete"
+      ]
+    ],
+    "output": [
+      "8|ready"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "T15",
+      "T22",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-returning-partial-return-error",
+    "directory": "cases/single-use-val-returning-partial-return-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-returning-repeated-value-call-error",
+    "directory": "cases/single-use-val-returning-repeated-value-call-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-returning-escaped-reference-error",
+    "directory": "cases/single-use-val-returning-escaped-reference-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-returning-wrong-result-type-error",
+    "directory": "cases/single-use-val-returning-wrong-result-type-error",
+    "compile_error": "expected Int, found String",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-returning-argument-write-error",
+    "directory": "cases/single-use-val-returning-argument-write-error",
+    "compile_error": "possible earlier initialization",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-expression-source-free-checkpoint",
+    "directory": "cases/single-use-val-expression-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Expression results"
+      ]
+    ],
+    "output": [
+      "3|positive|2|negative|5"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-expression-reader-source-free-checkpoint",
+    "directory": "cases/single-use-val-expression-reader-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Expression readers"
+      ]
+    ],
+    "output": [
+      "expression|true"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "G01",
+      "G03",
+      "G08",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-expression-suspending-source-free-checkpoint",
+    "directory": "cases/single-use-val-expression-suspending-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Before expression"
+      ],
+      [
+        "After 8"
+      ],
+      [
+        "Expression complete"
+      ]
+    ],
+    "output": [
+      "8|positive|2|negative"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "T15",
+      "T22",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-expression-partial-write-error",
+    "directory": "cases/single-use-val-expression-partial-write-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-expression-early-return-error",
+    "directory": "cases/single-use-val-expression-early-return-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-expression-repeated-call-error",
+    "directory": "cases/single-use-val-expression-repeated-call-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-expression-wrong-result-type-error",
+    "directory": "cases/single-use-val-expression-wrong-result-type-error",
+    "compile_error": "branch requires String, found Int",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-call-default-source-free-checkpoint",
+    "directory": "cases/single-use-val-call-default-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Default order"
+      ]
+    ],
+    "output": [
+      "9|7|2|72"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-suspending-default-source-free-checkpoint",
+    "directory": "cases/single-use-val-suspending-default-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Default 1"
+      ],
+      [
+        "Default complete"
+      ]
+    ],
+    "output": [
+      "8|8|1"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "T15",
+      "T22",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-supplied-call-default-source-free-checkpoint",
+    "directory": "cases/single-use-val-supplied-call-default-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Skipped default"
+      ]
+    ],
+    "output": [
+      "7|0"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-call-default-uninitialized-error",
+    "directory": "cases/single-use-val-call-default-uninitialized-error",
+    "compile_error": "not initialized",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-call-default-callback-read-error",
+    "directory": "cases/single-use-val-call-default-callback-read-error",
+    "compile_error": "not initialized",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-call-default-double-write-error",
+    "directory": "cases/single-use-val-call-default-double-write-error",
+    "compile_error": "cannot reassign",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-call-default-early-return-error",
+    "directory": "cases/single-use-val-call-default-early-return-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-assignment-source-free-checkpoint",
+    "directory": "cases/single-use-val-assignment-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Assigned results"
+      ]
+    ],
+    "output": [
+      "3|ready|5"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-return-call-source-free-checkpoint",
+    "directory": "cases/single-use-val-return-call-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Returned readers"
+      ]
+    ],
+    "output": [
+      "returned|true"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "G01",
+      "G03",
+      "G08",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-suspending-assignment-source-free-checkpoint",
+    "directory": "cases/single-use-val-suspending-assignment-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Before assignment"
+      ],
+      [
+        "After 8"
+      ],
+      [
+        "Assignment complete"
+      ]
+    ],
+    "output": [
+      "8|ready"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "T15",
+      "T22",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-assignment-protected-target-error",
+    "directory": "cases/single-use-val-assignment-protected-target-error",
+    "compile_error": "cannot reassign initialized val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-assignment-argument-write-error",
+    "directory": "cases/single-use-val-assignment-argument-write-error",
+    "compile_error": "possible earlier initialization",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-assignment-wrong-result-error",
+    "directory": "cases/single-use-val-assignment-wrong-result-error",
+    "compile_error": "expected Int, found String",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-mixed-call-sites-error",
+    "directory": "cases/single-use-val-mixed-call-sites-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-grouped-type-argument-error",
+    "directory": "cases/single-use-val-grouped-type-argument-error",
+    "compile_error": "nongeneric callable does not accept type arguments",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-grouped-initializer-runtime-check",
+    "directory": "cases/single-use-val-grouped-initializer-runtime-check",
+    "runtime_error": "division by zero",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-address-source-free-checkpoint",
+    "directory": "cases/single-use-val-address-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Write field TAI"
+      ],
+      [
+        "Write list LKAI"
+      ],
+      [
+        "Write map MKAI"
+      ],
+      [
+        "Only address"
+      ],
+      [
+        "Address complete"
+      ]
+    ],
+    "output": [
+      "ready|replacement|3|TAI|ready|replacement|4|LKAI|ready|replacement|5|MKAI|unaliased|6"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "E10",
+      "T22",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-address-hidden-call-error",
+    "directory": "cases/single-use-val-address-hidden-call-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-address-hidden-reference-error",
+    "directory": "cases/single-use-val-address-hidden-reference-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-address-target-write-error",
+    "directory": "cases/single-use-val-address-target-write-error",
+    "compile_error": "possible earlier initialization",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-address-result-type-error",
+    "directory": "cases/single-use-val-address-result-type-error",
+    "compile_error": "expected Int, found String",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-address-immutable-container-error",
+    "directory": "cases/single-use-val-address-immutable-container-error",
+    "compile_error": "requires a mutable list or map",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-compound-source-free-checkpoint",
+    "directory": "cases/single-use-val-compound-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Named cleared true"
+      ],
+      [
+        "Field cleared true"
+      ],
+      [
+        "List cleared true"
+      ],
+      [
+        "Map cleared"
+      ],
+      [
+        "Text changed"
+      ],
+      [
+        "Compound complete"
+      ]
+    ],
+    "output": [
+      "7|true|7|true|7|true|7|true|3|pendingready"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "E11",
+      "N09",
+      "T15",
+      "T22",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-compound-uninitialized-target-error",
+    "directory": "cases/single-use-val-compound-uninitialized-target-error",
+    "compile_error": "compound update reads uninitialized",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "E11"
+    ]
+  },
+  {
+    "id": "single-use-val-compound-repeat-error",
+    "directory": "cases/single-use-val-compound-repeat-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "E11"
+    ]
+  },
+  {
+    "id": "single-use-val-compound-hidden-key-call-error",
+    "directory": "cases/single-use-val-compound-hidden-key-call-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "E11"
+    ]
+  },
+  {
+    "id": "single-use-val-compound-result-type-error",
+    "directory": "cases/single-use-val-compound-result-type-error",
+    "compile_error": "expected Int, found String",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "E11"
+    ]
+  },
+  {
+    "id": "single-use-val-operand-arguments-source-free-checkpoint",
+    "directory": "cases/single-use-val-operand-arguments-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Inside LI"
+      ],
+      [
+        "Returned prefix|ready|3|LI"
+      ]
+    ],
+    "output": [
+      "prefix|ready|3|LI"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "A04",
+      "T22",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-operand-values-source-free",
+    "directory": "cases/single-use-val-operand-values-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Operands complete"
+      ]
+    ],
+    "output": [
+      "3|6|5|6|ready|7"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-operand-skipped-source-free-checkpoint",
+    "directory": "cases/single-use-val-operand-skipped-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Skipped 0"
+      ]
+    ],
+    "output": [
+      "false|true|7|true|true|true|0"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-operand-left-read-error",
+    "directory": "cases/single-use-val-operand-left-read-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-operand-repeat-error",
+    "directory": "cases/single-use-val-operand-repeat-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-operand-skipped-read-error",
+    "directory": "cases/single-use-val-operand-skipped-read-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-operand-escape-error",
+    "directory": "cases/single-use-val-operand-escape-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-operand-result-type-error",
+    "directory": "cases/single-use-val-operand-result-type-error",
+    "compile_error": "operator",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-site-values-source-free",
+    "directory": "cases/single-use-val-site-values-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Sites complete"
+      ]
+    ],
+    "output": [
+      "Ready prose",
+      "3|4|7|6|7|8|22"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "E09",
+      "E19",
+      "E32",
+      "T01"
+    ]
+  },
+  {
+    "id": "single-use-val-site-preparation-source-free-checkpoint",
+    "directory": "cases/single-use-val-site-preparation-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Ready 3|4"
+      ],
+      [
+        "Returned 3|4|5|6|VEL"
+      ]
+    ],
+    "output": [
+      "3|4|5|6|VEL"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "T14",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-site-once-source-free-checkpoint",
+    "directory": "cases/single-use-val-site-once-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "First"
+      ],
+      [
+        "Once complete 1"
+      ]
+    ],
+    "output": [
+      "1",
+      "Consumed",
+      "1"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-site-loop-condition-error",
+    "directory": "cases/single-use-val-site-loop-condition-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-site-loop-body-error",
+    "directory": "cases/single-use-val-site-loop-body-error",
+    "compile_error": "could be initialized more than once",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-site-once-read-error",
+    "directory": "cases/single-use-val-site-once-read-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-site-hidden-label-read-error",
+    "directory": "cases/single-use-val-site-hidden-label-read-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-site-prose-effect-error",
+    "directory": "cases/single-use-val-site-prose-effect-error",
+    "compile_error": "suspend",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-site-label-effect-error",
+    "directory": "cases/single-use-val-site-label-effect-error",
+    "compile_error": "suspend",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-site-later-mutation-source-free-checkpoint",
+    "directory": "cases/single-use-val-site-later-mutation-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "First",
+        "Other"
+      ]
+    ],
+    "output": [
+      "3|true|2"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "T14",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-site-other-option-read-error",
+    "directory": "cases/single-use-val-site-other-option-read-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "T14"
+    ]
+  },
+  {
+    "id": "single-use-val-site-later-narrowing-error",
+    "directory": "cases/single-use-val-site-later-narrowing-error",
+    "compile_error": "nullable",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "T14"
+    ]
+  },
+  {
+    "id": "single-use-val-site-sole-once-source-free-checkpoint",
+    "directory": "cases/single-use-val-site-sole-once-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Only"
+      ],
+      [
+        "Readback 3"
+      ]
+    ],
+    "output": [
+      "3"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19",
+      "T14",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-source-free-checkpoint",
+    "directory": "cases/single-use-val-forward-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Forward 16"
+      ]
+    ],
+    "output": [
+      "16"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-loop-cells-source-free-checkpoint",
+    "directory": "cases/single-use-val-forward-loop-cells-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Fresh 6|10"
+      ]
+    ],
+    "output": [
+      "6|10"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-repeat-error",
+    "directory": "cases/single-use-val-forward-repeat-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-missing-cell-error",
+    "directory": "cases/single-use-val-forward-missing-cell-error",
+    "compile_error": "initialized",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-second-write-error",
+    "directory": "cases/single-use-val-forward-second-write-error",
+    "compile_error": "initialized val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-result-type-error",
+    "directory": "cases/single-use-val-forward-result-type-error",
+    "compile_error": "expected Int, found String",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-late-value-error",
+    "directory": "cases/single-use-val-forward-late-value-error",
+    "compile_error": "unknown name 'later'",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-grouped-forward-source-free-checkpoint",
+    "directory": "cases/single-use-val-grouped-forward-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Forward 16"
+      ]
+    ],
+    "output": [
+      "16"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-grouped-forward-loop-cells-source-free-checkpoint",
+    "directory": "cases/single-use-val-grouped-forward-loop-cells-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Fresh 6|10"
+      ]
+    ],
+    "output": [
+      "6|10"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-grouped-forward-repeat-error",
+    "directory": "cases/single-use-val-grouped-forward-repeat-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-grouped-forward-missing-cell-error",
+    "directory": "cases/single-use-val-grouped-forward-missing-cell-error",
+    "compile_error": "initialized",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-grouped-forward-second-write-error",
+    "directory": "cases/single-use-val-grouped-forward-second-write-error",
+    "compile_error": "initialized val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-grouped-forward-result-type-error",
+    "directory": "cases/single-use-val-grouped-forward-result-type-error",
+    "compile_error": "expected Int, found String",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-grouped-forward-late-value-error",
+    "directory": "cases/single-use-val-grouped-forward-late-value-error",
+    "compile_error": "unknown name 'later'",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-unit-forward-source-free-checkpoint",
+    "directory": "cases/single-use-val-unit-forward-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Unit 4|3|5|6|7|3|true|true|1,3,"
+      ]
+    ],
+    "output": [
+      "4|3|5|6|7|3|true|true|1,3,"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F06",
+      "F14",
+      "F19",
+      "A04",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-unit-forward-loop-source-free-checkpoint",
+    "directory": "cases/single-use-val-unit-forward-loop-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Fresh 6|10"
+      ]
+    ],
+    "output": [
+      "6|10"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F06",
+      "F14",
+      "F19",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-unit-forward-return-source-free-checkpoint",
+    "directory": "cases/single-use-val-unit-forward-return-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Returned 3"
+      ]
+    ],
+    "output": [
+      "3"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F06",
+      "F14",
+      "F19",
+      "F04",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-unit-forward-safe-skipped-error",
+    "directory": "cases/single-use-val-unit-forward-safe-skipped-error",
+    "compile_error": "initialized",
+    "decisions": [
+      "B06",
+      "B07",
+      "F06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-unit-forward-short-circuit-error",
+    "directory": "cases/single-use-val-unit-forward-short-circuit-error",
+    "compile_error": "initialized",
+    "decisions": [
+      "B06",
+      "B07",
+      "F06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-unit-forward-early-argument-error",
+    "directory": "cases/single-use-val-unit-forward-early-argument-error",
+    "compile_error": "initialized",
+    "decisions": [
+      "B06",
+      "B07",
+      "F06",
+      "F14",
+      "F19",
+      "A04"
+    ]
+  },
+  {
+    "id": "single-use-val-unit-forward-second-write-error",
+    "directory": "cases/single-use-val-unit-forward-second-write-error",
+    "compile_error": "initialized val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-unit-forward-repeat-error",
+    "directory": "cases/single-use-val-unit-forward-repeat-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-unit-forward-escape-error",
+    "directory": "cases/single-use-val-unit-forward-escape-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-unit-forward-return-type-error",
+    "directory": "cases/single-use-val-unit-forward-return-type-error",
+    "compile_error": "must return",
+    "decisions": [
+      "B06",
+      "B07",
+      "F06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-frame-defaults-source-free-checkpoint",
+    "directory": "cases/single-use-val-forward-frame-defaults-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Defaults ready|9|11|2,3,5,6,"
+      ]
+    ],
+    "output": [
+      "ready|9|11|2,3,5,6,"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19",
+      "A04",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-frame-generic-source-free-checkpoint",
+    "directory": "cases/single-use-val-forward-frame-generic-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Generic ready 3|3"
+      ]
+    ],
+    "output": [
+      "ready 3|3"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19",
+      "G08",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-frame-suspend-source-free-checkpoint",
+    "directory": "cases/single-use-val-forward-frame-suspend-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Initialize"
+      ],
+      [
+        "Saved prefix ready 3|3"
+      ]
+    ],
+    "output": [
+      "prefix ready 3|3"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-frame-variadic-reader-source-free-checkpoint",
+    "directory": "cases/single-use-val-forward-frame-variadic-reader-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Reader 2"
+      ]
+    ],
+    "output": [
+      "2"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-frame-loop-readers-source-free-checkpoint",
+    "directory": "cases/single-use-val-forward-frame-loop-readers-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Loop 2|3"
+      ]
+    ],
+    "output": [
+      "2|3"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19",
+      "T24"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-frame-argument-transfer",
+    "directory": "cases/single-use-val-forward-frame-argument-transfer",
+    "quantum": 3,
+    "output": [],
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19",
+      "A04"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-frame-partial-write-error",
+    "directory": "cases/single-use-val-forward-frame-partial-write-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-frame-second-write-error",
+    "directory": "cases/single-use-val-forward-frame-second-write-error",
+    "compile_error": "initialized val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-frame-early-reader-error",
+    "directory": "cases/single-use-val-forward-frame-early-reader-error",
+    "compile_error": "initialized",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-frame-published-reader-error",
+    "directory": "cases/single-use-val-forward-frame-published-reader-error",
+    "compile_error": "initialized",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-frame-declaration-scope-error",
+    "directory": "cases/single-use-val-forward-frame-declaration-scope-error",
+    "compile_error": "unknown name 'hidden'",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-frame-entry-read-error",
+    "directory": "cases/single-use-val-forward-frame-entry-read-error",
+    "compile_error": "initialized",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-frame-generic-definition-error",
+    "directory": "cases/single-use-val-forward-frame-generic-definition-error",
+    "compile_error": "length",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19",
+      "G08"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-frame-repeat-error",
+    "directory": "cases/single-use-val-forward-frame-repeat-error",
+    "compile_error": "captured",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-frame-reference-error",
+    "directory": "cases/single-use-val-forward-frame-reference-error",
+    "compile_error": "captured",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-frame-body-type-error",
+    "directory": "cases/single-use-val-forward-frame-body-type-error",
+    "compile_error": "expected Int, found String",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-frame-later-value-error",
+    "directory": "cases/single-use-val-forward-frame-later-value-error",
+    "compile_error": "unknown name 'later'",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-forward-frame-argument-store-error",
+    "directory": "cases/single-use-val-forward-frame-argument-store-error",
+    "compile_error": "possible earlier initialization",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19",
+      "A04"
+    ]
+  },
+  {
+    "id": "single-use-val-lexical-list-source-free-checkpoint",
+    "directory": "cases/single-use-val-lexical-list-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "false|true|true"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-lexical-forward-list-source-free-checkpoint",
+    "directory": "cases/single-use-val-lexical-forward-list-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "false|true"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-lexical-indexed-list-source-free-checkpoint",
+    "directory": "cases/single-use-val-lexical-indexed-list-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "false|true"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-lexical-nullable-list-source-free-checkpoint",
+    "directory": "cases/single-use-val-lexical-nullable-list-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "false|ready"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-lexical-nullable-set-source-free-checkpoint",
+    "directory": "cases/single-use-val-lexical-nullable-set-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "false|1"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-lexical-map-source-free-checkpoint",
+    "directory": "cases/single-use-val-lexical-map-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "false|true"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-lexical-late-val-error",
+    "directory": "cases/single-use-val-lexical-late-val-error",
+    "compile_error": "unknown name 'hidden'",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-lexical-late-var-error",
+    "directory": "cases/single-use-val-lexical-late-var-error",
+    "compile_error": "unknown name 'hidden'",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-lexical-late-cell-error",
+    "directory": "cases/single-use-val-lexical-late-cell-error",
+    "compile_error": "unknown name 'hidden'",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "single-use-val-lexical-late-target-error",
+    "directory": "cases/single-use-val-lexical-late-target-error",
+    "compile_error": "unknown binding 'hidden'",
+    "decisions": [
+      "B06",
+      "B07",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "mutable-forward-argument-state-source-free-checkpoint",
+    "directory": "cases/mutable-forward-argument-state-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "ready|10|2,3,"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "mutable-forward-provided-default-source-free-checkpoint",
+    "directory": "cases/mutable-forward-provided-default-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "3"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "mutable-forward-generic-variadic-source-free-checkpoint",
+    "directory": "cases/mutable-forward-generic-variadic-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "2"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "mutable-forward-suspend-source-free-checkpoint",
+    "directory": "cases/mutable-forward-suspend-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Initialize"
+      ],
+      [
+        "Saved prefix ready 3|3"
+      ]
+    ],
+    "output": [
+      "prefix ready 3|3"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "mutable-forward-loop-readers-source-free-checkpoint",
+    "directory": "cases/mutable-forward-loop-readers-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "11|12"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "mutable-forward-argument-transfer-source-free-checkpoint",
+    "directory": "cases/mutable-forward-argument-transfer-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "done"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "mutable-forward-partial-write-error",
+    "directory": "cases/mutable-forward-partial-write-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "mutable-forward-skipped-error",
+    "directory": "cases/mutable-forward-skipped-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "mutable-forward-default-read-error",
+    "directory": "cases/mutable-forward-default-read-error",
+    "compile_error": "initialized",
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "mutable-forward-argument-read-error",
+    "directory": "cases/mutable-forward-argument-read-error",
+    "compile_error": "initialized",
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "mutable-forward-early-read-error",
+    "directory": "cases/mutable-forward-early-read-error",
+    "compile_error": "initialized",
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "mutable-forward-lexical-scope-error",
+    "directory": "cases/mutable-forward-lexical-scope-error",
+    "compile_error": "unknown name 'hidden'",
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "mutable-forward-generic-body-error",
+    "directory": "cases/mutable-forward-generic-body-error",
+    "compile_error": "length",
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "mutable-forward-argument-read-after-write-error",
+    "directory": "cases/mutable-forward-argument-read-after-write-error",
+    "compile_error": "initialized",
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "mutable-forward-default-only-write-error",
+    "directory": "cases/mutable-forward-default-only-write-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "mutable-forward-default-early-return-error",
+    "directory": "cases/mutable-forward-default-early-return-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "mutable-forward-provided-indirect-default-source-free-checkpoint",
+    "directory": "cases/mutable-forward-provided-indirect-default-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "ready 7|7"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "repeated-initializers-direct-source-free-checkpoint",
+    "directory": "cases/repeated-initializers-direct-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "ready 3|3|ready 4|4|3,4,"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "repeated-initializers-branches-source-free-checkpoint",
+    "directory": "cases/repeated-initializers-branches-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "ready 3|3|ready 4|4"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "repeated-initializers-after-definition-source-free-checkpoint",
+    "directory": "cases/repeated-initializers-after-definition-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "ready 3|ready 4|4"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "repeated-initializers-nested-calls-source-free-checkpoint",
+    "directory": "cases/repeated-initializers-nested-calls-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "3|3|2"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "repeated-initializers-argument-transfer-source-free-checkpoint",
+    "directory": "cases/repeated-initializers-argument-transfer-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "-1|3"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "repeated-initializers-type-overloads-source-free-checkpoint",
+    "directory": "cases/repeated-initializers-type-overloads-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "int 3|3|text 3|3|text 1|1"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "repeated-initializers-arity-overloads-source-free-checkpoint",
+    "directory": "cases/repeated-initializers-arity-overloads-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "one 3|3|two 7|7"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "repeated-initializers-generic-overloads-source-free-checkpoint",
+    "directory": "cases/repeated-initializers-generic-overloads-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "int 3|3|generic 4|4"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "repeated-initializers-suspend-branches-source-free-checkpoint",
+    "directory": "cases/repeated-initializers-suspend-branches-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Set 3"
+      ],
+      [
+        "Set 5"
+      ],
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "ready 3|ready 5|5"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "repeated-initializers-partial-write-error",
+    "directory": "cases/repeated-initializers-partial-write-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "repeated-initializers-early-read-error",
+    "directory": "cases/repeated-initializers-early-read-error",
+    "compile_error": "initialized",
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "repeated-initializers-readonly-error",
+    "directory": "cases/repeated-initializers-readonly-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "repeated-initializers-readonly-overloads-error",
+    "directory": "cases/repeated-initializers-readonly-overloads-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "repeated-initializers-argument-read-error",
+    "directory": "cases/repeated-initializers-argument-read-error",
+    "compile_error": "initialized",
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-initializers-for-default-source-free-checkpoint",
+    "directory": "cases/loop-initializers-for-default-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "1|2|3"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-initializers-while-condition-source-free-checkpoint",
+    "directory": "cases/loop-initializers-while-condition-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "3|1|2"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-initializers-posttest-argument-source-free-checkpoint",
+    "directory": "cases/loop-initializers-posttest-argument-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "3|3"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-initializers-range-break-source-free-checkpoint",
+    "directory": "cases/loop-initializers-range-break-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "7"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-initializers-shared-readers-source-free-checkpoint",
+    "directory": "cases/loop-initializers-shared-readers-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "3|3|3"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-initializers-suspend-body-source-free-checkpoint",
+    "directory": "cases/loop-initializers-suspend-body-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Set 1"
+      ],
+      [
+        "Set 2"
+      ],
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "ready 1|1|ready 2|2"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-initializers-overloaded-body-source-free-checkpoint",
+    "directory": "cases/loop-initializers-overloaded-body-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "int 3|3|text 3|3"
+    ],
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-initializers-empty-iteration-error",
+    "directory": "cases/loop-initializers-empty-iteration-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-initializers-skipped-condition-error",
+    "directory": "cases/loop-initializers-skipped-condition-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-initializers-readonly-repeat-error",
+    "directory": "cases/loop-initializers-readonly-repeat-error",
+    "compile_error": "could be initialized more than once",
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-initializers-early-read-error",
+    "directory": "cases/loop-initializers-early-read-error",
+    "compile_error": "initialized",
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-initializers-lexical-scope-error",
+    "directory": "cases/loop-initializers-lexical-scope-error",
+    "compile_error": "unknown name 'ordinal'",
+    "decisions": [
+      "B06",
+      "F14",
+      "F19"
+    ]
+  },
+  {
+    "id": "range-initializers-forms-source-free-checkpoint",
+    "directory": "cases/range-initializers-forms-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "3|3|1|6"
+    ],
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "range-initializers-continue-source-free-checkpoint",
+    "directory": "cases/range-initializers-continue-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "3"
+    ],
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "range-initializers-iteration-capture-source-free-checkpoint",
+    "directory": "cases/range-initializers-iteration-capture-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "3"
+    ],
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "range-initializers-callback-overwrite-source-free-checkpoint",
+    "directory": "cases/range-initializers-callback-overwrite-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "3"
+    ],
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "range-initializers-stable-guard-source-free-checkpoint",
+    "directory": "cases/range-initializers-stable-guard-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "5|0|0"
+    ],
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "range-initializers-forward-writer-source-free-checkpoint",
+    "directory": "cases/range-initializers-forward-writer-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "3"
+    ],
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "range-initializers-outer-continue-source-free-checkpoint",
+    "directory": "cases/range-initializers-outer-continue-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "3"
+    ],
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "range-initializers-empty-collection-error",
+    "directory": "cases/range-initializers-empty-collection-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "range-initializers-unwritten-continue-error",
+    "directory": "cases/range-initializers-unwritten-continue-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "range-initializers-unwritten-break-error",
+    "directory": "cases/range-initializers-unwritten-break-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "range-initializers-retired-key-error",
+    "directory": "cases/range-initializers-retired-key-error",
+    "compile_error": "nullable",
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "range-initializers-readonly-repeat-error",
+    "directory": "cases/range-initializers-readonly-repeat-error",
+    "compile_error": "more than once",
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "range-initializers-unknown-progression-error",
+    "directory": "cases/range-initializers-unknown-progression-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "range-initializers-rhs-replacement-error",
+    "directory": "cases/range-initializers-rhs-replacement-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "stored-progressions-aliases-source-free-checkpoint",
+    "directory": "cases/stored-progressions-aliases-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "5|true|false"
+    ],
+    "decisions": [
+      "B06",
+      "F19",
+      "R03",
+      "R06"
+    ]
+  },
+  {
+    "id": "stored-progressions-escaping-reader-source-free-checkpoint",
+    "directory": "cases/stored-progressions-escaping-reader-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "1"
+    ],
+    "decisions": [
+      "B06",
+      "F19",
+      "R03",
+      "R06"
+    ]
+  },
+  {
+    "id": "stored-progressions-universal-source-free-checkpoint",
+    "directory": "cases/stored-progressions-universal-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "5"
+    ],
+    "decisions": [
+      "B06",
+      "F19",
+      "R03",
+      "R06"
+    ]
+  },
+  {
+    "id": "stored-progressions-nullable-source-free-checkpoint",
+    "directory": "cases/stored-progressions-nullable-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "1"
+    ],
+    "decisions": [
+      "B06",
+      "F19",
+      "R03",
+      "R06"
+    ]
+  },
+  {
+    "id": "stored-progressions-suspension-source-free-checkpoint",
+    "directory": "cases/stored-progressions-suspension-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Proceed"
+      ],
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "3"
+    ],
+    "decisions": [
+      "B06",
+      "F19",
+      "R03",
+      "R06"
+    ]
+  },
+  {
+    "id": "stored-progressions-reuse-source-free-checkpoint",
+    "directory": "cases/stored-progressions-reuse-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "5|6|true"
+    ],
+    "decisions": [
+      "B06",
+      "F19",
+      "R03",
+      "R06"
+    ]
+  },
+  {
+    "id": "stored-progressions-unknown-input-error",
+    "directory": "cases/stored-progressions-unknown-input-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "F19",
+      "R03",
+      "R06"
+    ]
+  },
+  {
+    "id": "stored-progressions-mutable-alias-error",
+    "directory": "cases/stored-progressions-mutable-alias-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "F19",
+      "R03",
+      "R06"
+    ]
+  },
+  {
+    "id": "stored-progressions-reused-name-error",
+    "directory": "cases/stored-progressions-reused-name-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "F19",
+      "R03",
+      "R06"
+    ]
+  },
+  {
+    "id": "stored-progressions-untyped-iteration-error",
+    "directory": "cases/stored-progressions-untyped-iteration-error",
+    "compile_error": "for requires an iterable",
+    "decisions": [
+      "B06",
+      "F19",
+      "R03",
+      "R06"
+    ]
+  },
+  {
+    "id": "nonempty-values-list-alias-source-free-checkpoint",
+    "directory": "cases/nonempty-values-list-alias-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "2"
+    ],
+    "decisions": [
+      "B06",
+      "D02",
+      "D03",
+      "D16",
+      "F19"
+    ]
+  },
+  {
+    "id": "nonempty-values-set-coalescing-source-free-checkpoint",
+    "directory": "cases/nonempty-values-set-coalescing-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "3"
+    ],
+    "decisions": [
+      "B06",
+      "D02",
+      "D03",
+      "D16",
+      "F19"
+    ]
+  },
+  {
+    "id": "nonempty-values-map-order-source-free-checkpoint",
+    "directory": "cases/nonempty-values-map-order-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "2"
+    ],
+    "decisions": [
+      "B06",
+      "D02",
+      "D03",
+      "D16",
+      "F19"
+    ]
+  },
+  {
+    "id": "nonempty-values-fresh-mutable-source-free-checkpoint",
+    "directory": "cases/nonempty-values-fresh-mutable-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "1|2|4"
+    ],
+    "decisions": [
+      "B06",
+      "D02",
+      "D03",
+      "D16",
+      "F19"
+    ]
+  },
+  {
+    "id": "nonempty-values-copy-widening-source-free-checkpoint",
+    "directory": "cases/nonempty-values-copy-widening-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "true"
+    ],
+    "decisions": [
+      "B06",
+      "D02",
+      "D03",
+      "D16",
+      "F19"
+    ]
+  },
+  {
+    "id": "nonempty-values-scalar-text-source-free-checkpoint",
+    "directory": "cases/nonempty-values-scalar-text-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "\ud83d\ude00|8"
+    ],
+    "decisions": [
+      "B06",
+      "D02",
+      "D03",
+      "D16",
+      "F19"
+    ]
+  },
+  {
+    "id": "nonempty-values-escaping-reader-source-free-checkpoint",
+    "directory": "cases/nonempty-values-escaping-reader-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "2"
+    ],
+    "decisions": [
+      "B06",
+      "D02",
+      "D03",
+      "D16",
+      "F19"
+    ]
+  },
+  {
+    "id": "nonempty-values-suspension-source-free-checkpoint",
+    "directory": "cases/nonempty-values-suspension-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Proceed"
+      ],
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "2"
+    ],
+    "decisions": [
+      "B06",
+      "D02",
+      "D03",
+      "D16",
+      "F19"
+    ]
+  },
+  {
+    "id": "nonempty-values-mutable-elements-source-free-checkpoint",
+    "directory": "cases/nonempty-values-mutable-elements-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "7"
+    ],
+    "decisions": [
+      "B06",
+      "D02",
+      "D03",
+      "D16",
+      "F19"
+    ]
+  },
+  {
+    "id": "nonempty-values-continue-source-free-checkpoint",
+    "directory": "cases/nonempty-values-continue-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "2"
+    ],
+    "decisions": [
+      "B06",
+      "D02",
+      "D03",
+      "D16",
+      "F19"
+    ]
+  },
+  {
+    "id": "nonempty-values-empty-list-error",
+    "directory": "cases/nonempty-values-empty-list-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "D02",
+      "D03",
+      "D16",
+      "F19"
+    ]
+  },
+  {
+    "id": "nonempty-values-empty-set-error",
+    "directory": "cases/nonempty-values-empty-set-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "D02",
+      "D03",
+      "D16",
+      "F19"
+    ]
+  },
+  {
+    "id": "nonempty-values-empty-map-error",
+    "directory": "cases/nonempty-values-empty-map-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "D02",
+      "D03",
+      "D16",
+      "F19"
+    ]
+  },
+  {
+    "id": "nonempty-values-empty-text-error",
+    "directory": "cases/nonempty-values-empty-text-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "D02",
+      "D03",
+      "D16",
+      "F19"
+    ]
+  },
+  {
+    "id": "nonempty-values-mutable-alias-error",
+    "directory": "cases/nonempty-values-mutable-alias-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "D02",
+      "D03",
+      "D16",
+      "F19"
+    ]
+  },
+  {
+    "id": "nonempty-values-contextual-mutable-error",
+    "directory": "cases/nonempty-values-contextual-mutable-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "D02",
+      "D03",
+      "D16",
+      "F19"
+    ]
+  },
+  {
+    "id": "nonempty-values-mutable-copy-error",
+    "directory": "cases/nonempty-values-mutable-copy-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "D02",
+      "D03",
+      "D16",
+      "F19"
+    ]
+  },
+  {
+    "id": "nonempty-values-erased-mutable-error",
+    "directory": "cases/nonempty-values-erased-mutable-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "D02",
+      "D03",
+      "D16",
+      "F19"
+    ]
+  },
+  {
+    "id": "nonempty-values-unknown-input-error",
+    "directory": "cases/nonempty-values-unknown-input-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "D02",
+      "D03",
+      "D16",
+      "F19"
+    ]
+  },
+  {
+    "id": "nonempty-values-reused-name-error",
+    "directory": "cases/nonempty-values-reused-name-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "D02",
+      "D03",
+      "D16",
+      "F19"
+    ]
+  },
+  {
+    "id": "exclusive-initializers-after-definition-source-free-checkpoint",
+    "directory": "cases/exclusive-initializers-after-definition-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "1|2"
+    ],
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "exclusive-initializers-forward-results-source-free-checkpoint",
+    "directory": "cases/exclusive-initializers-forward-results-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "ready 1|1|ready 2|2"
+    ],
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "exclusive-initializers-when-source-free-checkpoint",
+    "directory": "cases/exclusive-initializers-when-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "3|4"
+    ],
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "exclusive-initializers-choice-source-free-checkpoint",
+    "directory": "cases/exclusive-initializers-choice-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0,
+      1,
+      0
+    ],
+    "options": [
+      [
+        "First",
+        "Second"
+      ],
+      [
+        "First",
+        "Second"
+      ],
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "1|2"
+    ],
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "exclusive-initializers-suspending-frame-source-free-checkpoint",
+    "directory": "cases/exclusive-initializers-suspending-frame-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Proceed"
+      ],
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "2"
+    ],
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "exclusive-initializers-defaults-source-free-checkpoint",
+    "directory": "cases/exclusive-initializers-defaults-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "6|7"
+    ],
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "exclusive-initializers-generic-source-free-checkpoint",
+    "directory": "cases/exclusive-initializers-generic-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "1|2"
+    ],
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "exclusive-initializers-mixed-targets-source-free-checkpoint",
+    "directory": "cases/exclusive-initializers-mixed-targets-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "2|3"
+    ],
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "exclusive-initializers-consumed-unit-source-free-checkpoint",
+    "directory": "cases/exclusive-initializers-consumed-unit-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "2|1"
+    ],
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "exclusive-initializers-fresh-iteration-captures-source-free-checkpoint",
+    "directory": "cases/exclusive-initializers-fresh-iteration-captures-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "1|3|3"
+    ],
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "exclusive-initializers-sequential-error",
+    "directory": "cases/exclusive-initializers-sequential-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "exclusive-initializers-possible-earlier-write-error",
+    "directory": "cases/exclusive-initializers-possible-earlier-write-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "exclusive-initializers-repeated-outer-val-error",
+    "directory": "cases/exclusive-initializers-repeated-outer-val-error",
+    "compile_error": "could be initialized more than once",
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "exclusive-initializers-missing-branch-error",
+    "directory": "cases/exclusive-initializers-missing-branch-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "exclusive-initializers-published-writer-error",
+    "directory": "cases/exclusive-initializers-published-writer-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "exclusive-initializers-nested-argument-error",
+    "directory": "cases/exclusive-initializers-nested-argument-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "exclusive-initializers-type-overloads-source-free-checkpoint",
+    "directory": "cases/exclusive-initializers-type-overloads-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "1|two"
+    ],
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "exclusive-initializers-arity-overloads-source-free-checkpoint",
+    "directory": "cases/exclusive-initializers-arity-overloads-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "1|3"
+    ],
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "exclusive-initializers-generic-overloads-source-free-checkpoint",
+    "directory": "cases/exclusive-initializers-generic-overloads-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "1|2"
+    ],
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "exclusive-initializers-overload-second-write-error",
+    "directory": "cases/exclusive-initializers-overload-second-write-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-exit-initializers-for-break-source-free-checkpoint",
+    "directory": "cases/loop-exit-initializers-for-break-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "1"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-exit-initializers-while-break-source-free-checkpoint",
+    "directory": "cases/loop-exit-initializers-while-break-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "3"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-exit-initializers-posttest-once-source-free-checkpoint",
+    "directory": "cases/loop-exit-initializers-posttest-once-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "4"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-exit-initializers-posttest-continue-source-free-checkpoint",
+    "directory": "cases/loop-exit-initializers-posttest-continue-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "4"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-exit-initializers-labeled-break-source-free-checkpoint",
+    "directory": "cases/loop-exit-initializers-labeled-break-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "2"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-exit-initializers-prose-break-source-free-checkpoint",
+    "directory": "cases/loop-exit-initializers-prose-break-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "3",
+      "3"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-exit-initializers-suspending-frame-source-free-checkpoint",
+    "directory": "cases/loop-exit-initializers-suspending-frame-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Proceed"
+      ],
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "5|1"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-exit-initializers-alternative-sites-source-free-checkpoint",
+    "directory": "cases/loop-exit-initializers-alternative-sites-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "2"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-exit-initializers-overloads-source-free-checkpoint",
+    "directory": "cases/loop-exit-initializers-overloads-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "ready"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-exit-initializers-unwritten-continues-source-free-checkpoint",
+    "directory": "cases/loop-exit-initializers-unwritten-continues-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "quantum": 3,
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Saved"
+      ]
+    ],
+    "output": [
+      "3|3"
+    ],
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-exit-initializers-normal-backedge-error",
+    "directory": "cases/loop-exit-initializers-normal-backedge-error",
+    "compile_error": "could be initialized more than once",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-exit-initializers-continue-backedge-error",
+    "directory": "cases/loop-exit-initializers-continue-backedge-error",
+    "compile_error": "could be initialized more than once",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-exit-initializers-possible-empty-error",
+    "directory": "cases/loop-exit-initializers-possible-empty-error",
+    "compile_error": "not definitely initialized",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-exit-initializers-while-condition-error",
+    "directory": "cases/loop-exit-initializers-while-condition-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-exit-initializers-posttest-condition-error",
+    "directory": "cases/loop-exit-initializers-posttest-condition-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  },
+  {
+    "id": "loop-exit-initializers-published-writer-error",
+    "directory": "cases/loop-exit-initializers-published-writer-error",
+    "compile_error": "captured val",
+    "decisions": [
+      "B06",
+      "B07",
+      "F19"
+    ]
+  }
+]

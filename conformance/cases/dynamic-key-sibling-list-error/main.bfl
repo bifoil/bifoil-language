@@ -1,0 +1,8 @@
+scene start():
+    val values: List<String?> = ["Ada", null]
+    if true:
+        val index = 0
+        values[index]!!
+    if true:
+        val index = 1
+        val size = values[index].length

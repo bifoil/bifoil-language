@@ -1,0 +1,12 @@
+scene start():
+    var item: String? = null
+    while item == null:
+        item = "ready"
+    val first: String = item
+    var other: String? = null
+    do:
+        other = "kept"
+    while other == null
+    val second: String = other
+    prose:
+        ${first}|${second}

@@ -1,0 +1,10 @@
+export fun run() -> () -> Int:
+    val first: Int
+    val second: Int
+    initialize()
+    val observed = first + second
+    fun initialize():
+        first = 3
+        second = first + 2
+    fun read() -> Int = observed + first + second
+    return ::read

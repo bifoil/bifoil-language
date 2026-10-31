@@ -1,0 +1,30 @@
+fun invoke(callback: () -> Int, ignored: Int) -> Int = callback()
+scene start():
+    val x: Int
+    val reader = if true:
+        () => x
+    else:
+        () => 0
+    val readers = [reader]
+    for pause in 1..2:
+        val visited = pause
+    val answer = invoke(readers[0], if true:
+        x = 7
+        0
+    else:
+        x = 8
+        0
+    )
+    var saved: () -> Int = () => 0
+    if true:
+        val local: Int
+        saved = () => local
+        local = 9
+    val callbacks = mutable [saved]
+    for i in 1..2:
+        val value = i
+        callbacks.add(() => value)
+    choice:
+        option "Continue":
+            prose:
+                ${answer}|${reader()}|${saved()}|${callbacks[1]()}|${callbacks[2]()}

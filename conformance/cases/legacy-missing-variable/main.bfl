@@ -1,0 +1,4 @@
+legacy val score: Int = "missing"
+scene start():
+    prose:
+        ${score}

@@ -1,0 +1,5 @@
+import a.early
+import state.log
+scene start():
+    prose:
+        ${early}|${log}

@@ -1,0 +1,10 @@
+export shared var writes: Int = 0
+export data class Box<T>:
+    var value: T
+export data class Fixed<T>:
+    val value: T
+export fun clear(box: Box<String?>):
+    writes += 1
+    box.value = null
+export fun ping():
+    Unit

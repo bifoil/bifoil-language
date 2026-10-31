@@ -1,0 +1,10 @@
+scene start():
+    val present: Unit? = Unit
+    val absent: Unit? = null
+    val units: Map<Unit?, Int> = {Unit: 1, null: 2}
+    val flags = {(!false): 3, false: 4}
+    choice:
+        option "Resume Unit and null keys":
+            Unit
+    prose:
+        ${units.size}|${units[Unit]!!}|${units[null]!!}|${flags[true]!!}|${flags[false]!!}|${present == absent}|${present === absent}

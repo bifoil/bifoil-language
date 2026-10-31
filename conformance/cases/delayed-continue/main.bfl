@@ -1,0 +1,5 @@
+scene start():
+    do:
+        continue
+        val again = false
+    while again

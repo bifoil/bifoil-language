@@ -1,0 +1,7 @@
+scene start():
+    val item: String? = "guarded"
+    when item:
+        case is String if item != null:
+            val result: String = item
+            prose:
+                ${result}

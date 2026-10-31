@@ -1,0 +1,5 @@
+data class Node<T>:
+    val next: Node<MutableList<Int>>? = null
+    val value: T
+scene start():
+    val keys = {Node(value = 3)}

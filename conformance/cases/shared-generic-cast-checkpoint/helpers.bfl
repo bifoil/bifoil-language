@@ -1,0 +1,30 @@
+shared var calls: Int = 0
+data class Pair<out L, out R>:
+    val left: L
+    val right: R
+data class Box<T>:
+    val value: T
+typealias A0<T> = T
+typealias A1<T> = Pair<A0<T>, A0<T>>
+typealias A2<T> = Pair<A1<T>, A1<T>>
+typealias A3<T> = Pair<A2<T>, A2<T>>
+typealias A4<T> = Pair<A3<T>, A3<T>>
+typealias A5<T> = Pair<A4<T>, A4<T>>
+suspend fun <T, U> check(input: Box<A5<T>>) -> Box<A5<U>>?:
+    calls += 1
+    val converted = input as? Box<A5<U>>
+    choice:
+        option "Check ${calls}":
+            Unit
+    return converted
+export suspend fun run() -> String:
+    val v0 = 3
+    val v1 = Pair(v0, v0)
+    val v2 = Pair(v1, v1)
+    val v3 = Pair(v2, v2)
+    val v4 = Pair(v3, v3)
+    val v5 = Pair(v4, v4)
+    val box = Box(v5)
+    val first = check<Int, Int>(box) != null
+    val second = check<Int, Float>(box) == null
+    return String(first) + "|" + String(second) + "|" + String(calls)

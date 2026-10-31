@@ -1,0 +1,6 @@
+import helpers.forward
+import helpers.recursive
+import helpers.callback
+scene start():
+    prose:
+        ${forward(true)}|${forward(false)}|${recursive(true)}|${callback(true)}

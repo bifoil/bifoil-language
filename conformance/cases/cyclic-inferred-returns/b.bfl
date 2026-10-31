@@ -1,0 +1,2 @@
+import a.value
+export fun anchor() = 7

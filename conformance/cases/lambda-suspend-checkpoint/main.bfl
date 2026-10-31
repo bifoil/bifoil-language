@@ -1,0 +1,10 @@
+scene start():
+    var total = 1
+    val ask = suspend (value: Int) -> Int =>:
+        choice:
+            option "Choose ${total}":
+                total += 1
+        value + total
+    val result = ask(3) + ask(4)
+    prose:
+        ${result}|${total}

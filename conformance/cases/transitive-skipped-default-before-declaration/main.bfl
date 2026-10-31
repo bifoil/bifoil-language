@@ -1,0 +1,11 @@
+scene start():
+    fun through() -> Int = read(7)
+    val before = through()
+    var future: Int
+    fun read(value: Int = future) -> Int = value
+    choice:
+        option "Initialize after the skipped call":
+            Unit
+    future = 3
+    prose:
+        ${before}|${read()}

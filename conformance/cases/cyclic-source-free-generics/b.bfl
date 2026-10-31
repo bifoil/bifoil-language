@@ -1,0 +1,2 @@
+import a.Box
+export fun wrap(value: String) -> Box<String> = Box(value)

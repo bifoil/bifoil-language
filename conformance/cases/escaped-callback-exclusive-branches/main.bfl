@@ -1,0 +1,22 @@
+shared var callback: () -> Int = () => 0
+fun invoke() -> Int = callback()
+fun run(flag: Boolean):
+    var future: Int
+    var target: () -> Int = () => 7
+    fun through() -> Int = target()
+    val previous = through()
+    if flag:
+        callback = ::through
+    else:
+        target = () => future
+        future = 3
+        prose:
+            ${through()}
+scene start():
+    run(true)
+    run(false)
+    choice:
+        option "Resume the published branch":
+            Unit
+    prose:
+        ${invoke()}

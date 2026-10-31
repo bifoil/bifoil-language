@@ -1,0 +1,43 @@
+shared var calls: Int = 0
+data class Receiver:
+    fun accept(value: Int):
+        calls += 1
+suspend fun ask() -> Boolean:
+    choice:
+        option "First":
+            return true
+        option "Second":
+            return false
+suspend fun method(receiver: Receiver?) -> Int:
+    receiver?.accept(
+        if ask():
+            return 11
+        else:
+            return 12
+    )
+    return 7
+suspend fun indexed(items: List<Int>?) -> Int:
+    val ignored = items?[
+        if ask():
+            return 21
+        else:
+            return 22
+    ]
+    return 8
+suspend fun callback(target: ((Int) -> Unit)?) -> Int:
+    target?.(
+        if ask():
+            return 31
+        else:
+            return 32
+    )
+    return 9
+scene start():
+    val a = method(null)
+    val b = method(Receiver())
+    val c = indexed(null)
+    val d = indexed([1])
+    val e = callback(null)
+    val f = callback((value: Int) => Unit)
+    prose:
+        ${a}|${b}|${c}|${d}|${e}|${f}|${calls}

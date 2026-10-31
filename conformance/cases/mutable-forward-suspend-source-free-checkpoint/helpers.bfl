@@ -1,0 +1,9 @@
+export suspend fun run() -> String:
+    var result: Int
+    val status = "prefix " + initialize(3)
+    suspend fun initialize(value: Int) -> String:
+        choice:
+            option "Initialize":
+                result = value
+        return "ready ${result}"
+    return "${status}|${result}"

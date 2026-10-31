@@ -1,0 +1,6 @@
+fun read(value: Int) = "single"
+fun read(vararg values: Int) = "many:" + values.size
+scene start():
+    val many: (vararg Int) -> String = ::read
+    prose:
+        ${many(1, *[2, 3])}

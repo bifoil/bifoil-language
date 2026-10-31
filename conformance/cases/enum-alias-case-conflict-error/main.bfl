@@ -1,0 +1,7 @@
+enum Mood:
+    Happy
+    Sad
+typealias Shade = Mood
+scene start():
+    val Happy = Mood.Sad
+    val invalid: Shade = Happy

@@ -1,0 +1,4 @@
+export enum Status:
+    case Unit
+export fun status() -> Status = Status.Unit
+export fun empty() -> Unit = Unit

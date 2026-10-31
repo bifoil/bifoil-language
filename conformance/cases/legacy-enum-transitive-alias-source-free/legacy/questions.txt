@@ -1,0 +1,4 @@
+*label echo
+*params requested
+*set answer requested
+*return

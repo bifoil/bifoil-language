@@ -1,0 +1,14 @@
+export data class Counter<T>:
+    val seed: T
+    var total: Int = 0
+    private fun adjust(amount: Int = 1) -> Int:
+        total += amount
+        return total
+    fun collect(amount: Int) -> Int = adjust(amount)
+    fun collect(text: String) -> Int = adjust(text.length)
+    fun recursive(remaining: Int) -> Int:
+        if remaining == 0:
+            return total
+        adjust()
+        return recursive(remaining - 1)
+    fun callback() -> (Int) -> Int = this::collect

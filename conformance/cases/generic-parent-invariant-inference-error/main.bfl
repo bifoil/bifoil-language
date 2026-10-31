@@ -1,0 +1,9 @@
+sealed class Result<T>:
+    case Success(value: T)
+fun <T> both(first: Result<T>, second: Result<T>) -> Boolean = true
+fun invalid():
+    val first = Result.Success(1)
+    val second = Result.Success(2.5)
+    return both(first, second)
+scene start():
+    Unit

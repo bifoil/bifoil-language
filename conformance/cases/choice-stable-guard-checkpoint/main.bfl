@@ -1,0 +1,17 @@
+suspend fun visible(name: String?):
+    choice:
+        option "Hello ${name.length}" if name != null:
+            prose:
+                ${name.length}
+        else:
+            Unit
+suspend fun enabled(name: String?):
+    choice:
+        option "Show" enabledIf name != null:
+            prose:
+                ${name.length}
+        option "Skip":
+            Unit
+scene start():
+    visible("Ada")
+    enabled("Beta")

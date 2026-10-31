@@ -1,0 +1,5 @@
+import helpers.result
+scene start():
+    val value = result()
+    prose:
+        ${value}

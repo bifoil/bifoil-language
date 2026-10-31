@@ -1,0 +1,10 @@
+shared var saved: (() -> Int)? = null
+scene start():
+    val result: Int
+    val status = initialize(3)
+    fun initialize(value: Int) -> String:
+        fun read() -> Int = result
+        saved = ::read
+        val earlier = saved!!()
+        result = value
+        return "ready"

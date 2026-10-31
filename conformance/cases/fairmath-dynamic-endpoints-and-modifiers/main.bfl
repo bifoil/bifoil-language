@@ -1,0 +1,14 @@
+fun keep(value: Int) -> Int = value
+scene start():
+    val result0 = keep(0) %+ keep(0)
+    val result1 = keep(100) %+ keep(0)
+    val result2 = keep(100) %+ keep(1)
+    val result3 = keep(50) %+ keep(20)
+    val result4 = keep(50) %- keep(20)
+    val result5 = keep(50) %+ keep(-20)
+    val result6 = keep(50) %- keep(-20)
+    val result7 = keep(50) %+ keep(150)
+    val result8 = keep(50) %- keep(150)
+    val result9 = keep(50) %- keep(-2147483648)
+    prose:
+        ${result0}|${result1}|${result2}|${result3}|${result4}|${result5}|${result6}|${result7}|${result8}|${result9}

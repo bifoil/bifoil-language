@@ -1,0 +1,3 @@
+import b.value
+import state.record
+export shared val early: Int = record("A", 1) + value()

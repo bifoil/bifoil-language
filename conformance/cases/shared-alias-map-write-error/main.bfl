@@ -1,0 +1,6 @@
+import state.values as first
+import state.values as second
+scene start():
+    first["name"]!!
+    second = {"name": null}
+    val length = first["name"].length

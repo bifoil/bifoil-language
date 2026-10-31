@@ -1,0 +1,13 @@
+data class Reader:
+    val name: String
+    fun read(value: Int) = name
+    fun read(value: String) = value
+scene start():
+    var calls = 0
+    fun argument() -> Int:
+        calls += 1
+        return calls
+    val reader: Reader? = null
+    val answer = reader?.read(argument())
+    prose:
+        ${answer == null}|${calls}

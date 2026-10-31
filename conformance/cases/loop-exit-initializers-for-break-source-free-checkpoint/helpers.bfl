@@ -1,0 +1,9 @@
+export fun run() -> () -> String:
+    val result: Int
+    for ordinal in 1..3:
+        initialize(ordinal)
+        break
+    fun initialize(value: Int):
+        result = value
+    fun read() -> String = "${result}"
+    return ::read

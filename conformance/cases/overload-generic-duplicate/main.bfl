@@ -1,0 +1,4 @@
+fun <T> identity(value: T) -> T = value
+fun <U> identity(other: U) -> U = other
+scene start():
+    return

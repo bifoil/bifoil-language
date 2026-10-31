@@ -1,0 +1,3 @@
+export data class Box<T: Any>:
+    val value: T
+    suspend fun use(callback: suspend (vararg T?) -> String) -> String = callback(value, null)

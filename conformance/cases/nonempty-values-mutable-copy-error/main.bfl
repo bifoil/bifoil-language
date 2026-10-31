@@ -1,0 +1,8 @@
+scene start():
+    val original = [1]
+    val items: MutableList<Int> = original
+    items.clear()
+    var result: Int
+    for item in items:
+        result = item
+    val observed = result

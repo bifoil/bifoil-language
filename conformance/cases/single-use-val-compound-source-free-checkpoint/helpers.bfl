@@ -1,0 +1,74 @@
+data class Box:
+    var score: Int? = 50
+export suspend fun named() -> String:
+    var score: Int? = 50
+    if score != null:
+        val result: Int
+        suspend fun initialize() -> Int:
+            score = null
+            choice:
+                option "Named cleared ${score == null}":
+                    Unit
+            result = 7
+            return 20
+        score %+= initialize()
+        return "${result}|${score == 60}"
+    else:
+        return "unexpected"
+export suspend fun field() -> String:
+    val box = Box()
+    if box.score != null:
+        val result: Int
+        suspend fun initialize() -> Int:
+            box.score = null
+            choice:
+                option "Field cleared ${box.score == null}":
+                    Unit
+            result = 7
+            return 20
+        box.score %+= initialize()
+        return "${result}|${box.score == 60}"
+    else:
+        return "unexpected"
+export suspend fun list() -> String:
+    val items: MutableList<Int?> = mutable [50]
+    if items[0] != null:
+        val result: Int
+        suspend fun initialize() -> Int:
+            items[0] = null
+            choice:
+                option "List cleared ${items[0] == null}":
+                    Unit
+            result = 7
+            return 20
+        items[0] %+= initialize()
+        return "${result}|${items[0] == 60}"
+    else:
+        return "unexpected"
+export suspend fun mapping() -> String:
+    val items: MutableMap<String, Int?> = mutable {"k": 50}
+    if items["k"] != null:
+        val result: Int
+        suspend fun initialize() -> Int:
+            items["k"] = null
+            choice:
+                option "Map cleared":
+                    Unit
+            result = 7
+            return 20
+        items["k"] %+= initialize()
+        return "${result}|${items["k"] == 60}"
+    else:
+        return "unexpected"
+export suspend fun text() -> String:
+    val result: Int
+    var status = "pending"
+    suspend fun initialize() -> String:
+        status = "changed"
+        choice:
+            option "Text ${status}":
+                Unit
+        result = 3
+        return "ready"
+    status += (initialize())
+    return "${result}|${status}"

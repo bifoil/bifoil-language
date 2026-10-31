@@ -1,0 +1,11 @@
+fun read(input: List<Int>) -> Int:
+    if true:
+        val items = [1]
+        val observed = items
+    val items = input
+    var result: Int
+    for item in items:
+        result = item
+    return result
+scene start():
+    Unit

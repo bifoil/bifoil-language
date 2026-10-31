@@ -1,0 +1,5 @@
+import state.value
+import state.trace
+export fun read() -> Int:
+    trace += "helper"
+    return value

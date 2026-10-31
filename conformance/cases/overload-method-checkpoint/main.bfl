@@ -1,0 +1,14 @@
+data class Person:
+    val name: String
+    fun describe(value: Int) = name + ":" + value
+    fun describe(value: String) = name + ":" + value
+scene start():
+    var person = Person("Ada")
+    val integer: (Int) -> String = person::describe
+    prose:
+        ${person.describe(2)}|${person.describe("two")}
+    person = Person("New")
+    choice:
+        option "Continue":
+            prose:
+                ${integer(4)}

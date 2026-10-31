@@ -1,0 +1,10 @@
+export suspend fun run() -> () -> Int:
+    val result: Int
+    fun initialize() -> String:
+        result = 3
+        return "Only"
+    fun read() -> Int = result
+    choice:
+        option "${initialize()}" once:
+            Unit
+    return ::read

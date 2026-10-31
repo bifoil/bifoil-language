@@ -1,0 +1,29 @@
+export suspend fun exercise() -> String:
+    val direct = read(5)
+    val reader: (Int) -> Int = ::read
+    val through = reader(6)
+    choice:
+        option "Initialize":
+            Unit
+    val seed: Int
+    fun read(value: Int = seed) -> Int = value
+    seed = 7
+    return "${direct}|${through}|${read()}"
+export suspend fun groups() -> String:
+    val left: Int
+    val right: Int
+    fun combine(
+        a: Int = left,
+        b: Int = if true:
+            val copied = right
+            copied
+        else:
+            right
+    ) -> Int = a + b
+    left = 10
+    val supplied = combine(b = 5)
+    choice:
+        option "Fill right":
+            Unit
+    right = 20
+    return "${supplied}|${combine()}"

@@ -1,0 +1,22 @@
+export fun <T> checked(value: T) = value!!
+export fun <T> reader(value: T) = () => value!!
+export fun <T> present(value: T) -> Any:
+    if value != null:
+        return value
+    return "missing"
+export fun <T> matched(value: T) -> Any:
+    when value:
+        case null:
+            return "missing"
+        else:
+            return value
+export fun <T> upper(value: T) -> String where T: String?:
+    if value != null:
+        return value
+    return "missing"
+export fun <T: String?> defaulted(value: T) -> String = value ?: "fallback"
+export suspend fun <T> retained(value: T) -> Any:
+    val kept = value!!
+    choice:
+        option "Continue":
+            return kept

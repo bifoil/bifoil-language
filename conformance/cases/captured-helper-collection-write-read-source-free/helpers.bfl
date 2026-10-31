@@ -1,0 +1,9 @@
+export fun run() -> Int:
+    var items: List<Int>
+    var mapping: Map<String, Int>
+    fun initialize() -> Int:
+        items = [3, 4]
+        mapping = {"value": 5}
+        return items[0] + mapping["value"]!!
+    val result = initialize()
+    return result + items[1]

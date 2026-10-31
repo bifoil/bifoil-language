@@ -1,0 +1,32 @@
+export data class Score:
+    val number: Int
+export fun numeric() -> Int:
+    val original = 1
+    when val captured: Float = original:
+        case is Float:
+            val checked: Float = original + 0
+            return Int(checked)
+        else:
+            return 0
+export fun character() -> Int:
+    val original = 'x'
+    when val captured: String = original:
+        case is String:
+            return original.code
+        else:
+            return 0
+export fun copied() -> String:
+    val original = mutable [1]
+    when val captured: List<Int> = original:
+        case is List<Int>:
+            original.add(2)
+            return "${original.size}|${captured.size}"
+        else:
+            return "missing"
+export fun numericField(score: Score) -> Int:
+    when val captured: Float = score.number:
+        case is Float:
+            val checked: Float = score.number + 0
+            return Int(checked)
+        else:
+            return 0

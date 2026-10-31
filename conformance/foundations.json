@@ -1,0 +1,589 @@
+[
+  {
+    "id": "text-scalars",
+    "decisions": [
+      "P01",
+      "P02",
+      "P03",
+      "P05",
+      "P06",
+      "P09",
+      "P11",
+      "P12",
+      "P13",
+      "P14",
+      "P15",
+      "P16"
+    ],
+    "output": [
+      "3|128512|\ud83d\ude00|e\u0301|true|3"
+    ],
+    "directory": "cases/text-scalars"
+  },
+  {
+    "id": "nullable-lazy",
+    "decisions": [
+      "B08",
+      "B09",
+      "B11",
+      "B12",
+      "B13",
+      "B14",
+      "B15",
+      "B16",
+      "B17",
+      "B20",
+      "B21",
+      "B22",
+      "B23",
+      "B25"
+    ],
+    "output": [
+      "z|4|0|true|2"
+    ],
+    "directory": "cases/nullable-lazy"
+  },
+  {
+    "id": "collection-copies",
+    "decisions": [
+      "D01",
+      "D02",
+      "D03",
+      "D04",
+      "D05",
+      "D06",
+      "D08",
+      "D09",
+      "D10",
+      "D11",
+      "D18",
+      "D20",
+      "D21",
+      "D22",
+      "D25",
+      "D26",
+      "D28",
+      "A04",
+      "A06"
+    ],
+    "output": [
+      "9|1|true|8|1"
+    ],
+    "directory": "cases/collection-copies"
+  },
+  {
+    "id": "collection-order",
+    "decisions": [
+      "D07",
+      "D12",
+      "D13",
+      "D14",
+      "D15",
+      "D16",
+      "D17",
+      "D19"
+    ],
+    "output": [
+      "bac|true|true|2|0"
+    ],
+    "directory": "cases/collection-order"
+  },
+  {
+    "id": "ranges-loops",
+    "decisions": [
+      "R01",
+      "R02",
+      "R03",
+      "R05",
+      "R06",
+      "R07",
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07"
+    ],
+    "output": [
+      "123741|2|2|true|true"
+    ],
+    "directory": "cases/ranges-loops"
+  },
+  {
+    "id": "delayed-capture",
+    "decisions": [
+      "B06",
+      "B07",
+      "F02",
+      "F19",
+      "F20",
+      "F21"
+    ],
+    "output": [
+      "10|5"
+    ],
+    "directory": "cases/delayed-capture"
+  },
+  {
+    "id": "varargs-spreads",
+    "decisions": [
+      "F24",
+      "F30",
+      "F31",
+      "F32",
+      "F33",
+      "D23",
+      "D24",
+      "A05",
+      "A07",
+      "A08"
+    ],
+    "output": [
+      "15|5|0"
+    ],
+    "directory": "cases/varargs-spreads"
+  },
+  {
+    "id": "once-checkpoint",
+    "decisions": [
+      "T14",
+      "T18",
+      "T19",
+      "T24",
+      "T25",
+      "T26"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Once"
+      ]
+    ],
+    "output": [
+      "Selected.",
+      "Empty 1."
+    ],
+    "directory": "cases/once-checkpoint"
+  },
+  {
+    "id": "scene-transfer",
+    "decisions": [
+      "M02",
+      "M03",
+      "M04",
+      "M05",
+      "M06",
+      "M09",
+      "M10",
+      "M11",
+      "M12",
+      "M13",
+      "M16",
+      "M17"
+    ],
+    "output": [
+      "Middle 3.",
+      "End.",
+      "Returned."
+    ],
+    "directory": "cases/scene-transfer"
+  },
+  {
+    "id": "duplicate-key-before-value",
+    "decisions": [
+      "D29"
+    ],
+    "runtime_error": "duplicate map key",
+    "output": [
+      "Value."
+    ],
+    "directory": "cases/duplicate-key-before-value"
+  },
+  {
+    "id": "invalid-range",
+    "decisions": [
+      "R04"
+    ],
+    "compile_error": "range is empty",
+    "directory": "cases/invalid-range"
+  },
+  {
+    "id": "delayed-continue",
+    "decisions": [
+      "C08"
+    ],
+    "compile_error": "initialized",
+    "directory": "cases/delayed-continue"
+  },
+  {
+    "id": "nullable-read",
+    "decisions": [
+      "B08"
+    ],
+    "compile_error": "nullable",
+    "directory": "cases/nullable-read"
+  },
+  {
+    "id": "duplicate-constant-map",
+    "decisions": [
+      "D14"
+    ],
+    "compile_error": "duplicate constant",
+    "directory": "cases/duplicate-constant-map"
+  },
+  {
+    "id": "missing-return-after-elvis",
+    "decisions": [
+      "E25",
+      "E26",
+      "F04"
+    ],
+    "compile_error": "return on every path",
+    "directory": "cases/missing-return-after-elvis"
+  },
+  {
+    "id": "constant-grouped-string-index",
+    "directory": "cases/constant-grouped-string-index",
+    "decisions": [
+      "P04",
+      "P16",
+      "D06"
+    ],
+    "compile_error": "constant index is out of bounds"
+  },
+  {
+    "id": "constant-list-index",
+    "directory": "cases/constant-list-index",
+    "decisions": [
+      "P04",
+      "P16",
+      "D06"
+    ],
+    "compile_error": "constant index is out of bounds"
+  },
+  {
+    "id": "constant-negative-index",
+    "directory": "cases/constant-negative-index",
+    "decisions": [
+      "P04",
+      "P16",
+      "D06"
+    ],
+    "compile_error": "constant index is out of bounds"
+  },
+  {
+    "id": "constant-substring-order",
+    "directory": "cases/constant-substring-order",
+    "decisions": [
+      "P04",
+      "P16",
+      "D06"
+    ],
+    "compile_error": "constant substring bounds"
+  },
+  {
+    "id": "constant-substring-named-bounds",
+    "directory": "cases/constant-substring-named-bounds",
+    "decisions": [
+      "P04",
+      "P16",
+      "D06"
+    ],
+    "compile_error": "constant substring bounds"
+  },
+  {
+    "id": "constant-list-write-bounds",
+    "directory": "cases/constant-list-write-bounds",
+    "decisions": [
+      "P04",
+      "P16",
+      "D06"
+    ],
+    "compile_error": "constant index is out of bounds"
+  },
+  {
+    "id": "constant-list-method-bounds",
+    "directory": "cases/constant-list-method-bounds",
+    "decisions": [
+      "P04",
+      "P16",
+      "D06"
+    ],
+    "compile_error": "constant list method index"
+  },
+  {
+    "id": "constant-empty-substring",
+    "directory": "cases/constant-empty-substring",
+    "decisions": [
+      "P04",
+      "P16",
+      "D06"
+    ],
+    "output": [
+      "[]|[]|3"
+    ]
+  },
+  {
+    "id": "large-progression-membership",
+    "directory": "cases/large-progression-membership",
+    "output": [
+      "true|true|true|true"
+    ],
+    "decisions": [
+      "R03",
+      "R06",
+      "R07"
+    ]
+  },
+  {
+    "id": "large-progression-overflow",
+    "directory": "cases/large-progression-overflow",
+    "runtime_error": "progression search index overflow",
+    "decisions": [
+      "R03",
+      "R06",
+      "R07"
+    ]
+  },
+  {
+    "id": "val-conditional-second-write",
+    "compile_error": "cannot reassign initialized val",
+    "directory": "cases/val-conditional-second-write",
+    "decisions": [
+      "B02",
+      "B06",
+      "B07"
+    ]
+  },
+  {
+    "id": "val-conditional-loop-write",
+    "compile_error": "could be initialized more than once",
+    "directory": "cases/val-conditional-loop-write",
+    "decisions": [
+      "B02",
+      "B06",
+      "B07"
+    ]
+  },
+  {
+    "id": "val-nested-assignment-write",
+    "compile_error": "cannot reassign initialized val",
+    "directory": "cases/val-nested-assignment-write",
+    "decisions": [
+      "B02",
+      "B06",
+      "B07"
+    ]
+  },
+  {
+    "id": "val-branch-checkpoint",
+    "choices": [
+      0
+    ],
+    "output": [
+      "10|1|2"
+    ],
+    "directory": "cases/val-branch-checkpoint",
+    "decisions": [
+      "B02",
+      "B06",
+      "B07"
+    ]
+  },
+  {
+    "id": "diagnostic-nullable-type",
+    "directory": "cases/diagnostic-nullable-type",
+    "compile_error": "expected String, found Int?",
+    "decisions": [
+      "S01",
+      "B01",
+      "F02"
+    ]
+  },
+  {
+    "id": "diagnostic-function-type",
+    "directory": "cases/diagnostic-function-type",
+    "compile_error": "expected (String) -> Int, found (Int) -> Int",
+    "decisions": [
+      "S01",
+      "B01",
+      "F02"
+    ]
+  },
+  {
+    "id": "diagnostic-generic-name",
+    "directory": "cases/diagnostic-generic-name",
+    "compile_error": "operator '+' cannot combine T and Int",
+    "decisions": [
+      "S01",
+      "B01",
+      "F02"
+    ]
+  },
+  {
+    "id": "unit-value-source-free",
+    "directory": "cases/unit-value-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "true|true|2"
+    ],
+    "decisions": [
+      "F06",
+      "U24",
+      "T24"
+    ]
+  },
+  {
+    "id": "unit-local-shadow-error",
+    "directory": "cases/unit-local-shadow-error",
+    "compile_error": "shadow",
+    "decisions": [
+      "B05",
+      "F06"
+    ]
+  },
+  {
+    "id": "unit-function-shadow-error",
+    "directory": "cases/unit-function-shadow-error",
+    "compile_error": "shadow",
+    "decisions": [
+      "B05",
+      "F06"
+    ]
+  },
+  {
+    "id": "unit-enum-conflict-error",
+    "directory": "cases/unit-enum-conflict-error",
+    "compile_error": "conflicts with a visible binding",
+    "decisions": [
+      "U24",
+      "F06"
+    ]
+  },
+  {
+    "id": "constant-unit-map-key-error",
+    "directory": "cases/constant-unit-map-key-error",
+    "decisions": [
+      "D14"
+    ],
+    "compile_error": "duplicate constant map key"
+  },
+  {
+    "id": "constant-boolean-map-key-error",
+    "directory": "cases/constant-boolean-map-key-error",
+    "decisions": [
+      "D14"
+    ],
+    "compile_error": "duplicate constant map key"
+  },
+  {
+    "id": "constant-exact-comparison-map-key-error",
+    "directory": "cases/constant-exact-comparison-map-key-error",
+    "decisions": [
+      "D14"
+    ],
+    "compile_error": "duplicate constant map key"
+  },
+  {
+    "id": "nullable-unit-map-keys-checkpoint",
+    "directory": "cases/nullable-unit-map-keys-checkpoint",
+    "decisions": [
+      "D14",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "2|1|2|3|4|false|false"
+    ]
+  },
+  {
+    "id": "signed-int-range-endpoints",
+    "directory": "cases/signed-int-range-endpoints",
+    "decisions": [
+      "N02"
+    ],
+    "output": [
+      "2147483646;2147483647;|-2147483647;-2147483648;|-2147483648;-1;2147483646;"
+    ]
+  },
+  {
+    "id": "indentation-and-spelling-preservation",
+    "directory": "cases/indentation-and-spelling-preservation",
+    "decisions": [
+      "L01",
+      "L02",
+      "L03",
+      "L04",
+      "L07",
+      "L09",
+      "E08",
+      "T01",
+      "T05",
+      "T06",
+      "T07"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Count 3; length 14"
+      ]
+    ],
+    "output": [
+      "3|14 Narrative \"\"\" stays prose."
+    ]
+  },
+  {
+    "id": "wide-function-parameters-source-free-checkpoint",
+    "directory": "cases/wide-function-parameters-source-free-checkpoint",
+    "decisions": [
+      "F02",
+      "F09",
+      "F10",
+      "F20",
+      "F35",
+      "A01",
+      "A03",
+      "A04",
+      "A05"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Resolved 40"
+      ],
+      [
+        "Resolved 80"
+      ],
+      [
+        "Resolved 120"
+      ],
+      [
+        "Done 120"
+      ]
+    ],
+    "output": [
+      "782|780|780|120",
+      "40|1|38|0|39|39|0"
+    ]
+  }
+]

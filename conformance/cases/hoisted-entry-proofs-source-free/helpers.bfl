@@ -1,0 +1,19 @@
+export fun guarded(name: String?) -> Int:
+    if name != null:
+        val before = read()
+        fun read() -> Int = name.length
+        return before
+    return 0
+export fun callback(name: String?) -> () -> Int:
+    if name == null:
+        return () => 0
+    return () => name.length
+export suspend fun ask(name: String?) -> Int:
+    if name != null:
+        fun read() -> Int = name.length
+        val retainedReader = ::read
+        choice:
+            option "Length":
+                Unit
+        return retainedReader()
+    return 0

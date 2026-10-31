@@ -1,0 +1,136 @@
+export typealias Last = Float
+export data class Box<T00000: StableKey, T00001: StableKey, T00002: StableKey, T00003: StableKey, T00004: StableKey, T00005: StableKey, T00006: StableKey, T00007: StableKey, T00008: StableKey, T00009: StableKey, T00010: StableKey, T00011: StableKey, T00012: StableKey, T00013: StableKey, T00014: StableKey, T00015: StableKey, T00016: StableKey, T00017: StableKey, T00018: StableKey, T00019: StableKey, T00020: StableKey, T00021: StableKey, T00022: StableKey, T00023: StableKey, T00024: StableKey, T00025: StableKey, T00026: StableKey, T00027: StableKey, T00028: StableKey, T00029: StableKey, T00030: StableKey, T00031: StableKey, T00032: StableKey, T00033: StableKey, T00034: StableKey, T00035: StableKey, T00036: StableKey, T00037: StableKey, T00038: StableKey, T00039: StableKey>:
+    val field00000: T00000
+    val field00001: T00001
+    val field00002: T00002
+    val field00003: T00003
+    val field00004: T00004
+    val field00005: T00005
+    val field00006: T00006
+    val field00007: T00007
+    val field00008: T00008
+    val field00009: T00009
+    val field00010: T00010
+    val field00011: T00011
+    val field00012: T00012
+    val field00013: T00013
+    val field00014: T00014
+    val field00015: T00015
+    val field00016: T00016
+    val field00017: T00017
+    val field00018: T00018
+    val field00019: T00019
+    val field00020: T00020
+    val field00021: T00021
+    val field00022: T00022
+    val field00023: T00023
+    val field00024: T00024
+    val field00025: T00025
+    val field00026: T00026
+    val field00027: T00027
+    val field00028: T00028
+    val field00029: T00029
+    val field00030: T00030
+    val field00031: T00031
+    val field00032: T00032
+    val field00033: T00033
+    val field00034: T00034
+    val field00035: T00035
+    val field00036: T00036
+    val field00037: T00037
+    val field00038: T00038
+    val field00039: T00039
+export typealias Envelope<T00000: StableKey, T00001: StableKey, T00002: StableKey, T00003: StableKey, T00004: StableKey, T00005: StableKey, T00006: StableKey, T00007: StableKey, T00008: StableKey, T00009: StableKey, T00010: StableKey, T00011: StableKey, T00012: StableKey, T00013: StableKey, T00014: StableKey, T00015: StableKey, T00016: StableKey, T00017: StableKey, T00018: StableKey, T00019: StableKey, T00020: StableKey, T00021: StableKey, T00022: StableKey, T00023: StableKey, T00024: StableKey, T00025: StableKey, T00026: StableKey, T00027: StableKey, T00028: StableKey, T00029: StableKey, T00030: StableKey, T00031: StableKey, T00032: StableKey, T00033: StableKey, T00034: StableKey, T00035: StableKey, T00036: StableKey, T00037: StableKey, T00038: StableKey, T00039: StableKey> = Box<T00000, T00001, T00002, T00003, T00004, T00005, T00006, T00007, T00008, T00009, T00010, T00011, T00012, T00013, T00014, T00015, T00016, T00017, T00018, T00019, T00020, T00021, T00022, T00023, T00024, T00025, T00026, T00027, T00028, T00029, T00030, T00031, T00032, T00033, T00034, T00035, T00036, T00037, T00038, T00039>
+export sealed class Outcome<T00000: StableKey, T00001: StableKey, T00002: StableKey, T00003: StableKey, T00004: StableKey, T00005: StableKey, T00006: StableKey, T00007: StableKey, T00008: StableKey, T00009: StableKey, T00010: StableKey, T00011: StableKey, T00012: StableKey, T00013: StableKey, T00014: StableKey, T00015: StableKey, T00016: StableKey, T00017: StableKey, T00018: StableKey, T00019: StableKey, T00020: StableKey, T00021: StableKey, T00022: StableKey, T00023: StableKey, T00024: StableKey, T00025: StableKey, T00026: StableKey, T00027: StableKey, T00028: StableKey, T00029: StableKey, T00030: StableKey, T00031: StableKey, T00032: StableKey, T00033: StableKey, T00034: StableKey, T00035: StableKey, T00036: StableKey, T00037: StableKey, T00038: StableKey, T00039: StableKey>:
+    case Ready(value: Envelope<T00000, T00001, T00002, T00003, T00004, T00005, T00006, T00007, T00008, T00009, T00010, T00011, T00012, T00013, T00014, T00015, T00016, T00017, T00018, T00019, T00020, T00021, T00022, T00023, T00024, T00025, T00026, T00027, T00028, T00029, T00030, T00031, T00032, T00033, T00034, T00035, T00036, T00037, T00038, T00039>)
+    case Pending
+export suspend fun <T00000: StableKey, T00001: StableKey, T00002: StableKey, T00003: StableKey, T00004: StableKey, T00005: StableKey, T00006: StableKey, T00007: StableKey, T00008: StableKey, T00009: StableKey, T00010: StableKey, T00011: StableKey, T00012: StableKey, T00013: StableKey, T00014: StableKey, T00015: StableKey, T00016: StableKey, T00017: StableKey, T00018: StableKey, T00019: StableKey, T00020: StableKey, T00021: StableKey, T00022: StableKey, T00023: StableKey, T00024: StableKey, T00025: StableKey, T00026: StableKey, T00027: StableKey, T00028: StableKey, T00029: StableKey, T00030: StableKey, T00031: StableKey, T00032: StableKey, T00033: StableKey, T00034: StableKey, T00035: StableKey, T00036: StableKey, T00037: StableKey, T00038: StableKey, T00039: StableKey> make(
+    p00000: T00000,
+    p00001: T00001,
+    p00002: T00002,
+    p00003: T00003,
+    p00004: T00004,
+    p00005: T00005,
+    p00006: T00006,
+    p00007: T00007,
+    p00008: T00008,
+    p00009: T00009,
+    p00010: T00010,
+    p00011: T00011,
+    p00012: T00012,
+    p00013: T00013,
+    p00014: T00014,
+    p00015: T00015,
+    p00016: T00016,
+    p00017: T00017,
+    p00018: T00018,
+    p00019: T00019,
+    p00020: T00020,
+    p00021: T00021,
+    p00022: T00022,
+    p00023: T00023,
+    p00024: T00024,
+    p00025: T00025,
+    p00026: T00026,
+    p00027: T00027,
+    p00028: T00028,
+    p00029: T00029,
+    p00030: T00030,
+    p00031: T00031,
+    p00032: T00032,
+    p00033: T00033,
+    p00034: T00034,
+    p00035: T00035,
+    p00036: T00036,
+    p00037: T00037,
+    p00038: T00038,
+    p00039: T00039
+) -> Outcome<T00000, T00001, T00002, T00003, T00004, T00005, T00006, T00007, T00008, T00009, T00010, T00011, T00012, T00013, T00014, T00015, T00016, T00017, T00018, T00019, T00020, T00021, T00022, T00023, T00024, T00025, T00026, T00027, T00028, T00029, T00030, T00031, T00032, T00033, T00034, T00035, T00036, T00037, T00038, T00039>:
+    val initial: Envelope<T00000, T00001, T00002, T00003, T00004, T00005, T00006, T00007, T00008, T00009, T00010, T00011, T00012, T00013, T00014, T00015, T00016, T00017, T00018, T00019, T00020, T00021, T00022, T00023, T00024, T00025, T00026, T00027, T00028, T00029, T00030, T00031, T00032, T00033, T00034, T00035, T00036, T00037, T00038, T00039> = Box<T00000, T00001, T00002, T00003, T00004, T00005, T00006, T00007, T00008, T00009, T00010, T00011, T00012, T00013, T00014, T00015, T00016, T00017, T00018, T00019, T00020, T00021, T00022, T00023, T00024, T00025, T00026, T00027, T00028, T00029, T00030, T00031, T00032, T00033, T00034, T00035, T00036, T00037, T00038, T00039>(
+        p00000,
+        p00001,
+        p00002,
+        p00003,
+        p00004,
+        p00005,
+        p00006,
+        p00007,
+        p00008,
+        p00009,
+        p00010,
+        p00011,
+        p00012,
+        p00013,
+        p00014,
+        p00015,
+        p00016,
+        p00017,
+        p00018,
+        p00019,
+        p00020,
+        p00021,
+        p00022,
+        p00023,
+        p00024,
+        p00025,
+        p00026,
+        p00027,
+        p00028,
+        p00029,
+        p00030,
+        p00031,
+        p00032,
+        p00033,
+        p00034,
+        p00035,
+        p00036,
+        p00037,
+        p00038,
+        p00039
+    )
+    val keys: Set<Envelope<T00000, T00001, T00002, T00003, T00004, T00005, T00006, T00007, T00008, T00009, T00010, T00011, T00012, T00013, T00014, T00015, T00016, T00017, T00018, T00019, T00020, T00021, T00022, T00023, T00024, T00025, T00026, T00027, T00028, T00029, T00030, T00031, T00032, T00033, T00034, T00035, T00036, T00037, T00038, T00039>> = {initial}
+    val copied = initial.copy()
+    choice:
+        option "Built ${copied in keys}":
+            Unit
+    return Outcome.Ready<T00000, T00001, T00002, T00003, T00004, T00005, T00006, T00007, T00008, T00009, T00010, T00011, T00012, T00013, T00014, T00015, T00016, T00017, T00018, T00019, T00020, T00021, T00022, T00023, T00024, T00025, T00026, T00027, T00028, T00029, T00030, T00031, T00032, T00033, T00034, T00035, T00036, T00037, T00038, T00039>(copied)

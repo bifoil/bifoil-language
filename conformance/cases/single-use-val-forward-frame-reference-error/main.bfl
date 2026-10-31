@@ -1,0 +1,7 @@
+scene start():
+    val result: Int
+    val status = initialize(3)
+    fun initialize(value: Int) -> String:
+        result = value
+        return "ready"
+    val escaped = ::initialize

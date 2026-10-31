@@ -1,0 +1,8 @@
+import helpers.keep
+scene start():
+    val readText = keep("Ada")
+    val readNumber = keep(3)
+    choice:
+        option "Read both generic captures":
+            prose:
+                ${readText()}|${readNumber()}

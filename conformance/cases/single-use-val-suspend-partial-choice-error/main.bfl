@@ -1,0 +1,9 @@
+scene start():
+    val x: Int
+    suspend fun initialize(value: Int):
+        choice:
+            option "Skip":
+                Unit
+            option "Set":
+                x = value
+    initialize(3)

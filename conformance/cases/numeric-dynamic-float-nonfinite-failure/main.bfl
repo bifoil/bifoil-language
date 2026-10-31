@@ -1,0 +1,6 @@
+fun integer(value: Int) -> Int = value
+fun floating(value: Float) -> Float = value
+scene start():
+    val result = floating(1e308) * floating(1e308)
+    prose:
+        This must not execute.

@@ -1,0 +1,55 @@
+export suspend fun compute() -> Int:
+    var result = 0
+    if true:
+        val x: Int
+        fun initialize():
+            x = 1
+        choice:
+            option "Initialize first":
+                Unit
+        initialize()
+        result += x
+    when true:
+        case true:
+            val x: Int
+            fun initialize():
+                x = 2
+            initialize()
+            result += x
+    for i in 1..3:
+        val x: Int
+        fun initialize():
+            x = i
+        initialize()
+        result += x
+    var count = 0
+    while count < 2:
+        val x: Int
+        fun initialize():
+            x = count + 3
+        initialize()
+        result += x
+        count += 1
+    do:
+        val x: Int
+        fun initialize():
+            x = count + 1
+        initialize()
+        count = x
+        result += x
+    while x < 4
+    choice:
+        option "Nested":
+            val x: Int
+            fun initialize():
+                x = 6
+            initialize()
+            result += x
+    prose:
+        @val x: Int
+        @fun initialize():
+            @x = 7
+        @initialize()
+        Prose ${x}.
+        @result += x
+    return result

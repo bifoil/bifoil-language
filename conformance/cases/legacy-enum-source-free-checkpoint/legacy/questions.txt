@@ -1,0 +1,10 @@
+*label echo
+*params requested
+*comment The null argument is accepted without reading it as a native expression.
+*return
+*label ask
+*params requested
+*choice
+  #Choose Sad from ${requested}
+    *set answer "Sad"
+    *return

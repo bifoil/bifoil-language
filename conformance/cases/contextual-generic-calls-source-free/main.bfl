@@ -1,0 +1,17 @@
+import helpers.Box
+import helpers.preserve
+import helpers.field
+import helpers.spread
+import helpers.waited
+import helpers.joined
+scene start():
+    val direct = preserve("kept")
+    val number = preserve(7)
+    val member = field(Box<String?>("field"))
+    val missing = field(Box<String?>(null))
+    val group = spread("list")
+    val later = waited<String?>("saved")
+    val absent = waited<String?>(null)
+    val widened = joined()
+    prose:
+        ${direct}|${number}|${member ?: "missing"}|${missing == null}|${group}|${later ?: "missing"}|${absent == null}|${widened === 2.5}

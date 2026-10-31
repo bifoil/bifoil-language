@@ -1,0 +1,5 @@
+fun <T: String?> read(values: Map<String, String?>, prefix: T) -> Int:
+    values["${prefix}!"]!!
+    return values["${prefix}!"].length
+scene start():
+    Unit

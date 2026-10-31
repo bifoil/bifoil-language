@@ -1,0 +1,11 @@
+fun effect():
+    Unit
+fun read(values: Map<String, String?>, var key: String) -> Int:
+    values[key]!!
+    effect()
+    if values[key] == null:
+        return 0
+    return values[key].length
+scene start():
+    prose:
+        ${read({"name": "Ada"}, "name")}

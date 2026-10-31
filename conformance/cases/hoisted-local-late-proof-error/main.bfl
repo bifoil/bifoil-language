@@ -1,0 +1,8 @@
+fun bypass(name: String?) -> Int:
+    val before = read()
+    if name == null:
+        return 0
+    fun read() -> Int = name.length
+    return before
+scene start():
+    Unit

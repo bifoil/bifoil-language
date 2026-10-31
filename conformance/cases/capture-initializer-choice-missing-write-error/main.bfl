@@ -1,0 +1,11 @@
+scene start():
+    var score: Int
+    suspend fun initialize():
+        choice:
+            option "Set":
+                score = 1
+            option "Skip":
+                Unit
+    initialize()
+    prose:
+        ${score}

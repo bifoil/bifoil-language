@@ -1,0 +1,6 @@
+import owner.touch
+scene start():
+    val candidate: Any? = null
+    if candidate is owner.Secret:
+        prose:
+            Unreachable.

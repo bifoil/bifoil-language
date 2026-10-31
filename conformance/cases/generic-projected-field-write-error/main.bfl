@@ -1,0 +1,6 @@
+data class Box<T>:
+    var value: T
+scene start():
+    val original = Box(3)
+    val hidden: Box<*> = original
+    hidden.value = "wrong"

@@ -1,0 +1,14 @@
+fun choose(flag: Boolean):
+    val reward: Int
+    if flag:
+        reward = 10
+    else:
+        reward = 20
+    return reward
+scene start():
+    val value: Int
+    fun read() -> Int = value
+    val reader = ::read
+    value = 5
+    prose:
+        ${choose(true)}|${reader()}

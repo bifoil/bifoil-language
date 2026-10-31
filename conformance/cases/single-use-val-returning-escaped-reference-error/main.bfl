@@ -1,0 +1,7 @@
+scene start():
+    val result: Int
+    fun initialize() -> String:
+        result = 3
+        return "ready"
+    val saved = ::initialize
+    val status = initialize()

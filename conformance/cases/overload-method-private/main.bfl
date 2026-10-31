@@ -1,0 +1,7 @@
+data class Reader:
+    val name: String
+    private fun read(value: Int) = name
+    fun read(value: String) = name
+scene start():
+    val reader = Reader("Ada")
+    reader.read(1)

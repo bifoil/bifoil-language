@@ -1,0 +1,17 @@
+import state.name as first
+import state.name as second
+scene start():
+    if first != null:
+        val snapshot = first
+        var local: String? = first
+        local!!
+        second = null
+        choice:
+            option "Read snapshots":
+                Unit
+        prose:
+            ${snapshot.length}|${local.length}
+        second = "Bifoil"
+        if first != null:
+            prose:
+                ${first.length}

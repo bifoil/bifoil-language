@@ -1,0 +1,9 @@
+fun run(select: Boolean) -> Int:
+    val result: Int
+    fun initialize(value: Int):
+        result = value
+    if select:
+        initialize(1)
+    return result
+scene start():
+    Unit

@@ -1,0 +1,11 @@
+scene start():
+    var future: Int
+    val callbacks = [() => future]
+    val copy = callbacks::toList
+    future = 4
+    choice:
+        option "Resume bound copy":
+            Unit
+    future = 8
+    prose:
+        ${copy()[0]()}

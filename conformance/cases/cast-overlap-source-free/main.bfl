@@ -1,0 +1,14 @@
+import helpers.nullable
+import helpers.read
+import helpers.target
+import helpers.emptyList
+import helpers.emptyMap
+import helpers.callable
+import helpers.suspended
+import helpers.unchangedAlias
+scene start():
+    prose:
+        ${nullable(null) == null}|${nullable(3) == null}|${read("Ada") ?: "-"}|${read(3) == null}|${target<Int>("x") == null}|${target<String>("yes") ?: "-"}|${emptyList().size}|${emptyMap().size}|${callable()}|${unchangedAlias()}
+    val answer = suspended(null)
+    prose:
+        ${answer == null}

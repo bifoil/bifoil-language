@@ -1,0 +1,12 @@
+scene start():
+    var text = ""
+    for value in 2147483646..2147483647:
+        text = text + "${value};"
+    text = text + "|"
+    for value in -2147483647 downTo -2147483648:
+        text = text + "${value};"
+    text = text + "|"
+    for value in -2147483648..2147483647 step 2147483647:
+        text = text + "${value};"
+    prose:
+        ${text}

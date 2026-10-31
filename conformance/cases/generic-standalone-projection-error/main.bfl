@@ -1,0 +1,4 @@
+fun unused(value: *):
+    return
+scene start():
+    return

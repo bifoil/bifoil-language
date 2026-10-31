@@ -1,0 +1,6 @@
+data class Box:
+    private val value: Int
+    private fun reveal() -> Int = value
+fun read(this: Box) -> Int = this.value
+scene start():
+    Unit

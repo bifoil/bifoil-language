@@ -1,0 +1,6 @@
+scene start():
+    val choose = (flag: Boolean) =>:
+        when flag:
+            case true:
+                10
+    choose(true)

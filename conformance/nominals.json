@@ -1,0 +1,333 @@
+[
+  {
+    "id": "data-methods-copy",
+    "output": [
+      "Ada|15|15|Bea|10|1|true"
+    ],
+    "decisions": [],
+    "directory": "cases/data-methods-copy"
+  },
+  {
+    "id": "enums-and-sums",
+    "output": [
+      "happy|ready|pending|true|true"
+    ],
+    "decisions": [],
+    "directory": "cases/enums-and-sums"
+  },
+  {
+    "id": "nominal-pattern-alternatives",
+    "output": [
+      "3.5"
+    ],
+    "decisions": [],
+    "directory": "cases/nominal-pattern-alternatives"
+  },
+  {
+    "id": "data-private-error",
+    "compile_error": "private",
+    "decisions": [],
+    "directory": "cases/data-private-error"
+  },
+  {
+    "id": "data-mutable-key-error",
+    "compile_error": "StableKey",
+    "decisions": [],
+    "directory": "cases/data-mutable-key-error"
+  },
+  {
+    "id": "nominal-modules",
+    "output": [
+      "book"
+    ],
+    "decisions": [],
+    "directory": "cases/nominal-modules"
+  },
+  {
+    "id": "data-copy-name-conflict",
+    "compile_error": "copy is generated",
+    "directory": "cases/data-copy-name-conflict",
+    "decisions": []
+  },
+  {
+    "id": "enum-returning-bound-method-checkpoint",
+    "directory": "cases/enum-returning-bound-method-checkpoint",
+    "decisions": [
+      "U09",
+      "U10",
+      "F43",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "true|true|box"
+    ]
+  },
+  {
+    "id": "instance-method-static-call-error",
+    "directory": "cases/instance-method-static-call-error",
+    "decisions": [
+      "U09",
+      "U10"
+    ],
+    "compile_error": "receiver"
+  },
+  {
+    "id": "instance-method-static-reference-error",
+    "directory": "cases/instance-method-static-reference-error",
+    "decisions": [
+      "U09",
+      "U10"
+    ],
+    "compile_error": "receiver"
+  },
+  {
+    "id": "instance-method-builtin-fallback-error",
+    "directory": "cases/instance-method-builtin-fallback-error",
+    "decisions": [
+      "U09",
+      "U10"
+    ],
+    "compile_error": "receiver"
+  },
+  {
+    "id": "type-namespace-value-error",
+    "directory": "cases/type-namespace-value-error",
+    "decisions": [
+      "U08"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "compile_error": "unknown name"
+  },
+  {
+    "id": "type-namespace-member-error",
+    "directory": "cases/type-namespace-member-error",
+    "decisions": [
+      "U08"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "compile_error": "unknown name"
+  },
+  {
+    "id": "method-parameter-member-shadow-error",
+    "directory": "cases/method-parameter-member-shadow-error",
+    "decisions": [
+      "B05",
+      "U09",
+      "U10",
+      "U23"
+    ],
+    "compile_error": "shadows an implicit instance member"
+  },
+  {
+    "id": "method-local-member-shadow-error",
+    "directory": "cases/method-local-member-shadow-error",
+    "decisions": [
+      "B05",
+      "U09",
+      "U10",
+      "U23"
+    ],
+    "compile_error": "shadows an implicit instance member"
+  },
+  {
+    "id": "method-delayed-member-shadow-error",
+    "directory": "cases/method-delayed-member-shadow-error",
+    "decisions": [
+      "B05",
+      "U09",
+      "U10",
+      "U23"
+    ],
+    "compile_error": "shadows an implicit instance member"
+  },
+  {
+    "id": "method-local-function-member-shadow-error",
+    "directory": "cases/method-local-function-member-shadow-error",
+    "decisions": [
+      "B05",
+      "U09",
+      "U10",
+      "U23"
+    ],
+    "compile_error": "shadows an implicit instance member"
+  },
+  {
+    "id": "method-lambda-member-shadow-error",
+    "directory": "cases/method-lambda-member-shadow-error",
+    "decisions": [
+      "B05",
+      "U09",
+      "U10",
+      "U23"
+    ],
+    "compile_error": "shadows an implicit instance member"
+  },
+  {
+    "id": "method-loop-member-shadow-error",
+    "directory": "cases/method-loop-member-shadow-error",
+    "decisions": [
+      "B05",
+      "U09",
+      "U10",
+      "U23"
+    ],
+    "compile_error": "shadows an implicit instance member"
+  },
+  {
+    "id": "method-subject-member-shadow-error",
+    "directory": "cases/method-subject-member-shadow-error",
+    "decisions": [
+      "B05",
+      "U09",
+      "U10",
+      "U23",
+      "E24"
+    ],
+    "compile_error": "shadows an implicit instance member"
+  },
+  {
+    "id": "method-pattern-member-shadow-error",
+    "directory": "cases/method-pattern-member-shadow-error",
+    "decisions": [
+      "B05",
+      "U09",
+      "U10",
+      "U23",
+      "U21"
+    ],
+    "compile_error": "shadows an implicit instance member"
+  },
+  {
+    "id": "implicit-copy-and-method-captures-source-free",
+    "directory": "cases/implicit-copy-and-method-captures-source-free",
+    "decisions": [
+      "U09",
+      "U10",
+      "U23",
+      "U29",
+      "F16",
+      "F17",
+      "F20",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "7",
+      "8|17",
+      "8|30"
+    ]
+  },
+  {
+    "id": "private-owner-instantiations-source-free",
+    "directory": "cases/private-owner-instantiations-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "9|9|9|9|9",
+      "public"
+    ],
+    "decisions": [
+      "U07",
+      "U09",
+      "U10",
+      "U11",
+      "F43",
+      "T24",
+      "F28"
+    ]
+  },
+  {
+    "id": "private-fake-receiver-field-error",
+    "directory": "cases/private-fake-receiver-field-error",
+    "compile_error": "private",
+    "decisions": [
+      "U10",
+      "U11"
+    ]
+  },
+  {
+    "id": "private-fake-receiver-method-error",
+    "directory": "cases/private-fake-receiver-method-error",
+    "compile_error": "private",
+    "decisions": [
+      "U09",
+      "U10",
+      "U11"
+    ]
+  },
+  {
+    "id": "private-fake-receiver-reference-error",
+    "directory": "cases/private-fake-receiver-reference-error",
+    "compile_error": "private",
+    "decisions": [
+      "U09",
+      "U10",
+      "U11",
+      "F43"
+    ]
+  },
+  {
+    "id": "private-unrelated-receiver-error",
+    "directory": "cases/private-unrelated-receiver-error",
+    "compile_error": "private",
+    "decisions": [
+      "U07",
+      "U10",
+      "U11"
+    ]
+  },
+  {
+    "id": "enum-alias-local-source-free",
+    "directory": "cases/enum-alias-local-source-free",
+    "decisions": [
+      "U01",
+      "U25",
+      "U26",
+      "S10",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "true|true|true|true"
+    ]
+  },
+  {
+    "id": "enum-alias-local-scope-error",
+    "directory": "cases/enum-alias-local-scope-error",
+    "decisions": [
+      "U25",
+      "U26"
+    ],
+    "compile_error": "unknown name 'Local'"
+  },
+  {
+    "id": "enum-alias-case-conflict-error",
+    "directory": "cases/enum-alias-case-conflict-error",
+    "decisions": [
+      "U01",
+      "U24"
+    ],
+    "compile_error": "conflicts with a visible binding"
+  }
+]

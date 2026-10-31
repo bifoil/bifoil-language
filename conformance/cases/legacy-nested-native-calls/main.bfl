@@ -1,0 +1,5 @@
+legacy suspend fun ask() -> Int = "questions" label "ask" result "answer"
+scene start():
+    val answer = ask()
+    prose:
+        ${answer}

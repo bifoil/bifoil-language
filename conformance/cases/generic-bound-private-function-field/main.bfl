@@ -1,0 +1,5 @@
+data class Box:
+    private val callback: () -> Int
+fun invalid(item: Box) = item::callback
+scene start():
+    return

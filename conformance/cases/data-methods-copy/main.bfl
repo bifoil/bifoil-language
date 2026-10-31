@@ -1,0 +1,16 @@
+data class Character:
+    val name: String
+    private var health: Int = 10
+    fun heal(amount: Int) -> Int:
+        health += amount
+        return this.health
+    fun current() = health
+scene start():
+    var original = Character(name = "Ada")
+    val alias = original
+    val heal = original::heal
+    val copy = original.copy(name = "Bea")
+    original = Character("Other", health = 1)
+    val changed = heal(5)
+    prose:
+        ${alias.name}|${changed}|${alias.current()}|${copy.name}|${copy.current()}|${original.current()}|${copy == Character("Bea")}

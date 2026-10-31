@@ -1,0 +1,5 @@
+import helpers.changed
+scene start():
+    val answer = changed(true)
+    prose:
+        ${answer}

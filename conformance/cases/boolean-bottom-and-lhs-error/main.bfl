@@ -1,0 +1,5 @@
+fun evaluate() -> Int:
+    val ignored = 1 && return 2
+    return 3
+scene start():
+    val answer = evaluate()

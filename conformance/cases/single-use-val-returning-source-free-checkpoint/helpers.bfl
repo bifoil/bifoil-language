@@ -1,0 +1,30 @@
+export fun run(seed: Int) -> String:
+    val first: Int
+    val second: Int
+    fun initialize(flag: Boolean) -> String:
+        if flag:
+            first = seed
+            second = first + 1
+            return "positive"
+        else:
+            first = -seed
+            second = first + 1
+            return "negative"
+    val status = initialize(seed > 0)
+    return "${first}|${second}|${status}"
+export fun unit() -> Int:
+    val result: Int
+    fun initialize():
+        result = 5
+    val status: Unit = initialize()
+    if status == Unit:
+        return result
+    else:
+        return 0
+export fun inferred() -> Int:
+    val result: Int
+    fun initialize(value: Int):
+        result = value
+        return "ready"
+    val status = initialize(7)
+    return result

@@ -1,0 +1,14 @@
+sealed class Left:
+    case Ready
+sealed class Right:
+    case Ready
+sealed class Result<T>:
+    case Success(item: T)
+    case Pending
+fun choose(flag: Boolean):
+    return if flag:
+        Left.Ready
+    else:
+        Right.Ready
+scene start():
+    Unit

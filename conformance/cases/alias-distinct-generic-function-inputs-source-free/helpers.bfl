@@ -1,0 +1,2 @@
+export typealias Pair<T> = Map<String, T>
+export fun combine(callback: (Pair<Int>, Pair<Float>) -> String) -> String = callback({"x": 3}, {"x": 2.5})

@@ -1,0 +1,7 @@
+fun accept(number: Int, name: String) -> Int = number + name.length
+export fun count(var name: String?) -> Int:
+    return accept((if name == null:
+        return 0
+    else:
+        1
+    ), name)

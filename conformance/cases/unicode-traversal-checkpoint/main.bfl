@@ -1,0 +1,10 @@
+scene start():
+    var result = ""
+    for character in "A😀e\u{301}":
+        for index in 1..12000:
+            val temporary = [index]
+        choice:
+            option "Append ${character}":
+                result += character
+    prose:
+        ${result}

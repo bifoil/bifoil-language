@@ -1,0 +1,8 @@
+fun invalid(value: String?, members: Set<String?>):
+    return when val selected = value:
+        case in members, "x":
+            selected.length
+        else:
+            0
+scene start():
+    invalid(null, {null})

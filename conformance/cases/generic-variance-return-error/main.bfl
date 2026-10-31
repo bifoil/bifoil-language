@@ -1,0 +1,4 @@
+data class Source<in T>:
+    val callback: () -> T
+scene start():
+    return

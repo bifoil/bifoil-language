@@ -1,0 +1,4 @@
+legacy val letter: Char = "letter"
+scene start():
+    prose:
+        ${letter}

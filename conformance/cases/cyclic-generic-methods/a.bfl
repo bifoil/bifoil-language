@@ -1,0 +1,4 @@
+import b.wrap
+export data class Box<out T>:
+    val value: T
+    fun wrapped() -> Box<String> = wrap("x")

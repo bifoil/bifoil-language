@@ -1,0 +1,15 @@
+import schema.Shade as Color
+export fun retained(values: Map<Color, String?>) -> () -> Int:
+    if values[Happy] == null:
+        return () => 0
+    return () => values[Color.Happy].length
+export suspend fun read(values: Map<Color, String?>) -> Int:
+    if values[Color.Happy] == null:
+        return 0
+    choice:
+        option "Read the enum key":
+            Unit
+    return values[Happy].length
+export fun optional(values: Map<Color?, String?>) -> Int:
+    values[Color.Happy]!!
+    return values[Happy].length

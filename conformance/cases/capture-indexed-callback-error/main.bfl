@@ -1,0 +1,4 @@
+scene start():
+    val x: Int
+    val readers = [() => x]
+    readers[0]()

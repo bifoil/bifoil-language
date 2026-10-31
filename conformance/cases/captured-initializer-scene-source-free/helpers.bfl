@@ -1,0 +1,12 @@
+export suspend fun run() -> Boolean:
+    var optional: (() -> Int)?
+    var destination: Scene
+    fun initialize():
+        optional = null
+        destination = ::forest
+    initialize()
+    visit destination()
+    return optional == null
+scene forest():
+    prose:
+        Forest

@@ -1,0 +1,8 @@
+legacy fun score() -> Int = "questions" label "read" result "score"
+scene start():
+    choice:
+        option "Continue":
+            Unit
+    val result = score()
+    prose:
+        ${result}

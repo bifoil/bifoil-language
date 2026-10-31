@@ -1,0 +1,6 @@
+scene start():
+    val result: Int
+    fun initialize(value: Int) -> Int:
+        result = value
+        return value
+    val observed = initialize(initialize(1))

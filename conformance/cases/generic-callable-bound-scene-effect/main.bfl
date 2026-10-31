@@ -1,0 +1,4 @@
+fun <T: Scene<Int>> invalid(destination: T):
+    visit destination(3)
+scene start():
+    return

@@ -1,0 +1,9 @@
+enum Mood:
+    Happy
+    Sad
+data class Box:
+    val value: Int
+    fun mood() -> Mood = Mood.Happy
+    fun toString() -> String = "box"
+scene start():
+    val invalid = Box::mood

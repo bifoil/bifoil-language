@@ -1,0 +1,14 @@
+export data class Box:
+    var value: Any?
+fun inspect(holder: Box) = when holder.value:
+    case is String:
+        holder.value.length
+    case null:
+        0
+    else:
+        -1
+export fun run() -> Int:
+    val box = Box("Ada")
+    val first = inspect(box)
+    box.value = null
+    return first + inspect(box)

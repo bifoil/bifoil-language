@@ -1,0 +1,8 @@
+scene start():
+    val result: Int
+    fun initialize() -> Boolean:
+        result = 3
+        return true
+    val answer = false && initialize()
+    prose:
+        ${result}

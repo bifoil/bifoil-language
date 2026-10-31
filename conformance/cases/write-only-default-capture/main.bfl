@@ -1,0 +1,9 @@
+scene start():
+    var value: Int
+    fun initialize():
+        value = 1
+    fun defaults(done: Unit = initialize()) -> Unit = Unit
+    defaults()
+    value = 2
+    prose:
+        ${value}

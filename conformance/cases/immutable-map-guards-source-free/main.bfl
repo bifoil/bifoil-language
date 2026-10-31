@@ -1,0 +1,29 @@
+import helpers.Box
+import helpers.numeric
+import helpers.text
+import helpers.zero
+import helpers.negative
+import helpers.optional
+import helpers.boolean
+import helpers.unitKey
+import helpers.field
+import helpers.matched
+import helpers.original
+import helpers.inspect
+import helpers.choose
+import helpers.retained
+scene start():
+    val numbers: Map<Float, String?> = {1.0: "Ada", 0.0: "Ada"}
+    val texts: Map<String, String?> = {"a": "Ada", "value": "Ada"}
+    val negatives: Map<Int, String?> = {-1: "Ada"}
+    val nulls: Map<String?, String?> = {null: "Ada"}
+    val booleans: Map<Boolean, String?> = {true: "Ada"}
+    val units: Map<Unit, String?> = {Unit: "Ada"}
+    val boxes: Map<String, Box?> = {"box": Box("Ada")}
+    val reader = retained(texts)
+    val resumed = inspect(texts)
+    val selected = choose(texts)
+    prose:
+        ${numeric(numbers)}|${text(texts)}|${zero(numbers)}|${negative(negatives)}|${optional(nulls)}|${boolean(booleans)}|${unitKey(units)}
+    prose:
+        ${field(boxes)}|${matched(texts)}|${original({"value": "Ada"}, "fallback")}|${resumed}|${selected}|${reader()}

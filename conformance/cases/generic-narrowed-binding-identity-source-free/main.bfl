@@ -1,0 +1,17 @@
+import helpers.Outcome
+import helpers.preserve
+import helpers.viaCall
+import helpers.branch
+import helpers.boxed
+import helpers.variant
+import helpers.ask
+import helpers.whenVariant
+scene start():
+    val missing: String? = preserve<String?>(null)
+    val result = variant(Outcome.Success(7))
+    val matched = whenVariant(Outcome.Success(8))
+    prose:
+        ${preserve("Ada")}|${preserve(3)}|${viaCall("four")}|${branch("yes")}|${boxed("x")[0]}|${result.value}|${missing == null}|${matched.value}
+    val answer = ask("saved")
+    prose:
+        ${answer}

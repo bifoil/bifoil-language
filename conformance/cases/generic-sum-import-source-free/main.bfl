@@ -1,0 +1,13 @@
+import helpers.Outcome as Result
+scene start():
+    val input: Result<Int> = Result.Success(7)
+    val take = (result: Result<Int>) =>:
+        when result:
+            case is Result.Success<Int>(amount):
+                amount
+            case is Result.Pending<Int>:
+                0
+    choice:
+        option "Continue":
+            prose:
+                ${take(input)}

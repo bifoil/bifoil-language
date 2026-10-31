@@ -1,0 +1,9 @@
+scene start():
+    val future: Int
+    fun read(value: Int) -> Int = value
+    fun read(value: Float) -> Int = future
+    fun integer() -> Int = read(7)
+    fun floating() -> Int = read(0.5)
+    val first = integer()
+    val second = floating()
+    future = 9

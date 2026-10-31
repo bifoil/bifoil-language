@@ -1,0 +1,9 @@
+fun run(flag: Boolean) -> Int:
+    var result: Int
+    for ordinal in 1..3:
+        if flag:
+            continue
+        result = ordinal
+    return result
+scene start():
+    Unit

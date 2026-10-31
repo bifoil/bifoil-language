@@ -1,0 +1,5 @@
+export fun precise() -> Float = -1.0803725086404524e-296
+export fun defaulted(value: Float = -1.0803725086404524e-296) -> Float = value
+export shared val saved: Float = -1.0803725086404524e-296
+export data class Sample:
+    val value: Float = -1.0803725086404524e-296

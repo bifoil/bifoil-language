@@ -1,0 +1,8 @@
+data class Box:
+    var value: String?
+fun invalid(holder: Box) -> () -> Int:
+    if holder.value == null:
+        return () => 0
+    return () => holder.value.length
+scene start():
+    Unit

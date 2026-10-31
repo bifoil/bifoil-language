@@ -1,0 +1,4 @@
+import helpers.count
+scene start():
+    prose:
+        ${count("Ada")}|${count(null)}

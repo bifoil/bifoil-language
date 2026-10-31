@@ -1,0 +1,17 @@
+enum Mood:
+    Happy
+    Sad
+data class Box:
+    val value: Int
+scene start():
+    val constant = ::happy
+    fun happy() -> Mood = Mood.Happy
+    val mood = constant()
+    var reader: () -> Int = () => 0
+    if true:
+        val box = Box(4)
+        reader = () => box.value
+    choice:
+        option "Continue":
+            prose:
+                ${mood == Mood.Happy}|${reader()}

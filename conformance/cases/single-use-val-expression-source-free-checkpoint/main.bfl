@@ -1,0 +1,11 @@
+import helpers.run
+import helpers.fixed
+scene start():
+    val first = run(3)
+    val second = run(-2)
+    val number = fixed()
+    choice:
+        option "Expression results":
+            Unit
+    prose:
+        ${first}|${second}|${number}

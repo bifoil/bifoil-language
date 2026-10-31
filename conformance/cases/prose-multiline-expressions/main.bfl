@@ -1,0 +1,12 @@
+scene start():
+    var score = 0
+    prose:
+        Count ${(
+            1 + // } """ ignored
+            2
+        )}; ${"""first
+        @not a directive
+
+        last""".length}.
+        @score += 1
+        End ${score}.

@@ -1,0 +1,8 @@
+scene start():
+    var position = 10
+    val values = [1]
+    choice:
+        option "Hidden" if false:
+            Unit
+        option "Read ${values[position]}":
+            Unit

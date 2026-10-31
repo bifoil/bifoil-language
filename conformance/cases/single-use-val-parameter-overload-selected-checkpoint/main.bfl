@@ -1,0 +1,12 @@
+scene start():
+    val x: Int
+    fun initialize(value: Int):
+        x = value
+    fun initialize(value: String):
+        Unit
+    initialize(3)
+    choice:
+        option "Saved":
+            Unit
+    prose:
+        ${x}

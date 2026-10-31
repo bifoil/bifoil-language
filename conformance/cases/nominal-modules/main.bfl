@@ -1,0 +1,12 @@
+import types.Item
+import types.Result
+scene start():
+    val item = Item("book")
+    val result: Result = Result.Good(item)
+    when result:
+        case is Result.Good(value):
+            prose:
+                ${value.text()}
+        case is Result.Empty:
+            prose:
+                empty

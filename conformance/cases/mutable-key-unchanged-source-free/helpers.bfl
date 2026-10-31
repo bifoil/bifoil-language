@@ -1,0 +1,9 @@
+export fun read(values: Map<String, String?>, var key: String) -> Int:
+    var extra = 0
+    if values[key] == null:
+        return 0
+    extra += 1
+    return values[key].length + extra
+export fun item(values: List<String?>, var index: Int) -> Int:
+    values[index]!!
+    return values[index].length

@@ -1,0 +1,8 @@
+scene start():
+    var future: Int
+    var callback: () -> Int
+    fun initialize():
+        callback = () => future
+    initialize()
+    future = 9
+    val value = callback()

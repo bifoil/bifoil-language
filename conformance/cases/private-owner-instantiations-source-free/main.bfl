@@ -1,0 +1,18 @@
+import helpers.Box
+import helpers.Chooser
+import helpers.publicPick
+scene start():
+    val owner = Box("owner")
+    val target = Box(3)
+    owner.writeOther(target, 7)
+    val bound = owner.reader(target)
+    val closure = owner.nested(target)
+    val alias = target
+    choice:
+        option "Inspect private receivers":
+            Unit
+    owner.writeOther(alias, 9)
+    prose:
+        ${owner.readOther(target)}|${owner.inferred(target)}|${owner.callOther(target)}|${bound()}|${closure()}
+    prose:
+        ${publicPick(Chooser())}

@@ -1,0 +1,7 @@
+import a.First
+import b.Second
+scene start():
+    val original = First(Second())
+    val copied = original.copy()
+    prose:
+        ${original == copied}|${original.next!!.next == null}|${original is First}

@@ -1,0 +1,13 @@
+shared var calls: Int = 0
+shared var trace: String = ""
+fun record(value: Int) -> Int:
+    calls += 1
+    trace = trace + "${value}"
+    return value
+export fun run() -> String:
+    val result: Int
+    fun initialize(first: Int = record(2), second: Int = record(first + 1)) -> Int:
+        result = first + second
+        return second
+    val status = initialize(second = record(7))
+    return "${result}|${status}|${calls}|${trace}"

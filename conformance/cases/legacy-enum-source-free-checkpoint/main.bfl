@@ -1,0 +1,15 @@
+import schema.Mood
+import bridge.current
+import bridge.echo
+import bridge.ask
+scene start():
+    val before = current
+    current = null
+    val empty = current
+    current = Mood.Sad
+    val selected = ask()
+    val after = current
+    current = null
+    val copied = echo(null)
+    prose:
+        ${before == Mood.Happy}|${after == Mood.Sad}|${selected == Mood.Sad}|${empty == null}|${copied == null}

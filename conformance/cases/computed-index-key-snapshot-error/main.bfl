@@ -1,0 +1,11 @@
+fun read(values: Map<String, String?>, var prefix: String) -> Int:
+    fun change() -> String:
+        prefix = "missing"
+        return "Ada"
+    return when values[prefix + 0]:
+        case change():
+            values[prefix + 0].length
+        else:
+            0
+scene start():
+    Unit

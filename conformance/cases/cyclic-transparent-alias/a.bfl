@@ -1,0 +1,3 @@
+import b.echo
+export typealias Score = Int
+export fun convert(value: Score) = echo(value)

@@ -1,0 +1,9 @@
+import helpers.make
+scene start():
+    val first = make("expression")
+    val second = make<Int?>(null)
+    choice:
+        option "Expression readers":
+            Unit
+    prose:
+        ${first()}|${second() == null}

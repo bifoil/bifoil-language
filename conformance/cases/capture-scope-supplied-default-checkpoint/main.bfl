@@ -1,0 +1,9 @@
+scene start():
+    if true:
+        val x = 1
+        choice:
+            option "Supply the argument before the capture exists":
+                prose:
+                    ${read(7)}
+    val x = 2
+    fun read(value: Int = x) -> Int = value

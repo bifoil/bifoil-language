@@ -1,0 +1,18 @@
+data class Node:
+    var value: Int
+    var next: Node? = null
+export fun run() -> () -> String:
+    val first = Node(1)
+    first.next = first
+    val second = Node(1)
+    val third = Node(1)
+    second.next = third
+    third.next = second
+    val left = {"a": first, "b": first}
+    val right = {"b": second, "a": third}
+    fun read() -> String:
+        val before = first === second
+        val mapping = left === right
+        third.value = 2
+        return "${before}|${mapping}|${first === second}|${first === first}"
+    return ::read

@@ -1,0 +1,7 @@
+export suspend fun <T> required(value: T):
+    choice:
+        option "Check null":
+            Unit
+    if value is String:
+        return value!!
+    return value!!

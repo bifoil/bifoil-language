@@ -1,0 +1,6 @@
+scene start():
+    val result: Any?
+    fun <T> initialize(value: T):
+        result = value
+    initialize<Int>(3)
+    initialize<String>("other")

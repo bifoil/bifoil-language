@@ -1,0 +1,11 @@
+data class Box:
+    var value: String?
+fun clear(holder: Box) -> String:
+    holder.value = null
+    return "!"
+fun update(holder: Box) -> String:
+    if holder.value == null:
+        return "missing"
+    holder.value += clear(holder)
+    return holder.value ?: "missing"
+export fun run() -> String = update(Box("Ada"))

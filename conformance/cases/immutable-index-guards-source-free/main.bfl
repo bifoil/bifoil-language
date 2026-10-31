@@ -1,0 +1,19 @@
+import helpers.Box
+import helpers.length
+import helpers.nested
+import helpers.field
+import helpers.checked
+import helpers.matched
+import helpers.inspect
+import helpers.choose
+import helpers.original
+import helpers.retained
+import helpers.local
+scene start():
+    val words: List<String?> = ["Ada"]
+    val boxes: List<Box<Any?>> = [Box<Any?>("Ada")]
+    val reader = retained(words)
+    val resumed = inspect(words)
+    val selected = choose(words)
+    prose:
+        ${length(words)}|${nested([words])}|${field(boxes)}|${checked(words)}|${matched(words)}|${resumed}|${selected}|${original(["Ada"])}|${reader()}|${local(words)}

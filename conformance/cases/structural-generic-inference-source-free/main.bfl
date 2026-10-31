@@ -1,0 +1,28 @@
+import helpers.Result
+import helpers.known
+import helpers.empty
+import helpers.boundedFirst
+import helpers.boundedCall
+import helpers.forwardWait
+import helpers.keep
+import helpers.boundedScene
+import helpers.render
+import helpers.pauseBeforeVisit
+import helpers.target
+suspend fun ask() -> Int:
+    choice:
+        option "Return 8":
+            return 8
+scene start():
+    val destination = keep(::target)
+    val through = boundedScene(destination)
+    val reference: (Scene<Int>) -> Scene<Int> = ::keep
+    val variant = known(Result.Success(3))
+    val missing: Result<Int> = empty()
+    val first = boundedFirst(["saved"])
+    val called = boundedCall(() => 7)
+    val retained = render(3)
+    val delayed = forwardWait(::ask)
+    pauseBeforeVisit(reference(through), 7)
+    prose:
+        ${variant}|${missing is Result.Empty<Int>}|${first}|${called}|${retained}|${destination is Scene<Int>}|${delayed}

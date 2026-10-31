@@ -1,0 +1,12 @@
+export suspend fun <T> keep(input: T) -> T:
+    val result: T
+    suspend fun <U: T> initialize(value: U):
+        choice:
+            option "Before generic write":
+                Unit
+        result = value
+        choice:
+            option "After generic write":
+                Unit
+    initialize<T>(input)
+    return result

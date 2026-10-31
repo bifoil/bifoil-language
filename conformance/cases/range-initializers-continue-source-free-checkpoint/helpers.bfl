@@ -1,0 +1,7 @@
+export fun run() -> () -> Int:
+    var result: Int
+    for ordinal in 1..3:
+        result = ordinal
+        if ordinal % 2 == 0:
+            continue
+    return () => result

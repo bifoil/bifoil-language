@@ -1,0 +1,17 @@
+export suspend fun inspect() -> String:
+    val future: Int
+    fun read(value: Int) -> Int = value
+    fun read(value: Float) -> Int = future
+    fun read(value: String) -> Int = future
+    fun read(value: Boolean) -> Int = 1
+    fun integer() -> Int = read(7)
+    fun boolean() -> Int = read(!false)
+    fun floating() -> Int = read(0.5)
+    val first = integer()
+    val flag = boolean()
+    choice:
+        option "Initialize after restoring":
+            Unit
+    future = 9
+    val second = floating()
+    return "${first}|${flag}|${second}"

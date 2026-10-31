@@ -1,0 +1,3 @@
+import main.start
+export fun helper():
+    return

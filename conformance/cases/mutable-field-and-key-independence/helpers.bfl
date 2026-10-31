@@ -1,0 +1,14 @@
+data class Box:
+    var value: String?
+fun length(holder: Box, values: Map<Int, String?>) -> Int:
+    var selected = 0
+    if values[selected] == null:
+        return 0
+    holder.value = null
+    val first = values[selected].length
+    holder.value = "Ada"
+    if holder.value == null:
+        return first
+    selected = 1
+    return first + holder.value.length
+export fun run() -> Int = length(Box("Other"), {0: "zero"})

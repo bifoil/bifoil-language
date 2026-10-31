@@ -1,0 +1,6 @@
+export fun run() -> () -> Int:
+    var reader: () -> Int
+    for ordinal in 1..3:
+        reader = () => ordinal
+        continue
+    return reader

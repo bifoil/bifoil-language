@@ -1,0 +1,28 @@
+import helpers.Box
+import helpers.Fixed
+import helpers.clear
+import helpers.ping
+import helpers.writes
+scene start():
+    val original = Box<String?>("Ada")
+    val hidden: Box<*> = original
+    var report = "not entered"
+    if hidden.value is String:
+        val before = hidden.value.length
+        clear(original)
+        choice:
+            option "Recheck ${writes}":
+                Unit
+        val after = if hidden.value is String:
+            hidden.value.length
+        else:
+            -1
+        report = "${before}|${after}"
+    val fixed: Fixed<*> = Fixed("Ada")
+    if fixed.value is String:
+        ping()
+        choice:
+            option "Stable":
+                Unit
+        prose:
+            ${report}|${writes}|${fixed.value.length}

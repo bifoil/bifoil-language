@@ -1,0 +1,2 @@
+export scene forest(danger: Int = 7):
+    Unit

@@ -1,0 +1,9 @@
+sealed class Outcome:
+    case Success(item: Int)
+data class Counter:
+    var value: Int
+    fun replace(value: Int) -> Int:
+        this.value = value
+        return this.value
+scene start():
+    Unit

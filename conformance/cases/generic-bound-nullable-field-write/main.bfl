@@ -1,0 +1,6 @@
+data class Box:
+    var value: Int
+fun <T: Box?> invalid(item: T):
+    item.value = 1
+scene start():
+    return

@@ -1,0 +1,5 @@
+import other.second
+export shared val first: Int = second + 1
+scene start():
+    prose:
+        ${first}

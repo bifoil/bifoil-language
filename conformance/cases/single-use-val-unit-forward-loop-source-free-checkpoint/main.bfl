@@ -1,0 +1,8 @@
+import helpers.run
+scene start():
+    val readers = run()
+    choice:
+        option "Fresh ${readers[0]()}|${readers[1]()}":
+            Unit
+    prose:
+        ${readers[0]()}|${readers[1]()}

@@ -1,0 +1,6 @@
+scene start():
+    val x: Int
+    fun initialize():
+        x = 3
+    initialize()
+    val initialize = 7

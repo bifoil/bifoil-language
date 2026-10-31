@@ -1,0 +1,53 @@
+export enum Mood:
+    Happy
+    Sad
+export sealed class Outcome<T>:
+    case Success(value: T)
+    case Pending
+fun needMood(value: Mood) -> String = "present"
+fun needBoolean(value: Boolean) -> String = value.toString()
+export fun <T: Mood> enumName(value: T) = when value:
+    case Happy:
+        "happy"
+    case Sad:
+        "sad"
+export fun <T: Mood?> optionalMood(value: T) = when value:
+    case null:
+        "none"
+    case Happy, Sad:
+        needMood(value)
+export fun <T: Boolean?> booleanName(value: T) = when value:
+    case true:
+        needBoolean(value)
+    case false:
+        needBoolean(value)
+    case null:
+        "missing"
+export fun <T: Outcome<Int>> inspect(value: T) = when value:
+    case is Outcome.Success<Int>(number):
+        number
+    case is Outcome.Pending<Int>:
+        0
+export fun <T: Outcome<Int>?> optionalOutcome(value: T) = when value:
+    case null:
+        -1
+    case is Outcome.Success<Int>(number):
+        number
+    case is Outcome.Pending<Int>:
+        0
+export fun <T: Boolean?> booleanAfterNull(value: T):
+    when value:
+        case null if true:
+            return "missing"
+    return needBoolean(value)
+export fun <T> identity(value: T) -> T:
+    when value:
+        case null:
+            return value
+        else:
+            return value
+export fun nonNullAlternative(value: String?, alternative: String) = when value:
+    case alternative, "x":
+        value.length
+    else:
+        0

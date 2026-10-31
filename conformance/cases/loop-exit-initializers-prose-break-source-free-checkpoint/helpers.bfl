@@ -1,0 +1,11 @@
+export fun run() -> () -> String:
+    val result: Int
+    fun initialize() -> Int:
+        result = 3
+        return result
+    prose:
+        @while true:
+            ${initialize()}
+            @break
+    fun read() -> String = "${result}"
+    return ::read

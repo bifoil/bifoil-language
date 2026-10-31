@@ -1,0 +1,10 @@
+shared val a = record("A") + later()
+shared val b = record("B")
+shared var log = ""
+fun record(letter: String) -> Int:
+    log += letter
+    return 1
+fun later(value: Int = b) -> Int = value
+scene start():
+    prose:
+        ${a}|${log}

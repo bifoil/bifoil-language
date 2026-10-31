@@ -1,0 +1,8 @@
+enum Mood:
+    case Happy
+    case Sad
+legacy fun join(vararg values: Mood) -> String = "questions" label "join" result "answer"
+scene start():
+    val joiner: (vararg Mood) -> String = ::join
+    prose:
+        ${joiner(Mood.Happy, Mood.Sad)}

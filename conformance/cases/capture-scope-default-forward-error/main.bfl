@@ -1,0 +1,6 @@
+scene start():
+    if true:
+        val x = 1
+        val result = read()
+    val x = 2
+    fun read(value: Int = x) -> Int = value

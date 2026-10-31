@@ -1,0 +1,6 @@
+scene start():
+    val divide = (value: Int) =>
+      10 / value
+    val answer = divide(0)
+    prose:
+        ${answer}

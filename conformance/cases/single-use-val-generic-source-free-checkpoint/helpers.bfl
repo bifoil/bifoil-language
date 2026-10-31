@@ -1,0 +1,27 @@
+export fun <T> identity(input: T) -> T:
+    val result: T
+    fun <U: T> initialize(value: U):
+        result = value
+    initialize<T>(input)
+    return result
+export fun erased(input: Int) -> Any?:
+    val result: Any?
+    fun <T> initialize(value: T):
+        result = value
+    initialize<Int>(input)
+    return result
+export fun bound() -> Int:
+    val result: Int
+    fun <T: Equatable> initialize(value: T, actual: Int = 4):
+        if value == value:
+            result = actual
+        else:
+            result = 0
+    initialize("same")
+    return result
+export fun zero() -> Int:
+    val result: Int
+    fun <T> initialize():
+        result = 5
+    initialize<String>()
+    return result

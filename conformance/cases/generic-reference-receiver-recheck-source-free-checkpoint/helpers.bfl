@@ -1,0 +1,2 @@
+export data class Source:
+    fun <T> identity(item: T) -> T = item

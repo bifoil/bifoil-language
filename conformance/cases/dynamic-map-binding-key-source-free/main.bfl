@@ -1,0 +1,8 @@
+import helpers.read
+import helpers.kind
+import helpers.matched
+scene start():
+    val values: Map<String, String?> = {"name": "Ada", "empty": null}
+    prose:
+        ${read(values, "name")}|${read(values, "empty")}|${read(values, "missing")}
+        ${kind({"name": "Ada"}, "name")}|${matched(values, "name")}

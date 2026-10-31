@@ -1,0 +1,9 @@
+scene start():
+    val result: Int
+    if true:
+        val hidden = 5
+        val status = initialize(3)
+    val hidden = 7
+    fun initialize(value: Int) -> String:
+        result = hidden + value
+        return "ready"

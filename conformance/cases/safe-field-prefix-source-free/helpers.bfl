@@ -1,0 +1,19 @@
+export data class Person:
+    val name: String?
+export data class House:
+    val person: Person?
+export fun read(person: Person?) -> Int:
+    if person?.name == null:
+        return 0
+    return person.name.length
+export fun nested(house: House?) -> Int:
+    house?.person?.name!!
+    return house.person.name.length
+export fun matched(person: Person?) -> Int = when person?.name:
+    case null:
+        0
+    else:
+        person.name.length
+export fun checked(person: Person?) -> String:
+    person?.name!!
+    return person?.name

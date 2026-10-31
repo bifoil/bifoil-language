@@ -1,0 +1,7 @@
+fun run(var progression: IntProgression) -> Int:
+    var result: Int
+    for ordinal in progression:
+        result = ordinal
+    return result
+scene start():
+    Unit

@@ -1,0 +1,15 @@
+export fun run() -> () -> String:
+    val result: String
+    val select = false
+    for ordinal in 1..3:
+        if select:
+            initialize(ordinal)
+        else:
+            initialize("ready")
+        break
+    fun initialize(value: Int):
+        result = "${value}"
+    fun initialize(value: String):
+        result = value
+    fun read() -> String = result
+    return ::read

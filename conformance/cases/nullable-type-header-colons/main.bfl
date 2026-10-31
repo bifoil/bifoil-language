@@ -1,0 +1,14 @@
+fun absent() -> String?:
+    return null
+fun callback() -> (() -> Int)?:
+    return null
+fun accepts(value: Any?) -> Boolean:
+    if value is String?:
+        return true
+    return false
+fun fallback(value: String?) -> String:
+    return value ?:
+        "fallback"
+scene start():
+    prose:
+        ${absent() == null}|${callback() == null}|${accepts(null)}|${accepts(1)}|${fallback(null)}

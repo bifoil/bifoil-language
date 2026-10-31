@@ -1,0 +1,2 @@
+# This original formatter fixture deliberately places alignment spaces before tabs.
+conformance/cases/indentation-and-spelling-preservation/main.bfl whitespace=-space-before-tab

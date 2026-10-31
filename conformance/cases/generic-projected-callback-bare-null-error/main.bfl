@@ -1,0 +1,5 @@
+data class Callback<T>:
+    val callback: (T) -> T
+scene start():
+    val hidden: Callback<*> = Callback<Int>((value: Int) => value)
+    hidden.callback(null)

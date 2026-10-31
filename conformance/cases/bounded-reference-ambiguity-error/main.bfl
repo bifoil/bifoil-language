@@ -1,0 +1,4 @@
+fun <U: Equatable> choose(value: U) -> U = value
+fun choose(value: String) -> Any = value
+scene start():
+    val ambiguous: (String) -> Any = ::choose

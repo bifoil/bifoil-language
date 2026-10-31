@@ -1,0 +1,2 @@
+import palette.Mood
+export typealias Shade = Mood

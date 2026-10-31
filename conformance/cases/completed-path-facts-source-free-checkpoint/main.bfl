@@ -1,0 +1,12 @@
+import helpers.byIf
+import helpers.byWhen
+import helpers.ask
+scene start():
+    val conditional = byIf(0) + byIf(1) + byIf(2) + byIf(3)
+    val cases = byWhen(0) + byWhen(1) + byWhen(2) + byWhen(3)
+    val interactive = ask() + ask() + ask() + ask()
+    choice:
+        option "Retain ${conditional}|${cases}|${interactive}":
+            Unit
+    prose:
+        ${conditional}|${cases}|${interactive}

@@ -1,0 +1,32 @@
+typealias A0<T> = Int
+typealias A1<T> = Map<A0<T>, A0<T>>
+typealias A2<T> = Map<A1<T>, A1<T>>
+typealias A3<T> = Map<A2<T>, A2<T>>
+typealias A4<T> = Map<A3<T>, A3<T>>
+typealias A5<T> = Map<A4<T>, A4<T>>
+typealias A6<T> = Map<A5<T>, A5<T>>
+typealias A7<T> = Map<A6<T>, A6<T>>
+typealias A8<T> = Map<A7<T>, A7<T>>
+typealias A9<T> = Map<A8<T>, A8<T>>
+typealias A10<T> = Map<A9<T>, A9<T>>
+typealias A11<T> = Map<A10<T>, A10<T>>
+typealias A12<T> = Map<A11<T>, A11<T>>
+typealias A13<T> = Map<A12<T>, A12<T>>
+typealias A14<T> = Map<A13<T>, A13<T>>
+typealias A15<T> = Map<A14<T>, A14<T>>
+typealias A16<T> = Map<A15<T>, A15<T>>
+typealias A17<T> = Map<A16<T>, A16<T>>
+typealias A18<T> = Map<A17<T>, A17<T>>
+typealias A19<T> = Map<A18<T>, A18<T>>
+typealias A20<T> = Map<A19<T>, A19<T>>
+typealias A21<T> = Map<A20<T>, A20<T>>
+typealias A22<T> = Map<A21<T>, A21<T>>
+typealias A23<T> = Map<A22<T>, A22<T>>
+typealias A24<T> = Map<A23<T>, A23<T>>
+typealias A25<T> = Map<A24<T>, A24<T>>
+typealias A26<T> = Map<A25<T>, A25<T>>
+typealias A27<T> = Map<A26<T>, A26<T>>
+typealias A28<T> = Map<A27<T>, A27<T>>
+scene start():
+    prose:
+        Graph checked.

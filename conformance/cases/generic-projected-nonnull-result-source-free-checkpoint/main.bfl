@@ -1,0 +1,10 @@
+import helpers.Box
+import helpers.make
+scene start():
+    val hidden: Box<*> = make()
+    val value: Any = hidden.present()
+    choice:
+        option "Present":
+            Unit
+    prose:
+        ${String(value)}

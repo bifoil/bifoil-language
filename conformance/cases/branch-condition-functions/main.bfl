@@ -1,0 +1,18 @@
+scene start():
+    if false:
+        prose:
+            wrong
+    elif ((flag: Boolean) => flag)(true):
+        prose:
+            right
+    val description = if ((value: Int) => value > 0)(1):
+        "positive"
+    else:
+        "negative"
+    val selected = when ((value: Int) => value + 1)(4):
+        case 5:
+            "five"
+        else:
+            "other"
+    prose:
+        ${description}|${selected}

@@ -1,0 +1,59 @@
+export data class Box:
+    val value: String?
+export fun numeric(values: Map<Float, String?>):
+    if values[1] == null:
+        return 0
+    return values[1.0].length
+export fun text(values: Map<String, String?>):
+    if values['a'] == null:
+        return 0
+    return values["a"].length
+export fun zero(values: Map<Float, String?>):
+    if values[-0.0] == null:
+        return 0
+    return values[0].length
+export fun negative(values: Map<Int, String?>):
+    if values[-1] == null:
+        return 0
+    return values[-1].length
+export fun optional(values: Map<String?, String?>):
+    if values[null] == null:
+        return 0
+    return values[null].length
+export fun boolean(values: Map<Boolean, String?>):
+    if values[true] == null:
+        return 0
+    return values[true].length
+export fun unitKey(values: Map<Unit, String?>):
+    values[Unit]!!
+    return values[Unit].length
+export fun field(values: Map<String, Box?>):
+    if values["box"] == null || values["box"].value == null:
+        return 0
+    return values["box"].value.length
+export fun matched(values: Map<String, String?>) = when values["value"]:
+    case null:
+        0
+    else:
+        values["value"].length
+export fun <T> original(values: Map<String, T>, fallback: T) -> T:
+    if values["value"] is String:
+        return values["value"]
+    return fallback
+export suspend fun inspect(values: Map<String, String?>) -> Int:
+    if values["value"] == null:
+        return 0
+    choice:
+        option "Resume stable map value":
+            Unit
+    return values["value"].length
+export suspend fun choose(values: Map<String, String?>) -> Int:
+    choice:
+        option "Read map value" if values["value"] != null:
+            return values["value"].length
+        else:
+            return 0
+export fun retained(values: Map<String, String?>) -> () -> Int:
+    if values["value"] == null:
+        return () => 0
+    return () => values["value"].length

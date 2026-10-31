@@ -1,0 +1,7 @@
+import helpers.combine
+scene start():
+    val render = (left: Map<String, Int>, right: Map<String, Float>) => "${left["x"]!!}|${right["x"]!!}"
+    choice:
+        option "Use both instantiated inputs":
+            prose:
+                ${combine(render)}

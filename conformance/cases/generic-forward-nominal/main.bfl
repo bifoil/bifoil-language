@@ -1,0 +1,13 @@
+data class First:
+    val second: Second<Int>
+data class Second<T>:
+    val value: T
+data class Node<T>:
+    val value: T
+    val next: Node<T>? = null
+fun <T: Node<T>> bounded(value: T):
+    return
+scene start():
+    val first = First(Second(7))
+    prose:
+        ${first.second.value}

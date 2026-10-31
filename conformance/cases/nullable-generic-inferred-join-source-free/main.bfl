@@ -1,0 +1,11 @@
+import helpers.choose
+import helpers.paths
+import helpers.saved
+scene start():
+    val first: String? = choose<String>(true, "kept", null)
+    val second: String? = choose<String?>(false, null, "other")
+    val third: String? = paths<String>(true, "path", null)
+    val retained: String? = saved<String?>(false, null, "saved")
+    val prefix = "${first ?: "missing"}|${second ?: "missing"}"
+    prose:
+        ${prefix}|${third ?: "missing"}|${retained ?: "missing"}

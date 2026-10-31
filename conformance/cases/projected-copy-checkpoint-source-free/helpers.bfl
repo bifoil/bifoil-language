@@ -1,0 +1,10 @@
+export fun snapshot(values: List<*>, ignored: Int) -> String = "${values.size}|${values is List<Int>}"
+export fun <T: MutableList<Int>> copyBound(values: T) -> List<*> = values
+export fun <T: MutableList<Int>?> copyChecked(values: T) -> List<*> = values!!
+export fun pick(values: List<Int>) -> String = "exact"
+export fun pick(values: List<*>) -> String = "projected"
+export suspend fun grow(values: MutableList<Int>) -> Int:
+    choice:
+        option "Grow":
+            values.add(3)
+    return 0

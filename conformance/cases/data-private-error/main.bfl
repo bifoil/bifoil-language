@@ -1,0 +1,5 @@
+data class Person:
+    private val secret: Int = 3
+scene start():
+    val person = Person()
+    val secret = person.secret

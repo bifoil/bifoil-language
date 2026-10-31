@@ -1,0 +1,4 @@
+fun missing(value: Int?) -> Int:
+    val result = value ?: return 0
+scene start():
+    return

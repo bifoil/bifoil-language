@@ -1,0 +1,11 @@
+enum Mood:
+    Happy
+    Sad
+fun length(values: MutableMap<Mood, String?>) -> Int:
+    if values[Mood.Happy] == null:
+        return 0
+    val present = values.containsKey(Happy)
+    return values[Happy].length
+export fun run() -> Int:
+    val values: MutableMap<Mood, String?> = mutable {Mood.Happy: "Ada"}
+    return length(values)

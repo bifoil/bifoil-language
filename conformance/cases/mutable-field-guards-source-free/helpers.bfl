@@ -1,0 +1,10 @@
+export data class Box<T>:
+    var value: T?
+export fun <T> choose(holder: Box<T>, fallback: T):
+    if holder.value != null:
+        return holder.value
+    return fallback
+export fun length(holder: Box<String>):
+    if holder.value == null:
+        return 0
+    return holder.value.length

@@ -1,0 +1,35 @@
+fun consume(value: Unit):
+    Unit
+export fun unitCall() -> Int:
+    val result: Int
+    fun initialize():
+        result = 3
+    consume(initialize())
+    return result
+export fun arithmetic() -> Int:
+    val result: Int
+    fun initialize() -> Int:
+        result = 4
+        return 2
+    return initialize() + result
+export fun collection() -> Int:
+    val result: Int
+    fun initialize() -> Int:
+        result = 5
+        return 3
+    val items = {initialize(): result}
+    return items[3]!!
+export fun target() -> Int:
+    val result: Int
+    val items = mutable [0]
+    fun initialize() -> Int:
+        result = 6
+        return 0
+    items[initialize()] = result
+    return items[0]
+export fun formatted() -> String:
+    val result: Int
+    fun initialize() -> String:
+        result = 7
+        return "ready"
+    return "${initialize()}|${result}"

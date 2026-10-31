@@ -1,0 +1,7 @@
+data class Left<T>:
+    val right: Right<T>? = null
+    val value: T
+data class Right<T>:
+    val left: Left<MutableList<T>>? = null
+scene start():
+    val keys = {Left(value = 3)}

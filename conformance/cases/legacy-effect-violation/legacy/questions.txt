@@ -1,0 +1,7 @@
+*label ask
+*set calls + 1
+Native ${calls}.
+*choice
+  #Take ${calls}
+    *set answer (amount + 3)
+    *return

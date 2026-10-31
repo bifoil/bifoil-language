@@ -1,0 +1,28 @@
+export fun factorial(value: Int) = if value <= 1:
+    1
+else:
+    value * factorial(value - 1)
+export fun even(value: Int) = when value:
+    case 0:
+        true
+    else:
+        odd(value - 1)
+export fun odd(value: Int) = when value:
+    case 0:
+        false
+    else:
+        even(value - 1)
+export fun mixed(value: Int) = if value == 0:
+    1
+else:
+    if value == 1:
+        2.5
+    else:
+        mixed(value - 1)
+export suspend fun descend(value: Int) = if value == 0:
+    choice:
+        option "Finish":
+            Unit
+    7
+else:
+    descend(value - 1)

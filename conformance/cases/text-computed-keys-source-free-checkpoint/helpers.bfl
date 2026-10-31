@@ -1,0 +1,35 @@
+export shared var calls: Int = 0
+export data class Key<T: String?>:
+    val text: T
+    var count: Int = 0
+export fun <T: String?> fieldReader(values: Map<String, String?>, box: Key<T>) -> () -> Int:
+    calls += 1
+    if box.text == null:
+        return () => 0
+    values["${box.text[0]}!"]!!
+    box.count += 1
+    return () => values["${box.text[0]}!"].length
+export fun <T: String?> width(values: List<String?>, box: Key<T>) -> Int:
+    calls += 1
+    if box.text == null:
+        return 0
+    values[box.text.length]!!
+    box.count += 1
+    return values[box.text.length].length
+export suspend fun <P: String, A: String, I: Int> delayed(
+    values: Map<String, String?>,
+    prefix: P,
+    alphabet: A,
+    offset: I
+) -> Int:
+    calls += 1
+    values["${prefix}${alphabet[(offset + 0) % alphabet.length]}"]!!
+    choice:
+        option "Read":
+            Unit
+    return values["${prefix}${alphabet[(offset + 0) % alphabet.length]}"].length
+export fun <T: String?> optional(values: Map<String, String?>, prefix: T, index: Int) -> Int:
+    if prefix == null:
+        return 0
+    values["${prefix}${index}"]!!
+    return values["${prefix}${index}"].length

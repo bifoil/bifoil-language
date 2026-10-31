@@ -1,0 +1,10 @@
+scene start():
+    val result: Int
+    fun initialize(value: Int = (if true:
+        result = 1
+        2
+    else:
+        3
+    )):
+        result = value
+    initialize()

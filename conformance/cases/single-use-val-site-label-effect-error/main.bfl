@@ -1,0 +1,13 @@
+scene start():
+    val result: Int
+    suspend fun initialize() -> Int:
+        choice:
+            option "Wait":
+                Unit
+        result = 3
+        return 3
+    choice:
+        option "${initialize()}":
+            Unit
+    prose:
+        ${result}

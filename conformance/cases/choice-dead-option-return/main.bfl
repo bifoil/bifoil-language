@@ -1,0 +1,12 @@
+suspend fun answer() -> Int:
+    choice:
+        option "Hidden" if (false):
+            Unit
+        option "Visible":
+            return 7
+        else:
+            Unit
+scene start():
+    val result = answer()
+    prose:
+        ${result}

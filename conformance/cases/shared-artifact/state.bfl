@@ -1,0 +1,3 @@
+export shared val seed = next() * 2
+export shared var count = seed + 1
+fun next() -> Int = 4

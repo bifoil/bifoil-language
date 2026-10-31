@@ -1,0 +1,7 @@
+scene start():
+    fun key() -> String = "same"
+    fun item() -> Int:
+        prose:
+            Value.
+        return 1
+    val mapping = {key(): item(), key(): item()}

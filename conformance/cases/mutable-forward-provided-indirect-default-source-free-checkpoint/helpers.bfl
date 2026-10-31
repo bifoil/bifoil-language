@@ -1,0 +1,8 @@
+export fun run() -> () -> String:
+    var result: Int
+    fun read() -> Int = result
+    val status = initialize(7)
+    fun initialize(value: Int = read()) -> String:
+        result = value
+        return "ready ${result}"
+    return () => "${status}|${result}"

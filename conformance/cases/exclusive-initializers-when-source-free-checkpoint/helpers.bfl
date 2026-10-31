@@ -1,0 +1,15 @@
+fun make(select: Boolean) -> Int:
+    val result: Int
+    when select:
+        case true:
+            initialize(3)
+        case false:
+            initialize(4)
+    fun initialize(value: Int):
+        result = value
+    return result
+export fun run() -> () -> String:
+    val first = make(true)
+    val second = make(false)
+    fun read() -> String = "${first}|${second}"
+    return ::read

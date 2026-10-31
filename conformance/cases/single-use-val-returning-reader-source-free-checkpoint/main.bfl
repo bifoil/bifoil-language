@@ -1,0 +1,14 @@
+import helpers.make
+scene start():
+    val first = make("first")
+    val second = make<Int?>(null)
+    choice:
+        option "Retained readers":
+            Unit
+    val text = first()
+    val absent = second()
+    choice:
+        option "Read results":
+            Unit
+    prose:
+        ${text}|${absent == null}

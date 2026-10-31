@@ -1,0 +1,7 @@
+fun read(values: MutableMap<String, String?>) -> Int:
+    if values["value"] != null:
+        values["value"] = null
+        return values["value"].length
+    return 0
+scene start():
+    Unit

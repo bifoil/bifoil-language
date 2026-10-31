@@ -1,0 +1,6 @@
+import middle.room
+scene start():
+    val destination: Scene<Int> = ::room
+    visit destination(3)
+    prose:
+        Returned.

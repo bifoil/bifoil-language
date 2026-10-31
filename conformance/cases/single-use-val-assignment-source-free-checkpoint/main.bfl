@@ -1,0 +1,10 @@
+import helpers.run
+import helpers.unit
+scene start():
+    val status = run(3)
+    val number = unit()
+    choice:
+        option "Assigned results":
+            Unit
+    prose:
+        ${status}|${number}

@@ -1,0 +1,295 @@
+[
+  {
+    "id": "overload-conversions",
+    "output": [
+      "int|float|widen|copy"
+    ],
+    "directory": "cases/overload-conversions",
+    "decisions": [
+      "F23",
+      "F28",
+      "D27"
+    ]
+  },
+  {
+    "id": "overload-ties",
+    "output": [
+      "fixed|fewer|concrete|generic"
+    ],
+    "directory": "cases/overload-ties",
+    "decisions": [
+      "F29",
+      "F42"
+    ]
+  },
+  {
+    "id": "overload-reference",
+    "output": [
+      "int:3|float:4|int:5"
+    ],
+    "directory": "cases/overload-reference",
+    "decisions": [
+      "F36"
+    ]
+  },
+  {
+    "id": "overload-local-checkpoint",
+    "output": [
+      "ready",
+      "kept:3"
+    ],
+    "choices": [
+      0
+    ],
+    "directory": "cases/overload-local-checkpoint",
+    "decisions": [
+      "F23"
+    ]
+  },
+  {
+    "id": "overload-method-checkpoint",
+    "output": [
+      "Ada:2|Ada:two",
+      "Ada:4"
+    ],
+    "choices": [
+      0
+    ],
+    "directory": "cases/overload-method-checkpoint",
+    "decisions": [
+      "U09"
+    ]
+  },
+  {
+    "id": "overload-import",
+    "output": [
+      "int|float|int"
+    ],
+    "directory": "cases/overload-import",
+    "decisions": [
+      "F23"
+    ],
+    "precompile": [
+      "helpers"
+    ]
+  },
+  {
+    "id": "overload-ambiguous",
+    "compile_error": "ambiguous overload",
+    "directory": "cases/overload-ambiguous",
+    "decisions": [
+      "F23",
+      "F28"
+    ]
+  },
+  {
+    "id": "overload-reference-ambiguous",
+    "compile_error": "ambiguous overload reference",
+    "directory": "cases/overload-reference-ambiguous",
+    "decisions": [
+      "F36"
+    ]
+  },
+  {
+    "id": "overload-return-only-error",
+    "compile_error": "return types cannot distinguish",
+    "directory": "cases/overload-return-only-error",
+    "decisions": [
+      "F23"
+    ]
+  },
+  {
+    "id": "overload-generic-duplicate",
+    "compile_error": "return types cannot distinguish",
+    "directory": "cases/overload-generic-duplicate",
+    "decisions": [
+      "F23"
+    ]
+  },
+  {
+    "id": "overload-method-private",
+    "compile_error": "argument requires String",
+    "directory": "cases/overload-method-private",
+    "decisions": [
+      "U09"
+    ]
+  },
+  {
+    "id": "overload-arity-recursion",
+    "output": [
+      "6|xx|3"
+    ],
+    "directory": "cases/overload-arity-recursion",
+    "decisions": [
+      "F23"
+    ]
+  },
+  {
+    "id": "overload-method-duplicate",
+    "compile_error": "return types cannot distinguish",
+    "directory": "cases/overload-method-duplicate",
+    "decisions": [
+      "F23",
+      "U09"
+    ]
+  },
+  {
+    "id": "overload-typed-variadic-reference",
+    "output": [
+      "many:3"
+    ],
+    "directory": "cases/overload-typed-variadic-reference",
+    "decisions": [
+      "F36"
+    ]
+  },
+  {
+    "id": "overload-generic-method",
+    "output": [
+      "number|text|generic"
+    ],
+    "directory": "cases/overload-generic-method",
+    "decisions": [
+      "U09"
+    ]
+  },
+  {
+    "id": "overload-safe-method",
+    "output": [
+      "true|0"
+    ],
+    "directory": "cases/overload-safe-method",
+    "decisions": [
+      "U09"
+    ]
+  },
+  {
+    "id": "overload-unit-lambda",
+    "output": [
+      "done"
+    ],
+    "directory": "cases/overload-unit-lambda",
+    "decisions": [
+      "F36"
+    ]
+  },
+  {
+    "id": "overload-grouped-reference",
+    "output": [
+      "text|3|true"
+    ],
+    "directory": "cases/overload-grouped-reference",
+    "decisions": [
+      "F36"
+    ]
+  },
+  {
+    "id": "overload-evaluation-order",
+    "output": [
+      "original:3|after|3"
+    ],
+    "directory": "cases/overload-evaluation-order",
+    "decisions": [
+      "U09"
+    ]
+  },
+  {
+    "id": "overload-method-visibility",
+    "output": [
+      "public"
+    ],
+    "directory": "cases/overload-method-visibility",
+    "decisions": [
+      "U09"
+    ]
+  },
+  {
+    "id": "overload-callable-field",
+    "output": [
+      "field"
+    ],
+    "directory": "cases/overload-callable-field",
+    "decisions": [
+      "U09"
+    ]
+  },
+  {
+    "id": "immediate-reference-values-source-free",
+    "directory": "cases/immediate-reference-values-source-free",
+    "decisions": [
+      "A05",
+      "F32",
+      "F35",
+      "F43",
+      "F44",
+      "G03",
+      "S10",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "output": [
+      "3|14|6|3|7|107|4"
+    ]
+  },
+  {
+    "id": "immediate-reference-default-error",
+    "directory": "cases/immediate-reference-default-error",
+    "decisions": [
+      "A05",
+      "F35"
+    ],
+    "compile_error": "missing required argument"
+  },
+  {
+    "id": "immediate-reference-named-error",
+    "directory": "cases/immediate-reference-named-error",
+    "decisions": [
+      "A05",
+      "F35"
+    ],
+    "compile_error": "do not expose parameter names"
+  },
+  {
+    "id": "immediate-bound-reference-default-error",
+    "directory": "cases/immediate-bound-reference-default-error",
+    "decisions": [
+      "A05",
+      "F43"
+    ],
+    "compile_error": "missing required argument"
+  },
+  {
+    "id": "immediate-reference-overload-error",
+    "directory": "cases/immediate-reference-overload-error",
+    "decisions": [
+      "F35",
+      "F36"
+    ],
+    "compile_error": "ambiguous overload reference"
+  },
+  {
+    "id": "immediate-reference-generic-error",
+    "directory": "cases/immediate-reference-generic-error",
+    "decisions": [
+      "F35",
+      "F36",
+      "G03"
+    ],
+    "compile_error": "cannot infer type argument"
+  },
+  {
+    "id": "immediate-scene-reference-default-error",
+    "directory": "cases/immediate-scene-reference-default-error",
+    "decisions": [
+      "M10",
+      "M11"
+    ],
+    "compile_error": "missing required argument"
+  }
+]

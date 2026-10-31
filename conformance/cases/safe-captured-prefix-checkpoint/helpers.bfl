@@ -1,0 +1,12 @@
+export data class Person:
+    val name: String?
+export data class House:
+    val person: Person?
+export fun reader(person: Person?) -> suspend () -> Int:
+    if person?.name == null:
+        return suspend () => 0
+    return suspend () =>:
+        choice:
+            option "Resume reader":
+                Unit
+        person.name.length

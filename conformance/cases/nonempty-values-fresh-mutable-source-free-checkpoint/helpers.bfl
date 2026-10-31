@@ -1,0 +1,12 @@
+export fun run() -> () -> String:
+    var first: Int
+    for item in mutable [1]:
+        first = item
+    var second: Int
+    for item in mutable {2}:
+        second = item
+    var third: Int
+    for entry in mutable {3: 4}:
+        third = entry.value
+    fun read() -> String = "${first}|${second}|${third}"
+    return ::read

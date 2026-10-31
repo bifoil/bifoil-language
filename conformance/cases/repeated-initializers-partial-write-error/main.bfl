@@ -1,0 +1,8 @@
+scene start():
+    var result: Int
+    initialize(false)
+    initialize(false)
+    fun initialize(flag: Boolean):
+        if flag:
+            result = 3
+    val invalid = result

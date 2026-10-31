@@ -1,0 +1,4 @@
+data class Box<out T>:
+    val values: MutableList<T>
+scene start():
+    return

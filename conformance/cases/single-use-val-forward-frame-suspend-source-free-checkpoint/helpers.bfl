@@ -1,0 +1,10 @@
+export suspend fun run() -> () -> String:
+    val result: Int
+    val status = "prefix " + initialize(value = 3)
+    suspend fun initialize(value: Int) -> String:
+        choice:
+            option "Initialize":
+                result = value
+        return "ready ${result}"
+    fun read() -> String = "${status}|${result}"
+    return ::read

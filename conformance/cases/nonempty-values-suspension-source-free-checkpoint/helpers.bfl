@@ -1,0 +1,10 @@
+export suspend fun run() -> () -> String:
+    val items = [1, 2]
+    choice:
+        option "Proceed":
+            Unit
+    var result: Int
+    for item in items:
+        result = item
+    fun read() -> String = "${result}"
+    return ::read

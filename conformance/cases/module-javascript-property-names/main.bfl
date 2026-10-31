@@ -1,0 +1,10 @@
+import __proto__.Record
+scene start():
+    val item = Record("First", 1)
+    item.constructor += 1
+    val duplicate = item.copy(__proto__ = "Kept")
+    choice:
+        option "Continue":
+            Unit
+    prose:
+        ${duplicate.__proto__}|${item.constructor}

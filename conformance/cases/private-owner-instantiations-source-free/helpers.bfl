@@ -1,0 +1,16 @@
+export data class Box<T>:
+    private var value: T
+    private fun reveal() -> T = value
+    fun readOther(other: Box<Int>) -> Int = other.value
+    fun inferred(other: Box<Int>) = other.value
+    fun writeOther(other: Box<Int>, next: Int):
+        other.value = next
+    fun callOther(other: Box<Int>) -> Int = other.reveal()
+    fun reader(other: Box<Int>) -> () -> Int = other::reveal
+    fun nested(other: Box<Int>) -> () -> Int:
+        fun readNested() = other.value
+        return ::readNested
+export data class Chooser:
+    private fun pick(amount: Int) -> String = "private"
+    fun pick(amount: Float) -> String = "public"
+export fun publicPick(this: Chooser) -> String = this.pick(3)

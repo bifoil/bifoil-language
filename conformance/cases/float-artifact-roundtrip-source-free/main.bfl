@@ -1,0 +1,20 @@
+import helpers.precise
+import helpers.defaulted
+import helpers.saved
+import helpers.Sample
+scene start():
+    val first = precise()
+    val second = defaulted()
+    val sample = Sample()
+    val numbers = [first, second, saved, sample.value]
+    choice:
+        option "Resume exact Floats":
+            Unit
+    prose:
+        ${numbers[0]}
+    prose:
+        ${numbers[1]}
+    prose:
+        ${numbers[2]}
+    prose:
+        ${numbers[3]}

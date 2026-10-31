@@ -1,0 +1,10 @@
+typealias A0<T: StableKey> = T
+typealias A1<T: StableKey> = Map<A0<T>, A0<T>>
+typealias A2<T: StableKey> = Map<A1<T>, A1<T>>
+typealias A3<T: StableKey> = Map<A2<T>, A2<T>>
+typealias A4<T: StableKey> = Map<A3<T>, A3<T>>
+typealias A5<T: StableKey> = Map<A4<T>, A4<T>>
+typealias A6<T: StableKey> = Map<A5<T>, A5<T>>
+typealias A7<T: StableKey> = Map<A6<T>, A6<T>>
+export typealias Tree<T: StableKey> = A7<T>
+export fun <T: StableKey> count(value: Tree<T>) -> Int = value.size

@@ -1,0 +1,7 @@
+export data class Consumer<in U>:
+    fun accept(value: U) -> Int = 1
+export data class Box<T: String>:
+    val value: T
+    fun measure(callback: (T) -> Int) -> Int = callback(value)
+    fun consume(other: Consumer<T>) -> Int = other.accept(value)
+export fun make() -> Box<String> = Box("Ada")

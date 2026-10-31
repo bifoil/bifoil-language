@@ -1,0 +1,9 @@
+shared val first = mark("A")
+shared val second = mark("B")
+shared var log = ""
+fun mark(value: String) -> String:
+    log += value
+    return value
+scene start():
+    prose:
+        ${log}

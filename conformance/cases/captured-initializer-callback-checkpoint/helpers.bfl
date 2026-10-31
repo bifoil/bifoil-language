@@ -1,0 +1,10 @@
+export suspend fun run() -> Int:
+    var callback: () -> Int
+    suspend fun initialize():
+        choice:
+            option "Initialize callback":
+                Unit
+        val hidden = 11
+        callback = () => hidden
+    initialize()
+    return callback()

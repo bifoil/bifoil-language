@@ -1,0 +1,12 @@
+enum Mood:
+    Happy
+    Sad
+fun <T: Mood> invalid(value: T):
+    val Happy = 3
+    return when value:
+        case Happy:
+            "happy"
+        case Sad:
+            "sad"
+scene start():
+    invalid(Mood.Happy)

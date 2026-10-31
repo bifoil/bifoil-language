@@ -1,0 +1,8 @@
+scene start():
+    if true:
+        val x = 1
+        val callback: () -> Int = ::read
+        prose:
+            ${callback()}
+    val x = 2
+    fun read() -> Int = x

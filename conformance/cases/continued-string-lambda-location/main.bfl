@@ -1,0 +1,5 @@
+scene start():
+    val message =
+      "${((value: Int) => 10 / value)(0)}"
+    prose:
+        ${message}

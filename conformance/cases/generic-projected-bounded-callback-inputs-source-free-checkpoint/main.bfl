@@ -1,0 +1,15 @@
+import helpers.Box
+import helpers.Consumer
+import helpers.make
+fun length(value: String) -> Int = value.length
+scene start():
+    val hidden: Box<*> = make()
+    val direct = hidden.measure(::length)
+    val bound: ((String) -> Int) -> Int = hidden::measure
+    val saved = bound(::length)
+    val accepted = hidden.consume(Consumer<Any?>())
+    choice:
+        option "Bound ${direct}":
+            Unit
+    prose:
+        ${direct}|${saved}|${accepted}

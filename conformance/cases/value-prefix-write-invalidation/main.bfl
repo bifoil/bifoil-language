@@ -1,0 +1,8 @@
+scene start():
+    var name: String? = "Ada"
+    if name != null:
+        val result = if true:
+            name = null
+            name.length
+        else:
+            0

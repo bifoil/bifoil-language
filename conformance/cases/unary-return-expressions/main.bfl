@@ -1,0 +1,5 @@
+fun number() = -(return 42)
+fun flag() = !(return true)
+scene start():
+    prose:
+        ${number()}|${flag()}

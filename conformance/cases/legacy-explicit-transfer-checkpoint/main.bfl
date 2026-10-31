@@ -1,0 +1,11 @@
+legacy transfer fun leave(amount: Int) = "native"
+suspend fun invoke():
+    leave(7)
+    prose:
+        Must not return from legacy.
+scene start():
+    prose:
+        Before.
+    invoke()
+    prose:
+        Must not resume.

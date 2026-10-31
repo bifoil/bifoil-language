@@ -1,0 +1,5 @@
+import helpers.Box
+import helpers.choose
+scene start():
+    prose:
+        ${choose(Box("Ada"), "None")}|${choose<String>(null, "None")}|${choose(Box(7), 0)}

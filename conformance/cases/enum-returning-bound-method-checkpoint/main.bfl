@@ -1,0 +1,14 @@
+enum Mood:
+    Happy
+    Sad
+data class Box:
+    val value: Int
+    fun mood() -> Mood = Mood.Happy
+    fun toString() -> String = "box"
+scene start():
+    val box = Box(4)
+    val read = box::mood
+    choice:
+        option "Continue":
+            prose:
+                ${read() == Mood.Happy}|${box.mood() == Mood.Happy}|${box.toString()}

@@ -1,0 +1,4 @@
+scene start():
+    choice:
+        option "Impossible" if 2 * 3 < 5:
+            return

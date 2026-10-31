@@ -1,0 +1,14 @@
+shared var calls: Int = 0
+suspend fun ask() -> Int:
+    calls += 1
+    choice:
+        option "Default ${calls}":
+            Unit
+    return 8
+export suspend fun run() -> String:
+    val result: Int
+    suspend fun initialize(value: Int = ask()) -> Int:
+        result = value
+        return value
+    val status = initialize()
+    return "${result}|${status}|${calls}"

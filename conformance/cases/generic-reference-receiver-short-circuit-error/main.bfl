@@ -1,0 +1,11 @@
+data class Source:
+    fun <T> identity(item: T) -> T = item
+scene start():
+    var text: String? = "true"
+    val source = Source()
+    fun clear() -> Source:
+        text = null
+        return source
+    if text != null && (clear()::identity<Int>) is (Int) -> Int:
+        prose:
+            ${text.length}

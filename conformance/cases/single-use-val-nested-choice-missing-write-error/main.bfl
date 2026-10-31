@@ -1,0 +1,15 @@
+suspend fun run() -> Int:
+    val result: Int
+    suspend fun initialize():
+        choice:
+            option "Outer":
+                choice:
+                    option "Write":
+                        result = 3
+                    option "Skip":
+                        Unit
+        choice:
+            option "After":
+                Unit
+    initialize()
+    return result

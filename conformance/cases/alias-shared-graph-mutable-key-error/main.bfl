@@ -1,0 +1,23 @@
+typealias A0 = MutableList<Int>
+typealias A1 = Map<A0, A0>
+typealias A2 = Map<A1, A1>
+typealias A3 = Map<A2, A2>
+typealias A4 = Map<A3, A3>
+typealias A5 = Map<A4, A4>
+typealias A6 = Map<A5, A5>
+typealias A7 = Map<A6, A6>
+typealias A8 = Map<A7, A7>
+typealias A9 = Map<A8, A8>
+typealias A10 = Map<A9, A9>
+typealias A11 = Map<A10, A10>
+typealias A12 = Map<A11, A11>
+typealias A13 = Map<A12, A12>
+typealias A14 = Map<A13, A13>
+typealias A15 = Map<A14, A14>
+typealias A16 = Map<A15, A15>
+typealias A17 = Map<A16, A16>
+typealias A18 = Map<A17, A17>
+typealias A19 = Map<A18, A18>
+typealias A20 = Map<A19, A19>
+scene start():
+    Unit

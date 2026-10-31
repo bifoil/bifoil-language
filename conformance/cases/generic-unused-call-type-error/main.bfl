@@ -1,0 +1,6 @@
+data class Box<T>:
+    val value: T
+fun <T> accept():
+    return
+scene start():
+    accept<Box<Int, String>>()

@@ -1,0 +1,7 @@
+import helpers.factory
+scene start():
+    val functions = factory()
+    choice:
+        option "Use captures":
+            prose:
+                ${functions[0]()}|${functions[1]()}

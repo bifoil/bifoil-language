@@ -1,0 +1,49 @@
+import helpers.number
+import helpers.Measurement
+import helpers.text
+import helpers.optional
+import helpers.numbers
+import helpers.nested
+import helpers.letters
+import helpers.pairs
+import helpers.dependent
+import helpers.group
+import helpers.combine
+import helpers.select
+scene start():
+    val integer = 3
+    val character = 'a'
+    val missing: Int? = null
+    val originals = [1, 2]
+    val nestedOriginals = [[1], [2]]
+    val characters = {'a', 'b'}
+    val entries = {1: 'a', 2: 'b'}
+    val numeric = number(integer)
+    val measured = Measurement(integer)
+    val string = text(character)
+    val present = optional(integer)
+    val absent = optional(missing)
+    val widenedNumbers = numbers(originals)
+    val widenedNested = nested(nestedOriginals)
+    val widenedLetters = letters(characters)
+    val widenedPairs = pairs(entries)
+    val related = dependent(integer, 1)
+    val grouped = group(*originals)
+    var effects = 0
+    fun mark() -> Int:
+        effects += 1
+        return 1
+    suspend fun wait() -> Int:
+        choice:
+            option "Finish widening":
+                Unit
+        return 2
+    val combined = combine(mark(), wait())
+    val measuredCorrectly = numeric is Float && measured is Measurement<Float>
+    val nestedCorrectly = widenedNested is List<List<Float>>
+    prose:
+        ${measuredCorrectly}|${string is String}|${present is Float}|${absent == null}
+    prose:
+        ${widenedNumbers is List<Float>}|${nestedCorrectly}|${widenedLetters is Set<String>}|${widenedPairs[1.0] == "a"}
+    prose:
+        ${related is Float}|${grouped is List<Float>}|${effects}|${combined[0] + combined[1]}|${select(1)}

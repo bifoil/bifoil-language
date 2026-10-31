@@ -1,0 +1,13 @@
+import helpers.first
+import helpers.calls
+import helpers.a
+import helpers.b
+import helpers.again
+scene start():
+    choice:
+        option "Retain initialized values":
+            Unit
+    first = 10
+    val current = again()
+    prose:
+        ${a}|${b}|${current}|${calls}

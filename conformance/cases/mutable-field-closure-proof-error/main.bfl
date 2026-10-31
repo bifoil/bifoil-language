@@ -1,0 +1,8 @@
+data class Person:
+    val name: String?
+fun invalid(var person: Person) -> () -> Int:
+    if person.name == null:
+        return () => 0
+    return () => person.name.length
+scene start():
+    Unit

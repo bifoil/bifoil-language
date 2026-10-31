@@ -1,0 +1,4 @@
+typealias Checked<T: Name> = T
+typealias Name = String
+scene start():
+    val value: Checked<Int> = 3

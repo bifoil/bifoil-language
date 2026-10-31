@@ -1,0 +1,12 @@
+shared val result: Int = prepare()
+fun read() -> Int = result
+fun zero() -> Int = 0
+fun prepare() -> Int:
+    var callback: () -> Int = ::zero
+    fun replace():
+        callback = ::read
+    replace()
+    return callback()
+scene start():
+    prose:
+        Unreachable.

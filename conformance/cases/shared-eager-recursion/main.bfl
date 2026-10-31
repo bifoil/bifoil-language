@@ -1,0 +1,13 @@
+shared val a = record("A") + read(2)
+shared val b = record("B")
+shared var log = ""
+fun record(letter: String) -> Int:
+    log += letter
+    return 1
+fun read(depth: Int) -> Int:
+    if depth == 0:
+        return b
+    return read(depth - 1)
+scene start():
+    prose:
+        ${a}|${log}

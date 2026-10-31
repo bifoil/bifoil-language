@@ -1,0 +1,6 @@
+scene start():
+    var denominator = 0
+    val result: Int
+    fun initialize():
+        result = 1 / denominator
+    (initialize)()

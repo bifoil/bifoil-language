@@ -1,0 +1,9 @@
+data class Box<T: Any> where T: String:
+    val value: T
+    fun read() -> T = value
+scene start():
+    val hidden: Box<*> = Box("bounded")
+    val field: String = hidden.value
+    val result: String = hidden.read()
+    prose:
+        ${field}|${result}

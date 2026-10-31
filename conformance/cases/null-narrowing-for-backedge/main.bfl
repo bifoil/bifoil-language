@@ -1,0 +1,6 @@
+scene start():
+    var item: String? = "present"
+    if item != null:
+        for i in 1..2:
+            val result: String = item
+            item = null

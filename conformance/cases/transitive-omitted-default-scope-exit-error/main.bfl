@@ -1,0 +1,8 @@
+scene start():
+    val reader: () -> Int = if true:
+        var future: Int
+        fun read(value: Int = future) -> Int = value
+        fun through() -> Int = read()
+        ::through
+    else:
+        () => 0

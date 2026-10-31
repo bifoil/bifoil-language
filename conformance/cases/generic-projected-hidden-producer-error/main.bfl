@@ -1,0 +1,4 @@
+import helpers.Box
+scene start():
+    val hidden: Box<*> = Box(7)
+    hidden.produce(() => 7)

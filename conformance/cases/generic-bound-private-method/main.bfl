@@ -1,0 +1,5 @@
+data class Box:
+    private fun secret() -> Int = 1
+fun <T: Box> invalid(item: T) -> Int = item.secret()
+scene start():
+    return

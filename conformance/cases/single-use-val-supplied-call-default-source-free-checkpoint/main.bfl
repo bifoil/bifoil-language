@@ -1,0 +1,8 @@
+import helpers.run
+scene start():
+    val status = run()
+    choice:
+        option "Skipped default":
+            Unit
+    prose:
+        ${status}

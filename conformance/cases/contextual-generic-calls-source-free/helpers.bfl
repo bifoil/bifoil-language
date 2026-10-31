@@ -1,0 +1,27 @@
+export data class Box<T>:
+    val value: T
+fun <U> identity(item: U) -> U = item
+fun <U> first(vararg items: U) -> U = items[0]
+fun <U> second(initial: U, values: List<U>) -> U = values[0]
+suspend fun <U> pause(item: U) -> U:
+    choice:
+        option "Preserve call":
+            Unit
+    return item
+export fun <T> preserve(value: T) -> T:
+    if value is String:
+        return identity(value)
+    return value
+export fun <T> field(holder: Box<T>) -> T:
+    if holder.value is String:
+        return identity(holder.value!!)
+    return holder.value
+export fun <T> spread(value: T) -> T:
+    if value is String:
+        return first(*[value])
+    return value
+export suspend fun <T> waited(value: T) -> T:
+    if value is String:
+        return pause(value)
+    return value
+export fun joined() = second(1, [2.5])

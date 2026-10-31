@@ -1,0 +1,97 @@
+import helpers.trace
+import helpers.mark
+import helpers.gather
+scene start():
+    val first = gather(p00039 = mark(40), p00000 = mark(1))
+    val routine = ::gather
+    val second = routine(
+        mark(0),
+        mark(1),
+        mark(2),
+        mark(3),
+        mark(4),
+        mark(5),
+        mark(6),
+        mark(7),
+        mark(8),
+        mark(9),
+        mark(10),
+        mark(11),
+        mark(12),
+        mark(13),
+        mark(14),
+        mark(15),
+        mark(16),
+        mark(17),
+        mark(18),
+        mark(19),
+        mark(20),
+        mark(21),
+        mark(22),
+        mark(23),
+        mark(24),
+        mark(25),
+        mark(26),
+        mark(27),
+        mark(28),
+        mark(29),
+        mark(30),
+        mark(31),
+        mark(32),
+        mark(33),
+        mark(34),
+        mark(35),
+        mark(36),
+        mark(37),
+        mark(38),
+        mark(39)
+    )
+    val third = gather(
+        p00039 = mark(39),
+        p00038 = mark(38),
+        p00037 = mark(37),
+        p00036 = mark(36),
+        p00035 = mark(35),
+        p00034 = mark(34),
+        p00033 = mark(33),
+        p00032 = mark(32),
+        p00031 = mark(31),
+        p00030 = mark(30),
+        p00029 = mark(29),
+        p00028 = mark(28),
+        p00027 = mark(27),
+        p00026 = mark(26),
+        p00025 = mark(25),
+        p00024 = mark(24),
+        p00023 = mark(23),
+        p00022 = mark(22),
+        p00021 = mark(21),
+        p00020 = mark(20),
+        p00019 = mark(19),
+        p00018 = mark(18),
+        p00017 = mark(17),
+        p00016 = mark(16),
+        p00015 = mark(15),
+        p00014 = mark(14),
+        p00013 = mark(13),
+        p00012 = mark(12),
+        p00011 = mark(11),
+        p00010 = mark(10),
+        p00009 = mark(9),
+        p00008 = mark(8),
+        p00007 = mark(7),
+        p00006 = mark(6),
+        p00005 = mark(5),
+        p00004 = mark(4),
+        p00003 = mark(3),
+        p00002 = mark(2),
+        p00001 = mark(1),
+        p00000 = mark(0)
+    )
+    choice:
+        option "Done ${trace.size}":
+            Unit
+    prose:
+        ${first}|${second}|${third}|${trace.size}
+    prose:
+        ${trace[0]}|${trace[1]}|${trace[39]}|${trace[40]}|${trace[79]}|${trace[80]}|${trace[119]}

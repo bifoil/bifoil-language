@@ -1,0 +1,3 @@
+scene start():
+    val text: String? = null
+    val size = text.length

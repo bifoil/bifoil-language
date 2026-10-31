@@ -1,0 +1,8 @@
+scene start():
+    var score: Int
+    fun initialize() -> Boolean:
+        score = 3
+        return true
+    val ignored = false && initialize()
+    prose:
+        ${score}

@@ -1,0 +1,5 @@
+import library.result
+fun readResult() -> Int = result
+scene start():
+    prose:
+        Unreachable.

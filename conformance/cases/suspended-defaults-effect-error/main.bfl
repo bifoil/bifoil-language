@@ -1,0 +1,7 @@
+suspend fun ask() -> Int:
+    choice:
+        option "Continue":
+            return 3
+fun invalid(value: Int = ask()) -> Int = value
+scene start():
+    return

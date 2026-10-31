@@ -1,0 +1,39 @@
+export data class Box<T>:
+    val value: T
+export shared var calls = 0
+export fun length(holder: Box<String?>):
+    when holder.value:
+        case null:
+            return 0
+        else:
+            return holder.value.length
+export fun remainder(holder: Box<String?>):
+    when holder.value:
+        case null:
+            return 0
+    return holder.value.length
+export fun typed(holder: Box<Any?>) = when holder.value:
+    case is String if holder.value.length > 0:
+        holder.value.length
+    else:
+        0
+export fun asserted(holder: Box<String?>):
+    when holder.value!!:
+        case "Ada":
+            return holder.value.length
+        else:
+            return holder.value.length
+export suspend fun test() -> String:
+    calls += 1
+    choice:
+        option "Prepare case":
+            Unit
+    return "Ada"
+export suspend fun pending(holder: Box<String?>):
+    return when holder.value:
+        case "unmatched", test():
+            holder.value.length
+        case null:
+            0
+        else:
+            holder.value.length

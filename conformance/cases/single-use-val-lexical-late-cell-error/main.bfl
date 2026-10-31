@@ -1,0 +1,8 @@
+scene start():
+    val result: Int
+    if true:
+        val hidden = 5
+        initialize()
+    val hidden: Int
+    fun initialize():
+        result = hidden

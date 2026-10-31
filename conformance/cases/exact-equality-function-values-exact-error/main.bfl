@@ -1,0 +1,5 @@
+fun answer() -> Int = 7
+scene start():
+    val first = ::answer
+    val second = ::answer
+    val observed = first === second

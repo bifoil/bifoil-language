@@ -1,0 +1,6 @@
+import helpers.run
+import helpers.calls
+scene start():
+    val result = run()
+    prose:
+        ${result}|${calls}

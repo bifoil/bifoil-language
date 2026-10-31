@@ -1,0 +1,13 @@
+data class Box<T: Any>:
+    val value: T
+    val values: List<T>
+    fun read() -> T = value
+    fun readValues() -> List<T> = values
+scene start():
+    val hidden: Box<*> = Box(3, [1, 2])
+    val first: Any = hidden.value
+    val read: Any = hidden.read()
+    val items: List<Any> = hidden.values
+    val returned: List<Any> = hidden.readValues()
+    prose:
+        ${first is Int}|${read is Int}|${items.size}|${returned[0] is Int}

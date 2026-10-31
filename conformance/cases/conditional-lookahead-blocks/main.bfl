@@ -1,0 +1,22 @@
+scene start():
+    if true:
+        Unit
+    val number = if true:
+        1
+    else:
+        2
+    val callback = () =>:
+        3
+    val other = if false:
+        4
+    else:
+        5
+    val tail = if true:
+        6
+    else:
+        7
+    prose:
+        @if true:
+            kept
+        else: literal narrative
+        ${number}|${callback()}|${other}|${tail}

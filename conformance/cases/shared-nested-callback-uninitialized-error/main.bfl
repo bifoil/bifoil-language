@@ -1,0 +1,7 @@
+shared var callbacks: List<() -> Int> = [() => 0]
+fun invoke() -> Int = callbacks[0]()
+scene start():
+    var future: Int
+    callbacks = [() => future]
+    val result = invoke()
+    future = 3

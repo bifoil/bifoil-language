@@ -1,0 +1,5 @@
+sealed class Result<T>:
+    case Good(value: T)
+scene start():
+    val specific: Result.Good<*> = Result.Good(3)
+    val unsafe: Result<Any?> = specific

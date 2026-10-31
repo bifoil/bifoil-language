@@ -1,0 +1,4 @@
+legacy var values: List<Int> = "values"
+scene start():
+    prose:
+        Unreachable.
