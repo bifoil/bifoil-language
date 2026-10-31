@@ -56,3 +56,6 @@ Generate portable Python coverage for the validator before scanning:
 uv run --no-project --with coverage python -m coverage run -m unittest discover -s tools -p test_validate_conformance.py
 uv run --no-project --with coverage python -m coverage xml
 ```
+
+For the five validator regressions, measured statement coverage is 92.77% and branch coverage is 91.18%.
+Coverage.py displays 92% combined coverage. These figures describe the Python validator, not execution of Bifoil cases.
