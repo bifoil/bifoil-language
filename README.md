@@ -3,8 +3,7 @@
 The specification and conformance examples for Bifoil, a planned ChoiceScript-compatible superset language.
 
 A Bifoil Foundation project maintained by **Chinay**. This repository contains the provisional design and review record.
-The first compiler/runtime slice is implemented in its separate repositories; no release or GitHub remote is
-established.
+The first compiler/runtime slice is implemented in its separate public repositories. No release is established.
 
 ## Intended scope
 
@@ -39,3 +38,14 @@ accepted features beyond that slice and explicitly mark unresolved details.
 
 Bifoil is independent of Choice of Games and upstream ChoiceScript. Any future use of upstream material must preserve
 its applicable licenses and notices.
+
+## Sonar analysis
+
+[SonarQube Cloud](https://sonarcloud.io/dashboard?id=bifoil_bifoil-language) analyzes this public repository.
+[Scanner settings](sonar-project.properties) separate original production sources from tests. Run the standard
+`sonar-scanner` with `SONAR_TOKEN` supplied through the environment; never save a token in source or command arguments.
+Scanner output stays under ignored `.bifoil/development/sonar/`. Use scanner-based analysis with automatic analysis
+disabled for this project. A completed analysis and its quality gate are separate from passing local tests.
+
+Sonar checks the Python validation tools. It does not understand `.bfl` semantics; language acceptance remains the
+responsibility of the metadata validator and native conformance runner.
