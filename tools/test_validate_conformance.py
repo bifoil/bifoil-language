@@ -4,9 +4,11 @@ import contextlib
 import importlib.util
 import io
 import json
+import runpy
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 
 spec = importlib.util.spec_from_file_location("validator", Path(__file__).with_name("validate-conformance.py"))
@@ -54,6 +56,43 @@ class EvidenceIntegrity(unittest.TestCase):
         self.assertEqual(decisions, {})
         _, decisions = validator.steering_rows("| S14 | " + " " * 100_000 + "rule |")
         self.assertEqual(decisions, {"S14": "rule"})
+
+    def test_expected_compile_and_runtime_diagnostics_are_nonempty_strings(self):
+        for key in ("compile_error", "runtime_error"):
+            with self.subTest(key=key):
+                self.check_fixture(lambda case, record: case.update({key: "Original expected diagnostic"}))
+            for invalid in ("", False, 7):
+                with self.subTest(key=key, invalid=invalid), self.assertRaisesRegex(ValueError, "nonempty diagnostic"):
+                    self.check_fixture(lambda case, record: case.update({key: invalid}))
+
+    def test_original_file_evidence_is_accepted_only_while_it_exists(self):
+        with tempfile.TemporaryDirectory(prefix="bifoil-file-evidence-") as temporary:
+            root = Path(temporary)
+            corpus, case, record = self.fixture(root)
+            case["decisions"] = []
+            record["evidence"] = ["original-evidence.md"]
+            evidence = corpus / "original-evidence.md"
+            evidence.write_text("Original manually inspectable evidence.\n")
+            (corpus / "cases.json").write_text(json.dumps([case]))
+            (corpus / "steering.json").write_text(json.dumps({
+                "format": "bifoil.conformance.v1", "decisions": [record],
+            }))
+            with contextlib.redirect_stdout(io.StringIO()):
+                validator.validate(root)
+            evidence.unlink()
+            with self.assertRaisesRegex(ValueError, "missing evidence"):
+                validator.validate(root)
+
+    def test_command_entry_validates_the_actual_repository(self):
+        output = io.StringIO()
+        with contextlib.redirect_stdout(output):
+            runpy.run_path(str(Path(__file__).with_name("validate-conformance.py")), run_name="__main__")
+        self.assertRegex(output.getvalue(), r"Validated [1-9]\d* steering decisions and [1-9]\d* unique conformance cases")
+
+    def test_command_entry_keeps_a_source_read_failure_nonzero(self):
+        with patch.object(Path, "read_text", side_effect=OSError("Original evidence read failure")):
+            with self.assertRaisesRegex(SystemExit, "conformance validation failed: Original evidence read failure"):
+                runpy.run_path(str(Path(__file__).with_name("validate-conformance.py")), run_name="__main__")
 
     def test_valid_reciprocal_record(self):
         self.check_fixture()
