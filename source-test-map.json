@@ -1,0 +1,12 @@
+{
+  "format": "bifoil.source-tests.v1",
+  "compile_only": {},
+  "command_contracts": {
+    "tools/collect-coverage.sh": {
+      "sha256": "ddf85cc75c4f09c013c70c236ba111408fe44826ce212705bef125937784a554",
+      "test": "tools/test_coverage_collector.py",
+      "case": "test_shell_collection_preserves_failure_and_cleans_staging",
+      "reason": "The test executes an exact copy of this shell source in owned temporary storage, substitutes external command boundaries, and verifies publication, failure, and staging cleanup."
+    }
+  }
+}
