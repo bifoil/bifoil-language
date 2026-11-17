@@ -1,10 +1,10 @@
 # Implementation status
 
-Updated: 2026-10-31
+Updated: 2026-11-05
 
 The full steering specification is authorized for implementation. The native compiler is Rust; the required execution
-layer is JavaScript through an explicit ChoiceScript extension. Current work uses the development `bifoil-vm.v2`
-profile. The runtime also retains v1 fixture compatibility.
+layer is JavaScript through an explicit ChoiceScript extension. Current work uses the development `bifoil-vm.v3`
+profile. The runtime also retains v1/v2 execution compatibility.
 
 The full specification is **not implemented**. Passing cases below establish behavior for those cases; they do not
 certify all 305 steering decisions, complete first-milestone compliance, or release readiness.
@@ -14,6 +14,97 @@ certify all 305 steering decisions, complete first-milestone compliance, or rele
 The compiler parses source into an independent AST, prepares declarations, performs semantic checks, lowers instructions
 with source spans, produces reusable module artifacts, and links extended ChoiceScript output. Source-free compilation
 of a client module is tested.
+
+The [compatibility contract](compatibility-contract.md) defines producer and format/profile obligations, including
+public module reuse distinct from executable-keyed caches. Direct runtime tests preserve original checkpoints and
+reject mixed/future versions before restore callbacks or replacement of a prepared adapter session.
+
+The [accepted clarification cases](clarification-conformance.md) exercise Unit-context early-return discard,
+consumed-option filtering before effectful preparation, generated copy-member collisions, explicit shared module
+storage, and nominal Map-key reconstruction with checked inference. Source-free helpers and restored input waits
+retain their effects, aliases, and initialization behavior. [Composite exact comparison](comparison-view-equality.md)
+uses a v3 instruction while preserving construction identities and previous-profile execution. Focused source and
+runtime cases pass; full-profile qualification is recorded separately.
+
+The [text and comparison contract](text-semantics.md) specifies exact triple-string dedent, delimiter/blank lines,
+source newline handling, primitive spellings, checked conversion APIs, active-cycle rendering, and repeated binary
+comparisons. Original source-free cases preserve suspended interpolation and diagnostic rendering through fresh-host
+restoration. Current enum conversion retains the selected case; original v1/v2 programs keep their earlier output.
+Authored toString methods retain ordinary lookup and do not replace the explicit String conversion.
+
+The [collection operation contract](collection-operations.md) specifies named map-key methods, mutation results,
+Entry snapshots, explicit container copies, dynamic bounds timing, and current-field copy defaults. Source-free cases
+check plain writes after suspended RHS effects, compound reads before those effects and final bounds rechecks, builtin
+checks after suspended arguments, and captured copy receivers with shallow aliases. Previous compiled key-parameter
+names remain executable; new source exposes the checked key name. Generic inference retains the selected copy boundary.
+
+The [pinned progression contract](progression-membership.md) now includes the approved constant-time search,
+exact signed-index failures, checked receiver views, integer query typing, and terminal iteration. An IntRange viewed
+as IntProgression uses the search contract without losing its retained type identity; narrowing back restores direct
+bounds membership. Source-free checkpoints exercise both views and both Int endpoints. That phase introduced module v5
+to reject older bodies that erased the selected receiver view. The current producer
+requires v6, as specified by the [compatibility contract](compatibility-contract.md); the VM remains v3.
+
+The [equality and nullable-result contract](equality-and-nullability.md) now specifies ordinary eligibility,
+structural comparison, and lazy fallback joins. Explicit expected results permit approved container copies and broad
+result types without broadening unconstrained inference. Original source-free cases cover cyclic data/sums, unordered
+containers, mutable-family comparison, suspended right-operand mutations, and safe operations over restored waits.
+
+The [module and name contract](modules-and-names.md) specifies explicit interfaces, transparent alias visibility,
+enum lookup, declaration grammar, and shared state versus fresh scene visits. Source-free cases exercise transitive
+enum aliases, imported overload groups, generic lexical aliases, private imports, and repeated restored visits.
+The subsequent namespace and storage clarifications below resolve the earlier cross-namespace and nested-placement
+questions; their original discussion remains design history.
+
+The [projection contract](projection-semantics.md) separates upper reads from lower field/method inputs. Safe null,
+empty covariant, and broad callback writes preserve the original object type and alias rules. Hidden-dependent method
+bounds accept proved bottom arguments and reject concrete guesses. Source-free checkpoints retain assignment addresses,
+generic method references, nullable containers, and reified identities. Existing unsafe source controls remain errors.
+
+The [module/name contract](modules-and-names.md) now includes separate type/value namespaces, unique exported names,
+and eager nested shared storage with lexical visibility. Ordinary value prefixes retain initialization checks and
+captured receiver bindings instead of falling back to enum aliases. Source-free checkpoints preserve per-site cells
+across calls, generic instantiations, and escaping functions. The [constraint contract](type-constraints.md) connects
+recursive bounds/interfaces, derived capabilities, subtype/conversion distinctions, joins, and conservative solver
+termination. That phase used module v5; current modules require v6 and the VM profile remains v3.
+
+The [prose contract](prose-semantics.md) specifies lexical directive suites, code-mode interpolation, and explicit
+newline rendering. Escaping named/anonymous prose callables own their output contexts across ordinary calls and
+suspension. Blank separators before a dedent remain with their surrounding suite; loop visits do not repeat them.
+Long blank runs use one boundary while preserving physical origins. Source-free and package checkpoints cover these
+rules, and the default presentation's visible breaks are checked through the pinned native paragraph renderer.
+
+The [function interaction contract](function-contracts.md) covers result joins, anchored recursion, null-only
+callable views, overload ordering, guarded coverage, and Unit-context early returns. Their accepted source-free
+inline/package cases pass. The selected retained-argument
+covariance rule is implemented and its original distinguishing source passes conformance. The [file-selection
+contract](file-selection.md) checks manifest/explicit
+selection, foreign .bfl preservation, and prior-artifact safety.
+
+The [text admission contract](text-semantics.md#scalar-validation-and-limits) now checks external scalar positions,
+development per-String size limits, and combined results before joining. Runtime tests pass on Linux and Windows;
+the complete accepted 1456-case corpus passes in each output mode, followed by one additional source-free legacy-return
+case per mode. The combined count is 1457 per mode, with the separate case recorded distinctly from the full run.
+[Legacy compatibility](legacy-compatibility.md) enumerates all 86 pinned native commands and explicit host/profile
+limits. The [instruction contract](../bifoil-runtime/INSTRUCTIONS.md) covers all 61 current producer/consumer opcodes.
+These checks do not establish target-scale aggregate resource, full platform/browser/persistence, or release acceptance.
+
+The retained-argument inference phase passed the complete 1463-case corpus in each output mode, including
+source-free, restored, and negative controls. The native compiler passed 763 tests and 46 release CLI tests with
+strict Clippy and rustfmt. Supplied generic arguments remain selected when their completed result already satisfies
+the expected type by genuine subtyping; missing parameters can use the expected result without replacing those known
+arguments. Module v6 requires that producer behavior; v5 and earlier artifacts need source regeneration. The VM remains
+v3. Runtime tests remain the previously executed 188 per Linux/Windows host, unchanged in this compiler-only phase.
+
+The subsequent narrative-capacity phase passes 766 native tests, 46 release CLI tests, 45 compiler-tool tests,
+five validator tests, and all 1463 conformance cases in each output mode with formatted copies and source-free/restored
+controls. Runtime suites pass 189 tests on each of Linux and Windows Node, with no skips. Current modules remain v6
+and the VM remains v3. [Large narrative measurements](../bifoil-compiler/NARRATIVE_CAPACITY.md) record a complete
+100M-row ext4 probe: a 7.552-second leaf edit, 1,002 independently published modules, and a 5.777-second cold
+source-free link. Their original, edited, and source-free routes restore without replay. Separate real-package checks
+verify bounded on-demand code residency on both Node hosts. Windows-mount deadline failures remain recorded; complete
+workload coverage, the pending aggregate-memory interpretation, broader compiler platforms, production-host
+persistence, and release acceptance remain separate gates.
 
 The current end-to-end cases exercise:
 
@@ -125,6 +216,22 @@ checks.
 - Intrinsic bound-method type arguments retained through covariant views, reassignment, casts, and saved effects.
 - Bound-valid generic function references under nullable, erased, and suspend views, without signature adapters.
 - Bound-directed scalar and recursive immutable-container call inference, including constructors and dependent bounds.
+- Partial overloaded callback constraints through nested literals, later supplied arguments, generic references, and
+  source-free cyclic interfaces; final selection retains visibility, shape, effects, and ambiguity checks.
+- Directional inference for rejected generic calls, composing function/declaration variance with lower, upper, and
+  exact constraints; ordinary value widening remains distinct from forbidden signature adapters.
+- Joint overloaded-reference alternatives with one complete instantiation, source-order flow snapshots, bounded
+  exploration, source-free helpers, and two restored waits retaining receiver/default/argument effects.
+- Dependent-bound inference from observed values, including scalar widening, structural element facts and callback
+  variance, with source-free cyclic helpers and preserved evaluation across two restored waits.
+- Supplied-first generic-call retry when contextual result inference conflicts with callbacks or invariant inputs;
+  result-only parameters retain expected-type inference, and nested literal applicability checks actual entries.
+- Higher-order lambda result alternatives through explicit parameters, branches, loops, choices, nested factories
+  and collection literals, using shared scope/flow/result analysis and contextual body checks.
+- Source-free returned generic references and private lexical methods, reified factory types, and restored waits
+  that preserve deferred body effects and selected bound receivers.
+- Generated anonymous fallthrough returns distinguished from authored returns, preserving all-returning choices
+  without discarding required reachable-result or authored-source checks.
 - Standard TOML manifests with strict typed fields, equivalent syntax, and source-free module builds.
 - Buffered function spooling with logical offsets, preserving append, pending restoration, and canonical output.
 - Iterative component discovery, deterministic cyclic groups, and a 100,000-node graph regression on a small thread
@@ -274,7 +381,7 @@ results cover the original acceptance host; wider platform and complete-game acc
 
 The [audit follow-up](audit-resolution.md) records each finding's repair or remaining limit. Ordered operand and
 argument checks now share normal-completion flow; binary lowering validates actual captured operand types. Reusable
-artifacts require `bifoil.module.v3`, while the VM instruction profile remains v2. Rebuild older modules from source.
+artifacts require `bifoil.module.v6`, while the VM instruction profile remains v3. Rebuild older modules from source.
 Graph-wide runtime name collisions fail before root publication. Logical/bottom checks, collection search capabilities,
 generic bounds, fairmath diagnostics, deterministic discovery, source attribution, bounded cache markers, and indexed
 legacy labels have targeted regressions.

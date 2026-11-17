@@ -1,0 +1,8 @@
+import helpers.Sink
+import helpers.combine
+scene start():
+    val narrow = Sink<Int>(1)
+    val broad = Sink<Int?>(2)
+    val result = combine(narrow, broad, 3)
+    prose:
+        ${result}|${result is Int}

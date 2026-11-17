@@ -1,0 +1,45 @@
+import helpers.present
+import helpers.Cell
+scene start():
+    val items: MutableList<Int> = [1, 2, 1]
+    val added = items.add(element = 3)
+    val removed = items.remove(element = 1)
+    items.insert(index = 1, element = 7)
+    val at = items.removeAt(index = 2)
+    items[0] = 9
+    val frozen = items.toList()
+    val copied = items.toMutableList()
+    copied.add(4)
+    val members: MutableSet<Int> = {2, 1}
+    val duplicate = members.add(2)
+    val inserted = members.add(3)
+    val removedMember = members.remove(1)
+    val absentMember = members.remove(8)
+    val savedSet = members.toSet()
+    val mapping: MutableMap<String, Int?> = {"a": null, "b": 2}
+    val hasNull = present(mapping.toMap(), "a")
+    val copiedHasNull = present<String, Int?>(mapping, "a")
+    val replacedNull = mapping.put(key = "a", value = 3)
+    val replaced = mapping.put(key = "b", value = 4)
+    val missing = mapping.remove(key = "none")
+    val old = mapping.remove(key = "a")
+    val newKey = mapping.put(key = "a", value = 9)
+    val copyMap = mapping.toMap()
+    val has: (String) -> Boolean = mapping::containsKey
+    var first: Entry<String, Int?>? = null
+    for entry in mapping:
+        if first == null:
+            first = entry
+    val cells: MutableList<Cell> = [Cell(1)]
+    val cellCopy = cells.toList()
+    choice:
+        option "Check ${mapping.containsKey(key = "a")}":
+            Unit
+    mapping["b"] = 8
+    cells[0].value = 5
+    cells.add(Cell(9))
+    val cleared: Unit = items.clear()
+    members.clear()
+    mapping.clear()
+    prose:
+        ${added}|${removed}|${at}|${String(frozen)}|${String(copied)}|${items.isEmpty()}|${cleared == Unit}|${duplicate}|${inserted}|${removedMember}|${absentMember}|${String(savedSet)}|${members.isEmpty()}|${hasNull}|${copiedHasNull}|${replacedNull == null}|${replaced!!}|${missing == null}|${old!!}|${newKey == null}|${String(copyMap)}|${first!!.key}|${first!!.value!!}|${has("a")}|${mapping.isEmpty()}|${cellCopy[0].value}|${cellCopy.size}|${cells.size}

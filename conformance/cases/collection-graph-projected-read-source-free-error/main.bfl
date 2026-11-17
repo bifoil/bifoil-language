@@ -1,0 +1,4 @@
+import helpers.Key
+fun unsafe(key: Key<*>) -> Int = key.token
+scene start():
+    Unit

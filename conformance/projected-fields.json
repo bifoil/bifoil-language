@@ -1,0 +1,219 @@
+[
+  {
+    "id": "projected-field-inputs-source-free-checkpoint",
+    "directory": "cases/projected-field-inputs-source-free-checkpoint",
+    "decisions": [
+      "G07",
+      "B03",
+      "B08",
+      "E10",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Clear source"
+      ],
+      [
+        "After writes"
+      ]
+    ],
+    "output": [
+      "null|fresh|0|ready|true|true"
+    ]
+  },
+  {
+    "id": "projected-bound-reads-source-free-checkpoint",
+    "directory": "cases/projected-bound-reads-source-free-checkpoint",
+    "decisions": [
+      "G05",
+      "G07",
+      "D12",
+      "G15",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Bounds"
+      ]
+    ],
+    "output": [
+      "A|3|true|true"
+    ]
+  },
+  {
+    "id": "projected-method-field-interface-source-free-checkpoint",
+    "directory": "cases/projected-method-field-interface-source-free-checkpoint",
+    "decisions": [
+      "G07",
+      "B08",
+      "G15",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Interfaces"
+      ]
+    ],
+    "output": [
+      "3|2|0|true|true|true"
+    ]
+  },
+  {
+    "id": "projected-nullable-container-input-source-free-checkpoint",
+    "directory": "cases/projected-nullable-container-input-source-free-checkpoint",
+    "decisions": [
+      "G07",
+      "B08",
+      "D30",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Null elements"
+      ]
+    ],
+    "output": [
+      "1|true|true"
+    ]
+  },
+  {
+    "id": "projected-nullable-field-wrong-value-error",
+    "directory": "cases/projected-nullable-field-wrong-value-error",
+    "decisions": [
+      "G07",
+      "B08"
+    ],
+    "compile_error": "Nothing"
+  },
+  {
+    "id": "projected-covariant-field-nonempty-error",
+    "directory": "cases/projected-covariant-field-nonempty-error",
+    "decisions": [
+      "G07",
+      "B08"
+    ],
+    "compile_error": "Nothing"
+  },
+  {
+    "id": "projected-nullable-container-wrong-element-error",
+    "directory": "cases/projected-nullable-container-wrong-element-error",
+    "decisions": [
+      "G07",
+      "B08"
+    ],
+    "compile_error": "Nothing"
+  },
+  {
+    "id": "projected-field-callback-narrow-input-error",
+    "directory": "cases/projected-field-callback-narrow-input-error",
+    "decisions": [
+      "G07",
+      "B08"
+    ],
+    "compile_error": "expected"
+  },
+  {
+    "id": "projected-field-invariant-input-error",
+    "directory": "cases/projected-field-invariant-input-error",
+    "decisions": [
+      "G07",
+      "B08"
+    ],
+    "compile_error": "Nothing"
+  },
+  {
+    "id": "projected-fixed-nullable-field-error",
+    "directory": "cases/projected-fixed-nullable-field-error",
+    "decisions": [
+      "G07",
+      "B08"
+    ],
+    "compile_error": "cannot assign to val field"
+  },
+  {
+    "id": "projected-private-nullable-field-error",
+    "directory": "cases/projected-private-nullable-field-error",
+    "decisions": [
+      "G07",
+      "B08"
+    ],
+    "compile_error": "private"
+  },
+  {
+    "id": "projected-safe-write-alias-guard-error",
+    "directory": "cases/projected-safe-write-alias-guard-error",
+    "decisions": [
+      "G07",
+      "B08"
+    ],
+    "compile_error": "nullable"
+  },
+  {
+    "id": "projected-generic-method-bounds-source-free-checkpoint",
+    "directory": "cases/projected-generic-method-bounds-source-free-checkpoint",
+    "decisions": [
+      "G05",
+      "G07",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Method bounds"
+      ]
+    ],
+    "output": [
+      "1|true|true"
+    ]
+  },
+  {
+    "id": "projected-generic-method-nonnull-bound-error",
+    "directory": "cases/projected-generic-method-nonnull-bound-error",
+    "decisions": [
+      "G05",
+      "G07",
+      "T24"
+    ],
+    "compile_error": "does not satisfy"
+  },
+  {
+    "id": "projected-generic-method-nullable-bound-error",
+    "directory": "cases/projected-generic-method-nullable-bound-error",
+    "decisions": [
+      "G05",
+      "G07",
+      "T24"
+    ],
+    "compile_error": "does not satisfy"
+  }
+]

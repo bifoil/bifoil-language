@@ -1,0 +1,267 @@
+[
+  {
+    "id": "unit-early-discard-source-free-checkpoint",
+    "directory": "cases/unit-early-discard-source-free-checkpoint",
+    "decisions": [
+      "F34",
+      "F27",
+      "F04",
+      "T22",
+      "T24",
+      "D26"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Return 102"
+      ]
+    ],
+    "output": [
+      "Trace 1023; units true true."
+    ]
+  },
+  {
+    "id": "unit-discarded-capture-source-free",
+    "directory": "cases/unit-discarded-capture-source-free",
+    "decisions": [
+      "F34",
+      "F19",
+      "F20"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "Discarded without reading."
+    ]
+  },
+  {
+    "id": "unit-early-discard-uninitialized-error",
+    "directory": "cases/unit-early-discard-uninitialized-error",
+    "decisions": [
+      "F34",
+      "F19"
+    ],
+    "compile_error": "initializ"
+  },
+  {
+    "id": "unit-early-discard-suspension-error",
+    "directory": "cases/unit-early-discard-suspension-error",
+    "decisions": [
+      "F34",
+      "T15"
+    ],
+    "compile_error": "suspend"
+  },
+  {
+    "id": "unit-named-early-return-value-error",
+    "directory": "cases/unit-named-early-return-value-error",
+    "decisions": [
+      "F34",
+      "F04"
+    ],
+    "compile_error": "Unit"
+  },
+  {
+    "id": "once-filter-effects-source-free-checkpoint",
+    "directory": "cases/once-filter-effects-source-free-checkpoint",
+    "decisions": [
+      "T14",
+      "T18",
+      "T19",
+      "T23",
+      "T24",
+      "T26"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "L",
+        "K"
+      ]
+    ],
+    "output": [
+      "Selected VELHDGK.",
+      "Fallback VELHDGKHDGK."
+    ]
+  },
+  {
+    "id": "copy-field-collision-error",
+    "directory": "cases/copy-field-collision-error",
+    "decisions": [
+      "U29"
+    ],
+    "compile_error": "copy is generated"
+  },
+  {
+    "id": "copy-private-field-collision-error",
+    "directory": "cases/copy-private-field-collision-error",
+    "decisions": [
+      "U29"
+    ],
+    "compile_error": "copy is generated"
+  },
+  {
+    "id": "copy-method-collision-error",
+    "directory": "cases/copy-method-collision-error",
+    "decisions": [
+      "U29"
+    ],
+    "compile_error": "copy is generated"
+  },
+  {
+    "id": "copy-private-overload-collision-error",
+    "directory": "cases/copy-private-overload-collision-error",
+    "decisions": [
+      "U29"
+    ],
+    "compile_error": "copy is generated"
+  },
+  {
+    "id": "copy-case-sensitive-member-names",
+    "directory": "cases/copy-case-sensitive-member-names",
+    "decisions": [
+      "U29",
+      "L08"
+    ],
+    "output": [
+      "3 5 5."
+    ]
+  },
+  {
+    "id": "module-ordinary-val-error",
+    "directory": "cases/module-ordinary-val-error",
+    "decisions": [
+      "M01",
+      "M15"
+    ],
+    "compile_error": "module-level values require shared"
+  },
+  {
+    "id": "module-ordinary-var-error",
+    "directory": "cases/module-ordinary-var-error",
+    "decisions": [
+      "M01",
+      "M15"
+    ],
+    "compile_error": "module-level values require shared"
+  },
+  {
+    "id": "module-exported-ordinary-value-error",
+    "directory": "cases/module-exported-ordinary-value-error",
+    "decisions": [
+      "M01",
+      "M15"
+    ],
+    "compile_error": "module-level values require shared"
+  },
+  {
+    "id": "module-delayed-ordinary-value-error",
+    "directory": "cases/module-delayed-ordinary-value-error",
+    "decisions": [
+      "M01",
+      "M15"
+    ],
+    "compile_error": "module-level values require shared"
+  },
+  {
+    "id": "module-shared-library-source-free-checkpoint",
+    "directory": "cases/module-shared-library-source-free-checkpoint",
+    "decisions": [
+      "M01",
+      "M07",
+      "M12",
+      "M13",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Visit 11/1"
+      ],
+      [
+        "Visit 12/1"
+      ]
+    ],
+    "output": [
+      "Final 13."
+    ]
+  },
+  {
+    "id": "nominal-map-key-copy-checkpoint",
+    "directory": "cases/nominal-map-key-copy-checkpoint",
+    "decisions": [
+      "D22",
+      "D21",
+      "D25",
+      "D26",
+      "D30",
+      "B14",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Converted"
+      ]
+    ],
+    "output": [
+      "true 10.",
+      "true 20.",
+      "Counts 2 2 3 2."
+    ]
+  },
+  {
+    "id": "nominal-map-key-generic-bound-source-free",
+    "directory": "cases/nominal-map-key-generic-bound-source-free",
+    "decisions": [
+      "D22",
+      "G03",
+      "G05",
+      "G14",
+      "F37"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "true true 1 1."
+    ]
+  },
+  {
+    "id": "nominal-map-mutable-invariance-error",
+    "directory": "cases/nominal-map-mutable-invariance-error",
+    "decisions": [
+      "D22",
+      "D30"
+    ],
+    "compile_error": "expected MutableMap"
+  },
+  {
+    "id": "nominal-map-no-function-adapter-error",
+    "directory": "cases/nominal-map-no-function-adapter-error",
+    "decisions": [
+      "D22",
+      "F38"
+    ],
+    "compile_error": "no overload matches"
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "id": "legacy-invalid-return-source-free-location",
+    "directory": "cases/legacy-invalid-return-source-free-location",
+    "decisions": ["S12", "E35"],
+    "precompile": ["api"],
+    "choices": [0],
+    "options": [["Return invalid result"]],
+    "legacy_stats": {
+      "answer": 0
+    },
+    "output": ["Before input."],
+    "runtime_error": "api.bfl:1: legacy value is not an Int"
+  }
+]

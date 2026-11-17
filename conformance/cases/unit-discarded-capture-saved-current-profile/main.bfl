@@ -1,0 +1,8 @@
+import helpers.create
+scene start():
+    val callback = create()
+    choice:
+        option "Discard":
+            callback()
+            prose:
+                Discarded after restore.

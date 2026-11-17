@@ -1,0 +1,1 @@
+export fun <A, B: MutableList<A>> choose(first: A, value: B) -> A = first

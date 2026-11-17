@@ -1,0 +1,8 @@
+export shared val items: MutableList<Int> = [5]
+export fun target() -> MutableList<Int> = items
+export suspend fun clear() -> Int:
+    choice:
+        option "Clear ${items[0]}":
+            Unit
+    items.clear()
+    return 1

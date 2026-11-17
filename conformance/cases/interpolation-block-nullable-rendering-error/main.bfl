@@ -1,0 +1,8 @@
+scene start():
+    val optional: Int? = 2
+    prose:
+        ${if true:
+            optional
+        else:
+            null
+        }

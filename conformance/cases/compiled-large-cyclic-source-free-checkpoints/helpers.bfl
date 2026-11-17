@@ -1,0 +1,42 @@
+export data class Key<T: StableKey>:
+    val token: T
+export data class Node<T: Equatable>:
+    val value: T
+    val payload: MutableList<Int>
+    var next: Node<T>? = null
+    var stamp: Int = 0
+export typealias Graph<T: Equatable> = List<Map<Key<*>, Node<T>?>>
+export fun ring(value: Int, payload: MutableList<Int>) -> Node<Int>:
+    val first = Node<Int>(value, payload)
+    val second = Node<Int>(value + 1, payload)
+    first.next = second
+    second.next = first
+    return first
+export fun order(table: Map<Key<*>, Node<Int>?>) -> String:
+    var result = ""
+    for entry in table:
+        if entry.key.token is String && entry.value == null:
+            result += "S"
+        elif entry.key.token is List<Int> && entry.value != null:
+            result += "L"
+        else:
+            result += "?"
+    return result
+export fun makeKey(value: Int) -> Key<Int> = Key<Int>(value)
+export fun <T: StableKey> coherent(first: T, second: T) -> Boolean:
+    val equal = first == second
+    val members: Set<T> = {first, second}
+    val mapping: MutableMap<T, Int> = {first: 1}
+    mapping[second] = 2
+    val expectedSize = if equal:
+        1
+    else:
+        2
+    val expectedFirst = if equal:
+        2
+    else:
+        1
+    return members.size == expectedSize &&
+        mapping.size == expectedSize &&
+        mapping[first] == expectedFirst &&
+        mapping[second] == 2

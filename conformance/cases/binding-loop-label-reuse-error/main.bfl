@@ -1,0 +1,4 @@
+scene start():
+    outer@ for i in 1..2:
+        outer@ for j in 1..2:
+            Unit

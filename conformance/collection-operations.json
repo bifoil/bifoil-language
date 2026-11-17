@@ -1,0 +1,253 @@
+[
+  {
+    "id": "collection-api-source-free-checkpoint",
+    "directory": "cases/collection-api-source-free-checkpoint",
+    "decisions": [
+      "D20",
+      "D15",
+      "D21",
+      "D05",
+      "D13",
+      "D19",
+      "G03",
+      "G14"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Check true"
+      ]
+    ],
+    "output": [
+      "true|true|1|[9, 7, 3]|[9, 7, 3, 4]|true|true|false|true|true|false|{2, 3}|true|true|true|true|2|true|3|true|{b: 4, a: 9}|b|4|false|true|5|1|2"
+    ]
+  },
+  {
+    "id": "collection-plain-write-late-bounds-source-free-checkpoint",
+    "directory": "cases/collection-plain-write-late-bounds-source-free-checkpoint",
+    "decisions": [
+      "E10",
+      "D20",
+      "T22",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Fill TKR"
+      ]
+    ],
+    "output": [
+      "7|TKRW|1"
+    ]
+  },
+  {
+    "id": "collection-compound-read-source-free-checkpoint",
+    "directory": "cases/collection-compound-read-source-free-checkpoint",
+    "decisions": [
+      "E11",
+      "D20",
+      "T22",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Replace 5 TKR"
+      ]
+    ],
+    "output": [
+      "7|TKRW"
+    ]
+  },
+  {
+    "id": "collection-plain-invalid-index-order-source-free",
+    "directory": "cases/collection-plain-invalid-index-order-source-free",
+    "decisions": [
+      "E10",
+      "D20"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "runtime_error": "division by zero"
+  },
+  {
+    "id": "collection-compound-invalid-index-order-source-free",
+    "directory": "cases/collection-compound-invalid-index-order-source-free",
+    "decisions": [
+      "E11",
+      "D20"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "runtime_error": "index out of bounds"
+  },
+  {
+    "id": "collection-compound-write-rechecks-source-free-checkpoint",
+    "directory": "cases/collection-compound-write-rechecks-source-free-checkpoint",
+    "decisions": [
+      "E11",
+      "D20",
+      "T22",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Clear 5"
+      ]
+    ],
+    "runtime_error": "index out of bounds"
+  },
+  {
+    "id": "copy-current-fields-source-free-checkpoint",
+    "directory": "cases/copy-current-fields-source-free-checkpoint",
+    "decisions": [
+      "U29",
+      "U05",
+      "U04",
+      "A04",
+      "A06",
+      "T22",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Change RA defaults 1"
+      ]
+    ],
+    "output": [
+      "9|11|9|100|2|8|1|RAB"
+    ]
+  },
+  {
+    "id": "collection-list-key-member-error",
+    "directory": "cases/collection-list-key-member-error",
+    "decisions": [
+      "D20"
+    ],
+    "compile_error": "no accessible member 'containsKey'"
+  },
+  {
+    "id": "collection-set-key-member-error",
+    "directory": "cases/collection-set-key-member-error",
+    "decisions": [
+      "D20"
+    ],
+    "compile_error": "no accessible member 'containsKey'"
+  },
+  {
+    "id": "collection-map-legacy-source-name-error",
+    "directory": "cases/collection-map-legacy-source-name-error",
+    "decisions": [
+      "A02",
+      "D19"
+    ],
+    "compile_error": "unknown argument 'element'"
+  },
+  {
+    "id": "collection-bound-key-named-error",
+    "directory": "cases/collection-bound-key-named-error",
+    "decisions": [
+      "A05"
+    ],
+    "compile_error": "function values do not expose parameter names"
+  },
+  {
+    "id": "collection-entry-value-write-error",
+    "directory": "cases/collection-entry-value-write-error",
+    "decisions": [
+      "D15"
+    ],
+    "compile_error": "cannot assign to val field"
+  },
+  {
+    "id": "collection-entry-key-write-error",
+    "directory": "cases/collection-entry-key-write-error",
+    "decisions": [
+      "D15"
+    ],
+    "compile_error": "cannot assign to val field"
+  },
+  {
+    "id": "collection-immutable-mutator-error",
+    "directory": "cases/collection-immutable-mutator-error",
+    "decisions": [
+      "D02"
+    ],
+    "compile_error": "no accessible member"
+  },
+  {
+    "id": "collection-wrong-element-error",
+    "directory": "cases/collection-wrong-element-error",
+    "decisions": [
+      "D20"
+    ],
+    "compile_error": "argument"
+  },
+  {
+    "id": "collection-copy-inference-requires-context-error",
+    "directory": "cases/collection-copy-inference-requires-context-error",
+    "decisions": [
+      "G14"
+    ],
+    "compile_error": "cannot infer type argument V"
+  },
+  {
+    "id": "collection-method-late-bounds-source-free-checkpoint",
+    "directory": "cases/collection-method-late-bounds-source-free-checkpoint",
+    "decisions": [
+      "D20",
+      "A04",
+      "A06",
+      "T22",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Grow TIA"
+      ],
+      [
+        "Remove TIARTB"
+      ]
+    ],
+    "output": [
+      "[2, 7]|9|TIARTBC"
+    ]
+  }
+]

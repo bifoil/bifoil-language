@@ -1,0 +1,9 @@
+import helpers.together
+import helpers.nested
+import helpers.chooseFirst
+import helpers.chooseSecond
+scene start():
+    val selected = together(::chooseFirst, ::chooseSecond)
+    val deep = nested([[::chooseFirst]], {"call": ::chooseSecond})
+    prose:
+        ${selected(3)}|${deep(4)}|${selected is (Int) -> Int}

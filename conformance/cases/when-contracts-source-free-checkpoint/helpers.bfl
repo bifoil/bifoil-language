@@ -1,0 +1,34 @@
+export enum Mood:
+    case Happy
+    case Quiet
+export sealed class Result<out T>:
+    case Good(value: T)
+    case Missing
+export fun <T> describe(input: Result<T>?) -> String:
+    return when val captured = input:
+        case null:
+            "null"
+        case is Result.Good<T>(payload):
+            String(payload)
+        case is Result.Missing<T>:
+            "missing"
+export fun choose(flag: Boolean) -> Int:
+    return when flag:
+        case true:
+            1
+        case false:
+            2
+export fun mood(input: Mood) -> String:
+    return when input:
+        case Mood.Happy:
+            "happy"
+        case Mood.Quiet:
+            "quiet"
+export fun requireName(input: String?) -> String:
+    return input ?: return "unnamed"
+export fun exitInBranch(flag: Boolean) -> Int:
+    return when flag:
+        case true:
+            return 3
+        case false:
+            4

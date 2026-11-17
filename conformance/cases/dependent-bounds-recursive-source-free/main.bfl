@@ -1,0 +1,5 @@
+import helpers.recurse
+scene start():
+    val first = recurse(1, 2.5, 2)
+    prose:
+        ${first}|${first is Float}

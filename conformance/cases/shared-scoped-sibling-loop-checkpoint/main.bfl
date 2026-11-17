@@ -1,0 +1,21 @@
+fun loops() -> Int:
+    var result = 0
+    for i in 1..2:
+        shared var count = 0
+        count += 1
+        result += count
+    if true:
+        shared val fixed = 3
+        result += fixed
+    if true:
+        shared val fixed = 4
+        result += fixed
+    return result
+scene start():
+    prose:
+        ${loops()}
+    choice:
+        option "Loop cells":
+            Unit
+    prose:
+        ${loops()}

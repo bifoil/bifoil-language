@@ -1,0 +1,14 @@
+export fun member(value: Int, items: IntProgression) -> Boolean = value in items
+export fun widen(items: IntRange) -> IntProgression = items
+export suspend fun inspect() -> String:
+    val original = -2147483648..2147483647
+    val view = widen(original)
+    val originalItems = [original]
+    val views: List<IntProgression> = originalItems
+    choice:
+        option "View ${view is IntRange} ${views is List<IntRange>}":
+            Unit
+    var found = true
+    for candidate in views:
+        found = found && member(-1, candidate)
+    return "${-1 in view}|${0 in original}|${found}|${view is IntRange}|${views is List<IntRange>}"

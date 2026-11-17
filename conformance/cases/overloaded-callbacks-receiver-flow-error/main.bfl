@@ -1,0 +1,14 @@
+data class Source:
+    fun choose(value: Int) -> Int = value
+    fun choose(value: Float) -> Float = value
+fun <T> invoke(factory: (Int) -> T) -> T = factory(1)
+scene start():
+    var text: String? = "safe"
+    val source = Source()
+    fun clear() -> Source:
+        text = null
+        return source
+    if text != null:
+        val value = invoke(clear()::choose)
+        prose:
+            ${text.length}

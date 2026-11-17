@@ -1,0 +1,6 @@
+import helpers.factory
+scene start():
+    val ask = factory()
+    val result = ask()
+    prose:
+        Result ${result}.

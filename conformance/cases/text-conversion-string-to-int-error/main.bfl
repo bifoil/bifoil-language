@@ -1,0 +1,2 @@
+scene start():
+    val invalid = Int("3")

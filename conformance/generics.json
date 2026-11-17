@@ -275,7 +275,7 @@
     "decisions": [
       "G07"
     ],
-    "compile_error": "cannot assign to val field"
+    "compile_error": "expected Nothing, found String"
   },
   {
     "id": "generic-projected-method-write-error",
@@ -436,7 +436,7 @@
   },
   {
     "id": "generic-projected-nominal-write-error",
-    "compile_error": "cannot assign to val field",
+    "compile_error": "expected Nothing, found String",
     "decisions": [
       "G07"
     ],
@@ -663,7 +663,7 @@
     ],
     "output": [
       "4",
-      "4|1.5|-3|hey!|true|true|true|😀|true|false|false|1|2"
+      "4|1.5|-3|hey!|true|true|true|\ud83d\ude00|true|false|false|1|2"
     ],
     "directory": "cases/generic-primitive-bound-operations",
     "decisions": [
@@ -684,7 +684,7 @@
     ],
     "output": [
       "4",
-      "4|1.5|-3|hey!|true|true|true|😀|true|false|false|1|2"
+      "4|1.5|-3|hey!|true|true|true|\ud83d\ude00|true|false|false|1|2"
     ],
     "precompile": [
       "helpers"
@@ -1274,7 +1274,8 @@
       "D30",
       "G15",
       "F37",
-      "F38"
+      "F38",
+      "E30"
     ],
     "precompile": [
       "helpers"
@@ -1283,7 +1284,7 @@
       0
     ],
     "output": [
-      "Ada|true|4|yes|true|chain|true|true|saved|1"
+      "Ada|true|4|yes|true|chain|true|false|saved|1"
     ]
   },
   {
@@ -2914,6 +2915,1282 @@
       "F44",
       "G03",
       "T24"
+    ]
+  },
+  {
+    "id": "type-interactions-source-free-checkpoint",
+    "directory": "cases/type-interactions-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Continue 3"
+      ]
+    ],
+    "output": [
+      "4|5|Int|widen|2.5|true|1|9|true|true|5|1"
+    ],
+    "decisions": [
+      "B14",
+      "D25",
+      "D27",
+      "F28",
+      "F34",
+      "F36",
+      "F37",
+      "F38",
+      "G14",
+      "G09",
+      "T21"
+    ]
+  },
+  {
+    "id": "function-input-conversion-adapter-matrix-error",
+    "directory": "cases/function-input-conversion-adapter-matrix-error",
+    "compile_error": "expected function type",
+    "decisions": [
+      "F38"
+    ],
+    "precompile": [
+      "helpers"
+    ]
+  },
+  {
+    "id": "function-result-conversion-adapter-matrix-error",
+    "directory": "cases/function-result-conversion-adapter-matrix-error",
+    "compile_error": "expected function type",
+    "decisions": [
+      "F38"
+    ],
+    "precompile": [
+      "helpers"
+    ]
+  },
+  {
+    "id": "function-value-named-matrix-error",
+    "directory": "cases/function-value-named-matrix-error",
+    "compile_error": "parameter names",
+    "decisions": [
+      "A05"
+    ],
+    "precompile": [
+      "helpers"
+    ]
+  },
+  {
+    "id": "generic-mutable-join-matrix-error",
+    "directory": "cases/generic-mutable-join-matrix-error",
+    "compile_error": "incompatible constraints",
+    "decisions": [
+      "G14"
+    ],
+    "precompile": [
+      "helpers"
+    ]
+  },
+  {
+    "id": "unknown-equality-matrix-error",
+    "directory": "cases/unknown-equality-matrix-error",
+    "compile_error": "cannot combine Any and Int",
+    "decisions": [
+      "B20"
+    ]
+  },
+  {
+    "id": "nested-unstable-key-matrix-error",
+    "directory": "cases/nested-unstable-key-matrix-error",
+    "compile_error": "StableKey",
+    "decisions": [
+      "D12",
+      "G09"
+    ],
+    "precompile": [
+      "helpers"
+    ]
+  },
+  {
+    "id": "suspend-view-prose-matrix-error",
+    "directory": "cases/suspend-view-prose-matrix-error",
+    "decisions": [
+      "T03",
+      "T21"
+    ],
+    "compile_error": "suspend context"
+  },
+  {
+    "id": "dependent-projected-capabilities-source-free-checkpoint",
+    "directory": "cases/dependent-projected-capabilities-source-free-checkpoint",
+    "decisions": [
+      "G05",
+      "G07",
+      "G09",
+      "D12"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "2|true|1"
+    ]
+  },
+  {
+    "id": "generic-heterogeneous-join-matrix-error",
+    "directory": "cases/generic-heterogeneous-join-matrix-error",
+    "compile_error": "incompatible constraints",
+    "decisions": [
+      "G14"
+    ],
+    "precompile": [
+      "helpers"
+    ]
+  },
+  {
+    "id": "function-value-default-matrix-error",
+    "directory": "cases/function-value-default-matrix-error",
+    "compile_error": "missing required argument",
+    "decisions": [
+      "A05"
+    ],
+    "precompile": [
+      "helpers"
+    ]
+  },
+  {
+    "id": "unresolved-overload-reference-matrix-error",
+    "directory": "cases/unresolved-overload-reference-matrix-error",
+    "compile_error": "ambiguous overload reference",
+    "decisions": [
+      "F36"
+    ],
+    "precompile": [
+      "helpers"
+    ]
+  },
+  {
+    "id": "dependent-projected-equatable-key-error",
+    "directory": "cases/dependent-projected-equatable-key-error",
+    "compile_error": "StableKey",
+    "decisions": [
+      "G07",
+      "G09",
+      "D12"
+    ]
+  },
+  {
+    "id": "dependent-projected-unbounded-key-error",
+    "directory": "cases/dependent-projected-unbounded-key-error",
+    "compile_error": "StableKey",
+    "decisions": [
+      "G07",
+      "G09",
+      "D12"
+    ]
+  },
+  {
+    "id": "projected-capability-compositions-source-free-checkpoint",
+    "directory": "cases/projected-capability-compositions-source-free-checkpoint",
+    "decisions": [
+      "G07",
+      "G09",
+      "D12",
+      "U06",
+      "U22",
+      "S10",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Resume"
+      ]
+    ],
+    "output": [
+      "true|1|1|1|2|1"
+    ]
+  },
+  {
+    "id": "projected-capability-composition-unknown-key-error",
+    "directory": "cases/projected-capability-composition-unknown-key-error",
+    "decisions": [
+      "G07",
+      "G09",
+      "D12"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "compile_error": "StableKey"
+  },
+  {
+    "id": "projected-capability-composition-mutable-key-error",
+    "directory": "cases/projected-capability-composition-mutable-key-error",
+    "decisions": [
+      "G07",
+      "G09",
+      "D12"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "compile_error": "StableKey"
+  },
+  {
+    "id": "projected-capability-composition-mutable-equality",
+    "directory": "cases/projected-capability-composition-mutable-equality",
+    "decisions": [
+      "G07",
+      "G09",
+      "U06"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "true"
+    ]
+  },
+  {
+    "id": "projected-capability-wide-state-source-free-checkpoint",
+    "directory": "cases/projected-capability-wide-state-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Resume"
+      ]
+    ],
+    "output": [
+      "1"
+    ],
+    "decisions": [
+      "G07",
+      "G09",
+      "D12",
+      "S10",
+      "T24"
+    ]
+  },
+  {
+    "id": "projected-capability-long-dependency-source-free-error",
+    "directory": "cases/projected-capability-long-dependency-source-free-error",
+    "precompile": [
+      "helpers"
+    ],
+    "compile_error": "StableKey",
+    "decisions": [
+      "G09",
+      "D12",
+      "S10"
+    ]
+  },
+  {
+    "id": "generic-result-conversion-source-free-checkpoint",
+    "directory": "cases/generic-result-conversion-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Finish converted result"
+      ]
+    ],
+    "output": [
+      "3|a|2|5|6|6|8|7|0",
+      "Before NCVLN.",
+      "4|NCVLNWR|6|8"
+    ],
+    "decisions": [
+      "G03",
+      "G08",
+      "F38",
+      "D22",
+      "D28",
+      "T24"
+    ]
+  },
+  {
+    "id": "generic-result-overload-source-free",
+    "directory": "cases/generic-result-overload-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "3|88"
+    ],
+    "decisions": [
+      "G03",
+      "F28",
+      "F29",
+      "F42"
+    ]
+  },
+  {
+    "id": "generic-result-explicit-callback-error",
+    "directory": "cases/generic-result-explicit-callback-error",
+    "compile_error": "no overload matches the expected function type",
+    "decisions": [
+      "G03",
+      "F38"
+    ]
+  },
+  {
+    "id": "generic-result-bound-callback-error",
+    "directory": "cases/generic-result-bound-callback-error",
+    "compile_error": "no overload matches the expected function type",
+    "decisions": [
+      "G03",
+      "F38",
+      "G05"
+    ]
+  },
+  {
+    "id": "generic-result-incompatible-output-error",
+    "directory": "cases/generic-result-incompatible-output-error",
+    "compile_error": "no overload matches the expected function type",
+    "decisions": [
+      "G03",
+      "F38"
+    ]
+  },
+  {
+    "id": "generic-result-callback-input-error",
+    "directory": "cases/generic-result-callback-input-error",
+    "compile_error": "no overload matches the expected function type",
+    "decisions": [
+      "G03",
+      "F38"
+    ]
+  },
+  {
+    "id": "generic-result-mutable-invariance-error",
+    "directory": "cases/generic-result-mutable-invariance-error",
+    "compile_error": "argument requires MutableList<Float>, found MutableList<Int>",
+    "decisions": [
+      "G03",
+      "D22",
+      "D28"
+    ]
+  },
+  {
+    "id": "generic-result-nested-invariance-error",
+    "directory": "cases/generic-result-nested-invariance-error",
+    "compile_error": "expected MutableList<Float>, found MutableList<Int>",
+    "decisions": [
+      "G03",
+      "D22",
+      "D28"
+    ]
+  },
+  {
+    "id": "overloaded-callbacks-source-free-checkpoint",
+    "directory": "cases/overloaded-callbacks-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Resume callback"
+      ]
+    ],
+    "output": [
+      "11|99|CWR|true",
+      "11|1|11|11|11|11|finished|true"
+    ],
+    "decisions": [
+      "G03",
+      "G15",
+      "F36",
+      "F38",
+      "F43",
+      "A04",
+      "A06",
+      "A08",
+      "T24"
+    ]
+  },
+  {
+    "id": "overloaded-callbacks-cyclic-source-free",
+    "directory": "cases/overloaded-callbacks-cyclic-source-free",
+    "precompile": [
+      "a",
+      "b"
+    ],
+    "output": [
+      "21|21"
+    ],
+    "decisions": [
+      "G03",
+      "F36",
+      "F38",
+      "S10"
+    ]
+  },
+  {
+    "id": "overloaded-callbacks-variance-source-free",
+    "directory": "cases/overloaded-callbacks-variance-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "present|present|2|1"
+    ],
+    "decisions": [
+      "G03",
+      "F36",
+      "F37",
+      "F38",
+      "F32",
+      "T21"
+    ]
+  },
+  {
+    "id": "overloaded-callbacks-ambiguity-error",
+    "directory": "cases/overloaded-callbacks-ambiguity-error",
+    "compile_error": "ambiguous overload reference",
+    "decisions": [
+      "G03",
+      "F36"
+    ]
+  },
+  {
+    "id": "overloaded-callbacks-explicit-adapter-error",
+    "directory": "cases/overloaded-callbacks-explicit-adapter-error",
+    "compile_error": "no overload matches the expected function type",
+    "decisions": [
+      "G03",
+      "F38"
+    ]
+  },
+  {
+    "id": "overloaded-callbacks-bound-adapter-error",
+    "directory": "cases/overloaded-callbacks-bound-adapter-error",
+    "compile_error": "no overload matches the expected function type",
+    "decisions": [
+      "G03",
+      "G05",
+      "F38"
+    ]
+  },
+  {
+    "id": "overloaded-callbacks-suspend-input-error",
+    "directory": "cases/overloaded-callbacks-suspend-input-error",
+    "compile_error": "no overload matches the expected function type",
+    "decisions": [
+      "G03",
+      "F37",
+      "T21"
+    ]
+  },
+  {
+    "id": "overloaded-callbacks-variadic-shape-error",
+    "directory": "cases/overloaded-callbacks-variadic-shape-error",
+    "compile_error": "no overload matches the expected function type",
+    "decisions": [
+      "G03",
+      "F32",
+      "F38"
+    ]
+  },
+  {
+    "id": "overloaded-callbacks-nominal-input-error",
+    "directory": "cases/overloaded-callbacks-nominal-input-error",
+    "compile_error": "no overload matches the expected function type",
+    "decisions": [
+      "G03",
+      "F38",
+      "U07"
+    ]
+  },
+  {
+    "id": "overloaded-callbacks-receiver-flow-error",
+    "directory": "cases/overloaded-callbacks-receiver-flow-error",
+    "compile_error": "nullable member receiver",
+    "decisions": [
+      "G03",
+      "B09",
+      "F43"
+    ]
+  },
+  {
+    "id": "overloaded-callbacks-owner-capture-error",
+    "directory": "cases/overloaded-callbacks-owner-capture-error",
+    "compile_error": "no overload matches the expected function type",
+    "decisions": [
+      "G03",
+      "F38"
+    ]
+  },
+  {
+    "id": "overloaded-callbacks-recursive-budget-error",
+    "directory": "cases/overloaded-callbacks-recursive-budget-error",
+    "compile_error": "type graph budget",
+    "decisions": [
+      "G03",
+      "S15"
+    ]
+  },
+  {
+    "id": "directional-inference-source-free-checkpoint",
+    "directory": "cases/directional-inference-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Argument ready"
+      ],
+      [
+        "Callback ready"
+      ]
+    ],
+    "output": [
+      "12|99|CWRDINB"
+    ],
+    "decisions": [
+      "G03",
+      "F37",
+      "F38",
+      "F43",
+      "A04",
+      "A06",
+      "T21",
+      "T24"
+    ]
+  },
+  {
+    "id": "directional-inference-joint-source-free",
+    "directory": "cases/directional-inference-joint-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "13|14|true"
+    ],
+    "decisions": [
+      "G03",
+      "G15",
+      "F36",
+      "F38",
+      "D03"
+    ]
+  },
+  {
+    "id": "directional-inference-cyclic-source-free",
+    "directory": "cases/directional-inference-cyclic-source-free",
+    "precompile": [
+      "a",
+      "b"
+    ],
+    "output": [
+      "2|4"
+    ],
+    "decisions": [
+      "G03",
+      "F37",
+      "F38",
+      "S10"
+    ]
+  },
+  {
+    "id": "directional-inference-value-widening-source-free",
+    "directory": "cases/directional-inference-value-widening-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "1|true|true|2|false"
+    ],
+    "decisions": [
+      "G03",
+      "G15",
+      "N04",
+      "F37",
+      "F38"
+    ]
+  },
+  {
+    "id": "directional-inference-container-context-source-free",
+    "directory": "cases/directional-inference-container-context-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "3|3|4|9|5"
+    ],
+    "decisions": [
+      "G03",
+      "G14",
+      "D10",
+      "D21",
+      "D25"
+    ]
+  },
+  {
+    "id": "directional-inference-owner-source-free",
+    "directory": "cases/directional-inference-owner-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "3|a|true|true"
+    ],
+    "decisions": [
+      "G03",
+      "G04",
+      "G15",
+      "F37",
+      "F38"
+    ]
+  },
+  {
+    "id": "directional-inference-nominal-variance-source-free",
+    "directory": "cases/directional-inference-nominal-variance-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "3|true"
+    ],
+    "decisions": [
+      "G03",
+      "G06",
+      "G15",
+      "U09"
+    ]
+  },
+  {
+    "id": "directional-inference-explicit-error",
+    "directory": "cases/directional-inference-explicit-error",
+    "compile_error": "no overload matches the expected function type",
+    "decisions": [
+      "G03",
+      "F38"
+    ]
+  },
+  {
+    "id": "directional-inference-numeric-input-error",
+    "directory": "cases/directional-inference-numeric-input-error",
+    "compile_error": "no overload matches the expected function type",
+    "decisions": [
+      "G03",
+      "F38"
+    ]
+  },
+  {
+    "id": "directional-inference-mutable-callback-error",
+    "directory": "cases/directional-inference-mutable-callback-error",
+    "compile_error": "generic arguments have incompatible constraints",
+    "decisions": [
+      "G03",
+      "F38"
+    ]
+  },
+  {
+    "id": "directional-inference-null-input-error",
+    "directory": "cases/directional-inference-null-input-error",
+    "compile_error": "no overload matches the expected function type",
+    "decisions": [
+      "G03",
+      "F38"
+    ]
+  },
+  {
+    "id": "directional-inference-numeric-result-error",
+    "directory": "cases/directional-inference-numeric-result-error",
+    "compile_error": "no overload matches the expected function type",
+    "decisions": [
+      "G03",
+      "F38"
+    ]
+  },
+  {
+    "id": "directional-inference-bound-adapter-error",
+    "directory": "cases/directional-inference-bound-adapter-error",
+    "compile_error": "no overload matches the expected function type",
+    "decisions": [
+      "G03",
+      "G05",
+      "F38"
+    ]
+  },
+  {
+    "id": "directional-inference-joint-ambiguity-error",
+    "directory": "cases/directional-inference-joint-ambiguity-error",
+    "compile_error": "ambiguous generic inference",
+    "decisions": [
+      "G03",
+      "F36"
+    ]
+  },
+  {
+    "id": "directional-inference-joint-adapter-error",
+    "directory": "cases/directional-inference-joint-adapter-error",
+    "compile_error": "cannot infer type argument T",
+    "decisions": [
+      "G03",
+      "F38"
+    ]
+  },
+  {
+    "id": "directional-inference-joint-suspend-error",
+    "directory": "cases/directional-inference-joint-suspend-error",
+    "compile_error": "no overload matches the expected function type",
+    "decisions": [
+      "G03",
+      "F36",
+      "F38",
+      "T21"
+    ]
+  },
+  {
+    "id": "directional-inference-constructor-source-free",
+    "directory": "cases/directional-inference-constructor-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "1|2|3|true"
+    ],
+    "decisions": [
+      "G03",
+      "G15",
+      "U01",
+      "U04",
+      "U21"
+    ]
+  },
+  {
+    "id": "directional-inference-whole-literals-source-free-checkpoint",
+    "directory": "cases/directional-inference-whole-literals-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Resume inferred collections"
+      ]
+    ],
+    "output": [
+      "4|5|6|7|true"
+    ],
+    "decisions": [
+      "G03",
+      "G14",
+      "G15",
+      "D03",
+      "D10",
+      "T24"
+    ]
+  },
+  {
+    "id": "directional-inference-whole-literal-ambiguity-error",
+    "directory": "cases/directional-inference-whole-literal-ambiguity-error",
+    "compile_error": "ambiguous generic inference",
+    "decisions": [
+      "G03",
+      "F36"
+    ]
+  },
+  {
+    "id": "lambda-inference-source-free-checkpoint",
+    "directory": "cases/lambda-inference-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Replace source"
+      ]
+    ],
+    "output": [
+      "Created|",
+      "23|99|RC|true"
+    ],
+    "decisions": [
+      "G03",
+      "G15",
+      "F17",
+      "F21",
+      "F25",
+      "F27",
+      "F36",
+      "A06",
+      "T24"
+    ]
+  },
+  {
+    "id": "lambda-inference-branch-source-free",
+    "directory": "cases/lambda-inference-branch-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "13|14|15"
+    ],
+    "decisions": [
+      "G03",
+      "F25",
+      "F27",
+      "F36",
+      "C01",
+      "C05",
+      "E13",
+      "E15",
+      "E21"
+    ]
+  },
+  {
+    "id": "lambda-inference-choice-checkpoint",
+    "directory": "cases/lambda-inference-choice-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "First callback",
+        "Alternative"
+      ],
+      [
+        "Use callback"
+      ]
+    ],
+    "output": [
+      "13|1"
+    ],
+    "decisions": [
+      "G03",
+      "F21",
+      "F27",
+      "F36",
+      "T08",
+      "T15",
+      "T24"
+    ]
+  },
+  {
+    "id": "lambda-inference-whole-literals-source-free-checkpoint",
+    "directory": "cases/lambda-inference-whole-literals-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Call factories"
+      ]
+    ],
+    "output": [
+      "13|14|15|16"
+    ],
+    "decisions": [
+      "G03",
+      "G14",
+      "F25",
+      "F27",
+      "F36",
+      "D03",
+      "D10",
+      "T24"
+    ]
+  },
+  {
+    "id": "lambda-inference-cyclic-source-free",
+    "directory": "cases/lambda-inference-cyclic-source-free",
+    "precompile": [
+      "a",
+      "b"
+    ],
+    "output": [
+      "11|12"
+    ],
+    "decisions": [
+      "G03",
+      "F25",
+      "F27",
+      "F36",
+      "S10"
+    ]
+  },
+  {
+    "id": "lambda-inference-generic-reference-source-free",
+    "directory": "cases/lambda-inference-generic-reference-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "3|true"
+    ],
+    "decisions": [
+      "G03",
+      "G15",
+      "F25",
+      "F27",
+      "F36"
+    ]
+  },
+  {
+    "id": "lambda-inference-unit-source-free",
+    "directory": "cases/lambda-inference-unit-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "C"
+    ],
+    "decisions": [
+      "F06",
+      "F25",
+      "F27",
+      "F34"
+    ]
+  },
+  {
+    "id": "lambda-inference-method-scope-source-free",
+    "directory": "cases/lambda-inference-method-scope-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Call private method"
+      ]
+    ],
+    "output": [
+      "13"
+    ],
+    "decisions": [
+      "G03",
+      "F21",
+      "F25",
+      "F27",
+      "F36",
+      "U09",
+      "U10",
+      "U11",
+      "T24"
+    ]
+  },
+  {
+    "id": "lambda-inference-ambiguity-error",
+    "directory": "cases/lambda-inference-ambiguity-error",
+    "compile_error": "ambiguous generic inference",
+    "decisions": [
+      "G03",
+      "F25",
+      "F36"
+    ]
+  },
+  {
+    "id": "lambda-inference-explicit-adapter-error",
+    "directory": "cases/lambda-inference-explicit-adapter-error",
+    "compile_error": "no overload matches the expected function type",
+    "decisions": [
+      "G03",
+      "F36",
+      "F38"
+    ]
+  },
+  {
+    "id": "lambda-inference-captured-guard-error",
+    "directory": "cases/lambda-inference-captured-guard-error",
+    "precompile": [
+      "helpers"
+    ],
+    "compile_error": "nullable member receiver",
+    "decisions": [
+      "B09",
+      "F17",
+      "F25"
+    ]
+  },
+  {
+    "id": "lambda-inference-private-result-error",
+    "directory": "cases/lambda-inference-private-result-error",
+    "precompile": [
+      "helpers"
+    ],
+    "compile_error": "no overload matches the expected function type",
+    "decisions": [
+      "G03",
+      "F36",
+      "U11"
+    ]
+  },
+  {
+    "id": "lambda-inference-invalid-unused-error",
+    "directory": "cases/lambda-inference-invalid-unused-error",
+    "compile_error": "cannot combine String and Int",
+    "decisions": [
+      "G08",
+      "F25",
+      "F34"
+    ]
+  },
+  {
+    "id": "lambda-inference-missing-return-error",
+    "directory": "cases/lambda-inference-missing-return-error",
+    "compile_error": "return requires Int, found Unit",
+    "decisions": [
+      "F25",
+      "F27"
+    ]
+  },
+  {
+    "id": "lambda-inference-authored-return-error",
+    "directory": "cases/lambda-inference-authored-return-error",
+    "compile_error": "expected Int, found Unit",
+    "decisions": [
+      "F25",
+      "F27"
+    ]
+  },
+  {
+    "id": "dependent-bounds-source-free-checkpoint",
+    "directory": "cases/dependent-bounds-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Widen"
+      ],
+      [
+        "Inspect"
+      ]
+    ],
+    "output": [
+      "1|true|AB|a|true|1|true"
+    ],
+    "decisions": [
+      "G03",
+      "G05",
+      "G15",
+      "N04",
+      "P12",
+      "T24",
+      "T26",
+      "A06"
+    ]
+  },
+  {
+    "id": "dependent-bounds-structural-source-free",
+    "directory": "cases/dependent-bounds-structural-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "1|true|2.5|true"
+    ],
+    "decisions": [
+      "G03",
+      "G05",
+      "G15"
+    ]
+  },
+  {
+    "id": "dependent-bounds-callbacks-source-free",
+    "directory": "cases/dependent-bounds-callbacks-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "1|true|2.5|true"
+    ],
+    "decisions": [
+      "G03",
+      "G05",
+      "G15",
+      "F25"
+    ]
+  },
+  {
+    "id": "dependent-bounds-lambda-source-free",
+    "directory": "cases/dependent-bounds-lambda-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "1|true|2.5|true"
+    ],
+    "decisions": [
+      "G03",
+      "G05",
+      "G15",
+      "F27",
+      "F36"
+    ]
+  },
+  {
+    "id": "dependent-bounds-cyclic-source-free",
+    "directory": "cases/dependent-bounds-cyclic-source-free",
+    "precompile": [
+      "helpers",
+      "partner"
+    ],
+    "output": [
+      "1|true|1|true"
+    ],
+    "decisions": [
+      "G03",
+      "G05",
+      "G15",
+      "F14"
+    ]
+  },
+  {
+    "id": "dependent-bounds-recursive-source-free",
+    "directory": "cases/dependent-bounds-recursive-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "1|true"
+    ],
+    "decisions": [
+      "G03",
+      "G05",
+      "G15",
+      "F13"
+    ]
+  },
+  {
+    "id": "dependent-bounds-explicit-error",
+    "directory": "cases/dependent-bounds-explicit-error",
+    "precompile": [
+      "helpers"
+    ],
+    "compile_error": "does not satisfy",
+    "decisions": [
+      "G03",
+      "G05",
+      "G15"
+    ]
+  },
+  {
+    "id": "dependent-bounds-unrelated-error",
+    "directory": "cases/dependent-bounds-unrelated-error",
+    "precompile": [
+      "helpers"
+    ],
+    "compile_error": "does not satisfy",
+    "decisions": [
+      "G03",
+      "G05",
+      "G15"
+    ]
+  },
+  {
+    "id": "dependent-bounds-nominal-error",
+    "directory": "cases/dependent-bounds-nominal-error",
+    "precompile": [
+      "helpers"
+    ],
+    "compile_error": "does not satisfy",
+    "decisions": [
+      "G03",
+      "G05",
+      "G15"
+    ]
+  },
+  {
+    "id": "dependent-bounds-mutable-error",
+    "directory": "cases/dependent-bounds-mutable-error",
+    "precompile": [
+      "helpers"
+    ],
+    "compile_error": "does not satisfy",
+    "decisions": [
+      "G03",
+      "G05",
+      "G15"
+    ]
+  },
+  {
+    "id": "dependent-bounds-copy-error",
+    "directory": "cases/dependent-bounds-copy-error",
+    "precompile": [
+      "helpers"
+    ],
+    "compile_error": "does not satisfy",
+    "decisions": [
+      "G03",
+      "G05",
+      "G15"
+    ]
+  },
+  {
+    "id": "dependent-bounds-adapter-error",
+    "directory": "cases/dependent-bounds-adapter-error",
+    "precompile": [
+      "helpers"
+    ],
+    "compile_error": "does not satisfy",
+    "decisions": [
+      "G03",
+      "G05",
+      "G15"
+    ]
+  },
+  {
+    "id": "dependent-bounds-unobserved-error",
+    "directory": "cases/dependent-bounds-unobserved-error",
+    "compile_error": "cannot infer type argument",
+    "decisions": [
+      "G03",
+      "G05"
+    ]
+  },
+  {
+    "id": "dependent-bounds-bound-cycle-error",
+    "directory": "cases/dependent-bounds-bound-cycle-error",
+    "compile_error": "cyclic generic upper bounds",
+    "decisions": [
+      "G05"
     ]
   }
 ]

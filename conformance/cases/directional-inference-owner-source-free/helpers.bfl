@@ -1,0 +1,5 @@
+fun <U> combine(first: (U) -> Int, second: (U) -> Int, value: U) -> U = value
+export fun <T> outer(value: T) -> T:
+    fun narrow(input: T) -> Int = 1
+    fun broad(input: Any?) -> Int = 2
+    return combine(::narrow, ::broad, value)

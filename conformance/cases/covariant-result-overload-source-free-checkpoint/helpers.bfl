@@ -1,0 +1,9 @@
+export data class Box<out T>:
+    val value: T
+shared var calls: Int = 0
+export fun argument() -> Int:
+    calls += 1
+    return calls
+export fun count() = calls
+export fun choose(value: Float) = Box(11.5)
+export fun <T> choose(value: T) = Box(value)

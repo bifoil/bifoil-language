@@ -1,0 +1,1 @@
+export fun <A, B: A> choose(first: A, second: B) -> A = first

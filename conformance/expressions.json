@@ -1420,5 +1420,462 @@
       "D14",
       "T24"
     ]
+  },
+  {
+    "id": "when-contracts-source-free-checkpoint",
+    "directory": "cases/when-contracts-source-free-checkpoint",
+    "output": [
+      "kept|missing|null|1|2|happy|quiet|unnamed|0|3|4"
+    ],
+    "choices": [
+      0
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "decisions": [
+      "E14",
+      "E17",
+      "E21",
+      "E22",
+      "E23",
+      "E25",
+      "E26",
+      "U14",
+      "U18",
+      "U19",
+      "G03"
+    ]
+  },
+  {
+    "id": "when-guard-does-not-complete-coverage",
+    "directory": "cases/when-guard-does-not-complete-coverage",
+    "compile_error": "exhaustive",
+    "decisions": [
+      "E21",
+      "U14"
+    ]
+  },
+  {
+    "id": "when-nullable-missing-null-coverage",
+    "directory": "cases/when-nullable-missing-null-coverage",
+    "compile_error": "exhaustive",
+    "decisions": [
+      "E21"
+    ]
+  },
+  {
+    "id": "when-unrelated-branch-inference-error",
+    "directory": "cases/when-unrelated-branch-inference-error",
+    "compile_error": "no compatible joined type",
+    "decisions": [
+      "E14"
+    ]
+  },
+  {
+    "id": "when-generic-constant-coverage-source-free",
+    "directory": "cases/when-generic-constant-coverage-source-free",
+    "decisions": [
+      "E14",
+      "E17",
+      "E21",
+      "U19",
+      "G03"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "missing|kept|null"
+    ]
+  },
+  {
+    "id": "interpolation-blocks-source-free-checkpoint",
+    "directory": "cases/interpolation-blocks-source-free-checkpoint",
+    "decisions": [
+      "T03",
+      "T12",
+      "T24",
+      "P06",
+      "F26",
+      "F27",
+      "S10"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Accept"
+      ]
+    ],
+    "output": [
+      "start 1 end.",
+      "none|2|yes3|6"
+    ]
+  },
+  {
+    "id": "interpolation-suspend-block-source-free-checkpoint",
+    "directory": "cases/interpolation-suspend-block-source-free-checkpoint",
+    "decisions": [
+      "P06",
+      "T22",
+      "T24",
+      "S10"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Continue"
+      ]
+    ],
+    "output": [
+      "1|7|2|2"
+    ]
+  },
+  {
+    "id": "interpolation-prose-suspend-block-error",
+    "directory": "cases/interpolation-prose-suspend-block-error",
+    "decisions": [
+      "T03"
+    ],
+    "compile_error": "suspend"
+  },
+  {
+    "id": "interpolation-label-suspend-block-error",
+    "directory": "cases/interpolation-label-suspend-block-error",
+    "decisions": [
+      "T12"
+    ],
+    "compile_error": "suspend"
+  },
+  {
+    "id": "interpolation-block-nullable-rendering-error",
+    "directory": "cases/interpolation-block-nullable-rendering-error",
+    "decisions": [
+      "T03",
+      "P08"
+    ],
+    "compile_error": "render"
+  },
+  {
+    "id": "interpolation-block-physical-syntax-error",
+    "directory": "cases/interpolation-block-physical-syntax-error",
+    "decisions": [
+      "T03"
+    ],
+    "compile_error": "src/main.bfl:4: reserved keyword 'return'"
+  },
+  {
+    "id": "interpolation-trailing-statement-error",
+    "directory": "cases/interpolation-trailing-statement-error",
+    "decisions": [
+      "P06"
+    ],
+    "compile_error": "src/main.bfl:3: unexpected statement after interpolation expression"
+  },
+  {
+    "id": "interpolation-block-runtime-location",
+    "directory": "cases/interpolation-block-runtime-location",
+    "decisions": [
+      "P06",
+      "E35"
+    ],
+    "runtime_error": "src/main.bfl:4: division by zero"
+  },
+  {
+    "id": "interpolation-prose-block-runtime-location",
+    "directory": "cases/interpolation-prose-block-runtime-location",
+    "decisions": [
+      "T03",
+      "E35"
+    ],
+    "runtime_error": "src/main.bfl:8: division by zero"
+  },
+  {
+    "id": "interpolation-label-block-runtime-location",
+    "directory": "cases/interpolation-label-block-runtime-location",
+    "decisions": [
+      "T12",
+      "E35"
+    ],
+    "runtime_error": "src/main.bfl:5: division by zero"
+  },
+  {
+    "id": "nested-recursive-story-expression-source-free",
+    "directory": "cases/nested-recursive-story-expression-source-free",
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Depth 1"
+      ],
+      [
+        "Recurse"
+      ],
+      [
+        "Depth 0"
+      ],
+      [
+        "Depth 1"
+      ],
+      [
+        "Recurse"
+      ],
+      [
+        "Depth 0"
+      ]
+    ],
+    "output": [
+      "130|4|5"
+    ],
+    "decisions": []
+  },
+  {
+    "id": "continued-operation-divide-source-free-error",
+    "directory": "cases/continued-operation-divide-source-free-error",
+    "decisions": [
+      "L05",
+      "E35"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "runtime_error": "src/helpers.bfl:4: division by zero"
+  },
+  {
+    "id": "continued-operation-overflow-source-free-error",
+    "directory": "cases/continued-operation-overflow-source-free-error",
+    "decisions": [
+      "L05",
+      "E35"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "runtime_error": "src/helpers.bfl:4: Int overflow"
+  },
+  {
+    "id": "continued-operation-negation-source-free-error",
+    "directory": "cases/continued-operation-negation-source-free-error",
+    "decisions": [
+      "L05",
+      "E35"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "runtime_error": "src/helpers.bfl:3: Int overflow"
+  },
+  {
+    "id": "continued-operation-cast-source-free-error",
+    "directory": "cases/continued-operation-cast-source-free-error",
+    "decisions": [
+      "L05",
+      "E35"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "runtime_error": "src/helpers.bfl:4: checked cast failed"
+  },
+  {
+    "id": "continued-operation-assertion-source-free-error",
+    "directory": "cases/continued-operation-assertion-source-free-error",
+    "decisions": [
+      "L05",
+      "E35"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "runtime_error": "src/helpers.bfl:4: non-null assertion failed"
+  },
+  {
+    "id": "continued-operation-index-source-free-error",
+    "directory": "cases/continued-operation-index-source-free-error",
+    "decisions": [
+      "L05",
+      "E35"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "runtime_error": "src/helpers.bfl:4: index out of bounds"
+  },
+  {
+    "id": "continued-operation-range-source-free-error",
+    "directory": "cases/continued-operation-range-source-free-error",
+    "decisions": [
+      "L05",
+      "E35"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "runtime_error": "src/helpers.bfl:4: ascending range is empty or reversed"
+  },
+  {
+    "id": "continued-operation-step-source-free-error",
+    "directory": "cases/continued-operation-step-source-free-error",
+    "decisions": [
+      "L05",
+      "E35"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "runtime_error": "src/helpers.bfl:4: range step must be a positive Int"
+  },
+  {
+    "id": "continued-operation-fairmath-source-free-error",
+    "directory": "cases/continued-operation-fairmath-source-free-error",
+    "decisions": [
+      "L05",
+      "E35"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "runtime_error": "src/helpers.bfl:4: fairmath base must be in 0..100"
+  },
+  {
+    "id": "continued-operation-method-source-free-error",
+    "directory": "cases/continued-operation-method-source-free-error",
+    "decisions": [
+      "L05",
+      "E35"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "runtime_error": "src/helpers.bfl:4: invalid substring bounds"
+  },
+  {
+    "id": "continued-operation-resume-source-free-error",
+    "directory": "cases/continued-operation-resume-source-free-error",
+    "decisions": [
+      "L05",
+      "E35",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Continue"
+      ]
+    ],
+    "output": [
+      "Resumed."
+    ],
+    "runtime_error": "src/helpers.bfl:8: division by zero"
+  },
+  {
+    "id": "continued-operation-safe-skips-source-free-checkpoint",
+    "directory": "cases/continued-operation-safe-skips-source-free-checkpoint",
+    "decisions": [
+      "L05",
+      "E35",
+      "B15",
+      "B16",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Check"
+      ]
+    ],
+    "output": [
+      "Continuing.",
+      "true|true|0"
+    ]
+  },
+  {
+    "id": "continued-operation-nested-source-free-error",
+    "directory": "cases/continued-operation-nested-source-free-error",
+    "decisions": [
+      "L05",
+      "E35"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "runtime_error": "src/helpers.bfl:5: division by zero"
+  },
+  {
+    "id": "continued-operation-default-source-free-error",
+    "directory": "cases/continued-operation-default-source-free-error",
+    "decisions": [
+      "L05",
+      "E35"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "runtime_error": "src/helpers.bfl:3: division by zero"
+  },
+  {
+    "id": "continued-operation-lambda-source-free-error",
+    "directory": "cases/continued-operation-lambda-source-free-error",
+    "decisions": [
+      "L05",
+      "E35"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "runtime_error": "src/helpers.bfl:4: division by zero"
+  },
+  {
+    "id": "continued-operation-prose-source-free-error",
+    "directory": "cases/continued-operation-prose-source-free-error",
+    "decisions": [
+      "L05",
+      "E35"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "runtime_error": "src/helpers.bfl:5: division by zero"
+  },
+  {
+    "id": "continued-operation-label-source-free-error",
+    "directory": "cases/continued-operation-label-source-free-error",
+    "decisions": [
+      "L05",
+      "E35"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "runtime_error": "src/helpers.bfl:5: division by zero"
   }
 ]

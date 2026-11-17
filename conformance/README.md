@@ -10,8 +10,7 @@ boundaries.
 - `generics.json`: annotation validity, inference, recursive capabilities, nested projected views, nominal parent
 identity, nested copy reification, non-null refinements, bound-based operations/calls, exhaustive patterns, suspension,
 nullable upper-type joins, sibling sum variants, structural scene/bound inference, safe projected callbacks and
-covariant
-inputs, and variance.
+covariant inputs, and variance.
 - `overloads.json`: conversion rankings, tie breakers, references, closures, methods, visibility, and artifact reuse.
 - `shared.json`: dependency-first effects, defaults, methods, recursion, conservative cycles, and artifact reuse.
 - `lifetimes.json`: allocation-heavy traversal, deep equality/rendering, execution slices, Unicode cursors, bound
@@ -40,11 +39,11 @@ selection, duplicate-ID errors, and malformed case metadata are checked before c
 compile/runtime failures, empty expected diagnostics, and empty runs are rejected. Resource measurements use the
 separate isolated benchmark commands.
 
-Add `--package` to build the same cases as `bifoil.package.v1` roots plus code scenes. The runtime executor shares the
-normal package loader, and every input wait still restores before continuing. Both inline and package modes passed all
-1,100 cases with source formatting and idempotence checks. Module coverage also includes source-free exports and data
-fields named after JavaScript object properties, including `__proto__` and `constructor`, with shallow copies and a
-restored input wait.
+Add `--package` to build the same cases as `bifoil.package.v2` roots plus content-addressed code scenes. The runtime
+executor shares the normal on-demand package loader, and every input wait still restores before continuing. Both modes
+check the same expected behavior with source formatting and idempotence. Runtime fixtures retain eager v1 compatibility.
+Module coverage also includes source-free exports and data fields named after JavaScript object properties, including
+`__proto__` and `constructor`, with shallow copies and a restored input wait.
 
 Add `--format-sources` to normalize generated Bifoil files before precompilation and verify formatter idempotence. A
 syntax-invalid input remains untouched for its normal expected compilation diagnostic; valid cases must format
@@ -60,8 +59,7 @@ uv run --no-project tools/validate-conformance.py
 It checks steering IDs, duplicate case IDs, source directories, expected-error fields, statuses, exact selected decision
 text, reciprocal case/decision links, and both case-ID and source-file evidence paths. These checks establish metadata
 integrity, rather than semantic conformance. Case metadata uses `compile_error` or `runtime_error` for expected
-failures; an unknown `error` field is
-rejected.
+failures; an unknown `error` field is rejected.
 
 Nested-text cases include quoted braces, recursive interpolation, triple literals, Unicode escape validation, multiline
 prose expressions, and suspension through a source-free module without replaying earlier substitutions. Guarded-return
@@ -80,7 +78,10 @@ while retaining complete generic declarations. Negation cases distinguish keywor
 
 Loop-result cases exercise condition exits, labeled breaks, continuing post-test bodies, and source-free suspension.
 Location cases check physical lines inside continued strings, lambdas, conditions, and prose; multiline block headers
-retain their opening structural level.
+retain their opening structural level. Continued-operation cases assert the failing operator's physical line for checked
+arithmetic, casts, assertions, indexing, ranges, fairmath, and built-in calls. Source-free modules exercise nested
+expressions, defaults, lambdas, prose/label interpolation, checkpoint resumption, and skipped nullable-call/index
+arguments.
 
 Projected-key cases preserve built-in set/key guarantees and closed nominal bounds without treating arbitrary hidden
 values as stable keys. Copy cases exercise bounded generic receivers, projected targets, conversion ranking, and
@@ -230,3 +231,49 @@ Continue-path coverage preserves distinct correlations between initialized bindi
 A source-free loop restores each prepared wait and calls the preceding iteration's callback; an unsafe backedge still
 reports its uninitialized capture. Scope-storage changes must retain these semantics rather than merging away needed
 path information.
+
+The [type-system interaction matrix](type-interactions.md) links combined source-free/checkpoint behavior to paired
+rejections for inference, variance, views, effects, keys, and call interfaces.
+
+The [collection/data graph matrix](collection-graph-interactions.md) combines cyclic values, stable projected keys,
+container and nominal copies, exact comparison, runtime type identity, ordering, and source-free checkpoints. Paired
+rejections preserve capability/projection boundaries; a larger compiled ring exercises repeated restoration of 20,000
+nodes.
+
+[text-contracts.json](text-contracts.json) checks exact triple-string whitespace, source-free suspended substitution,
+primitive and composite rendering, checked conversions, and ordinary repeated-comparison typing.
+
+[collection-operations.json](collection-operations.json) checks collection method signatures/results, Entry snapshots,
+dynamic bounds timing, and shallow data-copy evaluation with source-free modules and restored waits.
+
+[progression-reference.json](progression-reference.json) checks pinned integer membership, exact search-index failures,
+generic query proofs, and terminal loops through source-free modules and fresh-host checkpoint restoration.
+
+[Equality and nullable results](../equality-and-nullability.md) defines ordinary comparison and fallback typing, with
+source-free positive and rejection controls.
+
+[Modules, aliases, and shared storage](../modules-and-names.md) specifies module interfaces, enum lookup, and visit
+storage.
+
+[Projection views](../projection-semantics.md) defines sound reads and writes through hidden arguments.
+
+
+The constraint-contracts, namespace-separation, and scoped-shared indexes combine recursive bounds/interfaces, separate
+lexical namespaces, unique public names, ordinary value-prefix captures, and eagerly initialized nested persistent
+cells. Source-free positives restore checkpoints; negatives reject insufficient bounds, duplicate names, enclosing-state
+dependence, invalid scope, cycles, and illegal writes.
+
+
+The prose-boundaries index checks callable contexts, escaped/suspended functions, directive value blocks, code-mode
+interpolation, paragraph separators across dedents, comments, and explicit or literal newline escapes.
+
+
+The inference-contracts index combines function results, recursive anchors, generic contexts, overload/default ranks,
+Unit callbacks, and guarded coverage. One reified covariance distinction remains pending direct user steering and is not
+counted as qualified until resolved.
+
+The [text-admission cases](text-admission.json) exercise malformed external Unicode and dynamic String result guards;
+the [text contract](../text-semantics.md#scalar-validation-and-limits) records their development-profile scope.
+
+[Legacy returned-value validation](legacy-validation.json) checks an invalid native result after a real input wait,
+source-free import, and fresh-host restore, including its original Bifoil location.

@@ -1,0 +1,3 @@
+val title: String = "Story"
+scene start():
+    Unit

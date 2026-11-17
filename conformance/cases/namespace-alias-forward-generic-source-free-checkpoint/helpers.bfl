@@ -1,0 +1,9 @@
+export typealias Transform<T> = Handler<T>
+typealias Handler<T> = (T) -> T
+export data class Box<T>:
+    val value: T
+export fun <T> factory(value: T) -> () -> T:
+    fun read() -> Local = value
+    typealias Local = T
+    return ::read
+export fun <T> boxed(value: T) -> Box<T> = Box(value)

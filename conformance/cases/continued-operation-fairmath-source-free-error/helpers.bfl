@@ -1,0 +1,4 @@
+export fun fail(value: Int) -> Int:
+    return (
+        value
+        %+ 10)

@@ -1,0 +1,8 @@
+export fun <T> pair(left: T, right: T) -> T = left
+export fun chooseSecond(value: Int) -> Int = value
+export fun chooseSecond(value: Boolean) -> Boolean = value
+export data class Source:
+    val base: Int
+    private fun choose(value: Int) -> Int = base + value
+    fun choose(value: String) -> String = value
+    fun build() = pair(() => this::choose, () => ::chooseSecond)

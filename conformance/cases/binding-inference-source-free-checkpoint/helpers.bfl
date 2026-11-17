@@ -1,0 +1,16 @@
+export data class Box<T>:
+    val value: T
+export data class Marker<T>:
+    val code: Int
+export fun numeric(flag: Boolean):
+    if flag:
+        return 1
+    return 2.5
+export fun optional(flag: Boolean):
+    if flag:
+        return "ready"
+    return null
+export fun <T> select(first: T, second: T) -> T = second
+export fun curried(initial: Int):
+    fun add(value: Int) = initial + value
+    return ::add

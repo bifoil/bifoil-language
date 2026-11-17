@@ -1,0 +1,4 @@
+import helpers.Link0
+scene start():
+    val first = Link0()
+    val keys = {first}

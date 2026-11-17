@@ -1,0 +1,4 @@
+export fun fail(amount: Int):
+    val values = (
+        1..9
+        step amount)

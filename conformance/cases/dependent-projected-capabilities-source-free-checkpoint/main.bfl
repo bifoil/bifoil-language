@@ -1,0 +1,13 @@
+import helpers.Key
+import helpers.Nested
+scene start():
+    val first: Key<Int, *> = Key<Int, Int>(1)
+    val second: Key<*, *> = Key<String, String>("two")
+    val keys: Set<Key<*, *>> = {first, second}
+    val nested: Nested<*, *> = Nested<Int, List<Int>>([1, 2])
+    val held: Set<Nested<*, *>> = {nested}
+    choice:
+        option "Inspect stable keys":
+            Unit
+    prose:
+        ${keys.size}|${first == first}|${held.size}

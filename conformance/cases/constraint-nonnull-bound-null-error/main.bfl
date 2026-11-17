@@ -1,0 +1,4 @@
+fun <T: Any> present(value: T) -> T = value
+fun unused(value: Int?) = present<Int?>(value)
+scene start():
+    Unit

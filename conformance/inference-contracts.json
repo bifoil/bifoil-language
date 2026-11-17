@@ -1,0 +1,98 @@
+[
+  {
+    "id": "inference-return-contracts-source-free-checkpoint",
+    "directory": "cases/inference-return-contracts-source-free-checkpoint",
+    "decisions": ["F02", "F03", "F13", "F14", "F20", "G03", "G14", "T24"],
+    "precompile": ["helpers"],
+    "choices": [0],
+    "options": [["Inferred returns"]],
+    "output": ["true|true|7|true|false true|true|true|true"]
+  },
+  {
+    "id": "inference-overloads-unit-defaults-source-free-checkpoint",
+    "directory": "cases/inference-overloads-unit-defaults-source-free-checkpoint",
+    "decisions": ["F02", "F09", "F10", "F11", "F23", "F28", "F29", "F34", "G03", "G15", "T24"],
+    "precompile": ["helpers"],
+    "choices": [0],
+    "options": [["Calls BD"]],
+    "output": ["14|14|BDUAE|generic|float|plain|default|variadic"]
+  },
+  {
+    "id": "inference-parameter-annotation-error",
+    "directory": "cases/inference-parameter-annotation-error",
+    "decisions": ["F02"],
+    "compile_error": "expected ':'"
+  },
+  {
+    "id": "inference-recursive-result-error",
+    "directory": "cases/inference-recursive-result-error",
+    "decisions": ["F02", "F13"],
+    "compile_error": "cannot infer"
+  },
+  {
+    "id": "inference-incompatible-returns-error",
+    "directory": "cases/inference-incompatible-returns-error",
+    "decisions": ["F02"],
+    "compile_error": "incompatible"
+  },
+  {
+    "id": "inference-missing-return-error",
+    "directory": "cases/inference-missing-return-error",
+    "decisions": ["F02", "F04"],
+    "compile_error": "return on every path"
+  },
+  {
+    "id": "inference-return-only-overloads-error",
+    "directory": "cases/inference-return-only-overloads-error",
+    "decisions": ["F23"],
+    "compile_error": "duplicate"
+  },
+  {
+    "id": "inference-pareto-overloads-error",
+    "directory": "cases/inference-pareto-overloads-error",
+    "decisions": ["F23", "F28"],
+    "compile_error": "ambiguous"
+  },
+  {
+    "id": "inference-unrelated-generic-join-error",
+    "directory": "cases/inference-unrelated-generic-join-error",
+    "decisions": ["G03", "G14"],
+    "compile_error": "incompatible"
+  },
+  {
+    "id": "inference-unanchored-generic-error",
+    "directory": "cases/inference-unanchored-generic-error",
+    "decisions": ["G03"],
+    "compile_error": "infer"
+  },
+  {
+    "id": "inference-function-result-adapter-error",
+    "directory": "cases/inference-function-result-adapter-error",
+    "decisions": ["F36", "F38"],
+    "compile_error": "expected function type"
+  },
+  {
+    "id": "inference-guard-coverage-error",
+    "directory": "cases/inference-guard-coverage-error",
+    "decisions": ["F02", "E21", "E32"],
+    "compile_error": "exhaustive"
+  },
+  {
+    "id": "inference-guarded-returns-source-free-checkpoint",
+    "directory": "cases/inference-guarded-returns-source-free-checkpoint",
+    "decisions": ["F02", "E16", "E17", "E21", "E22", "E32", "T24"],
+    "precompile": ["helpers"],
+    "choices": [0],
+    "options": [["Guard coverage"]],
+    "output": ["1|2|0|5"]
+  },
+  {
+    "id": "inference-nominal-context-source-free-checkpoint",
+    "directory": "cases/inference-nominal-context-source-free-checkpoint",
+    "decisions": ["G01", "G03", "G06", "G11", "G14", "U01", "U20", "U21", "T24"],
+    "precompile": ["models"],
+    "choices": [0],
+    "options": [["Reified inference"]],
+    "output": ["true|true|false|true|true"]
+  }
+]

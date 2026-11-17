@@ -1,0 +1,3 @@
+fun <A: B, B: A> choose(first: A, second: B) -> A = first
+scene start():
+    Unit

@@ -1,0 +1,6 @@
+fun bad(flag: Boolean):
+    if flag:
+        return 1
+    return "text"
+scene start():
+    Unit

@@ -1,0 +1,9 @@
+fun divide(value: Int) -> String:
+    return "${if value == 0:
+        val numerator = 10
+        numerator / value
+    else:
+        value
+    }"
+scene start():
+    val rendered = divide(0)

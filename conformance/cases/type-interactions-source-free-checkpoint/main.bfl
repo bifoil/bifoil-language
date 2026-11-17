@@ -1,0 +1,29 @@
+import helpers.Handler
+import helpers.effects
+import helpers.broad
+import helpers.scalar
+import helpers.fit
+import helpers.joined
+import helpers.Key
+scene start():
+    val ordinary: (Int) -> String? = ::broad
+    val suspended: suspend (Int) -> String? = ordinary
+    val erased: Any = suspended
+    val completed = suspended(5)
+    val selected: (Int) -> String = ::scalar
+    val source = [1, 2]
+    val optional: List<Int>? = source
+    val converted: MutableList<Float>? = optional
+    converted!![0] = 9.0
+    val mixed = joined(1, 2.5)
+    val keys: Set<Key<Int>> = {Key([1, 2]), Key([1, 2])}
+    val consume: Handler = (item: Int) =>:
+        effects += item
+        "discarded"
+    consume(3)
+    choice:
+        option "Continue ${effects}":
+            Unit
+    consume(2)
+    prose:
+        ${ordinary(4)!!}|${completed!!}|${selected(3)}|${fit(source)}|${mixed}|${mixed is Float}|${source[0]}|${converted!![0]}|${erased is (Int?) -> String}|${erased is suspend (Int?) -> String}|${effects}|${keys.size}

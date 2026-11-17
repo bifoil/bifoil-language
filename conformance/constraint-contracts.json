@@ -1,0 +1,166 @@
+[
+  {
+    "id": "constraint-cyclic-interfaces-source-free-checkpoint",
+    "directory": "cases/constraint-cyclic-interfaces-source-free-checkpoint",
+    "decisions": [
+      "G03",
+      "G05",
+      "G08",
+      "G14",
+      "G15",
+      "T24"
+    ],
+    "precompile": [
+      "left",
+      "right"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Bounds AB"
+      ],
+      [
+        "Graph AB"
+      ]
+    ],
+    "output": [
+      "true|true|1|true|AB"
+    ]
+  },
+  {
+    "id": "constraint-recursive-bound-alias-source-free-checkpoint",
+    "directory": "cases/constraint-recursive-bound-alias-source-free-checkpoint",
+    "decisions": [
+      "G01",
+      "G05",
+      "G07",
+      "G08",
+      "U01",
+      "U27",
+      "G15",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Recursive bounds"
+      ]
+    ],
+    "output": [
+      "4|4|true|true|kept"
+    ]
+  },
+  {
+    "id": "constraint-capabilities-and-widening-source-free-checkpoint",
+    "directory": "cases/constraint-capabilities-and-widening-source-free-checkpoint",
+    "decisions": [
+      "G03",
+      "G04",
+      "G05",
+      "G08",
+      "G09",
+      "G10",
+      "G13",
+      "G14",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Capabilities"
+      ]
+    ],
+    "output": [
+      "true|false|true|3|true|3"
+    ]
+  },
+  {
+    "id": "constraint-direct-upper-cycle-error",
+    "directory": "cases/constraint-direct-upper-cycle-error",
+    "decisions": [
+      "G05",
+      "G08"
+    ],
+    "compile_error": "cyclic generic upper bounds"
+  },
+  {
+    "id": "constraint-nullable-upper-cycle-error",
+    "directory": "cases/constraint-nullable-upper-cycle-error",
+    "decisions": [
+      "G05",
+      "G08"
+    ],
+    "compile_error": "cyclic generic upper bounds"
+  },
+  {
+    "id": "constraint-unused-unknown-bound-error",
+    "directory": "cases/constraint-unused-unknown-bound-error",
+    "decisions": [
+      "G05",
+      "G08"
+    ],
+    "compile_error": "unknown type"
+  },
+  {
+    "id": "constraint-unused-insufficient-key-bound-error",
+    "directory": "cases/constraint-unused-insufficient-key-bound-error",
+    "decisions": [
+      "G05",
+      "G08",
+      "G09",
+      "G10"
+    ],
+    "compile_error": "StableKey"
+  },
+  {
+    "id": "constraint-explicit-argument-not-rewritten-error",
+    "directory": "cases/constraint-explicit-argument-not-rewritten-error",
+    "decisions": [
+      "G03",
+      "G05",
+      "G08"
+    ],
+    "compile_error": "does not satisfy"
+  },
+  {
+    "id": "constraint-recursive-bound-invalid-argument-error",
+    "directory": "cases/constraint-recursive-bound-invalid-argument-error",
+    "decisions": [
+      "G05",
+      "G08"
+    ],
+    "compile_error": "does not satisfy"
+  },
+  {
+    "id": "constraint-nonnull-bound-null-error",
+    "directory": "cases/constraint-nonnull-bound-null-error",
+    "decisions": [
+      "G05",
+      "G08",
+      "G13"
+    ],
+    "compile_error": "does not satisfy"
+  },
+  {
+    "id": "constraint-capability-does-not-imply-stable-error",
+    "directory": "cases/constraint-capability-does-not-imply-stable-error",
+    "decisions": [
+      "G05",
+      "G08"
+    ],
+    "compile_error": "StableKey"
+  }
+]

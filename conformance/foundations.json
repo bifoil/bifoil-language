@@ -16,7 +16,7 @@
       "P16"
     ],
     "output": [
-      "3|128512|\ud83d\ude00|e\u0301|true|3"
+      "3|128512|😀|é|true|3"
     ],
     "directory": "cases/text-scalars"
   },
@@ -585,5 +585,525 @@
       "782|780|780|120",
       "40|1|38|0|39|39|0"
     ]
+  },
+  {
+    "id": "collection-contracts-source-free-checkpoint",
+    "directory": "cases/collection-contracts-source-free-checkpoint",
+    "decisions": [
+      "D05",
+      "D07",
+      "D19",
+      "D21",
+      "D22",
+      "D25",
+      "U05",
+      "G03",
+      "G15"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "true|true|false|true|two|changed|true|true|true|7|1|2"
+    ]
+  },
+  {
+    "id": "linked-tape-source-free-checkpoint",
+    "directory": "cases/linked-tape-source-free-checkpoint",
+    "decisions": [],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "output": [
+      "111",
+      "_|111",
+      "111"
+    ]
+  },
+  {
+    "id": "range-terminal-boundaries-source-free-checkpoint",
+    "directory": "cases/range-terminal-boundaries-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "decisions": [
+      "R01",
+      "R05",
+      "R06",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "T24"
+    ],
+    "choices": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "A -2147483648"
+      ],
+      [
+        "A -1"
+      ],
+      [
+        "A 2147483646"
+      ],
+      [
+        "D 2147483647"
+      ],
+      [
+        "D 0"
+      ],
+      [
+        "D -2147483647"
+      ]
+    ],
+    "output": [
+      "-2147483648;-1;2147483646;2147483647;0;-2147483647;"
+    ]
+  },
+  {
+    "id": "range-zero-step-constant-error",
+    "directory": "cases/range-zero-step-constant-error",
+    "compile_error": "positive",
+    "decisions": [
+      "R06"
+    ]
+  },
+  {
+    "id": "range-negative-step-dynamic-failure",
+    "directory": "cases/range-negative-step-dynamic-failure",
+    "runtime_error": "range step must be a positive Int",
+    "decisions": [
+      "R06"
+    ]
+  },
+  {
+    "id": "primitive-text-contracts-source-free-checkpoint",
+    "directory": "cases/primitive-text-contracts-source-free-checkpoint",
+    "precompile": [
+      "helpers"
+    ],
+    "decisions": [
+      "P08",
+      "P12"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Keep v3 LR"
+      ]
+    ],
+    "output": [
+      "btrue|falseb|c😀|😀c|n7|7n|f2.5|2.5f|v3|LR"
+    ]
+  },
+  {
+    "id": "prose-nullable-rendering-error",
+    "directory": "cases/prose-nullable-rendering-error",
+    "compile_error": "renderable non-null primitive",
+    "decisions": [
+      "P08"
+    ]
+  },
+  {
+    "id": "prose-unit-rendering-error",
+    "directory": "cases/prose-unit-rendering-error",
+    "compile_error": "renderable non-null primitive",
+    "decisions": [
+      "P08"
+    ]
+  },
+  {
+    "id": "prose-collection-rendering-error",
+    "directory": "cases/prose-collection-rendering-error",
+    "compile_error": "renderable non-null primitive",
+    "decisions": [
+      "P08"
+    ]
+  },
+  {
+    "id": "prose-function-rendering-error",
+    "directory": "cases/prose-function-rendering-error",
+    "compile_error": "renderable non-null primitive",
+    "decisions": [
+      "P08"
+    ]
+  },
+  {
+    "id": "prose-scene-rendering-error",
+    "directory": "cases/prose-scene-rendering-error",
+    "compile_error": "renderable non-null primitive",
+    "decisions": [
+      "P08"
+    ]
+  },
+  {
+    "id": "primitive-string-assignment-error",
+    "directory": "cases/primitive-string-assignment-error",
+    "compile_error": "expected String",
+    "decisions": [
+      "P12"
+    ]
+  },
+  {
+    "id": "binding-inference-source-free-checkpoint",
+    "directory": "cases/binding-inference-source-free-checkpoint",
+    "decisions": [
+      "B01",
+      "B02",
+      "F02",
+      "F21",
+      "G03",
+      "S10",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "true|true|true|true|true|true|true|true|3|7|2.5|7|10|2"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Resume inference"
+      ]
+    ]
+  },
+  {
+    "id": "nullable-conversions-source-free-checkpoint",
+    "directory": "cases/nullable-conversions-source-free-checkpoint",
+    "decisions": [
+      "B14",
+      "D20",
+      "D21",
+      "D25",
+      "D27",
+      "S10",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "true|true|true|😀|true|true|true|1|8|9|true|2|3|3|true|3|8|9|true|1|true"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Resume conversions"
+      ]
+    ]
+  },
+  {
+    "id": "binding-initialization-source-free-checkpoint",
+    "directory": "cases/binding-initialization-source-free-checkpoint",
+    "decisions": [
+      "B06",
+      "B07",
+      "F10",
+      "F11",
+      "F13",
+      "F14",
+      "F19",
+      "F20",
+      "F21",
+      "S10",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "3|4|9|5|7|13|1|2|11|14"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Resume bindings"
+      ]
+    ]
+  },
+  {
+    "id": "binding-scope-reuse-source-free-checkpoint",
+    "directory": "cases/binding-scope-reuse-source-free-checkpoint",
+    "decisions": [
+      "B04",
+      "B05",
+      "B10",
+      "F21",
+      "C01",
+      "S10",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "7|34"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Resume scope"
+      ]
+    ]
+  },
+  {
+    "id": "binding-inference-unrelated-error",
+    "directory": "cases/binding-inference-unrelated-error",
+    "decisions": [
+      "B01"
+    ],
+    "compile_error": "compatible"
+  },
+  {
+    "id": "binding-inference-static-reassignment-error",
+    "directory": "cases/binding-inference-static-reassignment-error",
+    "decisions": [
+      "B01",
+      "B02"
+    ],
+    "compile_error": "expected Int"
+  },
+  {
+    "id": "nullable-conversion-unwrapping-error",
+    "directory": "cases/nullable-conversion-unwrapping-error",
+    "decisions": [
+      "B14",
+      "B08"
+    ],
+    "compile_error": "expected Float"
+  },
+  {
+    "id": "nullable-conversion-mutable-invariance-error",
+    "directory": "cases/nullable-conversion-mutable-invariance-error",
+    "decisions": [
+      "B14",
+      "D21"
+    ],
+    "compile_error": "expected MutableList"
+  },
+  {
+    "id": "nullable-conversion-wrong-family-error",
+    "directory": "cases/nullable-conversion-wrong-family-error",
+    "decisions": [
+      "B14"
+    ],
+    "compile_error": "expected Set"
+  },
+  {
+    "id": "binding-initialization-partial-read-error",
+    "directory": "cases/binding-initialization-partial-read-error",
+    "decisions": [
+      "B06"
+    ],
+    "compile_error": "not definitely initialized"
+  },
+  {
+    "id": "binding-initialization-default-read-error",
+    "directory": "cases/binding-initialization-default-read-error",
+    "decisions": [
+      "B06",
+      "F19"
+    ],
+    "compile_error": "captured binding 'seed' is not initialized"
+  },
+  {
+    "id": "binding-initialization-call-before-ready-error",
+    "directory": "cases/binding-initialization-call-before-ready-error",
+    "decisions": [
+      "B06",
+      "F19"
+    ],
+    "compile_error": "captured binding 'seed' is not initialized"
+  },
+  {
+    "id": "binding-initialization-escaping-read-error",
+    "directory": "cases/binding-initialization-escaping-read-error",
+    "decisions": [
+      "B06",
+      "F19"
+    ],
+    "compile_error": "captured binding 'seed' is not initialized"
+  },
+  {
+    "id": "binding-initialization-second-write-error",
+    "directory": "cases/binding-initialization-second-write-error",
+    "decisions": [
+      "B07"
+    ],
+    "compile_error": "cannot reassign initialized val"
+  },
+  {
+    "id": "binding-initialization-rhs-write-error",
+    "directory": "cases/binding-initialization-rhs-write-error",
+    "decisions": [
+      "B07"
+    ],
+    "compile_error": "cannot reassign initialized val"
+  },
+  {
+    "id": "binding-initialization-loop-write-error",
+    "directory": "cases/binding-initialization-loop-write-error",
+    "decisions": [
+      "B07"
+    ],
+    "compile_error": "could be initialized more than once"
+  },
+  {
+    "id": "binding-shadow-local-error",
+    "directory": "cases/binding-shadow-local-error",
+    "decisions": [
+      "B05"
+    ],
+    "compile_error": "shadowing"
+  },
+  {
+    "id": "binding-shadow-parameter-error",
+    "directory": "cases/binding-shadow-parameter-error",
+    "decisions": [
+      "B05"
+    ],
+    "compile_error": "shadow"
+  },
+  {
+    "id": "binding-shadow-iterator-error",
+    "directory": "cases/binding-shadow-iterator-error",
+    "decisions": [
+      "B05",
+      "C01"
+    ],
+    "compile_error": "shadowing"
+  },
+  {
+    "id": "binding-shadow-subject-error",
+    "directory": "cases/binding-shadow-subject-error",
+    "decisions": [
+      "B05"
+    ],
+    "compile_error": "shadowing"
+  },
+  {
+    "id": "binding-shadow-pattern-error",
+    "directory": "cases/binding-shadow-pattern-error",
+    "decisions": [
+      "B05"
+    ],
+    "compile_error": "shadowing"
+  },
+  {
+    "id": "binding-shadow-function-error",
+    "directory": "cases/binding-shadow-function-error",
+    "decisions": [
+      "B05",
+      "F23"
+    ],
+    "compile_error": "shadowing"
+  },
+  {
+    "id": "binding-shadow-builtin-error",
+    "directory": "cases/binding-shadow-builtin-error",
+    "decisions": [
+      "B05"
+    ],
+    "compile_error": "shadowing"
+  },
+  {
+    "id": "binding-loop-label-reuse-error",
+    "directory": "cases/binding-loop-label-reuse-error",
+    "decisions": [
+      "C03",
+      "C04"
+    ],
+    "compile_error": "label"
+  },
+  {
+    "id": "nonloop-if-label-error",
+    "directory": "cases/nonloop-if-label-error",
+    "decisions": [
+      "C03",
+      "C04"
+    ],
+    "compile_error": "loop labels require for, while, or do"
+  },
+  {
+    "id": "nonloop-when-label-error",
+    "directory": "cases/nonloop-when-label-error",
+    "decisions": [
+      "C03",
+      "C04"
+    ],
+    "compile_error": "loop labels require for, while, or do"
+  },
+  {
+    "id": "nonloop-choice-label-error",
+    "directory": "cases/nonloop-choice-label-error",
+    "decisions": [
+      "C03",
+      "C04"
+    ],
+    "compile_error": "loop labels require for, while, or do"
+  },
+  {
+    "id": "nonloop-prose-label-error",
+    "directory": "cases/nonloop-prose-label-error",
+    "decisions": [
+      "C03",
+      "C04"
+    ],
+    "compile_error": "loop labels require for, while, or do"
+  },
+  {
+    "id": "nonloop-prose-directive-label-error",
+    "directory": "cases/nonloop-prose-directive-label-error",
+    "decisions": [
+      "C03",
+      "C04"
+    ],
+    "compile_error": "loop labels require for, while, or do"
+  },
+  {
+    "id": "binding-initialization-forwarded-read-error",
+    "directory": "cases/binding-initialization-forwarded-read-error",
+    "decisions": [
+      "B06",
+      "F19"
+    ],
+    "compile_error": "captured binding 'seed' is not initialized"
+  },
+  {
+    "id": "binding-initialization-recursive-read-error",
+    "directory": "cases/binding-initialization-recursive-read-error",
+    "decisions": [
+      "B06",
+      "F13",
+      "F19"
+    ],
+    "compile_error": "captured binding 'seed' is not initialized"
   }
 ]

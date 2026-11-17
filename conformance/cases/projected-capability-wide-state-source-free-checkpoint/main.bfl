@@ -1,0 +1,67 @@
+import helpers.Inner
+import helpers.Wide
+scene start():
+    val item = Wide<
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int,
+        Any?, Int>(
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7),
+        Inner<Any?, Int, Int>(7)
+    )
+    val keys = {item}
+    choice:
+        option "Resume":
+            Unit
+    prose:
+        ${keys.size}

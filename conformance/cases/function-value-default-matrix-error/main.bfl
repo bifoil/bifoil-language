@@ -1,0 +1,4 @@
+import helpers.defaulted
+scene start():
+    val callback: (Int) -> Int = ::defaulted
+    callback()

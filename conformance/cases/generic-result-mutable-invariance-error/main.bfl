@@ -1,0 +1,4 @@
+fun <T> fill(holder: MutableList<T>, item: T) -> T = item
+scene start():
+    val original = mutable [1]
+    val value: Float = fill(original, 2.5)

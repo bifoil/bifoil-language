@@ -1,0 +1,4 @@
+fun <T> empty() -> List<T> = []
+fun fail() = empty()
+scene start():
+    Unit

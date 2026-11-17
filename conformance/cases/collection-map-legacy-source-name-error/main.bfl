@@ -1,0 +1,3 @@
+scene start():
+    val mapping = {1: 2}
+    mapping.containsKey(element = 1)

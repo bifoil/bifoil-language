@@ -1,0 +1,3 @@
+var visits: Int = 0
+scene start():
+    Unit

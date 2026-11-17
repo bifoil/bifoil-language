@@ -1,0 +1,3 @@
+export fun integer(value: Int) -> Int = value
+export fun ascending() -> IntProgression = (integer(-2147483648)..integer(2147483647)) step integer(2147483647)
+export fun descending() -> IntProgression = (integer(2147483647) downTo integer(-2147483648)) step integer(2147483647)

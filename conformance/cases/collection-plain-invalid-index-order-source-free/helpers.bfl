@@ -1,0 +1,4 @@
+export fun target() -> MutableList<Int> = mutable []
+export fun failure() -> Int:
+    var zero = 0
+    return 1 / zero

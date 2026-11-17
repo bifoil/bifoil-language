@@ -1,0 +1,4 @@
+export data class Batch<T>:
+    var values: List<T?>
+export fun clear(batch: Batch<*>):
+    batch.values = [null]

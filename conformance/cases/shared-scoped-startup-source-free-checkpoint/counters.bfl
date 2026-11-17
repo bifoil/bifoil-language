@@ -1,0 +1,15 @@
+export shared var trace = ""
+fun record(tag: String) -> Int:
+    trace += tag
+    return 1
+export fun count() -> Int:
+    shared var total = record("C")
+    total += 1
+    return total
+fun unused():
+    if false:
+        shared val hidden = record("U")
+export fun <T> generic(input: T) -> Int:
+    shared var total = 0
+    total += 1
+    return total

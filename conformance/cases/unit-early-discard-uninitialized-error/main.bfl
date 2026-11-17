@@ -1,0 +1,7 @@
+fun create() -> () -> Unit:
+    var pending: Int
+    val callback: () -> Unit = () =>:
+        return pending
+    return callback
+scene start():
+    create()()

@@ -1,0 +1,40 @@
+[
+  {
+    "id": "covariant-result-layers-source-free-checkpoint",
+    "directory": "cases/covariant-result-layers-source-free-checkpoint",
+    "decisions": ["G01", "G03", "G06", "G11", "G14", "F20", "F21", "F37", "T24", "U01", "U04"],
+    "precompile": ["models"],
+    "choices": [0],
+    "options": [["Retained arguments"]],
+    "output": ["true|true|true|true|true true|true|false|false|true true|owner"]
+  },
+  {
+    "id": "covariant-result-overload-source-free-checkpoint",
+    "directory": "cases/covariant-result-overload-source-free-checkpoint",
+    "decisions": ["G03", "G06", "G14", "F23", "F28", "F42", "T24"],
+    "precompile": ["helpers"],
+    "choices": [0],
+    "options": [["Selected once"]],
+    "output": ["true|1|true|1"]
+  },
+  {
+    "id": "covariant-result-invariant-explicit-error",
+    "directory": "cases/covariant-result-invariant-explicit-error",
+    "decisions": ["G03", "G06", "G14"],
+    "precompile": ["models"],
+    "compile_error": "expected models.Cell<Any>, found models.Cell<Int>"
+  },
+  {
+    "id": "covariant-result-missing-argument-error",
+    "directory": "cases/covariant-result-missing-argument-error",
+    "decisions": ["G03"],
+    "precompile": ["models"],
+    "compile_error": "cannot infer type argument"
+  },
+  {
+    "id": "covariant-result-function-adapter-error",
+    "directory": "cases/covariant-result-function-adapter-error",
+    "decisions": ["G03", "F38"],
+    "compile_error": "expected function type"
+  }
+]

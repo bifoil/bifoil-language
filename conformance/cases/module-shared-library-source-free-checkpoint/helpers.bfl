@@ -1,0 +1,13 @@
+shared var initialized: Int = 0
+fun initialize() -> Int:
+    initialized += 1
+    return initialized * 10
+shared var value: Int = initialize()
+export fun total() -> Int = value + initialized
+export suspend fun run():
+    var local = 0
+    local += 1
+    value += local
+    choice:
+        option "Visit ${value}/${initialized}":
+            Unit

@@ -1,0 +1,23 @@
+import helpers.Inner
+import helpers.Outer
+import helpers.Recursive
+import helpers.Outcome
+import helpers.same
+import helpers.distinct
+scene start():
+    val middle = Outer<Any?, Int, Any?>(Inner<Any?, Int, Int>(1), Inner<Int, Any?, Int>(2))
+    val secondMiddle = Outer<Any?, Int, Any?>(Inner<Any?, Int, Int>(1), Inner<Int, Any?, Int>(2))
+    val edges = Outer<Int, Any?, Int>(Inner<Int, Any?, Int>(3), Inner<Any?, Int, Int>(4))
+    val recursive = Recursive<Int>(Inner<Int, Int, Int>(9))
+    val recursiveAgain = Recursive<Int>(Inner<Int, Int, Int>(9))
+    val present: Outcome<Int> = Outcome.Present(edges)
+    val absent: Outcome<Int> = Outcome.Absent
+    val middleKeys: Set<Outer<Any?, Int, Any?>> = {middle, secondMiddle}
+    val edgeKeys = {edges}
+    val recursiveKeys = {recursive, recursiveAgain}
+    val outcomes: Set<Outcome<Int>> = {present, absent}
+    choice:
+        option "Resume":
+            Unit
+    prose:
+        ${same(middle, secondMiddle)}|${middleKeys.size}|${edgeKeys.size}|${recursiveKeys.size}|${outcomes.size}|${distinct(recursive, recursiveAgain)}

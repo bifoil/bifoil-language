@@ -1,0 +1,12 @@
+export fun <T: Int> member(value: T, items: IntProgression) -> Boolean = value in items
+export fun <T: IntRange> inRange(value: Int, items: T) -> Boolean = value in items
+export suspend fun inspect() -> String:
+    val all = -2147483648..2147483647
+    val full = all step 1
+    val half = (-2147483648..-1) step 1
+    val gaps = all step 2
+    val descending = 2147483647 downTo -2147483648
+    choice:
+        option "Search ${half.first} ${half.last} ${half.step}":
+            Unit
+    return "${member(-1, full)}|${member(2147483647, gaps)}|${0 !in half}|${inRange(2147483647, all)}|${-1 !in gaps}|${member(0, descending)}"

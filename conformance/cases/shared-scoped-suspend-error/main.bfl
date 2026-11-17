@@ -1,0 +1,6 @@
+suspend fun ask() -> Int:
+    return 3
+fun bad():
+    shared val stored = ask()
+scene start():
+    Unit

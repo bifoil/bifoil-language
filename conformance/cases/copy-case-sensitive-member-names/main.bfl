@@ -1,0 +1,9 @@
+fun copy(number: Int) -> Int = number + 1
+data class Record:
+    val Copy: Int
+    fun copycat() -> Int = Copy
+scene start():
+    val original = Record(3)
+    val copied = original.copy(Copy = copy(4))
+    prose:
+        ${original.Copy} ${copied.Copy} ${copied.copycat()}.

@@ -1,0 +1,18 @@
+import helpers.Holder
+import helpers.clearLater
+scene start():
+    val original = Holder<String>("old", ["keep"], (item: String) => item)
+    val fresh = Holder<String>("fresh", ["fresh"], (item: String) => item)
+    var current: Holder<*> = original
+    suspend fun next() -> Nothing?:
+        current = fresh
+        return clearLater()
+    current.value = next()
+    val hidden: Holder<*> = original
+    hidden.values = []
+    hidden.callback = (item: Any?) => String(item)
+    choice:
+        option "After writes":
+            Unit
+    prose:
+        ${String(original.value)}|${fresh.value!!}|${original.values.size}|${original.callback("ready")}|${original is Holder<String>}|${hidden is Holder<String>}

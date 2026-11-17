@@ -1,0 +1,10 @@
+data class Box<T>:
+    val value: T
+    fun <U: T> unit() -> Int = 1
+    fun <U: T?> maybe(input: U) -> Boolean = input == null
+fun checker(hidden: Box<*>) -> () -> Int = hidden::unit<Nothing>
+fun maybe(hidden: Box<*>) -> Boolean = hidden.maybe<Nothing?>(null)
+fun bad(hidden: Box<*>):
+    hidden.unit<Int>()
+scene start():
+    Unit

@@ -1,0 +1,16 @@
+import counters.trace
+import counters.count
+import counters.generic
+scene start():
+    prose:
+        ${trace}|${count()}|${count()}|${generic(3)}|${generic("text")}
+    choice:
+        option "Keep cells":
+            Unit
+    prose:
+        ${trace}|${count()}|${generic(true)}
+    choice:
+        option "After restoration":
+            Unit
+    prose:
+        ${count()}

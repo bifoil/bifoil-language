@@ -1,0 +1,6 @@
+data class Box<out T>:
+    val item: T
+scene start():
+    val first: Box<Any> = Box<Int>(3)
+    val second = Box<Any>(3)
+    val equal = first === second

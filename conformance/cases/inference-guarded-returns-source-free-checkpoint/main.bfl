@@ -1,0 +1,11 @@
+import helpers.Mode
+import helpers.Reply
+import helpers.constantGuard
+import helpers.guarded
+scene start():
+    val select: (Reply) -> Int = ::guarded
+    choice:
+        option "Guard coverage":
+            Unit
+    prose:
+        ${constantGuard(Mode.On)}|${constantGuard(Mode.Off)}|${select(Reply.Number(-1))}|${select(Reply.Text("three"))}

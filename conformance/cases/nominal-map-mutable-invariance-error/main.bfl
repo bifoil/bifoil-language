@@ -1,0 +1,6 @@
+sealed class Outcome:
+    case Success(number: Int)
+    case Failure(code: Int)
+scene start():
+    val source: MutableMap<Outcome.Success, Int> = {Outcome.Success(1): 7}
+    val target: MutableMap<Outcome, Int> = source

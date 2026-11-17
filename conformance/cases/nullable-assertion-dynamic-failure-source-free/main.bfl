@@ -1,0 +1,5 @@
+import helpers.absent
+scene start():
+    val value = absent()
+    prose:
+        ${value!!}

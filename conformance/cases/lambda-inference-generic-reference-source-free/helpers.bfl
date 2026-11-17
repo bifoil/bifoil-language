@@ -1,0 +1,5 @@
+export fun <T> extract(left: () -> (Int) -> T, right: () -> (Int) -> T) -> T = left()(3)
+export fun <U> identity(value: U) -> U = value
+export fun <U> identity(value: U, extra: U) -> U = value
+export fun choose(value: Int) -> Int = value
+export fun choose(value: Boolean) -> Boolean = value

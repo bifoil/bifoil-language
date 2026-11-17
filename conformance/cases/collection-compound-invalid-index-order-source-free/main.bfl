@@ -1,0 +1,5 @@
+import helpers.target
+import helpers.failure
+scene start():
+    var index = 0
+    target()[index] += failure()

@@ -1,0 +1,11 @@
+enum Mood:
+    case Happy
+    case Quiet
+fun render(input: Mood, flag: Boolean) -> Int:
+    return when input:
+        case Mood.Happy if flag:
+            1
+        case Mood.Quiet:
+            2
+scene start():
+    Unit

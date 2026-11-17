@@ -1,0 +1,4 @@
+export fun fail(first: Int, last: Int):
+    val values = (
+        first
+        .. last)

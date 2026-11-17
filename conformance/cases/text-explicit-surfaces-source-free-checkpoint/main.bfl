@@ -1,0 +1,8 @@
+import helpers.surfaces
+scene start():
+    val before = surfaces()
+    choice:
+        option "Continue":
+            Unit
+    prose:
+        ${before}|${before == surfaces()}

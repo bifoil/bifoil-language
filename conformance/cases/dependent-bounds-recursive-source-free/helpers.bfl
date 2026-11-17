@@ -1,0 +1,5 @@
+export fun <A, B: A> choose(first: A, second: B) -> A = first
+export fun <A, B: A> recurse(first: A, second: B, count: Int) -> A:
+    if count == 0:
+        return first
+    return recurse(first, second, count - 1)

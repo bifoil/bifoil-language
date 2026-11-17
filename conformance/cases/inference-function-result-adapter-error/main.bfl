@@ -1,0 +1,5 @@
+fun number() -> Int = 3
+fun fail():
+    val callback: () -> Float = ::number
+scene start():
+    Unit

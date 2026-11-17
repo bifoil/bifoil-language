@@ -1,0 +1,11 @@
+data class First:
+    val number: Int
+data class Second:
+    val number: Int
+scene start():
+    val first = First(3)
+    val second = Second(3)
+    val maybe: Int? = 3
+    prose:
+        Nominal ${first === second} ${first !== second} ${[first] === [second]}.
+        Primitive ${3 === 3.0} ${'a' === "a"} ${maybe === 3}.

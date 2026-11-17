@@ -1,0 +1,3 @@
+import helpers.joined
+scene start():
+    val result = joined(1, "other")

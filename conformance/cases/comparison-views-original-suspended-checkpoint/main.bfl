@@ -1,0 +1,18 @@
+data class Box<out T>:
+    val number: Int
+suspend fun pause(value: Box<Any>) -> Box<Any>:
+    choice:
+        option "Compare":
+            return value
+    return value
+scene start():
+    val originalBox = Box<Int>(3)
+    val viewedBox: Box<Any> = originalBox
+    val constructedBox = Box<Any>(3)
+    val originalList: List<Int> = []
+    val viewedList: List<Int?> = originalList
+    val constructedList: List<Int?> = []
+    val equal = viewedBox === pause(constructedBox)
+    prose:
+        Box ${equal}; identities ${viewedBox is Box<Int>} ${constructedBox is Box<Int>}.
+        List ${viewedList === constructedList}; identities ${viewedList is List<Int>} ${constructedList is List<Int>}.

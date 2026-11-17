@@ -1,0 +1,7 @@
+fun invalid() -> Int:
+    val seed: Int
+    fun read() -> Int = seed
+    fun relay() -> Int = read()
+    return relay()
+scene start():
+    Unit

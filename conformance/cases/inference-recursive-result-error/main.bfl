@@ -1,0 +1,4 @@
+fun first() = second()
+fun second() = first()
+scene start():
+    Unit

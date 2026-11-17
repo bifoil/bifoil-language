@@ -1,0 +1,3 @@
+import helpers.integer
+scene start():
+    val callback: (Int) -> Float = ::integer

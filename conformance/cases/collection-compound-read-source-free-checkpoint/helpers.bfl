@@ -1,0 +1,16 @@
+export shared var events = ""
+export shared val items: MutableList<Int> = [5]
+export fun target() -> MutableList<Int>:
+    events += "T"
+    return items
+export fun index() -> Int:
+    events += "K"
+    return 0
+export suspend fun replacement() -> Int:
+    events += "R"
+    choice:
+        option "Replace ${items[0]} ${events}":
+            Unit
+    items[0] = 100
+    events += "W"
+    return 2

@@ -1,0 +1,5 @@
+data class Key<U, T: U>:
+    val value: T
+scene start():
+    val value: Key<*, *> = Key<MutableList<Int>, MutableList<Int>>(mutable [1])
+    val keys: Set<Key<*, *>> = {value}

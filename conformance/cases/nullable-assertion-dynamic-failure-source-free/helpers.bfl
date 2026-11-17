@@ -1,0 +1,5 @@
+export suspend fun absent() -> Int?:
+    choice:
+        option "Assert absent":
+            Unit
+    return null

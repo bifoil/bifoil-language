@@ -1,0 +1,7 @@
+export data class Key<T: StableKey>:
+    val token: T
+export fun makeKey(value: Int) -> Key<Int> = Key<Int>(value)
+export fun observed(message: String) -> Int:
+    prose:
+        ${message}
+    return 1

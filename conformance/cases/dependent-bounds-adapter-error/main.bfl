@@ -1,0 +1,3 @@
+import helpers.produce
+scene start():
+    val result = produce(2.5, () => 1)

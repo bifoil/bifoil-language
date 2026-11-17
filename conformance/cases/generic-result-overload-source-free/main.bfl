@@ -1,0 +1,8 @@
+import helpers.select
+import helpers.tie
+fun number() -> Int = 3
+scene start():
+    val selected: Float = select(::number)
+    val tied: Float = tie(::number)
+    prose:
+        ${selected}|${tied}

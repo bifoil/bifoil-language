@@ -1,0 +1,17 @@
+data class First:
+    val number: Int
+data class Second:
+    val number: Int
+export suspend fun inspect() -> String:
+    val ints = mutable [1, 2]
+    val floats = mutable [1.0, 2.0]
+    val members = mutable {1, 2}
+    val frozen = {2.0, 1.0}
+    val mapping = mutable {1: "a"}
+    val other = {1.0: 'a'}
+    val narrow = First(1)
+    val separate = Second(1)
+    choice:
+        option "Compare controls":
+            Unit
+    return "${ints == floats}|${ints !== floats}|${members == frozen}|${members !== frozen}|${mapping == other}|${mapping !== other}|${narrow !== separate}|${false !== 0}|${null === null}|${3 === 3}"

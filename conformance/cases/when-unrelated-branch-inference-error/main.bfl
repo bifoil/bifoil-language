@@ -1,0 +1,8 @@
+fun render(flag: Boolean):
+    return when flag:
+        case true:
+            1
+        case false:
+            "text"
+scene start():
+    Unit

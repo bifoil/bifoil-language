@@ -1,0 +1,23 @@
+[
+  {
+    "id": "text-admission-external-scalar-position",
+    "directory": "cases/text-admission-external-scalar-position",
+    "decisions": ["P03", "S12"],
+    "legacy_stats": {
+      "text": "\ud83d\ude00secret\ud800"
+    },
+    "runtime_error": "main.bfl:3: legacy text is not a Unicode scalar String: unpaired surrogate at scalar index 7 (UTF-16 offset 8)"
+  },
+  {
+    "id": "text-admission-runtime-concatenation",
+    "directory": "cases/text-admission-runtime-concatenation",
+    "decisions": ["P12"],
+    "runtime_error": "main.bfl:5: text size budget exceeded"
+  },
+  {
+    "id": "text-admission-runtime-interpolation",
+    "directory": "cases/text-admission-runtime-interpolation",
+    "decisions": ["P06"],
+    "runtime_error": "main.bfl:5: text size budget exceeded"
+  }
+]

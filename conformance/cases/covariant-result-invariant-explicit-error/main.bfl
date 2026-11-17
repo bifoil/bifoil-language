@@ -1,0 +1,4 @@
+import models.Cell
+import models.cell
+scene start():
+    val result: Cell<Any> = cell<Int>(3)

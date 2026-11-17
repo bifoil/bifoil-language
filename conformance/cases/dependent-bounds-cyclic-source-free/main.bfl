@@ -1,0 +1,7 @@
+import helpers.choose
+import helpers.otherResult
+scene start():
+    val first = choose(1, 2.5)
+    val second = otherResult()
+    prose:
+        ${first}|${first is Float}|${second}|${second is Float}

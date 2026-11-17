@@ -1,6 +1,6 @@
 # Bifoil language specification draft
 
-Updated: 2026-10-25 Status: Provisional design draft; an initial compiler/runtime slice is implemented and tested
+Updated: 2026-11-05 Status: Provisional design draft; an initial compiler/runtime slice is implemented and tested
 separately.
 
 ## Reading this draft
@@ -21,6 +21,13 @@ the draft instead of becoming another open-ended sequence of feature questions.
 
 This repository defines the language. Compiler implementation belongs in Bifoil Compiler and execution components in
 Bifoil Runtime. Native story executables, self-hosting, general inheritance, and release commitments remain unselected.
+
+## Current contracts and retained draft history
+
+The [specification resolution index](specification-contracts.md) links the focused current contracts. Later explicit
+user clarifications and their focused contracts supersede earlier open-detail notes in this consolidated draft.
+The original decision rows and historical review cases remain preserved; they are not a second set of current rules.
+Implementation and acceptance evidence remain separate from the selected source contract.
 
 ## Targets and compiler contract
 
@@ -50,7 +57,8 @@ published workload on reference hardware. Clean builds scale with total source i
 envelope receive an explicit diagnostic. Resource-budget failure is a failed build, not a successful compilation.
 
 The capacity target is tens to hundreds of millions of source lines. The current small development limits do not
-establish compliance. Disk-backed interfaces, streaming compilation/linking, and lazy runtime code loading remain
+establish compliance. Package v2 now loads checked instruction bodies on demand through a bounded runtime cache;
+declaration metadata remains resident. Disk-backed interfaces and selective streaming compilation/linking remain
 necessary at that scale. Source size does not itself bound active runtime allocations or executed loop iterations.
 
 The acceptance protocol still needs a concrete workload, type-complexity limits, reference hardware, memory metric,
@@ -79,12 +87,12 @@ limits][r3]
 
 The acceptance procedure must specify all of the following:
 
-1. The supported source bytes, module/dependency graph, type complexity, and diagnostic workload.
-2. The reference machine, operating environment, storage, concurrency, and cache conditions.
-3. Which precompiled dependencies already exist, which modules are rebuilt, and what work is included in a clean build.
-4. The measured memory quantity, process membership, peak measurement, enforcement behavior, and required headroom.
-5. A monotonic end-to-end timing boundary covering required startup, compilation, linking, and artifact completion.
-6. The complete run results, including failures and worst observed resource use; a median alone cannot demonstrate the
+1. The supported source bytes, module/dependency graph, type complexity, and diagnostic workload. 2. The reference
+machine, operating environment, storage, concurrency, and cache conditions. 3. Which precompiled dependencies already
+exist, which modules are rebuilt, and what work is included in a clean build. 4. The measured memory quantity, process
+membership, peak measurement, enforcement behavior, and required headroom. 5. A monotonic end-to-end timing boundary
+covering required startup, compilation, linking, and artifact completion. 6. The complete run results, including
+failures and worst observed resource use; a median alone cannot demonstrate the
    selected worst-case-within-envelope requirement.
 
 Budget enforcement, successful compilation, and measurement are separate obligations. A process killed by a limit has
@@ -116,11 +124,14 @@ behavior. They specify information that must remain recoverable, not a binary fo
 A decisive review case is a client compiled against an artifact without access to the dependency's source. Direct
 named/default calls, taking a function reference, generic type tests, and calls that can suspend must retain the same
 specified behavior. Removing source access must not erase names/defaults from direct calls or add them to function-value
-calls. Exact supported artifact combinations remain to be defined.
+calls. The [compatibility contract](compatibility-contract.md) defines the supported combinations and required
+rejections for the selected extended ChoiceScript target.
 
-The artifact extension, format, versioning, ABI, linking strategy, generic representation, and compatibility validation
-remain open. This draft does not select native object files, a virtual machine, a particular intermediate representation
-for the full language. The restricted implemented instruction profile is documented separately.
+The selected target uses `.bfm.json` modules with `bifoil.module.v6` and `bifoil-vm.v3`, plus inline v2 programs or
+versioned code packages. Its serialized interfaces retain the obligations above. The runtime profile and container
+versions have separate compatibility rules; a module-format update need not change an otherwise compatible VM
+instruction profile. No native story object format or machine-code backend is selected. Full source-language conformance
+remains a separate obligation from compatibility with a supported representation.
 
 ## Source files, projects, and modules
 
@@ -132,12 +143,17 @@ conflict check](language-steering.md#preferred-extension-and-conflict-check). It
 of exclusive use or universal editor recognition.
 
 Sources live under `src/`. Directory and file paths determine dotted module names; for example, `src/story/stats.bfl`
-corresponds to module `story.stats`. A `bifoil.toml` manifest names the entry scene. Exact manifest keys, path
-validation, module-name restrictions, and conflict handling remain to be written.
+corresponds to module `story.stats`. A `bifoil.toml` manifest names the entry scene. The development compiler profile
+uses a required String `entry` in `module.scene` form and optional String `module_path` and `legacy_path` keys. Standard
+TOML strings and comments are accepted; duplicate/unknown keys, non-String values, invalid entry names, and manifests
+above 16 KiB are rejected. `--module-path` explicitly overrides the configured artifact search directory. See the
+[project contract and examples](../bifoil-compiler/README.md#compile-a-project). Source/module discovery and broader
+cross-file storage rules retain their separate obligations.
 
 A scene file has one executable scene body plus declarations. Library modules contain reusable declarations and
-non-suspending initialization. Top-level symbols are private by default. Export intended interfaces and explicitly
-import the symbols another file uses:
+non-suspending shared initializers. Ordinary file/module-level val and var values require shared; scene-body bindings
+remain local to their visit. Top-level symbols are private by default. Export intended interfaces and explicitly import
+the symbols another file uses:
 
 ```
 import story.stats.gold as coins
@@ -169,15 +185,23 @@ operators are distinct.
 Narrative enters a separate unquoted mode through `prose:`. Line-leading `@` directives after indentation return to
 executable Bifoil syntax; nested conditional and loop bodies remain in prose mode by default.
 
-Complete tokens, comments, identifier rules, newline handling, indentation jumps, and continuation/block interactions
-remain open. No complete formal grammar is claimed by this draft.
+The [development source grammar](development-source-grammar.md) specifies the implemented lexer, layout, declaration,
+type, expression, and prose forms, including the precedence table. It separates profile restrictions and permissive
+parser forms from unsettled whole-language rules. This draft does not claim complete language-level static semantics.
+
+The [module and name contract](modules-and-names.md) specifies explicit interfaces, alias visibility, enum lookup,
+shared versus visit storage, and declaration modifiers. Separate type/value namespaces and distinct exported names are
+selected. Nested shared cells have lexical visibility and initialize before scene entry.
 
 ## Bindings, scope, and initialization
 
 Steering: B01-B10, C01, C07-C08, F07-F08, F14-F21.
 
 `val` declares a binding that cannot be reassigned; `var` declares a reassignable binding. Binding mutability is
-separate from the mutability of referenced contents. Reassignment retains the binding's static type.
+separate from the mutability of referenced contents. Reassignment retains the binding's static type. The later D05, D21,
+U05, and U29 decisions supply the internal collection/data sharing and shallow-copy rules left open by the earlier B03
+note. Reassigning a binding neither freezes nor implicitly deep-copies its referenced object. Composite legacy bridge
+ownership remains a separate unresolved boundary contract.
 
 Infer a binding's type where possible. Permit explicit annotations and require them when inference cannot establish a
 type. A local declaration may omit its initializer only with an explicit type. Every read requires proven
@@ -187,7 +211,8 @@ Bindings have lexical block scope. A local variable name is visible from its dec
 blocks, and is unavailable outside that scope unless retained through a supported capture.
 
 Reject declarations that reuse currently visible binding names. Same-scope function overload sets are allowed; nested
-shadowing remains prohibited. Receiver/member lookup interactions still need formal specification.
+shadowing remains prohibited within each namespace. The module/name contract defines receiver lookup, imported names,
+type/value overlap, and generated-member collisions.
 
 Named functions are visible throughout their enclosing scope, including before their declarations. A local function may
 read enclosing bindings visible where it is declared and may reassign an enclosing `var`. Reads observe that binding's
@@ -195,6 +220,10 @@ current value. Escaping functions retain captured bindings; captures of the same
 
 A function may be declared before a visible captured binding is initialized. Every call that could read it requires
 compile-time proof of initialization. Definition order does not extend local variable name visibility.
+
+The [binding and flow proof rules](binding-flow-semantics.md) formalize conservative definite assignment, joins, loop
+backedges, selected defaults, recursive captures, publication, and refinement invalidation. Namespace policy remains a
+separate contract.
 
 ## Primitive and universal types
 
@@ -207,7 +236,8 @@ The initial scalar types include `Boolean`, `Int`, `Float`, `String`, and `Char`
 Universal types do not introduce an arbitrary `Any` fallback when inferring common types.
 
 `Unit` is an ordinary type with one value. A function returning no meaningful value may infer `Unit`, end naturally, or
-use bare `return`. The source spelling of the Unit value remains open.
+use bare `return`. The built-in value is spelled `Unit`, as specified with the [explicit
+conversions](text-semantics.md#explicit-conversions).
 
 `Nothing` has no values and is compatible with every result type. A path that never produces a value does not force an
 incompatible branch-result type.
@@ -222,7 +252,8 @@ non-finite results are errors.
 
 Automatically widen `Int` to `Float` in assignments, arguments, and mixed arithmetic. All Int values are exactly
 representable in the selected Float model. Float-to-Int conversion is explicit, truncates toward zero, and rejects a
-converted result outside the Int range. Its API spelling remains open.
+converted result outside the Int range. Use `Int(value)` or `value.toInt()`; see the [conversion
+contract](text-semantics.md#explicit-conversions).
 
 `Int / Int` returns an Int truncated toward zero. A Float operand makes division produce Float. Integer remainder
 satisfies the mathematical rule `a % b = a − (a / b) × b` and follows the dividend's sign when nonzero.
@@ -237,7 +268,9 @@ satisfies the mathematical rule `a % b = a − (a / b) × b` and follows the div
 The respective results are `1`, `-1`, `1.5`, and `-2`. The minimum Int divided by −1 overflows; its remainder by −1 is
 mathematically zero. Lowering must distinguish those cases.
 
-Numeric literal grammar, negative zero, floating remainder, and remaining checked-operation edge cases need completion.
+Numeric literal grammar is specified by the [source grammar](development-source-grammar.md). The [text
+contract](text-semantics.md#primitive-rendering) defines zero rendering and numeric conversion APIs. Floating remainder
+and remaining checked-operation edge cases retain their separate obligations.
 
 ### Text and characters
 
@@ -246,7 +279,8 @@ indexing, and substring bounds count scalar values, not UTF-16 code units or dis
 
 Use double quotes for String literals and single quotes for Char literals. Triple double quotes introduce multiline
 strings with ordinary escapes and interpolation. Strip common leading indentation from nonblank lines while retaining
-newlines and other content. Exact mixed-whitespace and delimiter-line treatment remains open.
+newlines and other content. The [text contract](text-semantics.md#triple-quoted-strings) specifies mixed whitespace,
+delimiter lines, source newline normalization, and substitution timing.
 
 Quoted literals support braced Unicode escapes with one to six hexadecimal digits, such as `\u{41}` and `\u{1F600}`, and
 fixed-width forms such as `\u0041` and `\U0001F600` with four and eight digits respectively. Also support `\\`, `\"`,
@@ -270,8 +304,8 @@ interpolation would format it. This does not introduce general numeric or Boolea
 String preserves exact scalar sequences without Unicode normalization. String equality compares those sequences.
 Ordering is case-sensitive scalar lexicographic order; a matching shorter prefix sorts first.
 
-Exact primitive rendering, conversion APIs, external encoding, malformed input, and residual mixed Char/String
-comparison and join rules remain open.
+The [text contract](text-semantics.md) specifies primitive rendering, conversion APIs, scalar validation, and exact
+triple-string whitespace. Residual mixed Char/String comparison and join rules retain their separate obligations.
 
 ## Nullable values, type tests, and casts
 
@@ -295,6 +329,9 @@ Safe operations evaluate their receiver or callable once:
 A present receiver follows its ordinary indexing, invocation, and suspension rules. Map lookup in a map whose value type
 is already nullable still produces one nullable layer; absence and a stored null are distinguished by key presence.
 
+The [equality and nullable-result contract](equality-and-nullability.md) defines compatible fallback joins,
+explicit-context conversions, static equality eligibility, and structural comparison without changing stored identities.
+
 Approved conversions lift through nullable types: convert present values and preserve null. This includes scalar
 widening and the approved collection conversions.
 
@@ -303,7 +340,8 @@ follow subtype rules without converting scalar values or copying containers.
 
 `value as T` checks compatibility and fails on a dynamic mismatch. `value as? T` yields null on mismatch. Casts do not
 perform scalar conversions or container copies. A cast provably impossible between concrete types is a compile error.
-Complete cast grammar, precedence, and compatibility proofs remain open.
+The [source grammar](development-source-grammar.md#expressions-and-precedence) defines cast grammar and precedence.
+Complete compatibility proofs retain their separate type-system obligations.
 
 ## Expressions, evaluation, and control results
 
@@ -317,10 +355,12 @@ comparisons bind before `&&`, which binds before `||`. Parentheses override grou
 
 Elvis `?:` follows the selected Kotlin precedence relationship: arithmetic, ranges, and infix range modifiers bind more
 tightly; membership, comparisons, equality, and logical operators bind less tightly. Repeated fallbacks associate right
-to left. The full operator table, including casts and type tests, remains incomplete.
+to left. The [source grammar](development-source-grammar.md#expressions-and-precedence) contains the full operator
+table, including casts and type tests.
 
 Plain and compound assignments are statements. For plain assignment, capture target receivers and indexes or keys once,
-left to right, before evaluating and converting the right side and writing. Exact bounds-check timing remains open.
+left to right, before evaluating and converting the right side and writing. Dynamic bounds-check timing follows the
+[collection operation contract](collection-operations.md#dynamic-bounds-check-timing).
 
 Compound `+=`, `-=`, `*=`, `/=`, and `%=` capture and read the target once before evaluating the right side. Apply the
 ordinary operator, overflow, conversion, and assignment rules. Fairmath compounds follow the same target order.
@@ -332,8 +372,9 @@ Value-producing branch and return inference uses compatible scalar/nullable join
 widening. It does not infer a common type by copying between mutable and immutable families. An explicit expected type
 may request approved copies.
 
-Python-style chained comparisons remain unsettled. Explicit comparisons are valid; prefer range membership for suitable
-bounds checks without changing invalid-range behavior.
+Repeated comparisons retain ordinary binary grouping and operand checks; no pairwise-conjunction chain is added. See the
+[distinguishing examples](text-semantics.md#repeated-comparisons). Prefer range membership for suitable bounds checks
+without changing invalid-range behavior.
 
 ## Fairmath
 
@@ -374,8 +415,11 @@ Lists compare elements in order. Sets and maps compare members or entries indepe
 compare corresponding fields of compatible nominal types. Through a compatible sum type, different variants are unequal
 and matching variants compare payloads. Equality requires eligible component types.
 
-Exact composite equality requires matching collection families and type arguments or the matching nominal value type,
-then recursively applies exact equality to eligible contents.
+Exact composite equality uses declared comparison views: match collection families and view arguments, or nominal
+comparison types, then recursively compare eligible contents. Retained construction identities remain available to type
+tests and casts. A covariant view can compare exactly equal to an independently constructed value with that same view,
+including empty containers. The existing equality eligibility rules remain in force. See the [accepted comparison-view
+rules](accepted-clarifications.md#exact-equality-and-comparison-views).
 
 Structural equality handles eligible cyclic graphs using tracked comparison pairs so a revisited pair does not recurse
 forever. Shared-reference layout does not determine equality. Ordered and unordered cyclic algorithms still require
@@ -383,7 +427,8 @@ formalization and conformance cases.
 
 Capability qualification is automatic. `Equatable` permits supported equality; `StableKey` additionally requires
 equality that cannot change while stored. Immutable containers qualify for stable-key use only when their contents do.
-Mutable composites do not qualify.
+Mutable composites do not qualify. The [capability judgments](capability-semantics.md) define field/payload eligibility,
+projected bound proofs, and finite recursive derivation independently of runtime comparison.
 
 A value with static type Any or Any? and unknown equality capability requires narrowing or other static proof before
 comparison; existing null comparisons remain available.
@@ -397,10 +442,11 @@ A zero-copy subtype view and a value conversion must remain distinguishable. Imm
 function variance do not authorize arbitrary numeric conversions or container copying. Runtime generic tests must still
 retain the information required by G15, and transparent aliases must not acquire a nominal identity.
 
-A remaining formalization case is comparing two collections through different covariant views when their runtime type
-arguments or original construction types differ. The exact-equality rule must say which retained type identity is
-compared and how it interacts with the static view. This draft does not invent a Boolean outcome for that unresolved
-case. The same rule must hold for direct source, imported precompiled modules, and restored suspended state.
+Declared comparison views determine composite exact comparison under E30. They do not replace retained construction
+identities used by type tests and casts. The rule applies to empty containers, nested eligible fields, precompiled
+modules, and restored suspended state. Profile v3 carries the required context explicitly; previous profiles retain
+their original behavior. See [comparison-view equality](comparison-view-equality.md) for distinguishing examples and
+validation boundaries.
 
 ## Collections and conversions
 
@@ -428,7 +474,11 @@ family copy may combine with such widening. Stop recursive lifting at mutable co
 arguments remain invariant; implicit conversion chains must not bypass that rule.
 
 Separately, immutable List/Set elements and Map values are covariant through genuine subtype relationships without
-copying. Map keys remain invariant. Subtyping is distinct from scalar value conversion and container-family copying.
+copying. Map keys remain invariant for subtyping. An implicit nominal key subtype conversion instead rebuilds the map
+and checks duplicates, including when combined with approved family copies. This preserves referenced key identities; it
+does not permit mutable-to-mutable widening. See the [accepted Map-key
+rules](accepted-clarifications.md#nominal-map-key-conversion). Subtyping remains distinct from value conversion and
+container-family copying.
 
 ### Access, membership, and traversal
 
@@ -466,9 +516,9 @@ and `5..<5`.
 the range form. Membership of a stepped progression follows the values it produces. The selected Kotlin reference does
 not replace Bifoil's invalid/empty ascending-range rule.
 
-`1..8 step 2` produces 1, 3, 5, and 7. An unreachable endpoint is not appended. The existing [stepped-membership
-reference and cost issue](language-steering.md#integer-ranges-and-membership) remain unresolved; this draft does not
-replace the requested reference implementation with a constant-time alternative.
+`1..8 step 2` produces 1, 3, 5, and 7. An unreachable endpoint is not appended. The [pinned
+contract](progression-membership.md) identifies Kotlin v2.2.0, preserves exact search-index failures and checked
+receiver-view dispatch, and records the user's approval for an equivalent constant-time calculation.
 
 `for i in range:` creates a fresh inferred immutable binding for each iteration, scoped to its body. `break` exits the
 innermost loop; `continue` starts its next iteration. Optional labels use `outer@ for ...:`, with `break@outer` and
@@ -485,8 +535,9 @@ while finished == false
 The trailing while aligns with do and has no colon. Direct body declarations are visible to the condition but not after
 the loop. Every condition read requires initialization on every reaching path, including continue paths.
 
-Descending invalid bounds, range type relationships, terminal-step overflow, and loop-bound evaluation timing remain
-open. A rewrite to `0..<count` must account for the invalid empty range when count is zero.
+Descending invalid bounds, range type relationships, and loop-bound evaluation timing remain open. Terminal iteration is
+verified against the pinned reference without an overflowing sentinel. A rewrite to `0..<count` must account for the
+invalid empty range when count is zero.
 
 ## Functions, closures, and calls
 
@@ -526,8 +577,11 @@ Their final expression supplies the value; an early return exits the anonymous f
 Optional return annotations precede the arrow body, as in `(x: Int) -> Float => x * 2`. Mandatory parameter annotations
 remain in force. Anonymous functions may also declare a final variadic parameter.
 
-When an anonymous function is constructed with an expected Unit result, evaluate and discard its final non-Unit result.
-This contextual construction rule does not convert an existing function value into another signature.
+When an anonymous function is constructed with an expected Unit result, evaluate and discard non-Unit values from its
+final expression and value-bearing early returns. An early return exits that anonymous function with Unit; effects and
+suspension permissions remain ordinary. Nested callables retain their own return rules. This contextual construction
+rule does not convert an existing function value into another signature. See the [accepted Unit-context
+rules](accepted-clarifications.md#unit-context-anonymous-returns).
 
 Function types use forms such as `(Int, Int) -> Int` and `() -> Unit`. With matching parameter count and variadic shape,
 subtype variance permits broader input types and narrower result types. Signature adaptation requiring scalar
@@ -568,7 +622,8 @@ categories: exact, widening, family copying, then copying plus widening.
 
 A candidate dominates on argument types only when no worse on every supplied argument and better on at least one.
 Otherwise tied candidates prefer nonvariadic shape, then fewer omitted defaults, then a nongeneric over a generic
-candidate. Other unresolved ties are compile errors. Complete inference/overload interaction remains open.
+candidate. Other unresolved ties are compile errors. The [function contract](function-contracts.md) specifies the
+combined guarded coverage, Unit-context, overload, and expected-result inference rules.
 
 ## Type declarations and generics
 
@@ -606,7 +661,8 @@ input from an otherwise permitted external construction.
 
 Generate `instance.copy(...)` for an explicit shallow copy. Supplied fields replace values; omitted fields retain their
 current values. Referenced field values retain their ordinary sharing semantics. Private copy inputs follow the
-constructor-input policy. Exact copy evaluation timing and generated-name collisions remain open.
+constructor-input policy. The generated data-member name copy is reserved; user-defined fields and methods with that
+name are compile errors. Exact copy evaluation timing remains a separate obligation.
 
 ### Enums and sealed sums
 
@@ -645,6 +701,58 @@ Infer type arguments from supplied arguments and expected types when unambiguous
 `identity<Int>(3)` resolve cases inference cannot settle. Compatible argument joins may infer Float from Int/Float, but
 inference does not invent container-family copies or arbitrary Any fallback.
 
+Retain supplied, bound-valid arguments when the substituted result already satisfies its expected type by genuine
+subtyping, including covariance. Expected types can first fill missing parameters without replacing already sufficient
+arguments. A Box<Any> result view of box(4), for Box<out T>, retains T=Int and tests as Box<Int> at runtime. Numeric
+conversions and invariant result positions still use contextual inference; explicit arguments stay authoritative.
+The [function contract](function-contracts.md#argument-inference-and-expected-result-views) defines that selection.
+
+When a genuine subtype result does not already fit, the development compiler checks supplied arguments against a
+contextual specialization before selecting it. If
+expected-result inference makes those inputs inapplicable, it retries their supplied type constraints and fills only
+still-unresolved parameters from the expected result. The completed result must support its ordinary contextual
+conversion. For example, a callback returning Int can supply a generic result later widened to Float without adapting
+that callback to a Float-returning signature. This retry preserves explicit type arguments, declared bounds, mutable
+invariance, and normal overload ranking. Nested collection literals must validate their actual entries before claiming a
+contextual element type. These rules do not establish complete generic constraint solving.
+
+Partial callback shapes can supply missing type arguments before result-context inference. The development compiler
+revisits unresolved references after later supplied arguments contribute constraints, retaining each argument's
+source-order flow state. Nested list and map literals, named/spread variadic groups, generic references, and bound
+methods use that same process. Only constraints common to all viable visible declarations propagate; final reference
+resolution still requires a unique compatible signature. Still-unknown callee parameters cannot become another
+reference's selected type arguments. Recursive inferred growth uses the existing development type-depth budget. When the
+existing inference attempts cannot prove a call applicable, the development compiler also solves directional parameter
+constraints. Supplied values give lower constraints; callback inputs reverse direction, while invariant positions
+require exact types. For callbacks accepting Int and Int? together with an Int value, the chosen argument can therefore
+remain Int. An ordinary value may widen to Float when needed by a Float callback input, but the callback itself never
+receives a signature adapter. Explicit arguments and already-successful specializations retain their identities.
+
+Overloaded references can also contribute alternatives checked jointly across the call. The final instantiation must
+prove every supplied argument and select each reference uniquely. Multiple complete instantiations are errors. Observed
+values also propagate through dependent bounds. For `fun <A, B: A> choose(first: A, second: B) -> A`, `choose(1, 2.5)`
+can infer Float for both parameters through the existing Int-to-Float argument conversion. A bound such as `B: List<A>`
+can reveal A from an observed List value for B. A bound with no observed value does not invent a type argument. The
+solver revisits dependent chains before rejecting a temporary conflict; function and nominal positions preserve their
+subtype and invariance rules. Inference does not derive a missing argument from a required copy of a pre-existing
+container. Contextual literals and copies whose target is established by other supplied or expected types retain their
+ordinary rules. Source-free data and variant constructors use the same applicability path. Development limits bound type
+depth, constraint alternatives, state exploration, and dependent-bound convergence; they do not establish unrestricted
+inference or capacity acceptance.
+
+Anonymous factories and ordinary value blocks can contribute alternative result types while a generic call is being
+inferred. The development compiler shares callable scopes, branch/loop/choice flow, and compatible result joins with
+ordinary return inference. Contextual hints can resolve a generic reference returned from a lambda, while still-unknown
+callee variables cannot become that reference's selected arguments. The final instantiation must prove every argument
+and reference uniquely. Captured mutable guards, private receiver permissions, explicit annotations, variadic shape, and
+suspension effects retain their existing rules.
+
+Generated fallthrough returns in anonymous blocks are checked only on paths that can reach them. All-returning choices
+and nested branches do not add an incompatible unreachable Unit return. This implementation distinction adds no source
+return syntax or value-producing choice form; authored returns retain their ordinary validation. Contextual Unit
+construction still discards only the selected final-expression result under F34. Broader generic inference, projections
+and bounds remain subject to their separate acceptance obligations.
+
 Unconstrained T may be nullable. `T: Any` excludes nullable arguments. Inline bounds and trailing where clauses express
 nominal and capability requirements. Multiple requirements are conjunctive, for example `where T: Outcome, T:
 Equatable`. Full declaration grammar and capability rules remain open.
@@ -655,14 +763,12 @@ safe from bounds. The development implementation derives field and method read t
 bounds expressed through known arguments and multiple constraints. Covariant result layers may preserve these safe upper
 views. Invariant hidden-dependent results remain conservative. A hidden-dependent callable input exposes `Nothing`,
 which has no values. An explicit outer nullable form, such as `T?` or `List<T>?`, exposes `Nothing?`, admitting only
-null.
-A bare unconstrained `T` does not promise null acceptance, since its actual argument may be non-null. These input views
-apply to methods, function-valued fields, and returned functions while preserving result bounds, suspension, and
-variadic
-shape. They introduce no conversion adapter or invented hidden argument.
+null. A bare unconstrained `T` does not promise null acceptance, since its actual argument may be non-null. These input
+views apply to methods, function-valued fields, and returned functions while preserving result bounds, suspension, and
+variadic shape. They introduce no conversion adapter or invented hidden argument.
 
-Declared methods retain their defaults, so an inaccessible input may be omitted when the original declaration provides
-a default. A variadic input of `Nothing` may receive an empty group. Defaults execute under the original reified callee
+Declared methods retain their defaults, so an inaccessible input may be omitted when the original declaration provides a
+default. A variadic input of `Nothing` may receive an empty group. Defaults execute under the original reified callee
 contract. Function values retain positional calls without default metadata. Other inputs requiring a present value of a
 hidden type remain unavailable; generic-method constraints depending on hidden owner arguments remain conservative.
 
@@ -700,18 +806,21 @@ A Boolean pattern guard follows a matched pattern, with payload names in scope: 
 cases can refine null/type information where proof remains safe.
 
 A value-producing when must cover every path; it may omit else only when coverage is proven. An unmatched statement when
-executes no branch and continues. Guarded-case coverage and complete pattern grammar remain to be formalized.
+executes no branch and continues. [Guard coverage](function-contracts.md#guard-coverage-and-value-branches) follows the
+selected Boolean proof rules. The [development grammar](development-source-grammar.md) specifies the implemented
+pattern and guard syntax.
 
 ## Narrative, choices, and suspension
 
 Steering: T01-T24, E09, A04.
 
 `prose:` introduces unquoted narrative. After structural indentation is removed, single newlines join a paragraph and
-blank lines separate paragraphs. The explicit line-break form and residual-whitespace rules remain open.
+blank lines separate paragraphs. A newline escape supplies an explicit within-paragraph break. The [prose
+contract](prose-semantics.md) defines residual whitespace, dedent separators, and lexical modes.
 
 Prose interpolation uses `${expression}`. It accepts non-suspending value expressions, including ordinary function
 calls, yielding a directly renderable non-null String, Char, Int, Float, or Boolean. Other types and nullable values
-require explicit conversion. Exact rendering formats remain open.
+require explicit conversion. Primitive formatting follows the [text contract](text-semantics.md#primitive-rendering).
 
 Inside prose, line-leading `@` after indentation introduces executable syntax. Conditional and loop bodies remain prose
 by default; further statements and branch headers use the same prefix. `\${` escapes the interpolation introducer, `\@`
@@ -725,9 +834,9 @@ interpolation as prose. After the selected body completes normally, execution co
 Headers may include Boolean visibility and enabling conditions: `option "Open" if visible enabledIf allowed:`. False
 visibility hides an option; false enabling displays it disabled.
 
-Prepare the choice once in source order. Evaluate visibility first, then enabling and label for visible options. Hidden
-options skip enabling and label evaluation. Non-suspending state changes are allowed. Retain the prepared results until
-selection.
+Prepare the choice once in source order. First filter consumed once options, skipping all their preparation expressions.
+For remaining options, evaluate visibility first, then enabling and label for visible options. Hidden options skip
+enabling and label evaluation. Non-suspending state changes are allowed. Retain the prepared results until selection.
 
 An optional else fallback handles having no selectable options. Without it, provably empty choices are compile errors
 and dynamically empty choices are runtime errors.
@@ -788,8 +897,8 @@ non-suspending functions, so some safe initializers may be rejected conservative
 linked module bodies, including source-free artifacts. Independent values use lexical module order and source
 declaration order. Cyclic imports now resolve normalized declarations and inferred interfaces before lowering every
 member, with shared dependencies checked against complete bodies. Cyclic artifacts validate the whole component; import
-cycles do not exempt shared initialization cycles. Ordinary library bindings and shared declarations inside bodies still
-need completion.
+cycles do not exempt shared initialization cycles. Module-level values require shared. Nested shared declarations use
+lexical names and eager source-site cells under the module/name contract.
 
 ## Saves, legacy boundaries, and failure
 
@@ -862,12 +971,12 @@ language-level exceptions are deferred. Nullable operations that explicitly retu
 
 ## Remaining specification work
 
-The [detailed open-issue register](language-steering.md#remaining-design-work-and-holes) remains authoritative. This
-completion sequence replaces a general list of questions with concrete drafting deliverables. It does not select new
-language features or remove accepted ones. The subsequent implementation authorization covers the initial slice
-described in the linked status document.
+The [resolution index](specification-contracts.md) supplies current status for the [historical drafting
+inventory](language-steering.md#remaining-design-work-and-holes). The original completion sequence below records the
+planned deliverables, many now covered by focused contracts and executable checks. It does not select new features,
+remove accepted requirements, or narrow the user's subsequent full-spec implementation authorization.
 
-### Completion sequence
+### Historical completion sequence
 
 1. **Close the lexical and grammar draft.** Write layout/prose token rules and productions for declarations, types,
    expressions, directives, patterns, and imports. Publish the complete precedence table. Each unresolved choice must
@@ -888,14 +997,16 @@ described in the linked status document.
    timing, range edge cases, equality/key rules, and source-mapped failures. Record precise expected outcomes for the
    review cases below, then organize executable conformance inputs only when that work is commissioned.
 
-These drafting and review tasks remain for the complete language. Rust, artifact encoding, runtime representation, and a
-benchmark profile are selected for the initial slice, documented separately. Accepted first-milestone requirements
+The historical sequence does not describe every item's present status. The focused contracts, checklist, and current
+implementation evidence record that separately. Rust, artifact encoding, runtime representation, and a development
+benchmark profile are documented separately. Accepted first-milestone requirements
 include reusable precompiled modules; staged work cannot silently drop that requirement.
 
 ### Review cases with outcomes already determined by steering
 
-These are original specification review cases, not executed tests or proof of compiler correctness. Runtime cases refer
-to runtime inputs; they do not force a decision about constant-folding every expression.
+These original specification review cases define expected behavior. Their [current evidence
+map](conformance/review-coverage.md) distinguishes executed assertions from remaining obligations; the prose cases alone
+do not prove correctness. Runtime cases refer to runtime inputs and do not force a constant-folding strategy.
 
 1. **Checked integer boundaries — N02, N06-N07.** A runtime Int multiplication whose mathematical result is outside the
    signed range fails. Minimum Int divided by −1 overflows; minimum Int remainder −1 is zero.
@@ -922,8 +1033,8 @@ to runtime inputs; they do not force a decision about constant-folding every exp
     constant range `5..<5` is an error; the same empty ascending range from dynamic bounds fails at runtime.
 12. **Loop condition initialization — C07-C08.** A direct do-body declaration is visible to the trailing condition, but
     a continue path that reaches a read without initializing it makes the program invalid.
-13. **Exact numeric equality — E03, E28.** `3 == 3.0` is true through approved widening; `3 === 3.0` is false.
-14. **Runtime generic tests — G15.** An empty List<Int> stored through a universal value still supports a List<Int> type
+13. **Exact numeric equality — E03, E28.** `3 == 3.0` is true through approved widening; `3 === 3.0` is false. 14.
+**Runtime generic tests — G15.** An empty List<Int> stored through a universal value still supports a List<Int> type
     test. Testing it as List<Float> cannot perform numeric conversion to manufacture a match.
 15. **Definition-time generic checking — G08-G10.** An unused generic body performing an unsupported operation is an
     error. Calling it nowhere does not bypass its declared capability requirements.
@@ -954,20 +1065,39 @@ to runtime inputs; they do not force a decision about constant-folding every exp
 
 ### Cases that still need a formal rule
 
-- Exact equality across covariant static views and retained runtime generic identities.
+[The accepted clarifications](accepted-clarifications.md) resolve comparison views, consumed-option filtering,
+copy-member collisions, nominal Map-key conversion, Unit-context early returns, and module-level shared values. Their
+implementation status is separate from selection of those rules.
+
 - Bare member lookup, lexical binding visibility, and no-shadowing inside methods and generated constructors.
 - Alias-preserving cyclic equality for unordered sets/maps, including recursive capability qualification.
 - Safe narrowing after a captured write, indirect call, or suspension that can invalidate a previous proof.
 - Type-level proof of initialization for recursive or escaping functions with delayed captured bindings.
 - Final-step overflow and the requested reference behavior for very large stepped progressions.
 - Broader shared-initializer dependency proof and inference interactions across cyclic module interfaces.
-- Guarded-pattern exhaustiveness, Unit-context early returns, and combined conversion/overload inference.
+- Guarded-pattern exhaustiveness and combined conversion/overload inference.
 
 Document a proposed rule and its distinguishing cases for each item. Do not silently promote a working interpretation to
 an accepted decision or claim that unresolved cases pass. The next drafting step is the lexical/grammar chapter,
 followed by extending the module/runtime interface contract. The initial slice has separate implementation tests and
 measurements; full-language conformance and performance remain unverified.
 
-[r1]: https://go.dev/doc/gc-guide
-[r2]: https://docs.kernel.org/admin-guide/cgroup-v2.html
-[r3]: https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-jobobject_extended_limit_information
+[r1]: https://go.dev/doc/gc-guide [r2]: https://docs.kernel.org/admin-guide/cgroup-v2.html [r3]:
+https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-jobobject_extended_limit_information
+
+The [text and comparison contract](text-semantics.md) completes the ordinary/triple literal whitespace, primitive
+formatting, explicit conversion and graph rendering, scalar validation, and repeated-comparison drafting details.
+
+The [collection operation contract](collection-operations.md) supplies complete built-in method signatures/results,
+Entry snapshots, dynamic bounds checks, explicit container copies, and generated data-copy evaluation timing.
+
+The [pinned progression contract](progression-membership.md) specifies exact search-index failures, integer query
+typing, checked receiver views, and terminal iteration. Its equivalent constant-time optimization is explicitly
+approved. The [projection-view contract](projection-semantics.md) defines safe hidden-argument reads and inputs,
+including nullable field writes, variance, generic method bounds, and retained construction identities.
+
+
+The [bounds and inference contract](type-constraints.md) connects recursive interfaces, automatic capabilities,
+subtyping versus conversions, compatible joins, and conservative termination/failure. The [module/name
+contract](modules-and-names.md) specifies separate type/value namespaces, distinct exports, and nested persistent shared
+storage.

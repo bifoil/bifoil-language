@@ -1,0 +1,4 @@
+export fun query(value: Int, items: IntProgression) -> Boolean:
+    if items is IntRange:
+        return value in items
+    return false

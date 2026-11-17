@@ -1,0 +1,6 @@
+fun bad():
+    if true:
+        shared val stored = 3
+    return stored
+scene start():
+    Unit

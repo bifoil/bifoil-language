@@ -1,0 +1,5 @@
+export fun <T> replace(values: MutableList<T>, next: T) -> T:
+    val previous = values[0]
+    values[0] = next
+    return previous
+export fun <T> first(values: MutableList<T>) -> T = values[0]

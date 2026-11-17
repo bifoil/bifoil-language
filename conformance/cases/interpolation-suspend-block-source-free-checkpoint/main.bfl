@@ -1,0 +1,11 @@
+import helpers.bump
+import helpers.count
+import helpers.ask
+scene start():
+    val rendered = "${bump()}|${if true:
+        ask()
+    else:
+        0
+    }|${bump()}"
+    prose:
+        ${rendered}|${count()}

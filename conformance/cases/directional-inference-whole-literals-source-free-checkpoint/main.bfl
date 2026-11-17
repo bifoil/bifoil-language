@@ -1,0 +1,13 @@
+import helpers.pair
+import helpers.chooseFirst
+import helpers.chooseSecond
+scene start():
+    val sequence = pair([::chooseFirst], [::chooseSecond])
+    val mapping = pair({"f": ::chooseFirst}, {"g": ::chooseSecond})
+    val nested = pair([{"f": ::chooseFirst}], [{"g": ::chooseSecond}])
+    val mutableValues = pair(mutable [::chooseFirst], mutable [::chooseSecond])
+    choice:
+        option "Resume inferred collections":
+            Unit
+    prose:
+        ${sequence[0](4)}|${(mapping["f"]!!)(5)}|${(nested[0]["f"]!!)(6)}|${mutableValues[0](7)}|${mutableValues is MutableList<(Int) -> Int>}

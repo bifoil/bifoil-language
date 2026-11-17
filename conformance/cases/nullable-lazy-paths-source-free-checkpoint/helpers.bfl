@@ -1,0 +1,30 @@
+export shared var trace: String = ""
+export data class Box:
+    fun read(value: Int) -> Int = value
+export fun mark(letter: String) -> Int:
+    trace += letter
+    return 0
+export fun absent() -> Int?:
+    trace += "L"
+    return null
+export fun present() -> Int?:
+    trace += "P"
+    return 4
+export suspend fun fallback() -> Int:
+    trace += "F"
+    choice:
+        option "Fallback ${trace}":
+            Unit
+    return 9
+export suspend fun inspect() -> String:
+    val box: Box? = null
+    val values: List<Int>? = null
+    val text: String? = null
+    val callback: ((Int) -> Int)? = null
+    val first = present() ?: fallback()
+    val a = box?.read(mark("a"))
+    val b = values?[mark("b")]
+    val c = text?[mark("c")]
+    val d = callback?.(mark("d"))
+    val last = absent() ?: fallback()
+    return "${first}|${a == null}|${b == null}|${c == null}|${d == null}|${last}|${trace}"

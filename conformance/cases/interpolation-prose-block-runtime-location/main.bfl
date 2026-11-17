@@ -1,0 +1,11 @@
+fun zero() -> Int = 0
+scene start():
+    prose:
+        before
+        ${when true:
+            case true:
+                val numerator = 10
+                numerator / zero()
+            else:
+                1
+        }

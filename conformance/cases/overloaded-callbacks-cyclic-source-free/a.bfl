@@ -1,0 +1,3 @@
+import b.choose
+export fun <T> invoke(factory: (Int) -> T) -> T = factory(1)
+export fun through() -> Float = invoke(::choose)

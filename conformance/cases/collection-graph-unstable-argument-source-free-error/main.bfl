@@ -1,0 +1,3 @@
+import helpers.Key
+scene start():
+    val invalid = Key<MutableList<Int>>(mutable [1])

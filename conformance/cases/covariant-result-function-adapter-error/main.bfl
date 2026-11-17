@@ -1,0 +1,6 @@
+data class Box<out T>:
+    val value: T
+fun <T> wrap(factory: () -> T) = Box(factory())
+fun number() -> Int = 3
+scene start():
+    val result: Box<Float> = wrap<Float>(::number)

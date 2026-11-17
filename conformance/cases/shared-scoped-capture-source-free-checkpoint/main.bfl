@@ -1,0 +1,12 @@
+import cells.counter
+import cells.dependencies
+scene start():
+    val first = counter()
+    val second = counter()
+    prose:
+        ${first()}|${second()}|${dependencies()}
+    choice:
+        option "Shared closures":
+            Unit
+    prose:
+        ${first()}|${second()}

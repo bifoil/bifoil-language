@@ -1,0 +1,5 @@
+import a.through as first
+import b.through as second
+scene start():
+    prose:
+        ${first()}|${second()}

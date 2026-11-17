@@ -1,0 +1,9 @@
+import helpers.invoke
+import helpers.produce
+fun consume(value: Float) -> Int = 1
+fun supply() -> Float = 2.5
+scene start():
+    val input = invoke(1, ::consume)
+    val output = produce(1, ::supply)
+    prose:
+        ${input}|${input is Float}|${output}|${output is Float}

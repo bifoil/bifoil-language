@@ -1,0 +1,10 @@
+enum Mode:
+    On
+    Off
+fun bad(value: Mode, allowed: Boolean) = when value:
+    case Mode.On if allowed:
+        1
+    case Mode.Off:
+        2
+scene start():
+    Unit

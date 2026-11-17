@@ -1,0 +1,4 @@
+import colors.Mood
+scene start():
+    val Happy = 1
+    val current: Mood = Happy

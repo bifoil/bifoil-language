@@ -1,0 +1,4 @@
+fun <K: StableKey, V> present(mapping: Map<K, V>, key: K) -> Boolean = mapping.containsKey(key = key)
+scene start():
+    val mapping: MutableMap<String, Int?> = {"a": null}
+    val invalid = present(mapping, "a")

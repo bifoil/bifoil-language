@@ -1,0 +1,3 @@
+import models.pair
+scene start():
+    val result = pair(3)

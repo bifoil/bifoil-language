@@ -1,0 +1,11 @@
+export data class Box<out T>:
+    val value: T
+export data class Cell<T>:
+    var value: T
+export sealed class Outcome<out T>:
+    case Value(value: T)
+    case Empty
+export typealias Boxed<T> = Box<T>
+export fun <T> box(value: T) = Box(value)
+export fun <T> cell(value: T) = Cell(value)
+export fun <T> outcome(value: T) = Outcome.Value(value)

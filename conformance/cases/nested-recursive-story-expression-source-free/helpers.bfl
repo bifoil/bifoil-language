@@ -1,0 +1,14 @@
+shared var ticks: Int = 0
+export fun tick() -> Int:
+    ticks += 1
+    return ticks
+export fun count() -> Int = ticks
+export suspend fun ask(depth: Int) -> Int:
+    val started = tick()
+    choice:
+        option "Depth ${depth}":
+            if depth > 0:
+                choice:
+                    option "Recurse":
+                        return started + ask(depth - 1)
+            return started

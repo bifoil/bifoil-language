@@ -1,0 +1,27 @@
+import helpers.Box
+import helpers.Marker
+import helpers.numeric
+import helpers.optional
+import helpers.select
+import helpers.curried
+scene start():
+    val integer = 3
+    var decimal = numeric(true)
+    decimal = numeric(false)
+    val letter = 'x'
+    val text = "ok"
+    val nullable = optional(false)
+    val numbers = [integer, decimal]
+    val texts = {letter, "y"}
+    val mapping = {'a': integer, "b": decimal}
+    val boxed = Box(numbers)
+    val marker: Marker<String> = Marker(7)
+    val mixed = select(integer, decimal)
+    val reader = curried(integer)
+    val doubled = (value: Int) => value * 2
+    val heterogeneous: List<Any> = [integer, text]
+    choice:
+        option "Resume inference":
+            Unit
+    prose:
+        ${integer is Int}|${decimal is Float}|${letter is Char}|${text is String}|${nullable == null}|${numbers is List<Float>}|${texts is Set<String>}|${mapping is Map<String, Float>}|${boxed.value[0]}|${marker.code}|${mixed}|${reader(4)}|${doubled(5)}|${heterogeneous.size}

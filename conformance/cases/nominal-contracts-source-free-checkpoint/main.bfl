@@ -1,0 +1,18 @@
+import helpers.Box
+import helpers.events
+import helpers.selected
+import helpers.rewritten
+scene start():
+    val source = Box<Int>(3, mutable [1])
+    val retained = source.reader()
+    val duplicate = selected(source).copy(serial = rewritten(source))
+    source.values.add(5)
+    val detached = duplicate.copy(stored = 11)
+    val reference = source::read
+    val opaque: Any = duplicate
+    choice:
+        option "Continue ${events}":
+            Unit
+    source.update(13)
+    prose:
+        ${retained()}|${reference()}|${duplicate.read()}|${detached.read()}|${source.values.size}|${duplicate.values.size}|${duplicate.serial}|${events}|${opaque is Box<Int>}

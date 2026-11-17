@@ -1,0 +1,7 @@
+fun <T> pair(left: T, right: T) -> T = left
+fun chooseFirst(value: Int) -> Int = value + 10
+fun chooseFirst(value: String) -> String = value
+fun chooseSecond(value: Int) -> Int = value + 20
+fun chooseSecond(value: Boolean) -> Boolean = value
+scene start():
+    val factory = pair<() -> (Float) -> Float>(() => ::chooseFirst, () => ::chooseSecond)

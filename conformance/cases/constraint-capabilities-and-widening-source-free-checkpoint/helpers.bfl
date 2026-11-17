@@ -1,0 +1,4 @@
+export fun <T: Equatable> same(first: T, second: T) -> Boolean = first == second
+export fun <T: StableKey> kept(value: T) -> Set<T> = {value}
+export fun <T: Any> present(value: T) -> T = value
+export fun <T: Float> decimal(value: T) -> T = value

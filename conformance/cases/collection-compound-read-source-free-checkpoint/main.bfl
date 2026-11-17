@@ -1,0 +1,9 @@
+import helpers.events
+import helpers.items
+import helpers.target
+import helpers.index
+import helpers.replacement
+scene start():
+    target()[index()] += replacement()
+    prose:
+        ${items[0]}|${events}

@@ -1,0 +1,7 @@
+import helpers.consume
+import helpers.record
+import helpers.trace
+scene start():
+    consume(() => record())
+    prose:
+        ${trace}

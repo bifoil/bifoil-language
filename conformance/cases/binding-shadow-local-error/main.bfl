@@ -1,0 +1,6 @@
+fun invalid():
+    val item = 1
+    if true:
+        val item = 2
+scene start():
+    Unit

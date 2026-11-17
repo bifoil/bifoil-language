@@ -1,0 +1,4 @@
+import helpers.boxed
+import helpers.Box
+scene start():
+    val result = boxed(2.5, Box(1))

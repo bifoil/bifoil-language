@@ -1,0 +1,13 @@
+import helpers.pair
+import helpers.chooseFirst
+import helpers.chooseSecond
+scene start():
+    val sequence = pair([() => ::chooseFirst], [() => ::chooseSecond])
+    val mapping = pair({"call": () => ::chooseFirst}, {"call": () => ::chooseSecond})
+    val nested = pair(() => () => ::chooseFirst, () => () => ::chooseSecond)
+    val mutableValues = pair(mutable [() => ::chooseFirst], mutable [() => ::chooseSecond])
+    choice:
+        option "Call factories":
+            Unit
+    prose:
+        ${sequence[0]()(3)}|${(mapping["call"]!!)()(4)}|${nested()()(5)}|${mutableValues[0]()(6)}

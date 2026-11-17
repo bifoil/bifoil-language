@@ -1,0 +1,6 @@
+fun invalid() -> () -> Int:
+    val seed: Int
+    fun read() -> Int = seed
+    return ::read
+scene start():
+    Unit

@@ -1,0 +1,7 @@
+export enum Mood:
+    Happy
+    Quiet
+export shared var count: Int = 0
+shared val hidden: Int = 7
+export fun integer(value: Int) -> String = "Int"
+export fun decimal(value: Float) -> String = "Float"

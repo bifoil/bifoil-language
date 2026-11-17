@@ -1,0 +1,5 @@
+export suspend fun inspect() -> Boolean:
+    choice:
+        option "Query":
+            Unit
+    return 0 in ((-2147483648..2147483647) step 1)

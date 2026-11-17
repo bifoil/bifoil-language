@@ -1,0 +1,8 @@
+import helpers.run
+import helpers.total
+import second.second
+scene start():
+    visit second()
+    run()
+    prose:
+        Final ${total()}.

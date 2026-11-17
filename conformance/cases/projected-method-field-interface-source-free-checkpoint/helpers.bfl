@@ -1,0 +1,8 @@
+export data class Input<T: Any>:
+    var value: T?
+    fun use(next: T? = null) -> T?:
+        val previous = value
+        value = next
+        return previous
+    fun count(vararg items: T?) -> Int = items.size
+    fun capture() -> (T?) -> T? = (next: T?) => next

@@ -1,0 +1,7 @@
+import helpers.extract
+import helpers.identity
+import helpers.choose
+scene start():
+    val result = extract(() => ::identity, () => ::choose)
+    prose:
+        ${result}|${result is Int}

@@ -1,0 +1,9 @@
+export data class Holder<T>:
+    var value: T?
+    var values: List<T>
+    var callback: (T) -> String
+export suspend fun clearLater() -> Nothing?:
+    choice:
+        option "Clear source":
+            Unit
+    return null

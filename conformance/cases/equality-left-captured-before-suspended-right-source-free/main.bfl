@@ -1,0 +1,8 @@
+import helpers.Cell
+import helpers.mutate
+import helpers.calls
+scene start():
+    val cell = Cell(1)
+    val equal = cell == mutate(cell)
+    prose:
+        ${equal}|${cell.value}|${calls}

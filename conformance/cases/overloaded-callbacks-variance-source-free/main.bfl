@@ -1,0 +1,13 @@
+import helpers.invoke
+import helpers.delayed
+import helpers.counted
+import helpers.choose
+import helpers.count
+import helpers.explicit
+scene start():
+    val ordinary = invoke(::choose)
+    val effect = delayed(::choose)
+    val size: Float = counted(::count)
+    val fixed: Float = invoke(::explicit<Int>)
+    prose:
+        ${ordinary}|${effect}|${size}|${fixed}

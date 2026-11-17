@@ -1,0 +1,18 @@
+import helpers.joined
+import helpers.forward
+import helpers.even
+import helpers.absent
+import helpers.pair
+scene start():
+    val numeric: (Boolean) -> Float = ::joined
+    val parity: (Int) -> Boolean = ::even
+    val missing: () -> Nothing? = ::absent
+    val text: String? = absent()
+    val numbers = pair(1, 2.5)
+    val words = pair('a', "b")
+    choice:
+        option "Inferred returns":
+            Unit
+    prose:
+        ${numeric(true) === 1.0}|${numeric(false) === 2.5}|${forward()}|${parity(4)}|${parity(5)}
+        ${missing() == null}|${text == null}|${numbers[0] === 1.0}|${words[0] === "a"}

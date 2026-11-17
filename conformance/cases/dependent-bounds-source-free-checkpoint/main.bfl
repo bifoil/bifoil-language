@@ -1,0 +1,16 @@
+import helpers.choose
+import helpers.chain
+import helpers.nested
+import helpers.trace
+import helpers.markFirst
+import helpers.ask
+scene start():
+    val value = choose(markFirst(), ask())
+    val char = choose('a', "b")
+    val chainValue = chain(1, 2, 3.5)
+    val nestedValue = nested(1, [[2.5]])
+    choice:
+        option "Inspect":
+            Unit
+    prose:
+        ${value}|${value is Float}|${trace}|${char}|${char is String}|${chainValue}|${nestedValue is Float}

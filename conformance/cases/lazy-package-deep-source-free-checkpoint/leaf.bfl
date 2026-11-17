@@ -1,0 +1,7 @@
+import state.calls
+export suspend fun ask(value: Int) -> Int:
+    calls += 1
+    choice:
+        option "Resume ${value}|${calls}":
+            Unit
+    return value + 1

@@ -1,0 +1,27 @@
+shared var trace: String = ""
+data class Box:
+    val number: Int
+    fun read(index: Int) -> Int = number + index
+fun receiver() -> Box?:
+    trace += "R"
+    return Box(7)
+fun values() -> List<Int>?:
+    trace += "L"
+    return [9]
+fun identity(value: Int) -> Int = value
+fun callback() -> ((Int) -> Int)?:
+    trace += "C"
+    return ::identity
+suspend fun argument() -> Int:
+    trace += "A"
+    choice:
+        option "Argument ${trace}":
+            Unit
+    return 0
+export suspend fun inspect() -> String:
+    val first = receiver()?.read(argument())
+    val second = values()?[argument()]
+    val third = callback()?.(argument())
+    val mapping: Map<String, Int?>? = {"stored": null}
+    val lookup = mapping?["stored"]
+    return "${first!!}|${second!!}|${third!!}|${lookup == null}|${trace}"

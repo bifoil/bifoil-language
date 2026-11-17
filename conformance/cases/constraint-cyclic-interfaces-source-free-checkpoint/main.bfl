@@ -1,0 +1,16 @@
+import left.choose
+import left.mark
+import left.make
+import left.trace
+import left.Node
+import right.ask
+import right.connect
+scene start():
+    val number = choose(mark("A", 1), ask(mark("B", 2.5)))
+    val root = make(number)
+    root.next = connect(root)
+    choice:
+        option "Graph ${trace}":
+            Unit
+    prose:
+        ${number is Float}|${root is Node<Float>}|${root.item}|${root.next!!.node === root}|${trace}

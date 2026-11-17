@@ -1,0 +1,4 @@
+fun <T> produce(factory: () -> T) -> T = factory()
+fun number() -> Int = 3
+scene start():
+    val value: String = produce(::number)

@@ -1,0 +1,11 @@
+data class Box<T>:
+    var value: T?
+fun bad(original: Box<String>) -> Int:
+    val hidden: Box<*> = original
+    if original.value != null:
+        hidden.value = null
+        return original.value.length
+    return 0
+
+scene start():
+    Unit

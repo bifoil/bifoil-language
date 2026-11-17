@@ -1,0 +1,13 @@
+import helpers.Transform
+import helpers.factory
+import helpers.boxed
+scene start():
+    typealias Element = String
+    val read = factory("kept")
+    val action: Transform<Int> = (number: Int) => number + 1
+    val record = boxed<Element>("value")
+    choice:
+        option "Aliases":
+            Unit
+    prose:
+        ${read()}|${action(3)}|${record.value}

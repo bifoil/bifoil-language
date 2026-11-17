@@ -1,0 +1,5 @@
+fun bad():
+    val local = 3
+    shared val stored = local
+scene start():
+    Unit

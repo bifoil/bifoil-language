@@ -1,0 +1,5 @@
+fun <T> invoke(factory: (Int) -> T) -> T = factory(1)
+fun choose(value: Int) -> Int = value
+fun choose(value: Float) -> Float = value
+scene start():
+    val result: Float = invoke<Float>(::choose)

@@ -1,0 +1,3 @@
+import types.Word as Int
+scene start():
+    val number: Int = 3

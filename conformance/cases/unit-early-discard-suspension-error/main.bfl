@@ -1,0 +1,6 @@
+suspend fun ask() -> Int:
+    return 1
+scene start():
+    val callback: () -> Unit = () =>:
+        return ask()
+    callback()

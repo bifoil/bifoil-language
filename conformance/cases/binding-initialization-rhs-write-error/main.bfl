@@ -1,0 +1,10 @@
+fun invalid(flag: Boolean) -> Int:
+    val result: Int
+    result = if flag:
+        result = 1
+        2
+    else:
+        3
+    return result
+scene start():
+    Unit

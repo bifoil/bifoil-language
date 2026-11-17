@@ -1,0 +1,22 @@
+import helpers.Mood
+import helpers.Result
+import helpers.describe
+import helpers.choose
+import helpers.mood
+import helpers.requireName
+import helpers.exitInBranch
+scene start():
+    val present: Result<String>? = Result.Good("kept")
+    val missing: Result<String>? = Result.Missing
+    val absent: Result<String>? = null
+    val render: (Result<String>?) -> String = ::describe
+    val values = [render(present), render(missing), render(absent)]
+    var unmatched = 0
+    when 3:
+        case 4:
+            unmatched = 1
+    choice:
+        option "Resume":
+            Unit
+    prose:
+        ${values[0]}|${values[1]}|${values[2]}|${choose(true)}|${choose(false)}|${mood(Mood.Happy)}|${mood(Mood.Quiet)}|${requireName(null)}|${unmatched}|${exitInBranch(true)}|${exitInBranch(false)}

@@ -1,0 +1,4 @@
+export data class Box<T>:
+    val value: T
+export fun <A, B: Box<A>> boxed(first: A, value: B) -> A = first
+export fun <A, B: List<A>> read(values: B) -> A = values[0]

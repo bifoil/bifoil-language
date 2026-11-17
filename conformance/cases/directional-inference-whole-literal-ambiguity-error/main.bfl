@@ -1,0 +1,7 @@
+fun <T> pair(left: T, right: T) -> T = left
+fun chooseFirst(value: Int) -> Int = value
+fun chooseFirst(value: String) -> String = value
+fun chooseSecond(value: Int) -> Int = value
+fun chooseSecond(value: String) -> String = value
+scene start():
+    val sequence = pair([::chooseFirst], [::chooseSecond])

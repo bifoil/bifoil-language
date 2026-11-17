@@ -1,0 +1,29 @@
+shared var trace: String = ""
+fun record(number: Int) -> Int:
+    trace += "${number}"
+    return number
+export suspend fun run():
+    val action: (Int) -> Unit = (number: Int) =>:
+        if number > 0:
+            return record(number)
+        record(0)
+    val first: Unit = action(1)
+    val second: Unit = action(0)
+    val nested: () -> Unit = () =>:
+        fun named() -> String:
+            return "named"
+        val inner = () =>:
+            return record(2)
+        val result: Int = inner()
+        return named() + result
+    nested()
+    val waiting: suspend () -> Unit = suspend () =>:
+        return ask()
+    waiting()
+    prose:
+        Trace ${trace}; units ${first === Unit} ${second === Unit}.
+suspend fun ask() -> Int:
+    choice:
+        option "Return ${trace}":
+            return record(3)
+    return record(9)

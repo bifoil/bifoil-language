@@ -1,0 +1,27 @@
+data class Node:
+    var value: Int
+    var next: Node? = null
+sealed class Result:
+    case Value(value: Node)
+    case Pending
+export suspend fun inspect() -> String:
+    val first = Node(1)
+    first.next = first
+    val second = Node(1)
+    val third = Node(1)
+    second.next = third
+    third.next = second
+    val one: Result = Result.Value(first)
+    val two: Result = Result.Value(second)
+    val pending: Result = Result.Pending
+    val left = {"first": first, "second": first}
+    val right = {"second": third, "first": second}
+    choice:
+        option "Compare graphs":
+            Unit
+    val before = first == second
+    val mapping = left == right
+    val payload = one == two
+    val variant = one != pending
+    third.value = 2
+    return "${before}|${mapping}|${payload}|${variant}|${first != second}|${left != right}|${one != two}|${first === first}|${first.value}|${third.value}"

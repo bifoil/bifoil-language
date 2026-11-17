@@ -1,0 +1,5 @@
+import a.result as first
+import b.result as second
+scene start():
+    prose:
+        ${first()}|${second()}

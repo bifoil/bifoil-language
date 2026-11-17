@@ -1,0 +1,40 @@
+import helpers.pair
+import helpers.chooseFirst
+import helpers.chooseSecond
+scene start():
+    val factory = pair((flag: Boolean) =>:
+        var count = 0
+        do:
+            count += 1
+        while count < 1
+        if flag:
+            return ::chooseFirst
+        when flag:
+            case false:
+                ::chooseFirst
+            case true:
+                ::chooseFirst
+    , (flag: Boolean) =>:
+        for index in 1..2:
+            if flag:
+                return ::chooseSecond
+        ::chooseSecond
+    )
+    val one = factory(true)(3)
+    val two = factory(false)(4)
+    val callback = pair(if true:
+        val marker = 1
+        when marker:
+            case 1 if marker > 0:
+                ::chooseFirst
+            else:
+                ::chooseFirst
+    else:
+        ::chooseFirst
+    , if false:
+        ::chooseSecond
+    else:
+        ::chooseSecond
+    )
+    prose:
+        ${one}|${two}|${callback(5)}

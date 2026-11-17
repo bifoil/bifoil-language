@@ -1,0 +1,3 @@
+import helpers.choose
+scene start():
+    val result = choose(2.5, mutable [1])

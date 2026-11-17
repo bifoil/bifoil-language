@@ -1,0 +1,11 @@
+import helpers.invoke
+import helpers.produce
+scene start():
+    val first = invoke(1, (value: Float) => 1)
+    val second = produce(1, () =>:
+        if true:
+            return 2.5
+        3.5
+    )
+    prose:
+        ${first}|${first is Float}|${second}|${second is Float}

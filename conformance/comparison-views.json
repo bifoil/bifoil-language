@@ -1,0 +1,191 @@
+[
+  {
+    "id": "comparison-views-original-suspended-checkpoint",
+    "directory": "cases/comparison-views-original-suspended-checkpoint",
+    "decisions": [
+      "E28",
+      "E29",
+      "E30",
+      "G15",
+      "T22",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Compare"
+      ]
+    ],
+    "output": [
+      "Box true; identities true false. List true; identities true false."
+    ]
+  },
+  {
+    "id": "comparison-views-containers-source-free-checkpoint",
+    "directory": "cases/comparison-views-containers-source-free-checkpoint",
+    "decisions": [
+      "E30",
+      "D08",
+      "D22",
+      "D30",
+      "G15",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Containers"
+      ]
+    ],
+    "output": [
+      "Nested true true true true. Retained true true. Ordinary true true true true."
+    ]
+  },
+  {
+    "id": "comparison-views-memo-context-source-free-checkpoint",
+    "directory": "cases/comparison-views-memo-context-source-free-checkpoint",
+    "decisions": [
+      "E30",
+      "G05",
+      "G07",
+      "G15",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Views"
+      ]
+    ],
+    "output": [
+      "Wide true; hidden false; pair false."
+    ]
+  },
+  {
+    "id": "comparison-views-cycles-checkpoint",
+    "directory": "cases/comparison-views-cycles-checkpoint",
+    "decisions": [
+      "E30",
+      "E34",
+      "U06",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Cycles"
+      ]
+    ],
+    "output": [
+      "Cycles true; construction false.",
+      "Changed false."
+    ]
+  },
+  {
+    "id": "comparison-views-sealed-parent-checkpoint",
+    "directory": "cases/comparison-views-sealed-parent-checkpoint",
+    "decisions": [
+      "E30",
+      "U22",
+      "G15",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Variants"
+      ]
+    ],
+    "output": [
+      "Same true; other false. Retained true false. Payload true; null true. Retained payload true false."
+    ]
+  },
+  {
+    "id": "comparison-views-static-capability-error",
+    "directory": "cases/comparison-views-static-capability-error",
+    "decisions": [
+      "E30",
+      "G09",
+      "G10"
+    ],
+    "compile_error": "operator '===' cannot combine"
+  },
+  {
+    "id": "comparison-views-primitive-and-nominal-kinds",
+    "directory": "cases/comparison-views-primitive-and-nominal-kinds",
+    "decisions": [
+      "E28",
+      "E29",
+      "E30",
+      "U07"
+    ],
+    "output": [
+      "Nominal false true false. Primitive false false true."
+    ]
+  },
+  {
+    "id": "unit-discarded-capture-saved-current-profile",
+    "directory": "cases/unit-discarded-capture-saved-current-profile",
+    "decisions": [
+      "F34",
+      "F19",
+      "F21",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Discard"
+      ]
+    ],
+    "output": [
+      "Discarded after restore."
+    ]
+  },
+  {
+    "id": "comparison-views-left-before-effect-source-free-checkpoint",
+    "directory": "cases/comparison-views-left-before-effect-source-free-checkpoint",
+    "decisions": [
+      "E30",
+      "E29",
+      "B09",
+      "T22",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Replace"
+      ]
+    ],
+    "output": [
+      "Captured true; changed true."
+    ]
+  }
+]

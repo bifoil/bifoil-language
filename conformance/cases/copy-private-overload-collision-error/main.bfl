@@ -1,0 +1,4 @@
+data class Record:
+    private fun copy(number: Int) -> Int = number
+scene start():
+    Unit

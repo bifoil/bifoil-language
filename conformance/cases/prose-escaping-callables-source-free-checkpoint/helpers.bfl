@@ -1,0 +1,13 @@
+export fun named() -> () -> Int:
+    prose:
+        @fun answer() -> Int:
+            Named callback.
+            @return 7
+        @return ::answer
+export fun anonymous() -> (Int) -> Int:
+    prose:
+        @return (number: Int) =>:
+            Lambda ${number}.
+            @if number == 0:
+                @return 2
+            @number * 2

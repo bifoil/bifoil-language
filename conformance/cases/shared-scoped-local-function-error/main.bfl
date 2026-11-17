@@ -1,0 +1,5 @@
+fun bad():
+    fun helper() = 3
+    shared val stored = helper()
+scene start():
+    Unit

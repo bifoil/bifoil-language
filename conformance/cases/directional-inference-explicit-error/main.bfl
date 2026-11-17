@@ -1,0 +1,5 @@
+fun <T> combine(first: (T) -> Int, second: (T) -> Int, value: T) -> Int = 0
+fun narrow(value: Int) -> Int = 1
+fun broad(value: Int?) -> Int = 2
+scene start():
+    val result = combine<Int?>(::narrow, ::broad, 1)

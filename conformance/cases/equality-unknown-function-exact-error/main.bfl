@@ -1,0 +1,5 @@
+data class Box:
+    val callback: () -> Unit
+fun compare(value: Box) = value === value
+scene start():
+    Unit

@@ -1,0 +1,44 @@
+import helpers.Box
+import helpers.read
+import helpers.produce
+import helpers.delayed
+import helpers.first
+import helpers.empty
+scene start():
+    var events = ""
+    fun number() -> Int:
+        events += "N"
+        return 3
+    fun letter() -> Char:
+        events += "C"
+        return 'a'
+    fun nested() -> List<List<Int>>:
+        events += "V"
+        return [[1, 2]]
+    val original = [7]
+    fun values() -> List<Int>:
+        events += "L"
+        return original
+    val numeric: Float = produce(::number)
+    val text: String = produce(::letter)
+    val matrix: List<List<Float>> = produce(::nested)
+    val held: Float = read(Box(5))
+    val mutableValues = mutable [6]
+    val spread: Float = first(*[mutableValues])
+    val named: Float = first(holders = [mutableValues])
+    val copied: MutableList<Float> = produce(::values)
+    copied[0] = 8
+    val missing: Map<Float, String> = empty(::number)
+    prose:
+        ${numeric}|${text}|${matrix[0][1]}|${held}|${spread}|${named}|${copied[0]}|${original[0]}|${missing.size}
+    prose:
+        Before ${events}.
+    suspend fun ask() -> Int:
+        events += "W"
+        choice:
+            option "Finish converted result":
+                events += "R"
+                return 4
+    val waited: Float = delayed(::ask)
+    prose:
+        ${waited}|${events}|${mutableValues[0]}|${copied[0]}

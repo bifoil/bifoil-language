@@ -101,9 +101,7 @@
       "id": "S05",
       "decision": "Narrative-block syntax and unquoted prose follow T01.",
       "status": "partial",
-      "evidence": [
-        "many-scene-modules-source-free-checkpoint"
-      ]
+      "evidence": ["many-scene-modules-source-free-checkpoint"]
     },
     {
       "id": "S06",
@@ -135,10 +133,18 @@
       "status": "partial",
       "evidence": [
         "alias-nullable-application-source-free",
+        "binding-inference-source-free-checkpoint",
+        "binding-initialization-source-free-checkpoint",
+        "binding-scope-reuse-source-free-checkpoint",
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "compiled-large-cyclic-source-checkpoints",
+        "compiled-large-cyclic-source-free-checkpoints",
         "completed-path-facts-source-free-checkpoint",
         "computed-index-keys-source-free-checkpoint",
         "conditional-chain-value-source-free-checkpoint",
         "continue-correlated-captures-source-free-checkpoint",
+        "directional-inference-cyclic-source-free",
         "enum-alias-local-source-free",
         "enum-map-guards-source-free",
         "escaped-callback-retarget-source-free-checkpoint",
@@ -164,17 +170,26 @@
         "immediate-reference-values-source-free",
         "immutable-index-guards-source-free",
         "immutable-map-guards-source-free",
+        "interpolation-blocks-source-free-checkpoint",
+        "interpolation-suspend-block-source-free-checkpoint",
+        "lambda-inference-cyclic-source-free",
+        "lazy-package-deep-source-free-checkpoint",
         "legacy-enum-source-free-checkpoint",
         "legacy-enum-transitive-alias-source-free",
         "location-prose-source-free-failure",
         "loop-break-facts-source-free-checkpoint",
         "method-body-lowering-source-free",
         "nonempty-loop-return-flow-source-free",
+        "nullable-conversions-source-free-checkpoint",
         "ordered-flow-named-guard-source-free",
         "ordered-operands-captured-left-source-free",
+        "overloaded-callbacks-cyclic-source-free",
         "overloaded-capture-literals-source-free",
         "overloaded-closures-source-free-checkpoint",
         "present-generic-results-source-free",
+        "projected-capability-compositions-source-free-checkpoint",
+        "projected-capability-long-dependency-source-free-error",
+        "projected-capability-wide-state-source-free-checkpoint",
         "runtime-identity-storage-collision-error",
         "runtime-identity-storage-collision-source-free-error",
         "shared-imported-callback-uninitialized-error",
@@ -207,6 +222,7 @@
         "legacy-invalid-char",
         "legacy-invalid-enum-global",
         "legacy-invalid-enum-result",
+        "legacy-invalid-return-source-free-location",
         "legacy-missing-result-interface",
         "legacy-missing-variable",
         "legacy-native-error-location",
@@ -235,7 +251,8 @@
         "legacy-unsupported-value-type",
         "legacy-untrusted-string",
         "legacy-variadic-groups",
-        "legacy-wrong-integer"
+        "legacy-wrong-integer",
+        "text-admission-external-scalar-position"
       ]
     },
     {
@@ -256,40 +273,33 @@
       "status": "partial",
       "evidence": [
         "alias-canonical-hash-budget-error",
-        "alias-shared-graph-depth-error"
+        "alias-shared-graph-depth-error",
+        "overloaded-callbacks-recursive-budget-error"
       ]
     },
     {
       "id": "L01",
       "decision": "Ordinary code blocks use indentation and a colon to open the body.",
       "status": "partial",
-      "evidence": [
-        "indentation-and-spelling-preservation"
-      ]
+      "evidence": ["indentation-and-spelling-preservation"]
     },
     {
       "id": "L02",
       "decision": "On ordinary code lines, each tab and each complete group of four spaces adds one structural indentation level. Leftover spaces count as alignment.",
       "status": "partial",
-      "evidence": [
-        "indentation-and-spelling-preservation"
-      ]
+      "evidence": ["indentation-and-spelling-preservation"]
     },
     {
       "id": "L03",
       "decision": "One tab followed by four spaces means two structural levels. Six spaces mean one level plus two alignment spaces.",
       "status": "partial",
-      "evidence": [
-        "indentation-and-spelling-preservation"
-      ]
+      "evidence": ["indentation-and-spelling-preservation"]
     },
     {
       "id": "L04",
       "decision": "Tabs and spaces may be mixed for alignment under the preceding counting rule.",
       "status": "partial",
-      "evidence": [
-        "indentation-and-spelling-preservation"
-      ]
+      "evidence": ["indentation-and-spelling-preservation"]
     },
     {
       "id": "L05",
@@ -299,6 +309,23 @@
         "continued-block-headers",
         "continued-condition-lambda-location",
         "continued-lambda-body-location",
+        "continued-operation-assertion-source-free-error",
+        "continued-operation-cast-source-free-error",
+        "continued-operation-default-source-free-error",
+        "continued-operation-divide-source-free-error",
+        "continued-operation-fairmath-source-free-error",
+        "continued-operation-index-source-free-error",
+        "continued-operation-label-source-free-error",
+        "continued-operation-lambda-source-free-error",
+        "continued-operation-method-source-free-error",
+        "continued-operation-negation-source-free-error",
+        "continued-operation-nested-source-free-error",
+        "continued-operation-overflow-source-free-error",
+        "continued-operation-prose-source-free-error",
+        "continued-operation-range-source-free-error",
+        "continued-operation-resume-source-free-error",
+        "continued-operation-safe-skips-source-free-checkpoint",
+        "continued-operation-step-source-free-error",
         "continued-string-lambda-location",
         "nullable-type-header-colons",
         "operator-continuations",
@@ -309,33 +336,25 @@
       "id": "L06",
       "decision": "Block expressions such as `if` retain their structural indentation rules within expressions.",
       "status": "partial",
-      "evidence": [
-        "continued-block-headers"
-      ]
+      "evidence": ["continued-block-headers"]
     },
     {
       "id": "L07",
       "decision": "Corresponding conditional branch headers align, and corresponding branch bodies use the same indentation level. Standard formatting normalizes this structure.",
       "status": "partial",
-      "evidence": [
-        "indentation-and-spelling-preservation"
-      ]
+      "evidence": ["indentation-and-spelling-preservation"]
     },
     {
       "id": "L08",
       "decision": "Names and keywords are case-sensitive in new Bifoil source. Legacy source keeps its original rules.",
       "status": "partial",
-      "evidence": [
-        "negated-keyword-prefixes"
-      ]
+      "evidence": ["copy-case-sensitive-member-names", "negated-keyword-prefixes"]
     },
     {
       "id": "L09",
       "decision": "Conditional branch spellings and their formatting follow E08.",
       "status": "partial",
-      "evidence": [
-        "indentation-and-spelling-preservation"
-      ]
+      "evidence": ["indentation-and-spelling-preservation"]
     },
     {
       "id": "L10",
@@ -347,18 +366,20 @@
       "id": "L11",
       "decision": "Logical NOT uses `!`; AND/OR spelling and behavior follow E02. Equality operators follow E03 and E28-E30.",
       "status": "partial",
-      "evidence": [
-        "negated-keyword-prefixes"
-      ]
+      "evidence": ["negated-keyword-prefixes"]
     },
     {
       "id": "B01",
       "decision": "Infer variable types when possible. Allow optional annotations and require them when inference cannot establish a type. Static checking remains mandatory.",
       "status": "partial",
       "evidence": [
+        "binding-inference-source-free-checkpoint",
+        "binding-inference-static-reassignment-error",
+        "binding-inference-unrelated-error",
         "diagnostic-function-type",
         "diagnostic-generic-name",
-        "diagnostic-nullable-type"
+        "diagnostic-nullable-type",
+        "shared-scoped-sibling-loop-checkpoint"
       ]
     },
     {
@@ -366,6 +387,8 @@
       "decision": "`val` declares a binding that cannot be reassigned; `var` declares a reassignable binding. Reassignment retains the binding's static type.",
       "status": "partial",
       "evidence": [
+        "binding-inference-source-free-checkpoint",
+        "binding-inference-static-reassignment-error",
         "field-mutable-root-error",
         "val-branch-checkpoint",
         "val-conditional-loop-write",
@@ -377,13 +400,20 @@
       "id": "B03",
       "decision": "Binding mutability and the mutability of referenced contents are separate. Collection-container mutability and aliasing follow D02/D05; data-instance sharing and field mutability follow U03/U05. Remaining object ownership rules are open.",
       "status": "pending",
-      "evidence": []
+      "evidence": [
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "compiled-large-cyclic-source-checkpoints",
+        "compiled-large-cyclic-source-free-checkpoints",
+        "projected-field-inputs-source-free-checkpoint"
+      ]
     },
     {
       "id": "B04",
       "decision": "Names have block scope: they are visible only within their declaring block and nested blocks, with declaration order governed by B10. Captured bindings may remain alive under F21.",
       "status": "pending",
       "evidence": [
+        "binding-scope-reuse-source-free-checkpoint",
         "single-use-val-lexical-bodies-source-free-checkpoint",
         "single-use-val-loop-readers-source-free-checkpoint",
         "single-use-val-outer-loop-binding-error",
@@ -395,6 +425,14 @@
       "decision": "Reject shadowing: a declaration cannot reuse a currently visible binding name. This includes implicit loop bindings. Same-scope function overload sets follow F23; nested shadowing remains prohibited.",
       "status": "partial",
       "evidence": [
+        "binding-scope-reuse-source-free-checkpoint",
+        "binding-shadow-builtin-error",
+        "binding-shadow-function-error",
+        "binding-shadow-iterator-error",
+        "binding-shadow-local-error",
+        "binding-shadow-parameter-error",
+        "binding-shadow-pattern-error",
+        "binding-shadow-subject-error",
         "method-delayed-member-shadow-error",
         "method-lambda-member-shadow-error",
         "method-local-function-member-shadow-error",
@@ -403,6 +441,18 @@
         "method-parameter-member-shadow-error",
         "method-pattern-member-shadow-error",
         "method-subject-member-shadow-error",
+        "namespace-alias-builtin-type-conflict-error",
+        "namespace-alias-scope-shadow-error",
+        "namespace-import-builtin-type-conflict-error",
+        "namespace-imported-type-alias-duplicate-error",
+        "namespace-separate-callables-members-source-free-checkpoint",
+        "namespace-separate-values-source-free-checkpoint",
+        "namespace-value-import-alias-conflict-error",
+        "namespace-value-prefix-members-source-free-checkpoint",
+        "namespace-value-prefix-no-fallback-error",
+        "namespace-value-prefix-uninitialized-error",
+        "shared-scoped-initializer-shadow-error",
+        "shared-scoped-when-shadow-error",
         "unit-function-shadow-error",
         "unit-local-shadow-error"
       ]
@@ -412,6 +462,13 @@
       "decision": "Local `val` and `var` declarations may omit their initializer when they have an explicit type. Every read requires proven initialization.",
       "status": "partial",
       "evidence": [
+        "binding-initialization-call-before-ready-error",
+        "binding-initialization-default-read-error",
+        "binding-initialization-escaping-read-error",
+        "binding-initialization-forwarded-read-error",
+        "binding-initialization-partial-read-error",
+        "binding-initialization-recursive-read-error",
+        "binding-initialization-source-free-checkpoint",
         "branch-capture-initializer",
         "capture-any-return-error",
         "capture-argument-replacement-error",
@@ -516,6 +573,7 @@
         "mutable-forward-skipped-error",
         "mutable-forward-suspend-source-free-checkpoint",
         "named-capture-source-free",
+        "namespace-value-prefix-uninitialized-error",
         "nonempty-values-contextual-mutable-error",
         "nonempty-values-continue-source-free-checkpoint",
         "nonempty-values-copy-widening-source-free-checkpoint",
@@ -769,6 +827,10 @@
       "decision": "Each delayed-initialization `val` binding must be initialized at most once. Control-flow checks must enforce this per binding.",
       "status": "partial",
       "evidence": [
+        "binding-initialization-loop-write-error",
+        "binding-initialization-rhs-write-error",
+        "binding-initialization-second-write-error",
+        "binding-initialization-source-free-checkpoint",
         "capture-repeatable-val-write-error",
         "completed-path-callback-uninitialized-error",
         "completed-path-facts-source-free-checkpoint",
@@ -967,6 +1029,8 @@
       "status": "partial",
       "evidence": [
         "bound-directed-null-unwrapping-error",
+        "compiled-large-cyclic-source-checkpoints",
+        "compiled-large-cyclic-source-free-checkpoints",
         "conditional-chain-exit-proofs",
         "conditional-chain-invalidated-null-proof",
         "generic-bound-inference-null-error",
@@ -977,6 +1041,7 @@
         "generic-nonnull-source-free",
         "generic-projected-nonnull-error",
         "generic-projected-nullable-view",
+        "nullable-conversion-unwrapping-error",
         "nullable-generic-inferred-join-source-free",
         "nullable-generic-no-arbitrary-return-error",
         "nullable-generic-no-null-unwrapping-error",
@@ -984,7 +1049,18 @@
         "nullable-generic-variance-source-free",
         "nullable-lazy",
         "nullable-read",
-        "nullable-type-header-colons"
+        "nullable-type-header-colons",
+        "projected-covariant-field-nonempty-error",
+        "projected-field-callback-narrow-input-error",
+        "projected-field-inputs-source-free-checkpoint",
+        "projected-field-invariant-input-error",
+        "projected-fixed-nullable-field-error",
+        "projected-method-field-interface-source-free-checkpoint",
+        "projected-nullable-container-input-source-free-checkpoint",
+        "projected-nullable-container-wrong-element-error",
+        "projected-nullable-field-wrong-value-error",
+        "projected-private-nullable-field-error",
+        "projected-safe-write-alias-guard-error"
       ]
     },
     {
@@ -997,6 +1073,7 @@
         "captured-mutable-local-narrowing-error",
         "choice-mutable-guard-invalidated",
         "choice-stable-guard-checkpoint",
+        "comparison-views-left-before-effect-source-free-checkpoint",
         "computed-index-key-choice-write-error",
         "computed-index-key-effect-error",
         "computed-index-key-heap-write-error",
@@ -1072,6 +1149,7 @@
         "inferred-guarded-branches-source-free",
         "inferred-loop-break-nullability-error",
         "inferred-loop-exits-source-free",
+        "lambda-inference-captured-guard-error",
         "map-entry-proofs-source-free",
         "mutable-field-alias-write-error",
         "mutable-field-and-key-independence",
@@ -1131,6 +1209,7 @@
         "ordered-operands-order-revoked-error",
         "ordered-operands-range-revoked-error",
         "ordered-operands-sum-revoked-error",
+        "overloaded-callbacks-receiver-flow-error",
         "present-generic-result-computed-error",
         "present-generic-result-null-error",
         "present-generic-results-source-free",
@@ -1176,7 +1255,11 @@
       "id": "B10",
       "decision": "A local variable name is visible from its declaration through the rest of its block and nested blocks. Local variable names are not visible before their declarations; function names retain F14's scope-wide visibility.",
       "status": "pending",
-      "evidence": []
+      "evidence": [
+        "binding-scope-reuse-source-free-checkpoint",
+        "namespace-value-prefix-members-source-free-checkpoint",
+        "shared-scoped-sibling-loop-checkpoint"
+      ]
     },
     {
       "id": "B11",
@@ -1184,6 +1267,8 @@
       "status": "partial",
       "evidence": [
         "nullable-lazy",
+        "nullable-lazy-paths-source-free-checkpoint",
+        "nullable-present-paths-source-free-checkpoint",
         "safe-method-skipped-initialization",
         "safe-skipped-returns-checkpoint"
       ]
@@ -1196,7 +1281,13 @@
         "inferred-expression-return-conflict",
         "inferred-expression-returns-source-free",
         "null-literal-fallback",
-        "nullable-lazy"
+        "nullable-contextual-copy-source-free-checkpoint",
+        "nullable-copy-inference-error",
+        "nullable-joins-source-free-checkpoint",
+        "nullable-lazy",
+        "nullable-lazy-paths-source-free-checkpoint",
+        "nullable-unrelated-expected-error",
+        "nullable-unrelated-inference-error"
       ]
     },
     {
@@ -1214,7 +1305,9 @@
         "generic-projected-nonnull-result-source-free-checkpoint",
         "inferred-expression-returns-source-free",
         "map-entry-proofs-source-free",
+        "nullable-assertion-dynamic-failure-source-free",
         "nullable-lazy",
+        "nullable-present-paths-source-free-checkpoint",
         "stable-field-proofs-source-free"
       ]
     },
@@ -1223,9 +1316,18 @@
       "decision": "Lift approved conversions through nullable types: convert a present value and preserve null. This includes `Int?` to `Float?`, `Char?` to `String?`, and nullable forms of approved collection copying and widening.",
       "status": "partial",
       "evidence": [
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
         "generic-primitive-bound-operations",
         "generic-primitive-bound-source-free",
-        "nullable-lazy"
+        "nominal-map-key-copy-checkpoint",
+        "nullable-conversion-mutable-invariance-error",
+        "nullable-conversion-unwrapping-error",
+        "nullable-conversion-wrong-family-error",
+        "nullable-conversions-source-free-checkpoint",
+        "nullable-joins-source-free-checkpoint",
+        "nullable-lazy",
+        "type-interactions-source-free-checkpoint"
       ]
     },
     {
@@ -1233,7 +1335,10 @@
       "decision": "Safe indexing of a nullable `String`, list, or map uses `?[index]`: for example, `items?[i]` or `mapping?[key]`. Evaluate the receiver once; null yields null and skips the index/key expression. A non-null receiver follows ordinary indexing, bounds, and missing-map-key rules.",
       "status": "partial",
       "evidence": [
+        "continued-operation-safe-skips-source-free-checkpoint",
         "nullable-lazy",
+        "nullable-lazy-paths-source-free-checkpoint",
+        "nullable-present-paths-source-free-checkpoint",
         "safe-index-skipped-initialization",
         "safe-skipped-returns-checkpoint"
       ]
@@ -1243,8 +1348,13 @@
       "decision": "Safely invoke a nullable function value with `?.(arguments)`, for example `callback?.(value)`. Evaluate the callable once; null yields null and skips arguments and the call. Function-value argument rules and suspension-effect checks still apply.",
       "status": "partial",
       "evidence": [
+        "continued-operation-safe-skips-source-free-checkpoint",
         "inferred-expression-returns-source-free",
         "nullable-lazy",
+        "nullable-lazy-paths-source-free-checkpoint",
+        "nullable-present-paths-source-free-checkpoint",
+        "nullable-skipped-call-type-error",
+        "nullable-skipped-suspend-error",
         "safe-call-skipped-initialization",
         "safe-skipped-returns-checkpoint"
       ]
@@ -1255,7 +1365,8 @@
       "status": "partial",
       "evidence": [
         "alias-nullable-application-source-free",
-        "nullable-lazy"
+        "nullable-lazy",
+        "nullable-present-paths-source-free-checkpoint"
       ]
     },
     {
@@ -1316,17 +1427,17 @@
       "decision": "Expose Any as the universal non-null value type and Any? as its nullable form. Operations require appropriate static type information. Universal types do not introduce automatic Any fallback in common-type inference.",
       "status": "partial",
       "evidence": [
-        "nullable-lazy"
+        "nullable-contextual-copy-source-free-checkpoint",
+        "nullable-lazy",
+        "nullable-unrelated-inference-error",
+        "unknown-equality-matrix-error"
       ]
     },
     {
       "id": "B21",
       "decision": "Test types in ordinary expressions with is and !is, for example value is Character or value !is Character. Existing case is Variant patterns remain available.",
       "status": "partial",
-      "evidence": [
-        "nullable-generic-variance-source-free",
-        "nullable-lazy"
-      ]
+      "evidence": ["nullable-generic-variance-source-free", "nullable-lazy"]
     },
     {
       "id": "B22",
@@ -1406,6 +1517,7 @@
         "null-narrowing-when-unmatched",
         "null-narrowing-while-backedge",
         "nullable-lazy",
+        "progression-view-smartcast-source-free",
         "shared-alias-map-reads-source-free",
         "shared-alias-read-guards-source-free",
         "shared-alias-type-write-error",
@@ -1419,17 +1531,13 @@
       "id": "P01",
       "decision": "Use Boolean as the boolean type, with lowercase true and false literals.",
       "status": "partial",
-      "evidence": [
-        "text-scalars"
-      ]
+      "evidence": ["text-scalars"]
     },
     {
       "id": "P02",
       "decision": "Provide immutable String values and a distinct Char type. String indexing produces Char. Immutability concerns the contents; a var binding may still be reassigned.",
       "status": "partial",
-      "evidence": [
-        "text-scalars"
-      ]
+      "evidence": ["text-scalars"]
     },
     {
       "id": "P03",
@@ -1437,6 +1545,9 @@
       "status": "partial",
       "evidence": [
         "nested-text-interpolation",
+        "text-admission-external-scalar-position",
+        "text-conversion-invalid-scalar-runtime",
+        "text-rendering-source-free-checkpoint",
         "text-scalars",
         "unicode-traversal-checkpoint"
       ]
@@ -1461,9 +1572,7 @@
       "id": "P05",
       "decision": "Ordinary String literals use double quotes and Char literals use single quotes. Escape forms follow P09.",
       "status": "partial",
-      "evidence": [
-        "text-scalars"
-      ]
+      "evidence": ["text-scalars"]
     },
     {
       "id": "P06",
@@ -1471,9 +1580,15 @@
       "status": "partial",
       "evidence": [
         "interpolated-functions",
+        "interpolation-block-runtime-location",
+        "interpolation-blocks-source-free-checkpoint",
+        "interpolation-suspend-block-source-free-checkpoint",
+        "interpolation-trailing-statement-error",
         "nested-text-interpolation",
         "nested-text-suspended-source-free",
-        "text-scalars"
+        "text-admission-runtime-interpolation",
+        "text-scalars",
+        "triple-whitespace-source-free-checkpoint"
       ]
     },
     {
@@ -1484,7 +1599,8 @@
         "module-triple-string-discovery",
         "nested-text-interpolation",
         "nested-text-suspended-source-free",
-        "prose-multiline-expressions"
+        "prose-multiline-expressions",
+        "triple-whitespace-source-free-checkpoint"
       ]
     },
     {
@@ -1493,17 +1609,23 @@
       "status": "partial",
       "evidence": [
         "generic-primitive-bound-operations",
-        "generic-primitive-bound-source-free"
+        "generic-primitive-bound-source-free",
+        "interpolation-block-nullable-rendering-error",
+        "primitive-text-contracts-source-free-checkpoint",
+        "prose-collection-rendering-error",
+        "prose-function-rendering-error",
+        "prose-nullable-rendering-error",
+        "prose-scene-rendering-error",
+        "prose-unit-rendering-error",
+        "text-explicit-surfaces-source-free-checkpoint",
+        "text-rendering-source-free-checkpoint"
       ]
     },
     {
       "id": "P09",
       "decision": "Quoted String and Char literals, including triple-quoted strings, accept both braced Unicode scalar escapes (`\\u{41}`, `\\u{1F600}`; one to six hexadecimal digits) and fixed-width escapes (`\\u0041`, `\\U0001F600`; four or eight hexadecimal digits). Also support `\\\\`, `\\\"`, `\\'`, `\\n`, `\\r`, `\\t`, and `\\${`. Unknown escapes and invalid scalar values are errors.",
       "status": "partial",
-      "evidence": [
-        "invalid-unicode-signed-digits",
-        "text-scalars"
-      ]
+      "evidence": ["invalid-unicode-signed-digits", "text-scalars"]
     },
     {
       "id": "P10",
@@ -1511,22 +1633,27 @@
       "status": "partial",
       "evidence": [
         "module-triple-string-discovery",
-        "prose-multiline-expressions"
+        "prose-multiline-expressions",
+        "triple-whitespace-source-free-checkpoint"
       ]
     },
     {
       "id": "P11",
       "decision": "Obtain String length with the length property, for example text.length. The result is Int and counts Unicode scalar elements.",
       "status": "partial",
-      "evidence": [
-        "text-scalars"
-      ]
+      "evidence": ["text-scalars"]
     },
     {
       "id": "P12",
       "decision": "When either operand of + is String, accept directly renderable non-null primitive operands and format them as interpolation would. Ordinary left-to-right evaluation still applies; this rule does not introduce general implicit conversion of numbers or booleans to String in assignments or calls.",
       "status": "partial",
       "evidence": [
+        "dependent-bounds-source-free-checkpoint",
+        "primitive-string-assignment-error",
+        "primitive-text-contracts-source-free-checkpoint",
+        "text-admission-runtime-concatenation",
+        "text-explicit-surfaces-source-free-checkpoint",
+        "text-rendering-source-free-checkpoint",
         "text-scalars"
       ]
     },
@@ -1545,19 +1672,13 @@
       "id": "P14",
       "decision": "String values preserve their scalar sequences without implicit Unicode normalization. String equality compares exact scalar sequences; canonically equivalent spellings may compare unequal.",
       "status": "partial",
-      "evidence": [
-        "text-scalars"
-      ]
+      "evidence": ["text-scalars"]
     },
     {
       "id": "P15",
       "decision": "String supports <, <=, >, and >= using case-sensitive scalar lexicographic order: compare scalar numeric values left to right, with a matching shorter prefix sorting first. Locale-aware sorting is a separate topic.",
       "status": "partial",
-      "evidence": [
-        "choice-constant-text-empty",
-        "constant-scalar-condition-flow",
-        "text-scalars"
-      ]
+      "evidence": ["choice-constant-text-empty", "constant-scalar-condition-flow", "text-scalars"]
     },
     {
       "id": "P16",
@@ -1583,7 +1704,7 @@
     },
     {
       "id": "N02",
-      "decision": "`Int` is signed 32-bit: −2,147,483,648 through +2,147,483,647. Out-of-range constants are compile errors; arithmetic overflow is checked at runtime.",
+      "decision": "`Int` is signed 32-bit: \u22122,147,483,648 through +2,147,483,647. Out-of-range constants are compile errors; arithmetic overflow is checked at runtime.",
       "status": "partial",
       "evidence": [
         "numeric-dynamic-division-overflow-failure",
@@ -1608,6 +1729,8 @@
       "status": "partial",
       "evidence": [
         "conditional-chain-value-source-free-checkpoint",
+        "dependent-bounds-source-free-checkpoint",
+        "directional-inference-value-widening-source-free",
         "generic-primitive-bound-operations",
         "generic-primitive-bound-source-free",
         "wide-generic-float-source-free-checkpoint"
@@ -1619,7 +1742,12 @@
       "status": "pending",
       "evidence": [
         "numeric-dynamic-division-overflow-failure",
-        "numeric-dynamic-division-remainder-and-truncation"
+        "numeric-dynamic-division-remainder-and-truncation",
+        "range-query-conversion-and-collection-control",
+        "text-conversion-nullable-number-error",
+        "text-conversion-overflow-runtime",
+        "text-conversion-string-to-int-error",
+        "text-rendering-source-free-checkpoint"
       ]
     },
     {
@@ -1634,19 +1762,15 @@
     },
     {
       "id": "N07",
-      "decision": "Integer `%` is truncation remainder: mathematically, `a % b = a − (a / b) × b`. Its sign follows the dividend when the remainder is nonzero.",
+      "decision": "Integer `%` is truncation remainder: mathematically, `a % b = a \u2212 (a / b) \u00d7 b`. Its sign follows the dividend when the remainder is nonzero.",
       "status": "pending",
-      "evidence": [
-        "numeric-dynamic-division-remainder-and-truncation"
-      ]
+      "evidence": ["numeric-dynamic-division-remainder-and-truncation"]
     },
     {
       "id": "N08",
       "decision": "Support binary fairmath `%+` and `%-`; numeric rules follow N10-N12 and the source baseline below, compounds follow N09, and grouping follows N13.",
       "status": "pending",
-      "evidence": [
-        "fairmath-dynamic-endpoints-and-modifiers"
-      ]
+      "evidence": ["fairmath-dynamic-endpoints-and-modifiers"]
     },
     {
       "id": "N09",
@@ -1663,9 +1787,7 @@
       "id": "N10",
       "decision": "Both fairmath operands may be `Int` or `Float`; the rounded result is `Int`. Use binary64 intermediates and directional integer rounding, including when both operands are `Int`, rather than N06's ordinary integer division.",
       "status": "pending",
-      "evidence": [
-        "fairmath-dynamic-endpoints-and-modifiers"
-      ]
+      "evidence": ["fairmath-dynamic-endpoints-and-modifiers"]
     },
     {
       "id": "N11",
@@ -1686,9 +1808,7 @@
       "id": "N12",
       "decision": "The fairmath change operand may be any finite numeric value, including negatives and magnitudes above 100. There is no separate percentage-range restriction; the operator and modifier sign determine direction.",
       "status": "pending",
-      "evidence": [
-        "fairmath-dynamic-endpoints-and-modifiers"
-      ]
+      "evidence": ["fairmath-dynamic-endpoints-and-modifiers"]
     },
     {
       "id": "N13",
@@ -1711,9 +1831,28 @@
         "alias-shared-graph-mutable-key-error",
         "alias-shared-graph-private",
         "alias-shared-graph-unused-generic",
+        "constraint-recursive-bound-alias-source-free-checkpoint",
+        "covariant-result-layers-source-free-checkpoint",
+        "directional-inference-constructor-source-free",
         "enum-alias-case-conflict-error",
         "enum-alias-local-source-free",
-        "forward-alias-bounds-source-free"
+        "forward-alias-bounds-source-free",
+        "inference-nominal-context-source-free-checkpoint",
+        "namespace-alias-builtin-type-conflict-error",
+        "namespace-alias-expansion-bound-cycle-error",
+        "namespace-alias-forward-generic-source-free-checkpoint",
+        "namespace-alias-scope-shadow-error",
+        "namespace-exported-enum-alias-shorthand-source-free",
+        "namespace-import-builtin-type-conflict-error",
+        "namespace-imported-type-alias-duplicate-error",
+        "namespace-local-alias-does-not-leak-error",
+        "namespace-separate-callables-members-source-free-checkpoint",
+        "namespace-separate-values-source-free-checkpoint",
+        "namespace-value-prefix-capture-source-free-checkpoint",
+        "namespace-value-prefix-members-source-free-checkpoint",
+        "namespace-value-prefix-no-fallback-error",
+        "namespace-value-prefix-uninitialized-error",
+        "namespace-visits-shared-aliases-source-free-checkpoint"
       ]
     },
     {
@@ -1727,6 +1866,8 @@
       "decision": "Declare fields in an indented `data class` block: `data class Character:` with declarations such as `val name: String` and `var health: Int`. Field types are explicit; `val` fields cannot be reassigned, while `var` fields can.",
       "status": "partial",
       "evidence": [
+        "compiled-large-cyclic-source-checkpoints",
+        "compiled-large-cyclic-source-free-checkpoints",
         "field-mutable-member-error",
         "module-javascript-property-names",
         "stable-field-proofs-source-free"
@@ -1737,6 +1878,11 @@
       "decision": "Generate a field constructor called with the data-type name, for example `Character(name = \"Ada\", health = 100)`. Parameters follow field declaration order and the existing positional/named/default-argument rules. Field initializers supply defaults evaluated per construction when omitted.",
       "status": "partial",
       "evidence": [
+        "compiled-large-cyclic-source-checkpoints",
+        "compiled-large-cyclic-source-free-checkpoints",
+        "copy-current-fields-source-free-checkpoint",
+        "covariant-result-layers-source-free-checkpoint",
+        "directional-inference-constructor-source-free",
         "module-javascript-property-names",
         "named-field-order-and-copy-checkpoint"
       ]
@@ -1746,6 +1892,14 @@
       "decision": "Assigning or passing a data instance shares that instance. Reassignable-field updates are visible through aliases; copying requires an explicit operation. Referenced field values retain their own semantics, and a `val` instance binding does not freeze its `var` fields.",
       "status": "partial",
       "evidence": [
+        "collection-contracts-source-free-checkpoint",
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "compiled-large-cyclic-source-checkpoints",
+        "compiled-large-cyclic-source-free-checkpoints",
+        "copy-current-fields-source-free-checkpoint",
+        "equality-left-captured-before-suspended-right-source-free",
+        "equality-ordinary-graphs-source-free-checkpoint",
         "mutable-field-alias-write-error",
         "mutable-field-and-key-independence",
         "mutable-field-conditional-write-error",
@@ -1768,12 +1922,22 @@
         "cases/generic-recursive-capabilities/main.bfl",
         "cases/generic-recursive-equality-error/main.bfl",
         "cases/generic-recursive-key-error/main.bfl",
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "comparison-views-cycles-checkpoint",
         "deep-cyclic-equality",
+        "equality-left-captured-before-suspended-right-source-free",
+        "equality-mutability-and-nominal-controls-source-free",
+        "equality-nominal-ordinary-error",
+        "equality-ordinary-graphs-source-free-checkpoint",
+        "equality-unknown-function-exact-error",
         "generic-mutual-recursive-key-error",
         "generic-phantom-capabilities",
         "generic-recursive-capabilities",
         "generic-recursive-equality-error",
-        "generic-recursive-key-error"
+        "generic-recursive-key-error",
+        "projected-capability-composition-mutable-equality",
+        "projected-capability-compositions-source-free-checkpoint"
       ]
     },
     {
@@ -1781,9 +1945,13 @@
       "decision": "Data types are nominal: distinct declarations define distinct types even when their fields match. Conversion between such types requires an explicit operation. Transparent aliases under U01 do not create another type.",
       "status": "partial",
       "evidence": [
+        "comparison-views-primitive-and-nominal-kinds",
+        "equality-mutability-and-nominal-controls-source-free",
+        "equality-nominal-ordinary-error",
         "module-exported-alias-private-owner",
         "module-private-qualified-test-error",
         "module-private-qualified-type-error",
+        "overloaded-callbacks-nominal-input-error",
         "private-owner-instantiations-source-free",
         "private-unrelated-receiver-error",
         "sum-join-unrelated-types-error"
@@ -1795,6 +1963,7 @@
       "status": "partial",
       "evidence": [
         "aliased-enum-when-source-free",
+        "equality-ordinary-families-source-free-checkpoint",
         "local-enum-shorthand-source-free",
         "qualified-local-capture-checkpoint",
         "type-namespace-member-error",
@@ -1814,12 +1983,14 @@
         "cases/overload-method-private/main.bfl",
         "cases/overload-method-visibility/main.bfl",
         "cases/overload-safe-method/main.bfl",
+        "directional-inference-nominal-variance-source-free",
         "enum-returning-bound-method-checkpoint",
         "implicit-copy-and-method-captures-source-free",
         "inferred-guard-source-free",
         "instance-method-builtin-fallback-error",
         "instance-method-static-call-error",
         "instance-method-static-reference-error",
+        "lambda-inference-method-scope-source-free",
         "method-body-lowering-source-free",
         "method-delayed-member-shadow-error",
         "method-lambda-member-shadow-error",
@@ -1839,7 +2010,8 @@
         "overload-safe-method",
         "private-fake-receiver-method-error",
         "private-fake-receiver-reference-error",
-        "private-owner-instantiations-source-free"
+        "private-owner-instantiations-source-free",
+        "text-explicit-surfaces-source-free-checkpoint"
       ]
     },
     {
@@ -1852,6 +2024,7 @@
         "instance-method-builtin-fallback-error",
         "instance-method-static-call-error",
         "instance-method-static-reference-error",
+        "lambda-inference-method-scope-source-free",
         "method-delayed-member-shadow-error",
         "method-lambda-member-shadow-error",
         "method-local-function-member-shadow-error",
@@ -1860,6 +2033,7 @@
         "method-parameter-member-shadow-error",
         "method-pattern-member-shadow-error",
         "method-subject-member-shadow-error",
+        "nominal-contracts-source-free-checkpoint",
         "private-fake-receiver-field-error",
         "private-fake-receiver-method-error",
         "private-fake-receiver-reference-error",
@@ -1873,6 +2047,8 @@
       "status": "partial",
       "evidence": [
         "field-private-access-error",
+        "lambda-inference-method-scope-source-free",
+        "lambda-inference-private-result-error",
         "private-fake-receiver-field-error",
         "private-fake-receiver-method-error",
         "private-fake-receiver-reference-error",
@@ -1896,14 +2072,21 @@
         "generic-enum-shorthand-conflict-error",
         "local-enum-capture-before-initialization-error",
         "local-enum-shorthand-source-free",
-        "local-enum-visible-binding-conflict-error"
+        "local-enum-visible-binding-conflict-error",
+        "namespace-enum-shorthand-binding-conflict-error",
+        "namespace-exported-enum-alias-shorthand-source-free",
+        "namespace-value-prefix-capture-source-free-checkpoint",
+        "namespace-value-prefix-members-source-free-checkpoint",
+        "namespace-value-prefix-no-fallback-error",
+        "namespace-value-prefix-uninitialized-error",
+        "namespace-visits-shared-aliases-source-free-checkpoint"
       ]
     },
     {
       "id": "U14",
       "decision": "Support closed sum types with typed payload variants, separate from plain enums. Their declaration, construction, matching, and equality follow U15-U22.",
-      "status": "pending",
-      "evidence": []
+      "status": "partial",
+      "evidence": ["when-contracts-source-free-checkpoint", "when-guard-does-not-complete-coverage"]
     },
     {
       "id": "U15",
@@ -1930,28 +2113,29 @@
       "evidence": [
         "generic-parent-invariant-inference-error",
         "sibling-sum-joins-source-free",
-        "structural-generic-inference-source-free"
+        "structural-generic-inference-source-free",
+        "when-contracts-source-free-checkpoint"
       ]
     },
     {
       "id": "U19",
       "decision": "Construct payload variants with qualified names, such as `Outcome.Success(\"Ada\")`; payload-free constants use `Outcome.Pending`. Payload constructors follow existing positional/named/default-argument rules.",
-      "status": "pending",
-      "evidence": []
+      "status": "partial",
+      "evidence": ["when-contracts-source-free-checkpoint", "when-generic-constant-coverage-source-free"]
     },
     {
       "id": "U20",
       "decision": "`when` supports explicit `is` variant tests and payload destructuring: `case is Outcome.Success:` and `case is Outcome.Success(value):`. The marker distinguishes patterns from ordinary value expressions.",
       "status": "partial",
-      "evidence": [
-        "lambda-exhaustive-final-when"
-      ]
+      "evidence": ["inference-nominal-context-source-free-checkpoint", "lambda-exhaustive-final-when"]
     },
     {
       "id": "U21",
       "decision": "Destructured payload names create inferred immutable bindings scoped to the matched branch. For example, `case is Outcome.Success(value):` binds `value` without an explicit `val`; no-shadowing and capture rules apply.",
       "status": "partial",
       "evidence": [
+        "directional-inference-constructor-source-free",
+        "inference-nominal-context-source-free-checkpoint",
         "method-pattern-member-shadow-error"
       ]
     },
@@ -1960,6 +2144,10 @@
       "decision": "Through a compatible sum type, different variants compare unequal; matching variants compare payloads structurally when all payload types support equality. Exact comparison retains E28-E30's type and recursive equality rules.",
       "status": "partial",
       "evidence": [
+        "comparison-views-sealed-parent-checkpoint",
+        "equality-ordinary-graphs-source-free-checkpoint",
+        "equality-sum-ineligible-payload-error",
+        "projected-capability-compositions-source-free-checkpoint",
         "sibling-sum-joins-source-free"
       ]
     },
@@ -1976,7 +2164,10 @@
         "method-loop-member-shadow-error",
         "method-parameter-member-shadow-error",
         "method-pattern-member-shadow-error",
-        "method-subject-member-shadow-error"
+        "method-subject-member-shadow-error",
+        "namespace-generated-enum-field-source-free-checkpoint",
+        "namespace-separate-callables-members-source-free-checkpoint",
+        "nominal-contracts-source-free-checkpoint"
       ]
     },
     {
@@ -1987,6 +2178,10 @@
         "enum-alias-case-conflict-error",
         "generic-enum-shorthand-conflict-error",
         "local-enum-visible-binding-conflict-error",
+        "namespace-enum-shorthand-binding-conflict-error",
+        "namespace-exported-enum-alias-shorthand-source-free",
+        "namespace-generated-enum-field-source-free-checkpoint",
+        "namespace-visits-shared-aliases-source-free-checkpoint",
         "unit-enum-conflict-error",
         "unit-value-source-free"
       ]
@@ -2001,6 +2196,13 @@
         "enum-alias-local-scope-error",
         "enum-alias-local-source-free",
         "generic-name-scope-checkpoint",
+        "namespace-alias-forward-generic-source-free-checkpoint",
+        "namespace-alias-scope-shadow-error",
+        "namespace-coexport-function-error",
+        "namespace-coexport-shared-error",
+        "namespace-local-alias-does-not-leak-error",
+        "namespace-separate-callables-members-source-free-checkpoint",
+        "namespace-separate-values-source-free-checkpoint",
         "normalization-scope-checkpoint",
         "normalization-scope-leak-error",
         "shared-collection-conversion-budget",
@@ -2034,6 +2236,8 @@
         "enum-alias-local-source-free",
         "forward-alias-bounds-source-free",
         "generic-name-scope-checkpoint",
+        "namespace-alias-forward-generic-source-free-checkpoint",
+        "namespace-separate-values-source-free-checkpoint",
         "normalization-scope-checkpoint",
         "normalization-scope-leak-error"
       ]
@@ -2044,25 +2248,37 @@
       "status": "partial",
       "evidence": [
         "alias-forward-bound-cycle-error",
-        "forward-alias-bounds-source-free"
+        "constraint-recursive-bound-alias-source-free-checkpoint",
+        "forward-alias-bounds-source-free",
+        "namespace-alias-expansion-bound-cycle-error",
+        "namespace-alias-forward-generic-source-free-checkpoint"
       ]
     },
     {
       "id": "U28",
       "decision": "Separate private field access from generated constructor inputs. If a data class is externally constructible, outside callers may supply a private field constructor parameter but cannot read or update the private field afterward.",
-      "status": "pending",
-      "evidence": []
+      "status": "partial",
+      "evidence": ["nominal-contracts-source-free-checkpoint"]
     },
     {
       "id": "U29",
-      "decision": "Generate explicit shallow data-instance copying with instance.copy(...): supplied fields replace values, and omitted fields retain their current values. The new instance shares referenced field values according to their ordinary semantics. Private inputs follow U28. Complete copy evaluation timing remains open.",
+      "decision": "Generate explicit shallow data-instance copying with instance.copy(...): supplied fields replace values, and omitted fields retain their current values. The new instance shares referenced field values according to their ordinary semantics. Private inputs follow U28. Reserve the generated member name copy: a user-defined field or method with that name is a compile error. Complete copy evaluation timing remains open.",
       "status": "partial",
       "evidence": [
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "copy-case-sensitive-member-names",
+        "copy-current-fields-source-free-checkpoint",
+        "copy-field-collision-error",
+        "copy-method-collision-error",
+        "copy-private-field-collision-error",
+        "copy-private-overload-collision-error",
         "generic-projected-default-only-source-free-checkpoint",
         "generic-projected-null-inputs-source-free-checkpoint",
         "implicit-copy-and-method-captures-source-free",
         "module-javascript-property-names",
-        "named-field-order-and-copy-checkpoint"
+        "named-field-order-and-copy-checkpoint",
+        "nominal-contracts-source-free-checkpoint"
       ]
     },
     {
@@ -2070,7 +2286,8 @@
       "decision": "After narrowing a sum value to a payload-bearing variant, allow named payload-field access, such as result.value. Payload bindings remain immutable; the existing destructuring patterns remain available.",
       "status": "partial",
       "evidence": [
-        "generic-narrowed-binding-identity-source-free"
+        "generic-narrowed-binding-identity-source-free",
+        "namespace-generated-enum-field-source-free-checkpoint"
       ]
     },
     {
@@ -2089,9 +2306,7 @@
       "id": "U33",
       "decision": "Comma-separated case alternatives introducing payload bindings must all bind the same names with compatible types. Infer each shared branch binding using the existing compatible-type join rules; no-shadowing and capture rules still apply.",
       "status": "partial",
-      "evidence": [
-        "exact-equality-variant-pattern-conversions-source-free-checkpoint"
-      ]
+      "evidence": ["exact-equality-variant-pattern-conversions-source-free-checkpoint"]
     },
     {
       "id": "G01",
@@ -2106,6 +2321,10 @@
         "alias-generic-shared-arguments",
         "alias-shared-graph-unused-generic",
         "cases/generic-local-alias-values/main.bfl",
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "constraint-recursive-bound-alias-source-free-checkpoint",
+        "covariant-result-layers-source-free-checkpoint",
         "cyclic-generic-methods",
         "cyclic-source-free-generics",
         "cyclic-transparent-alias",
@@ -2118,7 +2337,10 @@
         "generic-narrowed-new-value-error",
         "generic-shared-inference-source-free",
         "generic-sum-import-source-free",
+        "inference-nominal-context-source-free-checkpoint",
         "inferred-generic-binding-identity-source-free",
+        "namespace-alias-expansion-bound-cycle-error",
+        "namespace-alias-forward-generic-source-free-checkpoint",
         "shared-function-types-checkpoint",
         "shared-generic-cast-budget",
         "shared-generic-cast-checkpoint",
@@ -2157,16 +2379,59 @@
       "status": "partial",
       "evidence": [
         "alias-generic-overlay-source-free",
+        "binding-inference-source-free-checkpoint",
         "bound-directed-widening-source-free",
         "bounded-generic-references-source-free",
         "bounded-reference-ambiguity-error",
         "bounded-reference-nullable-input-error",
         "bounded-reference-numeric-adapter-error",
+        "collection-api-source-free-checkpoint",
+        "collection-contracts-source-free-checkpoint",
+        "constraint-capabilities-and-widening-source-free-checkpoint",
+        "constraint-cyclic-interfaces-source-free-checkpoint",
+        "constraint-explicit-argument-not-rewritten-error",
         "contextual-generic-call-computed-error",
         "contextual-generic-calls-source-free",
+        "covariant-result-function-adapter-error",
+        "covariant-result-invariant-explicit-error",
+        "covariant-result-layers-source-free-checkpoint",
+        "covariant-result-missing-argument-error",
+        "covariant-result-overload-source-free-checkpoint",
         "cyclic-generic-methods",
         "cyclic-source-free-generics",
         "cyclic-transparent-alias",
+        "dependent-bounds-adapter-error",
+        "dependent-bounds-callbacks-source-free",
+        "dependent-bounds-copy-error",
+        "dependent-bounds-cyclic-source-free",
+        "dependent-bounds-explicit-error",
+        "dependent-bounds-lambda-source-free",
+        "dependent-bounds-mutable-error",
+        "dependent-bounds-nominal-error",
+        "dependent-bounds-recursive-source-free",
+        "dependent-bounds-source-free-checkpoint",
+        "dependent-bounds-structural-source-free",
+        "dependent-bounds-unobserved-error",
+        "dependent-bounds-unrelated-error",
+        "directional-inference-bound-adapter-error",
+        "directional-inference-constructor-source-free",
+        "directional-inference-container-context-source-free",
+        "directional-inference-cyclic-source-free",
+        "directional-inference-explicit-error",
+        "directional-inference-joint-adapter-error",
+        "directional-inference-joint-ambiguity-error",
+        "directional-inference-joint-source-free",
+        "directional-inference-joint-suspend-error",
+        "directional-inference-mutable-callback-error",
+        "directional-inference-nominal-variance-source-free",
+        "directional-inference-null-input-error",
+        "directional-inference-numeric-input-error",
+        "directional-inference-numeric-result-error",
+        "directional-inference-owner-source-free",
+        "directional-inference-source-free-checkpoint",
+        "directional-inference-value-widening-source-free",
+        "directional-inference-whole-literal-ambiguity-error",
+        "directional-inference-whole-literals-source-free-checkpoint",
         "generic-bound-computed-identity-error",
         "generic-bound-inference-null-error",
         "generic-bound-mutable-field-proof-error",
@@ -2182,6 +2447,14 @@
         "generic-reference-receiver-recheck-source-free-checkpoint",
         "generic-reference-receiver-short-circuit-error",
         "generic-reference-receiver-when-error",
+        "generic-result-bound-callback-error",
+        "generic-result-callback-input-error",
+        "generic-result-conversion-source-free-checkpoint",
+        "generic-result-explicit-callback-error",
+        "generic-result-incompatible-output-error",
+        "generic-result-mutable-invariance-error",
+        "generic-result-nested-invariance-error",
+        "generic-result-overload-source-free",
         "generic-shared-inference-source-free",
         "generic-structural-inference-no-adapter-error",
         "generic-sum-import-source-free",
@@ -2189,7 +2462,37 @@
         "immediate-reference-values-source-free",
         "immutable-index-guards-source-free",
         "immutable-map-guards-source-free",
+        "inference-nominal-context-source-free-checkpoint",
+        "inference-overloads-unit-defaults-source-free-checkpoint",
+        "inference-return-contracts-source-free-checkpoint",
+        "inference-unanchored-generic-error",
+        "inference-unrelated-generic-join-error",
         "inferred-guard-source-free",
+        "lambda-inference-ambiguity-error",
+        "lambda-inference-branch-source-free",
+        "lambda-inference-choice-checkpoint",
+        "lambda-inference-cyclic-source-free",
+        "lambda-inference-explicit-adapter-error",
+        "lambda-inference-generic-reference-source-free",
+        "lambda-inference-method-scope-source-free",
+        "lambda-inference-private-result-error",
+        "lambda-inference-source-free-checkpoint",
+        "lambda-inference-whole-literals-source-free-checkpoint",
+        "namespace-alias-forward-generic-source-free-checkpoint",
+        "nominal-map-key-generic-bound-source-free",
+        "nullable-joins-source-free-checkpoint",
+        "overloaded-callbacks-ambiguity-error",
+        "overloaded-callbacks-bound-adapter-error",
+        "overloaded-callbacks-cyclic-source-free",
+        "overloaded-callbacks-explicit-adapter-error",
+        "overloaded-callbacks-nominal-input-error",
+        "overloaded-callbacks-owner-capture-error",
+        "overloaded-callbacks-receiver-flow-error",
+        "overloaded-callbacks-recursive-budget-error",
+        "overloaded-callbacks-source-free-checkpoint",
+        "overloaded-callbacks-suspend-input-error",
+        "overloaded-callbacks-variadic-shape-error",
+        "overloaded-callbacks-variance-source-free",
         "present-generic-result-computed-error",
         "present-generic-result-null-error",
         "present-generic-results-source-free",
@@ -2209,6 +2512,8 @@
         "single-use-val-returning-reader-source-free-checkpoint",
         "structural-generic-inference-source-free",
         "text-computed-keys-source-free-checkpoint",
+        "when-contracts-source-free-checkpoint",
+        "when-generic-constant-coverage-source-free",
         "wide-generic-float-source-free-checkpoint",
         "wide-generic-parameters-source-free-checkpoint"
       ]
@@ -2218,6 +2523,8 @@
       "decision": "Unconstrained type parameters are nullable-capable: `T` may stand for `String?`. An unmarked type parameter alone does not prove non-nullness; applying `T?` follows B17's nullable flattening.",
       "status": "partial",
       "evidence": [
+        "constraint-capabilities-and-widening-source-free-checkpoint",
+        "directional-inference-owner-source-free",
         "generic-nonnull-assertion",
         "generic-nonnull-checkpoint",
         "generic-nonnull-required",
@@ -2271,7 +2578,38 @@
         "cast-closed-generic-bound-error",
         "cast-nullable-generic-bound-error",
         "cast-overlap-source-free",
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "collection-graph-unstable-argument-source-free-error",
+        "comparison-views-memo-context-source-free-checkpoint",
         "concrete-bounded-projections-source-free",
+        "constraint-capabilities-and-widening-source-free-checkpoint",
+        "constraint-capability-does-not-imply-stable-error",
+        "constraint-cyclic-interfaces-source-free-checkpoint",
+        "constraint-direct-upper-cycle-error",
+        "constraint-explicit-argument-not-rewritten-error",
+        "constraint-nonnull-bound-null-error",
+        "constraint-nullable-upper-cycle-error",
+        "constraint-recursive-bound-alias-source-free-checkpoint",
+        "constraint-recursive-bound-invalid-argument-error",
+        "constraint-unused-insufficient-key-bound-error",
+        "constraint-unused-unknown-bound-error",
+        "dependent-bounds-adapter-error",
+        "dependent-bounds-bound-cycle-error",
+        "dependent-bounds-callbacks-source-free",
+        "dependent-bounds-copy-error",
+        "dependent-bounds-cyclic-source-free",
+        "dependent-bounds-explicit-error",
+        "dependent-bounds-lambda-source-free",
+        "dependent-bounds-mutable-error",
+        "dependent-bounds-nominal-error",
+        "dependent-bounds-recursive-source-free",
+        "dependent-bounds-source-free-checkpoint",
+        "dependent-bounds-structural-source-free",
+        "dependent-bounds-unobserved-error",
+        "dependent-bounds-unrelated-error",
+        "dependent-projected-capabilities-source-free-checkpoint",
+        "directional-inference-bound-adapter-error",
         "forward-alias-bounds-source-free",
         "generic-alias-bound-error",
         "generic-bound-members-checkpoint",
@@ -2307,6 +2645,7 @@
         "generic-recursive-capabilities",
         "generic-recursive-equality-error",
         "generic-recursive-key-error",
+        "generic-result-bound-callback-error",
         "generic-self-bound-cycle",
         "generic-shared-inference-source-free",
         "generic-standalone-projection-error",
@@ -2316,12 +2655,19 @@
         "generic-unused-bound-error",
         "generic-unused-call-type-error",
         "late-projected-bound-mutability-error",
+        "nominal-map-key-generic-bound-source-free",
         "nullable-generic-inferred-join-source-free",
         "nullable-generic-no-arbitrary-return-error",
         "nullable-generic-no-null-unwrapping-error",
         "nullable-generic-no-numeric-adapter-error",
         "nullable-generic-variance-source-free",
+        "overloaded-callbacks-bound-adapter-error",
+        "progression-reference-source-free-checkpoint",
+        "projected-bound-reads-source-free-checkpoint",
         "projected-copy-checkpoint-source-free",
+        "projected-generic-method-bounds-source-free-checkpoint",
+        "projected-generic-method-nonnull-bound-error",
+        "projected-generic-method-nullable-bound-error",
         "shared-projected-read-budget",
         "shared-projected-read-checkpoint",
         "single-use-val-generic-source-free-checkpoint",
@@ -2341,6 +2687,10 @@
         "cases/generic-variance-method-error/main.bfl",
         "cases/generic-variance-nested-error/main.bfl",
         "cases/generic-variance-return-error/main.bfl",
+        "covariant-result-invariant-explicit-error",
+        "covariant-result-layers-source-free-checkpoint",
+        "covariant-result-overload-source-free-checkpoint",
+        "directional-inference-nominal-variance-source-free",
         "generic-parent-invariant-inference-error",
         "generic-projected-bounded-callback-inputs-source-free-checkpoint",
         "generic-projected-callback-numeric-adapter-error",
@@ -2359,6 +2709,7 @@
         "generic-variance-method-error",
         "generic-variance-nested-error",
         "generic-variance-return-error",
+        "inference-nominal-context-source-free-checkpoint",
         "narrowed-shared-result-budget",
         "narrowed-shared-result-checkpoint",
         "nullable-generic-variance-source-free",
@@ -2382,7 +2733,15 @@
         "cases/generic-projected-nonnull-error/main.bfl",
         "cases/generic-projected-nullable-view/main.bfl",
         "cases/generic-projected-results/main.bfl",
+        "collection-graph-projected-read-source-free-error",
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "comparison-views-memo-context-source-free-checkpoint",
         "concrete-bounded-projections-source-free",
+        "constraint-recursive-bound-alias-source-free-checkpoint",
+        "dependent-projected-capabilities-source-free-checkpoint",
+        "dependent-projected-equatable-key-error",
+        "dependent-projected-unbounded-key-error",
         "equatable-projected-key-error",
         "generic-nested-copy-reification",
         "generic-projected-bare-null-input-error",
@@ -2430,9 +2789,29 @@
         "generic-projected-when-statement",
         "late-projected-bound-mutability-error",
         "mutable-projected-key-error",
+        "projected-bound-reads-source-free-checkpoint",
+        "projected-capability-composition-mutable-equality",
+        "projected-capability-composition-mutable-key-error",
+        "projected-capability-composition-unknown-key-error",
+        "projected-capability-compositions-source-free-checkpoint",
+        "projected-capability-wide-state-source-free-checkpoint",
         "projected-copy-checkpoint-source-free",
+        "projected-covariant-field-nonempty-error",
+        "projected-field-callback-narrow-input-error",
+        "projected-field-inputs-source-free-checkpoint",
+        "projected-field-invariant-input-error",
+        "projected-fixed-nullable-field-error",
+        "projected-generic-method-bounds-source-free-checkpoint",
+        "projected-generic-method-nonnull-bound-error",
+        "projected-generic-method-nullable-bound-error",
         "projected-list-key-still-rejected",
+        "projected-method-field-interface-source-free-checkpoint",
         "projected-mutable-set-key-rejected",
+        "projected-nullable-container-input-source-free-checkpoint",
+        "projected-nullable-container-wrong-element-error",
+        "projected-nullable-field-wrong-value-error",
+        "projected-private-nullable-field-error",
+        "projected-safe-write-alias-guard-error",
         "projected-unknown-map-values-key-rejected",
         "shared-projected-read-budget",
         "shared-projected-read-checkpoint",
@@ -2479,8 +2858,21 @@
         "cast-closed-generic-bound-error",
         "cast-nullable-generic-bound-error",
         "cast-overlap-source-free",
+        "collection-graph-projected-read-source-free-error",
+        "collection-graph-unstable-argument-source-free-error",
         "collection-search-callback-error",
         "collection-search-unconstrained-error",
+        "constraint-capabilities-and-widening-source-free-checkpoint",
+        "constraint-capability-does-not-imply-stable-error",
+        "constraint-cyclic-interfaces-source-free-checkpoint",
+        "constraint-direct-upper-cycle-error",
+        "constraint-explicit-argument-not-rewritten-error",
+        "constraint-nonnull-bound-null-error",
+        "constraint-nullable-upper-cycle-error",
+        "constraint-recursive-bound-alias-source-free-checkpoint",
+        "constraint-recursive-bound-invalid-argument-error",
+        "constraint-unused-insufficient-key-bound-error",
+        "constraint-unused-unknown-bound-error",
         "contextual-generic-call-computed-error",
         "contextual-generic-calls-source-free",
         "forward-alias-bounds-source-free",
@@ -2526,6 +2918,7 @@
         "generic-recursive-capabilities",
         "generic-recursive-equality-error",
         "generic-recursive-key-error",
+        "generic-result-conversion-source-free-checkpoint",
         "generic-self-bound-cycle",
         "generic-shared-inference-source-free",
         "generic-standalone-projection-error",
@@ -2535,12 +2928,17 @@
         "generic-unused-bound-error",
         "generic-unused-call-type-error",
         "inferred-generic-binding-identity-source-free",
+        "lambda-inference-invalid-unused-error",
         "map-entry-proofs-source-free",
         "nullable-generic-inferred-join-source-free",
         "nullable-generic-no-arbitrary-return-error",
         "nullable-generic-no-null-unwrapping-error",
         "nullable-generic-no-numeric-adapter-error",
         "nullable-generic-variance-source-free",
+        "progression-query-float-error",
+        "range-query-float-error",
+        "range-query-nullable-error",
+        "range-query-unbounded-error",
         "shared-generic-cast-budget",
         "shared-generic-cast-checkpoint",
         "sibling-sum-joins-source-free",
@@ -2575,16 +2973,33 @@
         "cases/generic-recursive-capabilities/main.bfl",
         "cases/generic-recursive-equality-error/main.bfl",
         "cases/generic-recursive-key-error/main.bfl",
+        "collection-graph-cyclic-key-source-free-error",
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "comparison-views-static-capability-error",
         "concrete-bounded-projections-source-free",
+        "constraint-capabilities-and-widening-source-free-checkpoint",
+        "constraint-unused-insufficient-key-bound-error",
+        "dependent-projected-capabilities-source-free-checkpoint",
+        "dependent-projected-equatable-key-error",
+        "dependent-projected-unbounded-key-error",
         "generic-mutual-recursive-key-error",
         "generic-phantom-capabilities",
         "generic-recursive-capabilities",
         "generic-recursive-equality-error",
         "generic-recursive-key-error",
         "late-projected-bound-mutability-error",
+        "nested-unstable-key-matrix-error",
+        "projected-capability-composition-mutable-equality",
+        "projected-capability-composition-mutable-key-error",
+        "projected-capability-composition-unknown-key-error",
+        "projected-capability-compositions-source-free-checkpoint",
+        "projected-capability-long-dependency-source-free-error",
+        "projected-capability-wide-state-source-free-checkpoint",
         "projected-list-key-still-rejected",
         "projected-mutable-set-key-rejected",
         "projected-unknown-map-values-key-rejected",
+        "type-interactions-source-free-checkpoint",
         "unbounded-projected-equality-error"
       ]
     },
@@ -2600,7 +3015,12 @@
         "cases/generic-recursive-capabilities/main.bfl",
         "cases/generic-recursive-equality-error/main.bfl",
         "cases/generic-recursive-key-error/main.bfl",
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "comparison-views-static-capability-error",
         "concrete-bounded-projections-source-free",
+        "constraint-capabilities-and-widening-source-free-checkpoint",
+        "constraint-unused-insufficient-key-bound-error",
         "equatable-projected-key-error",
         "generic-mutual-recursive-key-error",
         "generic-phantom-capabilities",
@@ -2621,22 +3041,22 @@
       "decision": "Support inline generic bounds, such as fun <T: Equatable> same(...), and trailing where clauses for additional nominal bounds or capabilities. Complete declaration grammar remains to be specified.",
       "status": "partial",
       "evidence": [
+        "covariant-result-layers-source-free-checkpoint",
         "generic-projected-bound-dependency",
         "generic-projected-bounded-reads",
         "generic-projected-entry-cross-write",
         "generic-projected-multiple-bounds",
         "generic-projected-nullable-reads",
         "generic-projected-remove-cross-write",
-        "generic-projected-traversal-cross-write"
+        "generic-projected-traversal-cross-write",
+        "inference-nominal-context-source-free-checkpoint"
       ]
     },
     {
       "id": "G12",
       "decision": "Combine requirements conjunctively with repeated comma-separated constraints, for example where T: Outcome, T: Equatable. This does not introduce general intersection types.",
       "status": "partial",
-      "evidence": [
-        "generic-projected-multiple-bounds"
-      ]
+      "evidence": ["generic-projected-multiple-bounds"]
     },
     {
       "id": "G13",
@@ -2645,6 +3065,8 @@
       "evidence": [
         "bounded-generic-references-source-free",
         "bounded-reference-nullable-input-error",
+        "constraint-capabilities-and-widening-source-free-checkpoint",
+        "constraint-nonnull-bound-null-error",
         "generic-bound-computed-identity-error",
         "generic-bound-mutable-field-proof-error",
         "generic-bound-result-contexts-source-free",
@@ -2660,9 +3082,26 @@
         "bound-directed-family-copy-error",
         "bound-directed-mutable-widening-error",
         "bound-directed-widening-source-free",
+        "collection-api-source-free-checkpoint",
+        "collection-copy-inference-requires-context-error",
+        "constraint-capabilities-and-widening-source-free-checkpoint",
+        "constraint-cyclic-interfaces-source-free-checkpoint",
         "contextual-generic-calls-source-free",
+        "covariant-result-invariant-explicit-error",
+        "covariant-result-layers-source-free-checkpoint",
+        "covariant-result-overload-source-free-checkpoint",
+        "directional-inference-container-context-source-free",
+        "directional-inference-whole-literals-source-free-checkpoint",
+        "generic-heterogeneous-join-matrix-error",
+        "generic-mutable-join-matrix-error",
         "generic-no-inferred-family-copy-error",
-        "shared-collection-types-checkpoint"
+        "inference-nominal-context-source-free-checkpoint",
+        "inference-return-contracts-source-free-checkpoint",
+        "inference-unrelated-generic-join-error",
+        "lambda-inference-whole-literals-source-free-checkpoint",
+        "nominal-map-key-generic-bound-source-free",
+        "shared-collection-types-checkpoint",
+        "type-interactions-source-free-checkpoint"
       ]
     },
     {
@@ -2672,10 +3111,47 @@
       "evidence": [
         "bound-method-reified-view-source-free",
         "bounded-generic-references-source-free",
+        "collection-contracts-source-free-checkpoint",
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "comparison-views-containers-source-free-checkpoint",
+        "comparison-views-memo-context-source-free-checkpoint",
+        "comparison-views-original-suspended-checkpoint",
+        "comparison-views-sealed-parent-checkpoint",
+        "constraint-cyclic-interfaces-source-free-checkpoint",
+        "constraint-recursive-bound-alias-source-free-checkpoint",
+        "dependent-bounds-adapter-error",
+        "dependent-bounds-callbacks-source-free",
+        "dependent-bounds-copy-error",
+        "dependent-bounds-cyclic-source-free",
+        "dependent-bounds-explicit-error",
+        "dependent-bounds-lambda-source-free",
+        "dependent-bounds-mutable-error",
+        "dependent-bounds-nominal-error",
+        "dependent-bounds-recursive-source-free",
+        "dependent-bounds-source-free-checkpoint",
+        "dependent-bounds-structural-source-free",
+        "dependent-bounds-unrelated-error",
+        "directional-inference-constructor-source-free",
+        "directional-inference-joint-source-free",
+        "directional-inference-nominal-variance-source-free",
+        "directional-inference-owner-source-free",
+        "directional-inference-value-widening-source-free",
+        "directional-inference-whole-literals-source-free-checkpoint",
         "generic-nested-copy-reification",
         "generic-projected-copy-reification",
         "generic-shared-inference-source-free",
+        "inference-overloads-unit-defaults-source-free-checkpoint",
+        "lambda-inference-generic-reference-source-free",
+        "lambda-inference-source-free-checkpoint",
         "nullable-generic-variance-source-free",
+        "overloaded-callbacks-source-free-checkpoint",
+        "progression-view-identities-source-free-checkpoint",
+        "progression-view-negated-overflow-source-free-checkpoint",
+        "progression-view-overflow-source-free-checkpoint",
+        "progression-view-smartcast-source-free",
+        "projected-bound-reads-source-free-checkpoint",
+        "projected-method-field-interface-source-free-checkpoint",
         "structural-generic-inference-source-free",
         "wide-generic-float-source-free-checkpoint",
         "wide-generic-parameters-source-free-checkpoint"
@@ -2710,7 +3186,16 @@
       "decision": "`==` and `!=` require compatible types. Unrelated types are compile errors; Int/Float comparisons use the agreed widening, and nullable values may be compared with `null`. Function-value comparisons follow F39; the separately requested `===` and `!==` operators follow E28.",
       "status": "partial",
       "evidence": [
-        "generic-unknown-equality-compatibility-error"
+        "equality-hidden-capability-error",
+        "equality-left-captured-before-suspended-right-source-free",
+        "equality-mutability-and-nominal-controls-source-free",
+        "equality-nominal-ordinary-error",
+        "equality-ordinary-families-source-free-checkpoint",
+        "equality-ordinary-graphs-source-free-checkpoint",
+        "equality-sum-ineligible-payload-error",
+        "equality-unrelated-ordinary-error",
+        "generic-unknown-equality-compatibility-error",
+        "range-query-conversion-and-collection-control"
       ]
     },
     {
@@ -2719,6 +3204,8 @@
       "status": "partial",
       "evidence": [
         "choice-constant-arithmetic-empty",
+        "comparison-binary-ordering-error",
+        "comparison-explicit-and-membership",
         "operator-continuations"
       ]
     },
@@ -2726,7 +3213,7 @@
       "id": "E05",
       "decision": "Explicit comparisons remain valid. Encourage integer range membership using `in` for suitable bounds checks.",
       "status": "pending",
-      "evidence": []
+      "evidence": ["comparison-binary-ordering-error", "comparison-explicit-and-membership"]
     },
     {
       "id": "E06",
@@ -2774,6 +3261,7 @@
       "status": "partial",
       "evidence": [
         "cooperative-execution-slices",
+        "equality-left-captured-before-suspended-right-source-free",
         "ordered-operands-captured-left-source-free",
         "ordered-operands-half-open-revoked-error",
         "ordered-operands-order-revoked-error",
@@ -2788,12 +3276,15 @@
       "status": "partial",
       "evidence": [
         "cases/gc-suspended-assignment-address/main.bfl",
+        "collection-plain-invalid-index-order-source-free",
+        "collection-plain-write-late-bounds-source-free-checkpoint",
         "compound-field-read-source-free",
         "compound-index-root-read-checkpoint",
         "compound-map-key-read-source-free",
         "compound-read-missing-guard-error",
         "compound-read-target-effect-error",
         "gc-suspended-assignment-address",
+        "projected-field-inputs-source-free-checkpoint",
         "single-use-val-address-source-free-checkpoint",
         "single-use-val-generic-argument-write-error"
       ]
@@ -2803,6 +3294,9 @@
       "decision": "Support compound assignment statements `+=`, `-=`, `*=`, `/=`, and `%=` where their operators and target types permit them. Capture and read the target once before evaluating the right-hand side; apply the existing operator, overflow, conversion, and assignment rules. Fairmath `%+=` and `%-=` follow the same target order with N09-N12's numeric rules.",
       "status": "partial",
       "evidence": [
+        "collection-compound-invalid-index-order-source-free",
+        "collection-compound-read-source-free-checkpoint",
+        "collection-compound-write-rechecks-source-free-checkpoint",
         "compound-fairmath-read-source-free",
         "compound-field-read-source-free",
         "compound-index-root-read-checkpoint",
@@ -2821,9 +3315,7 @@
       "id": "E12",
       "decision": "Use Kotlin's precedence for `?:`: arithmetic, ranges, and infix range forms/modifiers bind more tightly; `in`/`!in`, comparisons, equality, `&&`, and `\\|\\|` bind less tightly. Repeated fallbacks group right-to-left as proposed in this batch: `a ?: (b ?: c)`. Fairmath's relative grouping remains subject to N13.",
       "status": "partial",
-      "evidence": [
-        "nullable-type-header-colons"
-      ]
+      "evidence": ["nullable-joins-source-free-checkpoint", "nullable-type-header-colons"]
     },
     {
       "id": "E13",
@@ -2832,6 +3324,10 @@
       "evidence": [
         "anchored-expression-recursion-source-free",
         "inferred-narrowing-no-any-fallback-error",
+        "lambda-inference-branch-source-free",
+        "nullable-copy-inference-error",
+        "nullable-joins-source-free-checkpoint",
+        "nullable-unrelated-inference-error",
         "shared-collection-join-budget",
         "shared-collection-join-copy-error",
         "shared-collection-types-checkpoint"
@@ -2842,26 +3338,33 @@
       "decision": "Support `when` as a multi-branch statement or expression. Value-producing branches require compatible result types under E13/E25; coverage follows E21.",
       "status": "partial",
       "evidence": [
-        "when-suspended-alternatives-and-guard"
+        "when-contracts-source-free-checkpoint",
+        "when-generic-constant-coverage-source-free",
+        "when-suspended-alternatives-and-guard",
+        "when-unrelated-branch-inference-error"
       ]
     },
     {
       "id": "E15",
       "decision": "Support subject-based `when value:` and subjectless `when:`, each with indented branches. Subject-based cases compare against one evaluated value; subjectless cases test Boolean conditions.",
       "status": "pending",
-      "evidence": []
+      "evidence": ["lambda-inference-branch-source-free"]
     },
     {
       "id": "E16",
       "decision": "Use `case` with colon branch headers, such as `case 1:` or `case condition:`, followed by an indented body. The fallback header is `else:`. Branch results follow E22; fallback placement follows E33.",
       "status": "pending",
-      "evidence": []
+      "evidence": ["inference-guarded-returns-source-free-checkpoint"]
     },
     {
       "id": "E17",
       "decision": "Subject-based cases support compatible-type value equality, null for nullable subjects, and `in`/`!in` range or collection tests. Sum-type variant patterns follow U20-U21.",
-      "status": "pending",
-      "evidence": []
+      "status": "partial",
+      "evidence": [
+        "inference-guarded-returns-source-free-checkpoint",
+        "when-contracts-source-free-checkpoint",
+        "when-generic-constant-coverage-source-free"
+      ]
     },
     {
       "id": "E18",
@@ -2916,8 +3419,15 @@
         "generic-projected-when-not-exhaustive",
         "generic-projected-when-statement",
         "generic-sum-import-source-free",
+        "inference-guard-coverage-error",
+        "inference-guarded-returns-source-free-checkpoint",
         "lambda-exhaustive-final-when",
-        "lambda-nonexhaustive-final-when"
+        "lambda-inference-branch-source-free",
+        "lambda-nonexhaustive-final-when",
+        "when-contracts-source-free-checkpoint",
+        "when-generic-constant-coverage-source-free",
+        "when-guard-does-not-complete-coverage",
+        "when-nullable-missing-null-coverage"
       ]
     },
     {
@@ -2926,17 +3436,17 @@
       "status": "partial",
       "evidence": [
         "anchored-expression-recursion-source-free",
+        "inference-guarded-returns-source-free-checkpoint",
         "lambda-exhaustive-final-when",
-        "value-prefix-flow-source-free"
+        "value-prefix-flow-source-free",
+        "when-contracts-source-free-checkpoint"
       ]
     },
     {
       "id": "E23",
       "decision": "If a statement-form `when` has no matching branch or `else`, execute no branch and continue normally.",
       "status": "partial",
-      "evidence": [
-        "when-unmatched-test-effects"
-      ]
+      "evidence": ["when-contracts-source-free-checkpoint", "when-unmatched-test-effects"]
     },
     {
       "id": "E24",
@@ -2944,6 +3454,7 @@
       "status": "partial",
       "evidence": [
         "method-subject-member-shadow-error",
+        "shared-scoped-when-shadow-error",
         "when-converted-subject-source-free"
       ]
     },
@@ -2962,7 +3473,8 @@
         "missing-return-after-elvis",
         "nonreturning-conditions-checkpoint",
         "null-literal-fallback",
-        "unary-return-expressions"
+        "unary-return-expressions",
+        "when-contracts-source-free-checkpoint"
       ]
     },
     {
@@ -2985,7 +3497,8 @@
         "safe-skipped-returns-checkpoint",
         "shared-loop-expression-stack",
         "supplied-default-control-flow",
-        "unary-return-expressions"
+        "unary-return-expressions",
+        "when-contracts-source-free-checkpoint"
       ]
     },
     {
@@ -3000,7 +3513,15 @@
       "status": "partial",
       "evidence": [
         "choice-constant-exact-empty",
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "comparison-views-original-suspended-checkpoint",
+        "comparison-views-primitive-and-nominal-kinds",
         "constant-scalar-condition-flow",
+        "equality-mutability-and-nominal-controls-source-free",
+        "equality-ordinary-families-source-free-checkpoint",
+        "equality-ordinary-graphs-source-free-checkpoint",
+        "equality-unknown-function-exact-error",
         "exact-equality-collection-types-source-free-checkpoint",
         "exact-equality-contained-nullables-source-free-checkpoint",
         "exact-equality-cyclic-nominal-graphs-source-free-checkpoint",
@@ -3011,25 +3532,42 @@
     },
     {
       "id": "E29",
-      "decision": "Exact equality compares contained values or null. Two nulls are equal regardless of their nullable annotations; one null is unequal to a present value. A present `Int?` containing 3 is exactly equal to `Int` 3. Conversions performed before comparison still determine the stored value's type.",
+      "decision": "Exact equality compares contained values or null. Two nulls are equal regardless of their nullable annotations; one null is unequal to a present value. A present `Int?` containing 3 is exactly equal to `Int` 3. Conversions performed before comparison determine its values; composite comparison views follow E30.",
       "status": "partial",
       "evidence": [
+        "comparison-views-left-before-effect-source-free-checkpoint",
+        "comparison-views-original-suspended-checkpoint",
+        "comparison-views-primitive-and-nominal-kinds",
         "constant-scalar-condition-flow",
+        "equality-mutability-and-nominal-controls-source-free",
+        "equality-ordinary-families-source-free-checkpoint",
         "exact-equality-contained-nullables-source-free-checkpoint",
         "exact-equality-independent-generic-types-source-free-checkpoint"
       ]
     },
     {
       "id": "E30",
-      "decision": "Collections, data instances, and eligible sum values support typed structural exact equality. Collection families/type arguments or nominal value types must match; recursively compare supported contents without widening or copying. Sum-specific eligibility follows U22.",
+      "decision": "Collections, data instances, and eligible sum values support typed structural exact equality using their declared comparison views. Collection families/type arguments or nominal comparison types must match; recursively compare supported contents without widening or copying. A covariant view can therefore compare exactly equal to an independently constructed value with that same view, while retained construction types remain available to type tests and casts. Sum-specific eligibility follows U22.",
       "status": "partial",
       "evidence": [
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "comparison-views-containers-source-free-checkpoint",
+        "comparison-views-cycles-checkpoint",
+        "comparison-views-left-before-effect-source-free-checkpoint",
+        "comparison-views-memo-context-source-free-checkpoint",
+        "comparison-views-original-suspended-checkpoint",
+        "comparison-views-primitive-and-nominal-kinds",
+        "comparison-views-sealed-parent-checkpoint",
+        "comparison-views-static-capability-error",
+        "equality-ordinary-families-source-free-checkpoint",
         "exact-equality-collection-types-source-free-checkpoint",
         "exact-equality-covariant-empty-reification-source-free-checkpoint",
         "exact-equality-cyclic-nominal-graphs-source-free-checkpoint",
         "exact-equality-unequatable-data-error",
         "exact-equality-unordered-values-source-free-checkpoint",
-        "exact-equality-variant-pattern-conversions-source-free-checkpoint"
+        "exact-equality-variant-pattern-conversions-source-free-checkpoint",
+        "nullable-generic-variance-source-free"
       ]
     },
     {
@@ -3037,6 +3575,7 @@
       "decision": "If an operand has static type Any or Any? and its concrete equality capability is unknown, require narrowing or other static proof of equality eligibility before comparison. Existing null comparisons remain available; this does not introduce runtime failure-based equality dispatch.",
       "status": "partial",
       "evidence": [
+        "equality-hidden-capability-error",
         "exact-equality-covariant-empty-reification-source-free-checkpoint",
         "exact-equality-unknown-universal-error",
         "exact-equality-unknown-universal-exact-error"
@@ -3047,6 +3586,8 @@
       "decision": "Support Boolean when pattern guards, such as case is Outcome.Success(value) if value != \"\":. Payload names are available to the guard. Evaluate it once after the pattern matches, under the enclosing suspension permissions; a false guard continues to later cases.",
       "status": "partial",
       "evidence": [
+        "inference-guard-coverage-error",
+        "inference-guarded-returns-source-free-checkpoint",
         "single-use-val-site-values-source-free",
         "when-alternative-skipped-initialization",
         "when-guard-effects",
@@ -3066,7 +3607,11 @@
       "decision": "Ordinary and exact structural equality handle eligible cyclic data or collection graphs without infinite recursion. Track pairs being compared so revisiting a pair terminates that recursive step. Shared-reference layout does not determine equality; the ordinary and exact type rules remain distinct.",
       "status": "partial",
       "evidence": [
-        "deep-cyclic-equality"
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "comparison-views-cycles-checkpoint",
+        "deep-cyclic-equality",
+        "equality-ordinary-graphs-source-free-checkpoint"
       ]
     },
     {
@@ -3077,8 +3622,29 @@
         "cast-overlap-runtime-error",
         "continued-condition-lambda-location",
         "continued-lambda-body-location",
+        "continued-operation-assertion-source-free-error",
+        "continued-operation-cast-source-free-error",
+        "continued-operation-default-source-free-error",
+        "continued-operation-divide-source-free-error",
+        "continued-operation-fairmath-source-free-error",
+        "continued-operation-index-source-free-error",
+        "continued-operation-label-source-free-error",
+        "continued-operation-lambda-source-free-error",
+        "continued-operation-method-source-free-error",
+        "continued-operation-negation-source-free-error",
+        "continued-operation-nested-source-free-error",
+        "continued-operation-overflow-source-free-error",
+        "continued-operation-prose-source-free-error",
+        "continued-operation-range-source-free-error",
+        "continued-operation-resume-source-free-error",
+        "continued-operation-safe-skips-source-free-checkpoint",
+        "continued-operation-step-source-free-error",
         "continued-string-lambda-location",
         "interpolated-function-error-location",
+        "interpolation-block-runtime-location",
+        "interpolation-label-block-runtime-location",
+        "interpolation-prose-block-runtime-location",
+        "legacy-invalid-return-source-free-location",
         "location-choice-later-label",
         "location-choice-visibility",
         "location-multiline-label",
@@ -3091,9 +3657,7 @@
       "id": "D01",
       "decision": "Provide `List<T>`, `Set<T>`, and `Map<K, V>` as the initial collection families.",
       "status": "partial",
-      "evidence": [
-        "collection-copies"
-      ]
+      "evidence": ["collection-copies"]
     },
     {
       "id": "D02",
@@ -3101,6 +3665,7 @@
       "status": "partial",
       "evidence": [
         "collection-copies",
+        "collection-immutable-mutator-error",
         "mutable-index-conditional-mutation-error",
         "mutable-index-enum-source-free",
         "mutable-index-escaping-reader-error",
@@ -3139,7 +3704,10 @@
       "status": "partial",
       "evidence": [
         "collection-copies",
+        "directional-inference-joint-source-free",
+        "directional-inference-whole-literals-source-free-checkpoint",
         "float-key-precision-checkpoint",
+        "lambda-inference-whole-literals-source-free-checkpoint",
         "nonempty-values-contextual-mutable-error",
         "nonempty-values-continue-source-free-checkpoint",
         "nonempty-values-copy-widening-source-free-checkpoint",
@@ -3166,16 +3734,20 @@
       "id": "D04",
       "decision": "When no expected type supplies context, collection construction infers the immutable List/Set/Map family by default. Mutable construction uses the explicit prefix in D09 or expected-type guidance in D10.",
       "status": "partial",
-      "evidence": [
-        "collection-copies"
-      ]
+      "evidence": ["collection-copies"]
     },
     {
       "id": "D05",
       "decision": "Same-family assignment and argument passing of mutable collection values share the same container, so mutations are visible through aliases. Cross-family copying follows D21. These rules concern container contents rather than `val`/`var` binding reassignment.",
       "status": "partial",
       "evidence": [
-        "collection-copies"
+        "collection-api-source-free-checkpoint",
+        "collection-contracts-source-free-checkpoint",
+        "collection-copies",
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "compiled-large-cyclic-source-checkpoints",
+        "compiled-large-cyclic-source-free-checkpoints"
       ]
     },
     {
@@ -3209,6 +3781,7 @@
       "decision": "Map lookup with `map[key]` returns `V?`. A missing key yields null, and a stored null also yields null. Map key presence is tested with `in` or `!in` under D19.",
       "status": "partial",
       "evidence": [
+        "collection-contracts-source-free-checkpoint",
         "collection-order",
         "enum-map-distinct-keys",
         "enum-map-guards-source-free",
@@ -3231,33 +3804,38 @@
       "status": "partial",
       "evidence": [
         "builtin-projected-keys-source-free",
-        "collection-copies"
+        "collection-copies",
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "comparison-views-containers-source-free-checkpoint",
+        "equality-hidden-capability-error",
+        "equality-mutability-and-nominal-controls-source-free",
+        "equality-ordinary-families-source-free-checkpoint",
+        "equality-ordinary-graphs-source-free-checkpoint"
       ]
     },
     {
       "id": "D09",
       "decision": "Explicit mutable collection construction uses the mutable literal prefix, for example mutable [1, 2], mutable {\"a\", \"b\"}, and mutable {\"gold\": 3}.",
       "status": "partial",
-      "evidence": [
-        "collection-copies"
-      ]
+      "evidence": ["collection-copies"]
     },
     {
       "id": "D10",
       "decision": "Expected types guide collection literal element/key/value types and mutability. An annotation or parameter type may request mutable construction without a mutable prefix, for example val items: MutableList<Int> = [1, 2]. The no-context default remains immutable under D04.",
       "status": "partial",
       "evidence": [
-        "collection-copies"
+        "collection-copies",
+        "directional-inference-container-context-source-free",
+        "directional-inference-whole-literals-source-free-checkpoint",
+        "lambda-inference-whole-literals-source-free-checkpoint"
       ]
     },
     {
       "id": "D11",
       "decision": "Collection literals infer compatible-type joins using existing scalar widening: `[1, 2.5]` yields `List<Float>`, and `['a', \"b\"]` yields `List<String>`. Mixing `T` with null yields `T?`. Unrelated types require a suitable explicit expected type or are errors. Empty or all-null collections require an expected type; empty set/map forms follow D17.",
       "status": "partial",
-      "evidence": [
-        "collection-copies",
-        "sibling-sum-joins-source-free"
-      ]
+      "evidence": ["collection-copies", "sibling-sum-joins-source-free"]
     },
     {
       "id": "D12",
@@ -3270,8 +3848,16 @@
         "cases/generic-phantom-capabilities/main.bfl",
         "cases/generic-recursive-capabilities/main.bfl",
         "cases/generic-recursive-key-error/main.bfl",
+        "collection-graph-cyclic-key-source-free-error",
+        "collection-graph-duplicate-nominal-key-source-free-error",
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "collection-graph-unstable-argument-source-free-error",
         "collection-order",
         "concrete-bounded-projections-source-free",
+        "dependent-projected-capabilities-source-free-checkpoint",
+        "dependent-projected-equatable-key-error",
+        "dependent-projected-unbounded-key-error",
         "float-key-precision-checkpoint",
         "generic-bound-unstable-set-error",
         "generic-mutual-recursive-key-error",
@@ -3279,6 +3865,13 @@
         "generic-recursive-capabilities",
         "generic-recursive-key-error",
         "late-projected-bound-mutability-error",
+        "nested-unstable-key-matrix-error",
+        "projected-bound-reads-source-free-checkpoint",
+        "projected-capability-composition-mutable-key-error",
+        "projected-capability-composition-unknown-key-error",
+        "projected-capability-compositions-source-free-checkpoint",
+        "projected-capability-long-dependency-source-free-error",
+        "projected-capability-wide-state-source-free-checkpoint",
         "projected-list-key-still-rejected",
         "projected-mutable-set-key-rejected",
         "projected-unknown-map-values-key-rejected"
@@ -3289,6 +3882,9 @@
       "decision": "Sets and maps preserve first-insertion order for iteration. Replacing a map value retains its key's position; removing and reinserting moves it to the end. Lists retain positional order.",
       "status": "partial",
       "evidence": [
+        "collection-api-source-free-checkpoint",
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
         "collection-order"
       ]
     },
@@ -3297,6 +3893,9 @@
       "decision": "Set construction coalesces equal duplicate members. Map construction rejects duplicate keys: compile errors when provable and runtime errors otherwise. Literal evaluation and dynamic key-check timing follow D29.",
       "status": "partial",
       "evidence": [
+        "collection-graph-duplicate-nominal-key-source-free-error",
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
         "collection-order",
         "constant-boolean-map-key-error",
         "constant-exact-comparison-map-key-error",
@@ -3313,12 +3912,18 @@
       "decision": "For loops over lists and sets yield elements; loops over maps yield entry values with .key and .value. The existing fresh immutable iteration-binding rule applies. Entry type naming and destructuring remain separate decisions.",
       "status": "partial",
       "evidence": [
+        "collection-api-source-free-checkpoint",
+        "collection-entry-key-write-error",
+        "collection-entry-value-write-error",
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
         "collection-order",
         "empty-list-iteration-counter-checkpoint",
         "map-entry-key-update-error",
         "map-entry-proofs-source-free",
         "map-entry-value-update-error",
-        "nonempty-loop-return-flow-source-free"
+        "nonempty-loop-return-flow-source-free",
+        "text-explicit-surfaces-source-free-checkpoint"
       ]
     },
     {
@@ -3357,25 +3962,27 @@
       "id": "D17",
       "decision": "Empty literals use context: `[]` is a list; `{}` is a set or map according to its expected type. Empty collections require sufficient expected element/key/value types; insufficient context is a compile error.",
       "status": "partial",
-      "evidence": [
-        "collection-order"
-      ]
+      "evidence": ["collection-order"]
     },
     {
       "id": "D18",
       "decision": "Use the `size` property for collection element or entry counts, with an `Int` result. `String` retains its `length` property.",
       "status": "partial",
-      "evidence": [
-        "collection-copies"
-      ]
+      "evidence": ["collection-copies"]
     },
     {
       "id": "D19",
       "decision": "Use `in` and `!in` for collection membership. Lists and sets test elements; maps test keys, including keys whose stored value is null. `!in` negates the test.",
       "status": "partial",
       "evidence": [
+        "collection-api-source-free-checkpoint",
+        "collection-contracts-source-free-checkpoint",
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "collection-map-legacy-source-name-error",
         "collection-order",
-        "collection-search-callback-error"
+        "collection-search-callback-error",
+        "range-query-conversion-and-collection-control"
       ]
     },
     {
@@ -3383,11 +3990,22 @@
       "decision": "Mutable collections support indexed assignment plus methods: `items[i] = value` replaces a list element, and `mapping[key] = value` inserts or replaces a map entry. Add/remove operations use methods; exact method names and results remain open.",
       "status": "partial",
       "evidence": [
+        "collection-api-source-free-checkpoint",
+        "collection-compound-invalid-index-order-source-free",
+        "collection-compound-read-source-free-checkpoint",
+        "collection-compound-write-rechecks-source-free-checkpoint",
         "collection-copies",
         "collection-copy-deferred-capture-checkpoint",
+        "collection-list-key-member-error",
+        "collection-method-late-bounds-source-free-checkpoint",
+        "collection-plain-invalid-index-order-source-free",
+        "collection-plain-write-late-bounds-source-free-checkpoint",
         "collection-remove-at-uninitialized-error",
+        "collection-set-key-member-error",
+        "collection-wrong-element-error",
         "escaped-callback-heap-retarget-error",
-        "map-remove-callback-uninitialized-error"
+        "map-remove-callback-uninitialized-error",
+        "nullable-conversions-source-free-checkpoint"
       ]
     },
     {
@@ -3395,17 +4013,38 @@
       "decision": "Assignments and arguments may implicitly convert between corresponding immutable and mutable collection families by copying container contents into the requested family. The resulting container is independent; referenced element values retain their own semantics rather than being recursively frozen or copied.",
       "status": "partial",
       "evidence": [
-        "collection-copies"
+        "collection-api-source-free-checkpoint",
+        "collection-contracts-source-free-checkpoint",
+        "collection-copies",
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "directional-inference-container-context-source-free",
+        "nominal-map-key-copy-checkpoint",
+        "nullable-contextual-copy-source-free-checkpoint",
+        "nullable-conversion-mutable-invariance-error",
+        "nullable-conversions-source-free-checkpoint",
+        "nullable-copy-inference-error"
       ]
     },
     {
       "id": "D22",
-      "decision": "Lift approved lossless scalar widening through immutable `List`/`Set`/`Map` element, key, or value types, converting contents as needed, for example `List<Int>` to `List<Float>`. Same-family mutable collection type arguments must match exactly. Combining family copies with widening follows D25; recursive immutable lifting follows D28.",
+      "decision": "Lift approved lossless scalar widening through immutable `List`/`Set`/`Map` element, key, or value types, converting contents as needed. Also allow implicit nominal Map-key subtype conversion by rebuilding the map and checking duplicate keys. Map keys remain invariant for subtyping under D30. Same-family mutable collection type arguments must match exactly; family copying and recursive immutable lifting follow D25/D28.",
       "status": "partial",
       "evidence": [
         "bound-directed-family-copy-error",
         "bound-directed-widening-source-free",
+        "collection-contracts-source-free-checkpoint",
         "collection-copies",
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "comparison-views-containers-source-free-checkpoint",
+        "generic-result-conversion-source-free-checkpoint",
+        "generic-result-mutable-invariance-error",
+        "generic-result-nested-invariance-error",
+        "nominal-map-key-copy-checkpoint",
+        "nominal-map-key-generic-bound-source-free",
+        "nominal-map-mutable-invariance-error",
+        "nominal-map-no-function-adapter-error",
         "shared-collection-conversion-budget",
         "shared-collection-types-checkpoint"
       ]
@@ -3424,9 +4063,7 @@
       "id": "D24",
       "decision": "Use the star prefix to spread `List<T>` or `MutableList<T>` elements into typed variadic arguments, for example `total(1, *numbers)`. Multiple groups and source-position expansion follow A07; other iterable families remain separate.",
       "status": "partial",
-      "evidence": [
-        "varargs-spreads"
-      ]
+      "evidence": ["varargs-spreads"]
     },
     {
       "id": "D25",
@@ -3434,10 +4071,18 @@
       "status": "partial",
       "evidence": [
         "builtin-projected-keys-source-free",
+        "collection-contracts-source-free-checkpoint",
         "collection-copies",
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "directional-inference-container-context-source-free",
         "generic-nullable-copy-still-rejected",
+        "nominal-map-key-copy-checkpoint",
+        "nullable-contextual-copy-source-free-checkpoint",
+        "nullable-conversions-source-free-checkpoint",
         "projected-copy-checkpoint-source-free",
-        "shared-collection-types-checkpoint"
+        "shared-collection-types-checkpoint",
+        "type-interactions-source-free-checkpoint"
       ]
     },
     {
@@ -3446,7 +4091,10 @@
       "status": "partial",
       "evidence": [
         "collection-copies",
-        "projected-copy-checkpoint-source-free"
+        "nominal-map-key-copy-checkpoint",
+        "nullable-contextual-copy-source-free-checkpoint",
+        "projected-copy-checkpoint-source-free",
+        "unit-early-discard-source-free-checkpoint"
       ]
     },
     {
@@ -3456,8 +4104,10 @@
       "evidence": [
         "builtin-projected-keys-source-free",
         "cases/overload-conversions/main.bfl",
+        "nullable-conversions-source-free-checkpoint",
         "overload-conversions",
-        "projected-copy-checkpoint-source-free"
+        "projected-copy-checkpoint-source-free",
+        "type-interactions-source-free-checkpoint"
       ]
     },
     {
@@ -3468,6 +4118,11 @@
         "bound-directed-mutable-widening-error",
         "bound-directed-widening-source-free",
         "collection-copies",
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "generic-result-conversion-source-free-checkpoint",
+        "generic-result-mutable-invariance-error",
+        "generic-result-nested-invariance-error",
         "shared-collection-conversion-budget",
         "shared-collection-join-budget",
         "shared-collection-types-checkpoint"
@@ -3477,31 +4132,34 @@
       "id": "D29",
       "decision": "Collection literals evaluate elements or entries from left to right. For each map entry, evaluate its key, reject a dynamically duplicated key before evaluating its value, then proceed to the next entry. Provable duplicate map keys remain compile errors.",
       "status": "partial",
-      "evidence": [
-        "duplicate-key-before-value"
-      ]
+      "evidence": ["collection-graph-duplicate-nominal-key-source-free-error", "duplicate-key-before-value"]
     },
     {
       "id": "D30",
       "decision": "Immutable List and Set element types and Map value types are covariant through genuine subtype relationships, without copying; Map keys remain invariant. For example, List<Outcome.Success> may satisfy List<Outcome>. Scalar conversions remain separate, and mutable collection type arguments remain invariant.",
       "status": "partial",
       "evidence": [
-        "nullable-generic-variance-source-free"
+        "comparison-views-containers-source-free-checkpoint",
+        "nominal-map-key-copy-checkpoint",
+        "nominal-map-mutable-invariance-error",
+        "nullable-generic-variance-source-free",
+        "progression-view-identities-source-free-checkpoint",
+        "projected-nullable-container-input-source-free-checkpoint"
       ]
     },
     {
       "id": "R01",
       "decision": "`a..b` is an ascending inclusive integer range.",
       "status": "partial",
-      "evidence": [
-        "ranges-loops"
-      ]
+      "evidence": ["range-terminal-boundaries-source-free-checkpoint", "ranges-loops"]
     },
     {
       "id": "R02",
       "decision": "`a..<b` is an ascending half-open integer range: include `a`, exclude `b`.",
       "status": "partial",
       "evidence": [
+        "compiled-large-cyclic-source-checkpoints",
+        "compiled-large-cyclic-source-free-checkpoints",
         "ranges-loops"
       ]
     },
@@ -3512,6 +4170,8 @@
       "evidence": [
         "large-progression-membership",
         "large-progression-overflow",
+        "progression-reference-source-free-checkpoint",
+        "progression-view-identities-source-free-checkpoint",
         "ranges-loops",
         "stored-progressions-aliases-source-free-checkpoint",
         "stored-progressions-escaping-reader-source-free-checkpoint",
@@ -3529,17 +4189,15 @@
       "id": "R04",
       "decision": "Invalid or empty ascending ranges are errors. Reject constant cases at compile time and dynamically computed cases at runtime. Examples include `5..1` and `5..<5`.",
       "status": "partial",
-      "evidence": [
-        "invalid-range",
-        "numeric-dynamic-range-equal-failure",
-        "numeric-dynamic-range-reversed-failure"
-      ]
+      "evidence": ["invalid-range", "numeric-dynamic-range-equal-failure", "numeric-dynamic-range-reversed-failure"]
     },
     {
       "id": "R05",
       "decision": "`a downTo b` explicitly creates an inclusive descending range. The ascending forms retain their direction.",
       "status": "partial",
       "evidence": [
+        "progression-terminal-source-free-checkpoints",
+        "range-terminal-boundaries-source-free-checkpoint",
         "ranges-loops"
       ]
     },
@@ -3550,6 +4208,11 @@
       "evidence": [
         "large-progression-membership",
         "large-progression-overflow",
+        "progression-reference-source-free-checkpoint",
+        "progression-terminal-source-free-checkpoints",
+        "range-negative-step-dynamic-failure",
+        "range-terminal-boundaries-source-free-checkpoint",
+        "range-zero-step-constant-error",
         "ranges-loops",
         "stored-progressions-aliases-source-free-checkpoint",
         "stored-progressions-escaping-reader-source-free-checkpoint",
@@ -3570,6 +4233,19 @@
       "evidence": [
         "large-progression-membership",
         "large-progression-overflow",
+        "progression-absent-index-overflow-source-free-checkpoint",
+        "progression-descending-index-overflow-source-free-checkpoint",
+        "progression-found-index-overflow-source-free-checkpoint",
+        "progression-query-float-error",
+        "progression-reference-source-free-checkpoint",
+        "progression-view-identities-source-free-checkpoint",
+        "progression-view-negated-overflow-source-free-checkpoint",
+        "progression-view-overflow-source-free-checkpoint",
+        "progression-view-smartcast-source-free",
+        "range-query-conversion-and-collection-control",
+        "range-query-float-error",
+        "range-query-nullable-error",
+        "range-query-unbounded-error",
         "ranges-loops"
       ]
     },
@@ -3578,8 +4254,12 @@
       "decision": "`for i in range:` creates a fresh, inferred immutable binding each iteration, scoped to the loop body.",
       "status": "partial",
       "evidence": [
+        "binding-scope-reuse-source-free-checkpoint",
+        "binding-shadow-iterator-error",
         "empty-list-iteration-counter-checkpoint",
+        "lambda-inference-branch-source-free",
         "loop-break-facts-source-free-checkpoint",
+        "progression-terminal-source-free-checkpoints",
         "ranges-loops",
         "single-use-val-structured-source-free-checkpoint"
       ]
@@ -3600,6 +4280,7 @@
         "loop-expression-break-checkpoint",
         "loop-expression-continue",
         "loop-expression-continue-checkpoint",
+        "range-terminal-boundaries-source-free-checkpoint",
         "ranges-loops",
         "shared-loop-expression-stack"
       ]
@@ -3609,7 +4290,14 @@
       "decision": "Loops may have optional labels. A targeted jump must name an enclosing loop in the same function; invalid targets are compile errors.",
       "status": "partial",
       "evidence": [
+        "binding-loop-label-reuse-error",
         "loop-break-facts-source-free-checkpoint",
+        "nonloop-choice-label-error",
+        "nonloop-if-label-error",
+        "nonloop-prose-directive-label-error",
+        "nonloop-prose-label-error",
+        "nonloop-when-label-error",
+        "range-terminal-boundaries-source-free-checkpoint",
         "ranges-loops"
       ]
     },
@@ -3618,12 +4306,19 @@
       "decision": "Label a loop using `outer@ for ...:`; target it with `break@outer` or `continue@outer`.",
       "status": "partial",
       "evidence": [
+        "binding-loop-label-reuse-error",
         "inferred-loop-exits-source-free",
         "loop-break-facts-source-free-checkpoint",
         "loop-expression-break",
         "loop-expression-break-checkpoint",
         "loop-expression-continue",
         "loop-expression-continue-checkpoint",
+        "nonloop-choice-label-error",
+        "nonloop-if-label-error",
+        "nonloop-prose-directive-label-error",
+        "nonloop-prose-label-error",
+        "nonloop-when-label-error",
+        "range-terminal-boundaries-source-free-checkpoint",
         "ranges-loops"
       ]
     },
@@ -3636,9 +4331,11 @@
         "continue-uninitialized-capture-error",
         "inferred-loop-break-nullability-error",
         "inferred-loop-exits-source-free",
+        "lambda-inference-branch-source-free",
         "loop-break-facts-source-free-checkpoint",
         "loop-break-missing-initialization-error",
         "loop-break-possible-write-error",
+        "range-terminal-boundaries-source-free-checkpoint",
         "ranges-loops",
         "single-use-val-structured-source-free-checkpoint"
       ]
@@ -3650,6 +4347,7 @@
       "evidence": [
         "continue-correlated-captures-source-free-checkpoint",
         "loop-break-facts-source-free-checkpoint",
+        "range-terminal-boundaries-source-free-checkpoint",
         "ranges-loops"
       ]
     },
@@ -3668,10 +4366,7 @@
       "id": "C08",
       "decision": "Every variable read by the closing condition must be initialized on every path reaching it, including paths through `continue`.",
       "status": "partial",
-      "evidence": [
-        "delayed-continue",
-        "inferred-loop-exits-source-free"
-      ]
+      "evidence": ["delayed-continue", "inferred-loop-exits-source-free"]
     },
     {
       "id": "F01",
@@ -3697,6 +4392,7 @@
         "anchored-expression-recursion-source-free",
         "asserted-generic-identity-source-free",
         "asserted-generic-null-runtime-error",
+        "binding-inference-source-free-checkpoint",
         "completed-path-facts-source-free-checkpoint",
         "computed-index-keys-source-free-checkpoint",
         "contextual-generic-calls-source-free",
@@ -3706,6 +4402,14 @@
         "diagnostic-nullable-type",
         "immutable-index-guards-source-free",
         "immutable-map-guards-source-free",
+        "inference-guard-coverage-error",
+        "inference-guarded-returns-source-free-checkpoint",
+        "inference-incompatible-returns-error",
+        "inference-missing-return-error",
+        "inference-overloads-unit-defaults-source-free-checkpoint",
+        "inference-parameter-annotation-error",
+        "inference-recursive-result-error",
+        "inference-return-contracts-source-free-checkpoint",
         "inferred-generic-binding-identity-source-free",
         "inferred-loop-break-nullability-error",
         "inferred-loop-exits-source-free",
@@ -3736,9 +4440,7 @@
       "id": "F03",
       "decision": "Explicit return annotations use `->`: `fun double(value: Int) -> Int:`. The final colon opens a block body.",
       "status": "partial",
-      "evidence": [
-        "nullable-type-header-colons"
-      ]
+      "evidence": ["inference-return-contracts-source-free-checkpoint", "nullable-type-header-colons"]
     },
     {
       "id": "F04",
@@ -3748,8 +4450,11 @@
         "choice-dead-option-return",
         "constant-flow-initialization",
         "default-nonreturning-missing-return",
+        "inference-missing-return-error",
         "missing-return-after-elvis",
         "single-use-val-unit-forward-return-source-free-checkpoint",
+        "unit-early-discard-source-free-checkpoint",
+        "unit-named-early-return-value-error",
         "value-prefix-flow-source-free"
       ]
     },
@@ -3757,16 +4462,14 @@
       "id": "F05",
       "decision": "Support expression bodies: `fun double(value: Int) = value * 2`. The expression supplies the returned value; return annotations may still use `->`.",
       "status": "partial",
-      "evidence": [
-        "anchored-expression-recursion-source-free",
-        "inferred-expression-returns-source-free"
-      ]
+      "evidence": ["anchored-expression-recursion-source-free", "inferred-expression-returns-source-free"]
     },
     {
       "id": "F06",
       "decision": "`Unit` is a regular type with one value. Infer it for functions that return no value. Such functions may end naturally or use bare `return`. An explicit annotation is `-> Unit`.",
       "status": "partial",
       "evidence": [
+        "lambda-inference-unit-source-free",
         "single-use-val-unit-forward-early-argument-error",
         "single-use-val-unit-forward-escape-error",
         "single-use-val-unit-forward-loop-source-free-checkpoint",
@@ -3787,18 +4490,13 @@
       "id": "F07",
       "decision": "Parameters are immutable by default. An optional `var` modifier permits reassignment of a parameter binding inside the function.",
       "status": "pending",
-      "evidence": [
-        "single-use-val-parameter-source-free-checkpoint"
-      ]
+      "evidence": ["single-use-val-parameter-source-free-checkpoint"]
     },
     {
       "id": "F08",
       "decision": "Each parameter has its own local binding. Reassigning a `var` parameter does not update the caller's binding. Ordinary argument expressions are allowed.",
       "status": "pending",
-      "evidence": [
-        "single-use-val-generic-source-free-checkpoint",
-        "single-use-val-parameter-source-free-checkpoint"
-      ]
+      "evidence": ["single-use-val-generic-source-free-checkpoint", "single-use-val-parameter-source-free-checkpoint"]
     },
     {
       "id": "F09",
@@ -3812,6 +4510,7 @@
         "default-skipped-narrowing-error",
         "generic-projected-default-only-source-free-checkpoint",
         "generic-projected-null-inputs-source-free-checkpoint",
+        "inference-overloads-unit-defaults-source-free-checkpoint",
         "named-field-order-and-copy-checkpoint",
         "shared-wide-default-helper-source-free",
         "skipped-default-captures-source-free",
@@ -3827,6 +4526,7 @@
       "decision": "For parameters permitted to have defaults, evaluate an omitted default at each call only when that argument is omitted. Variadic parameters follow F33 instead.",
       "status": "partial",
       "evidence": [
+        "binding-initialization-source-free-checkpoint",
         "call-publisher-default-error",
         "call-publisher-supplied-default",
         "default-body-capture-still-required-error",
@@ -3834,6 +4534,7 @@
         "default-nonreturning-missing-return",
         "default-skipped-narrowing-error",
         "default-transitive-capture-still-required-error",
+        "inference-overloads-unit-defaults-source-free-checkpoint",
         "local-enum-shorthand-source-free",
         "named-field-order-and-copy-checkpoint",
         "shared-wide-default-helper-source-free",
@@ -3849,11 +4550,13 @@
       "decision": "Defaults may reference already-resolved earlier parameters and bindings visible where the function is declared. Later parameters are unavailable.",
       "status": "partial",
       "evidence": [
+        "binding-initialization-source-free-checkpoint",
         "call-publisher-default-error",
         "call-publisher-supplied-default",
         "default-body-capture-still-required-error",
         "default-transitive-capture-still-required-error",
         "hoisted-local-default-late-proof-error",
+        "inference-overloads-unit-defaults-source-free-checkpoint",
         "skipped-default-captures-source-free",
         "suspended-defaults-checkpoint",
         "suspended-defaults-source-free"
@@ -3863,9 +4566,7 @@
       "id": "F12",
       "decision": "Defaulted parameters may appear anywhere, including before required ones. Positionals bind in declaration order; named arguments can omit earlier defaults.",
       "status": "partial",
-      "evidence": [
-        "named-field-order-and-copy-checkpoint"
-      ]
+      "evidence": ["named-field-order-and-copy-checkpoint"]
     },
     {
       "id": "F13",
@@ -3873,6 +4574,12 @@
       "status": "partial",
       "evidence": [
         "anchored-expression-recursion-source-free",
+        "binding-initialization-recursive-read-error",
+        "binding-initialization-source-free-checkpoint",
+        "dependent-bounds-recursive-source-free",
+        "inference-recursive-result-error",
+        "inference-return-contracts-source-free-checkpoint",
+        "lazy-package-deep-source-free-checkpoint",
         "named-capture-source-free",
         "value-forward-local-results-source-free",
         "value-unanchored-local-result-error"
@@ -3883,6 +4590,7 @@
       "decision": "Function names are visible throughout their enclosing scope. Calls may precede declarations in that scope, so declaration order does not restrict ordinary calls or mutual recursion.",
       "status": "partial",
       "evidence": [
+        "binding-initialization-source-free-checkpoint",
         "capture-scope-container-forward-error",
         "capture-scope-default-forward-error",
         "capture-scope-direct-forward-error",
@@ -3891,10 +4599,12 @@
         "capture-scope-reference-forward-error",
         "capture-scope-supplied-default-checkpoint",
         "capture-scope-writer-forward-error",
+        "dependent-bounds-cyclic-source-free",
         "field-hoisted-late-proof-error",
         "hoisted-entry-proofs-source-free",
         "hoisted-local-default-late-proof-error",
         "hoisted-local-late-proof-error",
+        "inference-return-contracts-source-free-checkpoint",
         "local-enum-capture-before-initialization-error",
         "local-enum-shorthand-source-free",
         "loop-initializers-early-read-error",
@@ -4074,6 +4784,8 @@
         "escaped-callback-rhs-publication-error",
         "escaped-callback-transitive-retarget-error",
         "implicit-copy-and-method-captures-source-free",
+        "lambda-inference-captured-guard-error",
+        "lambda-inference-source-free-checkpoint",
         "local-callback-retarget-before-initialization",
         "mutable-field-call-proof-error",
         "mutable-field-choice-proof-error",
@@ -4141,6 +4853,12 @@
       "decision": "A local function may be declared before an enclosing binding it reads has been initialized. Every call that could read the binding requires compile-time proof of initialization; unprovable cases are compile errors.",
       "status": "partial",
       "evidence": [
+        "binding-initialization-call-before-ready-error",
+        "binding-initialization-default-read-error",
+        "binding-initialization-escaping-read-error",
+        "binding-initialization-forwarded-read-error",
+        "binding-initialization-recursive-read-error",
+        "binding-initialization-source-free-checkpoint",
         "bound-collection-copy-capture-checkpoint",
         "bound-collection-copy-uninitialized-error",
         "branch-capture-initializer",
@@ -4531,6 +5249,9 @@
         "transitive-omitted-default-scope-exit-error",
         "transitive-skipped-default-before-declaration",
         "transitive-skipped-defaults-source-free",
+        "unit-discarded-capture-saved-current-profile",
+        "unit-discarded-capture-source-free",
+        "unit-early-discard-uninitialized-error",
         "write-only-argument-capture",
         "write-only-block-capture-checkpoint",
         "write-only-default-capture",
@@ -4546,6 +5267,7 @@
       "decision": "Functions are first-class, statically typed values. They may be stored in variables, passed as arguments, and returned, including references to local functions.",
       "status": "partial",
       "evidence": [
+        "binding-initialization-source-free-checkpoint",
         "capture-any-return-error",
         "capture-argument-replacement-error",
         "capture-block-local-error",
@@ -4570,6 +5292,7 @@
         "completed-path-facts-source-free-checkpoint",
         "continue-correlated-captures-source-free-checkpoint",
         "continue-uninitialized-capture-error",
+        "covariant-result-layers-source-free-checkpoint",
         "delayed-capture",
         "generic-local-function-capture",
         "generic-projected-callback-views-source-free-checkpoint",
@@ -4579,17 +5302,24 @@
         "generic-projected-null-inputs-source-free-checkpoint",
         "generic-projected-rechecked-capture-source-free-checkpoint",
         "implicit-copy-and-method-captures-source-free",
+        "inference-return-contracts-source-free-checkpoint",
         "local-enum-shorthand-source-free",
         "loop-break-facts-source-free-checkpoint",
         "named-capture-source-free",
+        "namespace-value-prefix-capture-source-free-checkpoint",
+        "nominal-contracts-source-free-checkpoint",
+        "prose-escaping-callables-source-free-checkpoint",
+        "prose-suspend-callable-source-free-checkpoint",
         "qualified-local-capture-checkpoint",
         "shared-function-types-checkpoint",
         "shared-projected-read-checkpoint",
+        "shared-scoped-capture-source-free-checkpoint",
         "single-use-val-initializers-source-free-checkpoint",
         "single-use-val-loop-readers-source-free-checkpoint",
         "single-use-val-parameter-loop-readers-source-free-checkpoint",
         "skipped-default-captures-source-free",
         "stable-field-closures-checkpoint-source-free",
+        "unit-discarded-capture-source-free",
         "wide-function-parameters-source-free-checkpoint"
       ]
     },
@@ -4598,6 +5328,9 @@
       "decision": "Escaping functions retain their captured lexical bindings as long as needed. Functions capturing the same var binding share its current state; separate enclosing invocations still have their own bindings.",
       "status": "partial",
       "evidence": [
+        "binding-inference-source-free-checkpoint",
+        "binding-initialization-source-free-checkpoint",
+        "binding-scope-reuse-source-free-checkpoint",
         "bound-collection-copy-capture-checkpoint",
         "call-publisher-default-error",
         "call-publisher-deferred-until-ready",
@@ -4624,6 +5357,7 @@
         "compact-capture-delayed-checkpoint",
         "compact-capture-source-free",
         "computed-index-keys-source-free-checkpoint",
+        "covariant-result-layers-source-free-checkpoint",
         "delayed-capture",
         "dynamic-key-suspended-reader-source-free",
         "enum-map-guards-source-free",
@@ -4643,20 +5377,29 @@
         "immutable-index-guards-source-free",
         "immutable-map-guards-source-free",
         "inferred-generic-binding-identity-source-free",
+        "lambda-inference-choice-checkpoint",
+        "lambda-inference-method-scope-source-free",
+        "lambda-inference-source-free-checkpoint",
         "local-callback-retarget-before-initialization",
         "mutable-root-field-proofs-source-free",
         "named-capture-source-free",
+        "namespace-value-prefix-capture-source-free-checkpoint",
+        "nominal-contracts-source-free-checkpoint",
         "overloaded-closures-source-free-checkpoint",
+        "prose-escaping-callables-source-free-checkpoint",
+        "prose-suspend-callable-source-free-checkpoint",
         "qualified-local-capture-checkpoint",
         "safe-captured-prefix-checkpoint",
         "shared-callback-current-value-checkpoint",
         "shared-callback-skipped-default-checkpoint",
+        "shared-scoped-capture-source-free-checkpoint",
         "single-use-val-initializers-source-free-checkpoint",
         "single-use-val-loop-readers-source-free-checkpoint",
         "single-use-val-parameter-loop-readers-source-free-checkpoint",
         "stable-field-closures-checkpoint-source-free",
         "text-computed-keys-source-free-checkpoint",
         "transitive-skipped-defaults-source-free",
+        "unit-discarded-capture-saved-current-profile",
         "write-only-block-capture-checkpoint",
         "write-only-escaping-capture-source-free",
         "write-only-shared-capture-keeps-local-deferral"
@@ -4666,15 +5409,14 @@
       "id": "F22",
       "decision": "Function types use arrow notation, such as (Int, Int) -> Int, with an explicit return type. Unit-returning function types spell (Int) -> Unit or () -> Unit. Omission of -> Unit applies to function declarations.",
       "status": "partial",
-      "evidence": [
-        "shared-function-types-checkpoint"
-      ]
+      "evidence": ["shared-function-types-checkpoint"]
     },
     {
       "id": "F23",
       "decision": "Functions in the same scope may form overload sets distinguished by parameter types or counts. Ambiguous calls are compile errors, and return types alone cannot distinguish overloads. Nested shadowing remains prohibited.",
       "status": "partial",
       "evidence": [
+        "binding-shadow-function-error",
         "capture-scope-overload-forward-error",
         "cases/overload-ambiguous/main.bfl",
         "cases/overload-arity-recursion/main.bfl",
@@ -4684,6 +5426,10 @@
         "cases/overload-local-checkpoint/main.bfl",
         "cases/overload-method-duplicate/main.bfl",
         "cases/overload-return-only-error/main.bfl",
+        "covariant-result-overload-source-free-checkpoint",
+        "inference-overloads-unit-defaults-source-free-checkpoint",
+        "inference-pareto-overloads-error",
+        "inference-return-only-overloads-error",
         "method-body-lowering-source-free",
         "overload-ambiguous",
         "overload-arity-recursion",
@@ -4706,15 +5452,26 @@
       "id": "F24",
       "decision": "Support typed variadic parameters accepting zero or more arguments of one declared element type. Spelling follows F30 and placement follows F31; the fresh immutable `List<T>` representation follows D23.",
       "status": "partial",
-      "evidence": [
-        "varargs-spreads"
-      ]
+      "evidence": ["varargs-spreads"]
     },
     {
       "id": "F25",
       "decision": "Support anonymous function expressions without a declared name, with mandatory parameter annotations. Arrow syntax follows F26/F40, final-expression returns follow F27/F34, and variadic parameters follow F41.",
       "status": "partial",
       "evidence": [
+        "dependent-bounds-callbacks-source-free",
+        "lambda-inference-ambiguity-error",
+        "lambda-inference-authored-return-error",
+        "lambda-inference-branch-source-free",
+        "lambda-inference-captured-guard-error",
+        "lambda-inference-cyclic-source-free",
+        "lambda-inference-generic-reference-source-free",
+        "lambda-inference-invalid-unused-error",
+        "lambda-inference-method-scope-source-free",
+        "lambda-inference-missing-return-error",
+        "lambda-inference-source-free-checkpoint",
+        "lambda-inference-unit-source-free",
+        "lambda-inference-whole-literals-source-free-checkpoint",
         "shared-function-types-checkpoint"
       ]
     },
@@ -4732,6 +5489,8 @@
         "inferred-expression-returns-source-free",
         "interpolated-function-error-location",
         "interpolated-functions",
+        "interpolation-blocks-source-free-checkpoint",
+        "prose-escaping-callables-source-free-checkpoint",
         "prose-physical-line-location"
       ]
     },
@@ -4741,10 +5500,23 @@
       "status": "partial",
       "evidence": [
         "aliased-enum-when-source-free",
+        "dependent-bounds-lambda-source-free",
         "generic-sum-import-source-free",
         "inferred-generic-binding-identity-source-free",
+        "interpolation-blocks-source-free-checkpoint",
         "lambda-exhaustive-final-when",
-        "lambda-nonexhaustive-final-when"
+        "lambda-inference-authored-return-error",
+        "lambda-inference-branch-source-free",
+        "lambda-inference-choice-checkpoint",
+        "lambda-inference-cyclic-source-free",
+        "lambda-inference-generic-reference-source-free",
+        "lambda-inference-method-scope-source-free",
+        "lambda-inference-missing-return-error",
+        "lambda-inference-source-free-checkpoint",
+        "lambda-inference-unit-source-free",
+        "lambda-inference-whole-literals-source-free-checkpoint",
+        "lambda-nonexhaustive-final-when",
+        "unit-early-discard-source-free-checkpoint"
       ]
     },
     {
@@ -4755,6 +5527,10 @@
         "bound-directed-widening-source-free",
         "cases/overload-ambiguous/main.bfl",
         "cases/overload-conversions/main.bfl",
+        "covariant-result-overload-source-free-checkpoint",
+        "generic-result-overload-source-free",
+        "inference-overloads-unit-defaults-source-free-checkpoint",
+        "inference-pareto-overloads-error",
         "overload-ambiguous",
         "overload-conversions",
         "overloaded-capture-char-widen",
@@ -4762,7 +5538,8 @@
         "overloaded-capture-literals-source-free",
         "overloaded-capture-profile-error",
         "overloaded-capture-unknown-argument-error",
-        "private-owner-instantiations-source-free"
+        "private-owner-instantiations-source-free",
+        "type-interactions-source-free-checkpoint"
       ]
     },
     {
@@ -4771,6 +5548,8 @@
       "status": "partial",
       "evidence": [
         "cases/overload-ties/main.bfl",
+        "generic-result-overload-source-free",
+        "inference-overloads-unit-defaults-source-free-checkpoint",
         "overload-ties",
         "overloaded-capture-default-fit"
       ]
@@ -4779,19 +5558,13 @@
       "id": "F30",
       "decision": "Declare a typed variadic parameter with the vararg modifier, such as vararg values: Int. The annotation denotes the element type.",
       "status": "partial",
-      "evidence": [
-        "single-use-val-parameter-source-free-checkpoint",
-        "varargs-spreads"
-      ]
+      "evidence": ["single-use-val-parameter-source-free-checkpoint", "varargs-spreads"]
     },
     {
       "id": "F31",
       "decision": "Allow at most one variadic parameter per function signature, always as the last parameter.",
       "status": "partial",
-      "evidence": [
-        "single-use-val-parameter-source-free-checkpoint",
-        "varargs-spreads"
-      ]
+      "evidence": ["single-use-val-parameter-source-free-checkpoint", "varargs-spreads"]
     },
     {
       "id": "F32",
@@ -4800,6 +5573,8 @@
       "evidence": [
         "immediate-reference-values-source-free",
         "legacy-enum-varargs",
+        "overloaded-callbacks-variadic-shape-error",
+        "overloaded-callbacks-variance-source-free",
         "varargs-spreads"
       ]
     },
@@ -4807,16 +5582,24 @@
       "id": "F33",
       "decision": "Variadic parameters have no explicit default expressions; omission supplies an empty group under D23. Use an ordinary `List` parameter for a custom default.",
       "status": "partial",
-      "evidence": [
-        "varargs-spreads"
-      ]
+      "evidence": ["varargs-spreads"]
     },
     {
       "id": "F34",
-      "decision": "When constructing an anonymous function with an expected return type of `Unit`, evaluate its final expression, discard any non-Unit result, and return `Unit`. Ordinary inferred functions retain their existing return rules. This selects contextual anonymous-function construction, not a conversion of existing function values.",
+      "decision": "When constructing an anonymous function with an expected return type of `Unit`, evaluate and discard non-Unit values from both its final expression and value-bearing early return statements, then return `Unit`. An early return still exits that anonymous function. Ordinary named functions retain their existing return rules. This is contextual anonymous-function construction, not a conversion of existing function values.",
       "status": "partial",
       "evidence": [
-        "lambda-exhaustive-final-when"
+        "inference-overloads-unit-defaults-source-free-checkpoint",
+        "lambda-exhaustive-final-when",
+        "lambda-inference-invalid-unused-error",
+        "lambda-inference-unit-source-free",
+        "type-interactions-source-free-checkpoint",
+        "unit-discarded-capture-saved-current-profile",
+        "unit-discarded-capture-source-free",
+        "unit-early-discard-source-free-checkpoint",
+        "unit-early-discard-suspension-error",
+        "unit-early-discard-uninitialized-error",
+        "unit-named-early-return-value-error"
       ]
     },
     {
@@ -4846,14 +5629,36 @@
         "cases/overload-reference/main.bfl",
         "cases/overload-typed-variadic-reference/main.bfl",
         "cases/overload-unit-lambda/main.bfl",
+        "dependent-bounds-lambda-source-free",
+        "directional-inference-joint-ambiguity-error",
+        "directional-inference-joint-source-free",
+        "directional-inference-joint-suspend-error",
+        "directional-inference-whole-literal-ambiguity-error",
         "immediate-reference-generic-error",
         "immediate-reference-overload-error",
+        "inference-function-result-adapter-error",
+        "lambda-inference-ambiguity-error",
+        "lambda-inference-branch-source-free",
+        "lambda-inference-choice-checkpoint",
+        "lambda-inference-cyclic-source-free",
+        "lambda-inference-explicit-adapter-error",
+        "lambda-inference-generic-reference-source-free",
+        "lambda-inference-method-scope-source-free",
+        "lambda-inference-private-result-error",
+        "lambda-inference-source-free-checkpoint",
+        "lambda-inference-whole-literals-source-free-checkpoint",
         "method-body-lowering-source-free",
         "overload-grouped-reference",
         "overload-reference",
         "overload-reference-ambiguous",
         "overload-typed-variadic-reference",
-        "overload-unit-lambda"
+        "overload-unit-lambda",
+        "overloaded-callbacks-ambiguity-error",
+        "overloaded-callbacks-cyclic-source-free",
+        "overloaded-callbacks-source-free-checkpoint",
+        "overloaded-callbacks-variance-source-free",
+        "type-interactions-source-free-checkpoint",
+        "unresolved-overload-reference-matrix-error"
       ]
     },
     {
@@ -4864,6 +5669,11 @@
         "bound-method-reified-view-source-free",
         "bounded-generic-references-source-free",
         "cast-overlap-source-free",
+        "covariant-result-layers-source-free-checkpoint",
+        "directional-inference-cyclic-source-free",
+        "directional-inference-owner-source-free",
+        "directional-inference-source-free-checkpoint",
+        "directional-inference-value-widening-source-free",
         "generic-projected-bounded-callback-inputs-source-free-checkpoint",
         "generic-projected-callback-numeric-adapter-error",
         "generic-projected-callback-views-source-free-checkpoint",
@@ -4876,11 +5686,15 @@
         "generic-projected-nonnull-result-source-free-checkpoint",
         "generic-projected-null-inputs-source-free-checkpoint",
         "generic-projected-suspend-inputs-source-free-checkpoint",
+        "nominal-map-key-generic-bound-source-free",
         "nullable-generic-no-arbitrary-return-error",
         "nullable-generic-no-null-unwrapping-error",
         "nullable-generic-no-numeric-adapter-error",
         "nullable-generic-variance-source-free",
-        "structural-generic-inference-source-free"
+        "overloaded-callbacks-suspend-input-error",
+        "overloaded-callbacks-variance-source-free",
+        "structural-generic-inference-source-free",
+        "type-interactions-source-free-checkpoint"
       ]
     },
     {
@@ -4890,11 +5704,44 @@
       "evidence": [
         "bounded-reference-nullable-input-error",
         "bounded-reference-numeric-adapter-error",
+        "covariant-result-function-adapter-error",
+        "directional-inference-bound-adapter-error",
+        "directional-inference-cyclic-source-free",
+        "directional-inference-explicit-error",
+        "directional-inference-joint-adapter-error",
+        "directional-inference-joint-source-free",
+        "directional-inference-joint-suspend-error",
+        "directional-inference-mutable-callback-error",
+        "directional-inference-null-input-error",
+        "directional-inference-numeric-input-error",
+        "directional-inference-numeric-result-error",
+        "directional-inference-owner-source-free",
+        "directional-inference-source-free-checkpoint",
+        "directional-inference-value-widening-source-free",
+        "function-input-conversion-adapter-matrix-error",
+        "function-result-conversion-adapter-matrix-error",
+        "generic-result-bound-callback-error",
+        "generic-result-callback-input-error",
+        "generic-result-conversion-source-free-checkpoint",
+        "generic-result-explicit-callback-error",
+        "generic-result-incompatible-output-error",
         "generic-structural-inference-no-adapter-error",
+        "inference-function-result-adapter-error",
+        "lambda-inference-explicit-adapter-error",
+        "nominal-map-no-function-adapter-error",
         "nullable-generic-no-arbitrary-return-error",
         "nullable-generic-no-null-unwrapping-error",
         "nullable-generic-no-numeric-adapter-error",
-        "nullable-generic-variance-source-free"
+        "nullable-generic-variance-source-free",
+        "overloaded-callbacks-bound-adapter-error",
+        "overloaded-callbacks-cyclic-source-free",
+        "overloaded-callbacks-explicit-adapter-error",
+        "overloaded-callbacks-nominal-input-error",
+        "overloaded-callbacks-owner-capture-error",
+        "overloaded-callbacks-source-free-checkpoint",
+        "overloaded-callbacks-variadic-shape-error",
+        "overloaded-callbacks-variance-source-free",
+        "type-interactions-source-free-checkpoint"
       ]
     },
     {
@@ -4903,6 +5750,8 @@
       "status": "partial",
       "evidence": [
         "collection-search-callback-error",
+        "equality-sum-ineligible-payload-error",
+        "equality-unknown-function-exact-error",
         "exact-equality-function-null-checks-source-free-checkpoint",
         "exact-equality-function-values-error",
         "exact-equality-function-values-exact-error",
@@ -4919,9 +5768,7 @@
       "id": "F41",
       "decision": "Anonymous functions may declare a variadic parameter, such as `(vararg values: Int) => values.size`, and infer a variadic function type. Existing last-parameter, fresh immutable `List<T>`, and variadic function-value call rules apply.",
       "status": "partial",
-      "evidence": [
-        "generic-local-alias-values"
-      ]
+      "evidence": ["generic-local-alias-values"]
     },
     {
       "id": "F42",
@@ -4929,6 +5776,8 @@
       "status": "partial",
       "evidence": [
         "cases/overload-ties/main.bfl",
+        "covariant-result-overload-source-free-checkpoint",
+        "generic-result-overload-source-free",
         "overload-ties"
       ]
     },
@@ -4940,6 +5789,7 @@
         "bound-collection-copy-capture-checkpoint",
         "bound-collection-copy-uninitialized-error",
         "bound-method-reified-view-source-free",
+        "directional-inference-source-free-checkpoint",
         "enum-returning-bound-method-checkpoint",
         "generic-reference-receiver-negated-short-circuit-error",
         "generic-reference-receiver-recheck-source-free-checkpoint",
@@ -4947,6 +5797,8 @@
         "generic-reference-receiver-when-error",
         "immediate-bound-reference-default-error",
         "immediate-reference-values-source-free",
+        "overloaded-callbacks-receiver-flow-error",
+        "overloaded-callbacks-source-free-checkpoint",
         "private-fake-receiver-reference-error",
         "private-owner-instantiations-source-free"
       ]
@@ -4983,7 +5835,7 @@
       "id": "A02",
       "decision": "Unknown parameter names and duplicate argument bindings are compile errors. Arguments retain static type checking.",
       "status": "pending",
-      "evidence": []
+      "evidence": ["collection-map-legacy-source-name-error"]
     },
     {
       "id": "A03",
@@ -5002,10 +5854,14 @@
       "evidence": [
         "captured-callable-snapshot",
         "collection-copies",
+        "collection-method-late-bounds-source-free-checkpoint",
+        "copy-current-fields-source-free-checkpoint",
+        "directional-inference-source-free-checkpoint",
         "empty-dependency-call-profile-error",
         "empty-dependency-sibling-declarations-error",
         "named-field-order-and-copy-checkpoint",
         "ordered-flow-named-guard-source-free",
+        "overloaded-callbacks-source-free-checkpoint",
         "shared-callback-skipped-default-checkpoint",
         "single-use-val-forward-frame-argument-store-error",
         "single-use-val-forward-frame-argument-transfer",
@@ -5035,6 +5891,9 @@
       "decision": "Calls through function values require explicit positional arguments for fixed parameters and expose no parameter names or defaults. Variadic function types retain F32's zero-or-more argument interface. Declared function-name calls retain their named/default interfaces.",
       "status": "partial",
       "evidence": [
+        "collection-bound-key-named-error",
+        "function-value-default-matrix-error",
+        "function-value-named-matrix-error",
         "immediate-bound-reference-default-error",
         "immediate-reference-default-error",
         "immediate-reference-named-error",
@@ -5052,7 +5911,13 @@
       "evidence": [
         "captured-callable-snapshot",
         "collection-copies",
+        "collection-method-late-bounds-source-free-checkpoint",
+        "copy-current-fields-source-free-checkpoint",
+        "dependent-bounds-source-free-checkpoint",
+        "directional-inference-source-free-checkpoint",
+        "lambda-inference-source-free-checkpoint",
         "mutable-callable-before-suspended-argument",
+        "overloaded-callbacks-source-free-checkpoint",
         "single-use-val-parameter-suspending-argument-source-free-checkpoint"
       ]
     },
@@ -5060,9 +5925,7 @@
       "id": "A07",
       "decision": "Allow multiple spread groups interleaved with individual variadic arguments, for example `gather(1, *first, 2, *second)`. Expand groups at their source position under the selected argument order; spreads supply the variadic portion and preserve that element order.",
       "status": "partial",
-      "evidence": [
-        "varargs-spreads"
-      ]
+      "evidence": ["varargs-spreads"]
     },
     {
       "id": "A08",
@@ -5070,6 +5933,7 @@
       "status": "partial",
       "evidence": [
         "generic-projected-null-inputs-source-free-checkpoint",
+        "overloaded-callbacks-source-free-checkpoint",
         "varargs-spreads"
       ]
     },
@@ -5079,6 +5943,10 @@
       "status": "partial",
       "evidence": [
         "indentation-and-spelling-preservation",
+        "prose-escaping-callables-source-free-checkpoint",
+        "prose-separator-ownership-checkpoint",
+        "prose-suspend-callable-source-free-checkpoint",
+        "prose-value-blocks-and-flow-checkpoint",
         "single-use-val-site-values-source-free"
       ]
     },
@@ -5089,7 +5957,8 @@
       "evidence": [
         "interpolated-functions",
         "nested-text-interpolation",
-        "prose-multiline-expressions"
+        "prose-multiline-expressions",
+        "prose-value-blocks-and-flow-checkpoint"
       ]
     },
     {
@@ -5099,7 +5968,14 @@
       "evidence": [
         "interpolated-function-error-location",
         "interpolated-functions",
-        "prose-multiline-expressions"
+        "interpolation-block-nullable-rendering-error",
+        "interpolation-block-physical-syntax-error",
+        "interpolation-blocks-source-free-checkpoint",
+        "interpolation-prose-block-runtime-location",
+        "interpolation-prose-suspend-block-error",
+        "prose-multiline-expressions",
+        "prose-value-blocks-and-flow-checkpoint",
+        "suspend-view-prose-matrix-error"
       ]
     },
     {
@@ -5107,7 +5983,11 @@
       "decision": "After removing structural block indentation, single source newlines join text within a paragraph and blank lines separate paragraphs. An explicit line-break form remains open.",
       "status": "partial",
       "evidence": [
-        "prose-multiline-expressions"
+        "prose-escaping-callables-source-free-checkpoint",
+        "prose-multiline-expressions",
+        "prose-separator-ownership-checkpoint",
+        "prose-suspend-callable-source-free-checkpoint",
+        "prose-value-blocks-and-flow-checkpoint"
       ]
     },
     {
@@ -5115,24 +5995,27 @@
       "decision": "Support executable directives inside prose. Their prefix and nested-body rules follow T09-T10.",
       "status": "partial",
       "evidence": [
-        "indentation-and-spelling-preservation"
+        "indentation-and-spelling-preservation",
+        "prose-escaping-callables-source-free-checkpoint",
+        "prose-separator-ownership-checkpoint",
+        "prose-suspend-callable-source-free-checkpoint",
+        "prose-unprefixed-anonymous-function-error",
+        "prose-unprefixed-named-function-error",
+        "prose-unprefixed-value-expression-error",
+        "prose-value-blocks-and-flow-checkpoint"
       ]
     },
     {
       "id": "T06",
       "decision": "A choice uses an outer choice: block containing explicit option headers, such as option \"Open the door\":, each followed by its indented body.",
       "status": "partial",
-      "evidence": [
-        "indentation-and-spelling-preservation"
-      ]
+      "evidence": ["indentation-and-spelling-preservation"]
     },
     {
       "id": "T07",
       "decision": "After the selected option body finishes normally, execution continues after the choice. Existing return, break, and other control transfers still apply.",
       "status": "partial",
-      "evidence": [
-        "indentation-and-spelling-preservation"
-      ]
+      "evidence": ["indentation-and-spelling-preservation"]
     },
     {
       "id": "T08",
@@ -5145,7 +6028,9 @@
         "generic-projected-callback-views-source-free-checkpoint",
         "generic-projected-null-inputs-source-free-checkpoint",
         "generic-projected-suspend-inputs-source-free-checkpoint",
+        "lambda-inference-choice-checkpoint",
         "loop-break-facts-source-free-checkpoint",
+        "prose-suspend-callable-source-free-checkpoint",
         "single-use-val-suspending-before-write-source-free-checkpoint",
         "single-use-val-suspending-body-source-free-checkpoint",
         "suspended-defaults-effect-error"
@@ -5157,7 +6042,14 @@
       "status": "partial",
       "evidence": [
         "conditional-lookahead-blocks",
+        "prose-escaping-callables-source-free-checkpoint",
         "prose-multiline-expressions",
+        "prose-separator-ownership-checkpoint",
+        "prose-suspend-callable-source-free-checkpoint",
+        "prose-unprefixed-anonymous-function-error",
+        "prose-unprefixed-named-function-error",
+        "prose-unprefixed-value-expression-error",
+        "prose-value-blocks-and-flow-checkpoint",
         "spaced-prose-branches"
       ]
     },
@@ -5167,7 +6059,14 @@
       "status": "partial",
       "evidence": [
         "conditional-lookahead-blocks",
+        "prose-escaping-callables-source-free-checkpoint",
         "prose-multiline-expressions",
+        "prose-separator-ownership-checkpoint",
+        "prose-suspend-callable-source-free-checkpoint",
+        "prose-unprefixed-anonymous-function-error",
+        "prose-unprefixed-named-function-error",
+        "prose-unprefixed-value-expression-error",
+        "prose-value-blocks-and-flow-checkpoint",
         "spaced-prose-branches"
       ]
     },
@@ -5175,7 +6074,7 @@
       "id": "T11",
       "decision": "Prose uses backslash escapes: `\\${` produces literal `${`, `\\@` makes a directive introducer literal, and `\\\\` produces one backslash. Other escape forms remain open.",
       "status": "pending",
-      "evidence": []
+      "evidence": ["prose-value-blocks-and-flow-checkpoint"]
     },
     {
       "id": "T12",
@@ -5184,6 +6083,9 @@
       "evidence": [
         "choice-stable-guard-checkpoint",
         "interpolated-functions",
+        "interpolation-blocks-source-free-checkpoint",
+        "interpolation-label-block-runtime-location",
+        "interpolation-label-suspend-block-error",
         "nested-text-suspended-source-free"
       ]
     },
@@ -5199,7 +6101,7 @@
     },
     {
       "id": "T14",
-      "decision": "Prepare each choice once, processing options in source order. Evaluate visibility first, then the enabled condition and label for visible options. Hidden options skip enabled-condition and label evaluation. Retain these results until selection.",
+      "decision": "Prepare each choice once, processing options in source order. Filter a consumed once option before evaluating its visibility, enabling, or label expressions. For an unconsumed option, evaluate visibility first, then the enabled condition and label when visible. Hidden options skip enabled-condition and label evaluation. Retain these results until selection.",
       "status": "partial",
       "evidence": [
         "choice-dead-option-return",
@@ -5207,6 +6109,7 @@
         "choice-mutable-guard-invalidated",
         "choice-stable-guard-checkpoint",
         "once-checkpoint",
+        "once-filter-effects-source-free-checkpoint",
         "single-use-val-site-later-mutation-source-free-checkpoint",
         "single-use-val-site-later-narrowing-error",
         "single-use-val-site-other-option-read-error",
@@ -5219,6 +6122,7 @@
       "decision": "The suspend modifier marks suspension-capable named functions, anonymous functions, and function types: suspend fun ask() -> Int:, suspend () -> Int, and a suspend-prefixed lambda.",
       "status": "partial",
       "evidence": [
+        "lambda-inference-choice-checkpoint",
         "single-use-val-compound-source-free-checkpoint",
         "single-use-val-expression-suspending-source-free-checkpoint",
         "single-use-val-generic-suspending-source-free-checkpoint",
@@ -5226,7 +6130,8 @@
         "single-use-val-suspending-assignment-source-free-checkpoint",
         "single-use-val-suspending-before-write-source-free-checkpoint",
         "single-use-val-suspending-body-source-free-checkpoint",
-        "single-use-val-suspending-default-source-free-checkpoint"
+        "single-use-val-suspending-default-source-free-checkpoint",
+        "unit-early-discard-suspension-error"
       ]
     },
     {
@@ -5239,35 +6144,25 @@
       "id": "T17",
       "decision": "A choice may contain an else: fallback for when no option is selectable. Without a fallback, provably empty choices are compile errors and dynamically empty choices are runtime errors.",
       "status": "partial",
-      "evidence": [
-        "choice-constant-arithmetic-empty",
-        "choice-constant-exact-empty",
-        "choice-constant-text-empty"
-      ]
+      "evidence": ["choice-constant-arithmetic-empty", "choice-constant-exact-empty", "choice-constant-text-empty"]
     },
     {
       "id": "T18",
       "decision": "Options are reusable by default. An option with the once modifier, such as option \"Ask about the map\" once:, is consumed on selection and hidden on subsequent visits.",
       "status": "partial",
-      "evidence": [
-        "once-checkpoint"
-      ]
+      "evidence": ["once-checkpoint", "once-filter-effects-source-free-checkpoint"]
     },
     {
       "id": "T19",
       "decision": "Once-option history is story-wide per source option site for the playthrough. Later scene visits and function calls share that site's consumed state.",
       "status": "partial",
-      "evidence": [
-        "once-checkpoint"
-      ]
+      "evidence": ["once-checkpoint", "once-filter-effects-source-free-checkpoint"]
     },
     {
       "id": "T20",
       "decision": "New Bifoil scene bodies are automatically allowed to suspend: they may present choices and call suspend functions directly. Ordinary function bodies still require the suspend modifier.",
       "status": "partial",
-      "evidence": [
-        "suspended-scene-default-checkpoint"
-      ]
+      "evidence": ["suspended-scene-default-checkpoint"]
     },
     {
       "id": "T21",
@@ -5275,7 +6170,14 @@
       "status": "partial",
       "evidence": [
         "bound-method-reified-view-source-free",
-        "bounded-generic-references-source-free"
+        "bounded-generic-references-source-free",
+        "directional-inference-joint-suspend-error",
+        "directional-inference-source-free-checkpoint",
+        "lazy-package-deep-source-free-checkpoint",
+        "overloaded-callbacks-suspend-input-error",
+        "overloaded-callbacks-variance-source-free",
+        "suspend-view-prose-matrix-error",
+        "type-interactions-source-free-checkpoint"
       ]
     },
     {
@@ -5284,14 +6186,27 @@
       "status": "partial",
       "evidence": [
         "cases/gc-suspended-assignment-address/main.bfl",
+        "collection-compound-read-source-free-checkpoint",
+        "collection-compound-write-rechecks-source-free-checkpoint",
+        "collection-method-late-bounds-source-free-checkpoint",
+        "collection-plain-write-late-bounds-source-free-checkpoint",
+        "comparison-views-left-before-effect-source-free-checkpoint",
+        "comparison-views-original-suspended-checkpoint",
         "completed-path-facts-source-free-checkpoint",
         "conditional-chain-value-source-free-checkpoint",
+        "copy-current-fields-source-free-checkpoint",
         "gc-suspended-assignment-address",
         "generic-projected-callback-views-source-free-checkpoint",
         "generic-projected-suspend-inputs-source-free-checkpoint",
+        "interpolation-suspend-block-source-free-checkpoint",
         "loop-break-facts-source-free-checkpoint",
         "nested-text-suspended-source-free",
         "nonreturning-conditions-checkpoint",
+        "nullable-skipped-suspend-error",
+        "progression-absent-index-overflow-source-free-checkpoint",
+        "progression-descending-index-overflow-source-free-checkpoint",
+        "progression-found-index-overflow-source-free-checkpoint",
+        "progression-reference-source-free-checkpoint",
         "safe-skipped-returns-checkpoint",
         "single-use-val-address-source-free-checkpoint",
         "single-use-val-compound-source-free-checkpoint",
@@ -5304,7 +6219,9 @@
         "single-use-val-suspending-default-source-free-checkpoint",
         "suspended-defaults-checkpoint",
         "suspended-defaults-source-free",
-        "suspended-scene-default-checkpoint"
+        "suspended-scene-default-checkpoint",
+        "triple-whitespace-source-free-checkpoint",
+        "unit-early-discard-source-free-checkpoint"
       ]
     },
     {
@@ -5313,6 +6230,7 @@
       "status": "partial",
       "evidence": [
         "choice-mutable-guard-invalidated",
+        "once-filter-effects-source-free-checkpoint",
         "single-use-val-sequential-choice-call-before-write-error",
         "single-use-val-sequential-choice-read-before-write-error"
       ]
@@ -5327,6 +6245,9 @@
         "anchored-expression-recursion-source-free",
         "asserted-generic-identity-source-free",
         "asserted-generic-null-runtime-error",
+        "binding-inference-source-free-checkpoint",
+        "binding-initialization-source-free-checkpoint",
+        "binding-scope-reuse-source-free-checkpoint",
         "bound-collection-copy-capture-checkpoint",
         "bound-directed-widening-source-free",
         "bound-method-reified-view-source-free",
@@ -5340,21 +6261,50 @@
         "cases/gc-traversal-and-bound-method/main.bfl",
         "cast-overlap-source-free",
         "choice-stable-guard-checkpoint",
+        "collection-compound-read-source-free-checkpoint",
+        "collection-compound-write-rechecks-source-free-checkpoint",
         "collection-copy-deferred-capture-checkpoint",
+        "collection-graph-source-free-interactions",
+        "collection-graph-source-interactions",
+        "collection-method-late-bounds-source-free-checkpoint",
+        "collection-plain-write-late-bounds-source-free-checkpoint",
         "compact-capture-delayed-checkpoint",
         "compact-capture-source-free",
+        "comparison-views-containers-source-free-checkpoint",
+        "comparison-views-cycles-checkpoint",
+        "comparison-views-left-before-effect-source-free-checkpoint",
+        "comparison-views-memo-context-source-free-checkpoint",
+        "comparison-views-original-suspended-checkpoint",
+        "comparison-views-sealed-parent-checkpoint",
+        "compiled-large-cyclic-source-checkpoints",
+        "compiled-large-cyclic-source-free-checkpoints",
         "completed-path-facts-source-free-checkpoint",
         "computed-index-keys-source-free-checkpoint",
         "concrete-bounded-projections-source-free",
         "conditional-chain-value-source-free-checkpoint",
+        "constraint-capabilities-and-widening-source-free-checkpoint",
+        "constraint-cyclic-interfaces-source-free-checkpoint",
+        "constraint-recursive-bound-alias-source-free-checkpoint",
         "contextual-generic-calls-source-free",
         "continue-correlated-captures-source-free-checkpoint",
+        "continued-operation-resume-source-free-error",
+        "continued-operation-safe-skips-source-free-checkpoint",
         "cooperative-execution-slices",
+        "copy-current-fields-source-free-checkpoint",
+        "covariant-result-layers-source-free-checkpoint",
+        "covariant-result-overload-source-free-checkpoint",
+        "dependent-bounds-source-free-checkpoint",
+        "directional-inference-source-free-checkpoint",
+        "directional-inference-whole-literals-source-free-checkpoint",
         "empty-list-iteration-counter-checkpoint",
         "enum-alias-local-source-free",
         "enum-map-distinct-keys",
         "enum-map-guards-source-free",
         "enum-returning-bound-method-checkpoint",
+        "equality-left-captured-before-suspended-right-source-free",
+        "equality-mutability-and-nominal-controls-source-free",
+        "equality-ordinary-families-source-free-checkpoint",
+        "equality-ordinary-graphs-source-free-checkpoint",
         "escaped-callback-exclusive-branches",
         "escaped-callback-retarget-source-free-checkpoint",
         "float-artifact-roundtrip-source-free",
@@ -5378,20 +6328,32 @@
         "generic-projected-rechecked-capture-source-free-checkpoint",
         "generic-projected-suspend-inputs-source-free-checkpoint",
         "generic-reference-receiver-recheck-source-free-checkpoint",
+        "generic-result-conversion-source-free-checkpoint",
         "generic-sum-import-source-free",
         "hoisted-entry-proofs-source-free",
         "immediate-reference-values-source-free",
         "immutable-index-guards-source-free",
         "immutable-map-guards-source-free",
         "implicit-copy-and-method-captures-source-free",
+        "inference-guarded-returns-source-free-checkpoint",
+        "inference-nominal-context-source-free-checkpoint",
+        "inference-overloads-unit-defaults-source-free-checkpoint",
+        "inference-return-contracts-source-free-checkpoint",
         "inferred-bottom-source-free",
         "inferred-expression-returns-source-free",
         "inferred-generic-binding-identity-source-free",
         "inferred-guard-source-free",
         "inferred-guarded-branches-source-free",
         "inferred-loop-exits-source-free",
+        "interpolation-blocks-source-free-checkpoint",
+        "interpolation-suspend-block-source-free-checkpoint",
         "lambda-exhaustive-final-when",
+        "lambda-inference-choice-checkpoint",
+        "lambda-inference-method-scope-source-free",
+        "lambda-inference-source-free-checkpoint",
+        "lambda-inference-whole-literals-source-free-checkpoint",
         "large-collection-index-checkpoint",
+        "lazy-package-deep-source-free-checkpoint",
         "legacy-enum-source-free-checkpoint",
         "legacy-state-before-first-call",
         "legacy-state-before-first-read",
@@ -5403,22 +6365,64 @@
         "loop-expression-continue",
         "loop-expression-continue-checkpoint",
         "map-entry-proofs-source-free",
+        "module-shared-library-source-free-checkpoint",
         "mutable-root-field-proofs-source-free",
         "named-capture-source-free",
+        "namespace-alias-forward-generic-source-free-checkpoint",
+        "namespace-generated-enum-field-source-free-checkpoint",
+        "namespace-separate-callables-members-source-free-checkpoint",
+        "namespace-separate-values-source-free-checkpoint",
+        "namespace-value-prefix-capture-source-free-checkpoint",
+        "namespace-value-prefix-members-source-free-checkpoint",
+        "namespace-visits-shared-aliases-source-free-checkpoint",
         "nested-text-suspended-source-free",
+        "nominal-map-key-copy-checkpoint",
+        "nullable-assertion-dynamic-failure-source-free",
+        "nullable-contextual-copy-source-free-checkpoint",
+        "nullable-conversions-source-free-checkpoint",
         "nullable-generic-inferred-join-source-free",
         "nullable-generic-variance-source-free",
+        "nullable-joins-source-free-checkpoint",
+        "nullable-lazy-paths-source-free-checkpoint",
+        "nullable-present-paths-source-free-checkpoint",
         "nullable-unit-map-keys-checkpoint",
         "once-checkpoint",
+        "once-filter-effects-source-free-checkpoint",
         "ordered-operands-captured-left-source-free",
+        "overloaded-callbacks-source-free-checkpoint",
         "overloaded-capture-literals-source-free",
         "overloaded-closures-source-free-checkpoint",
         "present-generic-results-source-free",
         "private-owner-instantiations-source-free",
+        "progression-absent-index-overflow-source-free-checkpoint",
+        "progression-descending-index-overflow-source-free-checkpoint",
+        "progression-found-index-overflow-source-free-checkpoint",
+        "progression-reference-source-free-checkpoint",
+        "progression-terminal-source-free-checkpoints",
+        "progression-view-identities-source-free-checkpoint",
+        "progression-view-negated-overflow-source-free-checkpoint",
+        "progression-view-overflow-source-free-checkpoint",
+        "projected-bound-reads-source-free-checkpoint",
+        "projected-capability-compositions-source-free-checkpoint",
+        "projected-capability-wide-state-source-free-checkpoint",
         "projected-copy-checkpoint-source-free",
+        "projected-field-inputs-source-free-checkpoint",
+        "projected-generic-method-bounds-source-free-checkpoint",
+        "projected-generic-method-nonnull-bound-error",
+        "projected-generic-method-nullable-bound-error",
+        "projected-method-field-interface-source-free-checkpoint",
+        "projected-nullable-container-input-source-free-checkpoint",
+        "prose-escaping-callables-source-free-checkpoint",
+        "prose-separator-ownership-checkpoint",
+        "prose-suspend-callable-source-free-checkpoint",
+        "prose-value-blocks-and-flow-checkpoint",
         "qualified-local-capture-checkpoint",
+        "range-terminal-boundaries-source-free-checkpoint",
         "shared-callback-current-value-checkpoint",
         "shared-callback-skipped-default-checkpoint",
+        "shared-scoped-capture-source-free-checkpoint",
+        "shared-scoped-sibling-loop-checkpoint",
+        "shared-scoped-startup-source-free-checkpoint",
         "sibling-sum-joins-source-free",
         "single-use-val-address-source-free-checkpoint",
         "single-use-val-assignment-source-free-checkpoint",
@@ -5473,7 +6477,10 @@
         "text-computed-keys-source-free-checkpoint",
         "transitive-skipped-default-before-declaration",
         "transitive-skipped-defaults-source-free",
+        "triple-whitespace-source-free-checkpoint",
         "unicode-traversal-checkpoint",
+        "unit-discarded-capture-saved-current-profile",
+        "unit-early-discard-source-free-checkpoint",
         "unit-value-source-free",
         "value-prefix-flow-source-free",
         "when-immutable-field-source-free",
@@ -5498,6 +6505,8 @@
         "captured-writer-ready-checkpoint",
         "cases/gc-suspended-assignment-address/main.bfl",
         "cases/gc-traversal-and-bound-method/main.bfl",
+        "compiled-large-cyclic-source-checkpoints",
+        "compiled-large-cyclic-source-free-checkpoints",
         "completed-path-facts-source-free-checkpoint",
         "compound-index-root-read-checkpoint",
         "conditional-chain-exit-proofs",
@@ -5554,13 +6563,15 @@
       "decision": "Initial saves restore only against the same compiled build. Reject incompatible saves clearly. Compatibility across game updates and migrations are outside the initial save contract.",
       "status": "partial",
       "evidence": [
+        "dependent-bounds-source-free-checkpoint",
         "evidence/runtime-build-compatibility.md",
-        "once-checkpoint"
+        "once-checkpoint",
+        "once-filter-effects-source-free-checkpoint"
       ]
     },
     {
       "id": "M01",
-      "decision": "Organize new source into scene files and library modules. A scene file has one executable story body plus declarations; library modules contain reusable declarations and non-suspending initialization.",
+      "decision": "Organize new source into scene files and library modules. A scene file has one executable story body plus declarations. Ordinary file/module-level val/var values require shared; library initialization happens through non-suspending shared initializers. Scene-body bindings retain their per-visit behavior under M06.",
       "status": "partial",
       "evidence": [
         "cyclic-inferred-returns",
@@ -5572,51 +6583,47 @@
         "cyclic-shared-initialization-error",
         "cyclic-source-free-nominals",
         "cyclic-source-free-recursion",
-        "many-scene-modules-source-free-checkpoint"
+        "many-scene-modules-source-free-checkpoint",
+        "module-delayed-ordinary-value-error",
+        "module-exported-ordinary-value-error",
+        "module-ordinary-val-error",
+        "module-ordinary-var-error",
+        "module-shared-library-source-free-checkpoint"
       ]
     },
     {
       "id": "M02",
       "decision": "Scene destinations are typed first-class references that can be stored, passed, and selected with checked input signatures. Ordinary strings are not scene destinations.",
       "status": "partial",
-      "evidence": [
-        "many-scene-modules-source-free-checkpoint",
-        "scene-transfer"
-      ]
+      "evidence": ["many-scene-modules-source-free-checkpoint", "scene-transfer"]
     },
     {
       "id": "M03",
       "decision": "Scene entries may declare typed input parameters local to that visit. Scene entry and calls reuse the existing argument and default-argument rules.",
       "status": "partial",
-      "evidence": [
-        "scene-transfer",
-        "suspended-scene-default-checkpoint"
-      ]
+      "evidence": ["scene-transfer", "suspended-scene-default-checkpoint"]
     },
     {
       "id": "M04",
       "decision": "Support returning scene calls and one-way scene transfers. A call runs a fresh visit and returns control with Unit; a transfer replaces the current story position. Value-returning routines use suspend functions. Operation syntax and transfer unwinding follow M12-M13.",
       "status": "partial",
-      "evidence": [
-        "many-scene-modules-source-free-checkpoint",
-        "scene-transfer",
-        "suspended-scene-default-checkpoint"
-      ]
+      "evidence": ["many-scene-modules-source-free-checkpoint", "scene-transfer", "suspended-scene-default-checkpoint"]
     },
     {
       "id": "M05",
       "decision": "A scene body may finish naturally. Return to its scene caller if one exists; otherwise finish the story.",
       "status": "partial",
-      "evidence": [
-        "many-scene-modules-source-free-checkpoint",
-        "scene-transfer"
-      ]
+      "evidence": ["many-scene-modules-source-free-checkpoint", "scene-transfer"]
     },
     {
       "id": "M06",
       "decision": "Ordinary scene-body `val`/`var` declarations are local to that visit. Persistent shared storage follows M14.",
       "status": "partial",
       "evidence": [
+        "namespace-export-modifier-order-error",
+        "namespace-module-values-require-shared-error",
+        "namespace-shared-requires-initializer-error",
+        "namespace-visits-shared-aliases-source-free-checkpoint",
         "scene-transfer"
       ]
     },
@@ -5645,6 +6652,9 @@
         "cases/shared-store-before-initialization/main.bfl",
         "cases/shared-suspension-error/main.bfl",
         "cases/shared-unused-cycle/main.bfl",
+        "module-shared-library-source-free-checkpoint",
+        "namespace-shared-requires-initializer-error",
+        "namespace-visits-shared-aliases-source-free-checkpoint",
         "shared-artifact",
         "shared-captured-callable-cycle",
         "shared-cycle",
@@ -5693,50 +6703,57 @@
         "many-scene-modules-source-free-checkpoint",
         "module-exported-alias-private-owner",
         "module-private-qualified-test-error",
-        "module-private-qualified-type-error"
+        "module-private-qualified-type-error",
+        "namespace-coexport-function-error",
+        "namespace-coexport-shared-error",
+        "namespace-duplicate-export-modifier-error",
+        "namespace-enum-shorthand-binding-conflict-error",
+        "namespace-export-import-not-a-declaration-error",
+        "namespace-export-modifier-order-error",
+        "namespace-exported-enum-alias-shorthand-source-free",
+        "namespace-import-builtin-type-conflict-error",
+        "namespace-import-does-not-export-error",
+        "namespace-import-wildcard-error",
+        "namespace-imported-type-alias-duplicate-error",
+        "namespace-module-values-require-shared-error",
+        "namespace-no-implicit-qualified-access-error",
+        "namespace-private-import-error",
+        "namespace-separate-callables-members-source-free-checkpoint",
+        "namespace-separate-values-source-free-checkpoint",
+        "namespace-value-import-alias-conflict-error",
+        "namespace-value-prefix-members-source-free-checkpoint",
+        "namespace-visits-shared-aliases-source-free-checkpoint"
       ]
     },
     {
       "id": "M09",
       "decision": "A scene file declares its entry with a named header such as scene forest(danger: Int = 0): and an indented body. The header supplies the logical scene name; helpers and shared declarations remain outside that body.",
       "status": "partial",
-      "evidence": [
-        "scene-transfer"
-      ]
+      "evidence": ["scene-transfer"]
     },
     {
       "id": "M10",
       "decision": "Scene references use input types: `Scene<Int, Float>`, or bare `Scene` for zero inputs. Reference-valued targets require every input explicitly and positionally; named targets retain named/default arguments.",
       "status": "partial",
-      "evidence": [
-        "immediate-scene-reference-default-error",
-        "scene-transfer"
-      ]
+      "evidence": ["immediate-scene-reference-default-error", "scene-transfer"]
     },
     {
       "id": "M11",
       "decision": "Obtain a named scene reference with the explicit `::` prefix, for example `val destination = ::forest`. Named function references use the same prefix under F35.",
       "status": "partial",
-      "evidence": [
-        "immediate-scene-reference-default-error",
-        "scene-transfer"
-      ]
+      "evidence": ["immediate-scene-reference-default-error", "scene-transfer"]
     },
     {
       "id": "M12",
       "decision": "Use `goto` for a transfer and `visit` for a returning scene call, such as `goto forest(danger = 3)` or `visit forest(danger = 3)`. Input and return rules follow M03-M04/M10.",
       "status": "partial",
-      "evidence": [
-        "scene-transfer"
-      ]
+      "evidence": ["module-shared-library-source-free-checkpoint", "scene-transfer"]
     },
     {
       "id": "M13",
       "decision": "Transfers are permitted only in scene bodies or suspend functions. A transfer replaces the current scene visit and abandons its active function calls, while retaining earlier scene-call callers. If A visits B and B transfers to C, C's natural completion returns to A.",
       "status": "partial",
-      "evidence": [
-        "scene-transfer"
-      ]
+      "evidence": ["module-shared-library-source-free-checkpoint", "scene-transfer"]
     },
     {
       "id": "M14",
@@ -5770,6 +6787,7 @@
         "escaped-callback-retarget-source-free-checkpoint",
         "escaped-callback-rhs-publication-error",
         "escaped-callback-transitive-retarget-error",
+        "namespace-shared-function-placement-error",
         "shared-artifact",
         "shared-callback-current-value-checkpoint",
         "shared-callback-skipped-default-checkpoint",
@@ -5795,6 +6813,21 @@
         "shared-recursive-dependency-query-source-free",
         "shared-reference-is-not-call",
         "shared-retained-operands",
+        "shared-scoped-capture-source-free-checkpoint",
+        "shared-scoped-class-type-error",
+        "shared-scoped-cycle-error",
+        "shared-scoped-generic-type-error",
+        "shared-scoped-initializer-shadow-error",
+        "shared-scoped-local-error",
+        "shared-scoped-local-function-error",
+        "shared-scoped-parameter-error",
+        "shared-scoped-receiver-error",
+        "shared-scoped-scope-error",
+        "shared-scoped-sibling-loop-checkpoint",
+        "shared-scoped-startup-source-free-checkpoint",
+        "shared-scoped-suspend-error",
+        "shared-scoped-val-write-error",
+        "shared-scoped-when-shadow-error",
         "shared-source-order",
         "shared-store-before-initialization",
         "shared-summary-only-module-source-free",
@@ -5828,6 +6861,11 @@
         "cases/shared-store-before-initialization/main.bfl",
         "cases/shared-suspension-error/main.bfl",
         "cases/shared-unused-cycle/main.bfl",
+        "module-delayed-ordinary-value-error",
+        "module-exported-ordinary-value-error",
+        "module-ordinary-val-error",
+        "module-ordinary-var-error",
+        "namespace-visits-shared-aliases-source-free-checkpoint",
         "shared-artifact",
         "shared-captured-callable-cycle",
         "shared-cycle",
@@ -5849,6 +6887,19 @@
         "shared-recursive-dependency-query-source-free",
         "shared-reference-is-not-call",
         "shared-retained-operands",
+        "shared-scoped-capture-source-free-checkpoint",
+        "shared-scoped-class-type-error",
+        "shared-scoped-cycle-error",
+        "shared-scoped-generic-type-error",
+        "shared-scoped-local-error",
+        "shared-scoped-local-function-error",
+        "shared-scoped-parameter-error",
+        "shared-scoped-receiver-error",
+        "shared-scoped-scope-error",
+        "shared-scoped-sibling-loop-checkpoint",
+        "shared-scoped-startup-source-free-checkpoint",
+        "shared-scoped-suspend-error",
+        "shared-scoped-val-write-error",
         "shared-source-order",
         "shared-store-before-initialization",
         "shared-summary-only-module-source-free",
@@ -5880,20 +6931,37 @@
         "module-private-qualified-test-error",
         "module-private-qualified-type-error",
         "module-triple-string-discovery",
+        "namespace-duplicate-export-modifier-error",
+        "namespace-export-import-not-a-declaration-error",
+        "namespace-export-modifier-order-error",
+        "namespace-exported-enum-alias-shorthand-source-free",
+        "namespace-import-does-not-export-error",
+        "namespace-import-wildcard-error",
+        "namespace-no-implicit-qualified-access-error",
+        "namespace-private-import-error",
+        "namespace-value-import-alias-conflict-error",
+        "namespace-visits-shared-aliases-source-free-checkpoint",
         "runtime-identity-storage-collision-error",
         "runtime-identity-storage-collision-source-free-error",
-        "scene-transfer"
+        "scene-transfer",
+        "shared-scoped-class-type-error",
+        "shared-scoped-cycle-error",
+        "shared-scoped-generic-type-error",
+        "shared-scoped-local-error",
+        "shared-scoped-local-function-error",
+        "shared-scoped-parameter-error",
+        "shared-scoped-receiver-error",
+        "shared-scoped-scope-error",
+        "shared-scoped-startup-source-free-checkpoint",
+        "shared-scoped-suspend-error",
+        "shared-scoped-val-write-error"
       ]
     },
     {
       "id": "M17",
       "decision": "Place new Bifoil sources under src/ and derive dotted module names from directory and file paths. Existing explicit import and export rules remain in force.",
       "status": "partial",
-      "evidence": [
-        "module-javascript-property-names",
-        "module-triple-string-discovery",
-        "scene-transfer"
-      ]
+      "evidence": ["module-javascript-property-names", "module-triple-string-discovery", "scene-transfer"]
     },
     {
       "id": "M18",
@@ -5910,17 +6978,12 @@
   ],
   "clarifications": [
     {
-      "ids": [
-        "S09",
-        "S14"
-      ],
+      "ids": ["S09", "S14"],
       "date": "2026-10-25",
       "decision": "Under ten seconds applies to incremental builds; clean builds scale with total input."
     },
     {
-      "ids": [
-        "S12"
-      ],
+      "ids": ["S12"],
       "date": "2026-10-25",
       "decision": "Ordinary legacy bridges return; native transfers and termination require an explicit transfer bridge."
     }

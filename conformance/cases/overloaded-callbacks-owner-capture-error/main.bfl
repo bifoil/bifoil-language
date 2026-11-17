@@ -1,0 +1,7 @@
+fun <U> invoke(factory: (Int) -> U) -> U = factory(1)
+fun <T> outer(value: T) -> T:
+    fun choose(input: Int) -> String = "changed"
+    fun choose(input: Float) -> Float = input
+    return invoke(::choose)
+scene start():
+    val result = outer(3)

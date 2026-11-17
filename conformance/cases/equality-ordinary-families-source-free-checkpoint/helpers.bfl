@@ -1,0 +1,19 @@
+export data class Key:
+    val code: Int
+export enum Mood:
+    Happy
+    Sad
+export suspend fun inspect() -> String:
+    val ints = [1, 2]
+    val floats = [1.0, 2.0]
+    val editable = mutable [1.0, 2.0]
+    val unordered = {Key(1), Key(2)}
+    val reordered = {Key(2), Key(1)}
+    val first = {Key(1): [1, 2], Key(2): [3]}
+    val second = {Key(2): [3.0], Key(1): [1.0, 2.0]}
+    val nullable: Int? = 3
+    val absent: String? = null
+    choice:
+        option "Compare families":
+            Unit
+    return "${ints == floats}|${ints == editable}|${ints === floats}|${ints === editable}|${ints != [2, 1]}|${unordered == reordered}|${first == second}|${first === second}|${3 == 3.0}|${3 !== 3.0}|${'a' == "a"}|${'a' !== "a"}|${nullable === 3}|${absent === null}|${Mood.Happy != Mood.Sad}"

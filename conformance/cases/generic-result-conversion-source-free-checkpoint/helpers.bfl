@@ -1,0 +1,9 @@
+export data class Box<T>:
+    val value: T
+export fun <T> read(holder: Box<T>) -> T = holder.value
+export fun <T> produce(factory: () -> T) -> T = factory()
+export suspend fun <T> delayed(factory: suspend () -> T) -> T = factory()
+export fun <T> first(vararg holders: MutableList<T>) -> T = holders[0][0]
+export fun <T: StableKey, U> empty(factory: () -> T) -> Map<T, U>:
+    factory()
+    return {}

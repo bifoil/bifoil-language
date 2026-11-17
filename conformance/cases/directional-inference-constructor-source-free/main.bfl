@@ -1,0 +1,11 @@
+import helpers.Bundle
+import helpers.Outcome
+import helpers.Alias
+import helpers.narrow
+import helpers.broad
+scene start():
+    val instance = Bundle(::narrow, ::broad, 1)
+    val variant = Outcome.Value(::narrow, ::broad, 2)
+    val alias: Alias<Int> = Bundle(::narrow, ::broad, 3)
+    prose:
+        ${instance.value}|${variant.value}|${alias.value}|${instance.value is Int}

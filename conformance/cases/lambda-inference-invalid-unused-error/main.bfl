@@ -1,0 +1,6 @@
+fun <T> unused(value: T):
+    val invalid: () -> Unit = () =>:
+        "wrong" - 1
+        Unit
+scene start():
+    Unit

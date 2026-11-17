@@ -1,0 +1,3 @@
+scene start():
+    val number: Float? = 3.0
+    val invalid = Int(number)

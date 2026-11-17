@@ -1,0 +1,4 @@
+export fun fail(value: Int) -> Int:
+    return (
+        2147483647
+        + value)

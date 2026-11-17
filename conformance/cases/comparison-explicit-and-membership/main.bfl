@@ -1,0 +1,7 @@
+scene start():
+    var score = 3
+    val explicit = 0 < score && score < 9
+    val membership = score in 0..<9
+    val equality = true == false == false
+    prose:
+        ${explicit}|${membership}|${equality}

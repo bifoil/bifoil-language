@@ -1,0 +1,4 @@
+suspend fun ask() -> Int = 1
+fun invalid(callback: ((Int) -> Int)?) = callback?.(ask())
+scene start():
+    Unit

@@ -1,0 +1,18 @@
+import helpers.Cell
+import helpers.lookup
+scene start():
+    val original: MutableMap<Int, String?> = mutable {1: null, 2: "two"}
+    val snapshot: Map<Float, String?> = original
+    val alias = original
+    alias[2] = "changed"
+    val live = mutable {"box": Cell(1)}
+    val shallow: Map<String, Cell> = live
+    choice:
+        option "Resume map checks":
+            Unit
+    live["box"]!!.value = 7
+    live["new"] = Cell(9)
+    val missing = lookup(snapshot, 3.0)
+    val storedNull = lookup(snapshot, 1.0)
+    prose:
+        ${1 in original}|${original[1] == null}|${3 in original}|${original[3] == null}|${snapshot[2.0]!!}|${alias[2]!!}|${snapshot is Map<Float, String?>}|${missing == null}|${storedNull == null}|${shallow["box"]!!.value}|${shallow.size}|${live.size}

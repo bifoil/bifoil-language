@@ -1,0 +1,7 @@
+import helpers.Inner
+import helpers.Outer
+import helpers.same
+scene start():
+    val item = Outer<MutableList<Int>, Any?, MutableList<Int>>(Inner<MutableList<Int>, Any?, MutableList<Int>>(mutable [1]), Inner<Any?, MutableList<Int>, MutableList<Int>>(mutable [2]))
+    prose:
+        ${same(item, item)}

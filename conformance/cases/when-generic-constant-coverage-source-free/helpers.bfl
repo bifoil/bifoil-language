@@ -1,0 +1,11 @@
+export sealed class Result<T: Equatable>:
+    case Good(value: T)
+    case Missing
+export fun render(input: Result<String>?) -> String:
+    return when input:
+        case null:
+            "null"
+        case is Result.Good<String>(payload):
+            payload
+        case Result.Missing:
+            "missing"

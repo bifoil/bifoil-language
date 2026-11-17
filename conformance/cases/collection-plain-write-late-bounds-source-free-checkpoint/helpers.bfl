@@ -1,0 +1,16 @@
+export shared var events = ""
+export shared val items: MutableList<Int> = []
+export fun target() -> MutableList<Int>:
+    events += "T"
+    return items
+export fun index() -> Int:
+    events += "K"
+    return 0
+export suspend fun fill() -> Int:
+    events += "R"
+    choice:
+        option "Fill ${events}":
+            Unit
+    items.add(9)
+    events += "W"
+    return 7

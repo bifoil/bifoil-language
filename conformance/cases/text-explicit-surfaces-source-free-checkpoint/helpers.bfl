@@ -1,0 +1,18 @@
+export sealed class Answer:
+    case Yes(message: String)
+    case No
+export data class Named:
+    val value: Int
+    fun toString() -> String = "authored"
+export fun surfaces() -> String:
+    val mapping: Map<String, Int> = {"a": 1, "b": 2}
+    var entryText = ""
+    for entry in mapping:
+        if entryText != "":
+            entryText += ";"
+        entryText += String(entry)
+    val members: Set<Int> = {2, 1}
+    val items: MutableList<Int> = [3, 4]
+    val optional: Int? = 5
+    val named = Named(7)
+    return String(Answer.Yes("Ada")) + "|" + String(Answer.No) + "|" + String(members) + "|" + String(items) + "|" + entryText + "|" + String(1..6 step 2) + "|" + (5 downTo 1 step 2).toString() + "|" + String(optional) + "|" + String(named) + "|" + named.toString()

@@ -1,0 +1,15 @@
+export shared var trace = ""
+export fun inserted() -> String:
+    trace += "I"
+    return "  inner\n next"
+export suspend fun wait() -> String:
+    trace += "W"
+    choice:
+        option "Continue ${trace}":
+            Unit
+    trace += "R"
+    return "done"
+export suspend fun message() -> String = """
+    ${inserted()}
+      ${wait()}
+    """

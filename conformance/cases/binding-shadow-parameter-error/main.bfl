@@ -1,0 +1,4 @@
+fun invalid(item: Int):
+    fun nested(item: Int) -> Int = item
+scene start():
+    Unit

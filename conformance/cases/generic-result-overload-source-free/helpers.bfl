@@ -1,0 +1,4 @@
+export fun <T> select(factory: () -> T) -> T = factory()
+export fun select(factory: () -> Int, extra: Int = 0) -> Int = 99
+export fun <T> tie(factory: () -> T) -> T = factory()
+export fun tie(factory: () -> Int) -> Int = 88

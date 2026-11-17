@@ -1,0 +1,4 @@
+fun <T> bad():
+    shared val stored: List<T> = []
+scene start():
+    Unit

@@ -1,0 +1,40 @@
+import models.Box
+import models.Boxed
+import models.Pair
+import models.Factory
+import models.box
+import models.optional
+import models.many
+import models.supplier
+import models.pair
+import models.bounded
+scene start():
+    val first: Boxed<Any> = box(1)
+    val second: Box<Any>? = optional(2)
+    val third: List<Any> = many(3)
+    val fourth: () -> Any = supplier(4)
+    val fifth: Pair<Any, String> = pair(5)
+    val factory = Factory("owner")
+    val sixth: Box<Any> = factory.make(6)
+    val seventh: Box<Any> = Box(7)
+    val hidden: Any = 8
+    val eighth: Box<Any> = box(hidden)
+    val ninth: Box<Any> = box<Any>(9)
+    val tenth: Box<Any> = bounded(10)
+    val a: Any = first
+    val b: Any? = second
+    val c: Any = third
+    val d: Any = fourth
+    val e: Any = fifth
+    val f: Any = sixth
+    val g: Any = seventh
+    val h: Any = eighth
+    val i: Any = ninth
+    val j: Any = tenth
+    choice:
+        option "Retained arguments":
+            Unit
+    prose:
+        ${a is Box<Int>}|${b is Box<Int>}|${c is List<Int>}|${d is () -> Int}|${e is Pair<Int, String>}
+        ${f is Box<Int>}|${g is Box<Int>}|${h is Box<Int>}|${i is Box<Int>}|${j is Box<Float>}
+        ${(fourth() as Int) === 4}|${factory.owner}

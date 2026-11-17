@@ -1,0 +1,10 @@
+import types.Label
+scene start():
+    val Label: Label = "held"
+    val Local: Local = 3
+    typealias Local = Int
+    choice:
+        option "Separate values":
+            Unit
+    prose:
+        ${Label}|${Local}

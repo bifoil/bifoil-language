@@ -1,0 +1,17 @@
+sealed class Outcome:
+    case Success(number: Int)
+    case Failure(code: Int)
+scene start():
+    val source: MutableMap<Outcome.Success, Int> = {Outcome.Success(1): 10, Outcome.Success(2): 20}
+    val copied: Map<Outcome, Float> = source
+    source[Outcome.Success(1)] = 99
+    val back: MutableMap<Outcome, Float> = copied
+    back[Outcome.Failure(3)] = 30
+    val optional: Map<Outcome, Float>? = copied
+    choice:
+        option "Converted":
+            for entry in copied:
+                prose:
+                    ${entry.key is Outcome.Success} ${entry.value}.
+            prose:
+                Counts ${source.size} ${copied.size} ${back.size} ${optional!!.size}.

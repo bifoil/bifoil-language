@@ -1,0 +1,3 @@
+shared val value: Int
+scene start():
+    Unit

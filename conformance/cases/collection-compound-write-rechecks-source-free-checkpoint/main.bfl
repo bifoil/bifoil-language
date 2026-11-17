@@ -1,0 +1,5 @@
+import helpers.target
+import helpers.clear
+scene start():
+    var index = 0
+    target()[index] += clear()

@@ -1,0 +1,50 @@
+export fun prepared(flag: Boolean) -> () -> Int:
+    val result: Int
+    fun read() -> Int = result
+    if flag:
+        result = 3
+    else:
+        result = 4
+    return ::read
+export fun explicitOnly() -> (Int) -> Int:
+    var seed: Int
+    fun read(value: Int = seed) -> Int = value
+    return ::read
+export fun defaults() -> List<Int>:
+    var seed: Int
+    fun read(value: Int = seed) -> Int = value
+    seed = 5
+    val first = read()
+    seed = 7
+    val second = read()
+    return [first, second]
+export fun forwardWriter() -> Int:
+    var result: Int
+    val got = fill(6)
+    fun fill(value: Int) -> Int:
+        result = value
+        return result + 1
+    return result + got
+export fun freshLoop() -> List<() -> Int>:
+    val readers: MutableList<() -> Int> = []
+    for position in 1..2:
+        val slot: Int
+        slot = position
+        fun read() -> Int = slot
+        readers.add(::read)
+    return readers
+export fun recursive(flag: Boolean) -> (Int) -> Int:
+    val seed: Int
+    fun even(count: Int) -> Int:
+        if count == 0:
+            return seed
+        return odd(count - 1)
+    fun odd(count: Int) -> Int:
+        if count == 0:
+            return seed + 1
+        return even(count - 1)
+    if flag:
+        seed = 11
+    else:
+        seed = 13
+    return ::even

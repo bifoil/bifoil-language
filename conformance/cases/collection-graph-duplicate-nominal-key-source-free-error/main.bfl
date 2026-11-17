@@ -1,0 +1,4 @@
+import helpers.makeKey
+import helpers.observed
+scene start():
+    val table = {makeKey(1): observed("first"), makeKey(1): observed("second")}

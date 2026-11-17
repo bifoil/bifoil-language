@@ -1,0 +1,4 @@
+import a.combine
+export fun narrow(value: Int) -> Int = value
+export fun broad(value: Int?) -> Int = value ?: 0
+export fun through() -> Int = combine(::narrow, ::broad, 2)

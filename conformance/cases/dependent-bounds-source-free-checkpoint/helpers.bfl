@@ -1,0 +1,12 @@
+export fun <A, B: A> choose(first: A, second: B) -> A = first
+export fun <A, B: A, C: B> chain(first: A, second: B, third: C) -> A = first
+export fun <A, B: List<List<A>>> nested(first: A, values: B) -> A = first
+export shared var trace: String = ""
+export fun markFirst() -> Int:
+    trace += "A"
+    return 1
+export suspend fun ask() -> Float:
+    choice:
+        option "Widen":
+            trace += "B"
+    return 2.5

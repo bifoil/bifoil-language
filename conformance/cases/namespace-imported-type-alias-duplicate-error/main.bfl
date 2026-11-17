@@ -1,0 +1,4 @@
+import first.Word as Label
+import second.Word as Label
+scene start():
+    Unit

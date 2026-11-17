@@ -1,0 +1,4 @@
+fun <T: StableKey> kept(value: T) -> Set<T> = {value}
+fun unused() = kept(mutable [1])
+scene start():
+    Unit

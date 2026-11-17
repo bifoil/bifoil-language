@@ -1,0 +1,7 @@
+export data class Sink<in T>:
+    val label: Int
+    fun consume(value: T) -> Int = label
+export fun <T> combine(first: Sink<T>, second: Sink<T>, value: T) -> T:
+    first.consume(value)
+    second.consume(value)
+    return value

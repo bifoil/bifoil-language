@@ -1,0 +1,7 @@
+fun integer(value: Int) -> Int = value
+scene start():
+    val invalid = integer(-2147483648)
+    for item in 1..3 step invalid:
+        Unit
+    prose:
+        unreachable

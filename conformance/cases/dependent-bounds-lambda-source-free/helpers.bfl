@@ -1,0 +1,4 @@
+export fun <A, B: (A) -> Int> invoke(first: A, target: B) -> A:
+    target(first)
+    return first
+export fun <A, B: () -> A> produce(first: A, target: B) -> A = target()

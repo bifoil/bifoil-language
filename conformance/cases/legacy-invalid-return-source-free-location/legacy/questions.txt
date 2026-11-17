@@ -1,0 +1,5 @@
+Before input.
+*choice
+    #Return invalid result
+        *set answer "not an integer"
+        *return

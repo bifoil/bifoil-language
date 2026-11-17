@@ -1,0 +1,4 @@
+scene start():
+    val mapping: MutableMap<Int, Int> = {1: 2}
+    for entry in mapping:
+        entry.value = 7

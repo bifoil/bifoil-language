@@ -1,0 +1,25 @@
+export shared var defaults = 0
+export shared var events = ""
+fun initial() -> Int:
+    defaults += 1
+    return 2
+export data class Cell:
+    var value: Int
+export data class Record:
+    var number: Int = initial()
+    val items: MutableList<Cell> = mutable []
+export shared val original = Record()
+export shared var receiver = original
+export fun select() -> Record:
+    events += "R"
+    return receiver
+export suspend fun change() -> MutableList<Cell>:
+    events += "A"
+    choice:
+        option "Change ${events} defaults ${defaults}":
+            Unit
+    original.number = 9
+    original.items.add(Cell(3))
+    receiver = Record(100)
+    events += "B"
+    return original.items

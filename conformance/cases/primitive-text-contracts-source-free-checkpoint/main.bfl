@@ -1,0 +1,9 @@
+import helpers.joined
+import helpers.trace
+scene start():
+    val completed = joined()
+    choice:
+        option "Keep ${completed} ${trace}":
+            Unit
+    prose:
+        ${"b" + true}|${false + "b"}|${"c" + '😀'}|${'😀' + "c"}|${"n" + 7}|${7 + "n"}|${"f" + 2.5}|${2.5 + "f"}|${completed}|${trace}

@@ -1,0 +1,10 @@
+export fun counter() -> () -> Int:
+    shared var total = 0
+    fun advance() -> Int:
+        total += 1
+        return total
+    return ::advance
+export fun dependencies() -> Int:
+    shared val first = 3
+    shared val second = first + 2
+    return second

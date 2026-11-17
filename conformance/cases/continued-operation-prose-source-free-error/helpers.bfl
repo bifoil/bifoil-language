@@ -1,0 +1,5 @@
+export fun fail(divisor: Int):
+    prose:
+        Result ${(
+            10
+            / divisor)}

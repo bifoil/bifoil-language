@@ -1,0 +1,8 @@
+export suspend fun fail(value: Int) -> Int:
+    choice:
+        option "Continue":
+            prose:
+                Resumed.
+    return (
+        10
+        / value)

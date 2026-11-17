@@ -1,0 +1,23 @@
+import helpers.ascending
+import helpers.descending
+scene start():
+    var result = ""
+    outer@ for item in ascending():
+        var round = 0
+        do:
+            round += 1
+            if round == 1:
+                continue
+        while round < 2
+        while true:
+            choice:
+                option "A ${item}":
+                    result += String(item) + ";"
+            break
+        continue@outer
+    for item in descending():
+        choice:
+            option "D ${item}":
+                result += String(item) + ";"
+    prose:
+        ${result}

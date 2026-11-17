@@ -1,0 +1,18 @@
+data class Node<out T>:
+    val number: Int
+    var next: Node<Any>? = null
+scene start():
+    val first = Node<Int>(3)
+    val viewed: Node<Any> = first
+    first.next = first
+    val second = Node<Any>(3)
+    val third = Node<Any>(3)
+    second.next = third
+    third.next = second
+    choice:
+        option "Cycles":
+            prose:
+                Cycles ${viewed === second}; construction ${first === second}.
+            third.next = Node<Any>(4)
+            prose:
+                Changed ${viewed === second}.

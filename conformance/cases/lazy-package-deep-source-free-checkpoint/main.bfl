@@ -1,0 +1,9 @@
+import level1.compute
+import state.calls
+scene start():
+    val answer = compute(1)
+    choice:
+        option "Verify ${answer}|${calls}":
+            Unit
+    prose:
+        ${answer}|${calls}

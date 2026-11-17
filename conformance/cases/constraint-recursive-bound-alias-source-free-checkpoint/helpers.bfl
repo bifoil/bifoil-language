@@ -1,0 +1,4 @@
+export data class Loop<T: Loop<T>>:
+    val index: Int
+export typealias Ring<T: Loop<T>> = Loop<T>
+export fun read(value: Ring<Nothing>) -> Int = value.index

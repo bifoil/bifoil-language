@@ -1,0 +1,9 @@
+export fun <T> invoke(factory: (Int) -> T) -> T = factory(1)
+export suspend fun <T> delayed(factory: suspend (Int) -> T) -> T = factory(1)
+export fun <T> counted(factory: (vararg Int) -> T) -> T = factory(1, 2)
+export fun choose(value: Int?) -> String = "present"
+export fun choose(value: Float) -> Float = value
+export fun count(vararg values: Int) -> Int = values.size
+export fun count(first: Float, second: Float) -> Float = first + second
+export fun <U> explicit(value: U) -> U = value
+export fun <U> explicit(value: U, extra: U) -> U = value

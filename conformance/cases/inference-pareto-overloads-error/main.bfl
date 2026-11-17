@@ -1,0 +1,5 @@
+fun bad(first: Int, second: Float) = 1
+fun bad(first: Float, second: Int) = 2
+fun fail() = bad(1, 1)
+scene start():
+    Unit

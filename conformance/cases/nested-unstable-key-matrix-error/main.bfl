@@ -1,0 +1,3 @@
+import helpers.Cell
+scene start():
+    val keys: Set<List<Cell>> = {[Cell(1)]}

@@ -1,0 +1,14 @@
+import helpers.same
+import helpers.kept
+import helpers.present
+import helpers.decimal
+scene start():
+    val keys: Set<Int?> = kept<Int?>(null)
+    val editable = mutable [1]
+    val other = mutable [1]
+    val number = decimal(3)
+    choice:
+        option "Capabilities":
+            Unit
+    prose:
+        ${null in keys}|${same<Int?>(null, 3)}|${same(editable, other)}|${present(3)}|${number is Float}|${number}

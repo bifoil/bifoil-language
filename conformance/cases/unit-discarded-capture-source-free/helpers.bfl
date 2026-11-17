@@ -1,0 +1,6 @@
+export fun create() -> () -> Unit:
+    var pending: Int
+    val callback: () -> Unit = () =>:
+        val absent: Int? = null
+        val unreachable = absent ?: return (() => pending)
+    return callback

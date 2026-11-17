@@ -1,0 +1,5 @@
+data class Loop<T: Loop<T>>:
+    val index: Int
+fun unused() = Loop<Int>(1)
+scene start():
+    Unit

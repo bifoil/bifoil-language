@@ -1,0 +1,211 @@
+[
+  {
+    "id": "namespace-separate-values-source-free-checkpoint",
+    "directory": "cases/namespace-separate-values-source-free-checkpoint",
+    "decisions": [
+      "U01",
+      "U25",
+      "U26",
+      "B05",
+      "M08",
+      "T24"
+    ],
+    "precompile": [
+      "types"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Separate values"
+      ]
+    ],
+    "output": [
+      "held|3"
+    ]
+  },
+  {
+    "id": "namespace-separate-callables-members-source-free-checkpoint",
+    "directory": "cases/namespace-separate-callables-members-source-free-checkpoint",
+    "decisions": [
+      "U01",
+      "U25",
+      "B05",
+      "U23",
+      "M08",
+      "T24"
+    ],
+    "precompile": [
+      "types",
+      "values"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Separate callables"
+      ]
+    ],
+    "output": [
+      "kept|field3"
+    ]
+  },
+  {
+    "id": "namespace-value-prefix-members-source-free-checkpoint",
+    "directory": "cases/namespace-value-prefix-members-source-free-checkpoint",
+    "decisions": [
+      "U01",
+      "U13",
+      "B05",
+      "B10",
+      "M08",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Value prefix"
+      ]
+    ],
+    "output": [
+      "true|7|7"
+    ]
+  },
+  {
+    "id": "namespace-value-prefix-uninitialized-error",
+    "directory": "cases/namespace-value-prefix-uninitialized-error",
+    "decisions": [
+      "U01",
+      "U13",
+      "B05",
+      "B06"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "compile_error": "not definitely initialized"
+  },
+  {
+    "id": "namespace-value-prefix-no-fallback-error",
+    "directory": "cases/namespace-value-prefix-no-fallback-error",
+    "decisions": [
+      "U01",
+      "U13",
+      "B05"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "compile_error": "member"
+  },
+  {
+    "id": "namespace-imported-type-alias-duplicate-error",
+    "directory": "cases/namespace-imported-type-alias-duplicate-error",
+    "decisions": [
+      "U01",
+      "M08",
+      "B05"
+    ],
+    "precompile": [
+      "first",
+      "second"
+    ],
+    "compile_error": "duplicate imported type name"
+  },
+  {
+    "id": "namespace-alias-builtin-type-conflict-error",
+    "directory": "cases/namespace-alias-builtin-type-conflict-error",
+    "decisions": [
+      "U01",
+      "B05"
+    ],
+    "compile_error": "alias shadows a visible type"
+  },
+  {
+    "id": "namespace-import-builtin-type-conflict-error",
+    "directory": "cases/namespace-import-builtin-type-conflict-error",
+    "decisions": [
+      "U01",
+      "M08",
+      "B05"
+    ],
+    "precompile": [
+      "types"
+    ],
+    "compile_error": "duplicate imported type name"
+  },
+  {
+    "id": "namespace-coexport-function-error",
+    "directory": "cases/namespace-coexport-function-error",
+    "decisions": [
+      "U25",
+      "M08"
+    ],
+    "compile_error": "require distinct exported names"
+  },
+  {
+    "id": "namespace-coexport-shared-error",
+    "directory": "cases/namespace-coexport-shared-error",
+    "decisions": [
+      "U25",
+      "M08"
+    ],
+    "compile_error": "require distinct exported names"
+  },
+  {
+    "id": "namespace-generated-enum-field-source-free-checkpoint",
+    "directory": "cases/namespace-generated-enum-field-source-free-checkpoint",
+    "decisions": [
+      "U23",
+      "U24",
+      "U30",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Enum field"
+      ]
+    ],
+    "output": [
+      "true|true"
+    ]
+  },
+  {
+    "id": "namespace-value-prefix-capture-source-free-checkpoint",
+    "directory": "cases/namespace-value-prefix-capture-source-free-checkpoint",
+    "decisions": [
+      "U01",
+      "U13",
+      "T24",
+      "F20",
+      "F21"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Captured value prefix"
+      ]
+    ],
+    "output": [
+      "9|9"
+    ]
+  }
+]

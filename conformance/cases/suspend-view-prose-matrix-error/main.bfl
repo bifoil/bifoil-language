@@ -1,0 +1,5 @@
+fun plain() -> Int = 1
+scene start():
+    val callback: suspend () -> Int = ::plain
+    prose:
+        ${callback()}

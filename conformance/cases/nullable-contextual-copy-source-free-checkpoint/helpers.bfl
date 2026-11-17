@@ -1,0 +1,14 @@
+export fun copied(value: MutableList<Int>?, fallback: List<Float>) -> List<Float> = value ?: fallback
+export fun editable(value: List<Int>?, fallback: MutableList<Float>) -> MutableList<Float> = value ?: fallback
+export fun broad(value: Int?, fallback: String) -> Any = value ?: fallback
+export suspend fun inspect() -> String:
+    val original = mutable [1]
+    val snapshot = copied(original, [2.0])
+    original[0] = 9
+    val base = [3]
+    val copy = editable(base, mutable [4.0])
+    copy[0] = 8.0
+    choice:
+        option "Contextual fallback":
+            Unit
+    return "${snapshot[0]}|${original[0]}|${copy[0]}|${base[0]}|${broad(3, "other") is Int}|${broad(null, "other") is String}"

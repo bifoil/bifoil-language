@@ -1,0 +1,5 @@
+scene start():
+    var text = "a"
+    for count in 1..24:
+        text += text
+    text += "x"

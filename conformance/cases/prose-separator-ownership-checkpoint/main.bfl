@@ -1,0 +1,33 @@
+scene start():
+    prose:
+        Before.
+        @if false:
+            Hidden.
+
+        After if.
+        @when 2:
+            @case 1:
+                Wrong.
+            @case 2:
+                Selected.
+
+        After when.
+        @if true:
+            Active.
+        @// An ordinary code comment between branches.
+        @else:
+            Wrong.
+
+        // Literal prose.
+        # Literal prose too.
+        @var count = 0
+        @do:
+            @count += 1
+            ${count}
+
+        @while count < 2
+
+        After loop.
+    choice:
+        option "Boundaries":
+            Unit

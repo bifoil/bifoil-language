@@ -1,0 +1,4 @@
+scene start():
+    ignored@ choice:
+        option "Bad":
+            Unit

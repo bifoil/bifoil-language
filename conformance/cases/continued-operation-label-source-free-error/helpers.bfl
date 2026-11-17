@@ -1,0 +1,7 @@
+export suspend fun fail(divisor: Int):
+    choice:
+        option "Answer ${(
+            10
+            / divisor)}":
+            prose:
+                Unreachable.

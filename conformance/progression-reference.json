@@ -1,0 +1,258 @@
+[
+  {
+    "id": "progression-reference-source-free-checkpoint",
+    "directory": "cases/progression-reference-source-free-checkpoint",
+    "decisions": [
+      "R07",
+      "R03",
+      "R06",
+      "G05",
+      "T22",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Search -2147483648 -1 1"
+      ]
+    ],
+    "output": [
+      "true|false|true|true|true|true"
+    ]
+  },
+  {
+    "id": "progression-terminal-source-free-checkpoints",
+    "directory": "cases/progression-terminal-source-free-checkpoints",
+    "decisions": [
+      "R05",
+      "R06",
+      "C01",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Upper 2147483645"
+      ],
+      [
+        "Upper 2147483647"
+      ],
+      [
+        "Lower -2147483646"
+      ],
+      [
+        "Lower -2147483648"
+      ]
+    ],
+    "output": [
+      "4"
+    ]
+  },
+  {
+    "id": "progression-found-index-overflow-source-free-checkpoint",
+    "directory": "cases/progression-found-index-overflow-source-free-checkpoint",
+    "decisions": [
+      "R07",
+      "T22",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Query"
+      ]
+    ],
+    "runtime_error": "progression search index overflow"
+  },
+  {
+    "id": "progression-absent-index-overflow-source-free-checkpoint",
+    "directory": "cases/progression-absent-index-overflow-source-free-checkpoint",
+    "decisions": [
+      "R07",
+      "T22",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Query"
+      ]
+    ],
+    "runtime_error": "progression search index overflow"
+  },
+  {
+    "id": "progression-descending-index-overflow-source-free-checkpoint",
+    "directory": "cases/progression-descending-index-overflow-source-free-checkpoint",
+    "decisions": [
+      "R07",
+      "T22",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Query"
+      ]
+    ],
+    "runtime_error": "progression search index overflow"
+  },
+  {
+    "id": "range-query-float-error",
+    "directory": "cases/range-query-float-error",
+    "decisions": [
+      "R07",
+      "G08"
+    ],
+    "compile_error": "integer range membership requires Int"
+  },
+  {
+    "id": "progression-query-float-error",
+    "directory": "cases/progression-query-float-error",
+    "decisions": [
+      "R07",
+      "G08"
+    ],
+    "compile_error": "integer range membership requires Int"
+  },
+  {
+    "id": "range-query-nullable-error",
+    "directory": "cases/range-query-nullable-error",
+    "decisions": [
+      "R07",
+      "G08"
+    ],
+    "compile_error": "integer range membership requires Int"
+  },
+  {
+    "id": "range-query-unbounded-error",
+    "directory": "cases/range-query-unbounded-error",
+    "decisions": [
+      "R07",
+      "G08"
+    ],
+    "compile_error": "integer range membership requires Int"
+  },
+  {
+    "id": "range-query-conversion-and-collection-control",
+    "directory": "cases/range-query-conversion-and-collection-control",
+    "decisions": [
+      "R07",
+      "N05",
+      "D19",
+      "E03"
+    ],
+    "output": [
+      "true|true|false|true|true|true"
+    ]
+  },
+  {
+    "id": "progression-view-identities-source-free-checkpoint",
+    "directory": "cases/progression-view-identities-source-free-checkpoint",
+    "decisions": [
+      "R07",
+      "R03",
+      "G15",
+      "D30",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "View true true"
+      ]
+    ],
+    "output": [
+      "true|true|true|true|true"
+    ]
+  },
+  {
+    "id": "progression-view-overflow-source-free-checkpoint",
+    "directory": "cases/progression-view-overflow-source-free-checkpoint",
+    "decisions": [
+      "R07",
+      "G15",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Query true"
+      ]
+    ],
+    "runtime_error": "progression search index overflow"
+  },
+  {
+    "id": "progression-view-negated-overflow-source-free-checkpoint",
+    "directory": "cases/progression-view-negated-overflow-source-free-checkpoint",
+    "decisions": [
+      "R07",
+      "G15",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Query true"
+      ]
+    ],
+    "runtime_error": "progression search index overflow"
+  },
+  {
+    "id": "progression-view-smartcast-source-free",
+    "directory": "cases/progression-view-smartcast-source-free",
+    "decisions": [
+      "R07",
+      "B25",
+      "G15"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "output": [
+      "true|true"
+    ]
+  }
+]

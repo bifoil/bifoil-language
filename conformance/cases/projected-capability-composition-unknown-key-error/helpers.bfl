@@ -1,0 +1,15 @@
+export data class Inner<A, B, T> where T: A, T: B:
+    val value: T
+export data class Outer<X, Y, Z>:
+    val first: Inner<X, Y, *>
+    val second: Inner<Y, Z, *>
+export data class Recursive<X>:
+    val leaf: Inner<X, X, *>
+    val next: Recursive<List<X>>? = null
+export sealed class Outcome<X>:
+    case Present(value: Outer<X, Any?, X>)
+    case Absent
+export fun <T: Equatable> same(left: T, right: T) -> Boolean = left == right
+export fun <T: StableKey> distinct(left: T, right: T) -> Int:
+    val values: Set<T> = {left, right}
+    return values.size

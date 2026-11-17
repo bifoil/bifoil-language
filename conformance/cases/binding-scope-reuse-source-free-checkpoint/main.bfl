@@ -1,0 +1,10 @@
+import helpers.reuse
+import helpers.disjoint
+scene start():
+    val retained = reuse()
+    val total = disjoint(true) + disjoint(false)
+    choice:
+        option "Resume scope":
+            Unit
+    prose:
+        ${retained()}|${total}

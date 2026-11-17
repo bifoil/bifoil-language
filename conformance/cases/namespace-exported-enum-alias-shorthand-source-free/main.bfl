@@ -1,0 +1,7 @@
+import api.Visible as State
+import api.selected
+scene start():
+    val current: State = Happy
+    val later = selected(Quiet)
+    prose:
+        ${current == State.Happy}|${later == State.Quiet}|${current is State}

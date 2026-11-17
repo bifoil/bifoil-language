@@ -1,0 +1,10 @@
+import left.Node
+import left.trace
+export data class Link<T>:
+    val node: Node<T>
+export fun <T> connect(value: Node<T>) -> Link<T> = Link(value)
+export suspend fun ask(value: Float) -> Float:
+    choice:
+        option "Bounds ${trace}":
+            Unit
+    return value

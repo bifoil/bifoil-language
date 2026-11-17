@@ -1,0 +1,36 @@
+import helpers.Source
+import helpers.invoke
+import helpers.number
+import helpers.genericNumber
+import helpers.grouped
+import helpers.nested
+import helpers.mapped
+import helpers.chain
+import helpers.begin
+import helpers.finish
+import helpers.recordedInt
+scene start():
+    var source = Source(10)
+    var effects = ""
+    fun receiver() -> Source:
+        effects += "C"
+        return source
+    suspend fun advance() -> Int:
+        effects += "W"
+        choice:
+            option "Resume callback":
+                source = Source(99)
+                effects += "R"
+        return 0
+    val retained: Float = invoke(receiver()::choose, advance())
+    prose:
+        ${retained}|${source.base}|${effects}|${recordedInt}
+    val ordinary: Float = invoke(::number)
+    val generic: Float = invoke(::genericNumber)
+    val spread: Float = grouped(*[::number])
+    val named: Float = grouped(factories = [::number])
+    val deep: Float = nested([[::number]])
+    val mapping: Float = mapped({"call": ::number})
+    val chained = chain(::finish, ::begin)
+    prose:
+        ${ordinary}|${generic}|${spread}|${named}|${deep}|${mapping}|${chained}|${recordedInt}

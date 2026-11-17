@@ -1,0 +1,25 @@
+data class Box<out T>:
+    val number: Int
+data class Outer<out T: Equatable>:
+    val item: T
+export suspend fun run():
+    val left = Box<Int>(1)
+    val right = Box<Any>(1)
+    val originalList = [Outer(left)]
+    val viewedList: List<Outer<Box<Any>>> = originalList
+    val otherList = [Outer(right)]
+    val originalSet = {Box<Int>(1), Box<Int>(2)}
+    val viewedSet: Set<Box<Any>> = originalSet
+    val otherSet = {Box<Any>(2), Box<Any>(1)}
+    val originalMap = {"x": left}
+    val viewedMap: Map<String, Box<Any>> = originalMap
+    val otherMap = {"x": right}
+    val originalKeys = {Box<Int>(1): 10, Box<Int>(2): 20}
+    val viewedKeys: Map<Box<Any>, Int> = originalKeys
+    val otherKeys = {Box<Any>(2): 20, Box<Any>(1): 10}
+    choice:
+        option "Containers":
+            prose:
+                Nested ${viewedList === otherList} ${viewedSet === otherSet} ${viewedMap === otherMap} ${viewedKeys === otherKeys}.
+                Retained ${originalList is List<Outer<Box<Int>>>} ${viewedKeys is Map<Box<Any>, Int>}.
+                Ordinary ${viewedList == otherList} ${viewedSet == otherSet} ${viewedMap == otherMap} ${viewedKeys == otherKeys}.

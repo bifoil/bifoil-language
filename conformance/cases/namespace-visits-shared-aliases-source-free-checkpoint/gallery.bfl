@@ -1,0 +1,12 @@
+import api.Mood
+import api.pick
+import api.increment
+export scene show():
+    val number = increment()
+    var local: Int = 0
+    local += 1
+    choice:
+        option "Visit ${number} ${local}":
+            Unit
+    prose:
+        ${number}|${local}|${pick() == Mood.Happy}

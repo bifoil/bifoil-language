@@ -1,0 +1,8 @@
+import helpers.Source
+scene start():
+    val factory = Source(10).build()
+    choice:
+        option "Call private method":
+            Unit
+    prose:
+        ${factory()(3)}

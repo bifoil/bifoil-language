@@ -1,0 +1,21 @@
+data class Box<out T>:
+    val number: Int
+data class Outer<out T: Equatable>:
+    val item: T
+data class Pair:
+    val wide: Outer<Box<Any>>
+    val hidden: Outer<*>
+fun <T: Equatable> same(first: T, second: T) -> Boolean = first === second
+export suspend fun run():
+    val left = Outer(Box<Int>(3))
+    val right = Outer(Box<Any>(3))
+    val viewedLeft: Outer<Box<Any>> = left
+    val viewedRight: Outer<Box<Any>> = right
+    val hiddenLeft: Outer<*> = left
+    val hiddenRight: Outer<*> = right
+    val pairLeft = Pair(left, left)
+    val pairRight = Pair(right, right)
+    choice:
+        option "Views":
+            prose:
+                Wide ${viewedLeft === viewedRight}; hidden ${hiddenLeft === hiddenRight}; pair ${same(pairLeft, pairRight)}.

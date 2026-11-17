@@ -9,3 +9,7 @@
 # Operating-system metadata
 .DS_Store
 Thumbs.db
+
+# Python validator bytecode
+__pycache__/
+*.pyc

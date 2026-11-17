@@ -1,0 +1,4 @@
+scene start():
+    val mapping = {1: 2}
+    val callable = mapping::containsKey
+    callable(key = 1)

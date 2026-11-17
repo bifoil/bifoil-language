@@ -1,0 +1,9 @@
+shared var calls: Int = 0
+export fun bump() -> Int:
+    calls += 1
+    return calls
+export fun count() -> Int = calls
+export suspend fun ask() -> Int:
+    choice:
+        option "Continue":
+            return 7

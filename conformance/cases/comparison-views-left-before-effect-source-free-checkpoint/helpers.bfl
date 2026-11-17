@@ -1,0 +1,12 @@
+export suspend fun run():
+    var number: Int? = 3
+    suspend fun replace() -> Int:
+        number = null
+        choice:
+            option "Replace":
+                return 3
+        return 3
+    if number != null:
+        val equal = number === replace()
+        prose:
+            Captured ${equal}; changed ${number == null}.

@@ -1,0 +1,3 @@
+scene start():
+    var value = 1
+    value = "bad"

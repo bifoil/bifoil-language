@@ -1,0 +1,6 @@
+sealed class Value:
+    case Number(value: Int)
+    case Callback(value: () -> Unit)
+fun compare(a: Value, b: Value) = a == b
+scene start():
+    Unit

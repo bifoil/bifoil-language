@@ -1,0 +1,15 @@
+export shared var effects: Int = 0
+export typealias Handler = (Int) -> Unit
+export fun broad(value: Int?) -> String = String(value)
+export fun scalar(value: Int) -> String = "Int"
+export fun scalar(value: Float) -> String = "Float"
+export fun numeric(value: Float) -> Float = value
+export fun integer(value: Int) -> Int = value
+export fun fit(value: List<Float>) -> String = "widen"
+export fun fit(value: MutableList<Int>) -> String = "copy"
+export fun <T> joined(first: T, second: T) -> T = second
+export fun defaulted(value: Int = 4) -> Int = value
+export data class Key<out T: StableKey>:
+    val parts: List<T>
+export data class Cell:
+    var value: Int

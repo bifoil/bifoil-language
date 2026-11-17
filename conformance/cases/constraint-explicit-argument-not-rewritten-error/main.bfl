@@ -1,0 +1,4 @@
+fun <T: Float> decimal(value: T) -> T = value
+fun unused() = decimal<Int>(3)
+scene start():
+    Unit

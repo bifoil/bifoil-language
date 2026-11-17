@@ -1,0 +1,2 @@
+export typealias Label = String
+export fun Label() -> String = "value"

@@ -1,0 +1,4 @@
+fun bad(input: Int):
+    shared val stored = (input: Int) => input
+scene start():
+    Unit

@@ -1,6 +1,6 @@
 # Bifoil language steering
 
-Updated: 2026-10-25
+Updated: 2026-11-05
 
 ## Status and use
 
@@ -25,7 +25,7 @@ details marked explicitly. Stable decision IDs preserve traceability to the acce
 
 **Specification review:** The draft now contains a concrete completion sequence and 26 review cases. The initial review
 expands the resource protocol, module interface obligations, saved alias relationships, and legacy effects. Unresolved
-type-identity and flow-analysis cases remain explicit; no accepted decisions were changed.
+type-identity and flow-analysis cases remain explicit; subsequent accepted clarifications are recorded below.
 
 The broader question rounds are finished. Raise further steering only for a material conflict or a user-requested scope
 change; routine grammar and implementation details belong in the draft and feasibility review.
@@ -248,7 +248,7 @@ For example, `50 %+ 10 + 20` and `50 %+ 10 %+ 20` require grouping. Valid forms 
 | U26 | A type-alias name is visible throughout its enclosing scope, including before its declaration, subject to alias-cycle checks. Local variable visibility remains unchanged. |
 | U27 | Reject cycles through transparent alias expansion, such as typealias Nested = List<Nested>. Recursive structures must pass through nominal data or sum types; nominal recursion is not prohibited. |
 | U28 | Separate private field access from generated constructor inputs. If a data class is externally constructible, outside callers may supply a private field constructor parameter but cannot read or update the private field afterward. |
-| U29 | Generate explicit shallow data-instance copying with instance.copy(...): supplied fields replace values, and omitted fields retain their current values. The new instance shares referenced field values according to their ordinary semantics. Private inputs follow U28. Complete copy evaluation timing remains open. |
+| U29 | Generate explicit shallow data-instance copying with instance.copy(...): supplied fields replace values, and omitted fields retain their current values. The new instance shares referenced field values according to their ordinary semantics. Private inputs follow U28. Reserve the generated member name copy: a user-defined field or method with that name is a compile error. Complete copy evaluation timing remains open. |
 | U30 | After narrowing a sum value to a payload-bearing variant, allow named payload-field access, such as result.value. Payload bindings remain immutable; the existing destructuring patterns remain available. |
 | U31 | Use _ as an ignored payload-pattern position, for example case is Outcome.Success(_):. It creates no binding and is exempt from the no-shadowing rule. |
 | U32 | Initially limit payload patterns to one level. Bind payload values and use another when to inspect nested variants; recursive nested-pattern syntax has not been selected. |
@@ -306,8 +306,8 @@ For example, `50 %+ 10 + 20` and `50 %+ 10 %+ 20` require grouping. Valid forms 
 | E26 | Existing `return`, `break`, `continue`, and `goto` transfers may appear in expression positions, such as `val name = maybeName ?: return`. Each transfer must remain valid in its function, loop, or story context; a transferring path produces no value and has type `Nothing`.                                                                                |
 | E27 | Plain `=` assignment is a statement, not a value-producing expression. It changes a binding or container element under E10's target-first evaluation order. Compound updates retain E11's statement forms.                                                                                                                                                       |
 | E28 | Support `===` and `!==` as exact type-and-value equality operators alongside `==` and `!=`. Compare without widening: different non-null value types are unequal, so `3 === 3.0` is false. Comparable values of the same type use value equality; `!==` negates that comparison. Nullable and composite comparison follow E29-E30.                               |
-| E29 | Exact equality compares contained values or null. Two nulls are equal regardless of their nullable annotations; one null is unequal to a present value. A present `Int?` containing 3 is exactly equal to `Int` 3. Conversions performed before comparison still determine the stored value's type.                                                              |
-| E30 | Collections, data instances, and eligible sum values support typed structural exact equality. Collection families/type arguments or nominal value types must match; recursively compare supported contents without widening or copying. Sum-specific eligibility follows U22.                                                                                    |
+| E29 | Exact equality compares contained values or null. Two nulls are equal regardless of their nullable annotations; one null is unequal to a present value. A present `Int?` containing 3 is exactly equal to `Int` 3. Conversions performed before comparison determine its values; composite comparison views follow E30. |
+| E30 | Collections, data instances, and eligible sum values support typed structural exact equality using their declared comparison views. Collection families/type arguments or nominal comparison types must match; recursively compare supported contents without widening or copying. A covariant view can therefore compare exactly equal to an independently constructed value with that same view, while retained construction types remain available to type tests and casts. Sum-specific eligibility follows U22. |
 | E31 | If an operand has static type Any or Any? and its concrete equality capability is unknown, require narrowing or other static proof of equality eligibility before comparison. Existing null comparisons remain available; this does not introduce runtime failure-based equality dispatch. |
 | E32 | Support Boolean when pattern guards, such as case is Outcome.Success(value) if value != "":. Payload names are available to the guard. Evaluate it once after the pattern matches, under the enclosing suspension permissions; a false guard continues to later cases. |
 | E33 | A when may have at most one else: fallback, which must follow all case branches. Choice-fallback placement remains a separate matter. |
@@ -345,7 +345,7 @@ range-construction error.
 | D19 | Use `in` and `!in` for collection membership. Lists and sets test elements; maps test keys, including keys whose stored value is null. `!in` negates the test.                                                                                                                                                                                              |
 | D20 | Mutable collections support indexed assignment plus methods: `items[i] = value` replaces a list element, and `mapping[key] = value` inserts or replaces a map entry. Add/remove operations use methods; exact method names and results remain open.                                                                                                         |
 | D21 | Assignments and arguments may implicitly convert between corresponding immutable and mutable collection families by copying container contents into the requested family. The resulting container is independent; referenced element values retain their own semantics rather than being recursively frozen or copied.                                      |
-| D22 | Lift approved lossless scalar widening through immutable `List`/`Set`/`Map` element, key, or value types, converting contents as needed, for example `List<Int>` to `List<Float>`. Same-family mutable collection type arguments must match exactly. Combining family copies with widening follows D25; recursive immutable lifting follows D28.            |
+| D22 | Lift approved lossless scalar widening through immutable `List`/`Set`/`Map` element, key, or value types, converting contents as needed. Also allow implicit nominal Map-key subtype conversion by rebuilding the map and checking duplicate keys. Map keys remain invariant for subtyping under D30. Same-family mutable collection type arguments must match exactly; family copying and recursive immutable lifting follow D25/D28. |
 | D23 | A variadic parameter exposes a fresh immutable `List<T>` of its declared element type on each call, for example `vararg values: Int` yields `List<Int>`. Referenced elements retain their own semantics.                                                                                                                                                    |
 | D24 | Use the star prefix to spread `List<T>` or `MutableList<T>` elements into typed variadic arguments, for example `total(1, *numbers)`. Multiple groups and source-position expansion follow A07; other iterable families remain separate.                                                                                                                    |
 | D25 | A container-family copy may combine with approved scalar widening: `MutableList<Int>` to `List<Float>` and `List<Int>` to `MutableList<Float>` produce independent containers. Same-family `MutableList<Int>` to `MutableList<Float>` remains forbidden; implicit copy chains must not bypass that invariance.                                              |
@@ -433,7 +433,7 @@ constant-time implementation or a changed failure contract has not been selected
 | F31 | Allow at most one variadic parameter per function signature, always as the last parameter.                                                                                                                                                                                                                                                                                                      |
 | F32 | Retain variadic function-value types, such as `(vararg Int) -> Unit`, with zero-or-more individual or spread arguments. Other function-value call rules follow A05.                                                                                                                                                                                                                             |
 | F33 | Variadic parameters have no explicit default expressions; omission supplies an empty group under D23. Use an ordinary `List` parameter for a custom default.                                                                                                                                                                                                                                    |
-| F34 | When constructing an anonymous function with an expected return type of `Unit`, evaluate its final expression, discard any non-Unit result, and return `Unit`. Ordinary inferred functions retain their existing return rules. This selects contextual anonymous-function construction, not a conversion of existing function values.                                                           |
+| F34 | When constructing an anonymous function with an expected return type of `Unit`, evaluate and discard non-Unit values from both its final expression and value-bearing early return statements, then return `Unit`. An early return still exits that anonymous function. Ordinary named functions retain their existing return rules. This is contextual anonymous-function construction, not a conversion of existing function values. |
 | F35 | Take a named function reference with `::`, for example `val transform = ::double`. Its calling interface follows A05/F32.                                                                                                                                                                                                                                                                       |
 | F36 | Resolve an overloaded function reference using an expected function type from an annotation or parameter context. Select a unique compatible overload; unresolved or ambiguous references are compile errors.                                                                                                                                                                                   |
 | F37 | For function types with the same parameter count and variadic shape, allow safe variance through subtype relationships: broader parameter types and narrower return types may satisfy the expected type. For example, `(Int?) -> String` may satisfy `(Int) -> String?`. Numeric widening and container copying are separate conversions; T21's ordinary-to-suspend widening remains available. |
@@ -470,7 +470,7 @@ constant-time implementation or a changed failure contract has not been selected
 | T11 | Prose uses backslash escapes: `\${` produces literal `${`, `\@` makes a directive introducer literal, and `\\` produces one backslash. Other escape forms remain open.                                                                                                                                |
 | T12 | Quoted option labels support ${expression} interpolation under the same non-suspending, renderable-value rules as prose.                                                                                                                                                                              |
 | T13 | Conditional option headers may use if for visibility and enabledIf for selection availability, as in option "Open" if visible enabledIf allowed:. False if hides the option; false enabledIf displays it disabled. Conditions require booleans.                                                       |
-| T14 | Prepare each choice once, processing options in source order. Evaluate visibility first, then the enabled condition and label for visible options. Hidden options skip enabled-condition and label evaluation. Retain these results until selection.                                                  |
+| T14 | Prepare each choice once, processing options in source order. Filter a consumed once option before evaluating its visibility, enabling, or label expressions. For an unconsumed option, evaluate visibility first, then the enabled condition and label when visible. Hidden options skip enabled-condition and label evaluation. Retain these results until selection. |
 | T15 | The suspend modifier marks suspension-capable named functions, anonymous functions, and function types: suspend fun ask() -> Int:, suspend () -> Int, and a suspend-prefixed lambda.                                                                                                                  |
 | T16 | Call suspending functions with ordinary syntax, such as `val answer = ask()`, in a context permitted by T08. No `await` marker is required.                                                                                                                                                           |
 | T17 | A choice may contain an else: fallback for when no option is selectable. Without a fallback, provably empty choices are compile errors and dynamically empty choices are runtime errors.                                                                                                              |
@@ -488,7 +488,7 @@ constant-time implementation or a changed failure contract has not been selected
 
 | ID  | Current decision                                                                                                                                                                                                                                                            |
 |-----|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| M01 | Organize new source into scene files and library modules. A scene file has one executable story body plus declarations; library modules contain reusable declarations and non-suspending initialization.                                                                    |
+| M01 | Organize new source into scene files and library modules. A scene file has one executable story body plus declarations. Ordinary file/module-level val/var values require shared; library initialization happens through non-suspending shared initializers. Scene-body bindings retain their per-visit behavior under M06. |
 | M02 | Scene destinations are typed first-class references that can be stored, passed, and selected with checked input signatures. Ordinary strings are not scene destinations.                                                                                                    |
 | M03 | Scene entries may declare typed input parameters local to that visit. Scene entry and calls reuse the existing argument and default-argument rules.                                                                                                                         |
 | M04 | Support returning scene calls and one-way scene transfers. A call runs a fresh visit and returns control with Unit; a transfer replaces the current story position. Value-returning routines use suspend functions. Operation syntax and transfer unwinding follow M12-M13. |
@@ -514,6 +514,9 @@ calls, and default expressions, and reject dependency cycles conservatively. Thi
 as an implementation option.
 
 ## Combined illustrative sketches
+
+Variable-statement sketches belong inside a function or scene body unless they explicitly use shared storage. A
+standalone val/var sketch does not introduce an ordinary module-level initialization form.
 
 These examples use four spaces per level for readability. They are original design sketches, not compiled or verified
 conformance fixtures. Their layout does not select a default formatter indentation style.
@@ -756,6 +759,27 @@ scene crossroads():
 The visit returns before the transfer executes. The transfer replaces the crossroads visit while preserving any earlier
 scene caller. This sketch does not decide filesystem-to-module mapping or general modifier ordering.
 
+## Clarifications accepted 2026-11-04
+
+The user resolved six observable contracts after the original questionnaire. The existing 305 decision IDs are
+preserved. [Accepted clarification rules](accepted-clarifications.md) specify their scope and distinguishing examples.
+
+- E30 uses declared comparison views for composite exact equality. Retained construction identities still govern
+  runtime type tests and casts. This resolves the earlier covariant-view question, including empty containers.
+- T14 filters consumed once options before visibility, enabling, and label preparation; all three expressions are
+  skipped for a consumed option.
+- U29 reserves the generated data-member name copy and rejects field or method collisions. That collision policy had
+  previously been open.
+- D22 originally specified scalar lifting. Its Map-key rule now additionally permits nominal subtype conversion by
+  rebuilding the map and checking duplicates. D30's invariant key positions for subtyping remain unchanged.
+- F34 originally selected final-expression discard in a Unit context. Value-bearing early returns now also evaluate
+  and discard their values, then exit the anonymous function with Unit.
+- M01 requires shared for ordinary module-level values. Library initialization is through shared initializers; scene
+  visit-local bindings and declarations of external legacy storage keep their separate roles.
+
+These are accepted language rules. Their implementation and conformance evidence are tracked separately from this source
+record. Other unselected topics in the remaining-design-work section are unchanged.
+
 ## Revisions and corrections
 
 Use the current decisions above when older discussion differs.
@@ -774,7 +798,10 @@ Use the current decisions above when older discussion differs.
 
 ## Remaining design work and holes
 
-These are unresolved topics, not additional approved features. This section is the canonical open-issue list.
+This section preserves the dated drafting inventory and later resolutions. The [specification resolution
+index](specification-contracts.md) identifies current contracts and genuinely outstanding work. Historical uses of
+"open" below and in unchanged decision rows do not reopen a topic resolved by a subsequent clarification or contract.
+The inventory does not add approved features.
 
 ### Completed steering checkpoint
 
@@ -786,7 +813,28 @@ The questionnaire is complete. The items below are specification and feasibility
 feature questions. Accepted features remain in the language direction; precise implementation phasing has not been fixed
 beyond the explicit first-milestone requirements.
 
-### Specification and engineering work
+### Drafting resolutions after the completed questionnaire
+
+The [text and comparison contract](text-semantics.md) completes triple-string dedent, source newline handling,
+primitive/explicit rendering, numeric/scalar conversion APIs, and repeated ordinary comparisons. These drafting
+resolutions follow the accepted direction; no additional feature-selection round or new decision IDs are introduced. The
+dated open-topic inventory below remains as design history. Its text details are superseded where that contract supplies
+an explicit resolution; external-host admission and full resource acceptance remain open.
+
+The [collection operation contract](collection-operations.md) completes D15/D20's Entry and method details, E10/E11's
+dynamic bounds-check timing, and U29's receiver/argument/omitted-field timing. These are drafting resolutions under the
+accepted direction; the corresponding older open-topic notes remain historical inventory.
+
+On 2026-11-05 the user permitted constant-time progression calculation with identical results and failures. The [pinned
+progression contract](progression-membership.md) records that clarification, the immutable Kotlin reference, checked
+receiver-view dispatch, exact exhaustion/failure, and terminal iteration. This supersedes only the earlier
+unselected-algorithm note; the historical discussion remains intact. Integer query checking follows the selected element
+type, while other numeric comparisons retain their rules.
+
+### Historical specification and engineering inventory
+
+The following inventory predates the focused completion contracts linked above and below. Read it as the original
+work list, with current status supplied by the [resolution index](specification-contracts.md).
 
 The details below can be resolved during drafting and feasibility review. They are not a pending questionnaire. Escalate
 a detail to steering only when it exposes a material conflict, requires a scope change, or changes an observable
@@ -808,8 +856,10 @@ contract that cannot be reconciled with the accepted direction.
   behavior require review; `0..<count` must account for `count == 0` under R04.
 - **Types and equality:** Formal constraint, inference, projection, and variance rules; universal-type and subtype/join
   interactions; Elvis result typing; complete equality operand eligibility; and non-returning-path proof. Generic-alias
-  grammar and visibility, receiver/member lookup, private-constructor details, copy evaluation timing and method-name
-  collisions, and exhaustive guarded-pattern analysis remain open. Define cycle-safe comparison for ordered and
+  grammar and visibility, receiver/member lookup, private-constructor details, copy evaluation timing, other
+  member-lookup interactions,
+  and exhaustive guarded-pattern analysis remain open. The generated name copy is reserved under U29. Define cycle-safe
+  comparison for ordered and
   unordered structures, including recursive capability eligibility. Key eligibility must prove stable equality despite
   mutable fields or referenced values; hashing must agree with equality, including across approved widening. General
   inheritance and recursive nested payload patterns have not been selected.
@@ -819,18 +869,19 @@ contract that cannot be reconciled with the accepted direction.
 - **Scope and functions:** Symbol namespaces, module/import resolution, placement, alias conflicts and qualified access;
   label collisions and visibility; loop-bound evaluation timing and interaction with suspension. Recursion limits,
   failure behavior, and the Unit value's spelling remain open. Complete overload/reference resolution and function
-  compatibility, Unit-context interactions with early returns/overloads/branch typing, and variadic edge cases need
+  compatibility, Unit-context interactions with overloads and branch typing, and variadic edge cases need
   specification. Definite assignment and narrowing must account for forward/indirect calls, recursion, escaping
   captures, and captured delayed `val` initialization without expanding lexical name visibility.
 - **Narrative:** Complete directive surface and lexing of embedded functions/continuations, mixed whitespace and
   remaining literal escapes, explicit line breaks, residual indentation, and paragraph boundaries across directives and
-  nested prose. Once-option stable identity, modifier combinations, and history-filter timing relative to effectful
-  visibility tests remain open.
+  nested prose. Once-option stable identity and remaining modifier combinations need specification. Consumed history is
+  filtered
+  before effectful preparation under T14.
 - **Scenes and initialization:** Complete manifest schema, scene-name conflicts, scene-reference compatibility, and
   input binding modifiers. Evaluate targets/inputs/defaults consistently with visit replacement and frame abandonment.
   M15 now requires dependencies to finish before an initializer starts, with conservative discovery and cycle rejection.
-  Shared-storage placement inside bodies, library-level ordinary bindings, initialization proof, re-exports, and
-  declaration-modifier combinations still need specification.
+  Shared-storage placement inside bodies, initialization proof, re-exports, and declaration-modifier combinations
+  still need specification. Module-level values require shared under M01.
 - **Suspension and persistence:** Exact effect/flow analysis, continuation/capture representation, input-checkpoint
   detection, full-state serialization, stable identities, build matching, and target-runtime support. Cross-update saves
   are outside the initial contract. The contracts have not been verified through ChoiceScript lowering.
@@ -848,9 +899,72 @@ A whole-design review is required before treating this record as a finalized lan
 
 [s1]: https://github.com/dfabulich/choicescript/blob/60a6c3ee7393c9ee7e42650b8e1642ae38e3cb6a/web/scene.js#L4995-L5028
 [s2]: https://github.com/dfabulich/choicescript/blob/60a6c3ee7393c9ee7e42650b8e1642ae38e3cb6a/web/scene.js#L4173-L4251
-[s3]: https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/src/kotlin/ranges/Progressions.kt
-[s4]: https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/common/src/generated/_Collections.kt
+[s3]: https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/src/kotlin/ranges/Progressions.kt [s4]:
+https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/common/src/generated/_Collections.kt
 
-[ext1]: https://github.com/betaflight/blackbox-log-viewer/pull/749
-[ext2]: https://ptolemy.berkeley.edu/projects/embedded/mescal/forum/7/coreconnect_bfl.pdf?download=1
-[ext3]: https://raw.githubusercontent.com/github-linguist/linguist/main/lib/linguist/languages.yml
+[ext1]: https://github.com/betaflight/blackbox-log-viewer/pull/749 [ext2]:
+https://ptolemy.berkeley.edu/projects/embedded/mescal/forum/7/coreconnect_bfl.pdf?download=1 [ext3]:
+https://raw.githubusercontent.com/github-linguist/linguist/main/lib/linguist/languages.yml
+
+## Equality and fallback completion — 2026-11-05
+
+The [equality and nullable-result contract](equality-and-nullability.md) specifies compatible ordinary operands,
+structural data/sum/container comparison, and lazy fallback result typing using the accepted joins and conversions.
+Explicit expected results may request approved conversions; inference does not invent Any or container-family copies.
+Earlier open-detail notes are retained as design history. Exact comparison retains the approved declared-view rule.
+
+## Module-interface completion — 2026-11-05
+
+[Modules, aliases, and shared storage](modules-and-names.md) specifies explicit imports/exports, transparent alias
+interfaces, enum shorthand, declaration modifiers, and per-visit versus shared storage. At that checkpoint,
+cross-namespace alias/value reuse and nested shared placement awaited steering. The subsequent user clarifications
+below resolve both topics; earlier tested restrictions do not override those selections.
+
+## Projection completion — 2026-11-05
+
+The [projection-view contract](projection-semantics.md) specifies upper reads and lower field/method inputs from G07.
+Safe nullable writes, empty covariant values, broad callbacks, and bottom method arguments preserve hidden identities;
+unsafe concrete guesses remain errors. Earlier general open-detail notes remain as design history.
+
+
+## Separate namespaces and unique exports, 2026-11-05
+
+The user selected separate type/value namespaces: a type alias and an ordinary value may share a visible name.
+Same-namespace no-shadowing remains in force. A module must use distinct exported names for distinct entities;
+co-exporting an alias and a value under one name is a compile error.
+
+## Nested shared storage, 2026-11-05
+
+The user selected nested shared declarations with lexical visibility and initialization before the first scene.
+Initializers cannot use enclosing parameters, ordinary locals, or function type parameters. Receivers and class type
+parameters are equally unavailable because initialization precedes any instance/call. The [storage
+contract](modules-and-names.md#shared-state-and-visits) defines source-site cells, lexical aliases, ordering, and
+restored state. This supersedes M14's pending placement note without removing its decision history.
+
+
+## Prose specification completion, 2026-11-05
+
+The current-profile [prose contract](prose-semantics.md) completes paragraph/whitespace and embedded-suite details
+without changing historical decision rows. Directive suites retain lexical prose mode, including callable and
+value-producing blocks; interpolation fragments use ordinary code. Prose-body callables own their output context. The
+ordinary \n escape supplies a within-paragraph line break, and \\n remains literal backslash-plus-n.
+
+## Retained generic arguments clarification (2026-11-05)
+
+The user selected retaining argument-inferred Int for covariant Box<out T> when box(4) is used with expected Box<Any>.
+Expose the broader view by covariance; the retained runtime type remains Box<Int>, so its type test is true. Expected
+types still supply missing arguments and constrain invariant or conversion-requiring cases. The [function
+contract](function-contracts.md#argument-inference-and-expected-result-views) specifies the combined rule. This direct
+clarification resolves the previously recorded distinguishing prototype without changing the historical decision rows.
+
+
+## Copied legacy graphs and resident-memory accounting, 2026-11-05
+
+The user selected copying the reachable graph for composite typed legacy transfers, preserving aliases and cycles
+within each transfer. Native changes affect Bifoil only through explicitly returned or assigned values. The [legacy
+value-graph contract](legacy-value-graphs.md) records these obligations; the implementation gate remains separate.
+
+The user selected aggregate resident process memory for the compiler/helper budget: below 250,000,000 bytes including
+native allocations, stacks, and mapped libraries, excluding unmapped OS filesystem caches. Kernel peak accounting and
+a conservative continuous limit are required. The [compiler resource contract](compiler-resource-contract.md) records
+the quantity, process scope, and reference/enforcement boundaries. Historical decision rows remain unchanged.

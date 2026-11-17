@@ -1,0 +1,14 @@
+export enum Mood:
+    case Happy
+    case Sad
+export data class Pair:
+    val first: String
+    private val second: Int
+export data class Node:
+    val number: Int
+    var next: Node? = null
+export fun make() -> Node:
+    val node = Node(3)
+    node.next = node
+    return node
+export fun identity(value: Int) -> Int = value

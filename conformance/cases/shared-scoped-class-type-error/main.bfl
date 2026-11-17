@@ -1,0 +1,6 @@
+data class Holder<T>:
+    val input: T
+    fun bad():
+        shared val stored: List<T> = []
+scene start():
+    Unit

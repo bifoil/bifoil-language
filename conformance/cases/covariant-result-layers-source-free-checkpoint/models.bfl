@@ -1,0 +1,18 @@
+export data class Box<out T>:
+    val value: T
+export data class Cell<T>:
+    var value: T
+export data class Pair<out T, out U>:
+    val first: T
+    val second: U?
+export data class Factory<T>:
+    val owner: T
+    fun <U> make(value: U) = Box(value)
+export typealias Boxed<T> = Box<T>
+export fun <T> box(value: T) = Box(value)
+export fun <T> optional(value: T) -> Box<T>? = Box(value)
+export fun <T> many(value: T) -> List<T> = [value]
+export fun <T> supplier(value: T) -> () -> T = () => value
+export fun <T, U> pair(value: T) -> Pair<T, U> = Pair(value, null)
+export fun <T: Float> bounded(value: T) = Box(value)
+export fun <T> cell(value: T) = Cell(value)

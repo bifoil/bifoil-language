@@ -1,0 +1,19 @@
+shared var calls: Int = 0
+export fun bump() -> Int:
+    calls += 1
+    return calls
+export fun count() -> Int = calls
+export fun render(flag: Boolean) -> String:
+    return "${if flag:
+        val prefix = "${when 2:
+            case 2:
+                "yes"
+            else:
+                "other"
+        }"
+        prefix + ((value: Int) =>:
+            value + 1
+        )(2)
+    else:
+        "none"
+    }"

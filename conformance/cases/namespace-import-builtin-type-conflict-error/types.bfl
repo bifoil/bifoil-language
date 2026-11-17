@@ -1,0 +1,1 @@
+export typealias Word = String

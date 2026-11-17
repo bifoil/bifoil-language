@@ -1,0 +1,4 @@
+import helpers.Flag
+scene start():
+    val Flag = "value"
+    val result = Flag.Happy

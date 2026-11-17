@@ -1,0 +1,4 @@
+fun invalid():
+    shared var value: Int = 1
+scene start():
+    Unit

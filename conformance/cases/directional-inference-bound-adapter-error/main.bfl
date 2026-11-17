@@ -1,0 +1,5 @@
+fun <T: Float> combine(first: (T) -> Int, second: (T) -> Int, value: T) -> T = value
+fun narrow(value: Int) -> Int = value
+fun broad(value: Int?) -> Int = value ?: 0
+scene start():
+    val result: Float = combine(::narrow, ::broad, 1)

@@ -52,11 +52,19 @@ by the runtime.
 assertions or explicit remaining gaps. [Current implementation status](implementation-status.md) retains broader
 unfinished language and acceptance work.
 
-## Unselected profile details
+## Profile details at the audit-repair checkpoint
 
-The repairs do not select nominal Map-key copy broadening (LIA-C01), exact equality across differing covariant views
+The repairs themselves did not select nominal Map-key copy broadening (LIA-C01), exact equality across differing
+covariant views
 (LIA-D01), the complete resource measurement/reference protocol (LIA-D02), once-history evaluation timing (LIA-D03),
 embedded function/continuation modes (LIA-D04), or the large-progression reference/cost refinement (LIA-D06). The v3
 gate
 addresses the concrete old-producer issue in LIA-D05; wider producer compatibility remains a versioned profile concern.
-Composite legacy bridge ownership also remains undecided. These choices are separate from the reproduced defects.
+Composite legacy bridge ownership also remained undecided. These choices were separate from the reproduced defects.
+The [current resolution index](specification-contracts.md) links subsequent user clarifications and focused contracts:
+Map-key reconstruction, comparison views, once filtering, prose modes, and progression behavior are now resolved.
+Composite legacy ownership and complete resource acceptance retain their separate open gates.
+
+The ordered-check producer revision above remains repair history. Current independently compiled modules require
+format v6, including the later progression-view and retained-argument inference requirements; see the
+[current compatibility contract](compatibility-contract.md).

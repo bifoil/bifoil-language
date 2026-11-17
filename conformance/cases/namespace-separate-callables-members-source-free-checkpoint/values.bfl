@@ -1,0 +1,7 @@
+export fun produce() -> String = "kept"
+export data class Record:
+    val Label: String
+    fun report() -> String:
+        typealias Label = Int
+        val code: Label = 3
+        return Label + code

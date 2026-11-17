@@ -1,0 +1,13 @@
+import helpers.Loop
+import helpers.Ring
+import helpers.read
+scene start():
+    val value: Ring<Nothing> = Loop<Nothing>(4)
+    val hidden: Loop<*> = value
+    val keys = {value}
+    val mapping = {value: "kept"}
+    choice:
+        option "Recursive bounds":
+            Unit
+    prose:
+        ${read(value)}|${hidden.index}|${hidden is Loop<Nothing>}|${value in keys}|${mapping[value]!!}

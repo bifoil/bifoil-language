@@ -1,0 +1,4 @@
+fun named() -> Unit:
+    return 3
+scene start():
+    named()

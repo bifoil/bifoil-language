@@ -1,0 +1,12 @@
+import helpers.combine
+import helpers.narrow
+import helpers.broad
+import helpers.intNarrow
+import helpers.intBroad
+import helpers.observed
+scene start():
+    val widened = combine(::narrow, ::broad, 1)
+    val recorded = observed
+    val completed: Float = combine(::intNarrow, ::intBroad, 2)
+    prose:
+        ${widened}|${widened is Float}|${recorded}|${completed}|${observed}

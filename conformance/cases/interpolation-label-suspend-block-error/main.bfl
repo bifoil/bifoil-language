@@ -1,0 +1,10 @@
+suspend fun ask() -> String = "Wait"
+scene start():
+    choice:
+        option "${when true:
+            case true:
+                ask()
+            else:
+                "Other"
+        }":
+            Unit

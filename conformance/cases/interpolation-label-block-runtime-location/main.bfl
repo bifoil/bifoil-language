@@ -1,0 +1,9 @@
+fun zero() -> Int = 0
+scene start():
+    choice:
+        option "${if true:
+            10 / zero()
+        else:
+            1
+        }":
+            Unit

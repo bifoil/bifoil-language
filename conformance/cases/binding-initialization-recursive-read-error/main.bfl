@@ -1,0 +1,13 @@
+fun invalid() -> Int:
+    val seed: Int
+    fun even(count: Int) -> Int:
+        if count == 0:
+            return seed
+        return odd(count - 1)
+    fun odd(count: Int) -> Int:
+        if count == 0:
+            return seed + 1
+        return even(count - 1)
+    return even(4)
+scene start():
+    Unit

@@ -1,0 +1,4 @@
+scene start():
+    prose:
+        @ignored@ if true:
+            Bad

@@ -1,0 +1,4 @@
+data class Record:
+    val copy: Int
+scene start():
+    Unit

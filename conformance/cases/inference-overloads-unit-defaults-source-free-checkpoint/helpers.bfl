@@ -1,0 +1,14 @@
+export typealias Action = (Int) -> Unit
+export shared var trace = ""
+export fun mark(label: String) -> Int:
+    trace += label
+    return 7
+export fun defaults(first: Int = mark("D"), second: Int = mark("E")) = first + second
+export fun action() -> Action = (number: Int) =>:
+    trace += "U"
+    return number * 2
+export fun <T: Equatable> pick(value: T) = "generic"
+export fun pick(value: Float) = "float"
+export fun fit(value: Int) = "plain"
+export fun fit(value: Int, other: Int = 0) = "default"
+export fun fit(value: Int, vararg more: Int) = "variadic"

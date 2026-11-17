@@ -1,0 +1,200 @@
+[
+  {
+    "id": "shared-scoped-startup-source-free-checkpoint",
+    "directory": "cases/shared-scoped-startup-source-free-checkpoint",
+    "decisions": [
+      "M14",
+      "M15",
+      "M16",
+      "T24"
+    ],
+    "precompile": [
+      "counters"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Keep cells"
+      ],
+      [
+        "After restoration"
+      ]
+    ],
+    "output": [
+      "CU|2|3|1|2",
+      "CU|4|3",
+      "5"
+    ]
+  },
+  {
+    "id": "shared-scoped-capture-source-free-checkpoint",
+    "directory": "cases/shared-scoped-capture-source-free-checkpoint",
+    "decisions": [
+      "M14",
+      "M15",
+      "T24",
+      "F20",
+      "F21"
+    ],
+    "precompile": [
+      "cells"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Shared closures"
+      ]
+    ],
+    "output": [
+      "1|2|5",
+      "3|4"
+    ]
+  },
+  {
+    "id": "shared-scoped-sibling-loop-checkpoint",
+    "directory": "cases/shared-scoped-sibling-loop-checkpoint",
+    "decisions": [
+      "M14",
+      "M15",
+      "B01",
+      "B10",
+      "T24"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Loop cells"
+      ]
+    ],
+    "output": [
+      "10",
+      "14"
+    ]
+  },
+  {
+    "id": "shared-scoped-parameter-error",
+    "directory": "cases/shared-scoped-parameter-error",
+    "decisions": [
+      "M14",
+      "M15",
+      "M16"
+    ],
+    "compile_error": "cannot use enclosing local"
+  },
+  {
+    "id": "shared-scoped-local-error",
+    "directory": "cases/shared-scoped-local-error",
+    "decisions": [
+      "M14",
+      "M15",
+      "M16"
+    ],
+    "compile_error": "cannot use enclosing local"
+  },
+  {
+    "id": "shared-scoped-local-function-error",
+    "directory": "cases/shared-scoped-local-function-error",
+    "decisions": [
+      "M14",
+      "M15",
+      "M16"
+    ],
+    "compile_error": "cannot use enclosing local"
+  },
+  {
+    "id": "shared-scoped-generic-type-error",
+    "directory": "cases/shared-scoped-generic-type-error",
+    "decisions": [
+      "M14",
+      "M15",
+      "M16"
+    ],
+    "compile_error": "cannot use enclosing type parameters"
+  },
+  {
+    "id": "shared-scoped-class-type-error",
+    "directory": "cases/shared-scoped-class-type-error",
+    "decisions": [
+      "M14",
+      "M15",
+      "M16"
+    ],
+    "compile_error": "cannot use enclosing type parameters"
+  },
+  {
+    "id": "shared-scoped-receiver-error",
+    "directory": "cases/shared-scoped-receiver-error",
+    "decisions": [
+      "M14",
+      "M15",
+      "M16"
+    ],
+    "compile_error": "cannot use enclosing local"
+  },
+  {
+    "id": "shared-scoped-scope-error",
+    "directory": "cases/shared-scoped-scope-error",
+    "decisions": [
+      "M14",
+      "M15",
+      "M16"
+    ],
+    "compile_error": "unknown name 'stored'"
+  },
+  {
+    "id": "shared-scoped-cycle-error",
+    "directory": "cases/shared-scoped-cycle-error",
+    "decisions": [
+      "M14",
+      "M15",
+      "M16"
+    ],
+    "compile_error": "cycle"
+  },
+  {
+    "id": "shared-scoped-val-write-error",
+    "directory": "cases/shared-scoped-val-write-error",
+    "decisions": [
+      "M14",
+      "M15",
+      "M16"
+    ],
+    "compile_error": "val"
+  },
+  {
+    "id": "shared-scoped-suspend-error",
+    "directory": "cases/shared-scoped-suspend-error",
+    "decisions": [
+      "M14",
+      "M15",
+      "M16"
+    ],
+    "compile_error": "suspend"
+  },
+  {
+    "id": "shared-scoped-initializer-shadow-error",
+    "directory": "cases/shared-scoped-initializer-shadow-error",
+    "decisions": [
+      "M14",
+      "B05"
+    ],
+    "compile_error": "shadowing"
+  },
+  {
+    "id": "shared-scoped-when-shadow-error",
+    "directory": "cases/shared-scoped-when-shadow-error",
+    "decisions": [
+      "M14",
+      "B05",
+      "E24"
+    ],
+    "compile_error": "shadowing or duplicate declaration 'input'"
+  }
+]

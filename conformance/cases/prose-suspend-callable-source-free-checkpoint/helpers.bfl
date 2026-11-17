@@ -1,0 +1,10 @@
+export fun factory() -> suspend () -> Int:
+    prose:
+        @suspend fun ask() -> Int:
+            Before.
+            @choice:
+                @option "Continue":
+                    Selected.
+            After.
+            @return 9
+        @return ::ask

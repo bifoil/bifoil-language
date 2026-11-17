@@ -1,0 +1,8 @@
+export shared var trace: String = ""
+export fun left() -> String:
+    trace += "L"
+    return "v"
+export fun right() -> Int:
+    trace += "R"
+    return 3
+export fun joined() -> String = left() + right()

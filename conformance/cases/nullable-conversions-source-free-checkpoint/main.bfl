@@ -1,0 +1,38 @@
+import helpers.number
+import helpers.text
+import helpers.mutableList
+import helpers.immutableList
+import helpers.mutableSet
+import helpers.immutableSet
+import helpers.mutableMap
+import helpers.immutableMap
+import helpers.nested
+scene start():
+    val absentNumber = number(null)
+    val presentNumber = number(7)
+    val absentText = text(null)
+    val presentText = text('😀')
+    val absentList = mutableList(null)
+    val absentSet = immutableSet(null)
+    val absentMap = mutableMap(null)
+    val sourceList: MutableList<Int?> = [1, null]
+    val copiedList = immutableList(sourceList)
+    sourceList[0] = 9
+    val editableList = mutableList(copiedList)
+    editableList!![0] = 8.0
+    val sourceSet: MutableSet<Char?> = {'a', null}
+    val copiedSet = immutableSet(sourceSet)
+    sourceSet.add('b')
+    val editableSet = mutableSet(copiedSet)
+    editableSet!!.add("c")
+    val sourceMap: MutableMap<Char?, Int?> = {'a': 3, null: null}
+    val copiedMap = immutableMap(sourceMap)
+    sourceMap['a'] = 9
+    val editableMap = mutableMap(copiedMap)
+    editableMap!!["a"] = 8.0
+    val nestedCopy = nested([[1, null], null])
+    choice:
+        option "Resume conversions":
+            Unit
+    prose:
+        ${absentNumber == null}|${presentNumber is Float}|${absentText == null}|${presentText!!}|${absentList == null}|${absentSet == null}|${absentMap == null}|${copiedList!![0]!!}|${editableList!![0]!!}|${sourceList[0]!!}|${copiedList!![1] == null}|${copiedSet!!.size}|${editableSet!!.size}|${sourceSet.size}|${null in copiedSet!!}|${copiedMap!!["a"]!!}|${editableMap!!["a"]!!}|${sourceMap['a']!!}|${null in copiedMap!!}|${nestedCopy!![0]!![0]!!}|${nestedCopy!![1] == null}

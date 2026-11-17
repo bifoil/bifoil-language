@@ -1,0 +1,8 @@
+suspend fun ask() -> Int = 3
+scene start():
+    prose:
+        ${if true:
+            ask()
+        else:
+            0
+        }

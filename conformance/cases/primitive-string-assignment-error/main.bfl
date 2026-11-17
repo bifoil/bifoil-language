@@ -1,0 +1,2 @@
+scene start():
+    val text: String = 3

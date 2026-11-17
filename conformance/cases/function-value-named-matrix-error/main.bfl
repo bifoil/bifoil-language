@@ -1,0 +1,4 @@
+import helpers.scalar
+scene start():
+    val callback: (Int) -> String = ::scalar
+    callback(value = 3)

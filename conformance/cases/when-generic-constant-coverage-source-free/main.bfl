@@ -1,0 +1,6 @@
+import helpers.Result
+import helpers.render
+scene start():
+    val missing: Result<String> = Result.Missing
+    prose:
+        ${render(missing)}|${render(Result.Good("kept"))}|${render(null)}

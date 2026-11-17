@@ -1,0 +1,14 @@
+export fun numeric(value: Int?, fallback: Float) = value ?: fallback
+export fun textual(value: Char?, fallback: String) = value ?: fallback
+export fun immutable(value: List<Int>?, fallback: List<Float>) = value ?: fallback
+export fun <T> generic(value: T?, fallback: T) -> T = value ?: fallback
+export suspend fun inspect() -> String:
+    val absent: Int? = null
+    val maybe: Boolean? = false
+    val number = numeric(3, 4.0)
+    val text = textual('😀', "missing")
+    val values = immutable([1], [2.0])
+    choice:
+        option "Joined values":
+            Unit
+    return "${number is Float}|${number}|${numeric(null, 4.0)}|${text is String}|${text}|${values is List<Float>}|${values[0]}|${generic<Int>(null, 8)}|${absent ?: 2 ?: 3}|${maybe ?: true}"

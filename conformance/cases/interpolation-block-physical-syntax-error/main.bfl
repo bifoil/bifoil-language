@@ -1,0 +1,8 @@
+scene start():
+    prose:
+        ${if true:
+            val return = 2
+            7
+        else:
+            0
+        }

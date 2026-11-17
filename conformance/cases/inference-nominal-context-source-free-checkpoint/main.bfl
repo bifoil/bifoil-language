@@ -1,0 +1,25 @@
+import models.Box
+import models.Boxed
+import models.Cell
+import models.Outcome
+import models.box
+import models.cell
+import models.outcome
+scene start():
+    val widened: Boxed<Float> = box(3)
+    val viewed: Box<Any> = box(4)
+    val invariant: Cell<Any> = cell(5)
+    val result: Outcome<Float> = outcome(6)
+    val wideErased: Any = widened
+    val viewErased: Any = viewed
+    val cellErased: Any = invariant
+    choice:
+        option "Reified inference":
+            Unit
+    val payload = when result:
+        case is Outcome.Value<Float>(number):
+            number
+        else:
+            0.0
+    prose:
+        ${wideErased is Box<Float>}|${viewErased is Box<Int>}|${cellErased is Cell<Int>}|${invariant.value is Int}|${payload === 6.0}

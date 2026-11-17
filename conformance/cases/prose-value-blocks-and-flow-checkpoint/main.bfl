@@ -1,0 +1,24 @@
+scene start():
+    prose:
+        @val score: Int = if true:
+            Selected
+            @3
+        @else:
+            @4
+        value ${score}.
+
+        Alpha
+        beta.\nGamma.
+        @for number in 1..2:
+            ${number}
+
+        ${if score == 3:
+            "Code fragment."
+        else:
+            "Wrong."
+        }
+    choice:
+        option "Preserve flow":
+            Unit
+    prose:
+        Literal \\n remains.

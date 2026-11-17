@@ -1,0 +1,8 @@
+import gallery.show as revisit
+import colors.count as total
+import api.measured
+scene start():
+    visit revisit()
+    visit revisit()
+    prose:
+        ${total}|${measured()}

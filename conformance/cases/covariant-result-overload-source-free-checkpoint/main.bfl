@@ -1,0 +1,13 @@
+import helpers.Box
+import helpers.argument
+import helpers.count
+import helpers.choose
+scene start():
+    val selected: Box<Any> = choose(argument())
+    val tied: Box<Any> = choose(2.5)
+    val erased: Any = selected
+    choice:
+        option "Selected once":
+            Unit
+    prose:
+        ${erased is Box<Int>}|${selected.value as Int}|${(tied.value as Float) === 11.5}|${count()}

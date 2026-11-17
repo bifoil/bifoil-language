@@ -1,0 +1,11 @@
+import helpers.Bounded
+import helpers.first
+scene start():
+    val original = Bounded<String, String>("Ada")
+    val hidden: Bounded<*, *> = original
+    val keys: Set<Bounded<*, *>> = {hidden}
+    choice:
+        option "Bounds":
+            Unit
+    prose:
+        ${first(hidden)}|${hidden.value.length}|${hidden in keys}|${hidden is Bounded<String, String>}

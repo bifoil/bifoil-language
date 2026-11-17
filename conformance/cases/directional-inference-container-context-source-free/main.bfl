@@ -1,0 +1,10 @@
+import helpers.replace
+import helpers.first
+scene start():
+    val original = [3, 4]
+    val copied = replace(original, 9)
+    val mutableValues = mutable [4]
+    val previous = replace(mutableValues, 9)
+    val constructed = first([5, 6])
+    prose:
+        ${copied}|${original[0]}|${previous}|${mutableValues[0]}|${constructed}

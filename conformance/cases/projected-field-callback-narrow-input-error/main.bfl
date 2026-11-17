@@ -1,0 +1,7 @@
+data class Box<T>:
+    var callback: (T) -> String
+fun bad(box: Box<*>):
+    box.callback = (item: String) => item
+
+scene start():
+    Unit

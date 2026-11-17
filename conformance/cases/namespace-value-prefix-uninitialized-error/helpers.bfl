@@ -1,0 +1,6 @@
+export enum Mood:
+    Happy
+    Quiet
+export typealias Flag = Mood
+export data class Holder:
+    val Happy: Any

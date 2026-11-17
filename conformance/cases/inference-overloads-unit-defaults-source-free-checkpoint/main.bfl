@@ -1,0 +1,16 @@
+import helpers.trace
+import helpers.mark
+import helpers.defaults
+import helpers.action
+import helpers.pick
+import helpers.fit
+scene start():
+    val callback = action()
+    val first = defaults(second = mark("B"))
+    choice:
+        option "Calls ${trace}":
+            Unit
+    callback(2)
+    val second = defaults(first = mark("A"))
+    prose:
+        ${first}|${second}|${trace}|${pick(3)}|${pick(3.0)}|${fit(1)}|${fit(1, 2)}|${fit(1, 2, 3)}

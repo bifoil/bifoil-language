@@ -1,0 +1,24 @@
+import helpers.render
+import helpers.bump
+import helpers.count
+scene start():
+    val rendered = render(true)
+    val callback = "${((value: Int) =>:
+        value * 2
+    )(3)}"
+    prose:
+        start ${if true:
+            bump()
+        else:
+            0
+        } end.
+    choice:
+        option "${when bump():
+            case 2:
+                "Accept"
+            else:
+                "Reject"
+        }":
+            Unit
+    prose:
+        ${render(false)}|${count()}|${rendered}|${callback}

@@ -1,0 +1,19 @@
+import helpers.Source
+import helpers.apply
+import helpers.broad
+import helpers.trace
+scene start():
+    var source = Source(10)
+    fun receiver() -> Source:
+        trace += "C"
+        return source
+    suspend fun advance() -> Int:
+        trace += "W"
+        choice:
+            option "Argument ready":
+                source = Source(99)
+                trace += "R"
+        return 1
+    val result = apply(receiver()::narrow, ::broad, advance())
+    prose:
+        ${result}|${source.base}|${trace}

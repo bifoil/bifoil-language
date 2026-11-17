@@ -1,0 +1,9 @@
+export fun number(value: Int?) -> Float? = value
+export fun text(value: Char?) -> String? = value
+export fun mutableList(values: List<Float?>?) -> MutableList<Float?>? = values
+export fun immutableList(values: MutableList<Int?>?) -> List<Float?>? = values
+export fun mutableSet(values: Set<String?>?) -> MutableSet<String?>? = values
+export fun immutableSet(values: MutableSet<Char?>?) -> Set<String?>? = values
+export fun mutableMap(values: Map<String?, Float?>?) -> MutableMap<String?, Float?>? = values
+export fun immutableMap(values: MutableMap<Char?, Int?>?) -> Map<String?, Float?>? = values
+export fun nested(values: List<List<Int?>?>?) -> List<List<Float?>?>? = values

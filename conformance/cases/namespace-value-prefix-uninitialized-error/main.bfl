@@ -1,0 +1,5 @@
+import helpers.Flag
+import helpers.Holder
+scene start():
+    val Flag: Holder
+    val after = Flag.Happy

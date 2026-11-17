@@ -1,0 +1,72 @@
+import helpers.Key
+import helpers.Node
+import helpers.Graph
+import helpers.ring
+import helpers.order
+import helpers.coherent
+scene start():
+    val payload = mutable [7]
+    val root = ring(10, payload)
+    val alias = root
+    val equivalent = ring(10, mutable [7])
+    val equalBefore = root == equivalent
+    val exactBefore = root === equivalent
+    val copied = root.copy()
+    val key = Key<List<Int>>([1, 2])
+    val blank = Key<String>("empty")
+    val source: MutableMap<Key<*>, Node<Int>?> = {key: root, blank: null}
+    source[key] = root
+    val snapshot: Map<Key<*>, Node<Int>?> = source
+    val graph: Graph<Int> = [snapshot]
+    val reverse: Map<Key<*>, Node<Int>?> = {blank: null, Key<List<Int>>([1, 2]): equivalent}
+    val mapsBefore = snapshot == reverse
+    val exactMapsBefore = snapshot === reverse
+    val keys: Set<Key<*>> = {key, Key<List<Int>>([1, 2]), Key<List<Int>>([2, 1])}
+    val opaque: Any = key
+    val original: Set<Int> = {1, 2}
+    val widened: Set<Float> = original
+    val expected: Set<Float> = {1, 1.0, 2}
+    val mutableNumeric: MutableSet<Float> = original
+    val detached: Set<Float> = mutableNumeric
+    mutableNumeric.add(3.0)
+    val originalNested: List<List<Int>> = [[1, 2], [3]]
+    val optional: List<List<Int>>? = originalNested
+    val adopted: MutableList<List<Float>>? = optional
+    val nestedExpected: List<List<Float>> = [[1.0, 2.0], [3.0]]
+    val nestedOpaque: Any = adopted!!
+    val orderBefore = order(snapshot)
+    choice:
+        option "Mutate graph":
+            Unit
+    alias.stamp += 1
+    copied.stamp += 3
+    payload.add(9)
+    adopted!!.add([4.0])
+    source.remove(key)
+    source[key] = root
+    choice:
+        option "Inspect ${graph[0][key]!!.stamp}|${order(source)}":
+            Unit
+    val summary = "${equalBefore}|${exactBefore}|${mapsBefore}|${exactMapsBefore}|${root == equivalent}|${root === equivalent}"
+    val state = "${root.stamp}|${copied.stamp}|${copied.next!!.next!!.stamp}|${copied.payload.size}|${graph[0][key]!!.payload.size}"
+    val collection = "${keys.size}|${key in keys}|${blank in snapshot}|${snapshot[blank] == null}|${Key<String>("absent") in snapshot}"
+    val identity = "${opaque is Key<List<Int>>}|${opaque is Key<List<Float>>}|${widened is Set<Float>}|${original === widened}"
+    prose:
+        equality: ${summary}
+    prose:
+        aliases: ${state}
+    prose:
+        keys: ${collection}
+    prose:
+        identity: ${identity}
+    prose:
+        numeric: ${widened == expected}|${widened === expected}|${detached == expected}|${mutableNumeric.size}|${detached.size}|${original.size}
+    prose:
+        nested: ${adopted!!.size}|${originalNested.size}|${adopted!![0] === nestedExpected[0]}|${nestedOpaque is MutableList<List<Float>>}
+    prose:
+        order: ${orderBefore}|${order(source)}
+    val keysAgree = coherent<Key<*>>(Key<Int>(1), Key<Float>(1.0))
+    val listsAgree = coherent<Key<*>>(Key<List<Int>>([1, 2]), Key<List<Float>>([1.0, 2.0]))
+    val zerosAgree = coherent<Float>(0.0, -0.0)
+    prose:
+        coherence: ${keysAgree && listsAgree && zerosAgree}

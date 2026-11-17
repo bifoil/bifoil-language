@@ -1,0 +1,7 @@
+fun invalid(flag: Boolean) -> Int:
+    var value: Int
+    if flag:
+        value = 1
+    return value
+scene start():
+    Unit

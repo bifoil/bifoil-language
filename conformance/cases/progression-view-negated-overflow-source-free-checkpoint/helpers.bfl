@@ -1,0 +1,5 @@
+export suspend fun query(items: IntProgression) -> Boolean:
+    choice:
+        option "Query ${items is IntRange}":
+            Unit
+    return 0 !in items

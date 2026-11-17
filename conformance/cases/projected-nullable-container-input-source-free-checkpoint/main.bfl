@@ -1,0 +1,10 @@
+import helpers.Batch
+import helpers.clear
+scene start():
+    val original = Batch<String>(["before"])
+    clear(original)
+    choice:
+        option "Null elements":
+            Unit
+    prose:
+        ${original.values.size}|${original.values[0] == null}|${original is Batch<String>}

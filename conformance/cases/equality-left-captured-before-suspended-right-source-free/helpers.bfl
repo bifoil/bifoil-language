@@ -1,0 +1,10 @@
+export data class Cell:
+    var value: Int
+export shared var calls: Int = 0
+export suspend fun mutate(cell: Cell) -> Cell:
+    calls += 1
+    choice:
+        option "Mutate right":
+            Unit
+    cell.value = 2
+    return Cell(2)

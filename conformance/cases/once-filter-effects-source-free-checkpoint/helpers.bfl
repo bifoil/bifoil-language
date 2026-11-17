@@ -1,0 +1,30 @@
+shared var trace: String = ""
+shared var selected: Boolean = false
+fun visible() -> Boolean:
+    if selected:
+        val divisor = if selected:
+            0
+        else:
+            1
+        val impossible = 1 / divisor
+    trace += "V"
+    return true
+fun condition(mark: String, result: Boolean) -> Boolean:
+    trace += mark
+    return result
+fun label(mark: String) -> String:
+    trace += mark
+    return mark
+export suspend fun run():
+    choice:
+        option "${label("L")}" if visible() enabledIf condition("E", true) once:
+            selected = true
+            prose:
+                Selected ${trace}.
+        option "${label("X")}" if condition("H", false) enabledIf condition("Y", true):
+            Unit
+        option "${label("K")}" if condition("D", true) enabledIf condition("G", false):
+            Unit
+        else:
+            prose:
+                Fallback ${trace}.

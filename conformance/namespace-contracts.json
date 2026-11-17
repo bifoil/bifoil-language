@@ -1,0 +1,236 @@
+[
+  {
+    "id": "namespace-visits-shared-aliases-source-free-checkpoint",
+    "directory": "cases/namespace-visits-shared-aliases-source-free-checkpoint",
+    "decisions": [
+      "M08",
+      "M16",
+      "M06",
+      "M07",
+      "M15",
+      "U01",
+      "U13",
+      "U24",
+      "T24"
+    ],
+    "precompile": [
+      "colors",
+      "api",
+      "gallery"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Visit 1 1"
+      ],
+      [
+        "Visit 2 1"
+      ]
+    ],
+    "output": [
+      "1|1|true",
+      "2|1|true",
+      "2|Int|Float"
+    ]
+  },
+  {
+    "id": "namespace-alias-forward-generic-source-free-checkpoint",
+    "directory": "cases/namespace-alias-forward-generic-source-free-checkpoint",
+    "decisions": [
+      "U01",
+      "U25",
+      "U26",
+      "U27",
+      "G01",
+      "G03",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Aliases"
+      ]
+    ],
+    "output": [
+      "kept|4|value"
+    ]
+  },
+  {
+    "id": "namespace-exported-enum-alias-shorthand-source-free",
+    "directory": "cases/namespace-exported-enum-alias-shorthand-source-free",
+    "decisions": [
+      "U01",
+      "U13",
+      "U24",
+      "M08",
+      "M16"
+    ],
+    "precompile": [
+      "colors",
+      "api"
+    ],
+    "output": [
+      "true|true|true"
+    ]
+  },
+  {
+    "id": "namespace-private-import-error",
+    "directory": "cases/namespace-private-import-error",
+    "decisions": [
+      "M08",
+      "M16"
+    ],
+    "compile_error": "not exported",
+    "precompile": [
+      "colors"
+    ]
+  },
+  {
+    "id": "namespace-import-does-not-export-error",
+    "directory": "cases/namespace-import-does-not-export-error",
+    "decisions": [
+      "M08",
+      "M16"
+    ],
+    "compile_error": "not exported",
+    "precompile": [
+      "colors",
+      "api"
+    ]
+  },
+  {
+    "id": "namespace-no-implicit-qualified-access-error",
+    "directory": "cases/namespace-no-implicit-qualified-access-error",
+    "decisions": [
+      "M08",
+      "M16"
+    ],
+    "compile_error": "unknown"
+  },
+  {
+    "id": "namespace-value-import-alias-conflict-error",
+    "directory": "cases/namespace-value-import-alias-conflict-error",
+    "decisions": [
+      "M08",
+      "M16",
+      "B05"
+    ],
+    "compile_error": "shadowing",
+    "precompile": [
+      "colors"
+    ]
+  },
+  {
+    "id": "namespace-enum-shorthand-binding-conflict-error",
+    "directory": "cases/namespace-enum-shorthand-binding-conflict-error",
+    "decisions": [
+      "U13",
+      "U24",
+      "M08"
+    ],
+    "compile_error": "conflict",
+    "precompile": [
+      "colors"
+    ]
+  },
+  {
+    "id": "namespace-alias-expansion-bound-cycle-error",
+    "directory": "cases/namespace-alias-expansion-bound-cycle-error",
+    "decisions": [
+      "U01",
+      "U27",
+      "G01"
+    ],
+    "compile_error": "cycle"
+  },
+  {
+    "id": "namespace-local-alias-does-not-leak-error",
+    "directory": "cases/namespace-local-alias-does-not-leak-error",
+    "decisions": [
+      "U01",
+      "U25"
+    ],
+    "compile_error": "unknown type"
+  },
+  {
+    "id": "namespace-module-values-require-shared-error",
+    "directory": "cases/namespace-module-values-require-shared-error",
+    "decisions": [
+      "M06",
+      "M08"
+    ],
+    "compile_error": "module-level values require shared"
+  },
+  {
+    "id": "namespace-shared-requires-initializer-error",
+    "directory": "cases/namespace-shared-requires-initializer-error",
+    "decisions": [
+      "M06",
+      "M07"
+    ],
+    "compile_error": "shared declarations require initializers"
+  },
+  {
+    "id": "namespace-shared-function-placement-error",
+    "directory": "cases/namespace-shared-function-placement-error",
+    "decisions": [
+      "M14"
+    ],
+    "output": []
+  },
+  {
+    "id": "namespace-export-modifier-order-error",
+    "directory": "cases/namespace-export-modifier-order-error",
+    "decisions": [
+      "M06",
+      "M08",
+      "M16"
+    ],
+    "compile_error": "expected"
+  },
+  {
+    "id": "namespace-duplicate-export-modifier-error",
+    "directory": "cases/namespace-duplicate-export-modifier-error",
+    "decisions": [
+      "M08",
+      "M16"
+    ],
+    "compile_error": "expected"
+  },
+  {
+    "id": "namespace-export-import-not-a-declaration-error",
+    "directory": "cases/namespace-export-import-not-a-declaration-error",
+    "decisions": [
+      "M08",
+      "M16"
+    ],
+    "compile_error": "expected"
+  },
+  {
+    "id": "namespace-import-wildcard-error",
+    "directory": "cases/namespace-import-wildcard-error",
+    "decisions": [
+      "M08",
+      "M16"
+    ],
+    "compile_error": "expected"
+  },
+  {
+    "id": "namespace-alias-scope-shadow-error",
+    "directory": "cases/namespace-alias-scope-shadow-error",
+    "decisions": [
+      "U01",
+      "U25",
+      "B05"
+    ],
+    "compile_error": "alias shadows"
+  }
+]

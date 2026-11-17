@@ -1,0 +1,5 @@
+export fun <T> pair(left: T, right: T) -> T = left
+export fun chooseFirst(value: Int) -> Int = value + 10
+export fun chooseFirst(value: String) -> String = value
+export fun chooseSecond(value: Int) -> Int = value + 20
+export fun chooseSecond(value: Boolean) -> Boolean = value

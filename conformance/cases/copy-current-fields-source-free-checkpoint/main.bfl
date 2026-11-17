@@ -1,0 +1,14 @@
+import helpers.defaults
+import helpers.events
+import helpers.original
+import helpers.receiver
+import helpers.select
+import helpers.change
+import helpers.Cell
+scene start():
+    val duplicate = select().copy(items = change())
+    val other = duplicate.copy(number = 11)
+    duplicate.items[0].value = 8
+    duplicate.items.add(Cell(4))
+    prose:
+        ${duplicate.number}|${other.number}|${original.number}|${receiver.number}|${original.items.size}|${other.items[0].value}|${defaults}|${events}

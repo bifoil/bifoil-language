@@ -1,0 +1,3 @@
+import helpers.joined
+scene start():
+    val result = joined(mutable [1], mutable [2.0])

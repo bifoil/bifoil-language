@@ -1,0 +1,13 @@
+sealed class Outcome:
+    case Success(number: Int)
+    case Failure(code: Int)
+fun <T: Map<Outcome, Int>> preserve(values: T) -> T = values
+fun <K: StableKey> combine(values: Map<K, Int>, seed: K, first: (K) -> Int, second: (K) -> Int) -> Map<K, Int> = values
+fun narrow(value: Outcome) -> Int = 1
+fun broad(value: Outcome?) -> Int = 2
+export fun run():
+    val bounded = preserve({Outcome.Success(1): 7})
+    val seed: Outcome = Outcome.Failure(2)
+    val inferred = combine({Outcome.Success(1): 7}, seed, ::narrow, ::broad)
+    prose:
+        ${bounded is Map<Outcome, Int>} ${inferred is Map<Outcome, Int>} ${bounded.size} ${inferred.size}.

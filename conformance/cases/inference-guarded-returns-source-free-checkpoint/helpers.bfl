@@ -1,0 +1,18 @@
+export enum Mode:
+    On
+    Off
+export sealed class Reply:
+    case Number(value: Int)
+    case Text(value: String)
+export fun constantGuard(value: Mode) = when value:
+    case Mode.On if true:
+        1
+    case Mode.Off:
+        2
+export fun guarded(value: Reply) = when value:
+    case is Reply.Number(number) if number > 0:
+        number
+    case is Reply.Number(number):
+        0
+    case is Reply.Text(text):
+        text.length

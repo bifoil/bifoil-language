@@ -1,0 +1,2 @@
+scene start():
+    val Int = 1

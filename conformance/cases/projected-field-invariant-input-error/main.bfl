@@ -1,0 +1,7 @@
+data class Box<T>:
+    var values: MutableList<T>
+fun bad(box: Box<*>):
+    box.values = mutable [3]
+
+scene start():
+    Unit

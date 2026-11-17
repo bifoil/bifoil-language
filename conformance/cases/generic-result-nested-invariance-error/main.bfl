@@ -1,0 +1,4 @@
+fun consume(values: List<MutableList<Float>>) -> Unit = Unit
+scene start():
+    val original = mutable [1]
+    consume([original])

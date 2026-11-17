@@ -1,0 +1,4 @@
+import helpers.Node
+scene start():
+    val node = Node<Int>(1, mutable [1])
+    val invalid = {node}

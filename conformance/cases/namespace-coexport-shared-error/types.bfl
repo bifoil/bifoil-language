@@ -1,0 +1,2 @@
+export typealias Label = String
+export shared val Label = "value"

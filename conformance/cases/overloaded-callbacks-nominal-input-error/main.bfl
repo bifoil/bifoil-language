@@ -1,0 +1,9 @@
+data class First:
+    val value: Int
+data class Second:
+    val value: Int
+fun <T> invoke(factory: (First) -> T) -> T = factory(First(1))
+fun choose(value: Second) -> String = "different"
+fun choose(value: Float) -> Float = value
+scene start():
+    val result: String = invoke(::choose)

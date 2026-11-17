@@ -1,0 +1,12 @@
+import helpers.Flag
+import helpers.Holder
+scene start():
+    var Flag = Holder(7)
+    val read: () -> Int = () => Flag.Happy
+    fun current() -> Int = Flag.Happy
+    choice:
+        option "Captured value prefix":
+            Unit
+    Flag = Holder(9)
+    prose:
+        ${read()}|${current()}

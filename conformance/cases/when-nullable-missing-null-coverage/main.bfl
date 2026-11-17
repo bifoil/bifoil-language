@@ -1,0 +1,8 @@
+fun render(input: Boolean?) -> Int:
+    return when input:
+        case true:
+            1
+        case false:
+            2
+scene start():
+    Unit

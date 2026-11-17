@@ -1,0 +1,5 @@
+scene start():
+    prose:
+        @val double: (Int) -> Int = (value: Int) =>:
+            value * 2
+        Result ${double(3)}.

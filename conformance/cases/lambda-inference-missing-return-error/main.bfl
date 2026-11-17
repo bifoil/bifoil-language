@@ -1,0 +1,4 @@
+scene start():
+    val callback: (Boolean) -> Int = (flag: Boolean) =>:
+        if flag:
+            return 1

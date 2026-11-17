@@ -1,0 +1,20 @@
+import helpers.pair
+import helpers.chooseSecond
+import helpers.Source
+import helpers.trace
+scene start():
+    var source = Source(10)
+    fun receiver() -> Source:
+        trace += "C"
+        return source
+    val factory = pair(() => receiver()::choose, () => ::chooseSecond)
+    prose:
+        Created|${trace}
+    choice:
+        option "Replace source":
+            source = Source(20)
+            trace += "R"
+    val callback = factory()
+    source = Source(99)
+    prose:
+        ${callback(3)}|${source.base}|${trace}|${factory is () -> (Int) -> Int}

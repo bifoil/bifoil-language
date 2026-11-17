@@ -1,0 +1,333 @@
+[
+  {
+    "id": "equality-ordinary-families-source-free-checkpoint",
+    "directory": "cases/equality-ordinary-families-source-free-checkpoint",
+    "decisions": [
+      "E03",
+      "E28",
+      "E29",
+      "E30",
+      "D08",
+      "U08",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Compare families"
+      ]
+    ],
+    "output": [
+      "true|true|false|false|true|true|true|false|true|true|true|true|true|true|true"
+    ]
+  },
+  {
+    "id": "equality-ordinary-graphs-source-free-checkpoint",
+    "directory": "cases/equality-ordinary-graphs-source-free-checkpoint",
+    "decisions": [
+      "U06",
+      "U22",
+      "E03",
+      "E28",
+      "D08",
+      "E34",
+      "U05",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Compare graphs"
+      ]
+    ],
+    "output": [
+      "true|true|true|true|true|true|true|true|1|2"
+    ]
+  },
+  {
+    "id": "equality-left-captured-before-suspended-right-source-free",
+    "directory": "cases/equality-left-captured-before-suspended-right-source-free",
+    "decisions": [
+      "E03",
+      "U06",
+      "U05",
+      "E09",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Mutate right"
+      ]
+    ],
+    "output": [
+      "true|2|1"
+    ]
+  },
+  {
+    "id": "nullable-joins-source-free-checkpoint",
+    "directory": "cases/nullable-joins-source-free-checkpoint",
+    "decisions": [
+      "B12",
+      "B14",
+      "E12",
+      "E13",
+      "G03",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Joined values"
+      ]
+    ],
+    "output": [
+      "true|3|4|true|\ud83d\ude00|true|1|8|2|false"
+    ]
+  },
+  {
+    "id": "nullable-lazy-paths-source-free-checkpoint",
+    "directory": "cases/nullable-lazy-paths-source-free-checkpoint",
+    "decisions": [
+      "B11",
+      "B12",
+      "B15",
+      "B16",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Fallback PLF"
+      ]
+    ],
+    "output": [
+      "4|true|true|true|true|9|PLF"
+    ]
+  },
+  {
+    "id": "nullable-contextual-copy-source-free-checkpoint",
+    "directory": "cases/nullable-contextual-copy-source-free-checkpoint",
+    "decisions": [
+      "B12",
+      "D21",
+      "D25",
+      "D26",
+      "B20",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Contextual fallback"
+      ]
+    ],
+    "output": [
+      "1|9|8|3|true|true"
+    ]
+  },
+  {
+    "id": "equality-unrelated-ordinary-error",
+    "directory": "cases/equality-unrelated-ordinary-error",
+    "decisions": [
+      "E03"
+    ],
+    "compile_error": "cannot combine"
+  },
+  {
+    "id": "equality-nominal-ordinary-error",
+    "directory": "cases/equality-nominal-ordinary-error",
+    "decisions": [
+      "E03",
+      "U06",
+      "U07"
+    ],
+    "compile_error": "cannot combine"
+  },
+  {
+    "id": "equality-hidden-capability-error",
+    "directory": "cases/equality-hidden-capability-error",
+    "decisions": [
+      "E03",
+      "D08",
+      "E31"
+    ],
+    "compile_error": "cannot combine"
+  },
+  {
+    "id": "equality-unknown-function-exact-error",
+    "directory": "cases/equality-unknown-function-exact-error",
+    "decisions": [
+      "E28",
+      "U06",
+      "F39"
+    ],
+    "compile_error": "cannot combine"
+  },
+  {
+    "id": "equality-sum-ineligible-payload-error",
+    "directory": "cases/equality-sum-ineligible-payload-error",
+    "decisions": [
+      "E03",
+      "U22",
+      "F39"
+    ],
+    "compile_error": "cannot combine"
+  },
+  {
+    "id": "nullable-unrelated-inference-error",
+    "directory": "cases/nullable-unrelated-inference-error",
+    "decisions": [
+      "B12",
+      "B20",
+      "E13"
+    ],
+    "compile_error": "fallback types"
+  },
+  {
+    "id": "nullable-copy-inference-error",
+    "directory": "cases/nullable-copy-inference-error",
+    "decisions": [
+      "B12",
+      "E13",
+      "D21"
+    ],
+    "compile_error": "fallback types"
+  },
+  {
+    "id": "nullable-unrelated-expected-error",
+    "directory": "cases/nullable-unrelated-expected-error",
+    "decisions": [
+      "B12"
+    ],
+    "compile_error": "fallback"
+  },
+  {
+    "id": "nullable-skipped-call-type-error",
+    "directory": "cases/nullable-skipped-call-type-error",
+    "decisions": [
+      "B16"
+    ],
+    "compile_error": "expected Int, found String"
+  },
+  {
+    "id": "nullable-skipped-suspend-error",
+    "directory": "cases/nullable-skipped-suspend-error",
+    "decisions": [
+      "B16",
+      "T22"
+    ],
+    "compile_error": "suspend"
+  },
+  {
+    "id": "nullable-assertion-dynamic-failure-source-free",
+    "directory": "cases/nullable-assertion-dynamic-failure-source-free",
+    "decisions": [
+      "B13",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Assert absent"
+      ]
+    ],
+    "runtime_error": "null assertion failed"
+  },
+  {
+    "id": "equality-mutability-and-nominal-controls-source-free",
+    "directory": "cases/equality-mutability-and-nominal-controls-source-free",
+    "decisions": [
+      "E03",
+      "E28",
+      "D08",
+      "U06",
+      "U07",
+      "E29",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0
+    ],
+    "options": [
+      [
+        "Compare controls"
+      ]
+    ],
+    "output": [
+      "true|true|true|true|true|true|true|true|true|true"
+    ]
+  },
+  {
+    "id": "nullable-present-paths-source-free-checkpoint",
+    "directory": "cases/nullable-present-paths-source-free-checkpoint",
+    "decisions": [
+      "B11",
+      "B13",
+      "B15",
+      "B16",
+      "B17",
+      "T24"
+    ],
+    "precompile": [
+      "helpers"
+    ],
+    "choices": [
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Argument RA"
+      ],
+      [
+        "Argument RALA"
+      ],
+      [
+        "Argument RALACA"
+      ]
+    ],
+    "output": [
+      "7|9|0|true|RALACA"
+    ]
+  }
+]

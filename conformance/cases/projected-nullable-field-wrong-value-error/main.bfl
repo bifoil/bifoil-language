@@ -1,0 +1,7 @@
+data class Box<T>:
+    var value: T?
+fun bad(box: Box<*>):
+    box.value = 3
+
+scene start():
+    Unit

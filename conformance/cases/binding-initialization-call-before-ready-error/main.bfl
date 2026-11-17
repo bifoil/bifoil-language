@@ -1,0 +1,8 @@
+fun invalid() -> Int:
+    val seed: Int
+    fun read() -> Int = seed
+    val result = read()
+    seed = 4
+    return result
+scene start():
+    Unit

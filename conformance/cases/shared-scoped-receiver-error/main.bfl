@@ -1,0 +1,6 @@
+data class Holder:
+    val input: Int
+    fun bad():
+        shared val stored = input
+scene start():
+    Unit

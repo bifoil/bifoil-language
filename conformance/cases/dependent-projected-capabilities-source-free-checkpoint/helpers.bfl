@@ -1,0 +1,4 @@
+export data class Key<U: StableKey, T: U>:
+    val value: T
+export data class Nested<U: StableKey, T: List<U>>:
+    val value: T

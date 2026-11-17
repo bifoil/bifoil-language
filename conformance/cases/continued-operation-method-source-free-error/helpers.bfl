@@ -1,0 +1,4 @@
+export fun fail(value: String, end: Int) -> String:
+    return (
+        value.substring
+        (1, end))

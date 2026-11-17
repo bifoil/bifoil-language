@@ -1,0 +1,12 @@
+import helpers.Box
+import helpers.checker
+import helpers.maybe
+scene start():
+    val original = Box("held")
+    val hidden: Box<*> = original
+    val callback = checker(hidden)
+    choice:
+        option "Method bounds":
+            Unit
+    prose:
+        ${callback()}|${maybe(hidden)}|${original is Box<String>}

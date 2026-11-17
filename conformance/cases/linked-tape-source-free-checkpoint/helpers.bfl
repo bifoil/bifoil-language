@@ -1,0 +1,39 @@
+export data class Cell:
+    val symbol: Char
+    val tail: Cell?
+export data class Tape:
+    var left: Cell?
+    var current: Char
+    var right: Cell?
+    fun moveLeft():
+        val previous = left
+        right = Cell(current, right)
+        if previous == null:
+            current = '_'
+        else:
+            current = previous.symbol
+            left = previous.tail
+    fun moveRight():
+        val following = right
+        left = Cell(current, left)
+        if following == null:
+            current = '_'
+        else:
+            current = following.symbol
+            right = following.tail
+    fun rightText() -> String:
+        var result = ""
+        var cursor = right
+        while cursor != null:
+            result += cursor.symbol
+            cursor = cursor.tail
+        return result
+export fun increment(tape: Tape):
+    var scanning = true
+    while scanning:
+        when tape.current:
+            case '1':
+                tape.moveRight()
+            else:
+                tape.current = '1'
+                scanning = false

@@ -1,0 +1,3 @@
+import colors.Mood as Base
+export typealias Visible = Base
+export fun selected(value: Visible) -> Visible = value

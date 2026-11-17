@@ -1,0 +1,17 @@
+import helpers.named
+import helpers.anonymous
+scene start():
+    val first = named()
+    val second = anonymous()
+    choice:
+        option "Escaped prose":
+            Unit
+    val value = first() + second(3)
+    prose:
+        Result ${value}.
+    choice:
+        option "Restored callbacks":
+            Unit
+    val zero = second(0)
+    prose:
+        Zero ${zero}.

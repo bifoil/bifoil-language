@@ -1,0 +1,4 @@
+fun <T> same(first: T, second: T) = first
+fun fail() = same(1, true)
+scene start():
+    Unit

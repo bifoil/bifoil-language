@@ -1,0 +1,4 @@
+fun bad(value: Int) -> Int = value
+fun bad(value: Int) -> String = String(value)
+scene start():
+    Unit

@@ -1,0 +1,6 @@
+export shared var trace: String = ""
+export fun consume(action: () -> Unit):
+    action()
+export fun record() -> Int:
+    trace += "C"
+    return 3

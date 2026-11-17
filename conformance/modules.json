@@ -750,5 +750,39 @@
       "64|2016"
     ],
     "directory": "cases/many-scene-modules-source-free-checkpoint"
+  },
+  {
+    "id": "lazy-package-deep-source-free-checkpoint",
+    "directory": "cases/lazy-package-deep-source-free-checkpoint",
+    "decisions": [
+      "S10",
+      "F13",
+      "T21",
+      "T24"
+    ],
+    "precompile": [
+      "state",
+      "leaf",
+      "level5",
+      "level4",
+      "level3",
+      "level2",
+      "level1"
+    ],
+    "choices": [
+      0,
+      0
+    ],
+    "options": [
+      [
+        "Resume 6|6"
+      ],
+      [
+        "Verify 157|6"
+      ]
+    ],
+    "output": [
+      "157|6"
+    ]
   }
 ]

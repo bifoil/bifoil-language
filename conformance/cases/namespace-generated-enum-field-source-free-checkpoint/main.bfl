@@ -1,0 +1,10 @@
+import helpers.Mood
+import helpers.Holder
+scene start():
+    val original = Holder(Mood.Quiet)
+    val changed = original.copy(Happy = Mood.Happy)
+    choice:
+        option "Enum field":
+            Unit
+    prose:
+        ${original.Happy == Mood.Quiet}|${changed.Happy == Mood.Happy}

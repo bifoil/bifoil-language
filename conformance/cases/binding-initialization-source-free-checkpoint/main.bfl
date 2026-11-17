@@ -1,0 +1,20 @@
+import helpers.prepared
+import helpers.explicitOnly
+import helpers.defaults
+import helpers.forwardWriter
+import helpers.freshLoop
+import helpers.recursive
+scene start():
+    val first = prepared(true)
+    val second = prepared(false)
+    val explicit = explicitOnly()
+    val lateDefaults = defaults()
+    val forward = forwardWriter()
+    val loop = freshLoop()
+    val even = recursive(true)
+    val odd = recursive(false)
+    choice:
+        option "Resume bindings":
+            Unit
+    prose:
+        ${first()}|${second()}|${explicit(9)}|${lateDefaults[0]}|${lateDefaults[1]}|${forward}|${loop[0]()}|${loop[1]()}|${even(4)}|${odd(3)}

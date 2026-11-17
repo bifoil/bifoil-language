@@ -1,0 +1,5 @@
+import helpers.count
+scene start():
+    val visited = count()
+    prose:
+        ${visited}

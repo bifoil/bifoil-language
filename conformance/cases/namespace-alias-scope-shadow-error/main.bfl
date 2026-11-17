@@ -1,0 +1,6 @@
+typealias Name = Int
+fun invalid():
+    typealias Name = String
+    Unit
+scene start():
+    Unit

@@ -1,0 +1,15 @@
+import helpers.Input
+scene start():
+    val original = Input<Int>(3)
+    val hidden: Input<*> = original
+    val clear: (Nothing?) -> Any? = hidden::use
+    val count: (vararg Nothing?) -> Int = hidden::count
+    val callback: (Nothing?) -> Any? = hidden.capture()
+    choice:
+        option "Interfaces":
+            Unit
+    val previous = clear(null)
+    hidden.value = null
+    val copy = hidden.copy()
+    prose:
+        ${String(previous)}|${count(null, null)}|${count()}|${callback(null) == null}|${original.value == null}|${copy is Input<Int>}

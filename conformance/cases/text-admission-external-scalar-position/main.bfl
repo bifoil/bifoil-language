@@ -1,0 +1,3 @@
+legacy val external: String = "text"
+scene start():
+    val checked = external

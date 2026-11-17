@@ -1,0 +1,3 @@
+typealias Int = String
+scene start():
+    val number: Int = 3

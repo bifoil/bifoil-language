@@ -1,0 +1,7 @@
+fun <T> together(left: (T) -> T, right: (T) -> T) -> Unit = Unit
+fun chooseFirst(value: Int) -> Int = value
+fun chooseFirst(value: String) -> String = value
+fun chooseSecond(value: Float) -> Float = value
+fun chooseSecond(value: Boolean) -> Boolean = value
+scene start():
+    together(::chooseFirst, ::chooseSecond)

@@ -1,0 +1,20 @@
+import helpers.Mood
+import helpers.Pair
+import helpers.Node
+import helpers.make
+import helpers.identity
+scene start():
+    val node = make()
+    val pair = Pair("Ada", 7)
+    val aliases = [pair, pair]
+    val empty: Map<String, Int> = {}
+    val optional: String? = null
+    val function = ::identity
+    val sceneReference = ::start
+    val primitive = "${true}|${false}|${-0.0}|${1.0}|${1e-7}|${1e-6}|${1e20}|${1e21}"
+    choice:
+        option "Render ${primitive}":
+            Unit
+    prose:
+        ${String(optional)}|${Unit.toString()}|${String(Mood.Happy)}|${Mood.Sad.toString()}|${String(aliases)}|${String(node)}|${String(empty)}|${String(function)}|${String(sceneReference)}
+        ${Int(-3.9)}|${(-3.9).toInt()}|${Float(3)}|${3.toFloat()}|${Char(128512)}|${'😀'.code}

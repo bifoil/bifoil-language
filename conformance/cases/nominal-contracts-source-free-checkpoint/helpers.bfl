@@ -1,0 +1,22 @@
+export shared var events: String = ""
+export fun record(label: String, number: Int) -> Int:
+    events += label
+    return number
+export data class Box<T: Equatable>:
+    private var stored: T
+    val values: MutableList<Int>
+    val serial: Int = record("D", 1)
+    private fun current() -> T = stored
+    fun read() -> T = current()
+    fun update(next: T):
+        stored = next
+    fun reader() -> () -> T:
+        fun retained() -> T = current()
+        return ::retained
+export fun selected(box: Box<Int>) -> Box<Int>:
+    events += "R"
+    return box
+export fun rewritten(box: Box<Int>) -> Int:
+    events += "A"
+    box.update(9)
+    return 2

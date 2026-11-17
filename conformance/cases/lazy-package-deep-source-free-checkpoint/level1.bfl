@@ -1,0 +1,6 @@
+import level2.compute as next
+import state.calls
+export suspend fun compute(value: Int) -> Int:
+    calls += 1
+    val prefix = value * 10
+    return prefix + next(value + 1)

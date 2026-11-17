@@ -1,0 +1,22 @@
+sealed class Outcome<out T>:
+    case Success(number: Int)
+    case Pending
+sealed class ValueOutcome<out T: Equatable>:
+    case Some(value: T)
+    case Missing
+scene start():
+    val original = Outcome.Success<Int>(3)
+    val viewed: Outcome<Any> = original
+    val constructed: Outcome<Any> = Outcome.Success<Any>(3)
+    val pending: Outcome<Any> = Outcome.Pending<Any>()
+    val valueOriginal = ValueOutcome.Some<Int>(3)
+    val valueViewed: ValueOutcome<Int?> = valueOriginal
+    val valueConstructed: ValueOutcome<Int?> = ValueOutcome.Some<Int?>(3)
+    val missing: ValueOutcome<Int?> = ValueOutcome.Some<Int?>(null)
+    choice:
+        option "Variants":
+            prose:
+                Same ${viewed === constructed}; other ${viewed === pending}.
+                Retained ${viewed is Outcome.Success<Int>} ${constructed is Outcome.Success<Int>}.
+                Payload ${valueViewed === valueConstructed}; null ${valueViewed !== missing}.
+                Retained payload ${valueViewed is ValueOutcome.Some<Int>} ${valueConstructed is ValueOutcome.Some<Int>}.

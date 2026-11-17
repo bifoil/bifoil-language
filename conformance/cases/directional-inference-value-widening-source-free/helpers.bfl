@@ -1,0 +1,10 @@
+export shared var observed: Boolean = false
+export fun <T> combine(first: (T) -> Int, second: (T) -> Int, value: T) -> T:
+    first(value)
+    second(value)
+    observed = value is Float
+    return value
+export fun narrow(value: Float) -> Int = 1
+export fun broad(value: Float?) -> Int = 2
+export fun intNarrow(value: Int) -> Int = value
+export fun intBroad(value: Int?) -> Int = value ?: 0

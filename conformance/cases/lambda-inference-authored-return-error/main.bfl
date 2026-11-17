@@ -1,0 +1,4 @@
+scene start():
+    val callback: () -> Int = () =>:
+        return 1
+        return

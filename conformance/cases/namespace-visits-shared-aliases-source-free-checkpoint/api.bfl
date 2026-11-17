@@ -1,0 +1,11 @@
+import colors.Mood as Original
+import colors.count as sourceCount
+import colors.integer as measure
+import colors.decimal as measure
+export typealias Mood = Original
+export typealias Handler<T> = (T) -> T
+export fun pick(value: Mood = Happy) -> Mood = value
+export fun increment() -> Int:
+    sourceCount += 1
+    return sourceCount
+export fun measured() -> String = measure(3) + "|" + measure(3.0)

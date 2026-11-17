@@ -1,0 +1,5 @@
+fun invalid(value: String?):
+    prose:
+        ${value}
+scene start():
+    Unit

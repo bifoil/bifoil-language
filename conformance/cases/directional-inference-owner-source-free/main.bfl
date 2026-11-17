@@ -1,0 +1,7 @@
+import helpers.outer
+scene start():
+    val number = outer(3)
+    val letter = outer('a')
+    val absent: Int? = outer<Int?>(null)
+    prose:
+        ${number}|${letter}|${letter is Char}|${absent == null}

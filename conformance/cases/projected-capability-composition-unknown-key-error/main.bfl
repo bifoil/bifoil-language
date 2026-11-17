@@ -1,0 +1,5 @@
+import helpers.Inner
+import helpers.Outer
+scene start():
+    val item = Outer<Any?, Any?, Any?>(Inner<Any?, Any?, Int>(1), Inner<Any?, Any?, Int>(2))
+    val keys = {item}

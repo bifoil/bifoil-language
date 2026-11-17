@@ -1,0 +1,12 @@
+import helpers.Flag
+import helpers.Mood
+import helpers.Holder
+scene start():
+    val before: Flag = Flag.Happy
+    val Flag = Holder(7)
+    val after: Int = Flag.Happy
+    choice:
+        option "Value prefix":
+            Unit
+    prose:
+        ${before == Mood.Happy}|${after}|${Flag.Happy}

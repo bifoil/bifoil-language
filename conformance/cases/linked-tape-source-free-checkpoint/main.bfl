@@ -1,0 +1,19 @@
+import helpers.Cell
+import helpers.Tape
+import helpers.increment
+scene start():
+    val tape = Tape(null, '1', Cell('1', null))
+    increment(tape)
+    while tape.left != null:
+        tape.moveLeft()
+    prose:
+        ${tape.current}${tape.rightText()}
+    choice:
+        option "Move over the blank":
+            Unit
+    tape.moveLeft()
+    prose:
+        ${tape.current}|${tape.rightText()}
+    tape.moveRight()
+    prose:
+        ${tape.current}${tape.rightText()}

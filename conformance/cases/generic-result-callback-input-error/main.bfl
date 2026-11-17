@@ -1,0 +1,4 @@
+fun <T> produce(factory: (T) -> T, value: T) -> T = factory(value)
+fun number(value: Int) -> Int = value
+scene start():
+    val value: Float = produce(::number, 3.5)

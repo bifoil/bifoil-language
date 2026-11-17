@@ -1,0 +1,8 @@
+import helpers.Box
+import helpers.boxed
+import helpers.read
+scene start():
+    val first = boxed(1, Box(2.5))
+    val item = read([2.5])
+    prose:
+        ${first}|${first is Float}|${item}|${item is Float}

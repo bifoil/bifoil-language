@@ -1,0 +1,11 @@
+import helpers.events
+import helpers.items
+import helpers.target
+import helpers.position
+import helpers.element
+import helpers.appendIndex
+scene start():
+    target().insert(index = position(), element = element())
+    val removed = target().removeAt(index = appendIndex())
+    prose:
+        ${String(items)}|${removed}|${events}

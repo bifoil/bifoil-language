@@ -1,0 +1,10 @@
+import right.Link
+export shared var trace: String = ""
+export data class Node<T>:
+    val item: T
+    var next: Link<T>? = null
+export fun <A, B: A> choose(first: A, second: B) -> A = first
+export fun <T> mark(letter: String, value: T) -> T:
+    trace += letter
+    return value
+export fun <T> make(value: T) -> Node<T> = Node(value)

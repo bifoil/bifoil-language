@@ -1,0 +1,4 @@
+scene start():
+    ignored@ when true:
+        else:
+            Unit

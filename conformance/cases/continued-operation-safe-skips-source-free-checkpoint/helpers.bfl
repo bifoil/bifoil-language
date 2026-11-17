@@ -1,0 +1,18 @@
+shared var effects = 0
+fun change() -> Int:
+    effects += 1
+    return 7
+export suspend fun run() -> String:
+    val text: String? = null
+    val callback: ((Int) -> Int)? = null
+    val first = (
+        text
+        ?[change()])
+    val second = (
+        callback
+        ?.(change()))
+    choice:
+        option "Check":
+            prose:
+                Continuing.
+    return "${first == null}|${second == null}|${effects}"

@@ -1,0 +1,6 @@
+import helpers.Source
+import helpers.pair
+import helpers.chooseSecond
+scene start():
+    val source = Source(10)
+    val factory = pair<() -> (Int) -> Int>(() => source::choose, () => ::chooseSecond)

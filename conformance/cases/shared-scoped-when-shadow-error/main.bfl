@@ -1,0 +1,9 @@
+fun bad(input: Int):
+    shared val callback = (item: Int) =>:
+        return when val input = item:
+            case 1:
+                1
+            else:
+                0
+scene start():
+    Unit

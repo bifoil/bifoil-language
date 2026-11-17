@@ -1,0 +1,4 @@
+import b.narrow
+import b.broad
+export fun <T> combine(first: (T) -> Int, second: (T) -> Int, value: T) -> Int = first(value) + second(value)
+export fun through() -> Int = combine(::narrow, ::broad, 1)

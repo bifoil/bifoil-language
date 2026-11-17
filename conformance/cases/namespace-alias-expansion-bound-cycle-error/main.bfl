@@ -1,0 +1,4 @@
+typealias First<T: Second> = List<T>
+typealias Second = First<Int>
+scene start():
+    Unit

@@ -1,0 +1,7 @@
+import a.pair
+import a.chooseFirst
+export fun chooseSecond(value: Int) -> Int = value + 20
+export fun chooseSecond(value: Boolean) -> Boolean = value
+export fun result() -> Int:
+    val factory = pair(() => ::chooseFirst, () => ::chooseSecond)
+    return factory()(2)

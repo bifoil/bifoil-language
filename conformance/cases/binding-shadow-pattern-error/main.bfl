@@ -1,0 +1,9 @@
+sealed class Value:
+    case Present(item: Int)
+fun invalid(value: Value):
+    val item = 1
+    when value:
+        case is Value.Present(item):
+            Unit
+scene start():
+    Unit

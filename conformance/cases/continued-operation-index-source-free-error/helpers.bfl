@@ -1,0 +1,4 @@
+export fun fail(value: String, index: Int) -> Char:
+    return (
+        value
+        [index])

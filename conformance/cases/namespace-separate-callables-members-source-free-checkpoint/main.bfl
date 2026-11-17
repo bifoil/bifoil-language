@@ -1,0 +1,11 @@
+import types.Label
+import values.produce as Label
+import values.Record
+scene start():
+    val read: () -> Label = ::Label
+    val record = Record("field")
+    choice:
+        option "Separate callables":
+            Unit
+    prose:
+        ${read()}|${record.report()}

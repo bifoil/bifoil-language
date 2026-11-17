@@ -1,0 +1,4 @@
+import a.invoke
+export fun choose(value: Int) -> Int = value + 20
+export fun choose(value: Float) -> Float = value + 100
+export fun through() -> Float = invoke(::choose)

@@ -1,0 +1,9 @@
+import helpers.events
+import helpers.items
+import helpers.target
+import helpers.index
+import helpers.fill
+scene start():
+    target()[index()] = fill()
+    prose:
+        ${items[0]}|${events}|${items.size}

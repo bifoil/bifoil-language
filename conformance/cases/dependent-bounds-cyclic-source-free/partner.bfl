@@ -1,0 +1,3 @@
+import helpers.choose
+export fun result() = choose(1, 2.5)
+export fun <X, Y: X> select(first: X, second: Y) -> X = first

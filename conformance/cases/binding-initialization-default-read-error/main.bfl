@@ -1,0 +1,6 @@
+fun invalid() -> Int:
+    var seed: Int
+    fun read(value: Int = seed) -> Int = value
+    return read()
+scene start():
+    Unit

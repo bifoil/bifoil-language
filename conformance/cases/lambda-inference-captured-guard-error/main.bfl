@@ -1,0 +1,5 @@
+import helpers.pair
+scene start():
+    var name: String? = "ready"
+    if name != null:
+        val factory = pair<() -> Int>(() => name.length, () => 1)

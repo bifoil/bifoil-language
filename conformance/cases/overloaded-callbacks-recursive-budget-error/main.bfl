@@ -1,0 +1,6 @@
+fun <U> wrap(value: U) -> List<U> = [value]
+fun <U> wrap(value: U, extra: Int) -> U = value
+fun <A, B> cycle(first: (A) -> B, second: (B) -> A, initial: A) -> A = initial
+scene start():
+    val initial: List<Nothing> = []
+    val result = cycle(::wrap, ::wrap, initial)

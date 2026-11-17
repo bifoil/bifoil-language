@@ -1,0 +1,28 @@
+import helpers.Node
+scene start():
+    val payload = mutable [0]
+    var head: Node<Int>? = null
+    var tail: Node<Int>? = null
+    for index in 0..<20000:
+        val created = Node<Int>(index, payload)
+        if head == null:
+            head = created
+        if tail != null:
+            tail!!.next = created
+        tail = created
+    tail!!.next = head
+    val root = head!!
+    val alias = root
+    for round in 0..<4:
+        choice:
+            option "Round ${round}|${payload.size}":
+                Unit
+        alias.stamp += 1
+        payload.add(round + 1)
+        var current = root
+        var total = 0
+        for index in 0..<20000:
+            total += current.value
+            current = current.next!!
+        prose:
+            ${round}|${total}|${root.stamp}|${root.payload.size}|${current === root}

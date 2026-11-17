@@ -1,0 +1,20 @@
+export shared var recordedInt: Boolean = false
+export data class Source:
+    val base: Int
+    fun choose(value: Int) -> Int = base + value
+    fun choose(value: Float) -> Float = base + value
+export fun <T> invoke(factory: (Int) -> T, ignored: Int = 0) -> T:
+    recordedInt = factory is (Int) -> Int
+    return factory(1)
+export fun number(value: Int) -> Int = value + 10
+export fun number(value: Float) -> Float = value + 100
+export fun <U: Equatable> genericNumber(value: U) -> U = value
+export fun genericNumber(value: Float) -> Float = value + 100
+export fun <T> grouped(vararg factories: (Int) -> T) -> T = factories[0](1)
+export fun <T> nested(factories: List<List<(Int) -> T>>) -> T = factories[0][0](1)
+export fun <T> mapped(factories: Map<String, (Int) -> T>) -> T = (factories["call"]!!)(1)
+export fun <A, B> chain(second: (A) -> B, first: (Int) -> A) -> B = second(first(1))
+export fun begin(value: Int) -> Int = value
+export fun begin(value: Float) -> Float = value
+export fun finish(value: Int) -> String = "finished"
+export fun finish(value: String) -> Int = value.length

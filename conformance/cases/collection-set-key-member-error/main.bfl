@@ -1,0 +1,3 @@
+scene start():
+    val items = {1}
+    items.containsKey(1)

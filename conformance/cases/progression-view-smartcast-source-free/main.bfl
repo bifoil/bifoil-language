@@ -1,0 +1,6 @@
+import helpers.query
+scene start():
+    val original = -2147483648..2147483647
+    val view: IntProgression = original
+    prose:
+        ${query(0, view)}|${view is IntRange}

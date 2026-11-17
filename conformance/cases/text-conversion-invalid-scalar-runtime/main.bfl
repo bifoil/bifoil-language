@@ -1,0 +1,3 @@
+scene start():
+    var point = 55296
+    val invalid = Char(point)
